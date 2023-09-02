@@ -64,12 +64,18 @@ namespace ProyectoIntegrador.formularios
             buttonColumn1.UseColumnTextForButtonValue = true; // Display the Text value on buttons
 
             DataGridViewButtonColumn buttonColumn2 = new DataGridViewButtonColumn();
-            buttonColumn1.Name = "Reserva"; // Name the column
-            buttonColumn1.Text = "Reservas";    // Text for buttons in the column
-            buttonColumn1.UseColumnTextForButtonValue = true; // Display the Text value on buttons
+            buttonColumn2.Name = "Reserva"; // Name the column
+            buttonColumn2.Text = "Reservas";    // Text for buttons in the column
+            buttonColumn2.UseColumnTextForButtonValue = true; // Display the Text value on buttons
+
+            DataGridViewButtonColumn buttonColumn3 = new DataGridViewButtonColumn();
+            buttonColumn3.Name = "Reservar"; // Name the column
+            buttonColumn3.Text = "Reservar";    // Text for buttons in the column
+            buttonColumn3.UseColumnTextForButtonValue = true; // Display the Text value on buttons
 
             dataGridView1.Columns.Add(buttonColumn1);
             dataGridView1.Columns.Add(buttonColumn2);
+            dataGridView1.Columns.Add(buttonColumn3);
 
 
         }
@@ -106,6 +112,10 @@ namespace ProyectoIntegrador.formularios
                     Reservas unaReserva = new Reservas();
                     unaReserva.Show();
 
+                }else if(dataGridView1.Columns[e.ColumnIndex].Name == "Reservar")
+                {
+                    ReservarAula unaReserva = new ReservarAula();
+                    unaReserva.Show();
                 }
             }
         }
