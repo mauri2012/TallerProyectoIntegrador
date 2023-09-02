@@ -10,17 +10,17 @@ using System.Windows.Forms;
 
 namespace ProyectoIntegradorTaller.formularios
 {
-    public partial class AdminMenu : Form
+    public partial class Reservas : Form
     {
-        public AdminMenu()
+        public Reservas()
         {
 
             InitializeComponent();
-            List<Item> staticData = new List<Item>()
+            List<ItemReservas> staticData = new List<ItemReservas>()
             {
 
-                new Item{Id=1, Name= "Aula 5",Lugar="9 de julio", CapacidadMax=40,Tipo="Normal" },
-                new Item{Id=2, Name= "Aula Magna",Lugar = "libertad",CapacidadMax=100,Tipo = "Magna"},
+                new ItemReservas{Hora="14:00-18:00",Desde="14/8/23",Hasta="7/11/23",Materias="Ingeneria del Software",Profesor="Apellido Nombre" },
+                 new ItemReservas{Hora="14:00-18:00",Desde="14/8/23",Hasta="7/11/23",Materias="Ingeneria del Software",Profesor="Apellido Nombre" },
             };
             dataGridView1.DataSource = staticData;
         }
@@ -61,27 +61,10 @@ namespace ProyectoIntegradorTaller.formularios
             if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
             {
                 // Verificar si el clic ocurrió en la columna "Informe"
-                if (dataGridView1.Columns[e.ColumnIndex].Name == "Reservas")
-                {
-                    Reservas unaReserva = new Reservas();
-                    unaReserva.Show();
-
-                }
-                if (dataGridView1.Columns[e.ColumnIndex].Name == "Informe")
-                {
-                    Reporte unReporte = new Reporte();
-                    unReporte.Show();
-                    
-                }
+               
                 // Verificar si el clic ocurrió en la columna "Reservar"
-                else if (dataGridView1.Columns[e.ColumnIndex].Name == "Reservar")
-                {
-                    ReservarAula reserva = new ReservarAula();
-                    reserva.Show();
-                    // Realizar la acción correspondiente al botón "Reservar"
-                    // Por ejemplo, abrir un formulario para realizar una nueva reserva
-                }
-                else if (dataGridView1.Columns[e.ColumnIndex].Name == "Editar")
+          
+                if (dataGridView1.Columns[e.ColumnIndex].Name == "Editar")
                 {
                     EditarAula aula = new EditarAula((int)dataGridView1.Rows[e.RowIndex].Cells[0].Value,(string)dataGridView1.Rows[e.RowIndex].Cells[1].Value, (string)dataGridView1.Rows[e.RowIndex].Cells[2].Value, (int)dataGridView1.Rows[e.RowIndex].Cells[3].Value,(string)dataGridView1.Rows[e.RowIndex].Cells[4].Value);
                     aula.Show();
@@ -92,20 +75,8 @@ namespace ProyectoIntegradorTaller.formularios
         private void AdminMenu_Load(object sender, EventArgs e)
         {
 
-            DataGridViewButtonColumn buttonColumn1 = new DataGridViewButtonColumn();
-            buttonColumn1.Name = "Reservar"; // Name the column
-            buttonColumn1.Text = "Nueva Reserva";    // Text for buttons in the column
-            buttonColumn1.UseColumnTextForButtonValue = true; // Display the Text value on buttons
-
-
-
-
-            DataGridViewButtonColumn buttonColumn2 = new DataGridViewButtonColumn();
-            buttonColumn2.Name = "Informe"; // Name the column
-            buttonColumn2.Text = "Nuevo Informe";    // Text for buttons in the column
-            buttonColumn2.UseColumnTextForButtonValue = true; // Display the Text value on buttons
-
-            ;
+           
+            
             DataGridViewButtonColumn buttonColumn3 = new DataGridViewButtonColumn();
             buttonColumn3.Name = "Editar"; // Name the column
             buttonColumn3.Text = "Editar";    // Text for buttons in the column
@@ -117,17 +88,10 @@ namespace ProyectoIntegradorTaller.formularios
             buttonColumn4.Text = "Eliminar";    // Text for buttons in the column
             buttonColumn4.UseColumnTextForButtonValue = true; // Display the Text value on buttons
 
-
-            DataGridViewButtonColumn buttonColumn5 = new DataGridViewButtonColumn();
-            buttonColumn4.Name = "Reservas"; // Name the column
-            buttonColumn4.Text = "Reserva";    // Text for buttons in the column
-            buttonColumn4.UseColumnTextForButtonValue = true; // Display the Text value on buttons
-            
-            dataGridView1.Columns.Add(buttonColumn1);
-            dataGridView1.Columns.Add(buttonColumn2);
+     
             dataGridView1.Columns.Add(buttonColumn3);
             dataGridView1.Columns.Add(buttonColumn4);
-            dataGridView1.Columns.Add(buttonColumn5);
+
         }
         private void DataGridView1_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
@@ -151,12 +115,12 @@ namespace ProyectoIntegradorTaller.formularios
             aula.Show();
         }
     }
-    public class Item
+    public class ItemReservas
     {
-        public int Id { get; set; }
-        public string Name { get; set; }
-        public string Lugar { get; set; }
-        public int CapacidadMax { get; set; }
-        public string Tipo { get; set; }
+        public string Hora { get; set; }
+        public string Desde { get; set; }
+        public string Hasta { get; set; }
+        public string Materias { get; set; }
+        public string Profesor { get; set; }
     }
 }
