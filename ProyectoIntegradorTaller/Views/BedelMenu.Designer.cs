@@ -1,17 +1,17 @@
 ﻿using System.Drawing;
 using System.Windows.Forms;
 
-namespace ProyectoIntegradorTaller
+namespace ProyectoIntegrador.formularios
 {
-    partial class Form1
+    partial class BedelMenu
     {
         /// <summary>
-        ///  Required designer variable.
+        /// Required designer variable.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
 
         /// <summary>
-        ///  Clean up any resources being used.
+        /// Clean up any resources being used.
         /// </summary>
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
@@ -26,37 +26,37 @@ namespace ProyectoIntegradorTaller
         #region Windows Form Designer generated code
 
         /// <summary>
-        ///  Required method for Designer support - do not modify
-        ///  the contents of this method with the code editor.
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BedelMenu));
             this.panel3 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.BMaximizar = new System.Windows.Forms.PictureBox();
             this.BEsconder = new System.Windows.Forms.PictureBox();
             this.BRestaurar = new System.Windows.Forms.PictureBox();
             this.BCerrar = new System.Windows.Forms.PictureBox();
             this.LBienvenido = new System.Windows.Forms.Label();
-            this.TUsuario = new System.Windows.Forms.TextBox();
-            this.TContraseña = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.BInicioSesion = new System.Windows.Forms.Button();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.panel6 = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
+            this.BReservarAula = new System.Windows.Forms.Button();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.BMaximizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BEsconder)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BRestaurar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BCerrar)).BeginInit();
             this.panel7.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
+            this.panel3.Controls.Add(this.label1);
+            this.panel3.Controls.Add(this.label3);
             this.panel3.Controls.Add(this.BMaximizar);
             this.panel3.Controls.Add(this.BEsconder);
             this.panel3.Controls.Add(this.BRestaurar);
@@ -66,6 +66,26 @@ namespace ProyectoIntegradorTaller
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(686, 32);
             this.panel3.TabIndex = 2;
+            // 
+            // label1
+            // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
+            this.label1.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label1.Location = new System.Drawing.Point(309, 10);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(54, 19);
+            this.label1.TabIndex = 7;
+            this.label1.Text = "Home";
+            // 
+            // label3
+            // 
+            this.label3.Location = new System.Drawing.Point(0, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(86, 20);
+            this.label3.TabIndex = 0;
             // 
             // BMaximizar
             // 
@@ -109,124 +129,76 @@ namespace ProyectoIntegradorTaller
             // 
             // LBienvenido
             // 
-            this.LBienvenido.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.LBienvenido.AutoSize = true;
             this.LBienvenido.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Bold);
-            this.LBienvenido.Location = new System.Drawing.Point(111, 70);
+            this.LBienvenido.Location = new System.Drawing.Point(37, 27);
             this.LBienvenido.Name = "LBienvenido";
-            this.LBienvenido.Size = new System.Drawing.Size(97, 18);
+            this.LBienvenido.Size = new System.Drawing.Size(85, 18);
             this.LBienvenido.TabIndex = 3;
-            this.LBienvenido.Text = "Bienvenido";
-            // 
-            // TUsuario
-            // 
-            this.TUsuario.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.TUsuario.BackColor = System.Drawing.Color.Snow;
-            this.TUsuario.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.TUsuario.Location = new System.Drawing.Point(73, 114);
-            this.TUsuario.Name = "TUsuario";
-            this.TUsuario.Size = new System.Drawing.Size(170, 20);
-            this.TUsuario.TabIndex = 4;
-            // 
-            // TContraseña
-            // 
-            this.TContraseña.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.TContraseña.BackColor = System.Drawing.Color.Snow;
-            this.TContraseña.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.TContraseña.Location = new System.Drawing.Point(73, 180);
-            this.TContraseña.Name = "TContraseña";
-            this.TContraseña.PasswordChar = '*';
-            this.TContraseña.Size = new System.Drawing.Size(170, 20);
-            this.TContraseña.TabIndex = 5;
-            // 
-            // label1
-            // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(73, 99);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(43, 13);
-            this.label1.TabIndex = 6;
-            this.label1.Text = "Usuario";
-            // 
-            // label2
-            // 
-            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(73, 165);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(61, 13);
-            this.label2.TabIndex = 7;
-            this.label2.Text = "Contraseña";
-            // 
-            // BInicioSesion
-            // 
-            this.BInicioSesion.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.BInicioSesion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
-            this.BInicioSesion.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.BInicioSesion.Location = new System.Drawing.Point(73, 218);
-            this.BInicioSesion.Name = "BInicioSesion";
-            this.BInicioSesion.Size = new System.Drawing.Size(170, 33);
-            this.BInicioSesion.TabIndex = 8;
-            this.BInicioSesion.Text = "Log In";
-            this.BInicioSesion.UseVisualStyleBackColor = false;
-            this.BInicioSesion.Click += new System.EventHandler(this.BInicioSesion_Click);
-            // 
-            // panel5
-            // 
-            this.panel5.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel5.Location = new System.Drawing.Point(0, 32);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(179, 358);
-            this.panel5.TabIndex = 9;
-            // 
-            // panel6
-            // 
-            this.panel6.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel6.Location = new System.Drawing.Point(515, 32);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(171, 358);
-            this.panel6.TabIndex = 10;
+            this.LBienvenido.Text = "Reservas";
             // 
             // panel7
             // 
             this.panel7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.panel7.Controls.Add(this.BInicioSesion);
+            this.panel7.Controls.Add(this.BReservarAula);
             this.panel7.Controls.Add(this.LBienvenido);
-            this.panel7.Controls.Add(this.label2);
-            this.panel7.Controls.Add(this.label1);
-            this.panel7.Controls.Add(this.TContraseña);
-            this.panel7.Controls.Add(this.TUsuario);
-            this.panel7.Location = new System.Drawing.Point(179, 32);
+            this.panel7.Controls.Add(this.dataGridView1);
+            this.panel7.Location = new System.Drawing.Point(0, 29);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(335, 358);
+            this.panel7.Size = new System.Drawing.Size(686, 361);
             this.panel7.TabIndex = 11;
             // 
-            // Form1
+            // BReservarAula
+            // 
+            this.BReservarAula.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
+            this.BReservarAula.ForeColor = System.Drawing.Color.White;
+            this.BReservarAula.Location = new System.Drawing.Point(518, 308);
+            this.BReservarAula.Name = "BReservarAula";
+            this.BReservarAula.Size = new System.Drawing.Size(158, 27);
+            this.BReservarAula.TabIndex = 4;
+            this.BReservarAula.Text = "Reservar Aula";
+            this.BReservarAula.UseVisualStyleBackColor = false;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.GridColor = System.Drawing.SystemColors.ButtonFace;
+            this.dataGridView1.Location = new System.Drawing.Point(37, 88);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowTemplate.Height = 25;
+            this.dataGridView1.Size = new System.Drawing.Size(646, 156);
+            this.dataGridView1.TabIndex = 0;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick_1);
+            this.BReservarAula.Click+=new System.EventHandler(BReservarAula_Click);
+            
+            // 
+            // BedelMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Snow;
             this.ClientSize = new System.Drawing.Size(686, 390);
             this.Controls.Add(this.panel7);
-            this.Controls.Add(this.panel6);
-            this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel3);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.Name = "BedelMenu";
+            this.Text = "Menu";
+            this.Load += new System.EventHandler(this.BedelMenu_Load);
             this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.BMaximizar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BEsconder)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BRestaurar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BCerrar)).EndInit();
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
-
-        #endregion
 
         private Panel panel1;
         private Panel panel2;
@@ -240,13 +212,13 @@ namespace ProyectoIntegradorTaller
         private Label LBienvenido;
         private TextBox textBox1;
         private TextBox textBox2;
-        private Label label1;
-        private Label label2;
-        private Button BInicioSesion;
-        private Panel panel5;
-        private Panel panel6;
         private Panel panel7;
-        private TextBox TUsuario;
-        private TextBox TContraseña;
+        private Label label3;
+        private DataGridView dataGridView1;
+        private Label label1;
+        private Button BReservarAula;
     }
+
+    #endregion
+
 }

@@ -52,7 +52,7 @@ namespace ProyectoIntegradorTaller.formularios
 
         private void BCerrar_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+           this.Close();
         }
 
 
@@ -72,7 +72,7 @@ namespace ProyectoIntegradorTaller.formularios
                 }
             }
         }
-        private void AdminMenu_Load(object sender, EventArgs e)
+        private void Reservas_Load(object sender, EventArgs e)
         {
 
            
@@ -114,6 +114,7 @@ namespace ProyectoIntegradorTaller.formularios
             CrearAula aula=new CrearAula();
             aula.Show();
         }
+
     }
     public class ItemReservas
     {

@@ -78,11 +78,11 @@
     <Compile Include="views\Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="views\ProfesorMenu.cs">
+    <Compile Include="views\BedelMenu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="views\ProfesorMenu.Designer.cs">
-      <DependentUpon>ProfesorMenu.cs</DependentUpon>
+    <Compile Include="views\BedelMenu.Designer.cs">
+      <DependentUpon>BedelMenu.cs</DependentUpon>
     </Compile>
     <Compile Include="views\Reporte.cs">
       <SubType>Form</SubType>
@@ -121,8 +121,8 @@
     <EmbeddedResource Include="views\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="views\ProfesorMenu.resx">
-      <DependentUpon>ProfesorMenu.cs</DependentUpon>
+    <EmbeddedResource Include="views\BedelMenu.resx">
+      <DependentUpon>BedelMenu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="views\Reporte.resx">
       <DependentUpon>Reporte.cs</DependentUpon>

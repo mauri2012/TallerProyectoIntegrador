@@ -31,174 +31,171 @@ namespace ProyectoIntegradorTaller.formularios
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminMenu));
-            panel3 = new Panel();
-            label1 = new Label();
-            label3 = new Label();
-            BMaximizar = new PictureBox();
-            BEsconder = new PictureBox();
-            BRestaurar = new PictureBox();
-            BCerrar = new PictureBox();
-            LBienvenido = new Label();
-            panel7 = new Panel();
-            BCrearAula = new Button();
-            dataGridView1 = new DataGridView();
-            panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)BMaximizar).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)BEsconder).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)BRestaurar).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)BCerrar).BeginInit();
-            panel7.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
-            SuspendLayout();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Reservas));
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.BMaximizar = new System.Windows.Forms.PictureBox();
+            this.BEsconder = new System.Windows.Forms.PictureBox();
+            this.BRestaurar = new System.Windows.Forms.PictureBox();
+            this.BCerrar = new System.Windows.Forms.PictureBox();
+            this.LBienvenido = new System.Windows.Forms.Label();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.BCrearAula = new System.Windows.Forms.Button();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.BMaximizar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BEsconder)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BRestaurar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BCerrar)).BeginInit();
+            this.panel7.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.SuspendLayout();
             // 
             // panel3
             // 
-            panel3.BackColor = Color.FromArgb(17, 97, 238);
-            panel3.Controls.Add(label1);
-            panel3.Controls.Add(label3);
-            panel3.Controls.Add(BMaximizar);
-            panel3.Controls.Add(BEsconder);
-            panel3.Controls.Add(BRestaurar);
-            panel3.Controls.Add(BCerrar);
-            panel3.Dock = DockStyle.Top;
-            panel3.Location = new Point(0, 0);
-            panel3.Name = "panel3";
-            panel3.Size = new Size(800, 37);
-            panel3.TabIndex = 2;
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
+            this.panel3.Controls.Add(this.label1);
+            this.panel3.Controls.Add(this.label3);
+            this.panel3.Controls.Add(this.BMaximizar);
+            this.panel3.Controls.Add(this.BEsconder);
+            this.panel3.Controls.Add(this.BRestaurar);
+            this.panel3.Controls.Add(this.BCerrar);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel3.Location = new System.Drawing.Point(0, 0);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(686, 32);
+            this.panel3.TabIndex = 2;
             // 
             // label1
             // 
-            label1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            label1.AutoSize = true;
-            label1.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.ForeColor = SystemColors.ButtonFace;
-            label1.Location = new Point(361, 12);
-            label1.Name = "label1";
-            label1.Size = new Size(54, 19);
-            label1.TabIndex = 7;
-            label1.Text = "Home";
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
+            this.label1.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label1.Location = new System.Drawing.Point(309, 10);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(54, 19);
+            this.label1.TabIndex = 7;
+            this.label1.Text = "Home";
             // 
             // label3
             // 
-            label3.Location = new Point(0, 0);
-            label3.Name = "label3";
-            label3.Size = new Size(100, 23);
-            label3.TabIndex = 0;
+            this.label3.Location = new System.Drawing.Point(0, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(86, 20);
+            this.label3.TabIndex = 0;
             // 
             // BMaximizar
             // 
-            BMaximizar.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            BMaximizar.Image = (Image)resources.GetObject("BMaximizar.Image");
-            BMaximizar.Location = new Point(754, 12);
-            BMaximizar.Name = "BMaximizar";
-            BMaximizar.Size = new Size(15, 15);
-            BMaximizar.TabIndex = 5;
-            BMaximizar.TabStop = false;
-            BMaximizar.Click += BMaximizar_Click;
+            this.BMaximizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.BMaximizar.Image = ((System.Drawing.Image)(resources.GetObject("BMaximizar.Image")));
+            this.BMaximizar.Location = new System.Drawing.Point(646, 10);
+            this.BMaximizar.Name = "BMaximizar";
+            this.BMaximizar.Size = new System.Drawing.Size(13, 13);
+            this.BMaximizar.TabIndex = 5;
+            this.BMaximizar.TabStop = false;
             // 
             // BEsconder
             // 
-            BEsconder.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            BEsconder.Image = (Image)resources.GetObject("BEsconder.Image");
-            BEsconder.Location = new Point(733, 12);
-            BEsconder.Name = "BEsconder";
-            BEsconder.Size = new Size(15, 15);
-            BEsconder.TabIndex = 4;
-            BEsconder.TabStop = false;
-            BEsconder.Click += BEsconder_Click;
+            this.BEsconder.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.BEsconder.Image = ((System.Drawing.Image)(resources.GetObject("BEsconder.Image")));
+            this.BEsconder.Location = new System.Drawing.Point(628, 10);
+            this.BEsconder.Name = "BEsconder";
+            this.BEsconder.Size = new System.Drawing.Size(13, 13);
+            this.BEsconder.TabIndex = 4;
+            this.BEsconder.TabStop = false;
             // 
             // BRestaurar
             // 
-            BRestaurar.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            BRestaurar.Image = (Image)resources.GetObject("BRestaurar.Image");
-            BRestaurar.Location = new Point(754, 12);
-            BRestaurar.Name = "BRestaurar";
-            BRestaurar.Size = new Size(15, 15);
-            BRestaurar.TabIndex = 6;
-            BRestaurar.TabStop = false;
-            BRestaurar.Click += BRestaurar_Click;
+            this.BRestaurar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.BRestaurar.Image = ((System.Drawing.Image)(resources.GetObject("BRestaurar.Image")));
+            this.BRestaurar.Location = new System.Drawing.Point(646, 10);
+            this.BRestaurar.Name = "BRestaurar";
+            this.BRestaurar.Size = new System.Drawing.Size(13, 13);
+            this.BRestaurar.TabIndex = 6;
+            this.BRestaurar.TabStop = false;
             // 
             // BCerrar
             // 
-            BCerrar.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            BCerrar.Image = (Image)resources.GetObject("BCerrar.Image");
-            BCerrar.Location = new Point(775, 12);
-            BCerrar.Name = "BCerrar";
-            BCerrar.Size = new Size(15, 15);
-            BCerrar.TabIndex = 3;
-            BCerrar.TabStop = false;
-            BCerrar.Click += BCerrar_Click;
+            this.BCerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.BCerrar.Image = ((System.Drawing.Image)(resources.GetObject("BCerrar.Image")));
+            this.BCerrar.Location = new System.Drawing.Point(664, 10);
+            this.BCerrar.Name = "BCerrar";
+            this.BCerrar.Size = new System.Drawing.Size(13, 13);
+            this.BCerrar.TabIndex = 3;
+            this.BCerrar.TabStop = false;
+            this.BCerrar.Click += new System.EventHandler(this.BCerrar_Click);
             // 
             // LBienvenido
             // 
-            LBienvenido.AutoSize = true;
-            LBienvenido.Font = new Font("Verdana", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
-            LBienvenido.Location = new Point(43, 31);
-            LBienvenido.Name = "LBienvenido";
-            LBienvenido.Size = new Size(53, 18);
-            LBienvenido.TabIndex = 3;
-            LBienvenido.Text = "Aulas";
+            this.LBienvenido.AutoSize = true;
+            this.LBienvenido.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Bold);
+            this.LBienvenido.Location = new System.Drawing.Point(37, 27);
+            this.LBienvenido.Name = "LBienvenido";
+            this.LBienvenido.Size = new System.Drawing.Size(53, 18);
+            this.LBienvenido.TabIndex = 3;
+            this.LBienvenido.Text = "Aulas";
             // 
             // panel7
             // 
-            panel7.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
-            panel7.Controls.Add(BCrearAula);
-            panel7.Controls.Add(LBienvenido);
-            panel7.Controls.Add(dataGridView1);
-            panel7.Location = new Point(0, 37);
-            panel7.Name = "panel7";
-            panel7.Size = new Size(800, 413);
-            panel7.TabIndex = 11;
+            this.panel7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.panel7.Controls.Add(this.BCrearAula);
+            this.panel7.Controls.Add(this.LBienvenido);
+            this.panel7.Controls.Add(this.dataGridView1);
+            this.panel7.Location = new System.Drawing.Point(0, 32);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(686, 358);
+            this.panel7.TabIndex = 11;
             // 
             // BCrearAula
             // 
-            BCrearAula.BackColor = Color.FromArgb(17, 97, 238);
-            BCrearAula.ForeColor = Color.White;
-            BCrearAula.Location = new Point(604, 355);
-            BCrearAula.Name = "BCrearAula";
-            BCrearAula.Size = new Size(184, 31);
-            BCrearAula.TabIndex = 4;
-            BCrearAula.Text = "Crear Aula";
-            BCrearAula.UseVisualStyleBackColor = false;
-            BCrearAula.Click += BCrearAula_Click;
+            this.BCrearAula.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
+            this.BCrearAula.ForeColor = System.Drawing.Color.White;
+            this.BCrearAula.Location = new System.Drawing.Point(518, 308);
+            this.BCrearAula.Name = "BCrearAula";
+            this.BCrearAula.Size = new System.Drawing.Size(158, 27);
+            this.BCrearAula.TabIndex = 4;
+            this.BCrearAula.Text = "Crear Aula";
+            this.BCrearAula.UseVisualStyleBackColor = false;
             // 
             // dataGridView1
             // 
-            dataGridView1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            dataGridView1.BackgroundColor = SystemColors.ButtonFace;
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.GridColor = SystemColors.ButtonFace;
-            dataGridView1.Location = new Point(43, 101);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowTemplate.Height = 25;
-            dataGridView1.Size = new Size(754, 180);
-            dataGridView1.TabIndex = 0;
-            dataGridView1.CellContentClick += dataGridView1_CellContentClick;
-            dataGridView1.CellFormatting += DataGridView1_CellFormatting;
+            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.GridColor = System.Drawing.SystemColors.ButtonFace;
+            this.dataGridView1.Location = new System.Drawing.Point(37, 88);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowTemplate.Height = 25;
+            this.dataGridView1.Size = new System.Drawing.Size(646, 156);
+            this.dataGridView1.TabIndex = 0;
             // 
-            // AdminMenu
+            // Reservas
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
-            AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.Snow;
-            ClientSize = new Size(800, 450);
-            Controls.Add(panel7);
-            Controls.Add(panel3);
-            FormBorderStyle = FormBorderStyle.None;
-            Name = "AdminMenu";
-            Text = "Menu";
-            Load += AdminMenu_Load;
-            panel3.ResumeLayout(false);
-            panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)BMaximizar).EndInit();
-            ((System.ComponentModel.ISupportInitialize)BEsconder).EndInit();
-            ((System.ComponentModel.ISupportInitialize)BRestaurar).EndInit();
-            ((System.ComponentModel.ISupportInitialize)BCerrar).EndInit();
-            panel7.ResumeLayout(false);
-            panel7.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
-            ResumeLayout(false);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Snow;
+            this.ClientSize = new System.Drawing.Size(686, 390);
+            this.Controls.Add(this.panel7);
+            this.Controls.Add(this.panel3);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Name = "Reservas";
+            this.Text = "Menu";
+            this.Load += new System.EventHandler(this.Reservas_Load);
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.BMaximizar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BEsconder)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BRestaurar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BCerrar)).EndInit();
+            this.panel7.ResumeLayout(false);
+            this.panel7.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.ResumeLayout(false);
+
         }
 
         private Panel panel1;

@@ -1,3 +1,4 @@
+using ProyectoIntegrador.formularios;
 using ProyectoIntegradorTaller.formularios;
 using System;
 using System.Windows.Forms;
@@ -36,9 +37,11 @@ namespace ProyectoIntegradorTaller
         private void BInicioSesion_Click(object sender, EventArgs e)
         {
 
-            AdminMenu menu = new AdminMenu();
+            BedelMenu menu = new BedelMenu();
             menu.Show();
             this.Hide();
         }
+
+  
     }
 }
