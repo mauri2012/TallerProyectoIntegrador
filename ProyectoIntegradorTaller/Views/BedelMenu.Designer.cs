@@ -41,8 +41,8 @@ namespace ProyectoIntegrador.formularios
             this.BCerrar = new System.Windows.Forms.PictureBox();
             this.LBienvenido = new System.Windows.Forms.Label();
             this.panel7 = new System.Windows.Forms.Panel();
-            this.BReservarAula = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.BReservarAula = new ProyectoIntegradorTaller.views.components.BotonPersonalisado();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.BMaximizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BEsconder)).BeginInit();
@@ -96,6 +96,7 @@ namespace ProyectoIntegrador.formularios
             this.BMaximizar.Size = new System.Drawing.Size(13, 13);
             this.BMaximizar.TabIndex = 5;
             this.BMaximizar.TabStop = false;
+            this.BMaximizar.Click += new System.EventHandler(this.BMaximizar_Click);
             // 
             // BEsconder
             // 
@@ -126,6 +127,7 @@ namespace ProyectoIntegrador.formularios
             this.BCerrar.Size = new System.Drawing.Size(13, 13);
             this.BCerrar.TabIndex = 3;
             this.BCerrar.TabStop = false;
+            this.BCerrar.Click += new System.EventHandler(this.BCerrar_Click);
             // 
             // LBienvenido
             // 
@@ -148,17 +150,6 @@ namespace ProyectoIntegrador.formularios
             this.panel7.Size = new System.Drawing.Size(686, 361);
             this.panel7.TabIndex = 11;
             // 
-            // BReservarAula
-            // 
-            this.BReservarAula.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
-            this.BReservarAula.ForeColor = System.Drawing.Color.White;
-            this.BReservarAula.Location = new System.Drawing.Point(518, 308);
-            this.BReservarAula.Name = "BReservarAula";
-            this.BReservarAula.Size = new System.Drawing.Size(158, 27);
-            this.BReservarAula.TabIndex = 4;
-            this.BReservarAula.Text = "Reservar Aula";
-            this.BReservarAula.UseVisualStyleBackColor = false;
-            // 
             // dataGridView1
             // 
             this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -172,8 +163,25 @@ namespace ProyectoIntegrador.formularios
             this.dataGridView1.Size = new System.Drawing.Size(646, 156);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick_1);
-            this.BReservarAula.Click+=new System.EventHandler(BReservarAula_Click);
-            
+            // 
+            // BReservarAula
+            // 
+            this.BReservarAula.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
+            this.BReservarAula.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
+            this.BReservarAula.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.BReservarAula.BorderRadius = 6;
+            this.BReservarAula.BorderSize = 0;
+            this.BReservarAula.FlatAppearance.BorderSize = 0;
+            this.BReservarAula.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BReservarAula.ForeColor = System.Drawing.Color.White;
+            this.BReservarAula.Location = new System.Drawing.Point(524, 298);
+            this.BReservarAula.Name = "BReservarAula";
+            this.BReservarAula.Size = new System.Drawing.Size(150, 40);
+            this.BReservarAula.TabIndex = 5;
+            this.BReservarAula.Text = "Reservar Aula";
+            this.BReservarAula.TextColor = System.Drawing.Color.White;
+            this.BReservarAula.UseVisualStyleBackColor = false;
+            this.BReservarAula.Click += new System.EventHandler(this.BReservarAula_Click);
             // 
             // BedelMenu
             // 
@@ -216,7 +224,7 @@ namespace ProyectoIntegrador.formularios
         private Label label3;
         private DataGridView dataGridView1;
         private Label label1;
-        private Button BReservarAula;
+        private ProyectoIntegradorTaller.views.components.BotonPersonalisado BReservarAula;
     }
 
     #endregion

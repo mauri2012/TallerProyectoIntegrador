@@ -42,6 +42,6 @@ namespace ProyectoIntegradorTaller
             this.Hide();
         }
 
-  
+       
     }
 }

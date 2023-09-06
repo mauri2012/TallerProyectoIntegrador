@@ -42,10 +42,10 @@ namespace ProyectoIntegradorTaller
             this.TContraseña = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.BInicioSesion = new System.Windows.Forms.Button();
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
+            this.BInicioSesion = new ProyectoIntegradorTaller.views.components.BotonPersonalisado();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.BMaximizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BEsconder)).BeginInit();
@@ -123,7 +123,7 @@ namespace ProyectoIntegradorTaller
             this.TUsuario.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.TUsuario.BackColor = System.Drawing.Color.Snow;
             this.TUsuario.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.TUsuario.Location = new System.Drawing.Point(73, 114);
+            this.TUsuario.Location = new System.Drawing.Point(73, 127);
             this.TUsuario.Name = "TUsuario";
             this.TUsuario.Size = new System.Drawing.Size(170, 20);
             this.TUsuario.TabIndex = 4;
@@ -143,7 +143,7 @@ namespace ProyectoIntegradorTaller
             // 
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(73, 99);
+            this.label1.Location = new System.Drawing.Point(73, 111);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(43, 13);
             this.label1.TabIndex = 6;
@@ -158,19 +158,6 @@ namespace ProyectoIntegradorTaller
             this.label2.Size = new System.Drawing.Size(61, 13);
             this.label2.TabIndex = 7;
             this.label2.Text = "Contraseña";
-            // 
-            // BInicioSesion
-            // 
-            this.BInicioSesion.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.BInicioSesion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
-            this.BInicioSesion.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.BInicioSesion.Location = new System.Drawing.Point(73, 218);
-            this.BInicioSesion.Name = "BInicioSesion";
-            this.BInicioSesion.Size = new System.Drawing.Size(170, 33);
-            this.BInicioSesion.TabIndex = 8;
-            this.BInicioSesion.Text = "Log In";
-            this.BInicioSesion.UseVisualStyleBackColor = false;
-            this.BInicioSesion.Click += new System.EventHandler(this.BInicioSesion_Click);
             // 
             // panel5
             // 
@@ -201,6 +188,25 @@ namespace ProyectoIntegradorTaller
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(335, 358);
             this.panel7.TabIndex = 11;
+            // 
+            // BInicioSesion
+            // 
+            this.BInicioSesion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
+            this.BInicioSesion.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
+            this.BInicioSesion.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.BInicioSesion.BorderRadius = 6;
+            this.BInicioSesion.BorderSize = 0;
+            this.BInicioSesion.FlatAppearance.BorderSize = 0;
+            this.BInicioSesion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BInicioSesion.ForeColor = System.Drawing.Color.White;
+            this.BInicioSesion.Location = new System.Drawing.Point(73, 215);
+            this.BInicioSesion.Name = "BInicioSesion";
+            this.BInicioSesion.Size = new System.Drawing.Size(170, 40);
+            this.BInicioSesion.TabIndex = 0;
+            this.BInicioSesion.Text = "Log In";
+            this.BInicioSesion.TextColor = System.Drawing.Color.White;
+            this.BInicioSesion.UseVisualStyleBackColor = false;
+            this.BInicioSesion.Click += new System.EventHandler(this.BInicioSesion_Click);
             // 
             // Form1
             // 
@@ -242,11 +248,11 @@ namespace ProyectoIntegradorTaller
         private TextBox textBox2;
         private Label label1;
         private Label label2;
-        private Button BInicioSesion;
         private Panel panel5;
         private Panel panel6;
         private Panel panel7;
         private TextBox TUsuario;
         private TextBox TContraseña;
+        private views.components.BotonPersonalisado BInicioSesion;
     }
 }

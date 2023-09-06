@@ -41,8 +41,8 @@ namespace ProyectoIntegradorTaller.formularios
             this.BCerrar = new System.Windows.Forms.PictureBox();
             this.LBienvenido = new System.Windows.Forms.Label();
             this.panel7 = new System.Windows.Forms.Panel();
-            this.BCrearAula = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.botonPersonalisado1 = new ProyectoIntegradorTaller.views.components.BotonPersonalisado();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.BMaximizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BEsconder)).BeginInit();
@@ -96,6 +96,7 @@ namespace ProyectoIntegradorTaller.formularios
             this.BMaximizar.Size = new System.Drawing.Size(13, 13);
             this.BMaximizar.TabIndex = 5;
             this.BMaximizar.TabStop = false;
+            this.BMaximizar.Click += new System.EventHandler(this.BMaximizar_Click);
             // 
             // BEsconder
             // 
@@ -106,6 +107,7 @@ namespace ProyectoIntegradorTaller.formularios
             this.BEsconder.Size = new System.Drawing.Size(13, 13);
             this.BEsconder.TabIndex = 4;
             this.BEsconder.TabStop = false;
+            this.BEsconder.Click += new System.EventHandler(this.BEsconder_Click);
             // 
             // BRestaurar
             // 
@@ -116,6 +118,7 @@ namespace ProyectoIntegradorTaller.formularios
             this.BRestaurar.Size = new System.Drawing.Size(13, 13);
             this.BRestaurar.TabIndex = 6;
             this.BRestaurar.TabStop = false;
+            this.BRestaurar.Click += new System.EventHandler(this.BRestaurar_Click);
             // 
             // BCerrar
             // 
@@ -141,24 +144,13 @@ namespace ProyectoIntegradorTaller.formularios
             // panel7
             // 
             this.panel7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.panel7.Controls.Add(this.BCrearAula);
+            this.panel7.Controls.Add(this.botonPersonalisado1);
             this.panel7.Controls.Add(this.LBienvenido);
             this.panel7.Controls.Add(this.dataGridView1);
             this.panel7.Location = new System.Drawing.Point(0, 32);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(686, 358);
             this.panel7.TabIndex = 11;
-            // 
-            // BCrearAula
-            // 
-            this.BCrearAula.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
-            this.BCrearAula.ForeColor = System.Drawing.Color.White;
-            this.BCrearAula.Location = new System.Drawing.Point(518, 308);
-            this.BCrearAula.Name = "BCrearAula";
-            this.BCrearAula.Size = new System.Drawing.Size(158, 27);
-            this.BCrearAula.TabIndex = 4;
-            this.BCrearAula.Text = "Crear Aula";
-            this.BCrearAula.UseVisualStyleBackColor = false;
             // 
             // dataGridView1
             // 
@@ -172,6 +164,24 @@ namespace ProyectoIntegradorTaller.formularios
             this.dataGridView1.RowTemplate.Height = 25;
             this.dataGridView1.Size = new System.Drawing.Size(646, 156);
             this.dataGridView1.TabIndex = 0;
+            // 
+            // botonPersonalisado1
+            // 
+            this.botonPersonalisado1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
+            this.botonPersonalisado1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
+            this.botonPersonalisado1.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.botonPersonalisado1.BorderRadius = 6;
+            this.botonPersonalisado1.BorderSize = 0;
+            this.botonPersonalisado1.FlatAppearance.BorderSize = 0;
+            this.botonPersonalisado1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.botonPersonalisado1.ForeColor = System.Drawing.Color.White;
+            this.botonPersonalisado1.Location = new System.Drawing.Point(524, 306);
+            this.botonPersonalisado1.Name = "botonPersonalisado1";
+            this.botonPersonalisado1.Size = new System.Drawing.Size(150, 40);
+            this.botonPersonalisado1.TabIndex = 5;
+            this.botonPersonalisado1.Text = "Crear Aula";
+            this.botonPersonalisado1.TextColor = System.Drawing.Color.White;
+            this.botonPersonalisado1.UseVisualStyleBackColor = false;
             // 
             // Reservas
             // 
@@ -214,7 +224,7 @@ namespace ProyectoIntegradorTaller.formularios
         private Label label3;
         private DataGridView dataGridView1;
         private Label label1;
-        private Button BCrearAula;
+        private views.components.BotonPersonalisado botonPersonalisado1;
     }
 
     #endregion

@@ -84,6 +84,7 @@ namespace ProyectoIntegradorTaller.formularios
                 else if (dataGridView1.Columns[e.ColumnIndex].Name == "Editar")
                 {
                     EditarAula aula = new EditarAula((int)dataGridView1.Rows[e.RowIndex].Cells[0].Value,(string)dataGridView1.Rows[e.RowIndex].Cells[1].Value, (string)dataGridView1.Rows[e.RowIndex].Cells[2].Value, (int)dataGridView1.Rows[e.RowIndex].Cells[3].Value,(string)dataGridView1.Rows[e.RowIndex].Cells[4].Value);
+                    
                     aula.Show();
                     
                 }
@@ -105,7 +106,7 @@ namespace ProyectoIntegradorTaller.formularios
             buttonColumn2.Text = "Nuevo Informe";    // Text for buttons in the column
             buttonColumn2.UseColumnTextForButtonValue = true; // Display the Text value on buttons
 
-            ;
+            
             DataGridViewButtonColumn buttonColumn3 = new DataGridViewButtonColumn();
             buttonColumn3.Name = "Editar"; // Name the column
             buttonColumn3.Text = "Editar";    // Text for buttons in the column
@@ -119,9 +120,9 @@ namespace ProyectoIntegradorTaller.formularios
 
 
             DataGridViewButtonColumn buttonColumn5 = new DataGridViewButtonColumn();
-            buttonColumn4.Name = "Reservas"; // Name the column
-            buttonColumn4.Text = "Reserva";    // Text for buttons in the column
-            buttonColumn4.UseColumnTextForButtonValue = true; // Display the Text value on buttons
+            buttonColumn5.Name = "Reservas"; // Name the column
+            buttonColumn5.Text = "Reserva";    // Text for buttons in the column
+            buttonColumn5.UseColumnTextForButtonValue = true; // Display the Text value on buttons
             
             dataGridView1.Columns.Add(buttonColumn1);
             dataGridView1.Columns.Add(buttonColumn2);
@@ -150,6 +151,8 @@ namespace ProyectoIntegradorTaller.formularios
             CrearAula aula=new CrearAula();
             aula.Show();
         }
+
+       
     }
     public class Item
     {

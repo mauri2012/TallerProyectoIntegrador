@@ -31,9 +31,6 @@ namespace ProyectoIntegradorTaller.formularios
         /// </summary>
         private void InitializeComponent()
         {
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
@@ -46,9 +43,11 @@ namespace ProyectoIntegradorTaller.formularios
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
+            this.dateTimePicker3 = new System.Windows.Forms.DateTimePicker();
+            this.DTPhoraDesde = new System.Windows.Forms.DateTimePicker();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
+            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
@@ -57,6 +56,7 @@ namespace ProyectoIntegradorTaller.formularios
             this.BRestaurar = new System.Windows.Forms.PictureBox();
             this.BCerrar = new System.Windows.Forms.PictureBox();
             this.BReservarAula = new System.Windows.Forms.Button();
+            this.BGuardar = new ProyectoIntegradorTaller.views.components.BotonPersonalisado();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -71,34 +71,10 @@ namespace ProyectoIntegradorTaller.formularios
             ((System.ComponentModel.ISupportInitialize)(this.BCerrar)).BeginInit();
             this.SuspendLayout();
             // 
-            // comboBox3
-            // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(69, 140);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(85, 21);
-            this.comboBox3.TabIndex = 30;
-            // 
-            // comboBox2
-            // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(67, 102);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(85, 21);
-            this.comboBox2.TabIndex = 29;
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(119, 102);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(85, 21);
-            this.comboBox1.TabIndex = 28;
-            // 
             // pictureBox2
             // 
             this.pictureBox2.Image = global::ProyectoIntegradorTaller.Properties.Resources.Event;
-            this.pictureBox2.Location = new System.Drawing.Point(218, 146);
+            this.pictureBox2.Location = new System.Drawing.Point(209, 143);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(15, 17);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -128,7 +104,7 @@ namespace ProyectoIntegradorTaller.formularios
             // pictureBox1
             // 
             this.pictureBox1.Image = global::ProyectoIntegradorTaller.Properties.Resources.Event;
-            this.pictureBox1.Location = new System.Drawing.Point(218, 105);
+            this.pictureBox1.Location = new System.Drawing.Point(209, 105);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(15, 17);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -205,11 +181,11 @@ namespace ProyectoIntegradorTaller.formularios
             // 
             // panel4
             // 
-            this.panel4.Controls.Add(this.button1);
-            this.panel4.Controls.Add(this.comboBox2);
+            this.panel4.Controls.Add(this.BGuardar);
+            this.panel4.Controls.Add(this.dateTimePicker3);
+            this.panel4.Controls.Add(this.DTPhoraDesde);
             this.panel4.Controls.Add(this.label1);
             this.panel4.Controls.Add(this.pictureBox3);
-            this.panel4.Controls.Add(this.comboBox3);
             this.panel4.Controls.Add(this.pictureBox4);
             this.panel4.Controls.Add(this.label7);
             this.panel4.Controls.Add(this.label6);
@@ -219,21 +195,36 @@ namespace ProyectoIntegradorTaller.formularios
             this.panel4.Size = new System.Drawing.Size(357, 358);
             this.panel4.TabIndex = 32;
             // 
-            // button1
+            // dateTimePicker3
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
-            this.button1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button1.Location = new System.Drawing.Point(168, 302);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(158, 34);
-            this.button1.TabIndex = 31;
-            this.button1.Text = "Guardar";
-            this.button1.UseVisualStyleBackColor = false;
+            this.dateTimePicker3.CustomFormat = "HH;mm";
+            this.dateTimePicker3.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateTimePicker3.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.dateTimePicker3.Location = new System.Drawing.Point(70, 143);
+            this.dateTimePicker3.Name = "dateTimePicker3";
+            this.dateTimePicker3.ShowUpDown = true;
+            this.dateTimePicker3.Size = new System.Drawing.Size(83, 20);
+            this.dateTimePicker3.TabIndex = 37;
+            this.dateTimePicker3.TabStop = false;
+            this.dateTimePicker3.Value = new System.DateTime(2023, 8, 27, 0, 0, 0, 0);
+            // 
+            // DTPhoraDesde
+            // 
+            this.DTPhoraDesde.CustomFormat = "HH;mm";
+            this.DTPhoraDesde.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.DTPhoraDesde.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.DTPhoraDesde.Location = new System.Drawing.Point(70, 103);
+            this.DTPhoraDesde.Name = "DTPhoraDesde";
+            this.DTPhoraDesde.ShowUpDown = true;
+            this.DTPhoraDesde.Size = new System.Drawing.Size(83, 20);
+            this.DTPhoraDesde.TabIndex = 36;
+            this.DTPhoraDesde.TabStop = false;
+            this.DTPhoraDesde.Value = new System.DateTime(2023, 8, 27, 0, 0, 0, 0);
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.comboBox4);
-            this.panel1.Controls.Add(this.comboBox1);
+            this.panel1.Controls.Add(this.dateTimePicker2);
+            this.panel1.Controls.Add(this.dateTimePicker1);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.pictureBox2);
@@ -245,13 +236,22 @@ namespace ProyectoIntegradorTaller.formularios
             this.panel1.Size = new System.Drawing.Size(333, 358);
             this.panel1.TabIndex = 31;
             // 
-            // comboBox4
+            // dateTimePicker2
             // 
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Location = new System.Drawing.Point(119, 140);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(85, 21);
-            this.comboBox4.TabIndex = 29;
+            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateTimePicker2.Location = new System.Drawing.Point(120, 143);
+            this.dateTimePicker2.Name = "dateTimePicker2";
+            this.dateTimePicker2.Size = new System.Drawing.Size(83, 20);
+            this.dateTimePicker2.TabIndex = 35;
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateTimePicker1.Location = new System.Drawing.Point(120, 103);
+            this.dateTimePicker1.MinDate = new System.DateTime(2023, 9, 6, 0, 0, 0, 0);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(83, 20);
+            this.dateTimePicker1.TabIndex = 34;
             // 
             // panel3
             // 
@@ -297,6 +297,7 @@ namespace ProyectoIntegradorTaller.formularios
             this.BMaximizar.Size = new System.Drawing.Size(13, 13);
             this.BMaximizar.TabIndex = 5;
             this.BMaximizar.TabStop = false;
+            this.BMaximizar.Click += new System.EventHandler(this.BMaximizar_Click);
             // 
             // BEsconder
             // 
@@ -307,6 +308,7 @@ namespace ProyectoIntegradorTaller.formularios
             this.BEsconder.Size = new System.Drawing.Size(13, 13);
             this.BEsconder.TabIndex = 4;
             this.BEsconder.TabStop = false;
+            this.BEsconder.Click += new System.EventHandler(this.BEsconder_Click);
             // 
             // BRestaurar
             // 
@@ -317,6 +319,7 @@ namespace ProyectoIntegradorTaller.formularios
             this.BRestaurar.Size = new System.Drawing.Size(13, 13);
             this.BRestaurar.TabIndex = 6;
             this.BRestaurar.TabStop = false;
+            this.BRestaurar.Click += new System.EventHandler(this.BRestaurar_Click);
             // 
             // BCerrar
             // 
@@ -335,6 +338,24 @@ namespace ProyectoIntegradorTaller.formularios
             this.BReservarAula.Name = "BReservarAula";
             this.BReservarAula.Size = new System.Drawing.Size(64, 20);
             this.BReservarAula.TabIndex = 7;
+            // 
+            // BGuardar
+            // 
+            this.BGuardar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
+            this.BGuardar.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
+            this.BGuardar.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.BGuardar.BorderRadius = 6;
+            this.BGuardar.BorderSize = 0;
+            this.BGuardar.FlatAppearance.BorderSize = 0;
+            this.BGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BGuardar.ForeColor = System.Drawing.Color.White;
+            this.BGuardar.Location = new System.Drawing.Point(195, 306);
+            this.BGuardar.Name = "BGuardar";
+            this.BGuardar.Size = new System.Drawing.Size(150, 40);
+            this.BGuardar.TabIndex = 38;
+            this.BGuardar.Text = "Guardar";
+            this.BGuardar.TextColor = System.Drawing.Color.White;
+            this.BGuardar.UseVisualStyleBackColor = false;
             // 
             // Reporte
             // 
@@ -375,9 +396,6 @@ namespace ProyectoIntegradorTaller.formularios
         private PictureBox pictureBox4;
         private PictureBox pictureBox3;
         private PictureBox pictureBox1;
-        private ComboBox comboBox3;
-        private ComboBox comboBox2;
-        private ComboBox comboBox1;
         private Panel panel2;
         private Button BReservarAula;
         private Panel panel3;
@@ -389,7 +407,10 @@ namespace ProyectoIntegradorTaller.formularios
         private PictureBox BCerrar;
         private Panel panel1;
         private Panel panel4;
-        private ComboBox comboBox4;
-        private Button button1;
+        private DateTimePicker DTPhoraDesde;
+        private DateTimePicker dateTimePicker3;
+        private DateTimePicker dateTimePicker2;
+        private DateTimePicker dateTimePicker1;
+        private views.components.BotonPersonalisado BGuardar;
     }
 }

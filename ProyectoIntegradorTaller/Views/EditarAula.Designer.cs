@@ -34,11 +34,11 @@ namespace ProyectoIntegradorTaller.formularios
             this.label6 = new System.Windows.Forms.Label();
             this.TCapacidad = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.BCrearAula = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.TNombre = new System.Windows.Forms.TextBox();
+            this.BEditarAula = new ProyectoIntegradorTaller.views.components.BotonPersonalisado();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.BMaximizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BEsconder)).BeginInit();
@@ -94,6 +94,7 @@ namespace ProyectoIntegradorTaller.formularios
             this.BMaximizar.Size = new System.Drawing.Size(13, 13);
             this.BMaximizar.TabIndex = 5;
             this.BMaximizar.TabStop = false;
+            this.BMaximizar.Click += new System.EventHandler(this.BMaximizar_Click);
             // 
             // BEsconder
             // 
@@ -104,6 +105,7 @@ namespace ProyectoIntegradorTaller.formularios
             this.BEsconder.Size = new System.Drawing.Size(13, 13);
             this.BEsconder.TabIndex = 4;
             this.BEsconder.TabStop = false;
+            this.BEsconder.Click += new System.EventHandler(this.BEsconder_Click);
             // 
             // BRestaurar
             // 
@@ -236,24 +238,12 @@ namespace ProyectoIntegradorTaller.formularios
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.BCrearAula);
+            this.panel2.Controls.Add(this.BEditarAula);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel2.Location = new System.Drawing.Point(503, 0);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(183, 358);
             this.panel2.TabIndex = 13;
-            // 
-            // BCrearAula
-            // 
-            this.BCrearAula.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
-            this.BCrearAula.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.BCrearAula.ForeColor = System.Drawing.Color.White;
-            this.BCrearAula.Location = new System.Drawing.Point(15, 307);
-            this.BCrearAula.Name = "BCrearAula";
-            this.BCrearAula.Size = new System.Drawing.Size(158, 27);
-            this.BCrearAula.TabIndex = 4;
-            this.BCrearAula.Text = "Crear Aula";
-            this.BCrearAula.UseVisualStyleBackColor = false;
             // 
             // panel1
             // 
@@ -293,6 +283,24 @@ namespace ProyectoIntegradorTaller.formularios
             this.TNombre.Size = new System.Drawing.Size(170, 20);
             this.TNombre.TabIndex = 8;
             // 
+            // BEditarAula
+            // 
+            this.BEditarAula.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
+            this.BEditarAula.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
+            this.BEditarAula.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.BEditarAula.BorderRadius = 6;
+            this.BEditarAula.BorderSize = 0;
+            this.BEditarAula.FlatAppearance.BorderSize = 0;
+            this.BEditarAula.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BEditarAula.ForeColor = System.Drawing.Color.White;
+            this.BEditarAula.Location = new System.Drawing.Point(21, 306);
+            this.BEditarAula.Name = "BEditarAula";
+            this.BEditarAula.Size = new System.Drawing.Size(150, 40);
+            this.BEditarAula.TabIndex = 5;
+            this.BEditarAula.Text = "Editar Aula";
+            this.BEditarAula.TextColor = System.Drawing.Color.White;
+            this.BEditarAula.UseVisualStyleBackColor = false;
+            // 
             // EditarAula
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -304,6 +312,7 @@ namespace ProyectoIntegradorTaller.formularios
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "EditarAula";
             this.Text = "Menu";
+            this.Load += new System.EventHandler(this.LoadEditarAula);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.BMaximizar)).EndInit();
@@ -332,7 +341,6 @@ namespace ProyectoIntegradorTaller.formularios
         private Panel panel7;
         private Label label3;
         private Label label1;
-        private Button BCrearAula;
         private Label label2;
         private Label label4;
         private TextBox TNombre;
@@ -344,6 +352,7 @@ namespace ProyectoIntegradorTaller.formularios
         private CheckBox checkBox1;
         private PictureBox pictureBox1;
         private PictureBox pictureBox2;
+        private views.components.BotonPersonalisado BEditarAula;
     }
 
     #region Windows Form Designer generated code

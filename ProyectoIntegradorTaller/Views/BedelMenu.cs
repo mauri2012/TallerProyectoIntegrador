@@ -120,7 +120,7 @@ namespace ProyectoIntegrador.formularios
             }
         }
 
-       
+      
     }
     public class ItemProfesor
     {
