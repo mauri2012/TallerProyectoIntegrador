@@ -63,6 +63,16 @@ namespace ProyectoIntegradorTaller.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap add_person {
+            get {
+                object obj = ResourceManager.GetObject("add_person", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Event {
             get {
                 object obj = ResourceManager.GetObject("Event", resourceCulture);
@@ -116,6 +126,16 @@ namespace ProyectoIntegradorTaller.Properties {
         internal static System.Drawing.Bitmap Location {
             get {
                 object obj = ResourceManager.GetObject("Location", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap search {
+            get {
+                object obj = ResourceManager.GetObject("search", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

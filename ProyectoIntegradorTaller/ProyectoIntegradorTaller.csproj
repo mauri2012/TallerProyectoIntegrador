@@ -48,6 +48,27 @@
   <ItemGroup>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="views\admin\CrearProfesor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="views\admin\CrearProfesor.Designer.cs">
+      <DependentUpon>CrearProfesor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="views\admin\Profesores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="views\admin\Profesores.Designer.cs">
+      <DependentUpon>Profesores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="views\components\BotonPersonalisado.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="views\components\TextBoxPersonalisado.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="views\components\TextBoxPersonalisado.Designer.cs">
+      <DependentUpon>TextBoxPersonalisado.cs</DependentUpon>
+    </Compile>
     <Compile Include="views\Materias.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -112,6 +133,12 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="views\admin\Profesores.resx">
+      <DependentUpon>Profesores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="views\components\TextBoxPersonalisado.resx">
+      <DependentUpon>TextBoxPersonalisado.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="views\Materias.resx">
       <DependentUpon>Materias.cs</DependentUpon>
     </EmbeddedResource>
@@ -178,6 +205,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\transistor-black-letter-x-1 %281%291.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add_person.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\search.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

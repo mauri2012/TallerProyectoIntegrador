@@ -1,4 +1,5 @@
 ﻿using ProyectoIntegradorTaller.formularios;
+using ProyectoIntegradorTaller.views.admin;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,7 +18,7 @@ namespace ProyectoIntegradorTaller
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Materias());
+            Application.Run(new Profesores());
         }
     }
 }
