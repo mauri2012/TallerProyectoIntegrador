@@ -1,17 +1,17 @@
 ﻿using System.Drawing;
 using System.Windows.Forms;
 
-namespace ProyectoIntegradorTaller.formularios
+namespace ProyectoIntegradorTaller
 {
-    partial class Materias
+    partial class CrearMateria
     {
         /// <summary>
-        /// Required designer variable.
+        ///  Required designer variable.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
 
         /// <summary>
-        /// Clean up any resources being used.
+        ///  Clean up any resources being used.
         /// </summary>
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
@@ -26,37 +26,35 @@ namespace ProyectoIntegradorTaller.formularios
         #region Windows Form Designer generated code
 
         /// <summary>
-        /// Required method for Designer support - do not modify
-        /// the contents of this method with the code editor.
+        ///  Required method for Designer support - do not modify
+        ///  the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Materias));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CrearMateria));
             this.panel3 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.BMaximizar = new System.Windows.Forms.PictureBox();
             this.BEsconder = new System.Windows.Forms.PictureBox();
             this.BRestaurar = new System.Windows.Forms.PictureBox();
             this.BCerrar = new System.Windows.Forms.PictureBox();
             this.LBienvenido = new System.Windows.Forms.Label();
+            this.TNombre = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.panel6 = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.BCrearMateria = new ProyectoIntegradorTaller.views.components.BotonPersonalisado();
+            this.BInicioSesion = new ProyectoIntegradorTaller.views.components.BotonPersonalisado();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.BMaximizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BEsconder)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BRestaurar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BCerrar)).BeginInit();
             this.panel7.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
-            this.panel3.Controls.Add(this.label1);
-            this.panel3.Controls.Add(this.label3);
             this.panel3.Controls.Add(this.BMaximizar);
             this.panel3.Controls.Add(this.BEsconder);
             this.panel3.Controls.Add(this.BRestaurar);
@@ -67,26 +65,6 @@ namespace ProyectoIntegradorTaller.formularios
             this.panel3.Size = new System.Drawing.Size(686, 32);
             this.panel3.TabIndex = 2;
             // 
-            // label1
-            // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
-            this.label1.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label1.Location = new System.Drawing.Point(309, 10);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(54, 19);
-            this.label1.TabIndex = 7;
-            this.label1.Text = "Home";
-            // 
-            // label3
-            // 
-            this.label3.Location = new System.Drawing.Point(0, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(86, 20);
-            this.label3.TabIndex = 0;
-            // 
             // BMaximizar
             // 
             this.BMaximizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -96,7 +74,6 @@ namespace ProyectoIntegradorTaller.formularios
             this.BMaximizar.Size = new System.Drawing.Size(13, 13);
             this.BMaximizar.TabIndex = 5;
             this.BMaximizar.TabStop = false;
-            this.BMaximizar.Click += new System.EventHandler(this.BMaximizar_Click);
             // 
             // BEsconder
             // 
@@ -107,7 +84,6 @@ namespace ProyectoIntegradorTaller.formularios
             this.BEsconder.Size = new System.Drawing.Size(13, 13);
             this.BEsconder.TabIndex = 4;
             this.BEsconder.TabStop = false;
-            this.BEsconder.Click += new System.EventHandler(this.BEsconder_Click);
             // 
             // BRestaurar
             // 
@@ -118,7 +94,6 @@ namespace ProyectoIntegradorTaller.formularios
             this.BRestaurar.Size = new System.Drawing.Size(13, 13);
             this.BRestaurar.TabIndex = 6;
             this.BRestaurar.TabStop = false;
-            this.BRestaurar.Click += new System.EventHandler(this.BRestaurar_Click);
             // 
             // BCerrar
             // 
@@ -133,81 +108,107 @@ namespace ProyectoIntegradorTaller.formularios
             // 
             // LBienvenido
             // 
+            this.LBienvenido.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.LBienvenido.AutoSize = true;
             this.LBienvenido.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Bold);
-            this.LBienvenido.Location = new System.Drawing.Point(37, 27);
+            this.LBienvenido.Location = new System.Drawing.Point(111, 70);
             this.LBienvenido.Name = "LBienvenido";
-            this.LBienvenido.Size = new System.Drawing.Size(79, 18);
+            this.LBienvenido.Size = new System.Drawing.Size(70, 18);
             this.LBienvenido.TabIndex = 3;
-            this.LBienvenido.Text = "Materias";
+            this.LBienvenido.Text = "Materia";
+            // 
+            // TNombre
+            // 
+            this.TNombre.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.TNombre.BackColor = System.Drawing.Color.Snow;
+            this.TNombre.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TNombre.Location = new System.Drawing.Point(73, 127);
+            this.TNombre.Name = "TNombre";
+            this.TNombre.Size = new System.Drawing.Size(170, 20);
+            this.TNombre.TabIndex = 4;
+            // 
+            // label1
+            // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(73, 111);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(44, 13);
+            this.label1.TabIndex = 6;
+            this.label1.Text = "Nombre";
+            // 
+            // panel5
+            // 
+            this.panel5.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel5.Location = new System.Drawing.Point(0, 32);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(179, 358);
+            this.panel5.TabIndex = 9;
+            // 
+            // panel6
+            // 
+            this.panel6.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel6.Location = new System.Drawing.Point(515, 32);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(171, 358);
+            this.panel6.TabIndex = 10;
             // 
             // panel7
             // 
             this.panel7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.panel7.Controls.Add(this.BCrearMateria);
+            this.panel7.Controls.Add(this.BInicioSesion);
             this.panel7.Controls.Add(this.LBienvenido);
-            this.panel7.Controls.Add(this.dataGridView1);
-            this.panel7.Location = new System.Drawing.Point(0, 32);
+            this.panel7.Controls.Add(this.label1);
+            this.panel7.Controls.Add(this.TNombre);
+            this.panel7.Location = new System.Drawing.Point(179, 32);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(686, 358);
+            this.panel7.Size = new System.Drawing.Size(335, 358);
             this.panel7.TabIndex = 11;
             // 
-            // dataGridView1
+            // BInicioSesion
             // 
-            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.GridColor = System.Drawing.SystemColors.ButtonFace;
-            this.dataGridView1.Location = new System.Drawing.Point(37, 88);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 25;
-            this.dataGridView1.Size = new System.Drawing.Size(646, 156);
-            this.dataGridView1.TabIndex = 0;
+            this.BInicioSesion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
+            this.BInicioSesion.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
+            this.BInicioSesion.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.BInicioSesion.BorderRadius = 6;
+            this.BInicioSesion.BorderSize = 0;
+            this.BInicioSesion.FlatAppearance.BorderSize = 0;
+            this.BInicioSesion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BInicioSesion.ForeColor = System.Drawing.Color.White;
+            this.BInicioSesion.Location = new System.Drawing.Point(73, 174);
+            this.BInicioSesion.Name = "BInicioSesion";
+            this.BInicioSesion.Size = new System.Drawing.Size(170, 40);
+            this.BInicioSesion.TabIndex = 0;
+            this.BInicioSesion.Text = "Nueva Materia";
+            this.BInicioSesion.TextColor = System.Drawing.Color.White;
+            this.BInicioSesion.UseVisualStyleBackColor = false;
+            this.BInicioSesion.Click += new System.EventHandler(this.BInicioSesion_Click);
             // 
-            // BCrearMateria
-            // 
-            this.BCrearMateria.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
-            this.BCrearMateria.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
-            this.BCrearMateria.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.BCrearMateria.BorderRadius = 6;
-            this.BCrearMateria.BorderSize = 0;
-            this.BCrearMateria.FlatAppearance.BorderSize = 0;
-            this.BCrearMateria.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BCrearMateria.ForeColor = System.Drawing.Color.White;
-            this.BCrearMateria.Location = new System.Drawing.Point(524, 305);
-            this.BCrearMateria.Name = "BCrearMateria";
-            this.BCrearMateria.Size = new System.Drawing.Size(150, 40);
-            this.BCrearMateria.TabIndex = 5;
-            this.BCrearMateria.Text = "Crear Materia";
-            this.BCrearMateria.TextColor = System.Drawing.Color.White;
-            this.BCrearMateria.UseVisualStyleBackColor = false;
-            this.BCrearMateria.Click += new System.EventHandler(this.BCrearMateria_Click);
-            // 
-            // Materias
+            // CrearMateria
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Snow;
             this.ClientSize = new System.Drawing.Size(686, 390);
             this.Controls.Add(this.panel7);
+            this.Controls.Add(this.panel6);
+            this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel3);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "Materias";
-            this.Text = "Menu";
-            this.Load += new System.EventHandler(this.Reservas_Load);
+            this.Name = "CrearMateria";
+            this.Text = "Form1";
             this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.BMaximizar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BEsconder)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BRestaurar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BCerrar)).EndInit();
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
+
+        #endregion
 
         private Panel panel1;
         private Panel panel2;
@@ -221,13 +222,11 @@ namespace ProyectoIntegradorTaller.formularios
         private Label LBienvenido;
         private TextBox textBox1;
         private TextBox textBox2;
-        private Panel panel7;
-        private Label label3;
-        private DataGridView dataGridView1;
         private Label label1;
-        private views.components.BotonPersonalisado BCrearMateria;
+        private Panel panel5;
+        private Panel panel6;
+        private Panel panel7;
+        private TextBox TNombre;
+        private views.components.BotonPersonalisado BInicioSesion;
     }
-
-    #endregion
-
 }

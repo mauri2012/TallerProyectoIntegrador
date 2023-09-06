@@ -115,7 +115,12 @@ namespace ProyectoIntegradorTaller.formularios
             aula.Show();
         }
 
-      
+        private void BCrearMateria_Click(object sender, EventArgs e)
+        {
+            
+            CrearMateria unaMateria = new CrearMateria();
+            unaMateria.Show();
+        }
     }
     public class ItemMaterias
     {
