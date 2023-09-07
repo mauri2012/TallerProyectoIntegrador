@@ -66,12 +66,10 @@
     <Compile Include="views\components\ComboBoxPersonalisado.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="views\components\TextBoxPersonalisado.cs">
+    <Compile Include="views\components\RJTextBox.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="views\components\TextBoxPersonalisado.Designer.cs">
-      <DependentUpon>TextBoxPersonalisado.cs</DependentUpon>
-    </Compile>
+    <Compile Include="views\components\RJTextBox.Designer.cs" />
     <Compile Include="views\components\TimePickerPersonalisado.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -148,9 +146,7 @@
     <EmbeddedResource Include="views\admin\Profesores.resx">
       <DependentUpon>Profesores.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="views\components\TextBoxPersonalisado.resx">
-      <DependentUpon>TextBoxPersonalisado.cs</DependentUpon>
-    </EmbeddedResource>
+    <EmbeddedResource Include="views\components\RJTextBox.resx" />
     <EmbeddedResource Include="views\CrearMateria.resx">
       <DependentUpon>CrearMateria.cs</DependentUpon>
     </EmbeddedResource>

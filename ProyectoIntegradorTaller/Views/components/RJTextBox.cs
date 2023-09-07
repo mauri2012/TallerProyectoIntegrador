@@ -1,18 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Drawing.Drawing2D;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Drawing.Drawing2D;
 
-namespace ProyectoIntegradorTaller.views.components
+namespace CustomControls.RJControls
 {
     [DefaultEvent("_TextChanged")]
-    public partial class TextBoxPersonalisado : UserControl
+    public partial class RJTextBox : UserControl
     {
         #region -> Fields
         //Fields
@@ -34,7 +34,7 @@ namespace ProyectoIntegradorTaller.views.components
         #endregion
 
         //-> Constructor
-        private TextBoxPersonalisado()
+        public RJTextBox()
         {
             //Created by designer
             InitializeComponent();
@@ -288,7 +288,7 @@ namespace ProyectoIntegradorTaller.views.components
                 if (isPasswordChar)
                     textBox1.UseSystemPasswordChar = true;
             }
-        }
+        }        
         private GraphicsPath GetFigurePath(Rectangle rect, int radius)
         {
             GraphicsPath path = new GraphicsPath();
