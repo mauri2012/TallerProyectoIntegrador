@@ -63,6 +63,9 @@
     <Compile Include="views\components\BotonPersonalisado.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="views\components\ComboBoxPersonalisado.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="views\components\TextBoxPersonalisado.cs">
       <SubType>UserControl</SubType>
     </Compile>
