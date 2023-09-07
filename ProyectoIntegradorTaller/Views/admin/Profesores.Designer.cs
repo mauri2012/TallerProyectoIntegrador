@@ -28,20 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.listView1 = new System.Windows.Forms.ListView();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.botonPersonalisado1 = new ProyectoIntegradorTaller.views.components.BotonPersonalisado();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::ProyectoIntegradorTaller.Properties.Resources.search;
-            this.pictureBox1.Location = new System.Drawing.Point(737, 36);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(21, 20);
-            this.pictureBox1.TabIndex = 3;
-            this.pictureBox1.TabStop = false;
             // 
             // listView1
             // 
@@ -51,6 +42,15 @@
             this.listView1.Size = new System.Drawing.Size(776, 213);
             this.listView1.TabIndex = 4;
             this.listView1.UseCompatibleStateImageBehavior = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::ProyectoIntegradorTaller.Properties.Resources.calendarDark;
+            this.pictureBox1.Location = new System.Drawing.Point(737, 36);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(21, 20);
+            this.pictureBox1.TabIndex = 3;
+            this.pictureBox1.TabStop = false;
             // 
             // botonPersonalisado1
             // 
@@ -72,7 +72,6 @@
             this.botonPersonalisado1.TextColor = System.Drawing.Color.White;
             this.botonPersonalisado1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.botonPersonalisado1.UseVisualStyleBackColor = false;
-            
             // 
             // Profesores
             // 

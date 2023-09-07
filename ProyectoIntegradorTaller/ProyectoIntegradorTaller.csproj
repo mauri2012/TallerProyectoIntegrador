@@ -69,6 +69,9 @@
     <Compile Include="views\components\TextBoxPersonalisado.Designer.cs">
       <DependentUpon>TextBoxPersonalisado.cs</DependentUpon>
     </Compile>
+    <Compile Include="views\components\TimePickerPersonalisado.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="views\CrearMateria.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -220,6 +223,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\search.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\calendarWhite.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\calendarDark.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
