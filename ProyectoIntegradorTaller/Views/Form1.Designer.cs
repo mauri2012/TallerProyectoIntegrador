@@ -33,25 +33,25 @@ namespace ProyectoIntegradorTaller
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.panel3 = new System.Windows.Forms.Panel();
-            this.BMaximizar = new System.Windows.Forms.PictureBox();
-            this.BEsconder = new System.Windows.Forms.PictureBox();
-            this.BRestaurar = new System.Windows.Forms.PictureBox();
-            this.BCerrar = new System.Windows.Forms.PictureBox();
             this.LBienvenido = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
+            this.TPass = new CustomControls.RJControls.RJTextBox();
             this.TEmail = new CustomControls.RJControls.RJTextBox();
             this.BInicioSesion = new ProyectoIntegradorTaller.views.components.BotonPersonalisado();
-            this.TPass = new CustomControls.RJControls.RJTextBox();
+            this.BMaximizar = new System.Windows.Forms.PictureBox();
+            this.BEsconder = new System.Windows.Forms.PictureBox();
+            this.BRestaurar = new System.Windows.Forms.PictureBox();
+            this.BCerrar = new System.Windows.Forms.PictureBox();
             this.panel3.SuspendLayout();
+            this.panel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.BMaximizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BEsconder)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BRestaurar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BCerrar)).BeginInit();
-            this.panel7.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel3
@@ -71,46 +71,6 @@ namespace ProyectoIntegradorTaller
             this.panel3.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel3_MouseDown);
             this.panel3.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel3_MouseMove);
             this.panel3.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panel3_MouseUp);
-            // 
-            // BMaximizar
-            // 
-            this.BMaximizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.BMaximizar.Image = ((System.Drawing.Image)(resources.GetObject("BMaximizar.Image")));
-            this.BMaximizar.Location = new System.Drawing.Point(646, 10);
-            this.BMaximizar.Name = "BMaximizar";
-            this.BMaximizar.Size = new System.Drawing.Size(13, 13);
-            this.BMaximizar.TabIndex = 5;
-            this.BMaximizar.TabStop = false;
-            // 
-            // BEsconder
-            // 
-            this.BEsconder.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.BEsconder.Image = ((System.Drawing.Image)(resources.GetObject("BEsconder.Image")));
-            this.BEsconder.Location = new System.Drawing.Point(628, 10);
-            this.BEsconder.Name = "BEsconder";
-            this.BEsconder.Size = new System.Drawing.Size(13, 13);
-            this.BEsconder.TabIndex = 4;
-            this.BEsconder.TabStop = false;
-            // 
-            // BRestaurar
-            // 
-            this.BRestaurar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.BRestaurar.Image = ((System.Drawing.Image)(resources.GetObject("BRestaurar.Image")));
-            this.BRestaurar.Location = new System.Drawing.Point(646, 10);
-            this.BRestaurar.Name = "BRestaurar";
-            this.BRestaurar.Size = new System.Drawing.Size(13, 13);
-            this.BRestaurar.TabIndex = 6;
-            this.BRestaurar.TabStop = false;
-            // 
-            // BCerrar
-            // 
-            this.BCerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.BCerrar.Image = ((System.Drawing.Image)(resources.GetObject("BCerrar.Image")));
-            this.BCerrar.Location = new System.Drawing.Point(664, 10);
-            this.BCerrar.Name = "BCerrar";
-            this.BCerrar.Size = new System.Drawing.Size(13, 13);
-            this.BCerrar.TabIndex = 3;
-            this.BCerrar.TabStop = false;
             // 
             // LBienvenido
             // 
@@ -175,6 +135,28 @@ namespace ProyectoIntegradorTaller
             this.panel7.Size = new System.Drawing.Size(335, 358);
             this.panel7.TabIndex = 11;
             // 
+            // TPass
+            // 
+            this.TPass.BackColor = System.Drawing.SystemColors.Menu;
+            this.TPass.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
+            this.TPass.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.TPass.BorderRadius = 6;
+            this.TPass.BorderSize = 2;
+            this.TPass.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TPass.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.TPass.Location = new System.Drawing.Point(73, 185);
+            this.TPass.Margin = new System.Windows.Forms.Padding(4);
+            this.TPass.Multiline = false;
+            this.TPass.Name = "TPass";
+            this.TPass.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this.TPass.PasswordChar = true;
+            this.TPass.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.TPass.PlaceholderText = "";
+            this.TPass.Size = new System.Drawing.Size(186, 31);
+            this.TPass.TabIndex = 10;
+            this.TPass.Texts = "";
+            this.TPass.UnderlinedStyle = true;
+            // 
             // TEmail
             // 
             this.TEmail.BackColor = System.Drawing.SystemColors.Menu;
@@ -206,37 +188,58 @@ namespace ProyectoIntegradorTaller
             this.BInicioSesion.BorderSize = 0;
             this.BInicioSesion.FlatAppearance.BorderSize = 0;
             this.BInicioSesion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BInicioSesion.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BInicioSesion.ForeColor = System.Drawing.Color.White;
+            this.BInicioSesion.Image = global::ProyectoIntegradorTaller.Properties.Resources.login;
             this.BInicioSesion.Location = new System.Drawing.Point(73, 240);
             this.BInicioSesion.Name = "BInicioSesion";
             this.BInicioSesion.Size = new System.Drawing.Size(186, 40);
             this.BInicioSesion.TabIndex = 0;
-            this.BInicioSesion.Text = "Log In";
+            this.BInicioSesion.Text = "    Iniciar Sesión";
             this.BInicioSesion.TextColor = System.Drawing.Color.White;
+            this.BInicioSesion.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.BInicioSesion.UseVisualStyleBackColor = false;
             this.BInicioSesion.Click += new System.EventHandler(this.BInicioSesion_Click);
             // 
-            // TPass
+            // BMaximizar
             // 
-            this.TPass.BackColor = System.Drawing.SystemColors.Menu;
-            this.TPass.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
-            this.TPass.BorderFocusColor = System.Drawing.Color.HotPink;
-            this.TPass.BorderRadius = 6;
-            this.TPass.BorderSize = 2;
-            this.TPass.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TPass.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.TPass.Location = new System.Drawing.Point(73, 185);
-            this.TPass.Margin = new System.Windows.Forms.Padding(4);
-            this.TPass.Multiline = false;
-            this.TPass.Name = "TPass";
-            this.TPass.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.TPass.PasswordChar = true;
-            this.TPass.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.TPass.PlaceholderText = "";
-            this.TPass.Size = new System.Drawing.Size(186, 31);
-            this.TPass.TabIndex = 10;
-            this.TPass.Texts = "";
-            this.TPass.UnderlinedStyle = true;
+            this.BMaximizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.BMaximizar.Image = ((System.Drawing.Image)(resources.GetObject("BMaximizar.Image")));
+            this.BMaximizar.Location = new System.Drawing.Point(646, 10);
+            this.BMaximizar.Name = "BMaximizar";
+            this.BMaximizar.Size = new System.Drawing.Size(13, 13);
+            this.BMaximizar.TabIndex = 5;
+            this.BMaximizar.TabStop = false;
+            // 
+            // BEsconder
+            // 
+            this.BEsconder.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.BEsconder.Image = ((System.Drawing.Image)(resources.GetObject("BEsconder.Image")));
+            this.BEsconder.Location = new System.Drawing.Point(628, 10);
+            this.BEsconder.Name = "BEsconder";
+            this.BEsconder.Size = new System.Drawing.Size(13, 13);
+            this.BEsconder.TabIndex = 4;
+            this.BEsconder.TabStop = false;
+            // 
+            // BRestaurar
+            // 
+            this.BRestaurar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.BRestaurar.Image = ((System.Drawing.Image)(resources.GetObject("BRestaurar.Image")));
+            this.BRestaurar.Location = new System.Drawing.Point(646, 10);
+            this.BRestaurar.Name = "BRestaurar";
+            this.BRestaurar.Size = new System.Drawing.Size(13, 13);
+            this.BRestaurar.TabIndex = 6;
+            this.BRestaurar.TabStop = false;
+            // 
+            // BCerrar
+            // 
+            this.BCerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.BCerrar.Image = ((System.Drawing.Image)(resources.GetObject("BCerrar.Image")));
+            this.BCerrar.Location = new System.Drawing.Point(664, 10);
+            this.BCerrar.Name = "BCerrar";
+            this.BCerrar.Size = new System.Drawing.Size(13, 13);
+            this.BCerrar.TabIndex = 3;
+            this.BCerrar.TabStop = false;
             // 
             // Form1
             // 
@@ -252,12 +255,12 @@ namespace ProyectoIntegradorTaller
             this.Name = "Form1";
             this.Text = "Form1";
             this.panel3.ResumeLayout(false);
+            this.panel7.ResumeLayout(false);
+            this.panel7.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.BMaximizar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BEsconder)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BRestaurar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BCerrar)).EndInit();
-            this.panel7.ResumeLayout(false);
-            this.panel7.PerformLayout();
             this.ResumeLayout(false);
 
         }

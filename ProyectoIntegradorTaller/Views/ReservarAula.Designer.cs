@@ -32,13 +32,14 @@ namespace ProyectoIntegradorTaller.formularios
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.CBDias = new ProyectoIntegradorTaller.views.components.ComboBoxPersonalisado();
+            this.comboBoxPersonalisado4 = new ProyectoIntegradorTaller.views.components.ComboBoxPersonalisado();
+            this.comboBoxPersonalisado3 = new ProyectoIntegradorTaller.views.components.ComboBoxPersonalisado();
             this.comboBoxPersonalisado2 = new ProyectoIntegradorTaller.views.components.ComboBoxPersonalisado();
             this.comboBoxPersonalisado1 = new ProyectoIntegradorTaller.views.components.ComboBoxPersonalisado();
             this.timePickerPersonalisado2 = new ProyectoIntegradorTaller.views.components.TimePickerPersonalisado();
             this.botonPersonalisado1 = new ProyectoIntegradorTaller.views.components.BotonPersonalisado();
             this.timePickerPersonalisado1 = new ProyectoIntegradorTaller.views.components.TimePickerPersonalisado();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -50,23 +51,22 @@ namespace ProyectoIntegradorTaller.formularios
             this.panel3 = new System.Windows.Forms.Panel();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
+            this.BReservarAula = new System.Windows.Forms.Button();
             this.BMaximizar = new System.Windows.Forms.PictureBox();
             this.BEsconder = new System.Windows.Forms.PictureBox();
             this.BRestaurar = new System.Windows.Forms.PictureBox();
             this.BCerrar = new System.Windows.Forms.PictureBox();
-            this.BReservarAula = new System.Windows.Forms.Button();
-            this.comboBoxPersonalisado3 = new ProyectoIntegradorTaller.views.components.ComboBoxPersonalisado();
-            this.comboBoxPersonalisado4 = new ProyectoIntegradorTaller.views.components.ComboBoxPersonalisado();
-            this.CBDias = new ProyectoIntegradorTaller.views.components.ComboBoxPersonalisado();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.BMaximizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BEsconder)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BRestaurar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BCerrar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -94,21 +94,78 @@ namespace ProyectoIntegradorTaller.formularios
             this.panel1.Size = new System.Drawing.Size(686, 358);
             this.panel1.TabIndex = 0;
             // 
+            // CBDias
+            // 
+            this.CBDias.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.CBDias.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
+            this.CBDias.BorderSize = 2;
+            this.CBDias.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
+            this.CBDias.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.CBDias.ForeColor = System.Drawing.Color.DimGray;
+            this.CBDias.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
+            this.CBDias.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(228)))), ((int)(((byte)(245)))));
+            this.CBDias.ListTextColor = System.Drawing.Color.DimGray;
+            this.CBDias.Location = new System.Drawing.Point(357, 76);
+            this.CBDias.MinimumSize = new System.Drawing.Size(200, 30);
+            this.CBDias.Name = "CBDias";
+            this.CBDias.Padding = new System.Windows.Forms.Padding(2);
+            this.CBDias.Size = new System.Drawing.Size(228, 30);
+            this.CBDias.TabIndex = 39;
+            this.CBDias.Texts = "";
+            // 
+            // comboBoxPersonalisado4
+            // 
+            this.comboBoxPersonalisado4.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.comboBoxPersonalisado4.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
+            this.comboBoxPersonalisado4.BorderSize = 2;
+            this.comboBoxPersonalisado4.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
+            this.comboBoxPersonalisado4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.comboBoxPersonalisado4.ForeColor = System.Drawing.Color.DimGray;
+            this.comboBoxPersonalisado4.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
+            this.comboBoxPersonalisado4.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(228)))), ((int)(((byte)(245)))));
+            this.comboBoxPersonalisado4.ListTextColor = System.Drawing.Color.DimGray;
+            this.comboBoxPersonalisado4.Location = new System.Drawing.Point(357, 189);
+            this.comboBoxPersonalisado4.MinimumSize = new System.Drawing.Size(200, 30);
+            this.comboBoxPersonalisado4.Name = "comboBoxPersonalisado4";
+            this.comboBoxPersonalisado4.Padding = new System.Windows.Forms.Padding(2);
+            this.comboBoxPersonalisado4.Size = new System.Drawing.Size(228, 30);
+            this.comboBoxPersonalisado4.TabIndex = 38;
+            this.comboBoxPersonalisado4.Texts = "";
+            // 
+            // comboBoxPersonalisado3
+            // 
+            this.comboBoxPersonalisado3.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.comboBoxPersonalisado3.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
+            this.comboBoxPersonalisado3.BorderSize = 2;
+            this.comboBoxPersonalisado3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
+            this.comboBoxPersonalisado3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.comboBoxPersonalisado3.ForeColor = System.Drawing.Color.DimGray;
+            this.comboBoxPersonalisado3.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
+            this.comboBoxPersonalisado3.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(228)))), ((int)(((byte)(245)))));
+            this.comboBoxPersonalisado3.ListTextColor = System.Drawing.Color.DimGray;
+            this.comboBoxPersonalisado3.Location = new System.Drawing.Point(357, 130);
+            this.comboBoxPersonalisado3.MinimumSize = new System.Drawing.Size(200, 30);
+            this.comboBoxPersonalisado3.Name = "comboBoxPersonalisado3";
+            this.comboBoxPersonalisado3.Padding = new System.Windows.Forms.Padding(2);
+            this.comboBoxPersonalisado3.Size = new System.Drawing.Size(228, 30);
+            this.comboBoxPersonalisado3.TabIndex = 37;
+            this.comboBoxPersonalisado3.Texts = "";
+            // 
             // comboBoxPersonalisado2
             // 
             this.comboBoxPersonalisado2.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.comboBoxPersonalisado2.BorderColor = System.Drawing.Color.MediumSlateBlue;
-            this.comboBoxPersonalisado2.BorderSize = 1;
+            this.comboBoxPersonalisado2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
+            this.comboBoxPersonalisado2.BorderSize = 2;
             this.comboBoxPersonalisado2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
             this.comboBoxPersonalisado2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.comboBoxPersonalisado2.ForeColor = System.Drawing.Color.DimGray;
-            this.comboBoxPersonalisado2.IconColor = System.Drawing.Color.MediumSlateBlue;
+            this.comboBoxPersonalisado2.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
             this.comboBoxPersonalisado2.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(228)))), ((int)(((byte)(245)))));
             this.comboBoxPersonalisado2.ListTextColor = System.Drawing.Color.DimGray;
             this.comboBoxPersonalisado2.Location = new System.Drawing.Point(95, 78);
             this.comboBoxPersonalisado2.MinimumSize = new System.Drawing.Size(200, 30);
             this.comboBoxPersonalisado2.Name = "comboBoxPersonalisado2";
-            this.comboBoxPersonalisado2.Padding = new System.Windows.Forms.Padding(1);
+            this.comboBoxPersonalisado2.Padding = new System.Windows.Forms.Padding(2);
             this.comboBoxPersonalisado2.Size = new System.Drawing.Size(228, 30);
             this.comboBoxPersonalisado2.TabIndex = 36;
             this.comboBoxPersonalisado2.Texts = "";
@@ -116,18 +173,18 @@ namespace ProyectoIntegradorTaller.formularios
             // comboBoxPersonalisado1
             // 
             this.comboBoxPersonalisado1.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.comboBoxPersonalisado1.BorderColor = System.Drawing.Color.MediumSlateBlue;
-            this.comboBoxPersonalisado1.BorderSize = 1;
+            this.comboBoxPersonalisado1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
+            this.comboBoxPersonalisado1.BorderSize = 2;
             this.comboBoxPersonalisado1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
             this.comboBoxPersonalisado1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.comboBoxPersonalisado1.ForeColor = System.Drawing.Color.DimGray;
-            this.comboBoxPersonalisado1.IconColor = System.Drawing.Color.MediumSlateBlue;
+            this.comboBoxPersonalisado1.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
             this.comboBoxPersonalisado1.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(228)))), ((int)(((byte)(245)))));
             this.comboBoxPersonalisado1.ListTextColor = System.Drawing.Color.DimGray;
             this.comboBoxPersonalisado1.Location = new System.Drawing.Point(95, 130);
             this.comboBoxPersonalisado1.MinimumSize = new System.Drawing.Size(200, 30);
             this.comboBoxPersonalisado1.Name = "comboBoxPersonalisado1";
-            this.comboBoxPersonalisado1.Padding = new System.Windows.Forms.Padding(1);
+            this.comboBoxPersonalisado1.Padding = new System.Windows.Forms.Padding(2);
             this.comboBoxPersonalisado1.Size = new System.Drawing.Size(225, 30);
             this.comboBoxPersonalisado1.TabIndex = 35;
             this.comboBoxPersonalisado1.Texts = "";
@@ -140,8 +197,8 @@ namespace ProyectoIntegradorTaller.formularios
             this.timePickerPersonalisado2.Location = new System.Drawing.Point(92, 184);
             this.timePickerPersonalisado2.MinimumSize = new System.Drawing.Size(4, 35);
             this.timePickerPersonalisado2.Name = "timePickerPersonalisado2";
-            this.timePickerPersonalisado2.Size = new System.Drawing.Size(228, 35);
-            this.timePickerPersonalisado2.SkinColor = System.Drawing.Color.MediumSlateBlue;
+            this.timePickerPersonalisado2.Size = new System.Drawing.Size(231, 35);
+            this.timePickerPersonalisado2.SkinColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
             this.timePickerPersonalisado2.TabIndex = 34;
             this.timePickerPersonalisado2.TextColor = System.Drawing.Color.White;
             // 
@@ -154,6 +211,7 @@ namespace ProyectoIntegradorTaller.formularios
             this.botonPersonalisado1.BorderSize = 0;
             this.botonPersonalisado1.FlatAppearance.BorderSize = 0;
             this.botonPersonalisado1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.botonPersonalisado1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.botonPersonalisado1.ForeColor = System.Drawing.Color.White;
             this.botonPersonalisado1.Location = new System.Drawing.Point(524, 309);
             this.botonPersonalisado1.Name = "botonPersonalisado1";
@@ -171,30 +229,10 @@ namespace ProyectoIntegradorTaller.formularios
             this.timePickerPersonalisado1.Location = new System.Drawing.Point(92, 243);
             this.timePickerPersonalisado1.MinimumSize = new System.Drawing.Size(4, 35);
             this.timePickerPersonalisado1.Name = "timePickerPersonalisado1";
-            this.timePickerPersonalisado1.Size = new System.Drawing.Size(228, 35);
-            this.timePickerPersonalisado1.SkinColor = System.Drawing.Color.MediumSlateBlue;
+            this.timePickerPersonalisado1.Size = new System.Drawing.Size(231, 35);
+            this.timePickerPersonalisado1.SkinColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
             this.timePickerPersonalisado1.TabIndex = 9;
             this.timePickerPersonalisado1.TextColor = System.Drawing.Color.White;
-            // 
-            // pictureBox4
-            // 
-            this.pictureBox4.Image = global::ProyectoIntegradorTaller.Properties.Resources.Time;
-            this.pictureBox4.Location = new System.Drawing.Point(591, 189);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(26, 30);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox4.TabIndex = 26;
-            this.pictureBox4.TabStop = false;
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Image = global::ProyectoIntegradorTaller.Properties.Resources.Time;
-            this.pictureBox3.Location = new System.Drawing.Point(591, 130);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(26, 30);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox3.TabIndex = 25;
-            this.pictureBox3.TabStop = false;
             // 
             // label7
             // 
@@ -312,6 +350,13 @@ namespace ProyectoIntegradorTaller.formularios
             this.label9.Size = new System.Drawing.Size(86, 20);
             this.label9.TabIndex = 0;
             // 
+            // BReservarAula
+            // 
+            this.BReservarAula.Location = new System.Drawing.Point(0, 0);
+            this.BReservarAula.Name = "BReservarAula";
+            this.BReservarAula.Size = new System.Drawing.Size(64, 20);
+            this.BReservarAula.TabIndex = 7;
+            // 
             // BMaximizar
             // 
             this.BMaximizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -355,69 +400,25 @@ namespace ProyectoIntegradorTaller.formularios
             this.BCerrar.TabStop = false;
             this.BCerrar.Click += new System.EventHandler(this.BCerrar_Click);
             // 
-            // BReservarAula
+            // pictureBox4
             // 
-            this.BReservarAula.Location = new System.Drawing.Point(0, 0);
-            this.BReservarAula.Name = "BReservarAula";
-            this.BReservarAula.Size = new System.Drawing.Size(64, 20);
-            this.BReservarAula.TabIndex = 7;
+            this.pictureBox4.Image = global::ProyectoIntegradorTaller.Properties.Resources.Time;
+            this.pictureBox4.Location = new System.Drawing.Point(591, 189);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(30, 30);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox4.TabIndex = 26;
+            this.pictureBox4.TabStop = false;
             // 
-            // comboBoxPersonalisado3
+            // pictureBox3
             // 
-            this.comboBoxPersonalisado3.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.comboBoxPersonalisado3.BorderColor = System.Drawing.Color.MediumSlateBlue;
-            this.comboBoxPersonalisado3.BorderSize = 1;
-            this.comboBoxPersonalisado3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
-            this.comboBoxPersonalisado3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.comboBoxPersonalisado3.ForeColor = System.Drawing.Color.DimGray;
-            this.comboBoxPersonalisado3.IconColor = System.Drawing.Color.MediumSlateBlue;
-            this.comboBoxPersonalisado3.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(228)))), ((int)(((byte)(245)))));
-            this.comboBoxPersonalisado3.ListTextColor = System.Drawing.Color.DimGray;
-            this.comboBoxPersonalisado3.Location = new System.Drawing.Point(357, 130);
-            this.comboBoxPersonalisado3.MinimumSize = new System.Drawing.Size(200, 30);
-            this.comboBoxPersonalisado3.Name = "comboBoxPersonalisado3";
-            this.comboBoxPersonalisado3.Padding = new System.Windows.Forms.Padding(1);
-            this.comboBoxPersonalisado3.Size = new System.Drawing.Size(228, 30);
-            this.comboBoxPersonalisado3.TabIndex = 37;
-            this.comboBoxPersonalisado3.Texts = "";
-            // 
-            // comboBoxPersonalisado4
-            // 
-            this.comboBoxPersonalisado4.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.comboBoxPersonalisado4.BorderColor = System.Drawing.Color.MediumSlateBlue;
-            this.comboBoxPersonalisado4.BorderSize = 1;
-            this.comboBoxPersonalisado4.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
-            this.comboBoxPersonalisado4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.comboBoxPersonalisado4.ForeColor = System.Drawing.Color.DimGray;
-            this.comboBoxPersonalisado4.IconColor = System.Drawing.Color.MediumSlateBlue;
-            this.comboBoxPersonalisado4.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(228)))), ((int)(((byte)(245)))));
-            this.comboBoxPersonalisado4.ListTextColor = System.Drawing.Color.DimGray;
-            this.comboBoxPersonalisado4.Location = new System.Drawing.Point(357, 189);
-            this.comboBoxPersonalisado4.MinimumSize = new System.Drawing.Size(200, 30);
-            this.comboBoxPersonalisado4.Name = "comboBoxPersonalisado4";
-            this.comboBoxPersonalisado4.Padding = new System.Windows.Forms.Padding(1);
-            this.comboBoxPersonalisado4.Size = new System.Drawing.Size(228, 30);
-            this.comboBoxPersonalisado4.TabIndex = 38;
-            this.comboBoxPersonalisado4.Texts = "";
-            // 
-            // CBDias
-            // 
-            this.CBDias.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.CBDias.BorderColor = System.Drawing.Color.MediumSlateBlue;
-            this.CBDias.BorderSize = 1;
-            this.CBDias.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
-            this.CBDias.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.CBDias.ForeColor = System.Drawing.Color.DimGray;
-            this.CBDias.IconColor = System.Drawing.Color.MediumSlateBlue;
-            this.CBDias.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(228)))), ((int)(((byte)(245)))));
-            this.CBDias.ListTextColor = System.Drawing.Color.DimGray;
-            this.CBDias.Location = new System.Drawing.Point(357, 76);
-            this.CBDias.MinimumSize = new System.Drawing.Size(200, 30);
-            this.CBDias.Name = "CBDias";
-            this.CBDias.Padding = new System.Windows.Forms.Padding(1);
-            this.CBDias.Size = new System.Drawing.Size(228, 30);
-            this.CBDias.TabIndex = 39;
-            this.CBDias.Texts = "";
+            this.pictureBox3.Image = global::ProyectoIntegradorTaller.Properties.Resources.Time;
+            this.pictureBox3.Location = new System.Drawing.Point(591, 130);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(30, 30);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox3.TabIndex = 25;
+            this.pictureBox3.TabStop = false;
             // 
             // ReservarAula
             // 
@@ -430,8 +431,6 @@ namespace ProyectoIntegradorTaller.formularios
             this.Text = "ReservarAula";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
@@ -439,6 +438,8 @@ namespace ProyectoIntegradorTaller.formularios
             ((System.ComponentModel.ISupportInitialize)(this.BEsconder)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BRestaurar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BCerrar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.ResumeLayout(false);
 
         }

@@ -39,10 +39,10 @@ namespace ProyectoIntegradorTaller.formularios
             this.BEsconder = new System.Windows.Forms.PictureBox();
             this.BRestaurar = new System.Windows.Forms.PictureBox();
             this.BCerrar = new System.Windows.Forms.PictureBox();
-            this.LBienvenido = new System.Windows.Forms.Label();
             this.panel7 = new System.Windows.Forms.Panel();
+            this.CBDias = new ProyectoIntegradorTaller.views.components.ComboBoxPersonalisado();
+            this.label5 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.BCrearAula = new ProyectoIntegradorTaller.views.components.BotonPersonalisado();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.BMaximizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BEsconder)).BeginInit();
@@ -76,9 +76,9 @@ namespace ProyectoIntegradorTaller.formularios
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.label1.Location = new System.Drawing.Point(309, 10);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(54, 19);
+            this.label1.Size = new System.Drawing.Size(81, 19);
             this.label1.TabIndex = 7;
-            this.label1.Text = "Home";
+            this.label1.Text = "Reservas";
             // 
             // label3
             // 
@@ -131,26 +131,45 @@ namespace ProyectoIntegradorTaller.formularios
             this.BCerrar.TabStop = false;
             this.BCerrar.Click += new System.EventHandler(this.BCerrar_Click);
             // 
-            // LBienvenido
-            // 
-            this.LBienvenido.AutoSize = true;
-            this.LBienvenido.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Bold);
-            this.LBienvenido.Location = new System.Drawing.Point(37, 27);
-            this.LBienvenido.Name = "LBienvenido";
-            this.LBienvenido.Size = new System.Drawing.Size(53, 18);
-            this.LBienvenido.TabIndex = 3;
-            this.LBienvenido.Text = "Aulas";
-            // 
             // panel7
             // 
             this.panel7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.panel7.Controls.Add(this.BCrearAula);
-            this.panel7.Controls.Add(this.LBienvenido);
+            this.panel7.Controls.Add(this.CBDias);
+            this.panel7.Controls.Add(this.label5);
             this.panel7.Controls.Add(this.dataGridView1);
             this.panel7.Location = new System.Drawing.Point(0, 32);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(686, 358);
             this.panel7.TabIndex = 11;
+            // 
+            // CBDias
+            // 
+            this.CBDias.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.CBDias.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
+            this.CBDias.BorderSize = 2;
+            this.CBDias.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
+            this.CBDias.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.CBDias.ForeColor = System.Drawing.Color.DimGray;
+            this.CBDias.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
+            this.CBDias.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(228)))), ((int)(((byte)(245)))));
+            this.CBDias.ListTextColor = System.Drawing.Color.DimGray;
+            this.CBDias.Location = new System.Drawing.Point(12, 42);
+            this.CBDias.MinimumSize = new System.Drawing.Size(200, 30);
+            this.CBDias.Name = "CBDias";
+            this.CBDias.Padding = new System.Windows.Forms.Padding(2);
+            this.CBDias.Size = new System.Drawing.Size(200, 30);
+            this.CBDias.TabIndex = 41;
+            this.CBDias.Texts = "";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(12, 21);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(31, 18);
+            this.label5.TabIndex = 40;
+            this.label5.Text = "Dia";
             // 
             // dataGridView1
             // 
@@ -159,30 +178,11 @@ namespace ProyectoIntegradorTaller.formularios
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.GridColor = System.Drawing.SystemColors.ButtonFace;
-            this.dataGridView1.Location = new System.Drawing.Point(37, 88);
+            this.dataGridView1.Location = new System.Drawing.Point(12, 78);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 25;
-            this.dataGridView1.Size = new System.Drawing.Size(646, 156);
+            this.dataGridView1.Size = new System.Drawing.Size(662, 268);
             this.dataGridView1.TabIndex = 0;
-            // 
-            // BCrearAula
-            // 
-            this.BCrearAula.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
-            this.BCrearAula.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
-            this.BCrearAula.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.BCrearAula.BorderRadius = 6;
-            this.BCrearAula.BorderSize = 0;
-            this.BCrearAula.FlatAppearance.BorderSize = 0;
-            this.BCrearAula.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BCrearAula.ForeColor = System.Drawing.Color.White;
-            this.BCrearAula.Location = new System.Drawing.Point(524, 306);
-            this.BCrearAula.Name = "BCrearAula";
-            this.BCrearAula.Size = new System.Drawing.Size(150, 40);
-            this.BCrearAula.TabIndex = 5;
-            this.BCrearAula.Text = "Crear Aula";
-            this.BCrearAula.TextColor = System.Drawing.Color.White;
-            this.BCrearAula.UseVisualStyleBackColor = false;
-            this.BCrearAula.Click += new System.EventHandler(this.BCrearAula_Click);
             // 
             // Reservas
             // 
@@ -218,14 +218,14 @@ namespace ProyectoIntegradorTaller.formularios
         private PictureBox BEsconder;
         private PictureBox BMaximizar;
         private PictureBox BRestaurar;
-        private Label LBienvenido;
         private TextBox textBox1;
         private TextBox textBox2;
         private Panel panel7;
         private Label label3;
         private DataGridView dataGridView1;
         private Label label1;
-        private views.components.BotonPersonalisado BCrearAula;
+        private views.components.ComboBoxPersonalisado CBDias;
+        private Label label5;
     }
 
     #endregion

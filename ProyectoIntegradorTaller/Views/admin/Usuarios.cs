@@ -10,13 +10,11 @@ using System.Windows.Forms;
 
 namespace ProyectoIntegradorTaller.views.admin
 {
-    public partial class CrearProfesor : Form
+    public partial class Usuarios : Form
     {
-        public CrearProfesor()
+        public Usuarios()
         {
             InitializeComponent();
         }
-
-       
     }
 }

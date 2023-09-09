@@ -1,4 +1,5 @@
-﻿using ProyectoIntegradorTaller.formularios;
+﻿using ProyectoIntegrador.formularios;
+using ProyectoIntegradorTaller.formularios;
 using ProyectoIntegradorTaller.views.admin;
 using System;
 using System.Collections.Generic;
@@ -18,7 +19,7 @@ namespace ProyectoIntegradorTaller
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new Usuarios());
         }
     }
 }

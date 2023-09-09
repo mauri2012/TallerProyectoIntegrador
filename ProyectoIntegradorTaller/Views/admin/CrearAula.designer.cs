@@ -150,38 +150,38 @@ namespace ProyectoIntegradorTaller.formularios
             // TTipo
             // 
             this.TTipo.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.TTipo.BorderColor = System.Drawing.Color.MediumSlateBlue;
-            this.TTipo.BorderSize = 1;
+            this.TTipo.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
+            this.TTipo.BorderSize = 2;
             this.TTipo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
             this.TTipo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.TTipo.ForeColor = System.Drawing.Color.DimGray;
-            this.TTipo.IconColor = System.Drawing.Color.MediumSlateBlue;
+            this.TTipo.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
             this.TTipo.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(228)))), ((int)(((byte)(245)))));
             this.TTipo.ListTextColor = System.Drawing.Color.DimGray;
-            this.TTipo.Location = new System.Drawing.Point(251, 218);
+            this.TTipo.Location = new System.Drawing.Point(248, 217);
             this.TTipo.MinimumSize = new System.Drawing.Size(200, 30);
             this.TTipo.Name = "TTipo";
-            this.TTipo.Padding = new System.Windows.Forms.Padding(1);
-            this.TTipo.Size = new System.Drawing.Size(200, 30);
+            this.TTipo.Padding = new System.Windows.Forms.Padding(2);
+            this.TTipo.Size = new System.Drawing.Size(203, 30);
             this.TTipo.TabIndex = 26;
             this.TTipo.Texts = "";
             // 
             // CBUbicacion
             // 
             this.CBUbicacion.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.CBUbicacion.BorderColor = System.Drawing.Color.MediumSlateBlue;
-            this.CBUbicacion.BorderSize = 1;
+            this.CBUbicacion.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
+            this.CBUbicacion.BorderSize = 2;
             this.CBUbicacion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
             this.CBUbicacion.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.CBUbicacion.ForeColor = System.Drawing.Color.DimGray;
-            this.CBUbicacion.IconColor = System.Drawing.Color.MediumSlateBlue;
+            this.CBUbicacion.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
             this.CBUbicacion.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(228)))), ((int)(((byte)(245)))));
             this.CBUbicacion.ListTextColor = System.Drawing.Color.DimGray;
-            this.CBUbicacion.Location = new System.Drawing.Point(251, 116);
+            this.CBUbicacion.Location = new System.Drawing.Point(248, 113);
             this.CBUbicacion.MinimumSize = new System.Drawing.Size(200, 30);
             this.CBUbicacion.Name = "CBUbicacion";
-            this.CBUbicacion.Padding = new System.Windows.Forms.Padding(1);
-            this.CBUbicacion.Size = new System.Drawing.Size(200, 30);
+            this.CBUbicacion.Padding = new System.Windows.Forms.Padding(2);
+            this.CBUbicacion.Size = new System.Drawing.Size(203, 30);
             this.CBUbicacion.TabIndex = 0;
             this.CBUbicacion.Texts = "";
             // 
@@ -225,7 +225,7 @@ namespace ProyectoIntegradorTaller.formularios
             this.TNombre.PasswordChar = false;
             this.TNombre.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.TNombre.PlaceholderText = "";
-            this.TNombre.Size = new System.Drawing.Size(203, 31);
+            this.TNombre.Size = new System.Drawing.Size(200, 31);
             this.TNombre.TabIndex = 24;
             this.TNombre.Texts = "";
             this.TNombre.UnderlinedStyle = true;
@@ -233,9 +233,9 @@ namespace ProyectoIntegradorTaller.formularios
             // pictureBox2
             // 
             this.pictureBox2.Image = global::ProyectoIntegradorTaller.Properties.Resources.Group;
-            this.pictureBox2.Location = new System.Drawing.Point(458, 169);
+            this.pictureBox2.Location = new System.Drawing.Point(457, 167);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(32, 25);
+            this.pictureBox2.Size = new System.Drawing.Size(34, 27);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 23;
             this.pictureBox2.TabStop = false;
@@ -243,9 +243,9 @@ namespace ProyectoIntegradorTaller.formularios
             // pictureBox1
             // 
             this.pictureBox1.Image = global::ProyectoIntegradorTaller.Properties.Resources.Location;
-            this.pictureBox1.Location = new System.Drawing.Point(458, 117);
+            this.pictureBox1.Location = new System.Drawing.Point(457, 113);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(32, 29);
+            this.pictureBox1.Size = new System.Drawing.Size(23, 29);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 22;
             this.pictureBox1.TabStop = false;
@@ -253,9 +253,10 @@ namespace ProyectoIntegradorTaller.formularios
             // checkBox2
             // 
             this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(254, 279);
+            this.checkBox2.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBox2.Location = new System.Drawing.Point(248, 279);
             this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(71, 17);
+            this.checkBox2.Size = new System.Drawing.Size(82, 20);
             this.checkBox2.TabIndex = 21;
             this.checkBox2.Text = "Proyector";
             this.checkBox2.UseVisualStyleBackColor = true;
@@ -263,9 +264,10 @@ namespace ProyectoIntegradorTaller.formularios
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(254, 257);
+            this.checkBox1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBox1.Location = new System.Drawing.Point(248, 253);
             this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(118, 17);
+            this.checkBox1.Size = new System.Drawing.Size(137, 20);
             this.checkBox1.TabIndex = 20;
             this.checkBox1.Text = "Aire Acondicionado";
             this.checkBox1.UseVisualStyleBackColor = true;
@@ -275,7 +277,7 @@ namespace ProyectoIntegradorTaller.formularios
             this.label5.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
-            this.label5.Location = new System.Drawing.Point(252, 202);
+            this.label5.Location = new System.Drawing.Point(245, 198);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(37, 16);
             this.label5.TabIndex = 17;
@@ -310,13 +312,16 @@ namespace ProyectoIntegradorTaller.formularios
             this.BCrearAula.BorderSize = 0;
             this.BCrearAula.FlatAppearance.BorderSize = 0;
             this.BCrearAula.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BCrearAula.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BCrearAula.ForeColor = System.Drawing.Color.White;
+            this.BCrearAula.Image = global::ProyectoIntegradorTaller.Properties.Resources.add1;
             this.BCrearAula.Location = new System.Drawing.Point(21, 306);
             this.BCrearAula.Name = "BCrearAula";
             this.BCrearAula.Size = new System.Drawing.Size(150, 40);
             this.BCrearAula.TabIndex = 5;
-            this.BCrearAula.Text = "Crear Aula";
+            this.BCrearAula.Text = "  Crear Aula";
             this.BCrearAula.TextColor = System.Drawing.Color.White;
+            this.BCrearAula.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.BCrearAula.UseVisualStyleBackColor = false;
             this.BCrearAula.Click += new System.EventHandler(this.BCrearAula_Click);
             // 
@@ -333,18 +338,18 @@ namespace ProyectoIntegradorTaller.formularios
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
-            this.label2.Location = new System.Drawing.Point(248, 97);
+            this.label2.Location = new System.Drawing.Point(245, 96);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(76, 16);
             this.label2.TabIndex = 11;
-            this.label2.Text = "Ubicacion";
+            this.label2.Text = "Ubicación";
             // 
             // label4
             // 
             this.label4.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
-            this.label4.Location = new System.Drawing.Point(248, 44);
+            this.label4.Location = new System.Drawing.Point(245, 41);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(62, 16);
             this.label4.TabIndex = 10;

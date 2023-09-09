@@ -60,6 +60,12 @@
     <Compile Include="views\admin\Profesores.Designer.cs">
       <DependentUpon>Profesores.cs</DependentUpon>
     </Compile>
+    <Compile Include="views\admin\Usuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="views\admin\Usuarios.Designer.cs">
+      <DependentUpon>Usuarios.cs</DependentUpon>
+    </Compile>
     <Compile Include="views\components\BotonPersonalisado.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -73,16 +79,16 @@
     <Compile Include="views\components\TimePickerPersonalisado.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="views\CrearMateria.cs">
+    <Compile Include="views\admin\CrearMateria.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="views\CrearMateria.Designer.cs">
+    <Compile Include="views\admin\CrearMateria.Designer.cs">
       <DependentUpon>CrearMateria.cs</DependentUpon>
     </Compile>
-    <Compile Include="views\Materias.cs">
+    <Compile Include="views\admin\Materias.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="views\Materias.Designer.cs">
+    <Compile Include="views\admin\Materias.Designer.cs">
       <DependentUpon>Materias.cs</DependentUpon>
     </Compile>
     <Compile Include="views\Reservas.cs">
@@ -91,22 +97,22 @@
     <Compile Include="views\Reservas.Designer.cs">
       <DependentUpon>Reservas.cs</DependentUpon>
     </Compile>
-    <Compile Include="views\AdminMenu.cs">
+    <Compile Include="views\admin\AdminMenu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="views\AdminMenu.Designer.cs">
+    <Compile Include="views\admin\AdminMenu.Designer.cs">
       <DependentUpon>AdminMenu.cs</DependentUpon>
     </Compile>
-    <Compile Include="views\CrearAula.cs">
+    <Compile Include="views\admin\CrearAula.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="views\CrearAula.designer.cs">
+    <Compile Include="views\admin\CrearAula.designer.cs">
       <DependentUpon>CrearAula.cs</DependentUpon>
     </Compile>
-    <Compile Include="views\EditarAula.cs">
+    <Compile Include="views\admin\EditarAula.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="views\EditarAula.Designer.cs">
+    <Compile Include="views\admin\EditarAula.Designer.cs">
       <DependentUpon>EditarAula.cs</DependentUpon>
     </Compile>
     <Compile Include="views\Form1.cs">
@@ -143,26 +149,32 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="views\admin\CrearProfesor.resx">
+      <DependentUpon>CrearProfesor.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="views\admin\Profesores.resx">
       <DependentUpon>Profesores.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="views\admin\Usuarios.resx">
+      <DependentUpon>Usuarios.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="views\components\RJTextBox.resx" />
-    <EmbeddedResource Include="views\CrearMateria.resx">
+    <EmbeddedResource Include="views\admin\CrearMateria.resx">
       <DependentUpon>CrearMateria.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="views\Materias.resx">
+    <EmbeddedResource Include="views\admin\Materias.resx">
       <DependentUpon>Materias.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="views\Reservas.resx">
       <DependentUpon>Reservas.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="views\AdminMenu.resx">
+    <EmbeddedResource Include="views\admin\AdminMenu.resx">
       <DependentUpon>AdminMenu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="views\CrearAula.resx">
+    <EmbeddedResource Include="views\admin\CrearAula.resx">
       <DependentUpon>CrearAula.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="views\EditarAula.resx">
+    <EmbeddedResource Include="views\admin\EditarAula.resx">
       <DependentUpon>EditarAula.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="views\Form1.resx">
@@ -228,6 +240,39 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\calendarDark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\login.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\edit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\save.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\search_white.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\room.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\person_groups.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\book.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\badge.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\disable_off.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
