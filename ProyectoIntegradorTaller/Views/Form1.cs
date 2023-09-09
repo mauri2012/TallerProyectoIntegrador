@@ -36,10 +36,16 @@ namespace ProyectoIntegradorTaller
         }
         private void BInicioSesion_Click(object sender, EventArgs e)
         {
-
-            BedelMenu menu = new BedelMenu();
-            menu.Show();
-            this.Hide();
+            if (string.IsNullOrEmpty(this.TEmail.Texts) || string.IsNullOrEmpty(TPass.Texts))
+            {
+                MessageBox.Show("Existen campos incompletos", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                BedelMenu menu = new BedelMenu();
+                menu.Show();
+                this.Hide();
+            }
         }
 
        

@@ -196,6 +196,7 @@ namespace ProyectoIntegradorTaller.formularios
             this.BEditarAula.Text = "Editar Aula";
             this.BEditarAula.TextColor = System.Drawing.Color.White;
             this.BEditarAula.UseVisualStyleBackColor = false;
+            this.BEditarAula.Click += new System.EventHandler(this.BEditarAula_Click);
             // 
             // panel1
             // 

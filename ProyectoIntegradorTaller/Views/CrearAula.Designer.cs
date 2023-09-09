@@ -24,6 +24,10 @@ namespace ProyectoIntegradorTaller.formularios
             this.BRestaurar = new System.Windows.Forms.PictureBox();
             this.BCerrar = new System.Windows.Forms.PictureBox();
             this.panel7 = new System.Windows.Forms.Panel();
+            this.TTipo = new ProyectoIntegradorTaller.views.components.ComboBoxPersonalisado();
+            this.CBUbicacion = new ProyectoIntegradorTaller.views.components.ComboBoxPersonalisado();
+            this.TCapacidad = new CustomControls.RJControls.RJTextBox();
+            this.TNombre = new CustomControls.RJControls.RJTextBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.checkBox2 = new System.Windows.Forms.CheckBox();
@@ -35,10 +39,6 @@ namespace ProyectoIntegradorTaller.formularios
             this.panel1 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.rjTextBox1 = new CustomControls.RJControls.RJTextBox();
-            this.rjTextBox2 = new CustomControls.RJControls.RJTextBox();
-            this.comboBoxPersonalisado1 = new ProyectoIntegradorTaller.views.components.ComboBoxPersonalisado();
-            this.comboBoxPersonalisado2 = new ProyectoIntegradorTaller.views.components.ComboBoxPersonalisado();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.BMaximizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BEsconder)).BeginInit();
@@ -128,10 +128,10 @@ namespace ProyectoIntegradorTaller.formularios
             // panel7
             // 
             this.panel7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.panel7.Controls.Add(this.comboBoxPersonalisado2);
-            this.panel7.Controls.Add(this.comboBoxPersonalisado1);
-            this.panel7.Controls.Add(this.rjTextBox2);
-            this.panel7.Controls.Add(this.rjTextBox1);
+            this.panel7.Controls.Add(this.TTipo);
+            this.panel7.Controls.Add(this.CBUbicacion);
+            this.panel7.Controls.Add(this.TCapacidad);
+            this.panel7.Controls.Add(this.TNombre);
             this.panel7.Controls.Add(this.pictureBox2);
             this.panel7.Controls.Add(this.pictureBox1);
             this.panel7.Controls.Add(this.checkBox2);
@@ -146,6 +146,89 @@ namespace ProyectoIntegradorTaller.formularios
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(686, 358);
             this.panel7.TabIndex = 11;
+            // 
+            // TTipo
+            // 
+            this.TTipo.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.TTipo.BorderColor = System.Drawing.Color.MediumSlateBlue;
+            this.TTipo.BorderSize = 1;
+            this.TTipo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
+            this.TTipo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.TTipo.ForeColor = System.Drawing.Color.DimGray;
+            this.TTipo.IconColor = System.Drawing.Color.MediumSlateBlue;
+            this.TTipo.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(228)))), ((int)(((byte)(245)))));
+            this.TTipo.ListTextColor = System.Drawing.Color.DimGray;
+            this.TTipo.Location = new System.Drawing.Point(251, 218);
+            this.TTipo.MinimumSize = new System.Drawing.Size(200, 30);
+            this.TTipo.Name = "TTipo";
+            this.TTipo.Padding = new System.Windows.Forms.Padding(1);
+            this.TTipo.Size = new System.Drawing.Size(200, 30);
+            this.TTipo.TabIndex = 26;
+            this.TTipo.Texts = "";
+            // 
+            // CBUbicacion
+            // 
+            this.CBUbicacion.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.CBUbicacion.BorderColor = System.Drawing.Color.MediumSlateBlue;
+            this.CBUbicacion.BorderSize = 1;
+            this.CBUbicacion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
+            this.CBUbicacion.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.CBUbicacion.ForeColor = System.Drawing.Color.DimGray;
+            this.CBUbicacion.IconColor = System.Drawing.Color.MediumSlateBlue;
+            this.CBUbicacion.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(228)))), ((int)(((byte)(245)))));
+            this.CBUbicacion.ListTextColor = System.Drawing.Color.DimGray;
+            this.CBUbicacion.Location = new System.Drawing.Point(251, 116);
+            this.CBUbicacion.MinimumSize = new System.Drawing.Size(200, 30);
+            this.CBUbicacion.Name = "CBUbicacion";
+            this.CBUbicacion.Padding = new System.Windows.Forms.Padding(1);
+            this.CBUbicacion.Size = new System.Drawing.Size(200, 30);
+            this.CBUbicacion.TabIndex = 0;
+            this.CBUbicacion.Texts = "";
+            // 
+            // TCapacidad
+            // 
+            this.TCapacidad.BackColor = System.Drawing.SystemColors.Menu;
+            this.TCapacidad.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
+            this.TCapacidad.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.TCapacidad.BorderRadius = 6;
+            this.TCapacidad.BorderSize = 2;
+            this.TCapacidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TCapacidad.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.TCapacidad.Location = new System.Drawing.Point(248, 163);
+            this.TCapacidad.Margin = new System.Windows.Forms.Padding(4);
+            this.TCapacidad.Multiline = false;
+            this.TCapacidad.Name = "TCapacidad";
+            this.TCapacidad.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this.TCapacidad.PasswordChar = false;
+            this.TCapacidad.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.TCapacidad.PlaceholderText = "";
+            this.TCapacidad.Size = new System.Drawing.Size(203, 31);
+            this.TCapacidad.TabIndex = 25;
+            this.TCapacidad.Texts = "";
+            this.TCapacidad.UnderlinedStyle = true;
+            this.TCapacidad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TCapacidad_KeyPress);
+            // 
+            // TNombre
+            // 
+            this.TNombre.BackColor = System.Drawing.SystemColors.Menu;
+            this.TNombre.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
+            this.TNombre.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.TNombre.BorderRadius = 6;
+            this.TNombre.BorderSize = 2;
+            this.TNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TNombre.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.TNombre.Location = new System.Drawing.Point(248, 61);
+            this.TNombre.Margin = new System.Windows.Forms.Padding(4);
+            this.TNombre.Multiline = false;
+            this.TNombre.Name = "TNombre";
+            this.TNombre.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this.TNombre.PasswordChar = false;
+            this.TNombre.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.TNombre.PlaceholderText = "";
+            this.TNombre.Size = new System.Drawing.Size(203, 31);
+            this.TNombre.TabIndex = 24;
+            this.TNombre.Texts = "";
+            this.TNombre.UnderlinedStyle = true;
             // 
             // pictureBox2
             // 
@@ -235,6 +318,7 @@ namespace ProyectoIntegradorTaller.formularios
             this.BCrearAula.Text = "Crear Aula";
             this.BCrearAula.TextColor = System.Drawing.Color.White;
             this.BCrearAula.UseVisualStyleBackColor = false;
+            this.BCrearAula.Click += new System.EventHandler(this.BCrearAula_Click);
             // 
             // panel1
             // 
@@ -265,88 +349,6 @@ namespace ProyectoIntegradorTaller.formularios
             this.label4.Size = new System.Drawing.Size(62, 16);
             this.label4.TabIndex = 10;
             this.label4.Text = "Nombre";
-            // 
-            // rjTextBox1
-            // 
-            this.rjTextBox1.BackColor = System.Drawing.SystemColors.Menu;
-            this.rjTextBox1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
-            this.rjTextBox1.BorderFocusColor = System.Drawing.Color.HotPink;
-            this.rjTextBox1.BorderRadius = 6;
-            this.rjTextBox1.BorderSize = 2;
-            this.rjTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rjTextBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.rjTextBox1.Location = new System.Drawing.Point(248, 61);
-            this.rjTextBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.rjTextBox1.Multiline = false;
-            this.rjTextBox1.Name = "rjTextBox1";
-            this.rjTextBox1.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.rjTextBox1.PasswordChar = false;
-            this.rjTextBox1.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.rjTextBox1.PlaceholderText = "";
-            this.rjTextBox1.Size = new System.Drawing.Size(203, 31);
-            this.rjTextBox1.TabIndex = 24;
-            this.rjTextBox1.Texts = "";
-            this.rjTextBox1.UnderlinedStyle = true;
-            // 
-            // rjTextBox2
-            // 
-            this.rjTextBox2.BackColor = System.Drawing.SystemColors.Menu;
-            this.rjTextBox2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
-            this.rjTextBox2.BorderFocusColor = System.Drawing.Color.HotPink;
-            this.rjTextBox2.BorderRadius = 6;
-            this.rjTextBox2.BorderSize = 2;
-            this.rjTextBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rjTextBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.rjTextBox2.Location = new System.Drawing.Point(248, 163);
-            this.rjTextBox2.Margin = new System.Windows.Forms.Padding(4);
-            this.rjTextBox2.Multiline = false;
-            this.rjTextBox2.Name = "rjTextBox2";
-            this.rjTextBox2.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.rjTextBox2.PasswordChar = false;
-            this.rjTextBox2.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.rjTextBox2.PlaceholderText = "";
-            this.rjTextBox2.Size = new System.Drawing.Size(203, 31);
-            this.rjTextBox2.TabIndex = 25;
-            this.rjTextBox2.Texts = "";
-            this.rjTextBox2.UnderlinedStyle = true;
-            // 
-            // comboBoxPersonalisado1
-            // 
-            this.comboBoxPersonalisado1.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.comboBoxPersonalisado1.BorderColor = System.Drawing.Color.MediumSlateBlue;
-            this.comboBoxPersonalisado1.BorderSize = 1;
-            this.comboBoxPersonalisado1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
-            this.comboBoxPersonalisado1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.comboBoxPersonalisado1.ForeColor = System.Drawing.Color.DimGray;
-            this.comboBoxPersonalisado1.IconColor = System.Drawing.Color.MediumSlateBlue;
-            this.comboBoxPersonalisado1.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(228)))), ((int)(((byte)(245)))));
-            this.comboBoxPersonalisado1.ListTextColor = System.Drawing.Color.DimGray;
-            this.comboBoxPersonalisado1.Location = new System.Drawing.Point(251, 116);
-            this.comboBoxPersonalisado1.MinimumSize = new System.Drawing.Size(200, 30);
-            this.comboBoxPersonalisado1.Name = "comboBoxPersonalisado1";
-            this.comboBoxPersonalisado1.Padding = new System.Windows.Forms.Padding(1);
-            this.comboBoxPersonalisado1.Size = new System.Drawing.Size(200, 30);
-            this.comboBoxPersonalisado1.TabIndex = 0;
-            this.comboBoxPersonalisado1.Texts = "";
-            // 
-            // comboBoxPersonalisado2
-            // 
-            this.comboBoxPersonalisado2.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.comboBoxPersonalisado2.BorderColor = System.Drawing.Color.MediumSlateBlue;
-            this.comboBoxPersonalisado2.BorderSize = 1;
-            this.comboBoxPersonalisado2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
-            this.comboBoxPersonalisado2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.comboBoxPersonalisado2.ForeColor = System.Drawing.Color.DimGray;
-            this.comboBoxPersonalisado2.IconColor = System.Drawing.Color.MediumSlateBlue;
-            this.comboBoxPersonalisado2.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(228)))), ((int)(((byte)(245)))));
-            this.comboBoxPersonalisado2.ListTextColor = System.Drawing.Color.DimGray;
-            this.comboBoxPersonalisado2.Location = new System.Drawing.Point(251, 218);
-            this.comboBoxPersonalisado2.MinimumSize = new System.Drawing.Size(200, 30);
-            this.comboBoxPersonalisado2.Name = "comboBoxPersonalisado2";
-            this.comboBoxPersonalisado2.Padding = new System.Windows.Forms.Padding(1);
-            this.comboBoxPersonalisado2.Size = new System.Drawing.Size(200, 30);
-            this.comboBoxPersonalisado2.TabIndex = 26;
-            this.comboBoxPersonalisado2.Texts = "";
             // 
             // CrearAula
             // 
@@ -395,10 +397,10 @@ namespace ProyectoIntegradorTaller.formularios
         private PictureBox pictureBox1;
         private PictureBox pictureBox2;
         private views.components.BotonPersonalisado BCrearAula;
-        private views.components.ComboBoxPersonalisado comboBoxPersonalisado1;
-        private CustomControls.RJControls.RJTextBox rjTextBox2;
-        private CustomControls.RJControls.RJTextBox rjTextBox1;
-        private views.components.ComboBoxPersonalisado comboBoxPersonalisado2;
+        private views.components.ComboBoxPersonalisado CBUbicacion;
+        private CustomControls.RJControls.RJTextBox TCapacidad;
+        private CustomControls.RJControls.RJTextBox TNombre;
+        private views.components.ComboBoxPersonalisado TTipo;
     }
 
     #region Windows Form Designer generated code

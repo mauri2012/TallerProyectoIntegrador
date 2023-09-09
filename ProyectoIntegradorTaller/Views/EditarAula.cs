@@ -81,6 +81,12 @@ namespace ProyectoIntegradorTaller.formularios
             }
         }
 
-       
+        private void BEditarAula_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(this.TNombre.Texts) || string.IsNullOrEmpty(CBUbicacion.Texts) || string.IsNullOrEmpty(CBTipo.Texts) || string.IsNullOrEmpty(TCapacidad.Texts))
+            {
+                MessageBox.Show("Existen campos incompletos", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
     }
 }

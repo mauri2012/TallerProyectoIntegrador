@@ -43,7 +43,7 @@ namespace ProyectoIntegradorTaller
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
-            this.TUsuario = new CustomControls.RJControls.RJTextBox();
+            this.TEmail = new CustomControls.RJControls.RJTextBox();
             this.BInicioSesion = new ProyectoIntegradorTaller.views.components.BotonPersonalisado();
             this.TPass = new CustomControls.RJControls.RJTextBox();
             this.panel3.SuspendLayout();
@@ -125,9 +125,9 @@ namespace ProyectoIntegradorTaller
             this.label1.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
             this.label1.Location = new System.Drawing.Point(73, 111);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(61, 16);
+            this.label1.Size = new System.Drawing.Size(44, 16);
             this.label1.TabIndex = 6;
-            this.label1.Text = "Usuario";
+            this.label1.Text = "Email";
             // 
             // label2
             // 
@@ -160,7 +160,7 @@ namespace ProyectoIntegradorTaller
             // 
             this.panel7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.panel7.Controls.Add(this.TPass);
-            this.panel7.Controls.Add(this.TUsuario);
+            this.panel7.Controls.Add(this.TEmail);
             this.panel7.Controls.Add(this.BInicioSesion);
             this.panel7.Controls.Add(this.LBienvenido);
             this.panel7.Controls.Add(this.label2);
@@ -170,27 +170,27 @@ namespace ProyectoIntegradorTaller
             this.panel7.Size = new System.Drawing.Size(335, 358);
             this.panel7.TabIndex = 11;
             // 
-            // TUsuario
+            // TEmail
             // 
-            this.TUsuario.BackColor = System.Drawing.SystemColors.Menu;
-            this.TUsuario.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
-            this.TUsuario.BorderFocusColor = System.Drawing.Color.HotPink;
-            this.TUsuario.BorderRadius = 6;
-            this.TUsuario.BorderSize = 2;
-            this.TUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TUsuario.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.TUsuario.Location = new System.Drawing.Point(73, 130);
-            this.TUsuario.Margin = new System.Windows.Forms.Padding(4);
-            this.TUsuario.Multiline = false;
-            this.TUsuario.Name = "TUsuario";
-            this.TUsuario.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.TUsuario.PasswordChar = false;
-            this.TUsuario.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.TUsuario.PlaceholderText = "";
-            this.TUsuario.Size = new System.Drawing.Size(186, 31);
-            this.TUsuario.TabIndex = 9;
-            this.TUsuario.Texts = "";
-            this.TUsuario.UnderlinedStyle = true;
+            this.TEmail.BackColor = System.Drawing.SystemColors.Menu;
+            this.TEmail.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
+            this.TEmail.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.TEmail.BorderRadius = 6;
+            this.TEmail.BorderSize = 2;
+            this.TEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TEmail.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.TEmail.Location = new System.Drawing.Point(73, 130);
+            this.TEmail.Margin = new System.Windows.Forms.Padding(4);
+            this.TEmail.Multiline = false;
+            this.TEmail.Name = "TEmail";
+            this.TEmail.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this.TEmail.PasswordChar = false;
+            this.TEmail.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.TEmail.PlaceholderText = "";
+            this.TEmail.Size = new System.Drawing.Size(186, 31);
+            this.TEmail.TabIndex = 9;
+            this.TEmail.Texts = "";
+            this.TEmail.UnderlinedStyle = true;
             // 
             // BInicioSesion
             // 
@@ -277,7 +277,7 @@ namespace ProyectoIntegradorTaller
         private Panel panel6;
         private Panel panel7;
         private views.components.BotonPersonalisado BInicioSesion;
-        private CustomControls.RJControls.RJTextBox TUsuario;
+        private CustomControls.RJControls.RJTextBox TEmail;
         private CustomControls.RJControls.RJTextBox TPass;
     }
 }

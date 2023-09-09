@@ -45,10 +45,7 @@ namespace ProyectoIntegradorTaller.formularios
             Application.Exit();
         }
 
-        private void BCrearAula_Click(object sender, EventArgs e)
-        {
 
-        }
 
         private void BCapacidad_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -57,6 +54,24 @@ namespace ProyectoIntegradorTaller.formularios
             {
                 // Si no es un número ni una tecla de control, suprime la pulsación de tecla.
                 e.Handled = true;
+            }
+        }
+
+        private void BCrearAula_Click(object sender, EventArgs e)
+        {
+            if(string.IsNullOrEmpty(this.TNombre.Texts) || string.IsNullOrEmpty(CBUbicacion.Texts) || string.IsNullOrEmpty(TTipo.Texts) || string.IsNullOrEmpty(TCapacidad.Texts))
+            {
+                MessageBox.Show("Existen campos incompletos", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private void TCapacidad_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+                MessageBox.Show("El campo Capacidad solo acepta valores numericos", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+           
             }
         }
     }
