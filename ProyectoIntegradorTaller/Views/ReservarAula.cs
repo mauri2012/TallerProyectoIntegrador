@@ -24,9 +24,9 @@ namespace ProyectoIntegradorTaller.formularios
             items.Add(new diasSemana() { value = "viernes", text = "Viernes" });
             items.Add(new diasSemana() { value = "sabado", text = "Sabado" });
             items.Add(new diasSemana() { value = "domingo", text = "Domingo" });
-            CBdias.DataSource=items;
-            CBdias.DisplayMember = "text";
-            CBdias.ValueMember = "value";
+            CBDias.DataSource = items;
+            CBDias.DisplayMember = "text";
+            CBDias.ValueMember = "value";
 
 
         }
@@ -67,32 +67,14 @@ namespace ProyectoIntegradorTaller.formularios
         {
 
         }
+    }
 
-        private void DTPhoraDesde_ValueChanged(object sender, EventArgs e)
+        class diasSemana
         {
-            DateTime selectedDateTime = dateTimePicker1.Value;
-
-            // Set the date part to a fixed date (e.g., today)
-            DateTime fixedDate = DateTime.Today;
-
-            // Combine the fixed date with the selected time
-            DateTime resultDateTime = new DateTime(
-                fixedDate.Year,
-                fixedDate.Month,
-                fixedDate.Day,
-                selectedDateTime.Hour,
-                selectedDateTime.Minute,
-                selectedDateTime.Second);
-
-            // Update the DateTimePicker value
-            dateTimePicker1.Value = resultDateTime;
-        }
-    }
-    class diasSemana
-    {
             public diasSemana() { }
-            public string value{set;get; }
+            public string value { set; get; }
             public string text { set; get; }
-        
-    }
+
+        }
+    
 }

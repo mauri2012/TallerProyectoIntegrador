@@ -29,10 +29,10 @@ namespace ProyectoIntegradorTaller.formularios
         }
         private void LoadEditarAula(object sender, EventArgs e)
         {
-            TNombre.Text = name;
-            CBUbicacion.Text = lugar.ToString();
-            CBTipo.Text=tipo.ToString();
-            TCapacidad.Text = capacidad.ToString();
+            TNombre.Texts = name;
+            CBUbicacion.Texts = lugar.ToString();
+            CBTipo.Texts=tipo.ToString();
+            TCapacidad.Texts = capacidad.ToString();
 
         }
         private void pictureBox1_Click(object sender, EventArgs e)

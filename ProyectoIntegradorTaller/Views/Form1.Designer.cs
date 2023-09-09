@@ -38,14 +38,14 @@ namespace ProyectoIntegradorTaller
             this.BRestaurar = new System.Windows.Forms.PictureBox();
             this.BCerrar = new System.Windows.Forms.PictureBox();
             this.LBienvenido = new System.Windows.Forms.Label();
-            this.TUsuario = new System.Windows.Forms.TextBox();
-            this.TContraseña = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
+            this.TUsuario = new CustomControls.RJControls.RJTextBox();
             this.BInicioSesion = new ProyectoIntegradorTaller.views.components.BotonPersonalisado();
+            this.TPass = new CustomControls.RJControls.RJTextBox();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.BMaximizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BEsconder)).BeginInit();
@@ -118,34 +118,14 @@ namespace ProyectoIntegradorTaller
             this.LBienvenido.TabIndex = 3;
             this.LBienvenido.Text = "Bienvenido";
             // 
-            // TUsuario
-            // 
-            this.TUsuario.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.TUsuario.BackColor = System.Drawing.Color.Snow;
-            this.TUsuario.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.TUsuario.Location = new System.Drawing.Point(73, 127);
-            this.TUsuario.Name = "TUsuario";
-            this.TUsuario.Size = new System.Drawing.Size(170, 20);
-            this.TUsuario.TabIndex = 4;
-            // 
-            // TContraseña
-            // 
-            this.TContraseña.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.TContraseña.BackColor = System.Drawing.Color.Snow;
-            this.TContraseña.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.TContraseña.Location = new System.Drawing.Point(73, 180);
-            this.TContraseña.Name = "TContraseña";
-            this.TContraseña.PasswordChar = '*';
-            this.TContraseña.Size = new System.Drawing.Size(170, 20);
-            this.TContraseña.TabIndex = 5;
-            // 
             // label1
             // 
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
             this.label1.Location = new System.Drawing.Point(73, 111);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(43, 13);
+            this.label1.Size = new System.Drawing.Size(61, 16);
             this.label1.TabIndex = 6;
             this.label1.Text = "Usuario";
             // 
@@ -153,9 +133,10 @@ namespace ProyectoIntegradorTaller
             // 
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
             this.label2.Location = new System.Drawing.Point(73, 165);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(61, 13);
+            this.label2.Size = new System.Drawing.Size(88, 16);
             this.label2.TabIndex = 7;
             this.label2.Text = "Contraseña";
             // 
@@ -178,16 +159,38 @@ namespace ProyectoIntegradorTaller
             // panel7
             // 
             this.panel7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.panel7.Controls.Add(this.TPass);
+            this.panel7.Controls.Add(this.TUsuario);
             this.panel7.Controls.Add(this.BInicioSesion);
             this.panel7.Controls.Add(this.LBienvenido);
             this.panel7.Controls.Add(this.label2);
             this.panel7.Controls.Add(this.label1);
-            this.panel7.Controls.Add(this.TContraseña);
-            this.panel7.Controls.Add(this.TUsuario);
             this.panel7.Location = new System.Drawing.Point(179, 32);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(335, 358);
             this.panel7.TabIndex = 11;
+            // 
+            // TUsuario
+            // 
+            this.TUsuario.BackColor = System.Drawing.SystemColors.Menu;
+            this.TUsuario.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
+            this.TUsuario.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.TUsuario.BorderRadius = 6;
+            this.TUsuario.BorderSize = 2;
+            this.TUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TUsuario.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.TUsuario.Location = new System.Drawing.Point(73, 130);
+            this.TUsuario.Margin = new System.Windows.Forms.Padding(4);
+            this.TUsuario.Multiline = false;
+            this.TUsuario.Name = "TUsuario";
+            this.TUsuario.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this.TUsuario.PasswordChar = false;
+            this.TUsuario.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.TUsuario.PlaceholderText = "";
+            this.TUsuario.Size = new System.Drawing.Size(186, 31);
+            this.TUsuario.TabIndex = 9;
+            this.TUsuario.Texts = "";
+            this.TUsuario.UnderlinedStyle = true;
             // 
             // BInicioSesion
             // 
@@ -199,14 +202,36 @@ namespace ProyectoIntegradorTaller
             this.BInicioSesion.FlatAppearance.BorderSize = 0;
             this.BInicioSesion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BInicioSesion.ForeColor = System.Drawing.Color.White;
-            this.BInicioSesion.Location = new System.Drawing.Point(73, 215);
+            this.BInicioSesion.Location = new System.Drawing.Point(73, 240);
             this.BInicioSesion.Name = "BInicioSesion";
-            this.BInicioSesion.Size = new System.Drawing.Size(170, 40);
+            this.BInicioSesion.Size = new System.Drawing.Size(186, 40);
             this.BInicioSesion.TabIndex = 0;
             this.BInicioSesion.Text = "Log In";
             this.BInicioSesion.TextColor = System.Drawing.Color.White;
             this.BInicioSesion.UseVisualStyleBackColor = false;
             this.BInicioSesion.Click += new System.EventHandler(this.BInicioSesion_Click);
+            // 
+            // TPass
+            // 
+            this.TPass.BackColor = System.Drawing.SystemColors.Menu;
+            this.TPass.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
+            this.TPass.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.TPass.BorderRadius = 6;
+            this.TPass.BorderSize = 2;
+            this.TPass.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TPass.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.TPass.Location = new System.Drawing.Point(73, 185);
+            this.TPass.Margin = new System.Windows.Forms.Padding(4);
+            this.TPass.Multiline = false;
+            this.TPass.Name = "TPass";
+            this.TPass.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this.TPass.PasswordChar = true;
+            this.TPass.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.TPass.PlaceholderText = "";
+            this.TPass.Size = new System.Drawing.Size(186, 31);
+            this.TPass.TabIndex = 10;
+            this.TPass.Texts = "";
+            this.TPass.UnderlinedStyle = true;
             // 
             // Form1
             // 
@@ -251,8 +276,8 @@ namespace ProyectoIntegradorTaller
         private Panel panel5;
         private Panel panel6;
         private Panel panel7;
-        private TextBox TUsuario;
-        private TextBox TContraseña;
         private views.components.BotonPersonalisado BInicioSesion;
+        private CustomControls.RJControls.RJTextBox TUsuario;
+        private CustomControls.RJControls.RJTextBox TPass;
     }
 }

@@ -38,12 +38,12 @@ namespace ProyectoIntegradorTaller
             this.BRestaurar = new System.Windows.Forms.PictureBox();
             this.BCerrar = new System.Windows.Forms.PictureBox();
             this.LBienvenido = new System.Windows.Forms.Label();
-            this.TNombre = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
             this.BInicioSesion = new ProyectoIntegradorTaller.views.components.BotonPersonalisado();
+            this.rjTextBox2 = new CustomControls.RJControls.RJTextBox();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.BMaximizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BEsconder)).BeginInit();
@@ -117,23 +117,14 @@ namespace ProyectoIntegradorTaller
             this.LBienvenido.TabIndex = 3;
             this.LBienvenido.Text = "Materia";
             // 
-            // TNombre
-            // 
-            this.TNombre.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.TNombre.BackColor = System.Drawing.Color.Snow;
-            this.TNombre.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.TNombre.Location = new System.Drawing.Point(73, 127);
-            this.TNombre.Name = "TNombre";
-            this.TNombre.Size = new System.Drawing.Size(170, 20);
-            this.TNombre.TabIndex = 4;
-            // 
             // label1
             // 
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
             this.label1.Location = new System.Drawing.Point(73, 111);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(44, 13);
+            this.label1.Size = new System.Drawing.Size(62, 16);
             this.label1.TabIndex = 6;
             this.label1.Text = "Nombre";
             // 
@@ -156,10 +147,10 @@ namespace ProyectoIntegradorTaller
             // panel7
             // 
             this.panel7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.panel7.Controls.Add(this.rjTextBox2);
             this.panel7.Controls.Add(this.BInicioSesion);
             this.panel7.Controls.Add(this.LBienvenido);
             this.panel7.Controls.Add(this.label1);
-            this.panel7.Controls.Add(this.TNombre);
             this.panel7.Location = new System.Drawing.Point(179, 32);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(335, 358);
@@ -183,6 +174,28 @@ namespace ProyectoIntegradorTaller
             this.BInicioSesion.TextColor = System.Drawing.Color.White;
             this.BInicioSesion.UseVisualStyleBackColor = false;
             this.BInicioSesion.Click += new System.EventHandler(this.BInicioSesion_Click);
+            // 
+            // rjTextBox2
+            // 
+            this.rjTextBox2.BackColor = System.Drawing.SystemColors.Menu;
+            this.rjTextBox2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
+            this.rjTextBox2.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.rjTextBox2.BorderRadius = 6;
+            this.rjTextBox2.BorderSize = 2;
+            this.rjTextBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rjTextBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.rjTextBox2.Location = new System.Drawing.Point(73, 136);
+            this.rjTextBox2.Margin = new System.Windows.Forms.Padding(4);
+            this.rjTextBox2.Multiline = false;
+            this.rjTextBox2.Name = "rjTextBox2";
+            this.rjTextBox2.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this.rjTextBox2.PasswordChar = false;
+            this.rjTextBox2.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.rjTextBox2.PlaceholderText = "";
+            this.rjTextBox2.Size = new System.Drawing.Size(170, 31);
+            this.rjTextBox2.TabIndex = 26;
+            this.rjTextBox2.Texts = "";
+            this.rjTextBox2.UnderlinedStyle = true;
             // 
             // CrearMateria
             // 
@@ -226,7 +239,7 @@ namespace ProyectoIntegradorTaller
         private Panel panel5;
         private Panel panel6;
         private Panel panel7;
-        private TextBox TNombre;
         private views.components.BotonPersonalisado BInicioSesion;
+        private CustomControls.RJControls.RJTextBox rjTextBox2;
     }
 }

@@ -47,9 +47,5 @@ namespace ProyectoIntegradorTaller.formularios
         {
             this.Close();
         }
-
-     
-
-       
     }
 }

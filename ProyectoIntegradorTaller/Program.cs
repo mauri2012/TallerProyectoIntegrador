@@ -18,7 +18,7 @@ namespace ProyectoIntegradorTaller
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Profesores());
+            Application.Run(new AdminMenu());
         }
     }
 }
