@@ -265,6 +265,8 @@ namespace ProyectoIntegradorTaller.formularios
             this.TCapacidad.TabIndex = 35;
             this.TCapacidad.Texts = "";
             this.TCapacidad.UnderlinedStyle = true;
+            this.TCapacidad._TextChanged += new System.EventHandler(this.TCapacidad__TextChanged);
+            this.TCapacidad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TCapacidad_KeyPress);
             // 
             // TNombre
             // 

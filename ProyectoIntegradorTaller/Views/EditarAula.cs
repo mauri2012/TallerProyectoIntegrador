@@ -88,5 +88,20 @@ namespace ProyectoIntegradorTaller.formularios
                 MessageBox.Show("Existen campos incompletos", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
+
+        private void TCapacidad__TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TCapacidad_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+                MessageBox.Show("El campo Capacidad solo acepta valores numericos", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            }
+        }
     }
 }
