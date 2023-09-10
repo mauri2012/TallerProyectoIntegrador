@@ -39,6 +39,7 @@ namespace ProyectoIntegradorTaller.formularios
             this.panel1 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.BEditarAula = new ProyectoIntegradorTaller.views.components.BotonPersonalisado();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.BMaximizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BEsconder)).BeginInit();
@@ -296,6 +297,7 @@ namespace ProyectoIntegradorTaller.formularios
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.BEditarAula);
             this.panel2.Controls.Add(this.BCrearAula);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel2.Location = new System.Drawing.Point(503, 0);
@@ -355,6 +357,27 @@ namespace ProyectoIntegradorTaller.formularios
             this.label4.TabIndex = 10;
             this.label4.Text = "Nombre";
             // 
+            // BEditarAula
+            // 
+            this.BEditarAula.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
+            this.BEditarAula.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
+            this.BEditarAula.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.BEditarAula.BorderRadius = 6;
+            this.BEditarAula.BorderSize = 0;
+            this.BEditarAula.FlatAppearance.BorderSize = 0;
+            this.BEditarAula.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BEditarAula.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BEditarAula.ForeColor = System.Drawing.Color.White;
+            this.BEditarAula.Image = global::ProyectoIntegradorTaller.Properties.Resources.edit;
+            this.BEditarAula.Location = new System.Drawing.Point(21, 306);
+            this.BEditarAula.Name = "BEditarAula";
+            this.BEditarAula.Size = new System.Drawing.Size(150, 40);
+            this.BEditarAula.TabIndex = 6;
+            this.BEditarAula.Text = "  Editar Aula";
+            this.BEditarAula.TextColor = System.Drawing.Color.White;
+            this.BEditarAula.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.BEditarAula.UseVisualStyleBackColor = false;
+            // 
             // CrearAula
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -406,6 +429,7 @@ namespace ProyectoIntegradorTaller.formularios
         private CustomControls.RJControls.RJTextBox TCapacidad;
         private CustomControls.RJControls.RJTextBox TNombre;
         private views.components.ComboBoxPersonalisado TTipo;
+        private views.components.BotonPersonalisado BEditarAula;
     }
 
     #region Windows Form Designer generated code

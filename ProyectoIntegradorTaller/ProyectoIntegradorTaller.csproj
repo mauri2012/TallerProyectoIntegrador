@@ -109,17 +109,11 @@
     <Compile Include="views\admin\CrearAula.designer.cs">
       <DependentUpon>CrearAula.cs</DependentUpon>
     </Compile>
-    <Compile Include="views\admin\EditarAula.cs">
+    <Compile Include="views\LogIn.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="views\admin\EditarAula.Designer.cs">
-      <DependentUpon>EditarAula.cs</DependentUpon>
-    </Compile>
-    <Compile Include="views\Form1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="views\Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="views\LogIn.Designer.cs">
+      <DependentUpon>LogIn.cs</DependentUpon>
     </Compile>
     <Compile Include="views\BedelMenu.cs">
       <SubType>Form</SubType>
@@ -174,11 +168,8 @@
     <EmbeddedResource Include="views\admin\CrearAula.resx">
       <DependentUpon>CrearAula.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="views\admin\EditarAula.resx">
-      <DependentUpon>EditarAula.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="views\Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="views\LogIn.resx">
+      <DependentUpon>LogIn.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="views\BedelMenu.resx">
       <DependentUpon>BedelMenu.cs</DependentUpon>

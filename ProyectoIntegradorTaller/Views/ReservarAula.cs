@@ -13,22 +13,20 @@ namespace ProyectoIntegradorTaller.formularios
 {
     public partial class ReservarAula : Form
     {
+        
+        public ReservarAula(string HDesde,string Hhasta,string Materia,string profesor)
+        {
+            InitializeComponent();
+            CBDesde.Texts=HDesde;
+            CBHasta.Texts = Hhasta;
+            CBMateria.Texts = Materia;
+            CBPRofesor.Texts= profesor;
+
+          
+        }
         public ReservarAula()
         {
             InitializeComponent();
-            List<diasSemana> items = new List<diasSemana>();
-            items.Add(new diasSemana() { value = "lunes", text = "Lunes" });
-            items.Add(new diasSemana() { value = "martes", text = "Martes" });
-            items.Add(new diasSemana() { value = "miercoles", text = "Miercoles" });
-            items.Add(new diasSemana() { value = "jueves", text = "Jueves" });
-            items.Add(new diasSemana() { value = "viernes", text = "Viernes" });
-            items.Add(new diasSemana() { value = "sabado", text = "Sabado" });
-            items.Add(new diasSemana() { value = "domingo", text = "Domingo" });
-            CBDias.DataSource = items;
-            CBDias.DisplayMember = "text";
-            CBDias.ValueMember = "value";
-
-
         }
 
 
@@ -67,9 +65,23 @@ namespace ProyectoIntegradorTaller.formularios
         {
 
         }
+        private void LoadReservarAula(object sender,EventArgs e)
+        {
+            List<diasSemana> items = new List<diasSemana>();
+            items.Add(new diasSemana() { value = "lunes", text = "Lunes" });
+            items.Add(new diasSemana() { value = "martes", text = "Martes" });
+            items.Add(new diasSemana() { value = "miercoles", text = "Miercoles" });
+            items.Add(new diasSemana() { value = "jueves", text = "Jueves" });
+            items.Add(new diasSemana() { value = "viernes", text = "Viernes" });
+            items.Add(new diasSemana() { value = "sabado", text = "Sabado" });
+            items.Add(new diasSemana() { value = "domingo", text = "Domingo" });
+            CBDias.DataSource = items;
+            CBDias.DisplayMember = "text";
+            CBDias.ValueMember = "value";
+        }
     }
 
-        class diasSemana
+    class diasSemana
         {
             public diasSemana() { }
             public string value { set; get; }

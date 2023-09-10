@@ -7,14 +7,28 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
 
 namespace ProyectoIntegradorTaller.formularios
 {
     public partial class CrearAula : Form
     {
+        public CrearAula(int Id, string Name, String Lugar, int CapacidadMax, String Tipo)
+        {
+            InitializeComponent();
+           // id.Text = Id;
+            TNombre.Texts = Name;
+            CBUbicacion.Texts = Lugar;
+            TCapacidad.Texts = CapacidadMax.ToString();
+            TTipo.Texts = Tipo;
+            BEditarAula.Visible = true;
+            BCrearAula.Visible = false;
+        }
         public CrearAula()
         {
             InitializeComponent();
+            BEditarAula.Visible = false;
+            BCrearAula.Visible = true;
         }
         private void pictureBox1_Click(object sender, EventArgs e)
         {

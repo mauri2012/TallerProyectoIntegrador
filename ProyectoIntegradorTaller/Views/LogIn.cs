@@ -6,12 +6,12 @@ using System.Windows.Forms;
 
 namespace ProyectoIntegradorTaller    
 {
-    public partial class Form1 : Form
+    public partial class LogIn : Form
     {
         private bool isDragging = false;
         private Point originalMousePos;
         private Point originalFormPos;
-        public Form1()
+        public LogIn()
         {
             InitializeComponent();
         }
@@ -46,7 +46,7 @@ namespace ProyectoIntegradorTaller
             }
             else
             {
-                BedelMenu menu = new BedelMenu();
+                AdminMenu menu = new AdminMenu();
                 menu.Show();
                 this.Hide();
             }

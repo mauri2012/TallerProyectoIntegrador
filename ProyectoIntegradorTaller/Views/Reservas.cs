@@ -19,8 +19,8 @@ namespace ProyectoIntegradorTaller.formularios
             List<ItemReservas> staticData = new List<ItemReservas>()
             {
 
-                new ItemReservas{Hora="14:00-18:00",Desde="14/8/23",Hasta="7/11/23",Materias="Ingeneria del Software",Profesor="Apellido Nombre" },
-                 new ItemReservas{Hora="14:00-18:00",Desde="14/8/23",Hasta="7/11/23",Materias="Ingeneria del Software",Profesor="Apellido Nombre" },
+                new ItemReservas{HoraDesde="14:00",HoraHasta="18:00",Desde="14/8/23",Hasta="7/11/23",Materias="Ingeneria del Software",Profesor="Apellido Nombre" },
+                 new ItemReservas{HoraDesde="14:00",HoraHasta="18:00",Desde="14/8/23",Hasta="7/11/23",Materias="Ingeneria del Software",Profesor="Apellido Nombre" },
             };
             dataGridView1.DataSource = staticData;
         }
@@ -66,7 +66,10 @@ namespace ProyectoIntegradorTaller.formularios
           
                 if (dataGridView1.Columns[e.ColumnIndex].Name == "Editar")
                 {
-                    EditarAula aula = new EditarAula((int)dataGridView1.Rows[e.RowIndex].Cells[0].Value,(string)dataGridView1.Rows[e.RowIndex].Cells[1].Value, (string)dataGridView1.Rows[e.RowIndex].Cells[2].Value, (int)dataGridView1.Rows[e.RowIndex].Cells[3].Value,(string)dataGridView1.Rows[e.RowIndex].Cells[4].Value);
+                    ReservarAula aula = new ReservarAula((string)dataGridView1.Rows[e.RowIndex].Cells[0].Value,
+                        (string)dataGridView1.Rows[e.RowIndex].Cells[1].Value,
+                        (string)dataGridView1.Rows[e.RowIndex].Cells[4].Value,
+                        (string)dataGridView1.Rows[e.RowIndex].Cells[5].Value);
                     aula.Show();
                     
                 }
@@ -115,11 +118,12 @@ namespace ProyectoIntegradorTaller.formularios
             aula.Show();
         }
 
-        
+
     }
     public class ItemReservas
     {
-        public string Hora { get; set; }
+        public string HoraDesde { get; set; }
+        public string HoraHasta { get; set; }
         public string Desde { get; set; }
         public string Hasta { get; set; }
         public string Materias { get; set; }

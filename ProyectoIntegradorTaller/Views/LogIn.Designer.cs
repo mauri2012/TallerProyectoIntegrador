@@ -3,7 +3,7 @@ using System.Windows.Forms;
 
 namespace ProyectoIntegradorTaller
 {
-    partial class Form1
+    partial class LogIn
     {
         /// <summary>
         ///  Required designer variable.
@@ -31,7 +31,7 @@ namespace ProyectoIntegradorTaller
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LogIn));
             this.panel3 = new System.Windows.Forms.Panel();
             this.LBienvenido = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
