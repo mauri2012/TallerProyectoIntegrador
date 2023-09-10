@@ -152,7 +152,11 @@ namespace ProyectoIntegradorTaller.formularios
             aula.Show();
         }
 
-       
+        private void BMaterias_Click(object sender, EventArgs e)
+        {
+            Materias materias = new Materias();
+            materias.Show();
+        }
     }
     public class Item
     {

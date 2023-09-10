@@ -7,6 +7,11 @@ namespace ProyectoIntegradorTaller
 {
     public partial class CrearMateria : Form
     {
+        public CrearMateria(string materia)
+        {
+            InitializeComponent();
+            TMateria.Texts = materia;
+        }
         public CrearMateria()
         {
             InitializeComponent();
@@ -43,6 +48,14 @@ namespace ProyectoIntegradorTaller
         private void BCerrar_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void TMateria_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (string.IsNullOrEmpty(this.TMateria.Texts) )
+            {
+                MessageBox.Show("Existen campos incompletos", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
     }
 }

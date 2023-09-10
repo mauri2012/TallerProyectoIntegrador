@@ -41,10 +41,10 @@ namespace ProyectoIntegradorTaller.formularios
             this.BCerrar = new System.Windows.Forms.PictureBox();
             this.LBienvenido = new System.Windows.Forms.Label();
             this.panel7 = new System.Windows.Forms.Panel();
+            this.BBuscar = new ProyectoIntegradorTaller.views.components.BotonPersonalisado();
+            this.TBBusqueda = new CustomControls.RJControls.RJTextBox();
             this.BCrearMateria = new ProyectoIntegradorTaller.views.components.BotonPersonalisado();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.TBBusqueda = new CustomControls.RJControls.RJTextBox();
-            this.BBuscar = new ProyectoIntegradorTaller.views.components.BotonPersonalisado();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.BMaximizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BEsconder)).BeginInit();
@@ -156,6 +156,47 @@ namespace ProyectoIntegradorTaller.formularios
             this.panel7.Size = new System.Drawing.Size(686, 358);
             this.panel7.TabIndex = 11;
             // 
+            // BBuscar
+            // 
+            this.BBuscar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
+            this.BBuscar.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
+            this.BBuscar.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.BBuscar.BorderRadius = 6;
+            this.BBuscar.BorderSize = 0;
+            this.BBuscar.FlatAppearance.BorderSize = 0;
+            this.BBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BBuscar.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BBuscar.ForeColor = System.Drawing.Color.White;
+            this.BBuscar.Image = global::ProyectoIntegradorTaller.Properties.Resources.search_white;
+            this.BBuscar.Location = new System.Drawing.Point(628, 34);
+            this.BBuscar.Name = "BBuscar";
+            this.BBuscar.Size = new System.Drawing.Size(46, 32);
+            this.BBuscar.TabIndex = 11;
+            this.BBuscar.TextColor = System.Drawing.Color.White;
+            this.BBuscar.UseVisualStyleBackColor = false;
+            // 
+            // TBBusqueda
+            // 
+            this.TBBusqueda.BackColor = System.Drawing.SystemColors.Menu;
+            this.TBBusqueda.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
+            this.TBBusqueda.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.TBBusqueda.BorderRadius = 6;
+            this.TBBusqueda.BorderSize = 2;
+            this.TBBusqueda.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TBBusqueda.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.TBBusqueda.Location = new System.Drawing.Point(435, 35);
+            this.TBBusqueda.Margin = new System.Windows.Forms.Padding(4);
+            this.TBBusqueda.Multiline = false;
+            this.TBBusqueda.Name = "TBBusqueda";
+            this.TBBusqueda.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this.TBBusqueda.PasswordChar = false;
+            this.TBBusqueda.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.TBBusqueda.PlaceholderText = "";
+            this.TBBusqueda.Size = new System.Drawing.Size(186, 31);
+            this.TBBusqueda.TabIndex = 10;
+            this.TBBusqueda.Texts = "";
+            this.TBBusqueda.UnderlinedStyle = true;
+            // 
             // BCrearMateria
             // 
             this.BCrearMateria.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
@@ -190,47 +231,7 @@ namespace ProyectoIntegradorTaller.formularios
             this.dataGridView1.RowTemplate.Height = 25;
             this.dataGridView1.Size = new System.Drawing.Size(662, 227);
             this.dataGridView1.TabIndex = 0;
-            // 
-            // TBBusqueda
-            // 
-            this.TBBusqueda.BackColor = System.Drawing.SystemColors.Menu;
-            this.TBBusqueda.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
-            this.TBBusqueda.BorderFocusColor = System.Drawing.Color.HotPink;
-            this.TBBusqueda.BorderRadius = 6;
-            this.TBBusqueda.BorderSize = 2;
-            this.TBBusqueda.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TBBusqueda.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.TBBusqueda.Location = new System.Drawing.Point(435, 35);
-            this.TBBusqueda.Margin = new System.Windows.Forms.Padding(4);
-            this.TBBusqueda.Multiline = false;
-            this.TBBusqueda.Name = "TBBusqueda";
-            this.TBBusqueda.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.TBBusqueda.PasswordChar = false;
-            this.TBBusqueda.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.TBBusqueda.PlaceholderText = "";
-            this.TBBusqueda.Size = new System.Drawing.Size(186, 31);
-            this.TBBusqueda.TabIndex = 10;
-            this.TBBusqueda.Texts = "";
-            this.TBBusqueda.UnderlinedStyle = true;
-            // 
-            // BBuscar
-            // 
-            this.BBuscar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
-            this.BBuscar.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
-            this.BBuscar.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.BBuscar.BorderRadius = 6;
-            this.BBuscar.BorderSize = 0;
-            this.BBuscar.FlatAppearance.BorderSize = 0;
-            this.BBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BBuscar.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BBuscar.ForeColor = System.Drawing.Color.White;
-            this.BBuscar.Image = global::ProyectoIntegradorTaller.Properties.Resources.search_white;
-            this.BBuscar.Location = new System.Drawing.Point(628, 34);
-            this.BBuscar.Name = "BBuscar";
-            this.BBuscar.Size = new System.Drawing.Size(46, 32);
-            this.BBuscar.TabIndex = 11;
-            this.BBuscar.TextColor = System.Drawing.Color.White;
-            this.BBuscar.UseVisualStyleBackColor = false;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // Materias
             // 

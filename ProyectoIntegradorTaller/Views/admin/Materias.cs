@@ -66,7 +66,7 @@ namespace ProyectoIntegradorTaller.formularios
           
                 if (dataGridView1.Columns[e.ColumnIndex].Name == "Editar")
                 {
-                    EditarAula aula = new EditarAula((int)dataGridView1.Rows[e.RowIndex].Cells[0].Value,(string)dataGridView1.Rows[e.RowIndex].Cells[1].Value, (string)dataGridView1.Rows[e.RowIndex].Cells[2].Value, (int)dataGridView1.Rows[e.RowIndex].Cells[3].Value,(string)dataGridView1.Rows[e.RowIndex].Cells[4].Value);
+                    CrearMateria aula = new CrearMateria((string)dataGridView1.Rows[e.RowIndex].Cells[0].Value);
                     aula.Show();
                     
                 }
@@ -121,6 +121,8 @@ namespace ProyectoIntegradorTaller.formularios
             CrearMateria unaMateria = new CrearMateria();
             unaMateria.Show();
         }
+
+    
     }
     public class ItemMaterias
     {

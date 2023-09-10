@@ -35,26 +35,26 @@ namespace ProyectoIntegradorTaller.formularios
             this.panel3 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.LBienvenido = new System.Windows.Forms.Label();
-            this.panel7 = new System.Windows.Forms.Panel();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.TBBusqueda = new CustomControls.RJControls.RJTextBox();
-            this.BBuscar = new ProyectoIntegradorTaller.views.components.BotonPersonalisado();
-            this.BProfesores = new ProyectoIntegradorTaller.views.components.BotonPersonalisado();
-            this.BMaterias = new ProyectoIntegradorTaller.views.components.BotonPersonalisado();
-            this.BUsuarios = new ProyectoIntegradorTaller.views.components.BotonPersonalisado();
-            this.BCrearAula = new ProyectoIntegradorTaller.views.components.BotonPersonalisado();
             this.BMaximizar = new System.Windows.Forms.PictureBox();
             this.BEsconder = new System.Windows.Forms.PictureBox();
             this.BRestaurar = new System.Windows.Forms.PictureBox();
             this.BCerrar = new System.Windows.Forms.PictureBox();
+            this.LBienvenido = new System.Windows.Forms.Label();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.BBuscar = new ProyectoIntegradorTaller.views.components.BotonPersonalisado();
+            this.TBBusqueda = new CustomControls.RJControls.RJTextBox();
+            this.BProfesores = new ProyectoIntegradorTaller.views.components.BotonPersonalisado();
+            this.BMaterias = new ProyectoIntegradorTaller.views.components.BotonPersonalisado();
+            this.BUsuarios = new ProyectoIntegradorTaller.views.components.BotonPersonalisado();
+            this.BCrearAula = new ProyectoIntegradorTaller.views.components.BotonPersonalisado();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.panel3.SuspendLayout();
-            this.panel7.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BMaximizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BEsconder)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BRestaurar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BCerrar)).BeginInit();
+            this.panel7.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel3
@@ -91,172 +91,6 @@ namespace ProyectoIntegradorTaller.formularios
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(86, 20);
             this.label3.TabIndex = 0;
-            // 
-            // LBienvenido
-            // 
-            this.LBienvenido.AutoSize = true;
-            this.LBienvenido.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Bold);
-            this.LBienvenido.Location = new System.Drawing.Point(12, 56);
-            this.LBienvenido.Name = "LBienvenido";
-            this.LBienvenido.Size = new System.Drawing.Size(53, 18);
-            this.LBienvenido.TabIndex = 3;
-            this.LBienvenido.Text = "Aulas";
-            // 
-            // panel7
-            // 
-            this.panel7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.panel7.Controls.Add(this.BBuscar);
-            this.panel7.Controls.Add(this.TBBusqueda);
-            this.panel7.Controls.Add(this.BProfesores);
-            this.panel7.Controls.Add(this.BMaterias);
-            this.panel7.Controls.Add(this.BUsuarios);
-            this.panel7.Controls.Add(this.BCrearAula);
-            this.panel7.Controls.Add(this.LBienvenido);
-            this.panel7.Controls.Add(this.dataGridView1);
-            this.panel7.Location = new System.Drawing.Point(0, 32);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(686, 358);
-            this.panel7.TabIndex = 11;
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.GridColor = System.Drawing.SystemColors.ButtonFace;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 88);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 25;
-            this.dataGridView1.Size = new System.Drawing.Size(662, 192);
-            this.dataGridView1.TabIndex = 0;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
-            // TBBusqueda
-            // 
-            this.TBBusqueda.BackColor = System.Drawing.SystemColors.Menu;
-            this.TBBusqueda.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
-            this.TBBusqueda.BorderFocusColor = System.Drawing.Color.HotPink;
-            this.TBBusqueda.BorderRadius = 6;
-            this.TBBusqueda.BorderSize = 2;
-            this.TBBusqueda.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TBBusqueda.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.TBBusqueda.Location = new System.Drawing.Point(435, 50);
-            this.TBBusqueda.Margin = new System.Windows.Forms.Padding(4);
-            this.TBBusqueda.Multiline = false;
-            this.TBBusqueda.Name = "TBBusqueda";
-            this.TBBusqueda.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.TBBusqueda.PasswordChar = false;
-            this.TBBusqueda.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.TBBusqueda.PlaceholderText = "";
-            this.TBBusqueda.Size = new System.Drawing.Size(186, 31);
-            this.TBBusqueda.TabIndex = 9;
-            this.TBBusqueda.Texts = "";
-            this.TBBusqueda.UnderlinedStyle = true;
-            // 
-            // BBuscar
-            // 
-            this.BBuscar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
-            this.BBuscar.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
-            this.BBuscar.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.BBuscar.BorderRadius = 6;
-            this.BBuscar.BorderSize = 0;
-            this.BBuscar.FlatAppearance.BorderSize = 0;
-            this.BBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BBuscar.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BBuscar.ForeColor = System.Drawing.Color.White;
-            this.BBuscar.Image = global::ProyectoIntegradorTaller.Properties.Resources.search_white;
-            this.BBuscar.Location = new System.Drawing.Point(628, 50);
-            this.BBuscar.Name = "BBuscar";
-            this.BBuscar.Size = new System.Drawing.Size(46, 32);
-            this.BBuscar.TabIndex = 10;
-            this.BBuscar.TextColor = System.Drawing.Color.White;
-            this.BBuscar.UseVisualStyleBackColor = false;
-            // 
-            // BProfesores
-            // 
-            this.BProfesores.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
-            this.BProfesores.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
-            this.BProfesores.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.BProfesores.BorderRadius = 6;
-            this.BProfesores.BorderSize = 0;
-            this.BProfesores.FlatAppearance.BorderSize = 0;
-            this.BProfesores.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BProfesores.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BProfesores.ForeColor = System.Drawing.Color.White;
-            this.BProfesores.Image = global::ProyectoIntegradorTaller.Properties.Resources.badge;
-            this.BProfesores.Location = new System.Drawing.Point(56, 306);
-            this.BProfesores.Name = "BProfesores";
-            this.BProfesores.Size = new System.Drawing.Size(150, 40);
-            this.BProfesores.TabIndex = 8;
-            this.BProfesores.Text = "  Profesores";
-            this.BProfesores.TextColor = System.Drawing.Color.White;
-            this.BProfesores.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.BProfesores.UseVisualStyleBackColor = false;
-            // 
-            // BMaterias
-            // 
-            this.BMaterias.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
-            this.BMaterias.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
-            this.BMaterias.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.BMaterias.BorderRadius = 6;
-            this.BMaterias.BorderSize = 0;
-            this.BMaterias.FlatAppearance.BorderSize = 0;
-            this.BMaterias.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BMaterias.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BMaterias.ForeColor = System.Drawing.Color.White;
-            this.BMaterias.Image = global::ProyectoIntegradorTaller.Properties.Resources.book;
-            this.BMaterias.Location = new System.Drawing.Point(212, 306);
-            this.BMaterias.Name = "BMaterias";
-            this.BMaterias.Size = new System.Drawing.Size(150, 40);
-            this.BMaterias.TabIndex = 7;
-            this.BMaterias.Text = "  Materias";
-            this.BMaterias.TextColor = System.Drawing.Color.White;
-            this.BMaterias.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.BMaterias.UseVisualStyleBackColor = false;
-            // 
-            // BUsuarios
-            // 
-            this.BUsuarios.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
-            this.BUsuarios.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
-            this.BUsuarios.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.BUsuarios.BorderRadius = 6;
-            this.BUsuarios.BorderSize = 0;
-            this.BUsuarios.FlatAppearance.BorderSize = 0;
-            this.BUsuarios.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BUsuarios.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BUsuarios.ForeColor = System.Drawing.Color.White;
-            this.BUsuarios.Image = global::ProyectoIntegradorTaller.Properties.Resources.person_groups;
-            this.BUsuarios.Location = new System.Drawing.Point(368, 306);
-            this.BUsuarios.Name = "BUsuarios";
-            this.BUsuarios.Size = new System.Drawing.Size(150, 40);
-            this.BUsuarios.TabIndex = 6;
-            this.BUsuarios.Text = "  Usuarios";
-            this.BUsuarios.TextColor = System.Drawing.Color.White;
-            this.BUsuarios.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.BUsuarios.UseVisualStyleBackColor = false;
-            // 
-            // BCrearAula
-            // 
-            this.BCrearAula.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
-            this.BCrearAula.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
-            this.BCrearAula.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.BCrearAula.BorderRadius = 6;
-            this.BCrearAula.BorderSize = 0;
-            this.BCrearAula.FlatAppearance.BorderSize = 0;
-            this.BCrearAula.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BCrearAula.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BCrearAula.ForeColor = System.Drawing.Color.White;
-            this.BCrearAula.Image = global::ProyectoIntegradorTaller.Properties.Resources.room;
-            this.BCrearAula.Location = new System.Drawing.Point(524, 306);
-            this.BCrearAula.Name = "BCrearAula";
-            this.BCrearAula.Size = new System.Drawing.Size(150, 40);
-            this.BCrearAula.TabIndex = 5;
-            this.BCrearAula.Text = "  Crear Aula";
-            this.BCrearAula.TextColor = System.Drawing.Color.White;
-            this.BCrearAula.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.BCrearAula.UseVisualStyleBackColor = false;
-            this.BCrearAula.Click += new System.EventHandler(this.BCrearAula_Click);
             // 
             // BMaximizar
             // 
@@ -302,6 +136,173 @@ namespace ProyectoIntegradorTaller.formularios
             this.BCerrar.TabStop = false;
             this.BCerrar.Click += new System.EventHandler(this.BCerrar_Click);
             // 
+            // LBienvenido
+            // 
+            this.LBienvenido.AutoSize = true;
+            this.LBienvenido.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Bold);
+            this.LBienvenido.Location = new System.Drawing.Point(12, 56);
+            this.LBienvenido.Name = "LBienvenido";
+            this.LBienvenido.Size = new System.Drawing.Size(53, 18);
+            this.LBienvenido.TabIndex = 3;
+            this.LBienvenido.Text = "Aulas";
+            // 
+            // panel7
+            // 
+            this.panel7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.panel7.Controls.Add(this.BBuscar);
+            this.panel7.Controls.Add(this.TBBusqueda);
+            this.panel7.Controls.Add(this.BProfesores);
+            this.panel7.Controls.Add(this.BMaterias);
+            this.panel7.Controls.Add(this.BUsuarios);
+            this.panel7.Controls.Add(this.BCrearAula);
+            this.panel7.Controls.Add(this.LBienvenido);
+            this.panel7.Controls.Add(this.dataGridView1);
+            this.panel7.Location = new System.Drawing.Point(0, 32);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(686, 358);
+            this.panel7.TabIndex = 11;
+            // 
+            // BBuscar
+            // 
+            this.BBuscar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
+            this.BBuscar.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
+            this.BBuscar.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.BBuscar.BorderRadius = 6;
+            this.BBuscar.BorderSize = 0;
+            this.BBuscar.FlatAppearance.BorderSize = 0;
+            this.BBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BBuscar.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BBuscar.ForeColor = System.Drawing.Color.White;
+            this.BBuscar.Image = global::ProyectoIntegradorTaller.Properties.Resources.search_white;
+            this.BBuscar.Location = new System.Drawing.Point(628, 50);
+            this.BBuscar.Name = "BBuscar";
+            this.BBuscar.Size = new System.Drawing.Size(46, 32);
+            this.BBuscar.TabIndex = 10;
+            this.BBuscar.TextColor = System.Drawing.Color.White;
+            this.BBuscar.UseVisualStyleBackColor = false;
+            // 
+            // TBBusqueda
+            // 
+            this.TBBusqueda.BackColor = System.Drawing.SystemColors.Menu;
+            this.TBBusqueda.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
+            this.TBBusqueda.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.TBBusqueda.BorderRadius = 6;
+            this.TBBusqueda.BorderSize = 2;
+            this.TBBusqueda.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TBBusqueda.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.TBBusqueda.Location = new System.Drawing.Point(435, 50);
+            this.TBBusqueda.Margin = new System.Windows.Forms.Padding(4);
+            this.TBBusqueda.Multiline = false;
+            this.TBBusqueda.Name = "TBBusqueda";
+            this.TBBusqueda.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this.TBBusqueda.PasswordChar = false;
+            this.TBBusqueda.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.TBBusqueda.PlaceholderText = "";
+            this.TBBusqueda.Size = new System.Drawing.Size(186, 31);
+            this.TBBusqueda.TabIndex = 9;
+            this.TBBusqueda.Texts = "";
+            this.TBBusqueda.UnderlinedStyle = true;
+            // 
+            // BProfesores
+            // 
+            this.BProfesores.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
+            this.BProfesores.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
+            this.BProfesores.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.BProfesores.BorderRadius = 6;
+            this.BProfesores.BorderSize = 0;
+            this.BProfesores.FlatAppearance.BorderSize = 0;
+            this.BProfesores.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BProfesores.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BProfesores.ForeColor = System.Drawing.Color.White;
+            this.BProfesores.Image = global::ProyectoIntegradorTaller.Properties.Resources.badge;
+            this.BProfesores.Location = new System.Drawing.Point(56, 306);
+            this.BProfesores.Name = "BProfesores";
+            this.BProfesores.Size = new System.Drawing.Size(150, 40);
+            this.BProfesores.TabIndex = 8;
+            this.BProfesores.Text = "  Profesores";
+            this.BProfesores.TextColor = System.Drawing.Color.White;
+            this.BProfesores.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.BProfesores.UseVisualStyleBackColor = false;
+            // 
+            // BMaterias
+            // 
+            this.BMaterias.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
+            this.BMaterias.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
+            this.BMaterias.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.BMaterias.BorderRadius = 6;
+            this.BMaterias.BorderSize = 0;
+            this.BMaterias.FlatAppearance.BorderSize = 0;
+            this.BMaterias.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BMaterias.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BMaterias.ForeColor = System.Drawing.Color.White;
+            this.BMaterias.Image = global::ProyectoIntegradorTaller.Properties.Resources.book;
+            this.BMaterias.Location = new System.Drawing.Point(212, 306);
+            this.BMaterias.Name = "BMaterias";
+            this.BMaterias.Size = new System.Drawing.Size(150, 40);
+            this.BMaterias.TabIndex = 7;
+            this.BMaterias.Text = "  Materias";
+            this.BMaterias.TextColor = System.Drawing.Color.White;
+            this.BMaterias.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.BMaterias.UseVisualStyleBackColor = false;
+            this.BMaterias.Click += new System.EventHandler(this.BMaterias_Click);
+            // 
+            // BUsuarios
+            // 
+            this.BUsuarios.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
+            this.BUsuarios.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
+            this.BUsuarios.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.BUsuarios.BorderRadius = 6;
+            this.BUsuarios.BorderSize = 0;
+            this.BUsuarios.FlatAppearance.BorderSize = 0;
+            this.BUsuarios.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BUsuarios.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BUsuarios.ForeColor = System.Drawing.Color.White;
+            this.BUsuarios.Image = global::ProyectoIntegradorTaller.Properties.Resources.person_groups;
+            this.BUsuarios.Location = new System.Drawing.Point(368, 306);
+            this.BUsuarios.Name = "BUsuarios";
+            this.BUsuarios.Size = new System.Drawing.Size(150, 40);
+            this.BUsuarios.TabIndex = 6;
+            this.BUsuarios.Text = "  Usuarios";
+            this.BUsuarios.TextColor = System.Drawing.Color.White;
+            this.BUsuarios.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.BUsuarios.UseVisualStyleBackColor = false;
+            // 
+            // BCrearAula
+            // 
+            this.BCrearAula.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
+            this.BCrearAula.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
+            this.BCrearAula.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.BCrearAula.BorderRadius = 6;
+            this.BCrearAula.BorderSize = 0;
+            this.BCrearAula.FlatAppearance.BorderSize = 0;
+            this.BCrearAula.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BCrearAula.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BCrearAula.ForeColor = System.Drawing.Color.White;
+            this.BCrearAula.Image = global::ProyectoIntegradorTaller.Properties.Resources.room;
+            this.BCrearAula.Location = new System.Drawing.Point(524, 306);
+            this.BCrearAula.Name = "BCrearAula";
+            this.BCrearAula.Size = new System.Drawing.Size(150, 40);
+            this.BCrearAula.TabIndex = 5;
+            this.BCrearAula.Text = "  Crear Aula";
+            this.BCrearAula.TextColor = System.Drawing.Color.White;
+            this.BCrearAula.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.BCrearAula.UseVisualStyleBackColor = false;
+            this.BCrearAula.Click += new System.EventHandler(this.BCrearAula_Click);
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.GridColor = System.Drawing.SystemColors.ButtonFace;
+            this.dataGridView1.Location = new System.Drawing.Point(12, 88);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowTemplate.Height = 25;
+            this.dataGridView1.Size = new System.Drawing.Size(662, 192);
+            this.dataGridView1.TabIndex = 0;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
             // AdminMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -316,13 +317,13 @@ namespace ProyectoIntegradorTaller.formularios
             this.Load += new System.EventHandler(this.AdminMenu_Load);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
-            this.panel7.ResumeLayout(false);
-            this.panel7.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BMaximizar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BEsconder)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BRestaurar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BCerrar)).EndInit();
+            this.panel7.ResumeLayout(false);
+            this.panel7.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }

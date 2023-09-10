@@ -33,6 +33,7 @@ namespace ProyectoIntegradorTaller
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CrearMateria));
             this.panel3 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
             this.BMaximizar = new System.Windows.Forms.PictureBox();
             this.BEsconder = new System.Windows.Forms.PictureBox();
             this.BRestaurar = new System.Windows.Forms.PictureBox();
@@ -41,9 +42,8 @@ namespace ProyectoIntegradorTaller
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
-            this.rjTextBox2 = new CustomControls.RJControls.RJTextBox();
+            this.TMateria = new CustomControls.RJControls.RJTextBox();
             this.BInicioSesion = new ProyectoIntegradorTaller.views.components.BotonPersonalisado();
-            this.label2 = new System.Windows.Forms.Label();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.BMaximizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BEsconder)).BeginInit();
@@ -65,6 +65,18 @@ namespace ProyectoIntegradorTaller
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(686, 32);
             this.panel3.TabIndex = 2;
+            // 
+            // label2
+            // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
+            this.label2.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label2.Location = new System.Drawing.Point(305, 9);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(117, 19);
+            this.label2.TabIndex = 8;
+            this.label2.Text = "Nueva Materia";
             // 
             // BMaximizar
             // 
@@ -137,7 +149,7 @@ namespace ProyectoIntegradorTaller
             // panel7
             // 
             this.panel7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.panel7.Controls.Add(this.rjTextBox2);
+            this.panel7.Controls.Add(this.TMateria);
             this.panel7.Controls.Add(this.BInicioSesion);
             this.panel7.Controls.Add(this.label1);
             this.panel7.Location = new System.Drawing.Point(179, 32);
@@ -145,27 +157,28 @@ namespace ProyectoIntegradorTaller
             this.panel7.Size = new System.Drawing.Size(335, 358);
             this.panel7.TabIndex = 11;
             // 
-            // rjTextBox2
+            // TMateria
             // 
-            this.rjTextBox2.BackColor = System.Drawing.SystemColors.Menu;
-            this.rjTextBox2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
-            this.rjTextBox2.BorderFocusColor = System.Drawing.Color.HotPink;
-            this.rjTextBox2.BorderRadius = 6;
-            this.rjTextBox2.BorderSize = 2;
-            this.rjTextBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rjTextBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.rjTextBox2.Location = new System.Drawing.Point(73, 136);
-            this.rjTextBox2.Margin = new System.Windows.Forms.Padding(4);
-            this.rjTextBox2.Multiline = false;
-            this.rjTextBox2.Name = "rjTextBox2";
-            this.rjTextBox2.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.rjTextBox2.PasswordChar = false;
-            this.rjTextBox2.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.rjTextBox2.PlaceholderText = "";
-            this.rjTextBox2.Size = new System.Drawing.Size(170, 31);
-            this.rjTextBox2.TabIndex = 26;
-            this.rjTextBox2.Texts = "";
-            this.rjTextBox2.UnderlinedStyle = true;
+            this.TMateria.BackColor = System.Drawing.SystemColors.Menu;
+            this.TMateria.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
+            this.TMateria.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.TMateria.BorderRadius = 6;
+            this.TMateria.BorderSize = 2;
+            this.TMateria.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TMateria.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.TMateria.Location = new System.Drawing.Point(73, 136);
+            this.TMateria.Margin = new System.Windows.Forms.Padding(4);
+            this.TMateria.Multiline = false;
+            this.TMateria.Name = "TMateria";
+            this.TMateria.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this.TMateria.PasswordChar = false;
+            this.TMateria.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.TMateria.PlaceholderText = "";
+            this.TMateria.Size = new System.Drawing.Size(170, 31);
+            this.TMateria.TabIndex = 26;
+            this.TMateria.Texts = "";
+            this.TMateria.UnderlinedStyle = true;
+            this.TMateria.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TMateria_KeyPress);
             // 
             // BInicioSesion
             // 
@@ -188,18 +201,6 @@ namespace ProyectoIntegradorTaller
             this.BInicioSesion.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.BInicioSesion.UseVisualStyleBackColor = false;
             this.BInicioSesion.Click += new System.EventHandler(this.BInicioSesion_Click);
-            // 
-            // label2
-            // 
-            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
-            this.label2.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label2.Location = new System.Drawing.Point(305, 9);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(117, 19);
-            this.label2.TabIndex = 8;
-            this.label2.Text = "Nueva Materia";
             // 
             // CrearMateria
             // 
@@ -244,7 +245,7 @@ namespace ProyectoIntegradorTaller
         private Panel panel6;
         private Panel panel7;
         private views.components.BotonPersonalisado BInicioSesion;
-        private CustomControls.RJControls.RJTextBox rjTextBox2;
+        private CustomControls.RJControls.RJTextBox TMateria;
         private Label label2;
     }
 }
