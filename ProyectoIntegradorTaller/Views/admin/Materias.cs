@@ -19,12 +19,18 @@ namespace ProyectoIntegradorTaller.formularios
             List<ItemMaterias> staticData = new List<ItemMaterias>()
             {
 
-                new ItemMaterias{Materias="Taller de Programacion 1" },
-                 new ItemMaterias{Materias="Ingeneria del Software 1" },
+                new ItemMaterias{Materia="Taller de Programacion 1" },
+                 new ItemMaterias{Materia="Ingeneria del Software 1" },
             };
             dataGridView1.DataSource = staticData;
         }
 
+        private void Materias_Load(object sender, EventArgs e)
+        {
+            //string[] array = { "Hi" ,"world"};
+            //List<ItemMaterias> lista = array.Select(item => new ItemMaterias { Materia = item }).ToList();
+            //dataGridView1.DataSource=lista;
+        }
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
@@ -127,7 +133,7 @@ namespace ProyectoIntegradorTaller.formularios
     public class ItemMaterias
     {
      
-        public string Materias { get; set; }
+        public string Materia { get; set; }
     
     }
 }

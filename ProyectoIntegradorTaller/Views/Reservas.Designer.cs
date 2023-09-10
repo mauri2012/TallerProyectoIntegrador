@@ -31,6 +31,7 @@ namespace ProyectoIntegradorTaller.formularios
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Reservas));
             this.panel3 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
@@ -43,6 +44,13 @@ namespace ProyectoIntegradorTaller.formularios
             this.CBDias = new ProyectoIntegradorTaller.views.components.ComboBoxPersonalisado();
             this.label5 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.itemReservasBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.horaDesdeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.horaHastaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.desdeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hastaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.materiasDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.profesorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.BMaximizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BEsconder)).BeginInit();
@@ -50,6 +58,7 @@ namespace ProyectoIntegradorTaller.formularios
             ((System.ComponentModel.ISupportInitialize)(this.BCerrar)).BeginInit();
             this.panel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.itemReservasBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // panel3
@@ -175,8 +184,17 @@ namespace ProyectoIntegradorTaller.formularios
             // 
             this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.horaDesdeDataGridViewTextBoxColumn,
+            this.horaHastaDataGridViewTextBoxColumn,
+            this.desdeDataGridViewTextBoxColumn,
+            this.hastaDataGridViewTextBoxColumn,
+            this.materiasDataGridViewTextBoxColumn,
+            this.profesorDataGridViewTextBoxColumn});
+            this.dataGridView1.DataSource = this.itemReservasBindingSource;
             this.dataGridView1.GridColor = System.Drawing.SystemColors.ButtonFace;
             this.dataGridView1.Location = new System.Drawing.Point(12, 78);
             this.dataGridView1.Name = "dataGridView1";
@@ -184,6 +202,46 @@ namespace ProyectoIntegradorTaller.formularios
             this.dataGridView1.Size = new System.Drawing.Size(662, 268);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
+            // itemReservasBindingSource
+            // 
+            this.itemReservasBindingSource.DataSource = typeof(ProyectoIntegradorTaller.formularios.ItemReservas);
+            // 
+            // horaDesdeDataGridViewTextBoxColumn
+            // 
+            this.horaDesdeDataGridViewTextBoxColumn.DataPropertyName = "HoraDesde";
+            this.horaDesdeDataGridViewTextBoxColumn.HeaderText = "HoraDesde";
+            this.horaDesdeDataGridViewTextBoxColumn.Name = "horaDesdeDataGridViewTextBoxColumn";
+            // 
+            // horaHastaDataGridViewTextBoxColumn
+            // 
+            this.horaHastaDataGridViewTextBoxColumn.DataPropertyName = "HoraHasta";
+            this.horaHastaDataGridViewTextBoxColumn.HeaderText = "HoraHasta";
+            this.horaHastaDataGridViewTextBoxColumn.Name = "horaHastaDataGridViewTextBoxColumn";
+            // 
+            // desdeDataGridViewTextBoxColumn
+            // 
+            this.desdeDataGridViewTextBoxColumn.DataPropertyName = "Desde";
+            this.desdeDataGridViewTextBoxColumn.HeaderText = "Desde";
+            this.desdeDataGridViewTextBoxColumn.Name = "desdeDataGridViewTextBoxColumn";
+            // 
+            // hastaDataGridViewTextBoxColumn
+            // 
+            this.hastaDataGridViewTextBoxColumn.DataPropertyName = "Hasta";
+            this.hastaDataGridViewTextBoxColumn.HeaderText = "Hasta";
+            this.hastaDataGridViewTextBoxColumn.Name = "hastaDataGridViewTextBoxColumn";
+            // 
+            // materiasDataGridViewTextBoxColumn
+            // 
+            this.materiasDataGridViewTextBoxColumn.DataPropertyName = "Materias";
+            this.materiasDataGridViewTextBoxColumn.HeaderText = "Materias";
+            this.materiasDataGridViewTextBoxColumn.Name = "materiasDataGridViewTextBoxColumn";
+            // 
+            // profesorDataGridViewTextBoxColumn
+            // 
+            this.profesorDataGridViewTextBoxColumn.DataPropertyName = "Profesor";
+            this.profesorDataGridViewTextBoxColumn.HeaderText = "Profesor";
+            this.profesorDataGridViewTextBoxColumn.Name = "profesorDataGridViewTextBoxColumn";
             // 
             // Reservas
             // 
@@ -206,6 +264,7 @@ namespace ProyectoIntegradorTaller.formularios
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.itemReservasBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -227,6 +286,13 @@ namespace ProyectoIntegradorTaller.formularios
         private Label label1;
         private views.components.ComboBoxPersonalisado CBDias;
         private Label label5;
+        private DataGridViewTextBoxColumn horaDesdeDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn horaHastaDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn desdeDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn hastaDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn materiasDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn profesorDataGridViewTextBoxColumn;
+        private BindingSource itemReservasBindingSource;
     }
 
     #endregion

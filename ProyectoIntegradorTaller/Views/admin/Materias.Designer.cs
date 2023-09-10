@@ -31,6 +31,7 @@ namespace ProyectoIntegradorTaller.formularios
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Materias));
             this.panel3 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
@@ -45,6 +46,8 @@ namespace ProyectoIntegradorTaller.formularios
             this.TBBusqueda = new CustomControls.RJControls.RJTextBox();
             this.BCrearMateria = new ProyectoIntegradorTaller.views.components.BotonPersonalisado();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.itemMateriasBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.materiaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.BMaximizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BEsconder)).BeginInit();
@@ -52,6 +55,7 @@ namespace ProyectoIntegradorTaller.formularios
             ((System.ComponentModel.ISupportInitialize)(this.BCerrar)).BeginInit();
             this.panel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.itemMateriasBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // panel3
@@ -221,10 +225,15 @@ namespace ProyectoIntegradorTaller.formularios
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToOrderColumns = true;
             this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.materiaDataGridViewTextBoxColumn});
+            this.dataGridView1.DataSource = this.itemMateriasBindingSource;
             this.dataGridView1.GridColor = System.Drawing.SystemColors.ButtonFace;
             this.dataGridView1.Location = new System.Drawing.Point(12, 72);
             this.dataGridView1.Name = "dataGridView1";
@@ -232,6 +241,16 @@ namespace ProyectoIntegradorTaller.formularios
             this.dataGridView1.Size = new System.Drawing.Size(662, 227);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
+            // itemMateriasBindingSource
+            // 
+            this.itemMateriasBindingSource.DataSource = typeof(ProyectoIntegradorTaller.formularios.ItemMaterias);
+            // 
+            // materiaDataGridViewTextBoxColumn
+            // 
+            this.materiaDataGridViewTextBoxColumn.DataPropertyName = "Materia";
+            this.materiaDataGridViewTextBoxColumn.HeaderText = "Materia";
+            this.materiaDataGridViewTextBoxColumn.Name = "materiaDataGridViewTextBoxColumn";
             // 
             // Materias
             // 
@@ -244,7 +263,7 @@ namespace ProyectoIntegradorTaller.formularios
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Materias";
             this.Text = "Menu";
-            this.Load += new System.EventHandler(this.Reservas_Load);
+            this.Load += new System.EventHandler(this.Materias_Load);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.BMaximizar)).EndInit();
@@ -254,6 +273,7 @@ namespace ProyectoIntegradorTaller.formularios
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.itemMateriasBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -277,6 +297,8 @@ namespace ProyectoIntegradorTaller.formularios
         private views.components.BotonPersonalisado BCrearMateria;
         private CustomControls.RJControls.RJTextBox TBBusqueda;
         private views.components.BotonPersonalisado BBuscar;
+        private DataGridViewTextBoxColumn materiaDataGridViewTextBoxColumn;
+        private BindingSource itemMateriasBindingSource;
     }
 
     #endregion

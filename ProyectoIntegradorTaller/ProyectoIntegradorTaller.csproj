@@ -180,6 +180,11 @@
     <EmbeddedResource Include="views\ReservarAula.resx">
       <DependentUpon>ReservarAula.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="Properties\DataSources\CrearMateria.datasource" />
+    <None Include="Properties\DataSources\ProyectoIntegrador.formularios.ItemProfesor.datasource" />
+    <None Include="Properties\DataSources\ProyectoIntegradorTaller.formularios.Item.datasource" />
+    <None Include="Properties\DataSources\ProyectoIntegradorTaller.formularios.ItemMaterias.datasource" />
+    <None Include="Properties\DataSources\ProyectoIntegradorTaller.formularios.ItemReservas.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
