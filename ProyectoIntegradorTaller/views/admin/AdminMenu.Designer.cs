@@ -1,4 +1,5 @@
 ﻿using System.Drawing;
+using System.Resources;
 using System.Windows.Forms;
 
 namespace ProyectoIntegradorTaller.formularios
@@ -32,14 +33,6 @@ namespace ProyectoIntegradorTaller.formularios
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminMenu));
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.BMaximizar = new System.Windows.Forms.PictureBox();
-            this.BEsconder = new System.Windows.Forms.PictureBox();
-            this.BRestaurar = new System.Windows.Forms.PictureBox();
-            this.BCerrar = new System.Windows.Forms.PictureBox();
             this.LBienvenido = new System.Windows.Forms.Label();
             this.panel7 = new System.Windows.Forms.Panel();
             this.BBuscar = new ProyectoIntegradorTaller.views.components.BotonPersonalisado();
@@ -49,100 +42,17 @@ namespace ProyectoIntegradorTaller.formularios
             this.BUsuarios = new ProyectoIntegradorTaller.views.components.BotonPersonalisado();
             this.BCrearAula = new ProyectoIntegradorTaller.views.components.BotonPersonalisado();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.itemBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lugarDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.capacidadMaxDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tipoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.BMaximizar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.BEsconder)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.BRestaurar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.BCerrar)).BeginInit();
+            this.itemBindingSource = new System.Windows.Forms.BindingSource(this.components);
+         
             this.panel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.itemBindingSource)).BeginInit();
             this.SuspendLayout();
-            // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
-            this.panel3.Controls.Add(this.label1);
-            this.panel3.Controls.Add(this.label3);
-            this.panel3.Controls.Add(this.BMaximizar);
-            this.panel3.Controls.Add(this.BEsconder);
-            this.panel3.Controls.Add(this.BRestaurar);
-            this.panel3.Controls.Add(this.BCerrar);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel3.Location = new System.Drawing.Point(0, 0);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(686, 32);
-            this.panel3.TabIndex = 2;
-            // 
-            // label1
-            // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
-            this.label1.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label1.Location = new System.Drawing.Point(309, 10);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(54, 19);
-            this.label1.TabIndex = 7;
-            this.label1.Text = "Home";
-            // 
-            // label3
-            // 
-            this.label3.Location = new System.Drawing.Point(0, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(86, 20);
-            this.label3.TabIndex = 0;
-            // 
-            // BMaximizar
-            // 
-            this.BMaximizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.BMaximizar.Image = ((System.Drawing.Image)(resources.GetObject("BMaximizar.Image")));
-            this.BMaximizar.Location = new System.Drawing.Point(646, 10);
-            this.BMaximizar.Name = "BMaximizar";
-            this.BMaximizar.Size = new System.Drawing.Size(13, 13);
-            this.BMaximizar.TabIndex = 5;
-            this.BMaximizar.TabStop = false;
-            this.BMaximizar.Click += new System.EventHandler(this.BMaximizar_Click);
-            // 
-            // BEsconder
-            // 
-            this.BEsconder.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.BEsconder.Image = ((System.Drawing.Image)(resources.GetObject("BEsconder.Image")));
-            this.BEsconder.Location = new System.Drawing.Point(628, 10);
-            this.BEsconder.Name = "BEsconder";
-            this.BEsconder.Size = new System.Drawing.Size(13, 13);
-            this.BEsconder.TabIndex = 4;
-            this.BEsconder.TabStop = false;
-            this.BEsconder.Click += new System.EventHandler(this.BEsconder_Click);
-            // 
-            // BRestaurar
-            // 
-            this.BRestaurar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.BRestaurar.Image = ((System.Drawing.Image)(resources.GetObject("BRestaurar.Image")));
-            this.BRestaurar.Location = new System.Drawing.Point(646, 10);
-            this.BRestaurar.Name = "BRestaurar";
-            this.BRestaurar.Size = new System.Drawing.Size(13, 13);
-            this.BRestaurar.TabIndex = 6;
-            this.BRestaurar.TabStop = false;
-            this.BRestaurar.Click += new System.EventHandler(this.BRestaurar_Click);
-            // 
-            // BCerrar
-            // 
-            this.BCerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.BCerrar.Image = ((System.Drawing.Image)(resources.GetObject("BCerrar.Image")));
-            this.BCerrar.Location = new System.Drawing.Point(664, 10);
-            this.BCerrar.Name = "BCerrar";
-            this.BCerrar.Size = new System.Drawing.Size(13, 13);
-            this.BCerrar.TabIndex = 3;
-            this.BCerrar.TabStop = false;
-            this.BCerrar.Click += new System.EventHandler(this.BCerrar_Click);
             // 
             // LBienvenido
             // 
@@ -319,10 +229,6 @@ namespace ProyectoIntegradorTaller.formularios
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
-            // itemBindingSource
-            // 
-            this.itemBindingSource.DataSource = typeof(ProyectoIntegradorTaller.formularios.Item);
-            // 
             // idDataGridViewTextBoxColumn
             // 
             this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
@@ -353,6 +259,11 @@ namespace ProyectoIntegradorTaller.formularios
             this.tipoDataGridViewTextBoxColumn.HeaderText = "Tipo";
             this.tipoDataGridViewTextBoxColumn.Name = "tipoDataGridViewTextBoxColumn";
             // 
+            // itemBindingSource
+            // 
+            this.itemBindingSource.DataSource = typeof(ProyectoIntegradorTaller.formularios.Item);
+   
+            // 
             // AdminMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -360,17 +271,11 @@ namespace ProyectoIntegradorTaller.formularios
             this.BackColor = System.Drawing.Color.Snow;
             this.ClientSize = new System.Drawing.Size(686, 390);
             this.Controls.Add(this.panel7);
-            this.Controls.Add(this.panel3);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "AdminMenu";
             this.Text = "Menu";
             this.Load += new System.EventHandler(this.AdminMenu_Load);
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.BMaximizar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.BEsconder)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.BRestaurar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.BCerrar)).EndInit();
+            this.Controls.SetChildIndex(this.panel7, 0);
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -381,20 +286,13 @@ namespace ProyectoIntegradorTaller.formularios
 
         private Panel panel1;
         private Panel panel2;
-        private Panel panel3;
         private Panel panel4;
         private Label LCerrar;
-        private PictureBox BCerrar;
-        private PictureBox BEsconder;
-        private PictureBox BMaximizar;
-        private PictureBox BRestaurar;
         private Label LBienvenido;
         private TextBox textBox1;
         private TextBox textBox2;
         private Panel panel7;
-        private Label label3;
         private DataGridView dataGridView1;
-        private Label label1;
         private views.components.BotonPersonalisado BCrearAula;
         private views.components.BotonPersonalisado BProfesores;
         private views.components.BotonPersonalisado BMaterias;
@@ -407,6 +305,7 @@ namespace ProyectoIntegradorTaller.formularios
         private DataGridViewTextBoxColumn capacidadMaxDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn tipoDataGridViewTextBoxColumn;
         private BindingSource itemBindingSource;
+        
     }
 
     #endregion
