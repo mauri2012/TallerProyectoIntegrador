@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DraggingControl;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -11,7 +12,7 @@ using System.Windows.Forms;
 
 namespace ProyectoIntegradorTaller.formularios
 {
-    public partial class ReservarAula : Form
+    public partial class ReservarAula : DraggablePanelUserControl
     {
         
         public ReservarAula(string HDesde,string Hhasta,string Materia,string profesor)
@@ -36,30 +37,7 @@ namespace ProyectoIntegradorTaller.formularios
 
         }
 
-        private void BMaximizar_Click(object sender, EventArgs e)
-        {
-            this.WindowState = FormWindowState.Maximized;
-            BMaximizar.Visible = false;
-            BRestaurar.Visible = true;
-        }
 
-        private void BRestaurar_Click(object sender, EventArgs e)
-        {
-            this.WindowState = FormWindowState.Normal;
-            BMaximizar.Visible = true;
-            BRestaurar.Visible = false;
-        }
-
-        private void BEsconder_Click(object sender, EventArgs e)
-        {
-            this.WindowState = FormWindowState.Minimized;
-        }
-
-        private void BCerrar_Click(object sender, EventArgs e)
-        {
-            this.Close();
-            //Application.Exit();
-        }
 
         private void comboBox3_SelectedIndexChanged(object sender, EventArgs e)
         {

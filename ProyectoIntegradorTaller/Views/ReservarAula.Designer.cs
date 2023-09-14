@@ -50,23 +50,11 @@ namespace ProyectoIntegradorTaller.formularios
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
             this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.BMaximizar = new System.Windows.Forms.PictureBox();
-            this.BEsconder = new System.Windows.Forms.PictureBox();
-            this.BRestaurar = new System.Windows.Forms.PictureBox();
-            this.BCerrar = new System.Windows.Forms.PictureBox();
-            this.BReservarAula = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.panel2.SuspendLayout();
-            this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.BMaximizar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.BEsconder)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.BRestaurar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.BCerrar)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -89,9 +77,9 @@ namespace ProyectoIntegradorTaller.formularios
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(0, 32);
+            this.panel1.Location = new System.Drawing.Point(0, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(686, 355);
+            this.panel1.Size = new System.Drawing.Size(686, 384);
             this.panel1.TabIndex = 0;
             // 
             // CBDias
@@ -326,99 +314,26 @@ namespace ProyectoIntegradorTaller.formularios
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.panel3);
-            this.panel2.Controls.Add(this.BReservarAula);
             this.panel2.Controls.Add(this.panel1);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Location = new System.Drawing.Point(0, 32);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(686, 390);
+            this.panel2.Size = new System.Drawing.Size(686, 358);
             this.panel2.TabIndex = 6;
-            // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
-            this.panel3.Controls.Add(this.label8);
-            this.panel3.Controls.Add(this.label9);
-            this.panel3.Controls.Add(this.BMaximizar);
-            this.panel3.Controls.Add(this.BEsconder);
-            this.panel3.Controls.Add(this.BRestaurar);
-            this.panel3.Controls.Add(this.BCerrar);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel3.Location = new System.Drawing.Point(0, 0);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(686, 32);
-            this.panel3.TabIndex = 6;
             // 
             // label8
             // 
             this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label8.AutoSize = true;
+            this.label8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
             this.label8.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
             this.label8.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label8.Location = new System.Drawing.Point(309, 10);
+            this.label8.Location = new System.Drawing.Point(287, 9);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(115, 19);
             this.label8.TabIndex = 7;
             this.label8.Text = "Reservar Aula";
-            // 
-            // label9
-            // 
-            this.label9.Location = new System.Drawing.Point(0, 0);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(86, 20);
-            this.label9.TabIndex = 0;
-            // 
-            // BMaximizar
-            // 
-            this.BMaximizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.BMaximizar.Image = global::ProyectoIntegradorTaller.Properties.Resources.icons8_full_screen_24__1_;
-            this.BMaximizar.Location = new System.Drawing.Point(646, 10);
-            this.BMaximizar.Name = "BMaximizar";
-            this.BMaximizar.Size = new System.Drawing.Size(13, 13);
-            this.BMaximizar.TabIndex = 5;
-            this.BMaximizar.TabStop = false;
-            this.BMaximizar.Click += new System.EventHandler(this.BMaximizar_Click);
-            // 
-            // BEsconder
-            // 
-            this.BEsconder.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.BEsconder.Image = global::ProyectoIntegradorTaller.Properties.Resources.icons8_minus_24;
-            this.BEsconder.Location = new System.Drawing.Point(628, 10);
-            this.BEsconder.Name = "BEsconder";
-            this.BEsconder.Size = new System.Drawing.Size(13, 13);
-            this.BEsconder.TabIndex = 4;
-            this.BEsconder.TabStop = false;
-            this.BEsconder.Click += new System.EventHandler(this.BEsconder_Click);
-            // 
-            // BRestaurar
-            // 
-            this.BRestaurar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.BRestaurar.Image = global::ProyectoIntegradorTaller.Properties.Resources.icons8_bursts_24__1_;
-            this.BRestaurar.Location = new System.Drawing.Point(646, 10);
-            this.BRestaurar.Name = "BRestaurar";
-            this.BRestaurar.Size = new System.Drawing.Size(13, 13);
-            this.BRestaurar.TabIndex = 6;
-            this.BRestaurar.TabStop = false;
-            // 
-            // BCerrar
-            // 
-            this.BCerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.BCerrar.Image = global::ProyectoIntegradorTaller.Properties.Resources.transistor_black_letter_x_1__1_;
-            this.BCerrar.Location = new System.Drawing.Point(664, 10);
-            this.BCerrar.Name = "BCerrar";
-            this.BCerrar.Size = new System.Drawing.Size(19, 19);
-            this.BCerrar.TabIndex = 3;
-            this.BCerrar.TabStop = false;
-            this.BCerrar.Click += new System.EventHandler(this.BCerrar_Click);
-            // 
-            // BReservarAula
-            // 
-            this.BReservarAula.Location = new System.Drawing.Point(0, 0);
-            this.BReservarAula.Name = "BReservarAula";
-            this.BReservarAula.Size = new System.Drawing.Size(64, 20);
-            this.BReservarAula.TabIndex = 7;
             // 
             // ReservarAula
             // 
@@ -426,22 +341,20 @@ namespace ProyectoIntegradorTaller.formularios
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(686, 390);
             this.Controls.Add(this.panel2);
+            this.Controls.Add(this.label8);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ReservarAula";
             this.Text = "ReservarAula";
             this.Load += new System.EventHandler(this.LoadReservarAula);
+            this.Controls.SetChildIndex(this.label8, 0);
+            this.Controls.SetChildIndex(this.panel2, 0);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.panel2.ResumeLayout(false);
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.BMaximizar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.BEsconder)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.BRestaurar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.BCerrar)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -458,14 +371,7 @@ namespace ProyectoIntegradorTaller.formularios
         private PictureBox pictureBox4;
         private PictureBox pictureBox3;
         private Panel panel2;
-        private Button BReservarAula;
-        private Panel panel3;
         private Label label8;
-        private Label label9;
-        private PictureBox BMaximizar;
-        private PictureBox BEsconder;
-        private PictureBox BRestaurar;
-        private PictureBox BCerrar;
         private views.components.BotonPersonalisado botonPersonalisado1;
         private views.components.TimePickerPersonalisado timePickerPersonalisado1;
         private views.components.ComboBoxPersonalisado CBMateria;

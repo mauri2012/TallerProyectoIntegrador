@@ -190,4 +190,14 @@
   <data name="disable_off" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\disable_off.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="BCerrar.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAA8AAAAPCAYAAAA71pVKAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
+        DAAACwwBP0AiyAAAAMNJREFUOE+lk7sRgzAQRK8BElIaoAliJ07ohEZcASW4AMckDp1TAEUQ4d2bW0bm
+        EyBr5o10t3unkRCGMYAZvEF96+52BvXw0c86D5bgBaqTwip0eVnn3dhFyScoN4Vl5OWhv5bIBh8gsQdF
+        aEXE0ujz46XdGzACmR6AO3JWjnqz1miRNJgAjboUzoyZXwvdnwaeMGvDqN1U2O6824Qnf89I+kPfLpG7
+        M0bemSmA67eNkfeduQB5Lwzjr7etS2Fw4a+y4QtHq7SGmBVy8QAAAABJRU5ErkJggg==
+</value>
+  </data>
 </root>

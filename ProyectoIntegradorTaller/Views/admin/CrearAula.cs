@@ -1,4 +1,6 @@
-﻿using System;
+﻿using DraggingControl;
+using ProyectoIntegradorTaller.views.components;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -9,9 +11,10 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml.Linq;
 
+
 namespace ProyectoIntegradorTaller.formularios
 {
-    public partial class CrearAula : Form
+    public partial class CrearAula : DraggablePanelUserControl 
     {
         public CrearAula(int Id, string Name, String Lugar, int CapacidadMax, String Tipo)
         {
@@ -29,35 +32,10 @@ namespace ProyectoIntegradorTaller.formularios
             InitializeComponent();
             BEditarAula.Visible = false;
             BCrearAula.Visible = true;
+            
         }
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
+  
 
-        private void BMaximizar_Click(object sender, EventArgs e)
-        {
-            this.WindowState = FormWindowState.Maximized;
-            BMaximizar.Visible = false;
-            BRestaurar.Visible = true;
-        }
-
-        private void BRestaurar_Click(object sender, EventArgs e)
-        {
-            this.WindowState = FormWindowState.Normal;
-            BMaximizar.Visible = true;
-            BRestaurar.Visible = false;
-        }
-
-        private void BEsconder_Click(object sender, EventArgs e)
-        {
-            this.WindowState = FormWindowState.Minimized;
-        }
-
-        private void BCerrar_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
 
 
 
@@ -89,6 +67,14 @@ namespace ProyectoIntegradorTaller.formularios
             }
         }
 
-       
+        private void checkBox3_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

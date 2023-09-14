@@ -1,4 +1,5 @@
-﻿using ProyectoIntegradorTaller.formularios;
+﻿using DraggingControl;
+using ProyectoIntegradorTaller.formularios;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -12,7 +13,7 @@ using System.Windows.Forms;
 
 namespace ProyectoIntegrador.formularios
 {
-    public partial class BedelMenu : Form
+    public partial class BedelMenu : DraggablePanelUserControl
     {
         public BedelMenu()
         {
@@ -30,39 +31,10 @@ namespace ProyectoIntegrador.formularios
 
    
 
-        private void BMaximizar_Click(object sender, EventArgs e)
-        {
-            this.WindowState = FormWindowState.Maximized;
-            BMaximizar.Visible = false;
-            BRestaurar.Visible = true;
-        }
-
-        private void BRestaurar_Click(object sender, EventArgs e)
-        {
-            this.WindowState = FormWindowState.Normal;
-            BMaximizar.Visible = true;
-            BRestaurar.Visible = false;
-        }
-
-        private void BEsconder_Click(object sender, EventArgs e)
-        {
-            this.WindowState = FormWindowState.Minimized;
-        }
-
-        private void BCerrar_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
-
-
     
         private void BedelMenu_Load(object sender, EventArgs e)
         {
-            DataGridViewButtonColumn buttonColumn1 = new DataGridViewButtonColumn();
-            buttonColumn1.Name = "Eliminar"; // Name the column
-            buttonColumn1.Text = "Eliminar";    // Text for buttons in the column
-            buttonColumn1.UseColumnTextForButtonValue = true; // Display the Text value on buttons
-
+        
             DataGridViewButtonColumn buttonColumn2 = new DataGridViewButtonColumn();
             buttonColumn2.Name = "Reserva"; // Name the column
             buttonColumn2.Text = "Reservas";    // Text for buttons in the column
@@ -73,7 +45,7 @@ namespace ProyectoIntegrador.formularios
             buttonColumn3.Text = "Reservar";    // Text for buttons in the column
             buttonColumn3.UseColumnTextForButtonValue = true; // Display the Text value on buttons
 
-            dataGridView1.Columns.Add(buttonColumn1);
+ 
             dataGridView1.Columns.Add(buttonColumn2);
             dataGridView1.Columns.Add(buttonColumn3);
 
