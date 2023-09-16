@@ -109,7 +109,15 @@ namespace ProyectoIntegradorTaller.views.admin
             admin.Show();
         }
 
-     
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BBuscar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
     public class ItemMaterias
     {

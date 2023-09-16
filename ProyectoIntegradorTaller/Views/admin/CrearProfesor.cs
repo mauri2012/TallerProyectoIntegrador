@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DraggingControl;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,7 +11,7 @@ using System.Windows.Forms;
 
 namespace ProyectoIntegradorTaller.views.admin
 {
-    public partial class CrearProfesor : Form
+    public partial class CrearProfesor : DraggablePanelUserControl
     {
         public CrearProfesor()
         {
@@ -23,6 +24,11 @@ namespace ProyectoIntegradorTaller.views.admin
             Profesores profesores= new Profesores();
             profesores.Show();
             //admin.;
+        }
+
+        private void BInicioSesion_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

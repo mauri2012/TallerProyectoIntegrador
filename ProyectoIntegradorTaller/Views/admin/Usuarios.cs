@@ -1,4 +1,5 @@
 ﻿//using ProyectoIntegradorTaller.formularios;
+using DraggingControl;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -11,7 +12,7 @@ using System.Windows.Forms;
 
 namespace ProyectoIntegradorTaller.views.admin
 {
-    public partial class Usuarios : Form
+    public partial class Usuarios : DraggablePanelUserControl
     {
         public Usuarios()
         {

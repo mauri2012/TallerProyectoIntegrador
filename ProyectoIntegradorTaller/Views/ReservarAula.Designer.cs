@@ -32,6 +32,7 @@ namespace ProyectoIntegradorTaller.views.admin
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.BVolver = new ProyectoIntegradorTaller.views.components.BotonPersonalisado();
             this.CBDias = new ProyectoIntegradorTaller.views.components.ComboBoxPersonalisado();
             this.CBHasta = new ProyectoIntegradorTaller.views.components.ComboBoxPersonalisado();
             this.CBDesde = new ProyectoIntegradorTaller.views.components.ComboBoxPersonalisado();
@@ -51,7 +52,6 @@ namespace ProyectoIntegradorTaller.views.admin
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label8 = new System.Windows.Forms.Label();
-            this.BVolver = new ProyectoIntegradorTaller.views.components.BotonPersonalisado();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -83,6 +83,27 @@ namespace ProyectoIntegradorTaller.views.admin
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(686, 384);
             this.panel1.TabIndex = 0;
+            // 
+            // BVolver
+            // 
+            this.BVolver.BackColor = System.Drawing.Color.LimeGreen;
+            this.BVolver.BackgroundColor = System.Drawing.Color.LimeGreen;
+            this.BVolver.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.BVolver.BorderRadius = 6;
+            this.BVolver.BorderSize = 0;
+            this.BVolver.FlatAppearance.BorderSize = 0;
+            this.BVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BVolver.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BVolver.ForeColor = System.Drawing.Color.AliceBlue;
+            this.BVolver.Image = global::ProyectoIntegradorTaller.Properties.Resources.path30;
+            this.BVolver.Location = new System.Drawing.Point(12, 303);
+            this.BVolver.Name = "BVolver";
+            this.BVolver.Size = new System.Drawing.Size(100, 40);
+            this.BVolver.TabIndex = 52;
+            this.BVolver.Text = "  Volver";
+            this.BVolver.TextColor = System.Drawing.Color.AliceBlue;
+            this.BVolver.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.BVolver.UseVisualStyleBackColor = false;
             // 
             // CBDias
             // 
@@ -152,11 +173,11 @@ namespace ProyectoIntegradorTaller.views.admin
             this.CBPRofesor.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
             this.CBPRofesor.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(228)))), ((int)(((byte)(245)))));
             this.CBPRofesor.ListTextColor = System.Drawing.Color.DimGray;
-            this.CBPRofesor.Location = new System.Drawing.Point(95, 78);
+            this.CBPRofesor.Location = new System.Drawing.Point(92, 76);
             this.CBPRofesor.MinimumSize = new System.Drawing.Size(200, 30);
             this.CBPRofesor.Name = "CBPRofesor";
             this.CBPRofesor.Padding = new System.Windows.Forms.Padding(2);
-            this.CBPRofesor.Size = new System.Drawing.Size(228, 30);
+            this.CBPRofesor.Size = new System.Drawing.Size(244, 30);
             this.CBPRofesor.TabIndex = 36;
             this.CBPRofesor.Texts = "";
             // 
@@ -171,11 +192,11 @@ namespace ProyectoIntegradorTaller.views.admin
             this.CBMateria.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
             this.CBMateria.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(228)))), ((int)(((byte)(245)))));
             this.CBMateria.ListTextColor = System.Drawing.Color.DimGray;
-            this.CBMateria.Location = new System.Drawing.Point(95, 130);
+            this.CBMateria.Location = new System.Drawing.Point(92, 130);
             this.CBMateria.MinimumSize = new System.Drawing.Size(200, 30);
             this.CBMateria.Name = "CBMateria";
             this.CBMateria.Padding = new System.Windows.Forms.Padding(2);
-            this.CBMateria.Size = new System.Drawing.Size(225, 30);
+            this.CBMateria.Size = new System.Drawing.Size(244, 30);
             this.CBMateria.TabIndex = 35;
             this.CBMateria.Texts = "";
             // 
@@ -187,7 +208,7 @@ namespace ProyectoIntegradorTaller.views.admin
             this.timePickerPersonalisado2.Location = new System.Drawing.Point(92, 184);
             this.timePickerPersonalisado2.MinimumSize = new System.Drawing.Size(4, 35);
             this.timePickerPersonalisado2.Name = "timePickerPersonalisado2";
-            this.timePickerPersonalisado2.Size = new System.Drawing.Size(231, 35);
+            this.timePickerPersonalisado2.Size = new System.Drawing.Size(244, 35);
             this.timePickerPersonalisado2.SkinColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
             this.timePickerPersonalisado2.TabIndex = 34;
             this.timePickerPersonalisado2.TextColor = System.Drawing.Color.White;
@@ -219,7 +240,7 @@ namespace ProyectoIntegradorTaller.views.admin
             this.timePickerPersonalisado1.Location = new System.Drawing.Point(92, 243);
             this.timePickerPersonalisado1.MinimumSize = new System.Drawing.Size(4, 35);
             this.timePickerPersonalisado1.Name = "timePickerPersonalisado1";
-            this.timePickerPersonalisado1.Size = new System.Drawing.Size(231, 35);
+            this.timePickerPersonalisado1.Size = new System.Drawing.Size(244, 35);
             this.timePickerPersonalisado1.SkinColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
             this.timePickerPersonalisado1.TabIndex = 9;
             this.timePickerPersonalisado1.TextColor = System.Drawing.Color.White;
@@ -298,7 +319,7 @@ namespace ProyectoIntegradorTaller.views.admin
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(92, 109);
+            this.label2.Location = new System.Drawing.Point(89, 109);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(61, 18);
             this.label2.TabIndex = 6;
@@ -308,7 +329,7 @@ namespace ProyectoIntegradorTaller.views.admin
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(92, 57);
+            this.label1.Location = new System.Drawing.Point(92, 55);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(70, 18);
             this.label1.TabIndex = 5;
@@ -336,27 +357,6 @@ namespace ProyectoIntegradorTaller.views.admin
             this.label8.Size = new System.Drawing.Size(115, 19);
             this.label8.TabIndex = 7;
             this.label8.Text = "Reservar Aula";
-            // 
-            // BVolver
-            // 
-            this.BVolver.BackColor = System.Drawing.Color.LimeGreen;
-            this.BVolver.BackgroundColor = System.Drawing.Color.LimeGreen;
-            this.BVolver.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.BVolver.BorderRadius = 6;
-            this.BVolver.BorderSize = 0;
-            this.BVolver.FlatAppearance.BorderSize = 0;
-            this.BVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BVolver.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BVolver.ForeColor = System.Drawing.Color.AliceBlue;
-            this.BVolver.Image = global::ProyectoIntegradorTaller.Properties.Resources.path30;
-            this.BVolver.Location = new System.Drawing.Point(32, 309);
-            this.BVolver.Name = "BVolver";
-            this.BVolver.Size = new System.Drawing.Size(79, 40);
-            this.BVolver.TabIndex = 52;
-            this.BVolver.Text = "  Volver";
-            this.BVolver.TextColor = System.Drawing.Color.AliceBlue;
-            this.BVolver.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.BVolver.UseVisualStyleBackColor = false;
             // 
             // ReservarAula
             // 
