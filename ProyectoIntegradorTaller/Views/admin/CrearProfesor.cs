@@ -17,6 +17,12 @@ namespace ProyectoIntegradorTaller.views.admin
             InitializeComponent();
         }
 
-       
+        private void BVolver_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Profesores profesores= new Profesores();
+            profesores.Show();
+            //admin.;
+        }
     }
 }

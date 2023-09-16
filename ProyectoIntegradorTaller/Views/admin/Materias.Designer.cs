@@ -1,7 +1,7 @@
 ﻿using System.Drawing;
 using System.Windows.Forms;
 
-namespace ProyectoIntegradorTaller.formularios
+namespace ProyectoIntegradorTaller.views.admin
 {
     partial class Materias
     {
@@ -41,6 +41,7 @@ namespace ProyectoIntegradorTaller.formularios
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.materiaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.itemMateriasBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.BVolver = new ProyectoIntegradorTaller.views.components.BotonPersonalisado();
             this.panel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.itemMateriasBindingSource)).BeginInit();
@@ -51,12 +52,12 @@ namespace ProyectoIntegradorTaller.formularios
             this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.FromArgb(17, 97, 238);
+            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
             this.label1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.label1.Location = new System.Drawing.Point(344, 11);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(54, 19);
+            this.label1.Size = new System.Drawing.Size(64, 19);
             this.label1.TabIndex = 7;
             this.label1.Text = "Materia";
             // 
@@ -73,6 +74,7 @@ namespace ProyectoIntegradorTaller.formularios
             // panel7
             // 
             this.panel7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.panel7.Controls.Add(this.BVolver);
             this.panel7.Controls.Add(this.BBuscar);
             this.panel7.Controls.Add(this.TBBusqueda);
             this.panel7.Controls.Add(this.BCrearMateria);
@@ -174,7 +176,29 @@ namespace ProyectoIntegradorTaller.formularios
             // 
             // itemMateriasBindingSource
             // 
-            this.itemMateriasBindingSource.DataSource = typeof(ProyectoIntegradorTaller.formularios.ItemMaterias);
+            this.itemMateriasBindingSource.DataSource = typeof(ProyectoIntegradorTaller.views.admin.ItemMaterias);
+            // 
+            // BVolver
+            // 
+            this.BVolver.BackColor = System.Drawing.Color.LimeGreen;
+            this.BVolver.BackgroundColor = System.Drawing.Color.LimeGreen;
+            this.BVolver.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.BVolver.BorderRadius = 6;
+            this.BVolver.BorderSize = 0;
+            this.BVolver.FlatAppearance.BorderSize = 0;
+            this.BVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BVolver.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BVolver.ForeColor = System.Drawing.Color.AliceBlue;
+            this.BVolver.Image = global::ProyectoIntegradorTaller.Properties.Resources.path30;
+            this.BVolver.Location = new System.Drawing.Point(15, 305);
+            this.BVolver.Name = "BVolver";
+            this.BVolver.Size = new System.Drawing.Size(79, 40);
+            this.BVolver.TabIndex = 52;
+            this.BVolver.Text = "  Volver";
+            this.BVolver.TextColor = System.Drawing.Color.AliceBlue;
+            this.BVolver.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.BVolver.UseVisualStyleBackColor = false;
+            this.BVolver.Click += new System.EventHandler(this.BVolver_Click);
             // 
             // Materias
             // 
@@ -214,6 +238,7 @@ namespace ProyectoIntegradorTaller.formularios
         private views.components.BotonPersonalisado BBuscar;
         private BindingSource itemMateriasBindingSource;
         private DataGridViewTextBoxColumn materiaDataGridViewTextBoxColumn;
+        private components.BotonPersonalisado BVolver;
     }
 
     #endregion

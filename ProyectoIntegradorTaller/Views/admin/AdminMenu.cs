@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
 
-namespace ProyectoIntegradorTaller.formularios
+namespace ProyectoIntegradorTaller.views.admin
 {
     public partial class AdminMenu : DraggablePanelUserControl
     {
@@ -31,12 +31,14 @@ namespace ProyectoIntegradorTaller.formularios
                 // Verificar si el clic ocurrió en la columna "Informe"
                 if (dataGridView1.Columns[e.ColumnIndex].Name == "Reservas")
                 {
+                    this.Hide();
                     Reservas unaReserva = new Reservas();
                     unaReserva.Show();
 
                 }
                 if (dataGridView1.Columns[e.ColumnIndex].Name == "Informe")
                 {
+                    this.Hide();
                     Reporte unReporte = new Reporte();
                     unReporte.Show();
                     
@@ -44,6 +46,7 @@ namespace ProyectoIntegradorTaller.formularios
                 // Verificar si el clic ocurrió en la columna "Reservar"
                 else if (dataGridView1.Columns[e.ColumnIndex].Name == "Reservar")
                 {
+                    this.Hide();
                     ReservarAula reserva = new ReservarAula();
                     reserva.Show();
                     // Realizar la acción correspondiente al botón "Reservar"
@@ -51,6 +54,7 @@ namespace ProyectoIntegradorTaller.formularios
                 }
                 else if (dataGridView1.Columns[e.ColumnIndex].Name == "Editar")
                 {
+                    this.Hide();
                     CrearAula aula = new CrearAula((int)dataGridView1.Rows[e.RowIndex].Cells[0].Value,(string)dataGridView1.Rows[e.RowIndex].Cells[1].Value, (string)dataGridView1.Rows[e.RowIndex].Cells[2].Value, (int)dataGridView1.Rows[e.RowIndex].Cells[3].Value,(string)dataGridView1.Rows[e.RowIndex].Cells[4].Value);
                     
                     aula.Show();
@@ -122,12 +126,28 @@ namespace ProyectoIntegradorTaller.formularios
 
         private void BMaterias_Click(object sender, EventArgs e)
         {
+            this.Hide();
             Materias materias = new Materias();
             materias.Show();
         }
 
         private void utils2_Load(object sender, EventArgs e)
         {
+
+        }
+
+        private void BUsuarios_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Usuarios usuarios = new Usuarios();
+            usuarios.Show();
+        }
+
+        private void BProfesores_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Profesores profesores = new Profesores();
+            profesores.Show();
 
         }
     }

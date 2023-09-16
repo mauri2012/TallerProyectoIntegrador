@@ -9,7 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace ProyectoIntegradorTaller.formularios
+namespace ProyectoIntegradorTaller.views.admin
 {
     public partial class Reporte :DraggablePanelUserControl
     {
@@ -28,6 +28,13 @@ namespace ProyectoIntegradorTaller.formularios
         private void Reporte_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void BVolver_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            AdminMenu admin = new AdminMenu();
+            admin.Show();
         }
     }
 }

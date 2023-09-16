@@ -1,7 +1,7 @@
 ﻿using System.Drawing;
 using System.Windows.Forms;
 
-namespace ProyectoIntegradorTaller.formularios
+namespace ProyectoIntegradorTaller.views.admin
 {
     partial class Reporte
     {
@@ -35,7 +35,7 @@ namespace ProyectoIntegradorTaller.formularios
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.label6 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
             this.comboBoxPersonalisado4 = new ProyectoIntegradorTaller.views.components.ComboBoxPersonalisado();
             this.BGuardar = new ProyectoIntegradorTaller.views.components.BotonPersonalisado();
             this.comboBoxPersonalisado3 = new ProyectoIntegradorTaller.views.components.ComboBoxPersonalisado();
@@ -46,12 +46,13 @@ namespace ProyectoIntegradorTaller.formularios
             this.label2 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.BVolver = new ProyectoIntegradorTaller.views.components.BotonPersonalisado();
             this.timePickerPersonalisado2 = new ProyectoIntegradorTaller.views.components.TimePickerPersonalisado();
             this.timePickerPersonalisado1 = new ProyectoIntegradorTaller.views.components.TimePickerPersonalisado();
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
             this.BReservarAula = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -111,17 +112,18 @@ namespace ProyectoIntegradorTaller.formularios
             this.panel4.Size = new System.Drawing.Size(357, 358);
             this.panel4.TabIndex = 32;
             // 
-            // label6
+            // label8
             // 
-            this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
-            this.label6.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(270, 7);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(135, 19);
-            this.label6.TabIndex = 49;
-            this.label6.Text = "Generar Reporte";
+            this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
+            this.label8.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label8.Location = new System.Drawing.Point(-49, 62);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(135, 19);
+            this.label8.TabIndex = 7;
+            this.label8.Text = "Generar Reporte";
             // 
             // comboBoxPersonalisado4
             // 
@@ -244,6 +246,7 @@ namespace ProyectoIntegradorTaller.formularios
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.BVolver);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.timePickerPersonalisado2);
             this.panel1.Controls.Add(this.timePickerPersonalisado1);
@@ -254,6 +257,29 @@ namespace ProyectoIntegradorTaller.formularios
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(333, 358);
             this.panel1.TabIndex = 31;
+            // 
+            // BVolver
+            // 
+            this.BVolver.BackColor = System.Drawing.Color.LimeGreen;
+            this.BVolver.BackgroundColor = System.Drawing.Color.LimeGreen;
+            this.BVolver.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.BVolver.BorderRadius = 6;
+            this.BVolver.BorderSize = 0;
+            this.BVolver.FlatAppearance.BorderSize = 0;
+            this.BVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BVolver.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BVolver.ForeColor = System.Drawing.Color.White;
+            this.BVolver.Image = global::ProyectoIntegradorTaller.Properties.Resources.path30;
+            this.BVolver.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BVolver.Location = new System.Drawing.Point(43, 306);
+            this.BVolver.Name = "BVolver";
+            this.BVolver.Size = new System.Drawing.Size(79, 40);
+            this.BVolver.TabIndex = 49;
+            this.BVolver.Text = "  Volver";
+            this.BVolver.TextColor = System.Drawing.Color.White;
+            this.BVolver.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.BVolver.UseVisualStyleBackColor = false;
+            this.BVolver.Click += new System.EventHandler(this.BVolver_Click);
             // 
             // timePickerPersonalisado2
             // 
@@ -301,25 +327,24 @@ namespace ProyectoIntegradorTaller.formularios
             this.label11.TabIndex = 40;
             this.label11.Text = "Fecha hasta";
             // 
-            // label8
-            // 
-            this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
-            this.label8.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label8.Location = new System.Drawing.Point(-49, 62);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(135, 19);
-            this.label8.TabIndex = 7;
-            this.label8.Text = "Generar Reporte";
-            // 
             // BReservarAula
             // 
             this.BReservarAula.Location = new System.Drawing.Point(0, 0);
             this.BReservarAula.Name = "BReservarAula";
             this.BReservarAula.Size = new System.Drawing.Size(64, 20);
             this.BReservarAula.TabIndex = 7;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
+            this.label6.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.White;
+            this.label6.Location = new System.Drawing.Point(270, 7);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(135, 19);
+            this.label6.TabIndex = 49;
+            this.label6.Text = "Generar Reporte";
             // 
             // Reporte
             // 
@@ -370,5 +395,6 @@ namespace ProyectoIntegradorTaller.formularios
         private Label label2;
         private Label label10;
         private Label label6;
+        private components.BotonPersonalisado BVolver;
     }
 }

@@ -1,4 +1,4 @@
-﻿using ProyectoIntegradorTaller.formularios;
+﻿//using ProyectoIntegradorTaller.formularios;
 using ProyectoIntegradorTaller.Properties;
 
 using System;

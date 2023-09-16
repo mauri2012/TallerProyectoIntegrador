@@ -1,7 +1,7 @@
 ﻿using System.Drawing;
 using System.Windows.Forms;
 
-namespace ProyectoIntegradorTaller
+namespace ProyectoIntegradorTaller.views.admin
 {
     partial class LogIn
     {

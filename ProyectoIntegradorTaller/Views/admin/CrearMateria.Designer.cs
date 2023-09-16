@@ -38,6 +38,8 @@ namespace ProyectoIntegradorTaller
             this.panel7 = new System.Windows.Forms.Panel();
             this.TMateria = new CustomControls.RJControls.RJTextBox();
             this.BInicioSesion = new ProyectoIntegradorTaller.views.components.BotonPersonalisado();
+            this.BVolver = new ProyectoIntegradorTaller.views.components.BotonPersonalisado();
+            this.panel5.SuspendLayout();
             this.panel7.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -45,7 +47,7 @@ namespace ProyectoIntegradorTaller
             // 
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.FromArgb(17, 97, 238);
+            this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
             this.label2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
             this.label2.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.label2.Location = new System.Drawing.Point(288, 7);
@@ -68,6 +70,7 @@ namespace ProyectoIntegradorTaller
             // panel5
             // 
             this.panel5.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.panel5.Controls.Add(this.BVolver);
             this.panel5.Location = new System.Drawing.Point(0, 32);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(180, 358);
@@ -137,6 +140,28 @@ namespace ProyectoIntegradorTaller
             this.BInicioSesion.UseVisualStyleBackColor = false;
             this.BInicioSesion.Click += new System.EventHandler(this.BInicioSesion_Click);
             // 
+            // BVolver
+            // 
+            this.BVolver.BackColor = System.Drawing.Color.LimeGreen;
+            this.BVolver.BackgroundColor = System.Drawing.Color.LimeGreen;
+            this.BVolver.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.BVolver.BorderRadius = 6;
+            this.BVolver.BorderSize = 0;
+            this.BVolver.FlatAppearance.BorderSize = 0;
+            this.BVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BVolver.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BVolver.ForeColor = System.Drawing.Color.White;
+            this.BVolver.Image = global::ProyectoIntegradorTaller.Properties.Resources.path30;
+            this.BVolver.Location = new System.Drawing.Point(51, 293);
+            this.BVolver.Name = "BVolver";
+            this.BVolver.Size = new System.Drawing.Size(79, 40);
+            this.BVolver.TabIndex = 51;
+            this.BVolver.Text = "  Volver";
+            this.BVolver.TextColor = System.Drawing.Color.White;
+            this.BVolver.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.BVolver.UseVisualStyleBackColor = false;
+            this.BVolver.Click += new System.EventHandler(this.BVolver_Click);
+            // 
             // CrearMateria
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -154,6 +179,7 @@ namespace ProyectoIntegradorTaller
             this.Controls.SetChildIndex(this.panel6, 0);
             this.Controls.SetChildIndex(this.panel7, 0);
             this.Controls.SetChildIndex(this.label2, 0);
+            this.panel5.ResumeLayout(false);
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();
             this.ResumeLayout(false);
@@ -176,5 +202,6 @@ namespace ProyectoIntegradorTaller
         private views.components.BotonPersonalisado BInicioSesion;
         private CustomControls.RJControls.RJTextBox TMateria;
         private Label label2;
+        private views.components.BotonPersonalisado BVolver;
     }
 }

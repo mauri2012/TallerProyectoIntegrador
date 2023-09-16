@@ -12,7 +12,7 @@ using System.Windows.Forms;
 using System.Xml.Linq;
 
 
-namespace ProyectoIntegradorTaller.formularios
+namespace ProyectoIntegradorTaller.views.admin
 {
     public partial class CrearAula : DraggablePanelUserControl 
     {
@@ -75,6 +75,16 @@ namespace ProyectoIntegradorTaller.formularios
         private void label1_Click(object sender, EventArgs e)
         {
 
+        }
+
+
+
+        private void BVolver_Click(object sender, EventArgs e)
+        {
+            // cuando podamos discriminar usuarios aca va un if
+            AdminMenu admin = new AdminMenu();
+            admin.Show();
+            this.Hide();
         }
     }
 }

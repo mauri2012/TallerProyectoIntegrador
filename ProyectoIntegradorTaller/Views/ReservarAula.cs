@@ -10,7 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace ProyectoIntegradorTaller.formularios
+namespace ProyectoIntegradorTaller.views.admin
 {
     public partial class ReservarAula : DraggablePanelUserControl
     {
@@ -56,6 +56,14 @@ namespace ProyectoIntegradorTaller.formularios
             CBDias.DataSource = items;
             CBDias.DisplayMember = "text";
             CBDias.ValueMember = "value";
+        }
+
+        private void BVolver_Click(object sender, EventArgs e)
+        {
+            //discriminar a usuarios con if cuando se pueda
+            this.Hide();
+            AdminMenu admin=new AdminMenu();
+            admin.Show();
         }
     }
 

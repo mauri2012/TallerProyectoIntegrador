@@ -1,7 +1,7 @@
 ﻿using System.Drawing;
 using System.Windows.Forms;
 
-namespace ProyectoIntegradorTaller.formularios
+namespace ProyectoIntegradorTaller.views.admin
 {
     partial class ReservarAula
     {
@@ -51,6 +51,7 @@ namespace ProyectoIntegradorTaller.formularios
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label8 = new System.Windows.Forms.Label();
+            this.BVolver = new ProyectoIntegradorTaller.views.components.BotonPersonalisado();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -60,6 +61,7 @@ namespace ProyectoIntegradorTaller.formularios
             // panel1
             // 
             this.panel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.panel1.Controls.Add(this.BVolver);
             this.panel1.Controls.Add(this.CBDias);
             this.panel1.Controls.Add(this.CBHasta);
             this.panel1.Controls.Add(this.CBDesde);
@@ -335,6 +337,27 @@ namespace ProyectoIntegradorTaller.formularios
             this.label8.TabIndex = 7;
             this.label8.Text = "Reservar Aula";
             // 
+            // BVolver
+            // 
+            this.BVolver.BackColor = System.Drawing.Color.LimeGreen;
+            this.BVolver.BackgroundColor = System.Drawing.Color.LimeGreen;
+            this.BVolver.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.BVolver.BorderRadius = 6;
+            this.BVolver.BorderSize = 0;
+            this.BVolver.FlatAppearance.BorderSize = 0;
+            this.BVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BVolver.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BVolver.ForeColor = System.Drawing.Color.AliceBlue;
+            this.BVolver.Image = global::ProyectoIntegradorTaller.Properties.Resources.path30;
+            this.BVolver.Location = new System.Drawing.Point(32, 309);
+            this.BVolver.Name = "BVolver";
+            this.BVolver.Size = new System.Drawing.Size(79, 40);
+            this.BVolver.TabIndex = 52;
+            this.BVolver.Text = "  Volver";
+            this.BVolver.TextColor = System.Drawing.Color.AliceBlue;
+            this.BVolver.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.BVolver.UseVisualStyleBackColor = false;
+            // 
             // ReservarAula
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -380,5 +403,6 @@ namespace ProyectoIntegradorTaller.formularios
         private views.components.ComboBoxPersonalisado CBDias;
         private views.components.ComboBoxPersonalisado CBHasta;
         private views.components.ComboBoxPersonalisado CBDesde;
+        private components.BotonPersonalisado BVolver;
     }
 }

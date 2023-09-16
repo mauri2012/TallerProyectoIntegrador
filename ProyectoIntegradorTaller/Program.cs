@@ -1,5 +1,5 @@
-﻿using ProyectoIntegrador.formularios;
-using ProyectoIntegradorTaller.formularios;
+﻿//using ProyectoIntegrador.formularios;
+//using ProyectoIntegradorTaller.formularios;
 using ProyectoIntegradorTaller.views.admin;
 using System;
 using System.Collections.Generic;
@@ -7,7 +7,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 //using Views;
-namespace ProyectoIntegradorTaller
+namespace ProyectoIntegradorTaller.views
+
 {
     internal static class Program
     {

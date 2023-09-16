@@ -9,7 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace ProyectoIntegradorTaller.formularios
+namespace ProyectoIntegradorTaller.views.admin
 {
     public partial class Materias : DraggablePanelUserControl
     {
@@ -102,7 +102,14 @@ namespace ProyectoIntegradorTaller.formularios
             unaMateria.Show();
         }
 
-    
+        private void BVolver_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            AdminMenu admin=new AdminMenu();
+            admin.Show();
+        }
+
+     
     }
     public class ItemMaterias
     {

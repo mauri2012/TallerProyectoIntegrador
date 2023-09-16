@@ -1,6 +1,7 @@
 using DraggingControl;
-using ProyectoIntegrador.formularios;
-using ProyectoIntegradorTaller.formularios;
+using ProyectoIntegradorTaller.views.admin;
+//using ProyectoIntegrador.formularios;
+//using ProyectoIntegradorTaller.formularios;
 using System;
 using System.Windows.Forms;
 
@@ -41,5 +42,14 @@ namespace ProyectoIntegradorTaller
                 MessageBox.Show("Existen campos incompletos", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
+
+        private void BVolver_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Materias materias = new Materias();
+            materias.Show();
+        }
+
+  
     }
 }

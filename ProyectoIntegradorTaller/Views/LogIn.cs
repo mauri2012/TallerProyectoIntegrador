@@ -1,11 +1,11 @@
 using DraggingControl;
-using ProyectoIntegrador.formularios;
-using ProyectoIntegradorTaller.formularios;
+//using ProyectoIntegrador.formularios;
+//using ProyectoIntegradorTaller.formularios;
 using System;
 using System.Drawing;
 using System.Windows.Forms;
 
-namespace ProyectoIntegradorTaller    
+namespace ProyectoIntegradorTaller.views.admin    
 {
     public partial class LogIn : DraggablePanelUserControl
     {

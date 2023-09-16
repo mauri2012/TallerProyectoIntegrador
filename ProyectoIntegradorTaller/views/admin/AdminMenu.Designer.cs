@@ -2,7 +2,7 @@
 using System.Resources;
 using System.Windows.Forms;
 
-namespace ProyectoIntegradorTaller.formularios
+namespace ProyectoIntegradorTaller.views.admin
 {
     partial class AdminMenu
     {
@@ -48,7 +48,6 @@ namespace ProyectoIntegradorTaller.formularios
             this.capacidadMaxDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tipoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.itemBindingSource = new System.Windows.Forms.BindingSource(this.components);
-         
             this.panel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.itemBindingSource)).BeginInit();
@@ -141,6 +140,7 @@ namespace ProyectoIntegradorTaller.formularios
             this.BProfesores.TextColor = System.Drawing.Color.White;
             this.BProfesores.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.BProfesores.UseVisualStyleBackColor = false;
+            this.BProfesores.Click += new System.EventHandler(this.BProfesores_Click);
             // 
             // BMaterias
             // 
@@ -184,6 +184,7 @@ namespace ProyectoIntegradorTaller.formularios
             this.BUsuarios.TextColor = System.Drawing.Color.White;
             this.BUsuarios.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.BUsuarios.UseVisualStyleBackColor = false;
+            this.BUsuarios.Click += new System.EventHandler(this.BUsuarios_Click);
             // 
             // BCrearAula
             // 
@@ -261,8 +262,7 @@ namespace ProyectoIntegradorTaller.formularios
             // 
             // itemBindingSource
             // 
-            this.itemBindingSource.DataSource = typeof(ProyectoIntegradorTaller.formularios.Item);
-   
+            this.itemBindingSource.DataSource = typeof(Item);
             // 
             // AdminMenu
             // 

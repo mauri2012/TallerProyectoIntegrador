@@ -283,5 +283,11 @@
   <ItemGroup>
     <None Include="Resources\disable_off.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrow_back_FILL0_wght400_GRAD0_opsz24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\path30.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

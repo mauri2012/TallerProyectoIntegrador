@@ -1,4 +1,5 @@
-﻿using System;
+﻿//using ProyectoIntegradorTaller.formularios;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -16,5 +17,14 @@ namespace ProyectoIntegradorTaller.views.admin
         {
             InitializeComponent();
         }
+
+        private void BVolver_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            AdminMenu admin = new AdminMenu();
+            admin.Show();
+        }
+
+  
     }
 }

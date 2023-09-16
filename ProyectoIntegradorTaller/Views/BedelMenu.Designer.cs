@@ -1,7 +1,7 @@
 ﻿using System.Drawing;
 using System.Windows.Forms;
 
-namespace ProyectoIntegrador.formularios
+namespace ProyectoIntegradorTaller.views.admin
 {
     partial class BedelMenu
     {
@@ -172,7 +172,7 @@ namespace ProyectoIntegrador.formularios
             // 
             // itemProfesorBindingSource
             // 
-            this.itemProfesorBindingSource.DataSource = typeof(ProyectoIntegrador.formularios.ItemProfesor);
+            this.itemProfesorBindingSource.DataSource = typeof(ItemProfesor);
             // 
             // BedelMenu
             // 
