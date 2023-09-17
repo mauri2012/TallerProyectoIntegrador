@@ -12,6 +12,8 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -144,6 +146,12 @@
     <Compile Include="views\ReservarAula.Designer.cs">
       <DependentUpon>ReservarAula.cs</DependentUpon>
     </Compile>
+    <Compile Include="views\VerReservas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="views\VerReservas.Designer.cs">
+      <DependentUpon>VerReservas.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -177,6 +185,7 @@
       <DependentUpon>AdminMenu.cs</DependentUpon>
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>AdminMenu1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="views\admin\CrearAula.resx">
       <DependentUpon>CrearAula.cs</DependentUpon>
@@ -192,6 +201,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="views\ReservarAula.resx">
       <DependentUpon>ReservarAula.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="views\VerReservas.resx">
+      <DependentUpon>VerReservas.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\DataSources\CrearMateria.datasource" />
     <None Include="Properties\DataSources\ProyectoIntegrador.formularios.ItemProfesor.datasource" />

@@ -33,10 +33,10 @@ namespace ProyectoIntegradorTaller.views.admin
             this.BEditarAula = new ProyectoIntegradorTaller.views.components.BotonPersonalisado();
             this.BCrearAula = new ProyectoIntegradorTaller.views.components.BotonPersonalisado();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.BVolver = new ProyectoIntegradorTaller.views.components.BotonPersonalisado();
             this.label2 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.BVolver = new ProyectoIntegradorTaller.views.components.BotonPersonalisado();
             this.panel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -300,6 +300,28 @@ namespace ProyectoIntegradorTaller.views.admin
             this.panel1.Size = new System.Drawing.Size(219, 358);
             this.panel1.TabIndex = 12;
             // 
+            // BVolver
+            // 
+            this.BVolver.BackColor = System.Drawing.Color.LimeGreen;
+            this.BVolver.BackgroundColor = System.Drawing.Color.LimeGreen;
+            this.BVolver.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.BVolver.BorderRadius = 6;
+            this.BVolver.BorderSize = 0;
+            this.BVolver.FlatAppearance.BorderSize = 0;
+            this.BVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BVolver.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BVolver.ForeColor = System.Drawing.Color.White;
+            this.BVolver.Image = global::ProyectoIntegradorTaller.Properties.Resources.path30;
+            this.BVolver.Location = new System.Drawing.Point(12, 306);
+            this.BVolver.Name = "BVolver";
+            this.BVolver.Size = new System.Drawing.Size(100, 40);
+            this.BVolver.TabIndex = 50;
+            this.BVolver.Text = "  Volver";
+            this.BVolver.TextColor = System.Drawing.Color.White;
+            this.BVolver.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.BVolver.UseVisualStyleBackColor = false;
+            this.BVolver.Click += new System.EventHandler(this.BVolver_Click);
+            // 
             // label2
             // 
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.Top;
@@ -334,28 +356,6 @@ namespace ProyectoIntegradorTaller.views.admin
             this.label1.TabIndex = 12;
             this.label1.Text = "Aula";
             this.label1.Click += new System.EventHandler(this.label1_Click);
-            // 
-            // BVolver
-            // 
-            this.BVolver.BackColor = System.Drawing.Color.LimeGreen;
-            this.BVolver.BackgroundColor = System.Drawing.Color.LimeGreen;
-            this.BVolver.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.BVolver.BorderRadius = 6;
-            this.BVolver.BorderSize = 0;
-            this.BVolver.FlatAppearance.BorderSize = 0;
-            this.BVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BVolver.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BVolver.ForeColor = System.Drawing.Color.White;
-            this.BVolver.Image = global::ProyectoIntegradorTaller.Properties.Resources.path30;
-            this.BVolver.Location = new System.Drawing.Point(70, 306);
-            this.BVolver.Name = "BVolver";
-            this.BVolver.Size = new System.Drawing.Size(79, 40);
-            this.BVolver.TabIndex = 50;
-            this.BVolver.Text = "  Volver";
-            this.BVolver.TextColor = System.Drawing.Color.White;
-            this.BVolver.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.BVolver.UseVisualStyleBackColor = false;
-            this.BVolver.Click += new System.EventHandler(this.BVolver_Click);
             // 
             // CrearAula
             // 

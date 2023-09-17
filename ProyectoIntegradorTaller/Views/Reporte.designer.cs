@@ -271,9 +271,9 @@ namespace ProyectoIntegradorTaller.views.admin
             this.BVolver.ForeColor = System.Drawing.Color.White;
             this.BVolver.Image = global::ProyectoIntegradorTaller.Properties.Resources.path30;
             this.BVolver.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BVolver.Location = new System.Drawing.Point(43, 306);
+            this.BVolver.Location = new System.Drawing.Point(12, 306);
             this.BVolver.Name = "BVolver";
-            this.BVolver.Size = new System.Drawing.Size(79, 40);
+            this.BVolver.Size = new System.Drawing.Size(100, 40);
             this.BVolver.TabIndex = 49;
             this.BVolver.Text = "  Volver";
             this.BVolver.TextColor = System.Drawing.Color.White;

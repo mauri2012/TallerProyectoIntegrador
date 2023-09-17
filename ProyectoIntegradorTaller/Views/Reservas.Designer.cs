@@ -74,9 +74,9 @@ namespace ProyectoIntegradorTaller.views.admin
             this.BVolver.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BVolver.ForeColor = System.Drawing.Color.AliceBlue;
             this.BVolver.Image = global::ProyectoIntegradorTaller.Properties.Resources.path30;
-            this.BVolver.Location = new System.Drawing.Point(12, 32);
+            this.BVolver.Location = new System.Drawing.Point(12, 306);
             this.BVolver.Name = "BVolver";
-            this.BVolver.Size = new System.Drawing.Size(79, 40);
+            this.BVolver.Size = new System.Drawing.Size(100, 40);
             this.BVolver.TabIndex = 52;
             this.BVolver.Text = "  Volver";
             this.BVolver.TextColor = System.Drawing.Color.AliceBlue;
@@ -95,7 +95,7 @@ namespace ProyectoIntegradorTaller.views.admin
             this.CBDias.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
             this.CBDias.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(228)))), ((int)(((byte)(245)))));
             this.CBDias.ListTextColor = System.Drawing.Color.DimGray;
-            this.CBDias.Location = new System.Drawing.Point(474, 42);
+            this.CBDias.Location = new System.Drawing.Point(474, 19);
             this.CBDias.MinimumSize = new System.Drawing.Size(200, 30);
             this.CBDias.Name = "CBDias";
             this.CBDias.Padding = new System.Windows.Forms.Padding(2);
@@ -107,7 +107,7 @@ namespace ProyectoIntegradorTaller.views.admin
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(471, 21);
+            this.label5.Location = new System.Drawing.Point(437, 31);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(31, 18);
             this.label5.TabIndex = 40;
@@ -129,10 +129,10 @@ namespace ProyectoIntegradorTaller.views.admin
             this.profesorDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.itemReservasBindingSource;
             this.dataGridView1.GridColor = System.Drawing.SystemColors.ButtonFace;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 78);
+            this.dataGridView1.Location = new System.Drawing.Point(12, 55);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 25;
-            this.dataGridView1.Size = new System.Drawing.Size(662, 268);
+            this.dataGridView1.Size = new System.Drawing.Size(662, 245);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
