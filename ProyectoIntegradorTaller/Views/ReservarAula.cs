@@ -58,12 +58,15 @@ namespace ProyectoIntegradorTaller.views.admin
             CBDias.ValueMember = "value";
         }
 
-        private void BVolver_Click(object sender, EventArgs e)
+       
+
+        private void BVolver_Click_1(object sender, EventArgs e)
         {
             //discriminar a usuarios con if cuando se pueda
             this.Hide();
-            AdminMenu admin=new AdminMenu();
-            admin.Show();
+             VerReservas reservas = new VerReservas();
+            reservas.Show();
+           
         }
     }
 

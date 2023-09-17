@@ -14,6 +14,21 @@
     <Deterministic>true</Deterministic>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -61,6 +76,12 @@
     <Compile Include="views\admin\CrearProfesor.Designer.cs">
       <DependentUpon>CrearProfesor.cs</DependentUpon>
     </Compile>
+    <Compile Include="views\admin\CrearUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="views\admin\CrearUsuario.Designer.cs">
+      <DependentUpon>CrearUsuario.cs</DependentUpon>
+    </Compile>
     <Compile Include="views\admin\Profesores.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -92,23 +113,11 @@
     <Compile Include="views\components\TimePickerPersonalisado.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="views\admin\CrearMateria.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="views\admin\CrearMateria.Designer.cs">
-      <DependentUpon>CrearMateria.cs</DependentUpon>
-    </Compile>
     <Compile Include="views\admin\Materias.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="views\admin\Materias.Designer.cs">
       <DependentUpon>Materias.cs</DependentUpon>
-    </Compile>
-    <Compile Include="views\Reservas.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="views\Reservas.Designer.cs">
-      <DependentUpon>Reservas.cs</DependentUpon>
     </Compile>
     <Compile Include="views\admin\AdminMenu.cs">
       <SubType>Form</SubType>
@@ -165,6 +174,9 @@
     <EmbeddedResource Include="views\admin\CrearProfesor.resx">
       <DependentUpon>CrearProfesor.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="views\admin\CrearUsuario.resx">
+      <DependentUpon>CrearUsuario.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="views\admin\Profesores.resx">
       <DependentUpon>Profesores.cs</DependentUpon>
     </EmbeddedResource>
@@ -172,14 +184,8 @@
       <DependentUpon>Usuarios.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="views\components\RJTextBox.resx" />
-    <EmbeddedResource Include="views\admin\CrearMateria.resx">
-      <DependentUpon>CrearMateria.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="views\admin\Materias.resx">
       <DependentUpon>Materias.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="views\Reservas.resx">
-      <DependentUpon>Reservas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="views\admin\AdminMenu.resx">
       <DependentUpon>AdminMenu.cs</DependentUpon>
@@ -300,6 +306,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\path30.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.8">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.8 %28x86 y x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

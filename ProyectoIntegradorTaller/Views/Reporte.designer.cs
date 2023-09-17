@@ -355,6 +355,7 @@ namespace ProyectoIntegradorTaller.views.admin
             this.Controls.Add(this.label6);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Reporte";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ReservarAula";
             this.Load += new System.EventHandler(this.Reporte_Load);
             this.Controls.SetChildIndex(this.label6, 0);

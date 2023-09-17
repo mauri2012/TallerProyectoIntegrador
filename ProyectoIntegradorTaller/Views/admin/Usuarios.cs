@@ -26,6 +26,12 @@ namespace ProyectoIntegradorTaller.views.admin
             admin.Show();
         }
 
-  
+        private void BCrearUsuario_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            CrearUsuario crearUsuario = new CrearUsuario();
+            crearUsuario.Show();
+              
+        }
     }
 }

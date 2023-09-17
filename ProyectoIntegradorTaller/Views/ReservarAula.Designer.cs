@@ -104,6 +104,7 @@ namespace ProyectoIntegradorTaller.views.admin
             this.BVolver.TextColor = System.Drawing.Color.AliceBlue;
             this.BVolver.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.BVolver.UseVisualStyleBackColor = false;
+            this.BVolver.Click += new System.EventHandler(this.BVolver_Click_1);
             // 
             // CBDias
             // 
@@ -367,6 +368,7 @@ namespace ProyectoIntegradorTaller.views.admin
             this.Controls.Add(this.label8);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ReservarAula";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ReservarAula";
             this.Load += new System.EventHandler(this.LoadReservarAula);
             this.Controls.SetChildIndex(this.label8, 0);

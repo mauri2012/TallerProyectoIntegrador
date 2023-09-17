@@ -74,23 +74,7 @@ namespace ProyectoIntegradorTaller.views.admin
             reserva.Show();
         }
 
-        private void dataGridView1_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
-            {
-                // Verificar si el clic ocurrió en la columna "Informe"
-                if (dataGridView1.Columns[e.ColumnIndex].Name == "Reserva")
-                {
-                    Reservas unaReserva = new Reservas();
-                    unaReserva.Show();
-
-                }else if(dataGridView1.Columns[e.ColumnIndex].Name == "Reservar")
-                {
-                    ReservarAula unaReserva = new ReservarAula();
-                    unaReserva.Show();
-                }
-            }
-        }
+        
 
       
     }

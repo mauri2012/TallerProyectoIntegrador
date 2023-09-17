@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Apellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -38,7 +38,7 @@
             this.Desactivar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.rjTextBox1 = new CustomControls.RJControls.RJTextBox();
             this.BBuscar = new ProyectoIntegradorTaller.views.components.BotonPersonalisado();
-            this.botonPersonalisado1 = new ProyectoIntegradorTaller.views.components.BotonPersonalisado();
+            this.BCrearUsuario = new ProyectoIntegradorTaller.views.components.BotonPersonalisado();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.BVolver = new ProyectoIntegradorTaller.views.components.BotonPersonalisado();
@@ -54,14 +54,14 @@
             this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView1.ColumnHeadersHeight = 40;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Nombre,
@@ -163,26 +163,27 @@
             this.BBuscar.TextColor = System.Drawing.Color.White;
             this.BBuscar.UseVisualStyleBackColor = false;
             // 
-            // botonPersonalisado1
+            // BCrearUsuario
             // 
-            this.botonPersonalisado1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
-            this.botonPersonalisado1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
-            this.botonPersonalisado1.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.botonPersonalisado1.BorderRadius = 6;
-            this.botonPersonalisado1.BorderSize = 0;
-            this.botonPersonalisado1.FlatAppearance.BorderSize = 0;
-            this.botonPersonalisado1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.botonPersonalisado1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.botonPersonalisado1.ForeColor = System.Drawing.Color.White;
-            this.botonPersonalisado1.Image = global::ProyectoIntegradorTaller.Properties.Resources.add_person;
-            this.botonPersonalisado1.Location = new System.Drawing.Point(525, 338);
-            this.botonPersonalisado1.Name = "botonPersonalisado1";
-            this.botonPersonalisado1.Size = new System.Drawing.Size(149, 40);
-            this.botonPersonalisado1.TabIndex = 13;
-            this.botonPersonalisado1.Text = "  Crear Usuario";
-            this.botonPersonalisado1.TextColor = System.Drawing.Color.White;
-            this.botonPersonalisado1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.botonPersonalisado1.UseVisualStyleBackColor = false;
+            this.BCrearUsuario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
+            this.BCrearUsuario.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
+            this.BCrearUsuario.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.BCrearUsuario.BorderRadius = 6;
+            this.BCrearUsuario.BorderSize = 0;
+            this.BCrearUsuario.FlatAppearance.BorderSize = 0;
+            this.BCrearUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BCrearUsuario.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BCrearUsuario.ForeColor = System.Drawing.Color.White;
+            this.BCrearUsuario.Image = global::ProyectoIntegradorTaller.Properties.Resources.add_person;
+            this.BCrearUsuario.Location = new System.Drawing.Point(525, 338);
+            this.BCrearUsuario.Name = "BCrearUsuario";
+            this.BCrearUsuario.Size = new System.Drawing.Size(149, 40);
+            this.BCrearUsuario.TabIndex = 13;
+            this.BCrearUsuario.Text = "  Crear Usuario";
+            this.BCrearUsuario.TextColor = System.Drawing.Color.White;
+            this.BCrearUsuario.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.BCrearUsuario.UseVisualStyleBackColor = false;
+            this.BCrearUsuario.Click += new System.EventHandler(this.BCrearUsuario_Click);
             // 
             // radioButton1
             // 
@@ -256,11 +257,12 @@
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.BBuscar);
             this.Controls.Add(this.rjTextBox1);
-            this.Controls.Add(this.botonPersonalisado1);
+            this.Controls.Add(this.BCrearUsuario);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Usuarios";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Usuarios";
-            this.Controls.SetChildIndex(this.botonPersonalisado1, 0);
+            this.Controls.SetChildIndex(this.BCrearUsuario, 0);
             this.Controls.SetChildIndex(this.rjTextBox1, 0);
             this.Controls.SetChildIndex(this.BBuscar, 0);
             this.Controls.SetChildIndex(this.dataGridView1, 0);
@@ -279,7 +281,7 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private components.BotonPersonalisado BBuscar;
         private CustomControls.RJControls.RJTextBox rjTextBox1;
-        private components.BotonPersonalisado botonPersonalisado1;
+        private components.BotonPersonalisado BCrearUsuario;
         private System.Windows.Forms.RadioButton radioButton1;
         private System.Windows.Forms.RadioButton radioButton2;
         private components.BotonPersonalisado BVolver;

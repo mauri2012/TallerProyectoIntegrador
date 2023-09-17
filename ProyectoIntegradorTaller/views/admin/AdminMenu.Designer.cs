@@ -33,6 +33,7 @@ namespace ProyectoIntegradorTaller.views.admin
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.LBienvenido = new System.Windows.Forms.Label();
             this.panel7 = new System.Windows.Forms.Panel();
             this.BBuscar = new ProyectoIntegradorTaller.views.components.BotonPersonalisado();
@@ -48,6 +49,7 @@ namespace ProyectoIntegradorTaller.views.admin
             this.capacidadMaxDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tipoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.itemBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.label1 = new System.Windows.Forms.Label();
             this.panel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.itemBindingSource)).BeginInit();
@@ -57,7 +59,7 @@ namespace ProyectoIntegradorTaller.views.admin
             // 
             this.LBienvenido.AutoSize = true;
             this.LBienvenido.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Bold);
-            this.LBienvenido.Location = new System.Drawing.Point(12, 56);
+            this.LBienvenido.Location = new System.Drawing.Point(12, 32);
             this.LBienvenido.Name = "LBienvenido";
             this.LBienvenido.Size = new System.Drawing.Size(53, 18);
             this.LBienvenido.TabIndex = 3;
@@ -91,7 +93,7 @@ namespace ProyectoIntegradorTaller.views.admin
             this.BBuscar.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BBuscar.ForeColor = System.Drawing.Color.White;
             this.BBuscar.Image = global::ProyectoIntegradorTaller.Properties.Resources.search_white;
-            this.BBuscar.Location = new System.Drawing.Point(628, 50);
+            this.BBuscar.Location = new System.Drawing.Point(628, 18);
             this.BBuscar.Name = "BBuscar";
             this.BBuscar.Size = new System.Drawing.Size(46, 32);
             this.BBuscar.TabIndex = 10;
@@ -107,7 +109,7 @@ namespace ProyectoIntegradorTaller.views.admin
             this.TBBusqueda.BorderSize = 2;
             this.TBBusqueda.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TBBusqueda.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.TBBusqueda.Location = new System.Drawing.Point(435, 50);
+            this.TBBusqueda.Location = new System.Drawing.Point(435, 19);
             this.TBBusqueda.Margin = new System.Windows.Forms.Padding(4);
             this.TBBusqueda.Multiline = false;
             this.TBBusqueda.Name = "TBBusqueda";
@@ -213,8 +215,19 @@ namespace ProyectoIntegradorTaller.views.admin
             this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView1.AutoGenerateColumns = false;
-            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
+            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dataGridView1.ColumnHeadersHeight = 35;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idDataGridViewTextBoxColumn,
             this.nameDataGridViewTextBoxColumn,
@@ -222,11 +235,13 @@ namespace ProyectoIntegradorTaller.views.admin
             this.capacidadMaxDataGridViewTextBoxColumn,
             this.tipoDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.itemBindingSource;
+            this.dataGridView1.EnableHeadersVisualStyles = false;
             this.dataGridView1.GridColor = System.Drawing.SystemColors.ButtonFace;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 88);
+            this.dataGridView1.Location = new System.Drawing.Point(12, 57);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowTemplate.Height = 25;
-            this.dataGridView1.Size = new System.Drawing.Size(662, 192);
+            this.dataGridView1.Size = new System.Drawing.Size(662, 243);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
@@ -262,7 +277,21 @@ namespace ProyectoIntegradorTaller.views.admin
             // 
             // itemBindingSource
             // 
-            this.itemBindingSource.DataSource = typeof(Item);
+            this.itemBindingSource.DataSource = typeof(ProyectoIntegradorTaller.views.admin.Item);
+            // 
+            // label1
+            // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
+            this.label1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
+            this.label1.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label1.Location = new System.Drawing.Point(308, 7);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(54, 19);
+            this.label1.TabIndex = 11;
+            this.label1.Text = "Home";
             // 
             // AdminMenu
             // 
@@ -270,17 +299,21 @@ namespace ProyectoIntegradorTaller.views.admin
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Snow;
             this.ClientSize = new System.Drawing.Size(686, 390);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.panel7);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "AdminMenu";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menu";
             this.Load += new System.EventHandler(this.AdminMenu_Load);
             this.Controls.SetChildIndex(this.panel7, 0);
+            this.Controls.SetChildIndex(this.label1, 0);
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.itemBindingSource)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -305,7 +338,7 @@ namespace ProyectoIntegradorTaller.views.admin
         private DataGridViewTextBoxColumn capacidadMaxDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn tipoDataGridViewTextBoxColumn;
         private BindingSource itemBindingSource;
-        
+        private Label label1;
     }
 
     #endregion

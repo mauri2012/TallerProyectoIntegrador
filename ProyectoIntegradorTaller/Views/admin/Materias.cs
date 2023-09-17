@@ -36,22 +36,7 @@ namespace ProyectoIntegradorTaller.views.admin
  
 
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
-            {
-                // Verificar si el clic ocurrió en la columna "Informe"
-               
-                // Verificar si el clic ocurrió en la columna "Reservar"
-          
-                if (dataGridView1.Columns[e.ColumnIndex].Name == "Editar")
-                {
-                    CrearMateria aula = new CrearMateria((string)dataGridView1.Rows[e.RowIndex].Cells[0].Value);
-                    aula.Show();
-                    
-                }
-            }
-        }
+        
         private void Reservas_Load(object sender, EventArgs e)
         {
 
@@ -95,12 +80,7 @@ namespace ProyectoIntegradorTaller.views.admin
             aula.Show();
         }
 
-        private void BCrearMateria_Click(object sender, EventArgs e)
-        {
-            
-            CrearMateria unaMateria = new CrearMateria();
-            unaMateria.Show();
-        }
+        
 
         private void BVolver_Click(object sender, EventArgs e)
         {

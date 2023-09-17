@@ -40,6 +40,7 @@
             this.BInicioSesion = new ProyectoIntegradorTaller.views.components.BotonPersonalisado();
             this.TTipo = new ProyectoIntegradorTaller.views.components.ComboBoxPersonalisado();
             this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // rjTextBox1
@@ -52,7 +53,7 @@
             this.rjTextBox1.BorderSize = 2;
             this.rjTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rjTextBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.rjTextBox1.Location = new System.Drawing.Point(196, 128);
+            this.rjTextBox1.Location = new System.Drawing.Point(60, 80);
             this.rjTextBox1.Margin = new System.Windows.Forms.Padding(4);
             this.rjTextBox1.Multiline = false;
             this.rjTextBox1.Name = "rjTextBox1";
@@ -70,7 +71,7 @@
             this.label4.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
-            this.label4.Location = new System.Drawing.Point(193, 108);
+            this.label4.Location = new System.Drawing.Point(59, 60);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(62, 16);
             this.label4.TabIndex = 35;
@@ -81,7 +82,7 @@
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
-            this.label1.Location = new System.Drawing.Point(193, 163);
+            this.label1.Location = new System.Drawing.Point(57, 115);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(64, 16);
             this.label1.TabIndex = 36;
@@ -97,7 +98,7 @@
             this.rjTextBox2.BorderSize = 2;
             this.rjTextBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rjTextBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.rjTextBox2.Location = new System.Drawing.Point(196, 183);
+            this.rjTextBox2.Location = new System.Drawing.Point(62, 135);
             this.rjTextBox2.Margin = new System.Windows.Forms.Padding(4);
             this.rjTextBox2.Multiline = false;
             this.rjTextBox2.Name = "rjTextBox2";
@@ -115,7 +116,7 @@
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
-            this.label2.Location = new System.Drawing.Point(193, 218);
+            this.label2.Location = new System.Drawing.Point(59, 170);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(31, 16);
             this.label2.TabIndex = 38;
@@ -131,7 +132,7 @@
             this.rjTextBox3.BorderSize = 2;
             this.rjTextBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rjTextBox3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.rjTextBox3.Location = new System.Drawing.Point(196, 238);
+            this.rjTextBox3.Location = new System.Drawing.Point(60, 190);
             this.rjTextBox3.Margin = new System.Windows.Forms.Padding(4);
             this.rjTextBox3.Multiline = false;
             this.rjTextBox3.Name = "rjTextBox3";
@@ -154,7 +155,7 @@
             this.rjTextBox4.BorderSize = 2;
             this.rjTextBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rjTextBox4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.rjTextBox4.Location = new System.Drawing.Point(196, 293);
+            this.rjTextBox4.Location = new System.Drawing.Point(372, 80);
             this.rjTextBox4.Margin = new System.Windows.Forms.Padding(4);
             this.rjTextBox4.Multiline = false;
             this.rjTextBox4.Name = "rjTextBox4";
@@ -172,7 +173,7 @@
             this.label3.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
-            this.label3.Location = new System.Drawing.Point(193, 273);
+            this.label3.Location = new System.Drawing.Point(369, 60);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(44, 16);
             this.label3.TabIndex = 41;
@@ -190,14 +191,15 @@
             this.BVolver.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BVolver.ForeColor = System.Drawing.Color.AliceBlue;
             this.BVolver.Image = global::ProyectoIntegradorTaller.Properties.Resources.path30;
-            this.BVolver.Location = new System.Drawing.Point(12, 438);
+            this.BVolver.Location = new System.Drawing.Point(12, 306);
             this.BVolver.Name = "BVolver";
-            this.BVolver.Size = new System.Drawing.Size(79, 40);
+            this.BVolver.Size = new System.Drawing.Size(100, 40);
             this.BVolver.TabIndex = 53;
             this.BVolver.Text = "  Volver";
             this.BVolver.TextColor = System.Drawing.Color.AliceBlue;
             this.BVolver.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.BVolver.UseVisualStyleBackColor = false;
+            this.BVolver.Click += new System.EventHandler(this.BVolver_Click);
             // 
             // BInicioSesion
             // 
@@ -212,9 +214,9 @@
             this.BInicioSesion.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BInicioSesion.ForeColor = System.Drawing.Color.White;
             this.BInicioSesion.Image = global::ProyectoIntegradorTaller.Properties.Resources.add;
-            this.BInicioSesion.Location = new System.Drawing.Point(402, 438);
+            this.BInicioSesion.Location = new System.Drawing.Point(517, 306);
             this.BInicioSesion.Name = "BInicioSesion";
-            this.BInicioSesion.Size = new System.Drawing.Size(200, 40);
+            this.BInicioSesion.Size = new System.Drawing.Size(144, 40);
             this.BInicioSesion.TabIndex = 52;
             this.BInicioSesion.Text = "  Crear Usuario";
             this.BInicioSesion.TextColor = System.Drawing.Color.White;
@@ -235,7 +237,7 @@
             this.TTipo.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
             this.TTipo.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(228)))), ((int)(((byte)(245)))));
             this.TTipo.ListTextColor = System.Drawing.Color.DimGray;
-            this.TTipo.Location = new System.Drawing.Point(196, 347);
+            this.TTipo.Location = new System.Drawing.Point(372, 134);
             this.TTipo.MinimumSize = new System.Drawing.Size(200, 30);
             this.TTipo.Name = "TTipo";
             this.TTipo.Padding = new System.Windows.Forms.Padding(2);
@@ -248,18 +250,33 @@
             this.label5.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
-            this.label5.Location = new System.Drawing.Point(193, 328);
+            this.label5.Location = new System.Drawing.Point(369, 115);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(117, 16);
             this.label5.TabIndex = 55;
             this.label5.Text = "Tipo de Usuario";
+            // 
+            // label6
+            // 
+            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
+            this.label6.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
+            this.label6.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label6.Location = new System.Drawing.Point(268, 7);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(115, 19);
+            this.label6.TabIndex = 56;
+            this.label6.Text = "Crear Usuario";
             // 
             // CrearUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(614, 490);
+            this.ClientSize = new System.Drawing.Size(686, 358);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.TTipo);
             this.Controls.Add(this.BVolver);
@@ -274,6 +291,7 @@
             this.Controls.Add(this.rjTextBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "CrearUsuario";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CrearUsuario";
             this.Controls.SetChildIndex(this.rjTextBox1, 0);
             this.Controls.SetChildIndex(this.label4, 0);
@@ -287,6 +305,7 @@
             this.Controls.SetChildIndex(this.BVolver, 0);
             this.Controls.SetChildIndex(this.TTipo, 0);
             this.Controls.SetChildIndex(this.label5, 0);
+            this.Controls.SetChildIndex(this.label6, 0);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -306,5 +325,6 @@
         private components.BotonPersonalisado BInicioSesion;
         private components.ComboBoxPersonalisado TTipo;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
     }
 }

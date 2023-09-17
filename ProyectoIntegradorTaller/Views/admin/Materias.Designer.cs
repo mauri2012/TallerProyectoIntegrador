@@ -34,7 +34,6 @@ namespace ProyectoIntegradorTaller.views.admin
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
-            this.LBienvenido = new System.Windows.Forms.Label();
             this.panel7 = new System.Windows.Forms.Panel();
             this.TMateria = new CustomControls.RJControls.RJTextBox();
             this.BInicioSesion = new ProyectoIntegradorTaller.views.components.BotonPersonalisado();
@@ -44,6 +43,7 @@ namespace ProyectoIntegradorTaller.views.admin
             this.TBBusqueda = new CustomControls.RJControls.RJTextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.materiaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Eliminar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.itemMateriasBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -58,21 +58,11 @@ namespace ProyectoIntegradorTaller.views.admin
             this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
             this.label1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label1.Location = new System.Drawing.Point(344, 11);
+            this.label1.Location = new System.Drawing.Point(322, 11);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(73, 19);
             this.label1.TabIndex = 7;
             this.label1.Text = "Materias";
-            // 
-            // LBienvenido
-            // 
-            this.LBienvenido.AutoSize = true;
-            this.LBienvenido.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Bold);
-            this.LBienvenido.Location = new System.Drawing.Point(12, 37);
-            this.LBienvenido.Name = "LBienvenido";
-            this.LBienvenido.Size = new System.Drawing.Size(79, 18);
-            this.LBienvenido.TabIndex = 3;
-            this.LBienvenido.Text = "Materias";
             // 
             // panel7
             // 
@@ -83,7 +73,6 @@ namespace ProyectoIntegradorTaller.views.admin
             this.panel7.Controls.Add(this.BVolver);
             this.panel7.Controls.Add(this.BBuscar);
             this.panel7.Controls.Add(this.TBBusqueda);
-            this.panel7.Controls.Add(this.LBienvenido);
             this.panel7.Controls.Add(this.dataGridView1);
             this.panel7.Location = new System.Drawing.Point(0, 32);
             this.panel7.Name = "panel7";
@@ -229,7 +218,8 @@ namespace ProyectoIntegradorTaller.views.admin
             this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.ColumnHeadersHeight = 35;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.materiaDataGridViewTextBoxColumn});
+            this.materiaDataGridViewTextBoxColumn,
+            this.Eliminar});
             this.dataGridView1.DataSource = this.itemMateriasBindingSource;
             this.dataGridView1.EnableHeadersVisualStyles = false;
             this.dataGridView1.GridColor = System.Drawing.SystemColors.ButtonFace;
@@ -240,7 +230,7 @@ namespace ProyectoIntegradorTaller.views.admin
             this.dataGridView1.RowTemplate.Height = 25;
             this.dataGridView1.Size = new System.Drawing.Size(662, 227);
             this.dataGridView1.TabIndex = 0;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+           
             // 
             // materiaDataGridViewTextBoxColumn
             // 
@@ -249,6 +239,16 @@ namespace ProyectoIntegradorTaller.views.admin
             this.materiaDataGridViewTextBoxColumn.HeaderText = "Materia";
             this.materiaDataGridViewTextBoxColumn.Name = "materiaDataGridViewTextBoxColumn";
             this.materiaDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // Eliminar
+            // 
+            this.Eliminar.DataPropertyName = "Materia";
+            this.Eliminar.HeaderText = "Eliminar";
+            this.Eliminar.Name = "Eliminar";
+            this.Eliminar.ReadOnly = true;
+            this.Eliminar.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Eliminar.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.Eliminar.Text = "Eliminar";
             // 
             // itemMateriasBindingSource
             // 
@@ -264,6 +264,7 @@ namespace ProyectoIntegradorTaller.views.admin
             this.Controls.Add(this.panel7);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Materias";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Materias";
             this.Load += new System.EventHandler(this.Materias_Load);
             this.Controls.SetChildIndex(this.panel7, 0);
@@ -281,7 +282,6 @@ namespace ProyectoIntegradorTaller.views.admin
         private Panel panel2;
         private Panel panel4;
         private Label LCerrar;
-        private Label LBienvenido;
         private TextBox textBox1;
         private TextBox textBox2;
         private Panel panel7;
@@ -290,11 +290,12 @@ namespace ProyectoIntegradorTaller.views.admin
         private CustomControls.RJControls.RJTextBox TBBusqueda;
         private views.components.BotonPersonalisado BBuscar;
         private BindingSource itemMateriasBindingSource;
-        private DataGridViewTextBoxColumn materiaDataGridViewTextBoxColumn;
         private components.BotonPersonalisado BVolver;
         private CustomControls.RJControls.RJTextBox TMateria;
         private components.BotonPersonalisado BInicioSesion;
         private Label label2;
+        private DataGridViewTextBoxColumn materiaDataGridViewTextBoxColumn;
+        private DataGridViewButtonColumn Eliminar;
     }
 
     #endregion

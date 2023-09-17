@@ -17,5 +17,12 @@ namespace ProyectoIntegradorTaller.views.admin
         {
             InitializeComponent();
         }
+
+        private void BVolver_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Usuarios usuarios = new Usuarios(); 
+            usuarios.Show();
+        }
     }
 }

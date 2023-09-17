@@ -39,11 +39,11 @@ namespace ProyectoIntegradorTaller.views.admin
             this.TBBusqueda = new CustomControls.RJControls.RJTextBox();
             this.BBuscar = new ProyectoIntegradorTaller.views.components.BotonPersonalisado();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.itemProfesorBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lugarDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.capacidadMaxDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.itemProfesorBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.itemProfesorBindingSource)).BeginInit();
@@ -59,9 +59,9 @@ namespace ProyectoIntegradorTaller.views.admin
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.label1.Location = new System.Drawing.Point(317, 7);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(51, 19);
+            this.label1.Size = new System.Drawing.Size(54, 19);
             this.label1.TabIndex = 7;
-            this.label1.Text = "Menu";
+            this.label1.Text = "Home";
             // 
             // LBienvenido
             // 
@@ -161,12 +161,7 @@ namespace ProyectoIntegradorTaller.views.admin
             this.dataGridView1.RowTemplate.Height = 25;
             this.dataGridView1.Size = new System.Drawing.Size(662, 246);
             this.dataGridView1.TabIndex = 0;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick_1);
-            // 
-            // itemProfesorBindingSource
-            // 
-            this.itemProfesorBindingSource.DataSource = typeof(ProyectoIntegradorTaller.views.admin.ItemProfesor);
-            // 
+            
             // idDataGridViewTextBoxColumn
             // 
             this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
@@ -199,6 +194,10 @@ namespace ProyectoIntegradorTaller.views.admin
             this.capacidadMaxDataGridViewTextBoxColumn.ReadOnly = true;
             this.capacidadMaxDataGridViewTextBoxColumn.Width = 150;
             // 
+            // itemProfesorBindingSource
+            // 
+            this.itemProfesorBindingSource.DataSource = typeof(ProyectoIntegradorTaller.views.admin.ItemProfesor);
+            // 
             // BedelMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -209,6 +208,7 @@ namespace ProyectoIntegradorTaller.views.admin
             this.Controls.Add(this.panel7);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "BedelMenu";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menu";
             this.Load += new System.EventHandler(this.BedelMenu_Load);
             this.Controls.SetChildIndex(this.panel7, 0);

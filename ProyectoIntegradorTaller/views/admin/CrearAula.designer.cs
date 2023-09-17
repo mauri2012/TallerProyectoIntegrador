@@ -367,6 +367,7 @@ namespace ProyectoIntegradorTaller.views.admin
             this.Controls.Add(this.panel7);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "CrearAula";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menu";
             this.Controls.SetChildIndex(this.panel7, 0);
             this.Controls.SetChildIndex(this.label1, 0);
