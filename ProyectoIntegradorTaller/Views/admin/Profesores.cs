@@ -40,6 +40,11 @@ namespace ProyectoIntegradorTaller.views.admin
             admin.Show();
         }
 
-      
+        private void BCrearProfesor_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            CrearProfesor crearProfesor = new CrearProfesor();
+            crearProfesor.Show();
+        }
     }
 }

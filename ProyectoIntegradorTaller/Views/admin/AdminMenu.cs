@@ -32,7 +32,7 @@ namespace ProyectoIntegradorTaller.views.admin
                 if (dataGridView1.Columns[e.ColumnIndex].Name == "Reservas")
                 {
                     this.Hide();
-                    VerReservas reservas = new VerReservas();
+                    VerReservas reservas = new VerReservas("admin");
                     reservas.Show();
 
                 }
@@ -42,15 +42,6 @@ namespace ProyectoIntegradorTaller.views.admin
                     Reporte unReporte = new Reporte();
                     unReporte.Show();
                     
-                }
-                // Verificar si el clic ocurrió en la columna "Reservar"
-                else if (dataGridView1.Columns[e.ColumnIndex].Name == "Reservar")
-                {
-                    this.Hide();
-                    ReservarAula reserva = new ReservarAula();
-                    reserva.Show();
-                    // Realizar la acción correspondiente al botón "Reservar"
-                    // Por ejemplo, abrir un formulario para realizar una nueva reserva
                 }
                 else if (dataGridView1.Columns[e.ColumnIndex].Name == "Editar")
                 {
@@ -66,8 +57,8 @@ namespace ProyectoIntegradorTaller.views.admin
         {
 
             DataGridViewButtonColumn buttonColumn1 = new DataGridViewButtonColumn();
-            buttonColumn1.Name = "Reservar"; // Name the column
-            buttonColumn1.Text = "Nueva Reserva";    // Text for buttons in the column
+            buttonColumn1.Name = "Reservas"; // Name the column
+            buttonColumn1.Text = "Ver Reservas";    // Text for buttons in the column
             buttonColumn1.UseColumnTextForButtonValue = true; // Display the Text value on buttons
 
 
@@ -90,18 +81,13 @@ namespace ProyectoIntegradorTaller.views.admin
             buttonColumn4.Text = "Eliminar";    // Text for buttons in the column
             buttonColumn4.UseColumnTextForButtonValue = true; // Display the Text value on buttons
 
-
-            DataGridViewButtonColumn buttonColumn5 = new DataGridViewButtonColumn();
-            buttonColumn5.Name = "Reservas"; // Name the column
-            buttonColumn5.Text = "Reserva";    // Text for buttons in the column
-            buttonColumn5.UseColumnTextForButtonValue = true; // Display the Text value on buttons
             
             dataGridView1.Columns.Add(buttonColumn1);
             dataGridView1.Columns.Add(buttonColumn2);
             dataGridView1.Columns.Add(buttonColumn3);
             dataGridView1.Columns.Add(buttonColumn4);
-            dataGridView1.Columns.Add(buttonColumn5);
         }
+
         private void DataGridView1_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
             if (e.RowIndex >= 0 && e.ColumnIndex >= 0)

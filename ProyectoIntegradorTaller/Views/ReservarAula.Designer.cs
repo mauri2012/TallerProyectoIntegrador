@@ -33,17 +33,14 @@ namespace ProyectoIntegradorTaller.views.admin
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.BVolver = new ProyectoIntegradorTaller.views.components.BotonPersonalisado();
-            this.CBDias = new ProyectoIntegradorTaller.views.components.ComboBoxPersonalisado();
-            this.CBHasta = new ProyectoIntegradorTaller.views.components.ComboBoxPersonalisado();
-            this.CBDesde = new ProyectoIntegradorTaller.views.components.ComboBoxPersonalisado();
+            this.CBDia = new ProyectoIntegradorTaller.views.components.ComboBoxPersonalisado();
+            this.CBHora = new ProyectoIntegradorTaller.views.components.ComboBoxPersonalisado();
             this.CBPRofesor = new ProyectoIntegradorTaller.views.components.ComboBoxPersonalisado();
             this.CBMateria = new ProyectoIntegradorTaller.views.components.ComboBoxPersonalisado();
             this.timePickerPersonalisado2 = new ProyectoIntegradorTaller.views.components.TimePickerPersonalisado();
             this.botonPersonalisado1 = new ProyectoIntegradorTaller.views.components.BotonPersonalisado();
             this.timePickerPersonalisado1 = new ProyectoIntegradorTaller.views.components.TimePickerPersonalisado();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -54,7 +51,6 @@ namespace ProyectoIntegradorTaller.views.admin
             this.label8 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -62,17 +58,14 @@ namespace ProyectoIntegradorTaller.views.admin
             // 
             this.panel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.panel1.Controls.Add(this.BVolver);
-            this.panel1.Controls.Add(this.CBDias);
-            this.panel1.Controls.Add(this.CBHasta);
-            this.panel1.Controls.Add(this.CBDesde);
+            this.panel1.Controls.Add(this.CBDia);
+            this.panel1.Controls.Add(this.CBHora);
             this.panel1.Controls.Add(this.CBPRofesor);
             this.panel1.Controls.Add(this.CBMateria);
             this.panel1.Controls.Add(this.timePickerPersonalisado2);
             this.panel1.Controls.Add(this.botonPersonalisado1);
             this.panel1.Controls.Add(this.timePickerPersonalisado1);
             this.panel1.Controls.Add(this.pictureBox4);
-            this.panel1.Controls.Add(this.pictureBox3);
-            this.panel1.Controls.Add(this.label7);
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.label4);
@@ -106,62 +99,43 @@ namespace ProyectoIntegradorTaller.views.admin
             this.BVolver.UseVisualStyleBackColor = false;
             this.BVolver.Click += new System.EventHandler(this.BVolver_Click_1);
             // 
-            // CBDias
+            // CBDia
             // 
-            this.CBDias.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.CBDias.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
-            this.CBDias.BorderSize = 2;
-            this.CBDias.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
-            this.CBDias.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.CBDias.ForeColor = System.Drawing.Color.DimGray;
-            this.CBDias.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
-            this.CBDias.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(228)))), ((int)(((byte)(245)))));
-            this.CBDias.ListTextColor = System.Drawing.Color.DimGray;
-            this.CBDias.Location = new System.Drawing.Point(357, 76);
-            this.CBDias.MinimumSize = new System.Drawing.Size(200, 30);
-            this.CBDias.Name = "CBDias";
-            this.CBDias.Padding = new System.Windows.Forms.Padding(2);
-            this.CBDias.Size = new System.Drawing.Size(228, 30);
-            this.CBDias.TabIndex = 39;
-            this.CBDias.Texts = "";
+            this.CBDia.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.CBDia.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
+            this.CBDia.BorderSize = 2;
+            this.CBDia.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
+            this.CBDia.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.CBDia.ForeColor = System.Drawing.Color.DimGray;
+            this.CBDia.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
+            this.CBDia.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(228)))), ((int)(((byte)(245)))));
+            this.CBDia.ListTextColor = System.Drawing.Color.DimGray;
+            this.CBDia.Location = new System.Drawing.Point(386, 76);
+            this.CBDia.MinimumSize = new System.Drawing.Size(200, 30);
+            this.CBDia.Name = "CBDia";
+            this.CBDia.Padding = new System.Windows.Forms.Padding(2);
+            this.CBDia.Size = new System.Drawing.Size(244, 30);
+            this.CBDia.TabIndex = 39;
+            this.CBDia.Texts = "";
             // 
-            // CBHasta
+            // CBHora
             // 
-            this.CBHasta.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.CBHasta.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
-            this.CBHasta.BorderSize = 2;
-            this.CBHasta.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
-            this.CBHasta.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.CBHasta.ForeColor = System.Drawing.Color.DimGray;
-            this.CBHasta.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
-            this.CBHasta.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(228)))), ((int)(((byte)(245)))));
-            this.CBHasta.ListTextColor = System.Drawing.Color.DimGray;
-            this.CBHasta.Location = new System.Drawing.Point(357, 189);
-            this.CBHasta.MinimumSize = new System.Drawing.Size(200, 30);
-            this.CBHasta.Name = "CBHasta";
-            this.CBHasta.Padding = new System.Windows.Forms.Padding(2);
-            this.CBHasta.Size = new System.Drawing.Size(228, 30);
-            this.CBHasta.TabIndex = 38;
-            this.CBHasta.Texts = "";
-            // 
-            // CBDesde
-            // 
-            this.CBDesde.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.CBDesde.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
-            this.CBDesde.BorderSize = 2;
-            this.CBDesde.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
-            this.CBDesde.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.CBDesde.ForeColor = System.Drawing.Color.DimGray;
-            this.CBDesde.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
-            this.CBDesde.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(228)))), ((int)(((byte)(245)))));
-            this.CBDesde.ListTextColor = System.Drawing.Color.DimGray;
-            this.CBDesde.Location = new System.Drawing.Point(357, 130);
-            this.CBDesde.MinimumSize = new System.Drawing.Size(200, 30);
-            this.CBDesde.Name = "CBDesde";
-            this.CBDesde.Padding = new System.Windows.Forms.Padding(2);
-            this.CBDesde.Size = new System.Drawing.Size(228, 30);
-            this.CBDesde.TabIndex = 37;
-            this.CBDesde.Texts = "";
+            this.CBHora.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.CBHora.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
+            this.CBHora.BorderSize = 2;
+            this.CBHora.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
+            this.CBHora.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.CBHora.ForeColor = System.Drawing.Color.DimGray;
+            this.CBHora.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
+            this.CBHora.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(228)))), ((int)(((byte)(245)))));
+            this.CBHora.ListTextColor = System.Drawing.Color.DimGray;
+            this.CBHora.Location = new System.Drawing.Point(95, 76);
+            this.CBHora.MinimumSize = new System.Drawing.Size(200, 30);
+            this.CBHora.Name = "CBHora";
+            this.CBHora.Padding = new System.Windows.Forms.Padding(2);
+            this.CBHora.Size = new System.Drawing.Size(241, 30);
+            this.CBHora.TabIndex = 37;
+            this.CBHora.Texts = "";
             // 
             // CBPRofesor
             // 
@@ -174,7 +148,7 @@ namespace ProyectoIntegradorTaller.views.admin
             this.CBPRofesor.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
             this.CBPRofesor.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(228)))), ((int)(((byte)(245)))));
             this.CBPRofesor.ListTextColor = System.Drawing.Color.DimGray;
-            this.CBPRofesor.Location = new System.Drawing.Point(92, 76);
+            this.CBPRofesor.Location = new System.Drawing.Point(386, 130);
             this.CBPRofesor.MinimumSize = new System.Drawing.Size(200, 30);
             this.CBPRofesor.Name = "CBPRofesor";
             this.CBPRofesor.Padding = new System.Windows.Forms.Padding(2);
@@ -249,48 +223,28 @@ namespace ProyectoIntegradorTaller.views.admin
             // pictureBox4
             // 
             this.pictureBox4.Image = global::ProyectoIntegradorTaller.Properties.Resources.Time;
-            this.pictureBox4.Location = new System.Drawing.Point(591, 189);
+            this.pictureBox4.Location = new System.Drawing.Point(342, 76);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(30, 30);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox4.TabIndex = 26;
             this.pictureBox4.TabStop = false;
             // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Image = global::ProyectoIntegradorTaller.Properties.Resources.Time;
-            this.pictureBox3.Location = new System.Drawing.Point(591, 130);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(30, 30);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox3.TabIndex = 25;
-            this.pictureBox3.TabStop = false;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold);
-            this.label7.Location = new System.Drawing.Point(354, 168);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(48, 18);
-            this.label7.TabIndex = 13;
-            this.label7.Text = "Hasta";
-            // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold);
-            this.label6.Location = new System.Drawing.Point(354, 109);
+            this.label6.Location = new System.Drawing.Point(96, 55);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(54, 18);
+            this.label6.Size = new System.Drawing.Size(42, 18);
             this.label6.TabIndex = 12;
-            this.label6.Text = "Desde";
+            this.label6.Text = "Hora";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(354, 55);
+            this.label5.Location = new System.Drawing.Point(383, 55);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(31, 18);
             this.label5.TabIndex = 11;
@@ -330,7 +284,7 @@ namespace ProyectoIntegradorTaller.views.admin
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(92, 55);
+            this.label1.Location = new System.Drawing.Point(383, 109);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(70, 18);
             this.label1.TabIndex = 5;
@@ -370,13 +324,11 @@ namespace ProyectoIntegradorTaller.views.admin
             this.Name = "ReservarAula";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ReservarAula";
-            this.Load += new System.EventHandler(this.LoadReservarAula);
             this.Controls.SetChildIndex(this.label8, 0);
             this.Controls.SetChildIndex(this.panel2, 0);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -390,11 +342,9 @@ namespace ProyectoIntegradorTaller.views.admin
         private Label label3;
         private Label label2;
         private Label label1;
-        private Label label7;
         private Label label6;
         private Label label5;
         private PictureBox pictureBox4;
-        private PictureBox pictureBox3;
         private Panel panel2;
         private Label label8;
         private views.components.BotonPersonalisado botonPersonalisado1;
@@ -402,9 +352,8 @@ namespace ProyectoIntegradorTaller.views.admin
         private views.components.ComboBoxPersonalisado CBMateria;
         private views.components.TimePickerPersonalisado timePickerPersonalisado2;
         private views.components.ComboBoxPersonalisado CBPRofesor;
-        private views.components.ComboBoxPersonalisado CBDias;
-        private views.components.ComboBoxPersonalisado CBHasta;
-        private views.components.ComboBoxPersonalisado CBDesde;
+        private views.components.ComboBoxPersonalisado CBDia;
+        private views.components.ComboBoxPersonalisado CBHora;
         private components.BotonPersonalisado BVolver;
     }
 }

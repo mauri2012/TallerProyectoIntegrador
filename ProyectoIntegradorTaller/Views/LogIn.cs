@@ -30,17 +30,24 @@ namespace ProyectoIntegradorTaller.views.admin
             }
             else
             {
-                AdminMenu menu = new AdminMenu();
-                menu.Show();
-                this.Hide();
+
+                if (this.TEmail.Texts == "admin")
+                {
+                    AdminMenu menu = new AdminMenu();
+                    menu.Show();
+                    this.Hide();
+                }
+                else {
+
+                    BedelMenu menu = new BedelMenu();
+                    menu.Show();
+                    this.Hide();
+                }
+                
             }
         }
 
-        private void panel3_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
+        
 
 
        

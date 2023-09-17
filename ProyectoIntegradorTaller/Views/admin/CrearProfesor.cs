@@ -30,5 +30,13 @@ namespace ProyectoIntegradorTaller.views.admin
         {
 
         }
+
+        private void BVolver_Click_1(object sender, EventArgs e)
+        {
+            this.Hide();
+            Profesores profesores = new Profesores();
+            profesores.Show();
+
+        }
     }
 }

@@ -24,39 +24,17 @@ namespace ProyectoIntegradorTaller.views.admin
                  new ItemMaterias{Materia="Ingeneria del Software 1" },
             };
             dataGridView1.DataSource = staticData;
+           
         }
 
         private void Materias_Load(object sender, EventArgs e)
         {
-            //string[] array = { "Hi" ,"world"};
-            //List<ItemMaterias> lista = array.Select(item => new ItemMaterias { Materia = item }).ToList();
-            //dataGridView1.DataSource=lista;
-        }
-
- 
-
-
-        
-        private void Reservas_Load(object sender, EventArgs e)
-        {
-
-           
-            
-            DataGridViewButtonColumn buttonColumn3 = new DataGridViewButtonColumn();
-            buttonColumn3.Name = "Editar"; // Name the column
-            buttonColumn3.Text = "Editar";    // Text for buttons in the column
-            buttonColumn3.UseColumnTextForButtonValue = true; // Display the Text value on buttons
-
-
             DataGridViewButtonColumn buttonColumn4 = new DataGridViewButtonColumn();
             buttonColumn4.Name = "Eliminar"; // Name the column
             buttonColumn4.Text = "Eliminar";    // Text for buttons in the column
             buttonColumn4.UseColumnTextForButtonValue = true; // Display the Text value on buttons
 
-     
-            dataGridView1.Columns.Add(buttonColumn3);
             dataGridView1.Columns.Add(buttonColumn4);
-
         }
         private void DataGridView1_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
@@ -67,7 +45,7 @@ namespace ProyectoIntegradorTaller.views.admin
                 {
                     DataGridViewButtonCell buttonCell = dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex] as DataGridViewButtonCell;
                     buttonCell.Style.BackColor = Color.Green;
-                    //buttonCell.Style.ForeColor = Color.White;
+                    
 
                 }
             }
@@ -89,13 +67,19 @@ namespace ProyectoIntegradorTaller.views.admin
             admin.Show();
         }
 
-        private void label2_Click(object sender, EventArgs e)
-        {
+       
 
-        }
-
-        private void BBuscar_Click(object sender, EventArgs e)
+        private void BAgregarMateria_Click(object sender, EventArgs e)
         {
+            if (!string.IsNullOrEmpty(TMateria.Texts))
+            {
+            
+                
+            }
+            else
+            {
+                MessageBox.Show("El campo esta vacio!");
+            }
 
         }
     }

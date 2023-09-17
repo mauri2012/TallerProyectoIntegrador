@@ -25,29 +25,36 @@ namespace ProyectoIntegradorTaller.views.admin
                 new ItemProfesor {Id=1, Name= "Aula 5",Lugar="9 de julio", CapacidadMax=40},
                 new ItemProfesor{Id=2, Name= "Aula Magna",Lugar = "libertad",CapacidadMax=100},
             };
+
             dataGridView1.DataSource = staticData;
         }
 
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
+            {
+                // Verificar si el clic ocurrió en la columna "Informe"
+                if (dataGridView1.Columns[e.ColumnIndex].Name == "Reserva")
+                {
+                    this.Hide();
+                    VerReservas reservas = new VerReservas();
+                    reservas.Show();
 
-   
+                }
+            }
+        }
 
-    
+
+
         private void BedelMenu_Load(object sender, EventArgs e)
         {
         
             DataGridViewButtonColumn buttonColumn2 = new DataGridViewButtonColumn();
             buttonColumn2.Name = "Reserva"; // Name the column
-            buttonColumn2.Text = "Reservas";    // Text for buttons in the column
+            buttonColumn2.Text = "Ver Reservas";    // Text for buttons in the column
             buttonColumn2.UseColumnTextForButtonValue = true; // Display the Text value on buttons
-
-            DataGridViewButtonColumn buttonColumn3 = new DataGridViewButtonColumn();
-            buttonColumn3.Name = "Reservar"; // Name the column
-            buttonColumn3.Text = "Reservar";    // Text for buttons in the column
-            buttonColumn3.UseColumnTextForButtonValue = true; // Display the Text value on buttons
-
  
             dataGridView1.Columns.Add(buttonColumn2);
-            dataGridView1.Columns.Add(buttonColumn3);
 
 
         }
@@ -67,12 +74,7 @@ namespace ProyectoIntegradorTaller.views.admin
             }
         }
 
-        private void BReservarAula_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            ReservarAula reserva =new ReservarAula();
-            reserva.Show();
-        }
+       
 
         
 

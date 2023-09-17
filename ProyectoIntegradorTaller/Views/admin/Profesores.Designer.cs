@@ -36,7 +36,7 @@
             this.Eliminar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.BBuscar = new ProyectoIntegradorTaller.views.components.BotonPersonalisado();
             this.rjTextBox1 = new CustomControls.RJControls.RJTextBox();
-            this.botonPersonalisado1 = new ProyectoIntegradorTaller.views.components.BotonPersonalisado();
+            this.BCrearProfesor = new ProyectoIntegradorTaller.views.components.BotonPersonalisado();
             this.BVolver = new ProyectoIntegradorTaller.views.components.BotonPersonalisado();
             this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -142,26 +142,27 @@
             this.rjTextBox1.Texts = "";
             this.rjTextBox1.UnderlinedStyle = true;
             // 
-            // botonPersonalisado1
+            // BCrearProfesor
             // 
-            this.botonPersonalisado1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
-            this.botonPersonalisado1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
-            this.botonPersonalisado1.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.botonPersonalisado1.BorderRadius = 6;
-            this.botonPersonalisado1.BorderSize = 0;
-            this.botonPersonalisado1.FlatAppearance.BorderSize = 0;
-            this.botonPersonalisado1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.botonPersonalisado1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.botonPersonalisado1.ForeColor = System.Drawing.Color.White;
-            this.botonPersonalisado1.Image = global::ProyectoIntegradorTaller.Properties.Resources.add_person;
-            this.botonPersonalisado1.Location = new System.Drawing.Point(525, 338);
-            this.botonPersonalisado1.Name = "botonPersonalisado1";
-            this.botonPersonalisado1.Size = new System.Drawing.Size(149, 40);
-            this.botonPersonalisado1.TabIndex = 0;
-            this.botonPersonalisado1.Text = "Crear Profesor";
-            this.botonPersonalisado1.TextColor = System.Drawing.Color.White;
-            this.botonPersonalisado1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.botonPersonalisado1.UseVisualStyleBackColor = false;
+            this.BCrearProfesor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
+            this.BCrearProfesor.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
+            this.BCrearProfesor.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.BCrearProfesor.BorderRadius = 6;
+            this.BCrearProfesor.BorderSize = 0;
+            this.BCrearProfesor.FlatAppearance.BorderSize = 0;
+            this.BCrearProfesor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BCrearProfesor.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BCrearProfesor.ForeColor = System.Drawing.Color.White;
+            this.BCrearProfesor.Image = global::ProyectoIntegradorTaller.Properties.Resources.add_person;
+            this.BCrearProfesor.Location = new System.Drawing.Point(525, 338);
+            this.BCrearProfesor.Name = "BCrearProfesor";
+            this.BCrearProfesor.Size = new System.Drawing.Size(149, 40);
+            this.BCrearProfesor.TabIndex = 0;
+            this.BCrearProfesor.Text = "Crear Profesor";
+            this.BCrearProfesor.TextColor = System.Drawing.Color.White;
+            this.BCrearProfesor.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.BCrearProfesor.UseVisualStyleBackColor = false;
+            this.BCrearProfesor.Click += new System.EventHandler(this.BCrearProfesor_Click);
             // 
             // BVolver
             // 
@@ -209,12 +210,12 @@
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.BBuscar);
             this.Controls.Add(this.rjTextBox1);
-            this.Controls.Add(this.botonPersonalisado1);
+            this.Controls.Add(this.BCrearProfesor);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Profesores";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Profesores";
-            this.Controls.SetChildIndex(this.botonPersonalisado1, 0);
+            this.Controls.SetChildIndex(this.BCrearProfesor, 0);
             this.Controls.SetChildIndex(this.rjTextBox1, 0);
             this.Controls.SetChildIndex(this.BBuscar, 0);
             this.Controls.SetChildIndex(this.dataGridView1, 0);
@@ -228,7 +229,7 @@
 
         #endregion
 
-        private components.BotonPersonalisado botonPersonalisado1;
+        private components.BotonPersonalisado BCrearProfesor;
         private CustomControls.RJControls.RJTextBox rjTextBox1;
         private components.BotonPersonalisado BBuscar;
         private System.Windows.Forms.DataGridView dataGridView1;

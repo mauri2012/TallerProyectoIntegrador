@@ -14,8 +14,17 @@ namespace ProyectoIntegradorTaller.views
 {
     public partial class VerReservas : DraggablePanelUserControl
     {
+        private string isAdmin { get; set; }
+
+
         public VerReservas()
         {
+            InitializeComponent();
+            RellenarHorarios();
+        }
+        public VerReservas(string isAdmin)
+        {
+            this.isAdmin=isAdmin;
             InitializeComponent();
             RellenarHorarios();
         }
@@ -42,19 +51,24 @@ namespace ProyectoIntegradorTaller.views
 
         private void SeleccionarReserva(string dia, string hora)
         {
-            Console.WriteLine("Dia: " + dia);
-            Console.WriteLine("Hora: " + hora);
-
             this.Hide();
-            ReservarAula reserva = new ReservarAula();
+            ReservarAula reserva = new ReservarAula(hora,dia);
             reserva.Show();
         }
 
         private void BVolver_Click(object sender, EventArgs e)
         {
+            if (this.isAdmin == "admin")
+            {
+                AdminMenu adminMenu = new AdminMenu();
+                adminMenu.Show();
+            }
+            else { 
+                BedelMenu bedelMenu = new BedelMenu();
+                bedelMenu.Show();
+            }
             this.Hide();
-            AdminMenu adminMenu = new AdminMenu();
-            adminMenu.Show();
+            
         }
     }
 }

@@ -15,16 +15,15 @@ namespace ProyectoIntegradorTaller.views.admin
     public partial class ReservarAula : DraggablePanelUserControl
     {
         
-        public ReservarAula(string HDesde,string Hhasta,string Materia,string profesor)
+       
+        public ReservarAula(string hora, string dia)
         {
             InitializeComponent();
-            CBDesde.Texts=HDesde;
-            CBHasta.Texts = Hhasta;
-            CBMateria.Texts = Materia;
-            CBPRofesor.Texts= profesor;
+            CBHora.Texts = hora;
+            CBDia.Texts = dia;
 
-          
         }
+
         public ReservarAula()
         {
             InitializeComponent();
@@ -43,7 +42,7 @@ namespace ProyectoIntegradorTaller.views.admin
         {
 
         }
-        private void LoadReservarAula(object sender,EventArgs e)
+        private void LoadReservarAula1(object sender,EventArgs e)
         {
             List<diasSemana> items = new List<diasSemana>();
             items.Add(new diasSemana() { value = "lunes", text = "Lunes" });
@@ -53,9 +52,9 @@ namespace ProyectoIntegradorTaller.views.admin
             items.Add(new diasSemana() { value = "viernes", text = "Viernes" });
             items.Add(new diasSemana() { value = "sabado", text = "Sabado" });
             items.Add(new diasSemana() { value = "domingo", text = "Domingo" });
-            CBDias.DataSource = items;
-            CBDias.DisplayMember = "text";
-            CBDias.ValueMember = "value";
+            CBDia.DataSource = items;
+            CBDia.DisplayMember = "text";
+            CBDia.ValueMember = "value";
         }
 
        

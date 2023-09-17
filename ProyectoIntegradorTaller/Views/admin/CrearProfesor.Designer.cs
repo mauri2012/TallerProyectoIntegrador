@@ -78,6 +78,7 @@
             this.BVolver.TextColor = System.Drawing.Color.AliceBlue;
             this.BVolver.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.BVolver.UseVisualStyleBackColor = false;
+            this.BVolver.Click += new System.EventHandler(this.BVolver_Click_1);
             // 
             // BInicioSesion
             // 
