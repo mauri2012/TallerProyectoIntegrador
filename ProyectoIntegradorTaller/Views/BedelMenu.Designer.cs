@@ -44,6 +44,7 @@ namespace ProyectoIntegradorTaller.views.admin
             this.lugarDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.capacidadMaxDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.itemProfesorBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.BLogOut = new ProyectoIntegradorTaller.views.components.BotonPersonalisado();
             this.panel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.itemProfesorBindingSource)).BeginInit();
@@ -76,6 +77,7 @@ namespace ProyectoIntegradorTaller.views.admin
             // panel7
             // 
             this.panel7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.panel7.Controls.Add(this.BLogOut);
             this.panel7.Controls.Add(this.TBBusqueda);
             this.panel7.Controls.Add(this.BBuscar);
             this.panel7.Controls.Add(this.LBienvenido);
@@ -199,6 +201,26 @@ namespace ProyectoIntegradorTaller.views.admin
             // 
             this.itemProfesorBindingSource.DataSource = typeof(ProyectoIntegradorTaller.views.admin.ItemProfesor);
             // 
+            // BLogOut
+            // 
+            this.BLogOut.BackColor = System.Drawing.Color.Red;
+            this.BLogOut.BackgroundColor = System.Drawing.Color.Red;
+            this.BLogOut.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.BLogOut.BorderRadius = 6;
+            this.BLogOut.BorderSize = 0;
+            this.BLogOut.FlatAppearance.BorderSize = 0;
+            this.BLogOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BLogOut.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BLogOut.ForeColor = System.Drawing.Color.White;
+            this.BLogOut.Location = new System.Drawing.Point(12, 3);
+            this.BLogOut.Name = "BLogOut";
+            this.BLogOut.Size = new System.Drawing.Size(69, 32);
+            this.BLogOut.TabIndex = 13;
+            this.BLogOut.Text = "Log out";
+            this.BLogOut.TextColor = System.Drawing.Color.White;
+            this.BLogOut.UseVisualStyleBackColor = false;
+            this.BLogOut.Click += new System.EventHandler(this.BLogOut_Click);
+            // 
             // BedelMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -240,6 +262,7 @@ namespace ProyectoIntegradorTaller.views.admin
         private DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn lugarDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn capacidadMaxDataGridViewTextBoxColumn;
+        private components.BotonPersonalisado BLogOut;
     }
 
     #endregion

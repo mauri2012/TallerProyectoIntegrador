@@ -67,6 +67,20 @@ namespace ProyectoIntegradorTaller.views.admin
             reservas.Show();
            
         }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void botonPersonalisado1_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(this.timePickerPersonalisado1.Text) || string.IsNullOrEmpty(this.timePickerPersonalisado2.Text) || string.IsNullOrEmpty(this.CBHora.Text) || string.IsNullOrEmpty(this.CBMateria.Texts) || string.IsNullOrEmpty(CBPRofesor.Texts) || string.IsNullOrEmpty(this.CBDia.Texts))
+            {
+                MessageBox.Show("Existen campos incompletos", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            
+        }
     }
 
     class diasSemana

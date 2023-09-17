@@ -38,7 +38,7 @@ namespace ProyectoIntegradorTaller.views.admin
             this.CBPRofesor = new ProyectoIntegradorTaller.views.components.ComboBoxPersonalisado();
             this.CBMateria = new ProyectoIntegradorTaller.views.components.ComboBoxPersonalisado();
             this.timePickerPersonalisado2 = new ProyectoIntegradorTaller.views.components.TimePickerPersonalisado();
-            this.botonPersonalisado1 = new ProyectoIntegradorTaller.views.components.BotonPersonalisado();
+            this.BReservarAula = new ProyectoIntegradorTaller.views.components.BotonPersonalisado();
             this.timePickerPersonalisado1 = new ProyectoIntegradorTaller.views.components.TimePickerPersonalisado();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -63,7 +63,7 @@ namespace ProyectoIntegradorTaller.views.admin
             this.panel1.Controls.Add(this.CBPRofesor);
             this.panel1.Controls.Add(this.CBMateria);
             this.panel1.Controls.Add(this.timePickerPersonalisado2);
-            this.panel1.Controls.Add(this.botonPersonalisado1);
+            this.panel1.Controls.Add(this.BReservarAula);
             this.panel1.Controls.Add(this.timePickerPersonalisado1);
             this.panel1.Controls.Add(this.pictureBox4);
             this.panel1.Controls.Add(this.label6);
@@ -76,6 +76,7 @@ namespace ProyectoIntegradorTaller.views.admin
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(686, 384);
             this.panel1.TabIndex = 0;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // BVolver
             // 
@@ -188,24 +189,25 @@ namespace ProyectoIntegradorTaller.views.admin
             this.timePickerPersonalisado2.TabIndex = 34;
             this.timePickerPersonalisado2.TextColor = System.Drawing.Color.White;
             // 
-            // botonPersonalisado1
+            // BReservarAula
             // 
-            this.botonPersonalisado1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
-            this.botonPersonalisado1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
-            this.botonPersonalisado1.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.botonPersonalisado1.BorderRadius = 6;
-            this.botonPersonalisado1.BorderSize = 0;
-            this.botonPersonalisado1.FlatAppearance.BorderSize = 0;
-            this.botonPersonalisado1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.botonPersonalisado1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.botonPersonalisado1.ForeColor = System.Drawing.Color.White;
-            this.botonPersonalisado1.Location = new System.Drawing.Point(524, 309);
-            this.botonPersonalisado1.Name = "botonPersonalisado1";
-            this.botonPersonalisado1.Size = new System.Drawing.Size(150, 40);
-            this.botonPersonalisado1.TabIndex = 8;
-            this.botonPersonalisado1.Text = "Reservar Aula";
-            this.botonPersonalisado1.TextColor = System.Drawing.Color.White;
-            this.botonPersonalisado1.UseVisualStyleBackColor = false;
+            this.BReservarAula.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
+            this.BReservarAula.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
+            this.BReservarAula.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.BReservarAula.BorderRadius = 6;
+            this.BReservarAula.BorderSize = 0;
+            this.BReservarAula.FlatAppearance.BorderSize = 0;
+            this.BReservarAula.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BReservarAula.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BReservarAula.ForeColor = System.Drawing.Color.White;
+            this.BReservarAula.Location = new System.Drawing.Point(524, 309);
+            this.BReservarAula.Name = "BReservarAula";
+            this.BReservarAula.Size = new System.Drawing.Size(150, 40);
+            this.BReservarAula.TabIndex = 8;
+            this.BReservarAula.Text = "Reservar Aula";
+            this.BReservarAula.TextColor = System.Drawing.Color.White;
+            this.BReservarAula.UseVisualStyleBackColor = false;
+            this.BReservarAula.Click += new System.EventHandler(this.botonPersonalisado1_Click);
             // 
             // timePickerPersonalisado1
             // 
@@ -347,7 +349,7 @@ namespace ProyectoIntegradorTaller.views.admin
         private PictureBox pictureBox4;
         private Panel panel2;
         private Label label8;
-        private views.components.BotonPersonalisado botonPersonalisado1;
+        private views.components.BotonPersonalisado BReservarAula;
         private views.components.TimePickerPersonalisado timePickerPersonalisado1;
         private views.components.ComboBoxPersonalisado CBMateria;
         private views.components.TimePickerPersonalisado timePickerPersonalisado2;

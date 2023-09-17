@@ -36,5 +36,10 @@ namespace ProyectoIntegradorTaller.views.admin
             AdminMenu admin = new AdminMenu();
             admin.Show();
         }
+
+        private void BGuardar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

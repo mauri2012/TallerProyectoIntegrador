@@ -1,4 +1,5 @@
 ﻿//using ProyectoIntegradorTaller.formularios;
+using Microsoft.VisualBasic;
 using ProyectoIntegradorTaller.Properties;
 
 using System;
@@ -140,7 +141,12 @@ namespace DraggingControl
         }
         private void BCerrar_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            MsgBoxResult ask=(MsgBoxResult)MessageBox.Show("Seguro que quiere salir?", "Cerrar", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if(ask == MsgBoxResult.Yes)
+            {
+                Application.Exit();
+            }
+        
 
         }
         private void Panel_MouseClick(object sender, MouseEventArgs e)

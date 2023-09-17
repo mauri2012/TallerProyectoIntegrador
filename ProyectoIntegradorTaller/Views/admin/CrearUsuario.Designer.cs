@@ -28,43 +28,43 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.rjTextBox1 = new CustomControls.RJControls.RJTextBox();
+            this.TNombre = new CustomControls.RJControls.RJTextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.rjTextBox2 = new CustomControls.RJControls.RJTextBox();
+            this.TApellido = new CustomControls.RJControls.RJTextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.rjTextBox3 = new CustomControls.RJControls.RJTextBox();
-            this.rjTextBox4 = new CustomControls.RJControls.RJTextBox();
+            this.TDni = new CustomControls.RJControls.RJTextBox();
+            this.TEmail = new CustomControls.RJControls.RJTextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.BVolver = new ProyectoIntegradorTaller.views.components.BotonPersonalisado();
             this.BInicioSesion = new ProyectoIntegradorTaller.views.components.BotonPersonalisado();
-            this.TTipo = new ProyectoIntegradorTaller.views.components.ComboBoxPersonalisado();
+            this.CBTipo = new ProyectoIntegradorTaller.views.components.ComboBoxPersonalisado();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // rjTextBox1
+            // TNombre
             // 
-            this.rjTextBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.rjTextBox1.BackColor = System.Drawing.SystemColors.Menu;
-            this.rjTextBox1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
-            this.rjTextBox1.BorderFocusColor = System.Drawing.Color.HotPink;
-            this.rjTextBox1.BorderRadius = 6;
-            this.rjTextBox1.BorderSize = 2;
-            this.rjTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rjTextBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.rjTextBox1.Location = new System.Drawing.Point(60, 80);
-            this.rjTextBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.rjTextBox1.Multiline = false;
-            this.rjTextBox1.Name = "rjTextBox1";
-            this.rjTextBox1.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.rjTextBox1.PasswordChar = false;
-            this.rjTextBox1.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.rjTextBox1.PlaceholderText = "";
-            this.rjTextBox1.Size = new System.Drawing.Size(200, 31);
-            this.rjTextBox1.TabIndex = 34;
-            this.rjTextBox1.Texts = "";
-            this.rjTextBox1.UnderlinedStyle = true;
+            this.TNombre.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.TNombre.BackColor = System.Drawing.SystemColors.Menu;
+            this.TNombre.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
+            this.TNombre.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.TNombre.BorderRadius = 6;
+            this.TNombre.BorderSize = 2;
+            this.TNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TNombre.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.TNombre.Location = new System.Drawing.Point(60, 80);
+            this.TNombre.Margin = new System.Windows.Forms.Padding(4);
+            this.TNombre.Multiline = false;
+            this.TNombre.Name = "TNombre";
+            this.TNombre.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this.TNombre.PasswordChar = false;
+            this.TNombre.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.TNombre.PlaceholderText = "";
+            this.TNombre.Size = new System.Drawing.Size(200, 31);
+            this.TNombre.TabIndex = 34;
+            this.TNombre.Texts = "";
+            this.TNombre.UnderlinedStyle = true;
             // 
             // label4
             // 
@@ -88,28 +88,28 @@
             this.label1.TabIndex = 36;
             this.label1.Text = "Apellido";
             // 
-            // rjTextBox2
+            // TApellido
             // 
-            this.rjTextBox2.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.rjTextBox2.BackColor = System.Drawing.SystemColors.Menu;
-            this.rjTextBox2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
-            this.rjTextBox2.BorderFocusColor = System.Drawing.Color.HotPink;
-            this.rjTextBox2.BorderRadius = 6;
-            this.rjTextBox2.BorderSize = 2;
-            this.rjTextBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rjTextBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.rjTextBox2.Location = new System.Drawing.Point(62, 135);
-            this.rjTextBox2.Margin = new System.Windows.Forms.Padding(4);
-            this.rjTextBox2.Multiline = false;
-            this.rjTextBox2.Name = "rjTextBox2";
-            this.rjTextBox2.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.rjTextBox2.PasswordChar = false;
-            this.rjTextBox2.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.rjTextBox2.PlaceholderText = "";
-            this.rjTextBox2.Size = new System.Drawing.Size(200, 31);
-            this.rjTextBox2.TabIndex = 37;
-            this.rjTextBox2.Texts = "";
-            this.rjTextBox2.UnderlinedStyle = true;
+            this.TApellido.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.TApellido.BackColor = System.Drawing.SystemColors.Menu;
+            this.TApellido.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
+            this.TApellido.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.TApellido.BorderRadius = 6;
+            this.TApellido.BorderSize = 2;
+            this.TApellido.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TApellido.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.TApellido.Location = new System.Drawing.Point(62, 135);
+            this.TApellido.Margin = new System.Windows.Forms.Padding(4);
+            this.TApellido.Multiline = false;
+            this.TApellido.Name = "TApellido";
+            this.TApellido.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this.TApellido.PasswordChar = false;
+            this.TApellido.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.TApellido.PlaceholderText = "";
+            this.TApellido.Size = new System.Drawing.Size(200, 31);
+            this.TApellido.TabIndex = 37;
+            this.TApellido.Texts = "";
+            this.TApellido.UnderlinedStyle = true;
             // 
             // label2
             // 
@@ -122,51 +122,51 @@
             this.label2.TabIndex = 38;
             this.label2.Text = "DNI";
             // 
-            // rjTextBox3
+            // TDni
             // 
-            this.rjTextBox3.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.rjTextBox3.BackColor = System.Drawing.SystemColors.Menu;
-            this.rjTextBox3.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
-            this.rjTextBox3.BorderFocusColor = System.Drawing.Color.HotPink;
-            this.rjTextBox3.BorderRadius = 6;
-            this.rjTextBox3.BorderSize = 2;
-            this.rjTextBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rjTextBox3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.rjTextBox3.Location = new System.Drawing.Point(60, 190);
-            this.rjTextBox3.Margin = new System.Windows.Forms.Padding(4);
-            this.rjTextBox3.Multiline = false;
-            this.rjTextBox3.Name = "rjTextBox3";
-            this.rjTextBox3.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.rjTextBox3.PasswordChar = false;
-            this.rjTextBox3.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.rjTextBox3.PlaceholderText = "";
-            this.rjTextBox3.Size = new System.Drawing.Size(200, 31);
-            this.rjTextBox3.TabIndex = 39;
-            this.rjTextBox3.Texts = "";
-            this.rjTextBox3.UnderlinedStyle = true;
+            this.TDni.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.TDni.BackColor = System.Drawing.SystemColors.Menu;
+            this.TDni.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
+            this.TDni.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.TDni.BorderRadius = 6;
+            this.TDni.BorderSize = 2;
+            this.TDni.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TDni.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.TDni.Location = new System.Drawing.Point(60, 190);
+            this.TDni.Margin = new System.Windows.Forms.Padding(4);
+            this.TDni.Multiline = false;
+            this.TDni.Name = "TDni";
+            this.TDni.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this.TDni.PasswordChar = false;
+            this.TDni.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.TDni.PlaceholderText = "";
+            this.TDni.Size = new System.Drawing.Size(200, 31);
+            this.TDni.TabIndex = 39;
+            this.TDni.Texts = "";
+            this.TDni.UnderlinedStyle = true;
             // 
-            // rjTextBox4
+            // TEmail
             // 
-            this.rjTextBox4.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.rjTextBox4.BackColor = System.Drawing.SystemColors.Menu;
-            this.rjTextBox4.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
-            this.rjTextBox4.BorderFocusColor = System.Drawing.Color.HotPink;
-            this.rjTextBox4.BorderRadius = 6;
-            this.rjTextBox4.BorderSize = 2;
-            this.rjTextBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rjTextBox4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.rjTextBox4.Location = new System.Drawing.Point(372, 80);
-            this.rjTextBox4.Margin = new System.Windows.Forms.Padding(4);
-            this.rjTextBox4.Multiline = false;
-            this.rjTextBox4.Name = "rjTextBox4";
-            this.rjTextBox4.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.rjTextBox4.PasswordChar = false;
-            this.rjTextBox4.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.rjTextBox4.PlaceholderText = "";
-            this.rjTextBox4.Size = new System.Drawing.Size(200, 31);
-            this.rjTextBox4.TabIndex = 40;
-            this.rjTextBox4.Texts = "";
-            this.rjTextBox4.UnderlinedStyle = true;
+            this.TEmail.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.TEmail.BackColor = System.Drawing.SystemColors.Menu;
+            this.TEmail.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
+            this.TEmail.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.TEmail.BorderRadius = 6;
+            this.TEmail.BorderSize = 2;
+            this.TEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TEmail.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.TEmail.Location = new System.Drawing.Point(372, 80);
+            this.TEmail.Margin = new System.Windows.Forms.Padding(4);
+            this.TEmail.Multiline = false;
+            this.TEmail.Name = "TEmail";
+            this.TEmail.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this.TEmail.PasswordChar = false;
+            this.TEmail.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.TEmail.PlaceholderText = "";
+            this.TEmail.Size = new System.Drawing.Size(200, 31);
+            this.TEmail.TabIndex = 40;
+            this.TEmail.Texts = "";
+            this.TEmail.UnderlinedStyle = true;
             // 
             // label3
             // 
@@ -222,28 +222,29 @@
             this.BInicioSesion.TextColor = System.Drawing.Color.White;
             this.BInicioSesion.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.BInicioSesion.UseVisualStyleBackColor = false;
+            this.BInicioSesion.Click += new System.EventHandler(this.BInicioSesion_Click);
             // 
-            // TTipo
+            // CBTipo
             // 
-            this.TTipo.AutoCompleteCustomSource.AddRange(new string[] {
+            this.CBTipo.AutoCompleteCustomSource.AddRange(new string[] {
             "Administrador",
             "Bedel"});
-            this.TTipo.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.TTipo.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
-            this.TTipo.BorderSize = 2;
-            this.TTipo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
-            this.TTipo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.TTipo.ForeColor = System.Drawing.Color.DimGray;
-            this.TTipo.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
-            this.TTipo.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(228)))), ((int)(((byte)(245)))));
-            this.TTipo.ListTextColor = System.Drawing.Color.DimGray;
-            this.TTipo.Location = new System.Drawing.Point(372, 134);
-            this.TTipo.MinimumSize = new System.Drawing.Size(200, 30);
-            this.TTipo.Name = "TTipo";
-            this.TTipo.Padding = new System.Windows.Forms.Padding(2);
-            this.TTipo.Size = new System.Drawing.Size(203, 30);
-            this.TTipo.TabIndex = 54;
-            this.TTipo.Texts = "";
+            this.CBTipo.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.CBTipo.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
+            this.CBTipo.BorderSize = 2;
+            this.CBTipo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
+            this.CBTipo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.CBTipo.ForeColor = System.Drawing.Color.DimGray;
+            this.CBTipo.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
+            this.CBTipo.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(228)))), ((int)(((byte)(245)))));
+            this.CBTipo.ListTextColor = System.Drawing.Color.DimGray;
+            this.CBTipo.Location = new System.Drawing.Point(372, 134);
+            this.CBTipo.MinimumSize = new System.Drawing.Size(200, 30);
+            this.CBTipo.Name = "CBTipo";
+            this.CBTipo.Padding = new System.Windows.Forms.Padding(2);
+            this.CBTipo.Size = new System.Drawing.Size(203, 30);
+            this.CBTipo.TabIndex = 54;
+            this.CBTipo.Texts = "";
             // 
             // label5
             // 
@@ -278,32 +279,32 @@
             this.ClientSize = new System.Drawing.Size(686, 358);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.TTipo);
+            this.Controls.Add(this.CBTipo);
             this.Controls.Add(this.BVolver);
             this.Controls.Add(this.BInicioSesion);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.rjTextBox4);
-            this.Controls.Add(this.rjTextBox3);
+            this.Controls.Add(this.TEmail);
+            this.Controls.Add(this.TDni);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.rjTextBox2);
+            this.Controls.Add(this.TApellido);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.rjTextBox1);
+            this.Controls.Add(this.TNombre);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "CrearUsuario";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CrearUsuario";
-            this.Controls.SetChildIndex(this.rjTextBox1, 0);
+            this.Controls.SetChildIndex(this.TNombre, 0);
             this.Controls.SetChildIndex(this.label4, 0);
             this.Controls.SetChildIndex(this.label1, 0);
-            this.Controls.SetChildIndex(this.rjTextBox2, 0);
+            this.Controls.SetChildIndex(this.TApellido, 0);
             this.Controls.SetChildIndex(this.label2, 0);
-            this.Controls.SetChildIndex(this.rjTextBox3, 0);
-            this.Controls.SetChildIndex(this.rjTextBox4, 0);
+            this.Controls.SetChildIndex(this.TDni, 0);
+            this.Controls.SetChildIndex(this.TEmail, 0);
             this.Controls.SetChildIndex(this.label3, 0);
             this.Controls.SetChildIndex(this.BInicioSesion, 0);
             this.Controls.SetChildIndex(this.BVolver, 0);
-            this.Controls.SetChildIndex(this.TTipo, 0);
+            this.Controls.SetChildIndex(this.CBTipo, 0);
             this.Controls.SetChildIndex(this.label5, 0);
             this.Controls.SetChildIndex(this.label6, 0);
             this.ResumeLayout(false);
@@ -313,17 +314,17 @@
 
         #endregion
 
-        private CustomControls.RJControls.RJTextBox rjTextBox1;
+        private CustomControls.RJControls.RJTextBox TNombre;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label1;
-        private CustomControls.RJControls.RJTextBox rjTextBox2;
+        private CustomControls.RJControls.RJTextBox TApellido;
         private System.Windows.Forms.Label label2;
-        private CustomControls.RJControls.RJTextBox rjTextBox3;
-        private CustomControls.RJControls.RJTextBox rjTextBox4;
+        private CustomControls.RJControls.RJTextBox TDni;
+        private CustomControls.RJControls.RJTextBox TEmail;
         private System.Windows.Forms.Label label3;
         private components.BotonPersonalisado BVolver;
         private components.BotonPersonalisado BInicioSesion;
-        private components.ComboBoxPersonalisado TTipo;
+        private components.ComboBoxPersonalisado CBTipo;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
     }
