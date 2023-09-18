@@ -144,6 +144,7 @@
             this.TDni.TabIndex = 39;
             this.TDni.Texts = "";
             this.TDni.UnderlinedStyle = true;
+            this.TDni.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TDni_KeyPress);
             // 
             // TEmail
             // 

@@ -59,6 +59,16 @@ namespace ProyectoIntegradorTaller.views.admin
             // Utiliza Regex.IsMatch para verificar si la cadena coincide con el patrón.
             return Regex.IsMatch(email, pattern);
         }
+
+        private void TDni_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+                MessageBox.Show("El campo Capacidad solo acepta valores numericos", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            }
+        }
     }
 
 }
