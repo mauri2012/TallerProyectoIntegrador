@@ -16,8 +16,8 @@ namespace ProyectoIntegradorTaller.views.admin
             List<Item> staticData = new List<Item>()
             {
 
-                new Item{Id=1, Name= "Aula 5",Lugar="9 de julio", CapacidadMax=40,Tipo="Normal" },
-                new Item{Id=2, Name= "Aula Magna",Lugar = "libertad",CapacidadMax=100,Tipo = "Magna"},
+                new Item{Id=1, Name= "Aula 5",Lugar="1er piso", CapacidadMax=40,Tipo="Normal" },
+                new Item{Id=2, Name= "Aula Magna",Lugar = "3er piso",CapacidadMax=100,Tipo = "Magna"},
             };
             dataGridView1.DataSource = staticData;
         }
@@ -87,6 +87,10 @@ namespace ProyectoIntegradorTaller.views.admin
             dataGridView1.Columns.Add(buttonColumn2);
             dataGridView1.Columns.Add(buttonColumn3);
             dataGridView1.Columns.Add(buttonColumn4);
+
+            PBMaximizar_.Location = new Point(746, 11);
+            PBCerrar_.Location = new Point(766, 11);
+            PBEsconder_.Location = new Point(726, 11);
         }
 
         private void DataGridView1_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
@@ -118,9 +122,8 @@ namespace ProyectoIntegradorTaller.views.admin
             materias.Show();
         }
 
-        private void utils2_Load(object sender, EventArgs e)
-        {
-
+        private void utils2_Load(object sender, EventArgs e) { 
+        
         }
 
         private void BUsuarios_Click(object sender, EventArgs e)
@@ -147,6 +150,13 @@ namespace ProyectoIntegradorTaller.views.admin
                 LogIn log = new LogIn();
                 log.Show();
             }
+        }
+
+        private void botonPersonalisado1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            Datos misDatos = new Datos();
+            misDatos.Show();
         }
     }
     public class Item

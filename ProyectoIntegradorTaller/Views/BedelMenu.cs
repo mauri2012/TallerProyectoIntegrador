@@ -84,6 +84,28 @@ namespace ProyectoIntegradorTaller.views.admin
                 LogIn log= new LogIn();
                 log.Show();
             }
+            
+        }
+
+        private void BMaterias_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            Materias materias = new Materias();
+            materias.Show();
+        }
+
+        private void BProfesores_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            Profesores profesores=new Profesores();
+            profesores.Show();
+        }
+
+        private void botonPersonalisado1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            Datos datos = new Datos();
+            datos.Show();
         }
     }
     public class ItemProfesor

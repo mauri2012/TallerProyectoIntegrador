@@ -20,8 +20,10 @@ namespace DraggingControl
         private bool isDragging = false;
         private Point originalMousePos;
         private Point originalControlPos;
-        private PictureBox PBMaximizar_;
-        private PictureBox PBMinimizar_;
+        public PictureBox PBMaximizar_;
+        public PictureBox PBMinimizar_;
+        public PictureBox PBCerrar_;
+        public PictureBox PBEsconder_;
         public DraggablePanelUserControl()
         {
             InitializeComponent();
@@ -42,7 +44,7 @@ namespace DraggingControl
             PBCerrar.Size = new Size(15, 15);
             PBCerrar.TabIndex = 3;
             PBCerrar.TabStop = false;
-            PBCerrar.Location = new Point(666, 11);
+         //   PBCerrar.Location = new Point(666, 11);
             PBCerrar.BackgroundImage = null;
             PBCerrar.BorderStyle = BorderStyle.None;
             PBCerrar.BackColor = Color.FromArgb(17, 97, 238);
@@ -56,7 +58,7 @@ namespace DraggingControl
             PBMaximizar.Size = new Size(15, 15);
             PBMaximizar.TabIndex = 3;
             PBMaximizar.TabStop = false;
-            PBMaximizar.Location = new Point(646, 11);
+          //  PBMaximizar.Location = new Point(646, 11);
             PBMaximizar.BackgroundImage = null;
             PBMaximizar.BorderStyle = BorderStyle.None;
             PBMaximizar.BackColor = Color.FromArgb(17, 97, 238);
@@ -93,7 +95,7 @@ namespace DraggingControl
             panel1.BackColor = Color.FromArgb(17, 97, 238); // Set the background color
             panel1.Location = new Point(0, 0); // Set the location
             panel1.Dock = DockStyle.Top;
-    
+            this.Load +=new EventHandler(this.panel1_load);
         
          // PBMaximizar.SuspendLayout();
           //  this.SuspendLayout();
@@ -111,8 +113,8 @@ namespace DraggingControl
 
            PBMaximizar_ = PBMaximizar;
             PBMinimizar_ = PBRestaurar;
-
-
+            PBCerrar_ = PBCerrar;
+            PBEsconder_=PBEsconder;
            
             this.Controls.Add(PBCerrar);
             this.Controls.Add(PBMaximizar);
@@ -168,7 +170,7 @@ namespace DraggingControl
                 originalControlPos = Location;
             }
         }
-
+        
         private void Panel_MouseMove(object sender, MouseEventArgs e)
         {
             if (isDragging)
@@ -184,6 +186,12 @@ namespace DraggingControl
             {
                 isDragging = false;
             }
+        }
+        private void panel1_load(object sender, EventArgs e)
+        {
+            PBMaximizar_.Location = new Point(646, 11);
+            PBCerrar_.Location = new Point(666, 11);
+            PBEsconder_.Location = new Point(624, 11);
         }
     }
 }

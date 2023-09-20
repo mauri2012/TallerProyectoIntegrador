@@ -28,27 +28,17 @@ namespace ProyectoIntegradorTaller.views.admin
 
         private void BInicioSesion_Click(object sender, EventArgs e)
         {
-            if (IsValidEmail(this.TEmail.Texts))
+            if (!IsValidEmail(this.TEmail.Texts))
             {
-                Console.WriteLine("La dirección de correo electrónico es válida.");
-            }
-            else
-            {
+    
                 MessageBox.Show("El correo electronico no es valido", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
               
             }
-            if (string.IsNullOrEmpty(this.TNombre.Texts) || string.IsNullOrEmpty(this.TApellido.Texts) || string.IsNullOrEmpty(this.TDni.Text) || string.IsNullOrEmpty(this.TEmail.Texts) || string.IsNullOrEmpty(this.CBTipo.Texts))
+            if (string.IsNullOrEmpty(this.TNombre.Text) || string.IsNullOrEmpty(this.TApellido.Text) || string.IsNullOrEmpty(this.TDni.Text) || string.IsNullOrEmpty(this.TEmail.Text) || string.IsNullOrEmpty(this.CBTipo.Texts))
             {
                 MessageBox.Show("Existen campos incompletos", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-            else{
-                 
-
-           
-                
-
-
-            }
+          
         }
 
         public static bool IsValidEmail(string email)

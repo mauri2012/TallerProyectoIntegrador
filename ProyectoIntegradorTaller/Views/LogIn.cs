@@ -1,16 +1,15 @@
 using DraggingControl;
-//using ProyectoIntegrador.formularios;
-//using ProyectoIntegradorTaller.formularios;
 using System;
 using System.Drawing;
 using System.Windows.Forms;
 
 namespace ProyectoIntegradorTaller.views.admin    
 {
+
     public partial class LogIn : DraggablePanelUserControl
     {
-     
-   
+        string isAdmin;
+
         public LogIn()
         {
             InitializeComponent();
@@ -34,6 +33,7 @@ namespace ProyectoIntegradorTaller.views.admin
                 if (this.TEmail.Texts == "admin")
                 {
                     AdminMenu menu = new AdminMenu();
+                    isAdmin = TEmail.Texts;
                     menu.Show();
                     this.Hide();
                 }
