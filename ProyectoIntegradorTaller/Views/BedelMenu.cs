@@ -75,17 +75,7 @@ namespace ProyectoIntegradorTaller.views.admin
             }
         }
 
-        private void BLogOut_Click(object sender, EventArgs e)
-        {
-            MsgBoxResult ask = (MsgBoxResult)MessageBox.Show("Seguro que quiere deslogearse?", "Log out", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-            if (ask == MsgBoxResult.Yes)
-            {
-                this.Close();
-                LogIn log= new LogIn();
-                log.Show();
-            }
-            
-        }
+        
 
         private void BMaterias_Click(object sender, EventArgs e)
         {

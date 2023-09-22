@@ -1,4 +1,5 @@
 ﻿using DraggingControl;
+using Microsoft.VisualBasic;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -34,6 +35,17 @@ namespace ProyectoIntegradorTaller.views.admin
             }
            
             
+        }
+
+        private void BLogOut_Click(object sender, EventArgs e)
+        {
+            MsgBoxResult ask = (MsgBoxResult)MessageBox.Show("Seguro que quiere deslogearse?", "Log out", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if (ask == MsgBoxResult.Yes)
+            {
+                this.Close();
+                LogIn log = new LogIn();
+                log.Show();
+            }
         }
     }
 }

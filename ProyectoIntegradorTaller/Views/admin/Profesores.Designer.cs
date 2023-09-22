@@ -30,17 +30,30 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Apellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DNI = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Eliminar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.BBuscar = new ProyectoIntegradorTaller.views.components.BotonPersonalisado();
             this.rjTextBox1 = new CustomControls.RJControls.RJTextBox();
             this.BCrearProfesor = new ProyectoIntegradorTaller.views.components.BotonPersonalisado();
             this.BVolver = new ProyectoIntegradorTaller.views.components.BotonPersonalisado();
             this.label1 = new System.Windows.Forms.Label();
+            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Apellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CorreoElectronico = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DNI = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Eliminar = new System.Windows.Forms.DataGridViewButtonColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.PBMaximizar_)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PBMinimizar_)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PBCerrar_)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PBEsconder_)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
+            // 
+            // PBMaximizar_
+            // 
+            this.PBMaximizar_.Location = new System.Drawing.Point(646, 11);
+            // 
+            // PBCerrar_
+            // 
+            this.PBCerrar_.Location = new System.Drawing.Point(666, 11);
             // 
             // dataGridView1
             // 
@@ -62,6 +75,7 @@
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Nombre,
             this.Apellido,
+            this.CorreoElectronico,
             this.DNI,
             this.Eliminar});
             this.dataGridView1.EnableHeadersVisualStyles = false;
@@ -72,34 +86,6 @@
             this.dataGridView1.Size = new System.Drawing.Size(662, 236);
             this.dataGridView1.TabIndex = 12;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick_1);
-            // 
-            // Nombre
-            // 
-            this.Nombre.HeaderText = "Nombre";
-            this.Nombre.Name = "Nombre";
-            this.Nombre.ReadOnly = true;
-            this.Nombre.Width = 166;
-            // 
-            // Apellido
-            // 
-            this.Apellido.HeaderText = "Apellido";
-            this.Apellido.Name = "Apellido";
-            this.Apellido.ReadOnly = true;
-            this.Apellido.Width = 166;
-            // 
-            // DNI
-            // 
-            this.DNI.HeaderText = "DNI";
-            this.DNI.Name = "DNI";
-            this.DNI.ReadOnly = true;
-            this.DNI.Width = 166;
-            // 
-            // Eliminar
-            // 
-            this.Eliminar.HeaderText = "Eliminar";
-            this.Eliminar.Name = "Eliminar";
-            this.Eliminar.ReadOnly = true;
-            this.Eliminar.Width = 166;
             // 
             // BBuscar
             // 
@@ -199,6 +185,40 @@
             this.label1.TabIndex = 53;
             this.label1.Text = "Profesores";
             // 
+            // Nombre
+            // 
+            this.Nombre.HeaderText = "Nombre";
+            this.Nombre.Name = "Nombre";
+            this.Nombre.ReadOnly = true;
+            this.Nombre.Width = 166;
+            // 
+            // Apellido
+            // 
+            this.Apellido.HeaderText = "Apellido";
+            this.Apellido.Name = "Apellido";
+            this.Apellido.ReadOnly = true;
+            this.Apellido.Width = 166;
+            // 
+            // CorreoElectronico
+            // 
+            this.CorreoElectronico.HeaderText = "Correo Electronico";
+            this.CorreoElectronico.Name = "CorreoElectronico";
+            this.CorreoElectronico.ReadOnly = true;
+            // 
+            // DNI
+            // 
+            this.DNI.HeaderText = "DNI";
+            this.DNI.Name = "DNI";
+            this.DNI.ReadOnly = true;
+            this.DNI.Width = 166;
+            // 
+            // Eliminar
+            // 
+            this.Eliminar.HeaderText = "Eliminar";
+            this.Eliminar.Name = "Eliminar";
+            this.Eliminar.ReadOnly = true;
+            this.Eliminar.Width = 166;
+            // 
             // Profesores
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -215,12 +235,20 @@
             this.Name = "Profesores";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Profesores";
+            this.Controls.SetChildIndex(this.PBEsconder_, 0);
+            this.Controls.SetChildIndex(this.PBMinimizar_, 0);
+            this.Controls.SetChildIndex(this.PBMaximizar_, 0);
+            this.Controls.SetChildIndex(this.PBCerrar_, 0);
             this.Controls.SetChildIndex(this.BCrearProfesor, 0);
             this.Controls.SetChildIndex(this.rjTextBox1, 0);
             this.Controls.SetChildIndex(this.BBuscar, 0);
             this.Controls.SetChildIndex(this.dataGridView1, 0);
             this.Controls.SetChildIndex(this.BVolver, 0);
             this.Controls.SetChildIndex(this.label1, 0);
+            ((System.ComponentModel.ISupportInitialize)(this.PBMaximizar_)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PBMinimizar_)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PBCerrar_)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PBEsconder_)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -234,10 +262,11 @@
         private components.BotonPersonalisado BBuscar;
         private System.Windows.Forms.DataGridView dataGridView1;
         private components.BotonPersonalisado BVolver;
+        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn Apellido;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CorreoElectronico;
         private System.Windows.Forms.DataGridViewTextBoxColumn DNI;
         private System.Windows.Forms.DataGridViewButtonColumn Eliminar;
-        private System.Windows.Forms.Label label1;
     }
 }

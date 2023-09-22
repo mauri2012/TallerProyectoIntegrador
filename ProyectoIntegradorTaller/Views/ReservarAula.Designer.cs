@@ -49,10 +49,22 @@ namespace ProyectoIntegradorTaller.views.admin
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label8 = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.PBMaximizar_)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PBMinimizar_)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PBCerrar_)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PBEsconder_)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // PBMaximizar_
+            // 
+            this.PBMaximizar_.Location = new System.Drawing.Point(646, 11);
+            // 
+            // PBCerrar_
+            // 
+            this.PBCerrar_.Location = new System.Drawing.Point(666, 11);
             // 
             // panel1
             // 
@@ -214,7 +226,7 @@ namespace ProyectoIntegradorTaller.views.admin
             this.timePickerPersonalisado1.BorderColor = System.Drawing.Color.PaleVioletRed;
             this.timePickerPersonalisado1.BorderSize = 0;
             this.timePickerPersonalisado1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F);
-            this.timePickerPersonalisado1.Location = new System.Drawing.Point(92, 243);
+            this.timePickerPersonalisado1.Location = new System.Drawing.Point(386, 184);
             this.timePickerPersonalisado1.MinimumSize = new System.Drawing.Size(4, 35);
             this.timePickerPersonalisado1.Name = "timePickerPersonalisado1";
             this.timePickerPersonalisado1.Size = new System.Drawing.Size(244, 35);
@@ -256,7 +268,7 @@ namespace ProyectoIntegradorTaller.views.admin
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(92, 222);
+            this.label4.Location = new System.Drawing.Point(383, 163);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(93, 18);
             this.label4.TabIndex = 8;
@@ -326,8 +338,16 @@ namespace ProyectoIntegradorTaller.views.admin
             this.Name = "ReservarAula";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ReservarAula";
+            this.Controls.SetChildIndex(this.PBEsconder_, 0);
+            this.Controls.SetChildIndex(this.PBMinimizar_, 0);
+            this.Controls.SetChildIndex(this.PBMaximizar_, 0);
+            this.Controls.SetChildIndex(this.PBCerrar_, 0);
             this.Controls.SetChildIndex(this.label8, 0);
             this.Controls.SetChildIndex(this.panel2, 0);
+            ((System.ComponentModel.ISupportInitialize)(this.PBMaximizar_)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PBMinimizar_)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PBCerrar_)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PBEsconder_)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();

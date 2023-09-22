@@ -38,12 +38,28 @@
             this.rjTextBox1 = new CustomControls.RJControls.RJTextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.rjTextBox3 = new CustomControls.RJControls.RJTextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.PBMaximizar_)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PBMinimizar_)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PBCerrar_)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PBEsconder_)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // PBMaximizar_
+            // 
+            this.PBMaximizar_.Location = new System.Drawing.Point(646, 11);
+            // 
+            // PBCerrar_
+            // 
+            this.PBCerrar_.Location = new System.Drawing.Point(666, 11);
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Controls.Add(this.label5);
+            this.panel1.Controls.Add(this.rjTextBox3);
             this.panel1.Controls.Add(this.BVolver);
             this.panel1.Controls.Add(this.BInicioSesion);
             this.panel1.Controls.Add(this.TCapacidad);
@@ -218,6 +234,40 @@
             this.label3.TabIndex = 54;
             this.label3.Text = "Nuevo Profesor";
             // 
+            // rjTextBox3
+            // 
+            this.rjTextBox3.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.rjTextBox3.BackColor = System.Drawing.SystemColors.Menu;
+            this.rjTextBox3.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
+            this.rjTextBox3.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.rjTextBox3.BorderRadius = 6;
+            this.rjTextBox3.BorderSize = 2;
+            this.rjTextBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rjTextBox3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.rjTextBox3.Location = new System.Drawing.Point(235, 231);
+            this.rjTextBox3.Margin = new System.Windows.Forms.Padding(4);
+            this.rjTextBox3.Multiline = false;
+            this.rjTextBox3.Name = "rjTextBox3";
+            this.rjTextBox3.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this.rjTextBox3.PasswordChar = false;
+            this.rjTextBox3.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.rjTextBox3.PlaceholderText = "";
+            this.rjTextBox3.Size = new System.Drawing.Size(200, 31);
+            this.rjTextBox3.TabIndex = 52;
+            this.rjTextBox3.Texts = "";
+            this.rjTextBox3.UnderlinedStyle = true;
+            // 
+            // label5
+            // 
+            this.label5.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
+            this.label5.Location = new System.Drawing.Point(232, 211);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(140, 16);
+            this.label5.TabIndex = 53;
+            this.label5.Text = "Correo Electronico";
+            // 
             // CrearProfesor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -231,8 +281,16 @@
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CrearProfesor";
+            this.Controls.SetChildIndex(this.PBEsconder_, 0);
+            this.Controls.SetChildIndex(this.PBMinimizar_, 0);
+            this.Controls.SetChildIndex(this.PBMaximizar_, 0);
+            this.Controls.SetChildIndex(this.PBCerrar_, 0);
             this.Controls.SetChildIndex(this.panel1, 0);
             this.Controls.SetChildIndex(this.label3, 0);
+            ((System.ComponentModel.ISupportInitialize)(this.PBMaximizar_)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PBMinimizar_)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PBCerrar_)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PBEsconder_)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
@@ -252,5 +310,7 @@
         private components.BotonPersonalisado BInicioSesion;
         private components.BotonPersonalisado BVolver;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label5;
+        private CustomControls.RJControls.RJTextBox rjTextBox3;
     }
 }

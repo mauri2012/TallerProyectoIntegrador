@@ -32,13 +32,13 @@ namespace ProyectoIntegradorTaller.views.admin
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.LBienvenido = new System.Windows.Forms.Label();
             this.panel7 = new System.Windows.Forms.Panel();
+            this.botonPersonalisado1 = new ProyectoIntegradorTaller.views.components.BotonPersonalisado();
             this.BProfesores = new ProyectoIntegradorTaller.views.components.BotonPersonalisado();
             this.BMaterias = new ProyectoIntegradorTaller.views.components.BotonPersonalisado();
-            this.BLogOut = new ProyectoIntegradorTaller.views.components.BotonPersonalisado();
             this.TBBusqueda = new CustomControls.RJControls.RJTextBox();
             this.BBuscar = new ProyectoIntegradorTaller.views.components.BotonPersonalisado();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
@@ -47,11 +47,22 @@ namespace ProyectoIntegradorTaller.views.admin
             this.lugarDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.capacidadMaxDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.itemProfesorBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.botonPersonalisado1 = new ProyectoIntegradorTaller.views.components.BotonPersonalisado();
+            ((System.ComponentModel.ISupportInitialize)(this.PBMaximizar_)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PBMinimizar_)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PBCerrar_)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PBEsconder_)).BeginInit();
             this.panel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.itemProfesorBindingSource)).BeginInit();
             this.SuspendLayout();
+            // 
+            // PBMaximizar_
+            // 
+            this.PBMaximizar_.Location = new System.Drawing.Point(646, 11);
+            // 
+            // PBCerrar_
+            // 
+            this.PBCerrar_.Location = new System.Drawing.Point(666, 11);
             // 
             // label1
             // 
@@ -83,7 +94,6 @@ namespace ProyectoIntegradorTaller.views.admin
             this.panel7.Controls.Add(this.botonPersonalisado1);
             this.panel7.Controls.Add(this.BProfesores);
             this.panel7.Controls.Add(this.BMaterias);
-            this.panel7.Controls.Add(this.BLogOut);
             this.panel7.Controls.Add(this.TBBusqueda);
             this.panel7.Controls.Add(this.BBuscar);
             this.panel7.Controls.Add(this.LBienvenido);
@@ -92,6 +102,28 @@ namespace ProyectoIntegradorTaller.views.admin
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(686, 396);
             this.panel7.TabIndex = 11;
+            // 
+            // botonPersonalisado1
+            // 
+            this.botonPersonalisado1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
+            this.botonPersonalisado1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
+            this.botonPersonalisado1.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.botonPersonalisado1.BorderRadius = 6;
+            this.botonPersonalisado1.BorderSize = 0;
+            this.botonPersonalisado1.FlatAppearance.BorderSize = 0;
+            this.botonPersonalisado1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.botonPersonalisado1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.botonPersonalisado1.ForeColor = System.Drawing.Color.White;
+            this.botonPersonalisado1.Image = global::ProyectoIntegradorTaller.Properties.Resources.cuenta;
+            this.botonPersonalisado1.Location = new System.Drawing.Point(244, 344);
+            this.botonPersonalisado1.Name = "botonPersonalisado1";
+            this.botonPersonalisado1.Size = new System.Drawing.Size(118, 40);
+            this.botonPersonalisado1.TabIndex = 16;
+            this.botonPersonalisado1.Text = " Mi Cuenta";
+            this.botonPersonalisado1.TextColor = System.Drawing.Color.White;
+            this.botonPersonalisado1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.botonPersonalisado1.UseVisualStyleBackColor = false;
+            this.botonPersonalisado1.Click += new System.EventHandler(this.botonPersonalisado1_Click);
             // 
             // BProfesores
             // 
@@ -136,26 +168,6 @@ namespace ProyectoIntegradorTaller.views.admin
             this.BMaterias.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.BMaterias.UseVisualStyleBackColor = false;
             this.BMaterias.Click += new System.EventHandler(this.BMaterias_Click);
-            // 
-            // BLogOut
-            // 
-            this.BLogOut.BackColor = System.Drawing.Color.Red;
-            this.BLogOut.BackgroundColor = System.Drawing.Color.Red;
-            this.BLogOut.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.BLogOut.BorderRadius = 6;
-            this.BLogOut.BorderSize = 0;
-            this.BLogOut.FlatAppearance.BorderSize = 0;
-            this.BLogOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BLogOut.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BLogOut.ForeColor = System.Drawing.Color.White;
-            this.BLogOut.Location = new System.Drawing.Point(12, 352);
-            this.BLogOut.Name = "BLogOut";
-            this.BLogOut.Size = new System.Drawing.Size(69, 32);
-            this.BLogOut.TabIndex = 13;
-            this.BLogOut.Text = "Log out";
-            this.BLogOut.TextColor = System.Drawing.Color.White;
-            this.BLogOut.UseVisualStyleBackColor = false;
-            this.BLogOut.Click += new System.EventHandler(this.BLogOut_Click);
             // 
             // TBBusqueda
             // 
@@ -209,14 +221,14 @@ namespace ProyectoIntegradorTaller.views.admin
             this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.ColumnHeadersHeight = 40;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idDataGridViewTextBoxColumn,
@@ -271,27 +283,6 @@ namespace ProyectoIntegradorTaller.views.admin
             // 
             this.itemProfesorBindingSource.DataSource = typeof(ProyectoIntegradorTaller.views.admin.ItemProfesor);
             // 
-            // botonPersonalisado1
-            // 
-            this.botonPersonalisado1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
-            this.botonPersonalisado1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
-            this.botonPersonalisado1.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.botonPersonalisado1.BorderRadius = 6;
-            this.botonPersonalisado1.BorderSize = 0;
-            this.botonPersonalisado1.FlatAppearance.BorderSize = 0;
-            this.botonPersonalisado1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.botonPersonalisado1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.botonPersonalisado1.ForeColor = System.Drawing.Color.White;
-            this.botonPersonalisado1.Location = new System.Drawing.Point(230, 344);
-            this.botonPersonalisado1.Name = "botonPersonalisado1";
-            this.botonPersonalisado1.Size = new System.Drawing.Size(118, 40);
-            this.botonPersonalisado1.TabIndex = 16;
-            this.botonPersonalisado1.Text = "mis datos";
-            this.botonPersonalisado1.TextColor = System.Drawing.Color.White;
-            this.botonPersonalisado1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.botonPersonalisado1.UseVisualStyleBackColor = false;
-            this.botonPersonalisado1.Click += new System.EventHandler(this.botonPersonalisado1_Click);
-            // 
             // BedelMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -305,8 +296,16 @@ namespace ProyectoIntegradorTaller.views.admin
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menu";
             this.Load += new System.EventHandler(this.BedelMenu_Load);
+            this.Controls.SetChildIndex(this.PBEsconder_, 0);
+            this.Controls.SetChildIndex(this.PBMinimizar_, 0);
+            this.Controls.SetChildIndex(this.PBMaximizar_, 0);
+            this.Controls.SetChildIndex(this.PBCerrar_, 0);
             this.Controls.SetChildIndex(this.panel7, 0);
             this.Controls.SetChildIndex(this.label1, 0);
+            ((System.ComponentModel.ISupportInitialize)(this.PBMaximizar_)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PBMinimizar_)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PBCerrar_)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PBEsconder_)).EndInit();
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -333,7 +332,6 @@ namespace ProyectoIntegradorTaller.views.admin
         private DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn lugarDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn capacidadMaxDataGridViewTextBoxColumn;
-        private components.BotonPersonalisado BLogOut;
         private components.BotonPersonalisado BProfesores;
         private components.BotonPersonalisado BMaterias;
         private components.BotonPersonalisado botonPersonalisado1;
