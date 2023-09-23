@@ -51,13 +51,15 @@ namespace ProyectoIntegradorTaller.views.admin
                             nombre = this.TNombre.Texts,
                             apellido = this.TApellido.Texts,
                             correo = this.TEmail.Texts,
-                            id_tipoUsuario = 1,
+                            id_tipoUsuario = CBTipo.SelectedIndex,
                         };
                         using (classroom_managerEntities db = new classroom_managerEntities())
                         {
                             db.usuario.Add(user);
                             db.SaveChanges();
                             MessageBox.Show("se inserto el usuario correctamente!", "Insersion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            this.TDni.Texts = this.TApellido.Texts = this.TEmail.Texts=this.TNombre.Texts=" " ;
+                        
                     }
                     }
                 }
