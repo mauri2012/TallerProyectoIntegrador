@@ -77,10 +77,16 @@
     <Compile Include="models\aula.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="models\dias_semana.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="models\equipamiento.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="models\horas.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="models\materias.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="models\Model1.Context.cs">

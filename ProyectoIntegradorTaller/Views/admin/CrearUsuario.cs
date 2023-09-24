@@ -60,7 +60,7 @@ namespace ProyectoIntegradorTaller.views.admin
                             MessageBox.Show("se inserto el usuario correctamente!", "Insersion", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             this.TDni.Texts = this.TApellido.Texts = this.TEmail.Texts=this.TNombre.Texts=" " ;
                         
-                    }
+                        }
                     }
                 }
             

@@ -31,5 +31,7 @@ namespace ProyectoIntegradorTaller.models
         public virtual DbSet<reserva> reserva { get; set; }
         public virtual DbSet<tipoUsuario> tipoUsuario { get; set; }
         public virtual DbSet<usuario> usuario { get; set; }
+        public virtual DbSet<dias_semana> dias_semana { get; set; }
+        public virtual DbSet<materias> materias { get; set; }
     }
 }

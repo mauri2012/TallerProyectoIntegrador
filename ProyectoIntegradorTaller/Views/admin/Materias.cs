@@ -1,9 +1,11 @@
 ﻿using DraggingControl;
+using ProyectoIntegradorTaller.models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Drawing2D;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -24,7 +26,7 @@ namespace ProyectoIntegradorTaller.views.admin
                  new ItemMaterias{Materia="Ingeneria del Software 1" },
             };
             dataGridView1.DataSource = staticData;
-           
+
         }
 
         private void Materias_Load(object sender, EventArgs e)
@@ -35,6 +37,26 @@ namespace ProyectoIntegradorTaller.views.admin
             buttonColumn4.UseColumnTextForButtonValue = true; // Display the Text value on buttons
 
             dataGridView1.Columns.Add(buttonColumn4);
+            try
+            {
+
+                using (classroom_managerEntities db = new classroom_managerEntities())
+                {
+
+                    dataGridView1.DataSource = db.materias.ToList();
+
+
+
+                }
+            }
+            catch (DataException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
         private void DataGridView1_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
@@ -73,8 +95,17 @@ namespace ProyectoIntegradorTaller.views.admin
         {
             if (!string.IsNullOrEmpty(TMateria.Texts))
             {
-            
-                
+                materias sub = new materias { 
+                        materia = TMateria.Texts
+                    };
+                using (classroom_managerEntities db = new classroom_managerEntities())
+                {
+                    db.materias.Add(sub);
+                    db.SaveChanges();
+                    MessageBox.Show("materia ingresada correctamente!", "Insersion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.TMateria.Texts  = " ";
+                }
+
             }
             else
             {

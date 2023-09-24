@@ -16,6 +16,10 @@
         <AssociationConnector Association="classroom_managerModel.FK__reserva__id_usua__5441852A" ManuallyRouted="false" />
         <AssociationConnector Association="classroom_managerModel.FK__usuario__id_tipo__3A81B327" ManuallyRouted="false" />
         <AssociationConnector Association="classroom_managerModel.aula_recursos" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="classroom_managerModel.dias_semana" Width="1.5" PointX="0.75" PointY="7.875" />
+        <AssociationConnector Association="classroom_managerModel.FK__reserva__id_dia__5AEE82B9" />
+        <EntityTypeShape EntityType="classroom_managerModel.materias" Width="1.5" PointX="3.375" PointY="7.875" />
+        <AssociationConnector Association="classroom_managerModel.FK__reserva__id_mate__5FB337D6" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

@@ -1,4 +1,5 @@
 ﻿using DraggingControl;
+using ProyectoIntegradorTaller.models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -44,17 +45,14 @@ namespace ProyectoIntegradorTaller.views.admin
         }
         private void LoadReservarAula1(object sender,EventArgs e)
         {
-            List<diasSemana> items = new List<diasSemana>();
-            items.Add(new diasSemana() { value = "lunes", text = "Lunes" });
-            items.Add(new diasSemana() { value = "martes", text = "Martes" });
-            items.Add(new diasSemana() { value = "miercoles", text = "Miercoles" });
-            items.Add(new diasSemana() { value = "jueves", text = "Jueves" });
-            items.Add(new diasSemana() { value = "viernes", text = "Viernes" });
-            items.Add(new diasSemana() { value = "sabado", text = "Sabado" });
-            items.Add(new diasSemana() { value = "domingo", text = "Domingo" });
-            CBDia.DataSource = items;
-            CBDia.DisplayMember = "text";
-            CBDia.ValueMember = "value";
+            dias_semana dias = new dias_semana();
+            using (classroom_managerEntities db = new classroom_managerEntities())
+            {
+                CBDia.DataSource = db.tipoUsuario.ToList();
+                CBDia.DisplayMember = "dias"; // Specify the property to display in the ComboBox
+                CBDia.ValueMember = "id_dias";
+            }
+ 
         }
 
        
@@ -83,12 +81,5 @@ namespace ProyectoIntegradorTaller.views.admin
         }
     }
 
-    class diasSemana
-        {
-            public diasSemana() { }
-            public string value { set; get; }
-            public string text { set; get; }
 
-        }
-    
 }

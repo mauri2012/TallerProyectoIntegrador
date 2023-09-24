@@ -12,19 +12,18 @@ namespace ProyectoIntegradorTaller.models
     using System;
     using System.Collections.Generic;
     
-    public partial class reserva
+    public partial class dias_semana
     {
-        public int id_reserva { get; set; }
-        public int id_hora { get; set; }
-        public int id_usuario { get; set; }
-        public int id_aula { get; set; }
-        public int id_dia { get; set; }
-        public Nullable<int> id_materia { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public dias_semana()
+        {
+            this.reserva = new HashSet<reserva>();
+        }
     
-        public virtual aula aula { get; set; }
-        public virtual horas horas { get; set; }
-        public virtual usuario usuario { get; set; }
-        public virtual dias_semana dias_semana { get; set; }
-        public virtual materias materias { get; set; }
+        public int id_dias { get; set; }
+        public string dias { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<reserva> reserva { get; set; }
     }
 }
