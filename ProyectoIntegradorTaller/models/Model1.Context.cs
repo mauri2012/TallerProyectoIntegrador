@@ -33,5 +33,8 @@ namespace ProyectoIntegradorTaller.models
         public virtual DbSet<usuario> usuario { get; set; }
         public virtual DbSet<dias_semana> dias_semana { get; set; }
         public virtual DbSet<materias> materias { get; set; }
+        public virtual DbSet<ubicacion> ubicacion { get; set; }
+        public virtual DbSet<aula_equipamiento> aula_equipamiento { get; set; }
+        public virtual DbSet<tipoSala> tipoSala { get; set; }
     }
 }

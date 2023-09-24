@@ -12,30 +12,21 @@ namespace ProyectoIntegradorTaller.models
     using System;
     using System.Collections.Generic;
     
-    public partial class aula
+    public partial class ubicacion
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public aula()
+        public ubicacion()
         {
-            this.reserva = new HashSet<reserva>();
-            this.equipamiento = new HashSet<equipamiento>();
-            this.aula_equipamiento = new HashSet<aula_equipamiento>();
+            this.aula = new HashSet<aula>();
+            this.aula1 = new HashSet<aula>();
         }
     
-        public int id_aula { get; set; }
-        public string nombre { get; set; }
-        public int capacidad { get; set; }
         public int id_ubicacion { get; set; }
-        public int id_tipo { get; set; }
+        public string lugar { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<reserva> reserva { get; set; }
+        public virtual ICollection<aula> aula { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<equipamiento> equipamiento { get; set; }
-        public virtual ubicacion ubicacion { get; set; }
-        public virtual ubicacion ubicacion1 { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<aula_equipamiento> aula_equipamiento { get; set; }
-        public virtual tipoSala tipoSala { get; set; }
+        public virtual ICollection<aula> aula1 { get; set; }
     }
 }

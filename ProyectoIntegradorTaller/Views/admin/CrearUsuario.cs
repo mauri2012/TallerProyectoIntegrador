@@ -45,13 +45,19 @@ namespace ProyectoIntegradorTaller.views.admin
                     }
                     else
                     {
+                        int tipoU = 1;
+                        if (this.CBTipo.Texts=="bedel")
+                        {
+                            tipoU = 3;
+                        }
+                      
                         usuario user = new usuario
                         {
                             dni = int.Parse(this.TDni.Texts),
                             nombre = this.TNombre.Texts,
                             apellido = this.TApellido.Texts,
                             correo = this.TEmail.Texts,
-                            id_tipoUsuario = CBTipo.SelectedIndex,
+                            id_tipoUsuario = tipoU
                         };
                         using (classroom_managerEntities db = new classroom_managerEntities())
                         {

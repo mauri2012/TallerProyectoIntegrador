@@ -19,14 +19,7 @@ namespace ProyectoIntegradorTaller.views.admin
         {
 
             InitializeComponent();
-            List<ItemMaterias> staticData = new List<ItemMaterias>()
-            {
-
-                new ItemMaterias{Materia="Taller de Programacion 1" },
-                 new ItemMaterias{Materia="Ingeneria del Software 1" },
-            };
-            dataGridView1.DataSource = staticData;
-
+  
         }
 
         private void Materias_Load(object sender, EventArgs e)
@@ -114,10 +107,5 @@ namespace ProyectoIntegradorTaller.views.admin
 
         }
     }
-    public class ItemMaterias
-    {
-     
-        public string Materia { get; set; }
-    
-    }
+  
 }

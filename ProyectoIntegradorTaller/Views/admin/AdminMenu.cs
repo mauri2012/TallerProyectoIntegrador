@@ -1,8 +1,11 @@
 ﻿using DraggingControl;
 using Microsoft.VisualBasic;
+using ProyectoIntegradorTaller.models;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Drawing;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace ProyectoIntegradorTaller.views.admin
@@ -13,13 +16,8 @@ namespace ProyectoIntegradorTaller.views.admin
         {
 
             InitializeComponent();
-            List<Item> staticData = new List<Item>()
-            {
+ 
 
-                new Item{Id=1, Name= "Aula 5",Lugar="1er piso", CapacidadMax=40,Tipo="Normal" },
-                new Item{Id=2, Name= "Aula Magna",Lugar = "3er piso",CapacidadMax=100,Tipo = "Magna"},
-            };
-            dataGridView1.DataSource = staticData;
         }
 
 
@@ -91,6 +89,38 @@ namespace ProyectoIntegradorTaller.views.admin
             PBMaximizar_.Location = new Point(746, 11);
             PBCerrar_.Location = new Point(766, 11);
             PBEsconder_.Location = new Point(726, 11);
+
+
+            try
+            {
+
+                using (classroom_managerEntities db = new classroom_managerEntities())
+                {
+
+                    var query = from aula in db.aula
+                                join ubicacion in db.ubicacion on aula.id_ubicacion equals ubicacion.id_ubicacion
+                                join tipoSala in db.tipoSala on aula.id_tipo equals tipoSala.id_sala
+                                select new
+                                {
+                                    Id = aula.id_aula,
+                                    Name = aula.nombre,
+                                    CapacidadMax = aula.capacidad,
+                                    Lugar = ubicacion.lugar, // Assuming ubicacion has a "Nombre" property
+                                    Tipo = tipoSala.tipo // Assuming tipo has a "Nombre" property
+                                };
+
+                    dataGridView1.DataSource = query.ToList();
+
+                }       
+            }
+            catch (DataException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void DataGridView1_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)

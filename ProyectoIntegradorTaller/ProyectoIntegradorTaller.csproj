@@ -77,6 +77,9 @@
     <Compile Include="models\aula.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="models\aula_equipamiento.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="models\dias_semana.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -107,7 +110,13 @@
     <Compile Include="models\reserva.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="models\tipoSala.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="models\tipoUsuario.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="models\ubicacion.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="models\usuario.cs">

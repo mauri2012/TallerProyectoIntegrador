@@ -239,7 +239,7 @@ namespace ProyectoIntegradorTaller.views.admin
             // 
             // itemMateriasBindingSource
             // 
-            this.itemMateriasBindingSource.DataSource = typeof(ProyectoIntegradorTaller.views.admin.ItemMaterias);
+    
             // 
             // Materias
             // 

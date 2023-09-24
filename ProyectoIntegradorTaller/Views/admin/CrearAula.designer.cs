@@ -17,16 +17,16 @@ namespace ProyectoIntegradorTaller.views.admin
         private void InitializeComponent()
         {
             this.panel7 = new System.Windows.Forms.Panel();
-            this.checkBox4 = new System.Windows.Forms.CheckBox();
-            this.checkBox3 = new System.Windows.Forms.CheckBox();
+            this.CWifi = new System.Windows.Forms.CheckBox();
+            this.CTelevisor = new System.Windows.Forms.CheckBox();
             this.TTipo = new ProyectoIntegradorTaller.views.components.ComboBoxPersonalisado();
             this.CBUbicacion = new ProyectoIntegradorTaller.views.components.ComboBoxPersonalisado();
             this.TCapacidad = new CustomControls.RJControls.RJTextBox();
             this.TNombre = new CustomControls.RJControls.RJTextBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.CProyector = new System.Windows.Forms.CheckBox();
+            this.CAireAcondicionado = new System.Windows.Forms.CheckBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -37,6 +37,10 @@ namespace ProyectoIntegradorTaller.views.admin
             this.label2 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.PBMaximizar_)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PBMinimizar_)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PBCerrar_)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PBEsconder_)).BeginInit();
             this.panel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -44,19 +48,27 @@ namespace ProyectoIntegradorTaller.views.admin
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
+            // PBMaximizar_
+            // 
+            this.PBMaximizar_.Location = new System.Drawing.Point(646, 11);
+            // 
+            // PBCerrar_
+            // 
+            this.PBCerrar_.Location = new System.Drawing.Point(666, 11);
+            // 
             // panel7
             // 
             this.panel7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.panel7.Controls.Add(this.checkBox4);
-            this.panel7.Controls.Add(this.checkBox3);
+            this.panel7.Controls.Add(this.CWifi);
+            this.panel7.Controls.Add(this.CTelevisor);
             this.panel7.Controls.Add(this.TTipo);
             this.panel7.Controls.Add(this.CBUbicacion);
             this.panel7.Controls.Add(this.TCapacidad);
             this.panel7.Controls.Add(this.TNombre);
             this.panel7.Controls.Add(this.pictureBox2);
             this.panel7.Controls.Add(this.pictureBox1);
-            this.panel7.Controls.Add(this.checkBox2);
-            this.panel7.Controls.Add(this.checkBox1);
+            this.panel7.Controls.Add(this.CProyector);
+            this.panel7.Controls.Add(this.CAireAcondicionado);
             this.panel7.Controls.Add(this.label5);
             this.panel7.Controls.Add(this.label6);
             this.panel7.Controls.Add(this.panel2);
@@ -68,28 +80,28 @@ namespace ProyectoIntegradorTaller.views.admin
             this.panel7.Size = new System.Drawing.Size(686, 358);
             this.panel7.TabIndex = 11;
             // 
-            // checkBox4
+            // CWifi
             // 
-            this.checkBox4.AutoSize = true;
-            this.checkBox4.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox4.Location = new System.Drawing.Point(391, 279);
-            this.checkBox4.Name = "checkBox4";
-            this.checkBox4.Size = new System.Drawing.Size(48, 20);
-            this.checkBox4.TabIndex = 28;
-            this.checkBox4.Text = "Wifi";
-            this.checkBox4.UseVisualStyleBackColor = true;
+            this.CWifi.AutoSize = true;
+            this.CWifi.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CWifi.Location = new System.Drawing.Point(391, 279);
+            this.CWifi.Name = "CWifi";
+            this.CWifi.Size = new System.Drawing.Size(48, 20);
+            this.CWifi.TabIndex = 28;
+            this.CWifi.Text = "Wifi";
+            this.CWifi.UseVisualStyleBackColor = true;
             // 
-            // checkBox3
+            // CTelevisor
             // 
-            this.checkBox3.AutoSize = true;
-            this.checkBox3.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox3.Location = new System.Drawing.Point(391, 253);
-            this.checkBox3.Name = "checkBox3";
-            this.checkBox3.Size = new System.Drawing.Size(75, 20);
-            this.checkBox3.TabIndex = 27;
-            this.checkBox3.Text = "Televisor";
-            this.checkBox3.UseVisualStyleBackColor = true;
-            this.checkBox3.CheckedChanged += new System.EventHandler(this.checkBox3_CheckedChanged);
+            this.CTelevisor.AutoSize = true;
+            this.CTelevisor.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CTelevisor.Location = new System.Drawing.Point(391, 253);
+            this.CTelevisor.Name = "CTelevisor";
+            this.CTelevisor.Size = new System.Drawing.Size(75, 20);
+            this.CTelevisor.TabIndex = 27;
+            this.CTelevisor.Text = "Televisor";
+            this.CTelevisor.UseVisualStyleBackColor = true;
+            this.CTelevisor.CheckedChanged += new System.EventHandler(this.checkBox3_CheckedChanged);
             // 
             // TTipo
             // 
@@ -109,6 +121,7 @@ namespace ProyectoIntegradorTaller.views.admin
             this.TTipo.Size = new System.Drawing.Size(203, 30);
             this.TTipo.TabIndex = 26;
             this.TTipo.Texts = "";
+            this.TTipo.Load += new System.EventHandler(this.TTipo_Load);
             // 
             // CBUbicacion
             // 
@@ -128,6 +141,7 @@ namespace ProyectoIntegradorTaller.views.admin
             this.CBUbicacion.Size = new System.Drawing.Size(203, 30);
             this.CBUbicacion.TabIndex = 0;
             this.CBUbicacion.Texts = "";
+            this.CBUbicacion.Load += new System.EventHandler(this.CBUbicacion_Load);
             // 
             // TCapacidad
             // 
@@ -194,27 +208,27 @@ namespace ProyectoIntegradorTaller.views.admin
             this.pictureBox1.TabIndex = 22;
             this.pictureBox1.TabStop = false;
             // 
-            // checkBox2
+            // CProyector
             // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox2.Location = new System.Drawing.Point(248, 279);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(82, 20);
-            this.checkBox2.TabIndex = 21;
-            this.checkBox2.Text = "Proyector";
-            this.checkBox2.UseVisualStyleBackColor = true;
+            this.CProyector.AutoSize = true;
+            this.CProyector.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CProyector.Location = new System.Drawing.Point(248, 279);
+            this.CProyector.Name = "CProyector";
+            this.CProyector.Size = new System.Drawing.Size(82, 20);
+            this.CProyector.TabIndex = 21;
+            this.CProyector.Text = "Proyector";
+            this.CProyector.UseVisualStyleBackColor = true;
             // 
-            // checkBox1
+            // CAireAcondicionado
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox1.Location = new System.Drawing.Point(248, 253);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(137, 20);
-            this.checkBox1.TabIndex = 20;
-            this.checkBox1.Text = "Aire Acondicionado";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.CAireAcondicionado.AutoSize = true;
+            this.CAireAcondicionado.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CAireAcondicionado.Location = new System.Drawing.Point(248, 253);
+            this.CAireAcondicionado.Name = "CAireAcondicionado";
+            this.CAireAcondicionado.Size = new System.Drawing.Size(137, 20);
+            this.CAireAcondicionado.TabIndex = 20;
+            this.CAireAcondicionado.Text = "Aire Acondicionado";
+            this.CAireAcondicionado.UseVisualStyleBackColor = true;
             // 
             // label5
             // 
@@ -369,8 +383,16 @@ namespace ProyectoIntegradorTaller.views.admin
             this.Name = "CrearAula";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menu";
+            this.Controls.SetChildIndex(this.PBEsconder_, 0);
+            this.Controls.SetChildIndex(this.PBMinimizar_, 0);
+            this.Controls.SetChildIndex(this.PBMaximizar_, 0);
+            this.Controls.SetChildIndex(this.PBCerrar_, 0);
             this.Controls.SetChildIndex(this.panel7, 0);
             this.Controls.SetChildIndex(this.label1, 0);
+            ((System.ComponentModel.ISupportInitialize)(this.PBMaximizar_)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PBMinimizar_)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PBCerrar_)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PBEsconder_)).EndInit();
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
@@ -391,8 +413,8 @@ namespace ProyectoIntegradorTaller.views.admin
         private Label label4;
         private Label label5;
         private Label label6;
-        private CheckBox checkBox2;
-        private CheckBox checkBox1;
+        private CheckBox CProyector;
+        private CheckBox CAireAcondicionado;
         private PictureBox pictureBox1;
         private PictureBox pictureBox2;
         private views.components.BotonPersonalisado BCrearAula;
@@ -401,8 +423,8 @@ namespace ProyectoIntegradorTaller.views.admin
         private CustomControls.RJControls.RJTextBox TNombre;
         private views.components.ComboBoxPersonalisado TTipo;
         private views.components.BotonPersonalisado BEditarAula;
-        private CheckBox checkBox3;
-        private CheckBox checkBox4;
+        private CheckBox CTelevisor;
+        private CheckBox CWifi;
         private Label label1;
         private components.BotonPersonalisado BVolver;
     }

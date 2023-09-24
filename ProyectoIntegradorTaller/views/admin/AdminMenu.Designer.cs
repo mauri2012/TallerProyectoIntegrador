@@ -46,12 +46,11 @@ namespace ProyectoIntegradorTaller.views.admin
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.itemBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label1 = new System.Windows.Forms.Label();
-            this.CBMateria = new ProyectoIntegradorTaller.views.components.ComboBoxPersonalisado();
-            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lugarDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.capacidadMaxDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tipoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Lugar = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CapacidadMax = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Tipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.PBMaximizar_)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PBMinimizar_)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PBCerrar_)).BeginInit();
@@ -82,7 +81,6 @@ namespace ProyectoIntegradorTaller.views.admin
             // panel7
             // 
             this.panel7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.panel7.Controls.Add(this.CBMateria);
             this.panel7.Controls.Add(this.botonPersonalisado1);
             this.panel7.Controls.Add(this.BBuscar);
             this.panel7.Controls.Add(this.TBBusqueda);
@@ -147,7 +145,7 @@ namespace ProyectoIntegradorTaller.views.admin
             this.TBBusqueda.BorderSize = 2;
             this.TBBusqueda.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TBBusqueda.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.TBBusqueda.Location = new System.Drawing.Point(543, 19);
+            this.TBBusqueda.Location = new System.Drawing.Point(529, 19);
             this.TBBusqueda.Margin = new System.Windows.Forms.Padding(4);
             this.TBBusqueda.Multiline = false;
             this.TBBusqueda.Name = "TBBusqueda";
@@ -267,11 +265,11 @@ namespace ProyectoIntegradorTaller.views.admin
             this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.ColumnHeadersHeight = 35;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idDataGridViewTextBoxColumn,
-            this.nameDataGridViewTextBoxColumn,
-            this.lugarDataGridViewTextBoxColumn,
-            this.capacidadMaxDataGridViewTextBoxColumn,
-            this.tipoDataGridViewTextBoxColumn});
+            this.Id,
+            this.Name,
+            this.Lugar,
+            this.CapacidadMax,
+            this.Tipo});
             this.dataGridView1.DataSource = this.itemBindingSource;
             this.dataGridView1.EnableHeadersVisualStyles = false;
             this.dataGridView1.GridColor = System.Drawing.SystemColors.ButtonFace;
@@ -301,64 +299,35 @@ namespace ProyectoIntegradorTaller.views.admin
             this.label1.TabIndex = 11;
             this.label1.Text = "Home";
             // 
-            // CBMateria
+            // Id
             // 
-            this.CBMateria.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.CBMateria.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.CBMateria.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
-            this.CBMateria.BorderSize = 2;
-            this.CBMateria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.CBMateria.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.CBMateria.ForeColor = System.Drawing.Color.DimGray;
-            this.CBMateria.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
-            this.CBMateria.Items.AddRange(new object[] {
-            "Nombre",
-            "Capacidad",
-            "Equipamiento"});
-            this.CBMateria.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(228)))), ((int)(((byte)(245)))));
-            this.CBMateria.ListTextColor = System.Drawing.Color.DimGray;
-            this.CBMateria.Location = new System.Drawing.Point(336, 20);
-            this.CBMateria.MinimumSize = new System.Drawing.Size(200, 30);
-            this.CBMateria.Name = "CBMateria";
-            this.CBMateria.Padding = new System.Windows.Forms.Padding(2);
-            this.CBMateria.Size = new System.Drawing.Size(200, 30);
-            this.CBMateria.TabIndex = 37;
-            this.CBMateria.Texts = "";
+            this.Id.DataPropertyName = "Id";
+            this.Id.HeaderText = "Id";
+            this.Id.Name = "Id";
             // 
-            // idDataGridViewTextBoxColumn
+            // Name
             // 
-            this.idDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
-            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
-            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.Name.DataPropertyName = "Name";
+            this.Name.HeaderText = "Name";
+            this.Name.Name = "Name";
             // 
-            // nameDataGridViewTextBoxColumn
+            // Lugar
             // 
-            this.nameDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
-            this.nameDataGridViewTextBoxColumn.HeaderText = "Name";
-            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
+            this.Lugar.DataPropertyName = "Lugar";
+            this.Lugar.HeaderText = "Lugar";
+            this.Lugar.Name = "Lugar";
             // 
-            // lugarDataGridViewTextBoxColumn
+            // CapacidadMax
             // 
-            this.lugarDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.lugarDataGridViewTextBoxColumn.DataPropertyName = "Lugar";
-            this.lugarDataGridViewTextBoxColumn.HeaderText = "Lugar";
-            this.lugarDataGridViewTextBoxColumn.Name = "lugarDataGridViewTextBoxColumn";
+            this.CapacidadMax.DataPropertyName = "CapacidadMax";
+            this.CapacidadMax.HeaderText = "CapacidadMax";
+            this.CapacidadMax.Name = "CapacidadMax";
             // 
-            // capacidadMaxDataGridViewTextBoxColumn
+            // Tipo
             // 
-            this.capacidadMaxDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.capacidadMaxDataGridViewTextBoxColumn.DataPropertyName = "CapacidadMax";
-            this.capacidadMaxDataGridViewTextBoxColumn.HeaderText = "CapacidadMax";
-            this.capacidadMaxDataGridViewTextBoxColumn.Name = "capacidadMaxDataGridViewTextBoxColumn";
-            // 
-            // tipoDataGridViewTextBoxColumn
-            // 
-            this.tipoDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.tipoDataGridViewTextBoxColumn.DataPropertyName = "Tipo";
-            this.tipoDataGridViewTextBoxColumn.HeaderText = "Tipo";
-            this.tipoDataGridViewTextBoxColumn.Name = "tipoDataGridViewTextBoxColumn";
+            this.Tipo.DataPropertyName = "Tipo";
+            this.Tipo.HeaderText = "Tipo";
+            this.Tipo.Name = "Tipo";
             // 
             // AdminMenu
             // 
@@ -369,7 +338,7 @@ namespace ProyectoIntegradorTaller.views.admin
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel7);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "AdminMenu";
+           // this.Name = "AdminMenu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menu";
             this.Load += new System.EventHandler(this.AdminMenu_Load);
@@ -410,12 +379,11 @@ namespace ProyectoIntegradorTaller.views.admin
         private BindingSource itemBindingSource;
         private Label label1;
         private components.BotonPersonalisado botonPersonalisado1;
-        private components.ComboBoxPersonalisado CBMateria;
-        private DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn lugarDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn capacidadMaxDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn tipoDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn Id;
+        private DataGridViewTextBoxColumn Name;
+        private DataGridViewTextBoxColumn Lugar;
+        private DataGridViewTextBoxColumn CapacidadMax;
+        private DataGridViewTextBoxColumn Tipo;
     }
 
     #endregion

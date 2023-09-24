@@ -1,4 +1,5 @@
 ﻿using DraggingControl;
+using ProyectoIntegradorTaller.models;
 using ProyectoIntegradorTaller.views.components;
 using System;
 using System.Collections.Generic;
@@ -55,6 +56,86 @@ namespace ProyectoIntegradorTaller.views.admin
             {
                 MessageBox.Show("Existen campos incompletos", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+            else
+            {
+                //try
+                //{
+                int tipo = 1;
+                if (this.TTipo.Texts == "laboratorio")
+                {
+                    tipo = 2;
+                }
+                int tipoU = 1;
+                if (this.CBUbicacion.Texts == "segundo piso")
+                {
+                    tipoU = 2;
+                }else if (this.CBUbicacion.Texts == "tercer piso")
+                {
+                    tipoU = 3;
+                }
+                aula aula1 = new aula()
+                    {
+                        nombre = this.TNombre.Texts,
+                        capacidad = int.Parse(this.TCapacidad.Texts),
+                        id_ubicacion = tipoU,
+                        id_tipo = tipo,
+                    };
+
+
+
+                    string disponibleCA = CAireAcondicionado.Checked ? "SI" : "NO";
+                    string disponibleWIFI = CWifi.Checked ? "SI" : "NO";
+                    string disponibleProyector = CProyector.Checked ? "SI" : "NO";
+                    string disponibleTelevisor = CTelevisor.Checked ? "SI" : "NO";
+
+                    aula_equipamiento relacion1 = new aula_equipamiento()
+                    {
+                        id_aula = aula1.id_aula,
+                        id_equipamiento = 1,
+                        disponible = disponibleTelevisor,
+                    };
+                    aula_equipamiento relacion2 = new aula_equipamiento()
+                    {
+                        id_aula = aula1.id_aula,
+                        id_equipamiento = 2,
+                        disponible = disponibleCA,
+                     };
+
+                    aula_equipamiento relacion3 = new aula_equipamiento()
+                    {
+                        id_aula = aula1.id_aula,
+                        id_equipamiento = 3,
+                        disponible = disponibleProyector,
+                    };
+                    aula_equipamiento relacion4 = new aula_equipamiento()
+                    {
+                        id_aula = aula1.id_aula,
+                        id_equipamiento = 4,
+                        disponible = disponibleWIFI,
+                    };
+                    using (classroom_managerEntities db = new classroom_managerEntities())
+                    {
+                    db.aula.Add(aula1);
+                    db.aula_equipamiento.Add(relacion1);
+                        db.aula_equipamiento.Add(relacion2);
+                        db.aula_equipamiento.Add(relacion3);
+                        db.aula_equipamiento.Add(relacion4);
+                       
+                        db.SaveChanges();
+                        MessageBox.Show("se inserto el aula correctamente!", "Insersion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                          this.TCapacidad.Texts = this.TNombre.Texts = " ";
+
+                    }
+                //}
+                /*catch (DataException ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }*/
+            }
         }
 
         private void TCapacidad_KeyPress(object sender, KeyPressEventArgs e)
@@ -85,6 +166,28 @@ namespace ProyectoIntegradorTaller.views.admin
             AdminMenu admin = new AdminMenu();
             admin.Show();
             this.Hide();
+        }
+
+        private void CBUbicacion_Load(object sender, EventArgs e)
+        {
+            ubicacion tuser = new ubicacion();
+            using (classroom_managerEntities db = new classroom_managerEntities())
+            {
+                CBUbicacion.DataSource = db.ubicacion.ToList();
+                CBUbicacion.DisplayMember = "lugar"; // Specify the property to display in the ComboBox
+                CBUbicacion.ValueMember = "id_ubicacion";
+            }
+        }
+
+        private void TTipo_Load(object sender, EventArgs e)
+        {
+           
+            using (classroom_managerEntities db = new classroom_managerEntities())
+            {
+                TTipo.DataSource = db.tipoSala.ToList();
+                TTipo.DisplayMember = "tipo"; // Specify the property to display in the ComboBox
+                TTipo.ValueMember = "id_sala";
+            }
         }
     }
 }
