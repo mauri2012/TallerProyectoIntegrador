@@ -30,19 +30,11 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.TPass = new CustomControls.RJControls.RJTextBox();
-            this.TEmail = new CustomControls.RJControls.RJTextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.rjTextBox1 = new CustomControls.RJControls.RJTextBox();
-            this.rjTextBox2 = new CustomControls.RJControls.RJTextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.BAgregarMateria = new ProyectoIntegradorTaller.views.components.BotonPersonalisado();
             this.label6 = new System.Windows.Forms.Label();
             this.BVolver = new ProyectoIntegradorTaller.views.components.BotonPersonalisado();
             this.rjTextBox3 = new CustomControls.RJControls.RJTextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.botonPersonalisado1 = new ProyectoIntegradorTaller.views.components.BotonPersonalisado();
             this.BLogOut = new ProyectoIntegradorTaller.views.components.BotonPersonalisado();
@@ -78,7 +70,7 @@
             this.TPass.BorderSize = 2;
             this.TPass.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TPass.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.TPass.Location = new System.Drawing.Point(366, 158);
+            this.TPass.Location = new System.Drawing.Point(237, 210);
             this.TPass.Margin = new System.Windows.Forms.Padding(4);
             this.TPass.Multiline = false;
             this.TPass.Name = "TPass";
@@ -91,136 +83,16 @@
             this.TPass.Texts = "";
             this.TPass.UnderlinedStyle = true;
             // 
-            // TEmail
-            // 
-            this.TEmail.BackColor = System.Drawing.SystemColors.Menu;
-            this.TEmail.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
-            this.TEmail.BorderFocusColor = System.Drawing.Color.HotPink;
-            this.TEmail.BorderRadius = 6;
-            this.TEmail.BorderSize = 2;
-            this.TEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TEmail.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.TEmail.Location = new System.Drawing.Point(94, 213);
-            this.TEmail.Margin = new System.Windows.Forms.Padding(4);
-            this.TEmail.Multiline = false;
-            this.TEmail.Name = "TEmail";
-            this.TEmail.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.TEmail.PasswordChar = false;
-            this.TEmail.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.TEmail.PlaceholderText = "";
-            this.TEmail.Size = new System.Drawing.Size(186, 31);
-            this.TEmail.TabIndex = 14;
-            this.TEmail.Texts = "";
-            this.TEmail.UnderlinedStyle = true;
-            // 
             // label2
             // 
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
-            this.label2.Location = new System.Drawing.Point(363, 138);
+            this.label2.Location = new System.Drawing.Point(234, 190);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(144, 16);
             this.label2.TabIndex = 13;
             this.label2.Text = "Repetir Contraseña";
-            // 
-            // label3
-            // 
-            this.label3.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
-            this.label3.Location = new System.Drawing.Point(92, 193);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(44, 16);
-            this.label3.TabIndex = 12;
-            this.label3.Text = "Email";
-            // 
-            // rjTextBox1
-            // 
-            this.rjTextBox1.BackColor = System.Drawing.SystemColors.Menu;
-            this.rjTextBox1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
-            this.rjTextBox1.BorderFocusColor = System.Drawing.Color.HotPink;
-            this.rjTextBox1.BorderRadius = 6;
-            this.rjTextBox1.BorderSize = 2;
-            this.rjTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rjTextBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.rjTextBox1.Location = new System.Drawing.Point(94, 158);
-            this.rjTextBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.rjTextBox1.Multiline = false;
-            this.rjTextBox1.Name = "rjTextBox1";
-            this.rjTextBox1.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.rjTextBox1.PasswordChar = true;
-            this.rjTextBox1.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.rjTextBox1.PlaceholderText = "";
-            this.rjTextBox1.Size = new System.Drawing.Size(186, 31);
-            this.rjTextBox1.TabIndex = 19;
-            this.rjTextBox1.Texts = "";
-            this.rjTextBox1.UnderlinedStyle = true;
-            // 
-            // rjTextBox2
-            // 
-            this.rjTextBox2.BackColor = System.Drawing.SystemColors.Menu;
-            this.rjTextBox2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
-            this.rjTextBox2.BorderFocusColor = System.Drawing.Color.HotPink;
-            this.rjTextBox2.BorderRadius = 6;
-            this.rjTextBox2.BorderSize = 2;
-            this.rjTextBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rjTextBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.rjTextBox2.Location = new System.Drawing.Point(94, 103);
-            this.rjTextBox2.Margin = new System.Windows.Forms.Padding(4);
-            this.rjTextBox2.Multiline = false;
-            this.rjTextBox2.Name = "rjTextBox2";
-            this.rjTextBox2.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.rjTextBox2.PasswordChar = false;
-            this.rjTextBox2.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.rjTextBox2.PlaceholderText = "";
-            this.rjTextBox2.Size = new System.Drawing.Size(186, 31);
-            this.rjTextBox2.TabIndex = 18;
-            this.rjTextBox2.Texts = "";
-            this.rjTextBox2.UnderlinedStyle = true;
-            // 
-            // label4
-            // 
-            this.label4.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
-            this.label4.Location = new System.Drawing.Point(92, 138);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(64, 16);
-            this.label4.TabIndex = 17;
-            this.label4.Text = "Apellido";
-            // 
-            // label5
-            // 
-            this.label5.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
-            this.label5.Location = new System.Drawing.Point(91, 83);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(62, 16);
-            this.label5.TabIndex = 16;
-            this.label5.Text = "Nombre";
-            // 
-            // BAgregarMateria
-            // 
-            this.BAgregarMateria.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
-            this.BAgregarMateria.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
-            this.BAgregarMateria.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.BAgregarMateria.BorderRadius = 6;
-            this.BAgregarMateria.BorderSize = 0;
-            this.BAgregarMateria.FlatAppearance.BorderSize = 0;
-            this.BAgregarMateria.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BAgregarMateria.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BAgregarMateria.ForeColor = System.Drawing.Color.White;
-            this.BAgregarMateria.Image = global::ProyectoIntegradorTaller.Properties.Resources.edit;
-            this.BAgregarMateria.Location = new System.Drawing.Point(95, 251);
-            this.BAgregarMateria.Name = "BAgregarMateria";
-            this.BAgregarMateria.Size = new System.Drawing.Size(185, 45);
-            this.BAgregarMateria.TabIndex = 54;
-            this.BAgregarMateria.Text = " Editar Datos";
-            this.BAgregarMateria.TextColor = System.Drawing.Color.White;
-            this.BAgregarMateria.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.BAgregarMateria.UseVisualStyleBackColor = false;
             // 
             // label6
             // 
@@ -265,7 +137,7 @@
             this.rjTextBox3.BorderSize = 2;
             this.rjTextBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rjTextBox3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.rjTextBox3.Location = new System.Drawing.Point(366, 103);
+            this.rjTextBox3.Location = new System.Drawing.Point(237, 155);
             this.rjTextBox3.Margin = new System.Windows.Forms.Padding(4);
             this.rjTextBox3.Multiline = false;
             this.rjTextBox3.Name = "rjTextBox3";
@@ -283,29 +155,18 @@
             this.label7.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
-            this.label7.Location = new System.Drawing.Point(363, 83);
+            this.label7.Location = new System.Drawing.Point(241, 135);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(137, 16);
             this.label7.TabIndex = 57;
             this.label7.Text = "Contraseña Nueva";
-            // 
-            // label8
-            // 
-            this.label8.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(147, 52);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(82, 19);
-            this.label8.TabIndex = 59;
-            this.label8.Text = "Mis datos";
             // 
             // label9
             // 
             this.label9.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(384, 52);
+            this.label9.Location = new System.Drawing.Point(251, 103);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(157, 19);
             this.label9.TabIndex = 60;
@@ -323,7 +184,7 @@
             this.botonPersonalisado1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.botonPersonalisado1.ForeColor = System.Drawing.Color.White;
             this.botonPersonalisado1.Image = global::ProyectoIntegradorTaller.Properties.Resources.edit;
-            this.botonPersonalisado1.Location = new System.Drawing.Point(366, 196);
+            this.botonPersonalisado1.Location = new System.Drawing.Point(237, 248);
             this.botonPersonalisado1.Name = "botonPersonalisado1";
             this.botonPersonalisado1.Size = new System.Drawing.Size(186, 45);
             this.botonPersonalisado1.TabIndex = 61;
@@ -363,20 +224,12 @@
             this.Controls.Add(this.BLogOut);
             this.Controls.Add(this.botonPersonalisado1);
             this.Controls.Add(this.label9);
-            this.Controls.Add(this.label8);
             this.Controls.Add(this.rjTextBox3);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.BVolver);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.BAgregarMateria);
-            this.Controls.Add(this.rjTextBox1);
-            this.Controls.Add(this.rjTextBox2);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label5);
             this.Controls.Add(this.TPass);
-            this.Controls.Add(this.TEmail);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Datos";
@@ -387,20 +240,12 @@
             this.Controls.SetChildIndex(this.PBMaximizar_, 0);
             this.Controls.SetChildIndex(this.PBCerrar_, 0);
             this.Controls.SetChildIndex(this.label1, 0);
-            this.Controls.SetChildIndex(this.label3, 0);
             this.Controls.SetChildIndex(this.label2, 0);
-            this.Controls.SetChildIndex(this.TEmail, 0);
             this.Controls.SetChildIndex(this.TPass, 0);
-            this.Controls.SetChildIndex(this.label5, 0);
-            this.Controls.SetChildIndex(this.label4, 0);
-            this.Controls.SetChildIndex(this.rjTextBox2, 0);
-            this.Controls.SetChildIndex(this.rjTextBox1, 0);
-            this.Controls.SetChildIndex(this.BAgregarMateria, 0);
             this.Controls.SetChildIndex(this.label6, 0);
             this.Controls.SetChildIndex(this.BVolver, 0);
             this.Controls.SetChildIndex(this.label7, 0);
             this.Controls.SetChildIndex(this.rjTextBox3, 0);
-            this.Controls.SetChildIndex(this.label8, 0);
             this.Controls.SetChildIndex(this.label9, 0);
             this.Controls.SetChildIndex(this.botonPersonalisado1, 0);
             this.Controls.SetChildIndex(this.BLogOut, 0);
@@ -416,19 +261,11 @@
         #endregion
         private System.Windows.Forms.Label label1;
         private CustomControls.RJControls.RJTextBox TPass;
-        private CustomControls.RJControls.RJTextBox TEmail;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private CustomControls.RJControls.RJTextBox rjTextBox1;
-        private CustomControls.RJControls.RJTextBox rjTextBox2;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
-        private components.BotonPersonalisado BAgregarMateria;
         private System.Windows.Forms.Label label6;
         private components.BotonPersonalisado BVolver;
         private CustomControls.RJControls.RJTextBox rjTextBox3;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
         private components.BotonPersonalisado botonPersonalisado1;
         private components.BotonPersonalisado BLogOut;

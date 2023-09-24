@@ -1,6 +1,7 @@
 ﻿//using ProyectoIntegrador.formularios;
 //using ProyectoIntegradorTaller.formularios;
 using ProyectoIntegradorTaller.views.admin;
+using ProyectoIntegradorTaller.views.profesor;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,7 +21,7 @@ namespace ProyectoIntegradorTaller.views
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new LogIn());
+            Application.Run(new HomeProfesor());
         }
     }
 }

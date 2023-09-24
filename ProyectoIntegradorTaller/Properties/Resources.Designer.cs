@@ -203,6 +203,16 @@ namespace ProyectoIntegradorTaller.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap history {
+            get {
+                object obj = ResourceManager.GetObject("history", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_bursts_24__1_ {
             get {
                 object obj = ResourceManager.GetObject("icons8-bursts-24 (1)", resourceCulture);
@@ -266,6 +276,16 @@ namespace ProyectoIntegradorTaller.Properties {
         internal static System.Drawing.Bitmap person_groups {
             get {
                 object obj = ResourceManager.GetObject("person_groups", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap resource {
+            get {
+                object obj = ResourceManager.GetObject("resource", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

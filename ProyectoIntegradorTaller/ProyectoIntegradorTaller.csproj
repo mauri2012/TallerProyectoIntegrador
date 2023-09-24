@@ -150,6 +150,12 @@
     <Compile Include="views\components\DraggingControl.Designer.cs">
       <DependentUpon>DraggingControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="views\components\FormPersonalisado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="views\components\FormPersonalisado.Designer.cs">
+      <DependentUpon>FormPersonalisado.cs</DependentUpon>
+    </Compile>
     <Compile Include="views\components\RJTextBox.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -192,6 +198,24 @@
     </Compile>
     <Compile Include="views\BedelMenu.Designer.cs">
       <DependentUpon>BedelMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="views\profesor\Complementos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="views\profesor\Complementos.Designer.cs">
+      <DependentUpon>Complementos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="views\profesor\HomeProfesor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="views\profesor\HomeProfesor.Designer.cs">
+      <DependentUpon>HomeProfesor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="views\profesor\MisReservas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="views\profesor\MisReservas.Designer.cs">
+      <DependentUpon>MisReservas.cs</DependentUpon>
     </Compile>
     <Compile Include="views\Reporte.cs">
       <SubType>Form</SubType>
@@ -254,6 +278,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="views\BedelMenu.resx">
       <DependentUpon>BedelMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="views\profesor\Complementos.resx">
+      <DependentUpon>Complementos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="views\profesor\HomeProfesor.resx">
+      <DependentUpon>HomeProfesor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="views\profesor\MisReservas.resx">
+      <DependentUpon>MisReservas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="views\Reporte.resx">
       <DependentUpon>Reporte.cs</DependentUpon>
@@ -397,12 +430,12 @@
       <DependentUpon>Model1.edmx</DependentUpon>
       <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\resource.png" />
+    <None Include="Resources\history.png" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="NewFolder1\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

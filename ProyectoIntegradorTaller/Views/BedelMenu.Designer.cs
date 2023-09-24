@@ -47,6 +47,7 @@ namespace ProyectoIntegradorTaller.views.admin
             this.lugarDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.capacidadMaxDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.itemProfesorBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.CBMateria = new ProyectoIntegradorTaller.views.components.ComboBoxPersonalisado();
             ((System.ComponentModel.ISupportInitialize)(this.PBMaximizar_)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PBMinimizar_)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PBCerrar_)).BeginInit();
@@ -91,6 +92,7 @@ namespace ProyectoIntegradorTaller.views.admin
             // panel7
             // 
             this.panel7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.panel7.Controls.Add(this.CBMateria);
             this.panel7.Controls.Add(this.botonPersonalisado1);
             this.panel7.Controls.Add(this.BProfesores);
             this.panel7.Controls.Add(this.BMaterias);
@@ -115,7 +117,7 @@ namespace ProyectoIntegradorTaller.views.admin
             this.botonPersonalisado1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.botonPersonalisado1.ForeColor = System.Drawing.Color.White;
             this.botonPersonalisado1.Image = global::ProyectoIntegradorTaller.Properties.Resources.cuenta;
-            this.botonPersonalisado1.Location = new System.Drawing.Point(244, 344);
+            this.botonPersonalisado1.Location = new System.Drawing.Point(12, 344);
             this.botonPersonalisado1.Name = "botonPersonalisado1";
             this.botonPersonalisado1.Size = new System.Drawing.Size(118, 40);
             this.botonPersonalisado1.TabIndex = 16;
@@ -283,6 +285,30 @@ namespace ProyectoIntegradorTaller.views.admin
             // 
             this.itemProfesorBindingSource.DataSource = typeof(ProyectoIntegradorTaller.views.admin.ItemProfesor);
             // 
+            // CBMateria
+            // 
+            this.CBMateria.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.CBMateria.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.CBMateria.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
+            this.CBMateria.BorderSize = 2;
+            this.CBMateria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CBMateria.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.CBMateria.ForeColor = System.Drawing.Color.DimGray;
+            this.CBMateria.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
+            this.CBMateria.Items.AddRange(new object[] {
+            "Nombre",
+            "Capacidad",
+            "Equipamiento"});
+            this.CBMateria.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(228)))), ((int)(((byte)(245)))));
+            this.CBMateria.ListTextColor = System.Drawing.Color.DimGray;
+            this.CBMateria.Location = new System.Drawing.Point(228, 36);
+            this.CBMateria.MinimumSize = new System.Drawing.Size(200, 30);
+            this.CBMateria.Name = "CBMateria";
+            this.CBMateria.Padding = new System.Windows.Forms.Padding(2);
+            this.CBMateria.Size = new System.Drawing.Size(200, 30);
+            this.CBMateria.TabIndex = 37;
+            this.CBMateria.Texts = "";
+            // 
             // BedelMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -335,6 +361,7 @@ namespace ProyectoIntegradorTaller.views.admin
         private components.BotonPersonalisado BProfesores;
         private components.BotonPersonalisado BMaterias;
         private components.BotonPersonalisado botonPersonalisado1;
+        private components.ComboBoxPersonalisado CBMateria;
     }
 
     #endregion
