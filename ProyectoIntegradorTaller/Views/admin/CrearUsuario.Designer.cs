@@ -245,6 +245,7 @@
             this.CBTipo.BackColor = System.Drawing.Color.WhiteSmoke;
             this.CBTipo.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
             this.CBTipo.BorderSize = 2;
+            this.CBTipo.DisplayMember = "asdsdsadsadsadasd";
             this.CBTipo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
             this.CBTipo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.CBTipo.ForeColor = System.Drawing.Color.DimGray;
@@ -258,6 +259,7 @@
             this.CBTipo.Size = new System.Drawing.Size(203, 30);
             this.CBTipo.TabIndex = 54;
             this.CBTipo.Texts = "";
+            this.CBTipo.ValueMember = "asdsdsadsadsadasd";
             this.CBTipo.OnSelectedIndexChanged += new System.EventHandler(this.CBTipo_OnSelectedIndexChanged);
             this.CBTipo.Load += new System.EventHandler(this.CBTipo_Load);
             // 
