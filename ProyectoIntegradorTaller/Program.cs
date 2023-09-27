@@ -21,7 +21,7 @@ namespace ProyectoIntegradorTaller.views
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new HomeProfesor());
+            Application.Run(new LogIn());
         }
     }
 }

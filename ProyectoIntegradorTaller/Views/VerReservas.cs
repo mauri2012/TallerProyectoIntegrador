@@ -1,5 +1,6 @@
 ﻿using DraggingControl;
 using ProyectoIntegradorTaller.views.admin;
+using ProyectoIntegradorTaller.views.components;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -12,7 +13,7 @@ using System.Windows.Forms;
 
 namespace ProyectoIntegradorTaller.views
 {
-    public partial class VerReservas : DraggablePanelUserControl
+    public partial class VerReservas : FormPersonalisado
     {
         private string isAdmin { get; set; }
 
