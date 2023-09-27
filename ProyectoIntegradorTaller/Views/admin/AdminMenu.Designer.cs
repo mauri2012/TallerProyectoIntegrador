@@ -44,13 +44,13 @@ namespace ProyectoIntegradorTaller.views.admin
             this.BUsuarios = new ProyectoIntegradorTaller.views.components.BotonPersonalisado();
             this.BCrearAula = new ProyectoIntegradorTaller.views.components.BotonPersonalisado();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.itemBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.label1 = new System.Windows.Forms.Label();
             this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Lugar = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CapacidadMax = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Tipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.itemBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.PBMaximizar_)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PBMinimizar_)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PBCerrar_)).BeginInit();
@@ -145,7 +145,7 @@ namespace ProyectoIntegradorTaller.views.admin
             this.TBBusqueda.BorderSize = 2;
             this.TBBusqueda.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TBBusqueda.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.TBBusqueda.Location = new System.Drawing.Point(529, 19);
+            this.TBBusqueda.Location = new System.Drawing.Point(543, 19);
             this.TBBusqueda.Margin = new System.Windows.Forms.Padding(4);
             this.TBBusqueda.Multiline = false;
             this.TBBusqueda.Name = "TBBusqueda";
@@ -281,24 +281,6 @@ namespace ProyectoIntegradorTaller.views.admin
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
-            // itemBindingSource
-            // 
-            this.itemBindingSource.DataSource = typeof(ProyectoIntegradorTaller.views.admin.Item);
-            // 
-            // label1
-            // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
-            this.label1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
-            this.label1.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label1.Location = new System.Drawing.Point(308, 7);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(54, 19);
-            this.label1.TabIndex = 11;
-            this.label1.Text = "Home";
-            // 
             // Id
             // 
             this.Id.DataPropertyName = "Id";
@@ -329,6 +311,25 @@ namespace ProyectoIntegradorTaller.views.admin
             this.Tipo.HeaderText = "Tipo";
             this.Tipo.Name = "Tipo";
             // 
+            // itemBindingSource
+            // 
+          //  this.itemBindingSource.DataSource = typeof(ProyectoIntegradorTaller.views.admin.Item);
+            this.itemBindingSource.CurrentChanged += new System.EventHandler(this.itemBindingSource_CurrentChanged);
+            // 
+            // label1
+            // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
+            this.label1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
+            this.label1.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label1.Location = new System.Drawing.Point(308, 7);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(54, 19);
+            this.label1.TabIndex = 11;
+            this.label1.Text = "Home";
+            // 
             // AdminMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -338,7 +339,7 @@ namespace ProyectoIntegradorTaller.views.admin
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel7);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-           // this.Name = "AdminMenu";
+           //this.Name = "AdminMenu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menu";
             this.Load += new System.EventHandler(this.AdminMenu_Load);

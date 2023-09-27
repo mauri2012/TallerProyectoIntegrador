@@ -26,6 +26,7 @@ namespace ProyectoIntegradorTaller.models
         public string apellido { get; set; }
         public string correo { get; set; }
         public int id_tipoUsuario { get; set; }
+        public string desactivar { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<reserva> reserva { get; set; }

@@ -105,6 +105,7 @@ advertencia 6002: La tabla o vista 'classroom_manager.dbo.aula_recursos' no tien
           <Property Name="apellido" Type="varchar" MaxLength="20" Nullable="false" />
           <Property Name="correo" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="id_tipoUsuario" Type="int" Nullable="false" />
+          <Property Name="desactivar" Type="varchar" MaxLength="2" />
         </EntityType>
         <Association Name="FK__aula__id_tipo__6C190EBB">
           <End Role="tipoSala" Type="Self.tipoSala" Multiplicity="1" />
@@ -407,6 +408,7 @@ advertencia 6002: La tabla o vista 'classroom_manager.dbo.aula_recursos' no tien
           <Property Name="id_tipoUsuario" Type="Int32" Nullable="false" />
           <NavigationProperty Name="reserva" Relationship="Self.FK__reserva__id_usua__5441852A" FromRole="usuario" ToRole="reserva" />
           <NavigationProperty Name="tipoUsuario" Relationship="Self.FK__usuario__id_tipo__3A81B327" FromRole="usuario" ToRole="tipoUsuario" />
+          <Property Name="desactivar" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
         </EntityType>
         <Association Name="FK__reserva__id_aula__534D60F1">
           <End Role="aula" Type="Self.aula" Multiplicity="1" />
@@ -705,6 +707,7 @@ advertencia 6002: La tabla o vista 'classroom_manager.dbo.aula_recursos' no tien
           <EntitySetMapping Name="usuario">
             <EntityTypeMapping TypeName="classroom_managerModel.usuario">
               <MappingFragment StoreEntitySet="usuario">
+                <ScalarProperty Name="desactivar" ColumnName="desactivar" />
                 <ScalarProperty Name="id_usuario" ColumnName="id_usuario" />
                 <ScalarProperty Name="dni" ColumnName="dni" />
                 <ScalarProperty Name="nombre" ColumnName="nombre" />

@@ -1,4 +1,5 @@
 ﻿using DraggingControl;
+using ProyectoIntegradorTaller.logica;
 using ProyectoIntegradorTaller.models;
 using System;
 using System.Collections.Generic;
@@ -15,9 +16,22 @@ namespace ProyectoIntegradorTaller.views.admin
 {
     public partial class CrearUsuario : DraggablePanelUserControl
     {
+        public int id_;
+        public bool isEdit;
         public CrearUsuario()
         {
             InitializeComponent();
+        }
+        public CrearUsuario(string nombre,string apellido,string mail, int dni,int tipo,int id )
+        {
+            InitializeComponent();
+            this.TNombre.Texts= nombre;
+            this.TApellido.Texts= apellido;
+            this.TEmail.Texts= mail;
+            this.TDni.Texts = dni.ToString();
+            this.CBTipo.ValueMember = tipo.ToString();
+            isEdit= true;
+            id_ = id;
         }
 
         private void BVolver_Click(object sender, EventArgs e)
@@ -50,24 +64,18 @@ namespace ProyectoIntegradorTaller.views.admin
                         {
                             tipoU = 3;
                         }
-                      
-                        usuario user = new usuario
+                        if (!isEdit)
                         {
-                            dni = int.Parse(this.TDni.Texts),
-                            nombre = this.TNombre.Texts,
-                            apellido = this.TApellido.Texts,
-                            correo = this.TEmail.Texts,
-                            id_tipoUsuario = tipoU
-                        };
-                        using (classroom_managerEntities db = new classroom_managerEntities())
-                        {
-                            db.usuario.Add(user);
-                            db.SaveChanges();
-                            MessageBox.Show("se inserto el usuario correctamente!", "Insersion", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            this.TDni.Texts = this.TApellido.Texts = this.TEmail.Texts=this.TNombre.Texts=" " ;
-                        
+                            UsuarioLogica.agregar(int.Parse(TDni.Texts),this.TApellido.Texts, this.TEmail.Texts, this.TNombre.Texts,tipoU);
+
+
                         }
-                    }
+                        else
+                        {
+                            UsuarioLogica.update(id_,int.Parse(TDni.Texts), this.TApellido.Texts, this.TEmail.Texts, this.TNombre.Texts, tipoU);
+                        }
+                    this.TDni.Texts = this.TApellido.Texts = this.TEmail.Texts = this.TNombre.Texts = " ";
+                }
                 }
             
           
@@ -108,6 +116,7 @@ namespace ProyectoIntegradorTaller.views.admin
             }
                
         }
+        
     }
 
 }

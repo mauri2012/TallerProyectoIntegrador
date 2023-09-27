@@ -30,20 +30,21 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.rjTextBox1 = new CustomControls.RJControls.RJTextBox();
-            this.BBuscar = new ProyectoIntegradorTaller.views.components.BotonPersonalisado();
-            this.BCrearUsuario = new ProyectoIntegradorTaller.views.components.BotonPersonalisado();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.BVolver = new ProyectoIntegradorTaller.views.components.BotonPersonalisado();
-            this.label1 = new System.Windows.Forms.Label();
             this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Apellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Tipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Activo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Editar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.Desactivar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.blanquear = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.rjTextBox1 = new CustomControls.RJControls.RJTextBox();
+            this.BBuscar = new ProyectoIntegradorTaller.views.components.BotonPersonalisado();
+            this.BCrearUsuario = new ProyectoIntegradorTaller.views.components.BotonPersonalisado();
+            this.RBActivo = new System.Windows.Forms.RadioButton();
+            this.RBDesactivados = new System.Windows.Forms.RadioButton();
+            this.BVolver = new ProyectoIntegradorTaller.views.components.BotonPersonalisado();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.PBMaximizar_)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PBMinimizar_)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PBCerrar_)).BeginInit();
@@ -79,8 +80,9 @@
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Nombre,
             this.Apellido,
-            this.Email,
             this.Tipo,
+            this.Email,
+            this.Activo,
             this.Editar,
             this.Desactivar,
             this.blanquear});
@@ -93,6 +95,72 @@
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.Size = new System.Drawing.Size(662, 233);
             this.dataGridView1.TabIndex = 16;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
+            // Nombre
+            // 
+            this.Nombre.DataPropertyName = "Nombre";
+            this.Nombre.HeaderText = "Nombre";
+            this.Nombre.Name = "Nombre";
+            this.Nombre.ReadOnly = true;
+            this.Nombre.Width = 110;
+            // 
+            // Apellido
+            // 
+            this.Apellido.DataPropertyName = "Apellido";
+            this.Apellido.HeaderText = "Apellido";
+            this.Apellido.Name = "Apellido";
+            this.Apellido.ReadOnly = true;
+            this.Apellido.Width = 110;
+            // 
+            // Tipo
+            // 
+            this.Tipo.DataPropertyName = "Tipo";
+            this.Tipo.HeaderText = "Tipo";
+            this.Tipo.Name = "Tipo";
+            this.Tipo.ReadOnly = true;
+            this.Tipo.Width = 110;
+            // 
+            // Email
+            // 
+            this.Email.DataPropertyName = "Email";
+            this.Email.HeaderText = "Email";
+            this.Email.Name = "Email";
+            this.Email.ReadOnly = true;
+            this.Email.Width = 110;
+            // 
+            // Activo
+            // 
+            this.Activo.DataPropertyName = "Activo";
+            this.Activo.HeaderText = "Activo";
+            this.Activo.Name = "Activo";
+            this.Activo.ReadOnly = true;
+            // 
+            // Editar
+            // 
+            this.Editar.HeaderText = "Editar";
+            this.Editar.Name = "Editar";
+            this.Editar.ReadOnly = true;
+            this.Editar.Text = "Editar";
+            this.Editar.UseColumnTextForButtonValue = true;
+            this.Editar.Width = 110;
+            // 
+            // Desactivar
+            // 
+            this.Desactivar.HeaderText = "Desactivar";
+            this.Desactivar.Name = "Desactivar";
+            this.Desactivar.ReadOnly = true;
+            this.Desactivar.Text = "Desactivar";
+            this.Desactivar.UseColumnTextForButtonValue = true;
+            this.Desactivar.Width = 110;
+            // 
+            // blanquear
+            // 
+            this.blanquear.HeaderText = "contraseña";
+            this.blanquear.Name = "blanquear";
+            this.blanquear.ReadOnly = true;
+            this.blanquear.Text = "blanquear";
+            this.blanquear.UseColumnTextForButtonValue = true;
             // 
             // rjTextBox1
             // 
@@ -115,6 +183,7 @@
             this.rjTextBox1.TabIndex = 14;
             this.rjTextBox1.Texts = "";
             this.rjTextBox1.UnderlinedStyle = true;
+            this.rjTextBox1._TextChanged += new System.EventHandler(this.rjTextBox1__TextChanged);
             // 
             // BBuscar
             // 
@@ -157,29 +226,30 @@
             this.BCrearUsuario.UseVisualStyleBackColor = false;
             this.BCrearUsuario.Click += new System.EventHandler(this.BCrearUsuario_Click);
             // 
-            // radioButton1
+            // RBActivo
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Checked = true;
-            this.radioButton1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButton1.Location = new System.Drawing.Point(12, 73);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(121, 20);
-            this.radioButton1.TabIndex = 17;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Usuarios Activos";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.RBActivo.AutoSize = true;
+            this.RBActivo.Checked = true;
+            this.RBActivo.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.RBActivo.Location = new System.Drawing.Point(12, 73);
+            this.RBActivo.Name = "RBActivo";
+            this.RBActivo.Size = new System.Drawing.Size(121, 20);
+            this.RBActivo.TabIndex = 17;
+            this.RBActivo.TabStop = true;
+            this.RBActivo.Text = "Usuarios Activos";
+            this.RBActivo.UseVisualStyleBackColor = true;
             // 
-            // radioButton2
+            // RBDesactivados
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButton2.Location = new System.Drawing.Point(139, 73);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(157, 20);
-            this.radioButton2.TabIndex = 18;
-            this.radioButton2.Text = "Usuarios Desactivados";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.RBDesactivados.AutoSize = true;
+            this.RBDesactivados.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.RBDesactivados.Location = new System.Drawing.Point(139, 73);
+            this.RBDesactivados.Name = "RBDesactivados";
+            this.RBDesactivados.Size = new System.Drawing.Size(157, 20);
+            this.RBDesactivados.TabIndex = 18;
+            this.RBDesactivados.Text = "Usuarios Desactivados";
+            this.RBDesactivados.UseVisualStyleBackColor = true;
+            this.RBDesactivados.CheckedChanged += new System.EventHandler(this.RBDesactivados_CheckedChanged);
             // 
             // BVolver
             // 
@@ -216,61 +286,6 @@
             this.label1.TabIndex = 53;
             this.label1.Text = "Usuarios";
             // 
-            // Nombre
-            // 
-            this.Nombre.HeaderText = "Nombre";
-            this.Nombre.Name = "Nombre";
-            this.Nombre.ReadOnly = true;
-            this.Nombre.Width = 110;
-            // 
-            // Apellido
-            // 
-            this.Apellido.HeaderText = "Apellido";
-            this.Apellido.Name = "Apellido";
-            this.Apellido.ReadOnly = true;
-            this.Apellido.Width = 110;
-            // 
-            // Email
-            // 
-            this.Email.HeaderText = "Email";
-            this.Email.Name = "Email";
-            this.Email.ReadOnly = true;
-            this.Email.Width = 110;
-            // 
-            // Tipo
-            // 
-            this.Tipo.HeaderText = "Tipo";
-            this.Tipo.Name = "Tipo";
-            this.Tipo.ReadOnly = true;
-            this.Tipo.Width = 110;
-            // 
-            // Editar
-            // 
-            this.Editar.HeaderText = "Editar";
-            this.Editar.Name = "Editar";
-            this.Editar.ReadOnly = true;
-            this.Editar.Text = "Editar";
-            this.Editar.Width = 110;
-            this.Editar.UseColumnTextForButtonValue= true;
-            
-            // 
-            // Desactivar
-            // 
-            this.Desactivar.HeaderText = "Desactivar";
-            this.Desactivar.Name = "Desactivar";
-            this.Desactivar.ReadOnly = true;
-            this.Desactivar.Text = "Desactivar";
-            this.Desactivar.Width = 110;
-            this.Desactivar.UseColumnTextForButtonValue = true;
-            // 
-            // blanquear
-            // 
-            this.blanquear.HeaderText = "contraseña";
-            this.blanquear.Name = "blanquear";
-            this.blanquear.ReadOnly = true;
-            this.blanquear.Text = "blanquear";
-            this.blanquear.UseColumnTextForButtonValue = true;
-            // 
             // Usuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -279,8 +294,8 @@
             this.ClientSize = new System.Drawing.Size(686, 397);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.BVolver);
-            this.Controls.Add(this.radioButton2);
-            this.Controls.Add(this.radioButton1);
+            this.Controls.Add(this.RBDesactivados);
+            this.Controls.Add(this.RBActivo);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.BBuscar);
             this.Controls.Add(this.rjTextBox1);
@@ -298,8 +313,8 @@
             this.Controls.SetChildIndex(this.rjTextBox1, 0);
             this.Controls.SetChildIndex(this.BBuscar, 0);
             this.Controls.SetChildIndex(this.dataGridView1, 0);
-            this.Controls.SetChildIndex(this.radioButton1, 0);
-            this.Controls.SetChildIndex(this.radioButton2, 0);
+            this.Controls.SetChildIndex(this.RBActivo, 0);
+            this.Controls.SetChildIndex(this.RBDesactivados, 0);
             this.Controls.SetChildIndex(this.BVolver, 0);
             this.Controls.SetChildIndex(this.label1, 0);
             ((System.ComponentModel.ISupportInitialize)(this.PBMaximizar_)).EndInit();
@@ -318,14 +333,15 @@
         private components.BotonPersonalisado BBuscar;
         private CustomControls.RJControls.RJTextBox rjTextBox1;
         private components.BotonPersonalisado BCrearUsuario;
-        private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.RadioButton radioButton2;
+        private System.Windows.Forms.RadioButton RBActivo;
+        private System.Windows.Forms.RadioButton RBDesactivados;
         private components.BotonPersonalisado BVolver;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn Apellido;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Email;
         private System.Windows.Forms.DataGridViewTextBoxColumn Tipo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Email;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Activo;
         private System.Windows.Forms.DataGridViewButtonColumn Editar;
         private System.Windows.Forms.DataGridViewButtonColumn Desactivar;
         private System.Windows.Forms.DataGridViewButtonColumn blanquear;

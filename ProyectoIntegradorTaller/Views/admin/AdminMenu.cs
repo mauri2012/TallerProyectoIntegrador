@@ -100,6 +100,7 @@ namespace ProyectoIntegradorTaller.views.admin
                     var query = from aula in db.aula
                                 join ubicacion in db.ubicacion on aula.id_ubicacion equals ubicacion.id_ubicacion
                                 join tipoSala in db.tipoSala on aula.id_tipo equals tipoSala.id_sala
+                                
                                 select new
                                 {
                                     Id = aula.id_aula,
@@ -109,6 +110,7 @@ namespace ProyectoIntegradorTaller.views.admin
                                     Tipo = tipoSala.tipo // Assuming tipo has a "Nombre" property
                                 };
 
+                  
                     dataGridView1.DataSource = query.ToList();
 
                 }       
@@ -178,13 +180,11 @@ namespace ProyectoIntegradorTaller.views.admin
             Datos misDatos = new Datos();
             misDatos.Show();
         }
+
+        private void itemBindingSource_CurrentChanged(object sender, EventArgs e)
+        {
+
+        }
     }
-    public class Item
-    {
-        public int Id { get; set; }
-        public string Name { get; set; }
-        public string Lugar { get; set; }
-        public int CapacidadMax { get; set; }
-        public string Tipo { get; set; }
-    }
+
 }

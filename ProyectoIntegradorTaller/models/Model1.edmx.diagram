@@ -16,10 +16,18 @@
         <AssociationConnector Association="classroom_managerModel.FK__reserva__id_usua__5441852A" ManuallyRouted="false" />
         <AssociationConnector Association="classroom_managerModel.FK__usuario__id_tipo__3A81B327" ManuallyRouted="false" />
         <AssociationConnector Association="classroom_managerModel.aula_recursos" ManuallyRouted="false" />
-        <EntityTypeShape EntityType="classroom_managerModel.dias_semana" Width="1.5" PointX="0.75" PointY="7.875" />
+        <EntityTypeShape EntityType="classroom_managerModel.dias_semana" Width="1.5" PointX="4.875" PointY="4.5" />
         <AssociationConnector Association="classroom_managerModel.FK__reserva__id_dia__5AEE82B9" />
-        <EntityTypeShape EntityType="classroom_managerModel.materias" Width="1.5" PointX="3.375" PointY="7.875" />
+        <EntityTypeShape EntityType="classroom_managerModel.materias" Width="1.5" PointX="3.125" PointY="4.625" />
         <AssociationConnector Association="classroom_managerModel.FK__reserva__id_mate__5FB337D6" />
+        <EntityTypeShape EntityType="classroom_managerModel.ubicacion" Width="1.5" PointX="0.5" PointY="7" />
+        <AssociationConnector Association="classroom_managerModel.FK__aula__id_ubicaci__628FA481" />
+        <AssociationConnector Association="classroom_managerModel.FK__aula__id_ubicaci__6383C8BA" />
+        <EntityTypeShape EntityType="classroom_managerModel.aula_equipamiento" Width="1.5" PointX="3.125" PointY="7.25" />
+        <AssociationConnector Association="classroom_managerModel.fk_aula" />
+        <AssociationConnector Association="classroom_managerModel.fk_equipamiento" />
+        <EntityTypeShape EntityType="classroom_managerModel.tipoSala" Width="1.5" PointX="8.375" PointY="0.875" />
+        <AssociationConnector Association="classroom_managerModel.FK__aula__id_tipo__6C190EBB" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
