@@ -38,6 +38,7 @@
             this.Editar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.Desactivar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.blanquear = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.DNI = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.rjTextBox1 = new CustomControls.RJControls.RJTextBox();
             this.BBuscar = new ProyectoIntegradorTaller.views.components.BotonPersonalisado();
             this.BCrearUsuario = new ProyectoIntegradorTaller.views.components.BotonPersonalisado();
@@ -85,7 +86,8 @@
             this.Activo,
             this.Editar,
             this.Desactivar,
-            this.blanquear});
+            this.blanquear,
+            this.DNI});
             this.dataGridView1.EnableHeadersVisualStyles = false;
             this.dataGridView1.GridColor = System.Drawing.Color.White;
             this.dataGridView1.Location = new System.Drawing.Point(12, 99);
@@ -161,6 +163,13 @@
             this.blanquear.ReadOnly = true;
             this.blanquear.Text = "blanquear";
             this.blanquear.UseColumnTextForButtonValue = true;
+            // 
+            // DNI
+            // 
+            this.DNI.DataPropertyName = "DNI";
+            this.DNI.HeaderText = "DNI";
+            this.DNI.Name = "DNI";
+            this.DNI.ReadOnly = true;
             // 
             // rjTextBox1
             // 
@@ -345,5 +354,6 @@
         private System.Windows.Forms.DataGridViewButtonColumn Editar;
         private System.Windows.Forms.DataGridViewButtonColumn Desactivar;
         private System.Windows.Forms.DataGridViewButtonColumn blanquear;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DNI;
     }
 }

@@ -1,4 +1,5 @@
 ﻿using ProyectoIntegradorTaller.models;
+using ProyectoIntegradorTaller.views.components;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,6 +11,16 @@ namespace ProyectoIntegradorTaller.logica
 {
     internal class UsuarioLogica
     {
+        public static void CBTipoListar(ComboBoxPersonalisado box)
+        {
+            using (classroom_managerEntities db = new classroom_managerEntities())
+            {
+                box.DataSource = db.tipoSala.ToList();
+                box.DisplayMember = "tipo"; // Specify the property to display in the ComboBox
+                box.ValueMember = "id_tipoUsuario";
+            }
+        }
+    
         public static void listarUsuarios(RadioButton RBActivo ,DataGridView dataGrid)
         {
             using (classroom_managerEntities db = new classroom_managerEntities())

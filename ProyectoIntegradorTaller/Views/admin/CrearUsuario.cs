@@ -21,6 +21,7 @@ namespace ProyectoIntegradorTaller.views.admin
         public CrearUsuario()
         {
             InitializeComponent();
+            isEdit = false;
         }
         public CrearUsuario(string nombre,string apellido,string mail, int dni,int tipo,int id )
         {
@@ -51,10 +52,10 @@ namespace ProyectoIntegradorTaller.views.admin
                 }
                 else
                 {
-                    if (!IsValidEmail(this.TEmail.Texts))
-                    {
+                if (!IsValidEmail(this.TEmail.Texts))
+                {
 
-                        MessageBox.Show("El correo electronico no es valido", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("El correo electronico no es valido", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                     }
                     else
@@ -107,14 +108,7 @@ namespace ProyectoIntegradorTaller.views.admin
 
         private void CBTipo_Load(object sender, EventArgs e)
         {
-            tipoUsuario tuser =new  tipoUsuario();
-            using (classroom_managerEntities db = new classroom_managerEntities())
-            {
-                CBTipo.DataSource = db.tipoUsuario.ToList();
-                CBTipo.DisplayMember = "tipo"; // Specify the property to display in the ComboBox
-                CBTipo.ValueMember = "id_tipoUsuario";
-            }
-               
+            UsuarioLogica.CBTipoListar(CBTipo);
         }
         
     }
