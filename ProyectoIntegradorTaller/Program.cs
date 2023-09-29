@@ -21,7 +21,7 @@ namespace ProyectoIntegradorTaller.views
         {
             Application.EnableVisualStyles();
 
-            Application.Run(new Usuarios());
+            Application.Run(new LogIn());
 
         }
     }

@@ -74,7 +74,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-  <Compile Include="logica\Encript.cs" />
+    <Compile Include="logica\Encript.cs" />
     <Compile Include="logica\Session.cs" />
     <Compile Include="logica\LogicaClase.cs" />
     <Compile Include="logica\UsuarioLogica.cs" />
@@ -459,7 +459,7 @@
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="views\NewFolder1\" />
+    <Folder Include="views\bedel\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
