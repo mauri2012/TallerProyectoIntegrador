@@ -15,7 +15,7 @@ namespace ProyectoIntegradorTaller.logica
         {
             using (classroom_managerEntities db = new classroom_managerEntities())
             {
-                box.DataSource = db.tipoSala.ToList();
+                box.DataSource = db.tipoUsuario.ToList();
                 box.DisplayMember = "tipo"; // Specify the property to display in the ComboBox
                 box.ValueMember = "id_tipoUsuario";
             }

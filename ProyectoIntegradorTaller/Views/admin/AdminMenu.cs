@@ -1,5 +1,6 @@
 ﻿using DraggingControl;
 using Microsoft.VisualBasic;
+using ProyectoIntegradorTaller.logica;
 using ProyectoIntegradorTaller.models;
 using System;
 using System.Collections.Generic;
@@ -46,10 +47,14 @@ namespace ProyectoIntegradorTaller.views.admin
                 {
                     this.Hide();
 
-                    CrearAula aula = new CrearAula((int)dataGridView1.Rows[e.RowIndex].Cells[0].Value,(string)dataGridView1.Rows[e.RowIndex].Cells[1].Value, (string)dataGridView1.Rows[e.RowIndex].Cells[2].Value, (int)dataGridView1.Rows[e.RowIndex].Cells[3].Value,(string)dataGridView1.Rows[e.RowIndex].Cells[4].Value);
+                    CrearAula aula = new CrearAula((int)dataGridView1.Rows[e.RowIndex].Cells[0].Value,(string)dataGridView1.Rows[e.RowIndex].Cells[1].Value, (int)dataGridView1.Rows[e.RowIndex].Cells[2].Value, (string)dataGridView1.Rows[e.RowIndex].Cells[3].Value,(string)dataGridView1.Rows[e.RowIndex].Cells[4].Value);
                     
                     aula.Show();
                     
+                }
+                else if(dataGridView1.Columns[e.ColumnIndex].Name == "Eliminar")
+                {
+                    LogicaClase.aulaActiva("NO",dataGridView1,e);
                 }
             }
         }
@@ -95,26 +100,7 @@ namespace ProyectoIntegradorTaller.views.admin
             try
             {
 
-                using (classroom_managerEntities db = new classroom_managerEntities())
-                {
-
-                    var query = from aula in db.aula
-                                join ubicacion in db.ubicacion on aula.id_ubicacion equals ubicacion.id_ubicacion
-                                join tipoSala in db.tipoSala on aula.id_tipo equals tipoSala.id_sala
-                                
-                                select new
-                                {
-                                    Id = aula.id_aula,
-                                    Name = aula.nombre,
-                                    CapacidadMax = aula.capacidad,
-                                    Lugar = ubicacion.lugar, // Assuming ubicacion has a "Nombre" property
-                                    Tipo = tipoSala.tipo // Assuming tipo has a "Nombre" property
-                                };
-
-                  
-                    dataGridView1.DataSource = query.ToList();
-
-                }       
+                LogicaClase.listarAula(dataGridView1);   
             }
             catch (DataException ex)
             {
@@ -185,6 +171,20 @@ namespace ProyectoIntegradorTaller.views.admin
         private void itemBindingSource_CurrentChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void TBBusqueda__TextChanged(object sender, EventArgs e)
+        {
+            if(string.IsNullOrEmpty(this.TBBusqueda.Texts))
+            {
+                LogicaClase.listarAula(dataGridView1);
+            }
+            else
+            {
+                LogicaClase.busquedaAula(this.TBBusqueda.Texts, dataGridView1);
+            }
+              
+       
         }
     }
 

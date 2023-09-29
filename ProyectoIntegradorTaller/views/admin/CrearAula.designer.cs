@@ -282,6 +282,7 @@ namespace ProyectoIntegradorTaller.views.admin
             this.BEditarAula.TextColor = System.Drawing.Color.White;
             this.BEditarAula.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.BEditarAula.UseVisualStyleBackColor = false;
+            this.BEditarAula.Click += new System.EventHandler(this.BEditarAula_Click);
             // 
             // BCrearAula
             // 

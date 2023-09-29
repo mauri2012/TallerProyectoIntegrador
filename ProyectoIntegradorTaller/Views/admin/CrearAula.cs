@@ -1,4 +1,5 @@
 ﻿using DraggingControl;
+using ProyectoIntegradorTaller.logica;
 using ProyectoIntegradorTaller.models;
 using ProyectoIntegradorTaller.views.components;
 using System;
@@ -17,10 +18,11 @@ namespace ProyectoIntegradorTaller.views.admin
 {
     public partial class CrearAula : DraggablePanelUserControl 
     {
-        public CrearAula(int Id, string Name, String Lugar, int CapacidadMax, String Tipo)
+        private int id_;
+        public CrearAula(int Id, string Name,  int CapacidadMax, String Tipo, String Lugar)
         {
             InitializeComponent();
-           // id.Text = Id;
+            id_ = Id;
             TNombre.Texts = Name;
             CBUbicacion.Texts = Lugar;
             TCapacidad.Texts = CapacidadMax.ToString();
@@ -58,83 +60,8 @@ namespace ProyectoIntegradorTaller.views.admin
             }
             else
             {
-                //try
-                //{
-                int tipo = 1;
-                if (this.TTipo.Texts == "laboratorio")
-                {
-                    tipo = 2;
-                }
-                int tipoU = 1;
-                if (this.CBUbicacion.Texts == "segundo piso")
-                {
-                    tipoU = 2;
-                }else if (this.CBUbicacion.Texts == "tercer piso")
-                {
-                    tipoU = 3;
-                }
-                aula aula1 = new aula()
-                    {
-                        nombre = this.TNombre.Texts,
-                        capacidad = int.Parse(this.TCapacidad.Texts),
-                        id_ubicacion = tipoU,
-                        id_tipo = tipo,
-                    };
-
-
-
-                    string disponibleCA = CAireAcondicionado.Checked ? "SI" : "NO";
-                    string disponibleWIFI = CWifi.Checked ? "SI" : "NO";
-                    string disponibleProyector = CProyector.Checked ? "SI" : "NO";
-                    string disponibleTelevisor = CTelevisor.Checked ? "SI" : "NO";
-
-                    aula_equipamiento relacion1 = new aula_equipamiento()
-                    {
-                        id_aula = aula1.id_aula,
-                        id_equipamiento = 1,
-                        disponible = disponibleTelevisor,
-                    };
-                    aula_equipamiento relacion2 = new aula_equipamiento()
-                    {
-                        id_aula = aula1.id_aula,
-                        id_equipamiento = 2,
-                        disponible = disponibleCA,
-                     };
-
-                    aula_equipamiento relacion3 = new aula_equipamiento()
-                    {
-                        id_aula = aula1.id_aula,
-                        id_equipamiento = 3,
-                        disponible = disponibleProyector,
-                    };
-                    aula_equipamiento relacion4 = new aula_equipamiento()
-                    {
-                        id_aula = aula1.id_aula,
-                        id_equipamiento = 4,
-                        disponible = disponibleWIFI,
-                    };
-                    using (classroom_managerEntities db = new classroom_managerEntities())
-                    {
-                    db.aula.Add(aula1);
-                    db.aula_equipamiento.Add(relacion1);
-                        db.aula_equipamiento.Add(relacion2);
-                        db.aula_equipamiento.Add(relacion3);
-                        db.aula_equipamiento.Add(relacion4);
-                       
-                        db.SaveChanges();
-                        MessageBox.Show("se inserto el aula correctamente!", "Insersion", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                          this.TCapacidad.Texts = this.TNombre.Texts = " ";
-
-                    }
-                //}
-                /*catch (DataException ex)
-                {
-                    MessageBox.Show(ex.Message);
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
-                }*/
+                LogicaClase.addClassroom(this.TTipo.Texts,this.CBUbicacion.Texts,this.TNombre.Texts,this.TCapacidad.Texts,this.CAireAcondicionado,this.CWifi,this.CProyector,this.CTelevisor);
+                this.TCapacidad.Texts = this.TNombre.Texts = " ";
             }
         }
 
@@ -187,6 +114,19 @@ namespace ProyectoIntegradorTaller.views.admin
                 TTipo.DataSource = db.tipoSala.ToList();
                 TTipo.DisplayMember = "tipo"; // Specify the property to display in the ComboBox
                 TTipo.ValueMember = "id_sala";
+            }
+        }
+
+        private void BEditarAula_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(this.TNombre.Texts) || string.IsNullOrEmpty(CBUbicacion.Texts) || string.IsNullOrEmpty(TTipo.Texts) || string.IsNullOrEmpty(TCapacidad.Texts))
+            {
+                MessageBox.Show("Existen campos incompletos", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                LogicaClase.updateClassroom(id_,this.TTipo.Texts, this.CBUbicacion.Texts, this.TNombre.Texts, this.TCapacidad.Texts, this.CAireAcondicionado, this.CWifi, this.CProyector, this.CTelevisor);
+                this.TCapacidad.Texts = this.TNombre.Texts = " ";
             }
         }
     }

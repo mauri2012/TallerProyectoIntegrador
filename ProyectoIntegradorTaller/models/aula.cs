@@ -27,6 +27,7 @@ namespace ProyectoIntegradorTaller.models
         public int capacidad { get; set; }
         public int id_ubicacion { get; set; }
         public int id_tipo { get; set; }
+        public string activa { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<reserva> reserva { get; set; }

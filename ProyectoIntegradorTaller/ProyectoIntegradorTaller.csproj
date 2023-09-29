@@ -74,8 +74,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="logica\Encript.cs" />
+  <Compile Include="logica\Encript.cs" />
     <Compile Include="logica\Session.cs" />
+    <Compile Include="logica\LogicaClase.cs" />
     <Compile Include="logica\UsuarioLogica.cs" />
     <Compile Include="models\aula.cs">
       <DependentUpon>Model1.tt</DependentUpon>
