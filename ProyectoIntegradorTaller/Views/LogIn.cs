@@ -8,7 +8,7 @@ namespace ProyectoIntegradorTaller.views.admin
 
     public partial class LogIn : DraggablePanelUserControl
     {
-        string isAdmin;
+        public string isAdmin;
 
         public LogIn()
         {

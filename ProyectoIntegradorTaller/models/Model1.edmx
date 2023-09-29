@@ -14,6 +14,7 @@
           <Property Name="capacidad" Type="int" Nullable="false" />
           <Property Name="id_ubicacion" Type="int" Nullable="false" />
           <Property Name="id_tipo" Type="int" Nullable="false" />
+          <Property Name="activa" Type="varchar" MaxLength="2" />
         </EntityType>
         <EntityType Name="aula_equipamiento">
           <Key>
@@ -354,6 +355,7 @@ advertencia 6002: La tabla o vista 'classroom_manager.dbo.aula_recursos' no tien
           <NavigationProperty Name="aula_equipamiento" Relationship="classroom_managerModel.fk_aula" FromRole="aula" ToRole="aula_equipamiento" />
           <Property Name="id_tipo" Type="Int32" Nullable="false" />
           <NavigationProperty Name="tipoSala" Relationship="classroom_managerModel.FK__aula__id_tipo__6C190EBB" FromRole="aula" ToRole="tipoSala" />
+          <Property Name="activa" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="equipamiento">
           <Key>
@@ -660,6 +662,7 @@ advertencia 6002: La tabla o vista 'classroom_manager.dbo.aula_recursos' no tien
           <EntitySetMapping Name="aula">
             <EntityTypeMapping TypeName="classroom_managerModel.aula">
               <MappingFragment StoreEntitySet="aula">
+                <ScalarProperty Name="activa" ColumnName="activa" />
                 <ScalarProperty Name="id_tipo" ColumnName="id_tipo" />
                 <ScalarProperty Name="id_ubicacion" ColumnName="id_ubicacion" />
                 <ScalarProperty Name="id_aula" ColumnName="id_aula" />

@@ -44,11 +44,6 @@ namespace ProyectoIntegradorTaller.views.admin
             this.BUsuarios = new ProyectoIntegradorTaller.views.components.BotonPersonalisado();
             this.BCrearAula = new ProyectoIntegradorTaller.views.components.BotonPersonalisado();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Lugar = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CapacidadMax = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Tipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.itemBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.PBMaximizar_)).BeginInit();
@@ -157,6 +152,7 @@ namespace ProyectoIntegradorTaller.views.admin
             this.TBBusqueda.TabIndex = 9;
             this.TBBusqueda.Texts = "";
             this.TBBusqueda.UnderlinedStyle = true;
+            this.TBBusqueda._TextChanged += new System.EventHandler(this.TBBusqueda__TextChanged);
             // 
             // BProfesores
             // 
@@ -264,56 +260,69 @@ namespace ProyectoIntegradorTaller.views.admin
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.ColumnHeadersHeight = 35;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Id,
-            this.Name,
-            this.Lugar,
-            this.CapacidadMax,
-            this.Tipo});
             this.dataGridView1.DataSource = this.itemBindingSource;
             this.dataGridView1.EnableHeadersVisualStyles = false;
             this.dataGridView1.GridColor = System.Drawing.SystemColors.ButtonFace;
             this.dataGridView1.Location = new System.Drawing.Point(12, 73);
             this.dataGridView1.Name = "dataGridView1";
+            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Tipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Lugar = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CapacidadMax = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowTemplate.Height = 25;
             this.dataGridView1.Size = new System.Drawing.Size(770, 243);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+                this.Id,
+                this.Name,
+                this.CapacidadMax,
+                this.Tipo,
+                this.Lugar });
             // 
-            // Id
+            // id
             // 
             this.Id.DataPropertyName = "Id";
             this.Id.HeaderText = "Id";
             this.Id.Name = "Id";
+            this.Id.ReadOnly = true;
+            this.Id.Width = 110;
             // 
-            // Name
+            // name
             // 
             this.Name.DataPropertyName = "Name";
             this.Name.HeaderText = "Name";
             this.Name.Name = "Name";
-            // 
-            // Lugar
-            // 
-            this.Lugar.DataPropertyName = "Lugar";
-            this.Lugar.HeaderText = "Lugar";
-            this.Lugar.Name = "Lugar";
+            this.Name.ReadOnly = true;
+            this.Name.Width = 110;
             // 
             // CapacidadMax
             // 
             this.CapacidadMax.DataPropertyName = "CapacidadMax";
-            this.CapacidadMax.HeaderText = "CapacidadMax";
+            this.CapacidadMax.HeaderText = "Capacidad";
             this.CapacidadMax.Name = "CapacidadMax";
+            this.CapacidadMax.ReadOnly = true;
+            this.CapacidadMax.Width = 110;
             // 
             // Tipo
             // 
             this.Tipo.DataPropertyName = "Tipo";
             this.Tipo.HeaderText = "Tipo";
             this.Tipo.Name = "Tipo";
+            this.Tipo.ReadOnly = true;
+            this.Tipo.Width = 110;
+            // 
+            // Lugar
+            // 
+            this.Lugar.DataPropertyName = "Lugar";
+            this.Lugar.HeaderText = "Lugar";
+            this.Lugar.Name = "Lugar";
+            this.Lugar.ReadOnly = true;
             // 
             // itemBindingSource
             // 
-          //  this.itemBindingSource.DataSource = typeof(ProyectoIntegradorTaller.views.admin.Item);
             this.itemBindingSource.CurrentChanged += new System.EventHandler(this.itemBindingSource_CurrentChanged);
             // 
             // label1
@@ -339,7 +348,7 @@ namespace ProyectoIntegradorTaller.views.admin
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel7);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-           //this.Name = "AdminMenu";
+           // this.Name = "AdminMenu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menu";
             this.Load += new System.EventHandler(this.AdminMenu_Load);
