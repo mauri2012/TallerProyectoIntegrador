@@ -27,28 +27,38 @@ namespace ProyectoIntegradorTaller.views.admin
 
         private void BInicioSesion_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(this.TEmail.Texts) || string.IsNullOrEmpty(TPass.Texts))
+            string password = this.TPass.Texts.Trim();
+            string email = this.TEmail.Texts.Trim();
+
+            if (Session.StartSession(email, password))
             {
-                MessageBox.Show("Existen campos incompletos", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                
+                switch (Session.SessionCacheData.IdProfile)
+                {
+
+                    case 1:
+                        AdminMenu menuAdmin = new AdminMenu();
+                        isAdmin = TEmail.Texts;
+                        menuAdmin.Show();
+                        this.Hide();
+                        break;
+                    case 3:
+                        BedelMenu menuBedel = new BedelMenu();
+                        menuBedel.Show();
+                        this.Hide();
+                        break;
+                    default:
+                        HomeProfesor homeProfesor = new HomeProfesor();
+                        homeProfesor.Show();
+                        this.Hide();
+                        break;
+
+                }
+
             }
             else
             {
-
-                if (this.TEmail.Texts == "admin")
-                {
-                    AdminMenu menu = new AdminMenu();
-                    isAdmin = TEmail.Texts;
-                    menu.Show();
-                    this.Hide();
-                }
-                else
-                {
-
-                    BedelMenu menu = new BedelMenu();
-                    menu.Show();
-                    this.Hide();
-                }
-
+                MessageBox.Show("El usuario no existe");
             }
         }
 
@@ -60,7 +70,8 @@ namespace ProyectoIntegradorTaller.views.admin
 
             if (Session.StartSession(email, password))
             {
-                switch (int.Parse(Session.SessionCacheData.IdProfile)) {
+                MessageBox.Show("sus usuario es_  "+ Session.SessionCacheData.IdProfile);
+                switch (Session.SessionCacheData.IdProfile) {
 
                     case 1:
                         AdminMenu menuAdmin = new AdminMenu();
@@ -68,7 +79,7 @@ namespace ProyectoIntegradorTaller.views.admin
                         menuAdmin.Show();
                         this.Hide();
                         break;
-                    case 2:
+                    case 3:
                         BedelMenu menuBedel = new BedelMenu();
                         menuBedel.Show();
                         this.Hide();

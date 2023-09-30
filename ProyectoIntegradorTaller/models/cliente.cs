@@ -12,25 +12,22 @@ namespace ProyectoIntegradorTaller.models
     using System;
     using System.Collections.Generic;
     
-    public partial class usuario
+    public partial class cliente
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public usuario()
+        public cliente()
         {
-            this.reserva = new HashSet<reserva>();
+            this.consulta = new HashSet<consulta>();
         }
     
-        public int id_usuario { get; set; }
-        public int dni { get; set; }
+        public int id_cliente { get; set; }
+        public Nullable<System.DateTime> fecha_creacion { get; set; }
         public string nombre { get; set; }
-        public string apellido { get; set; }
-        public string correo { get; set; }
-        public int id_tipoUsuario { get; set; }
-        public string desactivar { get; set; }
-        public string password { get; set; }
+        public Nullable<System.DateTime> fecha_nacimiento { get; set; }
+        public string gmail { get; set; }
+        public Nullable<int> dni { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<reserva> reserva { get; set; }
-        public virtual tipoUsuario tipoUsuario { get; set; }
+        public virtual ICollection<consulta> consulta { get; set; }
     }
 }

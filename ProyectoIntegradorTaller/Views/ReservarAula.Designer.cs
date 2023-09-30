@@ -84,9 +84,9 @@ namespace ProyectoIntegradorTaller.views.admin
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(0, 3);
+            this.panel1.Location = new System.Drawing.Point(0, -1);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(686, 384);
+            this.panel1.Size = new System.Drawing.Size(686, 388);
             this.panel1.TabIndex = 0;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
@@ -312,6 +312,7 @@ namespace ProyectoIntegradorTaller.views.admin
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(686, 358);
             this.panel2.TabIndex = 6;
+            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // label8
             // 

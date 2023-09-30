@@ -28,6 +28,21 @@
         <AssociationConnector Association="classroom_managerModel.fk_equipamiento" />
         <EntityTypeShape EntityType="classroom_managerModel.tipoSala" Width="1.5" PointX="9.25" PointY="1" />
         <AssociationConnector Association="classroom_managerModel.FK__aula__id_tipo__6C190EBB" />
+        <EntityTypeShape EntityType="classroom_managerModel.categoria" Width="1.5" PointX="9.875" PointY="4.375" />
+        <EntityTypeShape EntityType="classroom_managerModel.cliente" Width="1.5" PointX="12.125" PointY="11.5" />
+        <EntityTypeShape EntityType="classroom_managerModel.consulta" Width="1.5" PointX="14.375" PointY="8" />
+        <EntityTypeShape EntityType="classroom_managerModel.departamento" Width="1.5" PointX="5.375" PointY="8.375" />
+        <EntityTypeShape EntityType="classroom_managerModel.detalles" Width="1.5" PointX="12.125" PointY="8" />
+        <EntityTypeShape EntityType="classroom_managerModel.producto" Width="1.5" PointX="12.125" PointY="4.75" />
+        <EntityTypeShape EntityType="classroom_managerModel.respuesta" Width="1.5" PointX="9.875" PointY="8" />
+        <EntityTypeShape EntityType="classroom_managerModel.vendedor" Width="1.5" PointX="7.625" PointY="8" />
+        <AssociationConnector Association="classroom_managerModel.fk_categoria" />
+        <AssociationConnector Association="classroom_managerModel.fk_cliente" />
+        <AssociationConnector Association="classroom_managerModel.fk_detalle" />
+        <AssociationConnector Association="classroom_managerModel.fk_producto" />
+        <AssociationConnector Association="classroom_managerModel.fk_departamento" />
+        <AssociationConnector Association="classroom_managerModel.fk_respuesta" />
+        <AssociationConnector Association="classroom_managerModel.fk_dni_vendedor" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

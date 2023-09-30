@@ -32,7 +32,7 @@ namespace ProyectoIntegradorTaller.views.admin
                 if (dataGridView1.Columns[e.ColumnIndex].Name == "Reservas")
                 {
                     this.Hide();
-                    VerReservas reservas = new VerReservas("admin");
+                    VerReservas reservas = new VerReservas((int)dataGridView1.Rows[e.RowIndex].Cells[0].Value, "admin");
                     reservas.Show();
 
                 }
@@ -181,7 +181,8 @@ namespace ProyectoIntegradorTaller.views.admin
             }
             else
             {
-                LogicaClase.busquedaAula(this.TBBusqueda.Texts, dataGridView1);
+                
+                LogicaClase.busquedaAula(this.TBBusqueda.Texts,dataGridView1);
             }
               
        

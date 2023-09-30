@@ -233,6 +233,7 @@
             this.Name = "VerReservas";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "VerReservas";
+            this.Load += new System.EventHandler(this.Reservas_load);
             this.Controls.SetChildIndex(this.label1, 0);
             this.Controls.SetChildIndex(this.PBEsconder_, 0);
             this.Controls.SetChildIndex(this.PBMinimizar_, 0);

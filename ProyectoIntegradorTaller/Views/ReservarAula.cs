@@ -10,19 +10,21 @@ using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ProyectoIntegradorTaller.logica;
 
 namespace ProyectoIntegradorTaller.views.admin
 {
     public partial class ReservarAula : DraggablePanelUserControl
     {
-        
-       
-        public ReservarAula(string hora, string dia)
+
+        private int id_aula;
+        public ReservarAula(int id,string hora, string dia)
         {
             InitializeComponent();
             CBHora.Texts = hora;
             CBDia.Texts = dia;
-
+            id_aula = id;
+            reservaLogica.CBMateriasListar(CBMateria);
         }
 
         public ReservarAula()
@@ -52,7 +54,9 @@ namespace ProyectoIntegradorTaller.views.admin
                 CBDia.DisplayMember = "dias"; // Specify the property to display in the ComboBox
                 CBDia.ValueMember = "id_dias";
             }
- 
+            reservaLogica.CBHoraListar(CBHora);
+            reservaLogica.CBMateriasListar(CBMateria);
+
         }
 
        
@@ -73,11 +77,26 @@ namespace ProyectoIntegradorTaller.views.admin
 
         private void botonPersonalisado1_Click(object sender, EventArgs e)
         {
+
             if (string.IsNullOrEmpty(this.CBHora.Texts) || string.IsNullOrEmpty(this.CBMateria.Texts) ||       string.IsNullOrEmpty(CBPRofesor.Texts) || string.IsNullOrEmpty(this.CBDia.Texts))
             {
+               
                 MessageBox.Show("Existen campos incompletos", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+            else
+            {
+                
+                reservaLogica.insertarReserva(id_aula,this.CBHora.Texts,this.CBMateria.Texts,this.CBPRofesor.Texts,this.CBDia.Texts);
+                MessageBox.Show("Insercion echa exitosamente!", "insersion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
             
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+            reservaLogica.CBMateriasListar(CBMateria);
+            reservaLogica.CBPRofesorListar(CBPRofesor);
         }
     }
 

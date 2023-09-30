@@ -21,14 +21,14 @@ namespace ProyectoIntegradorTaller.logica
 
                 var lst = from d in db.usuario
                           where d.correo == email
-                          && d.contrasena == password
+                          && d.password == password
                           select d;
 
-                if (lst.count() > 0) {
+                if (lst.Count() > 0) {
 
                     var user = lst.FirstOrDefault();
 
-                    SessionCacheData = new SessionCache(user.correo,user.nombre, user.apellido,user.id,user.id_tipoUsuario);
+                    SessionCacheData = new SessionCache(user.correo,user.nombre, user.apellido,user.id_usuario, user.id_tipoUsuario);
                     
                     return true;
                 
@@ -47,9 +47,9 @@ namespace ProyectoIntegradorTaller.logica
         public string Email { get; set; }
         public string Name { get; set; }
         public string LastName { get; set; }
-        public string IdProfile { get; set; }
+        public int IdProfile { get; set; }
 
-        public SessionCache(string email, string name, string lastName, int id, string idProfile)
+        public SessionCache(string email, string name, string lastName, int id, int idProfile)
         {
             Email = email;
             Name = name;
