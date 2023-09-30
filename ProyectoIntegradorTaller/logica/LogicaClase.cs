@@ -1,6 +1,7 @@
 ﻿using ProyectoIntegradorTaller.models;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -108,40 +109,28 @@ namespace ProyectoIntegradorTaller.logica
         {
             List<aula_equipamiento> aula_equi = new List<aula_equipamiento>();
             List<string> equipamiento = new List<string>();
-            int tipo = 1;
-            if (ttipo == "laboratorio")
-            {
-                tipo = 2;
-            }
-            int tipoU = 1;
-            if (CBubicacion == "segundo piso")
-            {
-                tipoU = 2;
-            }
-            else if (CBubicacion == "tercer piso")
-            {
-                tipoU = 3;
-            }
-
-            equipamiento.Add(CBAire.Checked ? "SI" : "NO");
-            equipamiento.Add(CBWIFI.Checked ? "SI" : "NO");
-            equipamiento.Add(CBProyector.Checked ? "SI" : "NO");
-            equipamiento.Add(CBTelevisor.Checked ? "SI" : "NO");
-
-
-            for (int i = 0; i < 4; i++)
-            {
-                aula_equi.Add(new aula_equipamiento()
-                {
-                    id_aula = id,
-                    id_equipamiento = i,
-                    disponible = equipamiento[i],
-                   
-                }); 
-
-            }
             using (classroom_managerEntities dbContext = new classroom_managerEntities())
             {
+                var tipoSala = dbContext.tipoSala.FirstOrDefault(tipoS => tipoS.tipo ==ttipo);
+                var ubicacion = dbContext.ubicacion.FirstOrDefault(tipoU => tipoU.lugar == CBubicacion);
+            
+                equipamiento.Add(CBAire.Checked ? "SI" : "NO");
+                equipamiento.Add(CBWIFI.Checked ? "SI" : "NO");
+                equipamiento.Add(CBProyector.Checked ? "SI" : "NO");
+                equipamiento.Add(CBTelevisor.Checked ? "SI" : "NO");
+
+
+                for (int i = 0; i < 4; i++)
+                {
+                    aula_equi.Add(new aula_equipamiento()
+                    {
+                        id_aula = id,
+                        id_equipamiento = i,
+                        disponible = equipamiento[i],
+                   
+                    }); 
+                }
+           
 
                 var entityToUpdate = dbContext.aula.Find(id);
                 var entityToUpdate1 = dbContext.aula_equipamiento;
@@ -149,8 +138,8 @@ namespace ProyectoIntegradorTaller.logica
                 {
                     entityToUpdate.nombre = tnombre;
                     entityToUpdate.capacidad = int.Parse(tcapacidad);
-                    entityToUpdate.id_ubicacion = tipoU;
-                    entityToUpdate.id_tipo = tipo;
+                    entityToUpdate.id_ubicacion = ubicacion.id_ubicacion;
+                    entityToUpdate.id_tipo = tipoSala.id_sala;
 
                     for (int i = 0; i < 4; i++)
                     {
@@ -168,58 +157,46 @@ namespace ProyectoIntegradorTaller.logica
         }
         public static void addClassroom(string ttipo,string CBubicacion,string tnombre,string tcapacidad,CheckBox CBAire,CheckBox CBWIFI,CheckBox CBProyector,CheckBox CBTelevisor)
         {
-            int tipo = 1;
-            if (ttipo == "laboratorio")
-            {
-                tipo = 2;
-            }
-            int tipoU = 1;
-            if (CBubicacion == "segundo piso")
-            {
-                tipoU = 2;
-            }
-            else if (CBubicacion == "tercer piso")
-            {
-                tipoU = 3;
-            }
-            aula aula1 = new aula()
-            {
-                nombre = tnombre,
-                capacidad = int.Parse(tcapacidad),
-                id_ubicacion = tipoU,
-                id_tipo = tipo,
-                activa = "SI",
-            };
-
-
-            List<aula_equipamiento> aula_equi=new List<aula_equipamiento>();
-            List<string> equipamiento = new List<string>();
-            
-       
-            string disponibleCA = CBAire.Checked ? "SI" : "NO";
-            string disponibleWIFI = CBWIFI.Checked ? "SI" : "NO";
-            string disponibleProyector = CBProyector.Checked ? "SI" : "NO";
-            string disponibleTelevisor = CBTelevisor.Checked ? "SI" : "NO";
-            equipamiento.Add(disponibleCA);
-            equipamiento.Add(disponibleWIFI);
-            equipamiento.Add(disponibleProyector);
-            equipamiento.Add(disponibleTelevisor);
-
-
-            for (int i=0; i<4;i++){
-                aula_equi.Add(new aula_equipamiento()
-                {
-                    id_aula = aula1.id_aula,
-                    id_equipamiento = i+1,
-                    disponible = equipamiento[i],
-                });
-
-            }
-          
-         
-        
             using (classroom_managerEntities db = new classroom_managerEntities())
             {
+                var tipoSala = db.tipoSala.FirstOrDefault(tipoS => tipoS.tipo == ttipo);
+                var ubicacion = db.ubicacion.FirstOrDefault(tipoU => tipoU.lugar == CBubicacion);
+      
+            
+                aula aula1 = new aula()
+                {
+                    nombre = tnombre,
+                    capacidad = int.Parse(tcapacidad),
+                    id_ubicacion = ubicacion.id_ubicacion,
+                    id_tipo = tipoSala.id_sala,
+                    activa = "SI",
+                };
+
+
+                List<aula_equipamiento> aula_equi=new List<aula_equipamiento>();
+                List<string> equipamiento = new List<string>();
+            
+       
+                string disponibleCA = CBAire.Checked ? "SI" : "NO";
+                string disponibleWIFI = CBWIFI.Checked ? "SI" : "NO";
+                string disponibleProyector = CBProyector.Checked ? "SI" : "NO";
+                string disponibleTelevisor = CBTelevisor.Checked ? "SI" : "NO";
+                equipamiento.Add(disponibleCA);
+                equipamiento.Add(disponibleWIFI);
+                equipamiento.Add(disponibleProyector);
+                equipamiento.Add(disponibleTelevisor);
+
+
+                for (int i=0; i<4;i++){
+                    aula_equi.Add(new aula_equipamiento()
+                    {
+                        id_aula = aula1.id_aula,
+                        id_equipamiento = i+1,
+                        disponible = equipamiento[i],
+                    });
+
+                }
+          
                 db.aula.Add(aula1);
 
                 for (int i = 0; i < 4; i++)

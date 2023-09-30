@@ -183,6 +183,7 @@
             this.Lunes.HeaderText = "Lunes";
             this.Lunes.Name = "Lunes";
             this.Lunes.ReadOnly = true;
+            this.Lunes.DataPropertyName = "Lunes";
             // 
             // Martes
             // 
@@ -190,6 +191,7 @@
             this.Martes.HeaderText = "Martes";
             this.Martes.Name = "Martes";
             this.Martes.ReadOnly = true;
+            this.Martes.DataPropertyName = "Martes";
             // 
             // Miercoles
             // 
@@ -197,6 +199,7 @@
             this.Miercoles.HeaderText = "Miercoles";
             this.Miercoles.Name = "Miercoles";
             this.Miercoles.ReadOnly = true;
+            this.Miercoles.DataPropertyName = "Miercoles";
             // 
             // Jueves
             // 
@@ -204,6 +207,7 @@
             this.Jueves.HeaderText = "Jueves";
             this.Jueves.Name = "Jueves";
             this.Jueves.ReadOnly = true;
+            this.Jueves.DataPropertyName = "Jueves";
             // 
             // Viernes
             // 

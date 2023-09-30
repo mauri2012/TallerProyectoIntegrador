@@ -1,4 +1,5 @@
 ﻿using DraggingControl;
+using ProyectoIntegradorTaller.logica;
 using ProyectoIntegradorTaller.views.admin;
 using ProyectoIntegradorTaller.views.components;
 using System;
@@ -40,7 +41,8 @@ namespace ProyectoIntegradorTaller.views
         }
         private void Reservas_load(object sender, EventArgs e)
         {
-             
+            reservaLogica.mostrarReserva(DGHorarios);
+         //   reservaLogica.mostrarReserva(DGHorarios.Columns["lunes"].Name, DGHorarios.Rows[0].Cells[0].Value.ToString(), DGHorarios);
         }
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)

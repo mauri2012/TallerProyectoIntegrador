@@ -40,6 +40,31 @@ namespace ProyectoIntegradorTaller.logica
                 box.ValueMember = "id_usuario";
             }
         }
+        public static void mostrarHorarios(DataGridView dataGrid)
+        {
+            using (classroom_managerEntities db= new classroom_managerEntities())
+            {
+                
+                //for (int i = 0; i < 6; i ++)
+                //{
+                  //  var horas_ = db.horas.FirstOrDefault(id => id.id_hora == i);
+                       
+                    var query = from horas in db.horas
+                               // where horas.id_hora == i
+                                 select new 
+                                 {
+                                    Horario = horas.horario,
+                       
+                                  };
+
+                   dataGrid.Rows.Add(query);
+                //}
+               
+ //               dataGrid.DataSource = query.ToList();
+            }
+
+            
+        }
         public static void insertarReserva(int id_aula, string CBHora,string CBMateria,string CBPRofesor, string CBDia)
         {
             using (classroom_managerEntities db = new classroom_managerEntities())
@@ -49,6 +74,7 @@ namespace ProyectoIntegradorTaller.logica
                 var materiaElegida = db.materias.FirstOrDefault(materia => materia.materia == CBMateria);
                 var diaElegido = db.dias_semana.FirstOrDefault(dia => dia.dias == CBDia);
                 var horarioElegido= db.horas.FirstOrDefault(horario => horario.horario == CBHora);
+                //MessageBox.Show(usuarioProfesor.id_usuario +" "+ materiaElegida.id_materia);
                 reserva unaReserva = new reserva()
                 {
                     id_hora = horarioElegido.id_hora,
@@ -58,20 +84,38 @@ namespace ProyectoIntegradorTaller.logica
                     id_aula = id_aula
                    
                 };
+                db.reserva.Add(unaReserva);
                 db.SaveChanges();
 
             }
         }
-        public static void mostrarReserva(string diaColumna,string Horario)
+        public static void mostrarReserva(DataGridView dataGrid)
         {
             using (classroom_managerEntities db = new classroom_managerEntities())
             {
-/*
-                var diaElegido = db.dias_semana.FirstOrDefault(dia => dia.dias == diaColumna);
-                var horaElegido = db.horas.FirstOrDefault(hora => hora.horario == Horario);
+
+                //   var diaElegido = db.dias_semana.FirstOrDefault(dia => dia.dias == diaColumna);
+                //  var horaElegido = db.horas.FirstOrDefault(hora => hora.horario == Horario);
+                var diaColumna=dataGrid.Columns["lunes"].Name;
+                Dictionary<int, string> dict = new Dictionary<int, string>()
+                {
+                    {0,"Lunes"},
+                    {4,"Jueves" }
+                };
+                var semana = from reserva in db.reserva join dias_semana in db.dias_semana on reserva.id_dia equals dias_semana.id_dias
+                             select new { 
+                                dias= (dict.ContainsKey(dias_semana.id_dias) ? dict[dias_semana.id_dias] : "Unknown")
+                             };
                 var query = from reserva in db.reserva
-              /*              join dias_semana in db.dias_semana on  reserva.id_dia== dias_semana.id_
-                            where dias_semana.dias==diaColumna && horas.horario == Horario
+                            join dias_semana in db.dias_semana on reserva.id_dia equals dias_semana.id_dias
+                            join horas in db.horas on reserva.id_hora equals horas.id_hora
+                            join materias in db.materias on reserva.id_materia equals materias.id_materia
+                            
+                            select new {
+
+                                dias= materias.materia
+                            };
+                            
 
 
                 dataGrid.DataSource = query.ToList();
@@ -85,8 +129,7 @@ namespace ProyectoIntegradorTaller.logica
                       id_aula = id_aula
 
                   };*/
-                db.SaveChanges();
-
+               
             }
         }
 
