@@ -25,7 +25,7 @@ namespace ProyectoIntegradorTaller.logica
                           select d;
 
                 if (lst.Count() > 0) {
-
+                    Console.WriteLine(lst.First());
                     var user = lst.FirstOrDefault();
 
                     SessionCacheData = new SessionCache(user.correo,user.nombre, user.apellido,user.id_usuario, user.id_tipoUsuario);

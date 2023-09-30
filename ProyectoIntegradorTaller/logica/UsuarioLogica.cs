@@ -62,9 +62,7 @@ namespace ProyectoIntegradorTaller.logica
         {
             using (classroom_managerEntities dbContext = new classroom_managerEntities())
             {
-                // Step 1: Create an instance of your DbContext
-
-                // Step 2: Retrieve the entity you want to update
+              
                 var entityToUpdate = dbContext.usuario.Find(id); // Replace YourEntities with your actual DbSet and id with the primary key value.
 
                 if (entityToUpdate != null)
@@ -75,7 +73,6 @@ namespace ProyectoIntegradorTaller.logica
                     entityToUpdate.correo = emial;
                     entityToUpdate.id_tipoUsuario = tipoU;
                     entityToUpdate.dni = dni_;
-                    // ...
 
                     // Step 4: Save changes to the database
                     dbContext.SaveChanges();
@@ -92,8 +89,10 @@ namespace ProyectoIntegradorTaller.logica
                 nombre = nombre,
                 apellido = apellido_,
                 correo = emial,
-                id_tipoUsuario = tipoU
+                id_tipoUsuario = tipoU,
+                password=Encrypt.GetSHA256(dni_.ToString())
             };
+
             using (classroom_managerEntities db = new classroom_managerEntities())
             {
                 db.usuario.Add(user);
@@ -117,6 +116,25 @@ namespace ProyectoIntegradorTaller.logica
                     usuarioDesactivar.desactivar = estado;
                     db.SaveChanges();
 
+                }
+            }
+        }
+
+
+        public static void CambiarPassword(string password) {
+
+            using (classroom_managerEntities dbContext = new classroom_managerEntities())
+            {
+
+                var entityToUpdate = dbContext.usuario.Find(Session.SessionCacheData.Id); // Replace YourEntities with your actual DbSet and id with the primary key value.
+
+                if (entityToUpdate != null)
+                {
+                   
+                    entityToUpdate.password = Encrypt.GetSHA256(password);
+                     
+                    dbContext.SaveChanges();
+                    
                 }
             }
         }

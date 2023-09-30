@@ -29,14 +29,14 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.TPass = new CustomControls.RJControls.RJTextBox();
+            this.TBRepetirContrasena = new CustomControls.RJControls.RJTextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.BVolver = new ProyectoIntegradorTaller.views.components.BotonPersonalisado();
-            this.rjTextBox3 = new CustomControls.RJControls.RJTextBox();
+            this.TBContrasena = new CustomControls.RJControls.RJTextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.botonPersonalisado1 = new ProyectoIntegradorTaller.views.components.BotonPersonalisado();
+            this.BCambiarPassword = new ProyectoIntegradorTaller.views.components.BotonPersonalisado();
             this.BLogOut = new ProyectoIntegradorTaller.views.components.BotonPersonalisado();
             ((System.ComponentModel.ISupportInitialize)(this.PBMaximizar_)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PBMinimizar_)).BeginInit();
@@ -61,27 +61,27 @@
             this.label1.TabIndex = 7;
             this.label1.Text = "Datos";
             // 
-            // TPass
+            // TBRepetirContrasena
             // 
-            this.TPass.BackColor = System.Drawing.SystemColors.Menu;
-            this.TPass.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
-            this.TPass.BorderFocusColor = System.Drawing.Color.HotPink;
-            this.TPass.BorderRadius = 6;
-            this.TPass.BorderSize = 2;
-            this.TPass.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TPass.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.TPass.Location = new System.Drawing.Point(237, 210);
-            this.TPass.Margin = new System.Windows.Forms.Padding(4);
-            this.TPass.Multiline = false;
-            this.TPass.Name = "TPass";
-            this.TPass.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.TPass.PasswordChar = true;
-            this.TPass.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.TPass.PlaceholderText = "";
-            this.TPass.Size = new System.Drawing.Size(186, 31);
-            this.TPass.TabIndex = 15;
-            this.TPass.Texts = "";
-            this.TPass.UnderlinedStyle = true;
+            this.TBRepetirContrasena.BackColor = System.Drawing.SystemColors.Menu;
+            this.TBRepetirContrasena.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
+            this.TBRepetirContrasena.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.TBRepetirContrasena.BorderRadius = 6;
+            this.TBRepetirContrasena.BorderSize = 2;
+            this.TBRepetirContrasena.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TBRepetirContrasena.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.TBRepetirContrasena.Location = new System.Drawing.Point(237, 210);
+            this.TBRepetirContrasena.Margin = new System.Windows.Forms.Padding(4);
+            this.TBRepetirContrasena.Multiline = false;
+            this.TBRepetirContrasena.Name = "TBRepetirContrasena";
+            this.TBRepetirContrasena.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this.TBRepetirContrasena.PasswordChar = true;
+            this.TBRepetirContrasena.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.TBRepetirContrasena.PlaceholderText = "";
+            this.TBRepetirContrasena.Size = new System.Drawing.Size(186, 31);
+            this.TBRepetirContrasena.TabIndex = 15;
+            this.TBRepetirContrasena.Texts = "";
+            this.TBRepetirContrasena.UnderlinedStyle = true;
             // 
             // label2
             // 
@@ -128,27 +128,27 @@
             this.BVolver.UseVisualStyleBackColor = false;
             this.BVolver.Click += new System.EventHandler(this.BVolver_Click);
             // 
-            // rjTextBox3
+            // TBContrasena
             // 
-            this.rjTextBox3.BackColor = System.Drawing.SystemColors.Menu;
-            this.rjTextBox3.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
-            this.rjTextBox3.BorderFocusColor = System.Drawing.Color.HotPink;
-            this.rjTextBox3.BorderRadius = 6;
-            this.rjTextBox3.BorderSize = 2;
-            this.rjTextBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rjTextBox3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.rjTextBox3.Location = new System.Drawing.Point(237, 155);
-            this.rjTextBox3.Margin = new System.Windows.Forms.Padding(4);
-            this.rjTextBox3.Multiline = false;
-            this.rjTextBox3.Name = "rjTextBox3";
-            this.rjTextBox3.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.rjTextBox3.PasswordChar = true;
-            this.rjTextBox3.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.rjTextBox3.PlaceholderText = "";
-            this.rjTextBox3.Size = new System.Drawing.Size(186, 31);
-            this.rjTextBox3.TabIndex = 58;
-            this.rjTextBox3.Texts = "";
-            this.rjTextBox3.UnderlinedStyle = true;
+            this.TBContrasena.BackColor = System.Drawing.SystemColors.Menu;
+            this.TBContrasena.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
+            this.TBContrasena.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.TBContrasena.BorderRadius = 6;
+            this.TBContrasena.BorderSize = 2;
+            this.TBContrasena.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TBContrasena.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.TBContrasena.Location = new System.Drawing.Point(237, 155);
+            this.TBContrasena.Margin = new System.Windows.Forms.Padding(4);
+            this.TBContrasena.Multiline = false;
+            this.TBContrasena.Name = "TBContrasena";
+            this.TBContrasena.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this.TBContrasena.PasswordChar = true;
+            this.TBContrasena.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.TBContrasena.PlaceholderText = "";
+            this.TBContrasena.Size = new System.Drawing.Size(186, 31);
+            this.TBContrasena.TabIndex = 58;
+            this.TBContrasena.Texts = "";
+            this.TBContrasena.UnderlinedStyle = true;
             // 
             // label7
             // 
@@ -172,26 +172,27 @@
             this.label9.TabIndex = 60;
             this.label9.Text = "Cambiar contaseña";
             // 
-            // botonPersonalisado1
+            // BCambiarPassword
             // 
-            this.botonPersonalisado1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
-            this.botonPersonalisado1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
-            this.botonPersonalisado1.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.botonPersonalisado1.BorderRadius = 6;
-            this.botonPersonalisado1.BorderSize = 0;
-            this.botonPersonalisado1.FlatAppearance.BorderSize = 0;
-            this.botonPersonalisado1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.botonPersonalisado1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.botonPersonalisado1.ForeColor = System.Drawing.Color.White;
-            this.botonPersonalisado1.Image = global::ProyectoIntegradorTaller.Properties.Resources.edit;
-            this.botonPersonalisado1.Location = new System.Drawing.Point(237, 248);
-            this.botonPersonalisado1.Name = "botonPersonalisado1";
-            this.botonPersonalisado1.Size = new System.Drawing.Size(186, 45);
-            this.botonPersonalisado1.TabIndex = 61;
-            this.botonPersonalisado1.Text = " Cambiar Contraseña";
-            this.botonPersonalisado1.TextColor = System.Drawing.Color.White;
-            this.botonPersonalisado1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.botonPersonalisado1.UseVisualStyleBackColor = false;
+            this.BCambiarPassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
+            this.BCambiarPassword.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
+            this.BCambiarPassword.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.BCambiarPassword.BorderRadius = 6;
+            this.BCambiarPassword.BorderSize = 0;
+            this.BCambiarPassword.FlatAppearance.BorderSize = 0;
+            this.BCambiarPassword.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BCambiarPassword.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BCambiarPassword.ForeColor = System.Drawing.Color.White;
+            this.BCambiarPassword.Image = global::ProyectoIntegradorTaller.Properties.Resources.edit;
+            this.BCambiarPassword.Location = new System.Drawing.Point(237, 248);
+            this.BCambiarPassword.Name = "BCambiarPassword";
+            this.BCambiarPassword.Size = new System.Drawing.Size(186, 45);
+            this.BCambiarPassword.TabIndex = 61;
+            this.BCambiarPassword.Text = " Cambiar Contraseña";
+            this.BCambiarPassword.TextColor = System.Drawing.Color.White;
+            this.BCambiarPassword.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.BCambiarPassword.UseVisualStyleBackColor = false;
+            this.BCambiarPassword.Click += new System.EventHandler(this.BCambiarPassword_Click);
             // 
             // BLogOut
             // 
@@ -222,13 +223,13 @@
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(686, 390);
             this.Controls.Add(this.BLogOut);
-            this.Controls.Add(this.botonPersonalisado1);
+            this.Controls.Add(this.BCambiarPassword);
             this.Controls.Add(this.label9);
-            this.Controls.Add(this.rjTextBox3);
+            this.Controls.Add(this.TBContrasena);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.BVolver);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.TPass);
+            this.Controls.Add(this.TBRepetirContrasena);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -241,13 +242,13 @@
             this.Controls.SetChildIndex(this.PBCerrar_, 0);
             this.Controls.SetChildIndex(this.label1, 0);
             this.Controls.SetChildIndex(this.label2, 0);
-            this.Controls.SetChildIndex(this.TPass, 0);
+            this.Controls.SetChildIndex(this.TBRepetirContrasena, 0);
             this.Controls.SetChildIndex(this.label6, 0);
             this.Controls.SetChildIndex(this.BVolver, 0);
             this.Controls.SetChildIndex(this.label7, 0);
-            this.Controls.SetChildIndex(this.rjTextBox3, 0);
+            this.Controls.SetChildIndex(this.TBContrasena, 0);
             this.Controls.SetChildIndex(this.label9, 0);
-            this.Controls.SetChildIndex(this.botonPersonalisado1, 0);
+            this.Controls.SetChildIndex(this.BCambiarPassword, 0);
             this.Controls.SetChildIndex(this.BLogOut, 0);
             ((System.ComponentModel.ISupportInitialize)(this.PBMaximizar_)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PBMinimizar_)).EndInit();
@@ -260,14 +261,14 @@
 
         #endregion
         private System.Windows.Forms.Label label1;
-        private CustomControls.RJControls.RJTextBox TPass;
+        private CustomControls.RJControls.RJTextBox TBRepetirContrasena;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label6;
         private components.BotonPersonalisado BVolver;
-        private CustomControls.RJControls.RJTextBox rjTextBox3;
+        private CustomControls.RJControls.RJTextBox TBContrasena;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label9;
-        private components.BotonPersonalisado botonPersonalisado1;
+        private components.BotonPersonalisado BCambiarPassword;
         private components.BotonPersonalisado BLogOut;
     }
 }
