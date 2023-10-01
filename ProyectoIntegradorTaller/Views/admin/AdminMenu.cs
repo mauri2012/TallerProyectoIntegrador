@@ -53,7 +53,12 @@ namespace ProyectoIntegradorTaller.views.admin
                 }
                 else if(dataGridView1.Columns[e.ColumnIndex].Name == "Eliminar")
                 {
-                    LogicaClase.aulaActiva("NO",dataGridView1,e);
+                    MsgBoxResult ask = (MsgBoxResult)MessageBox.Show("Seguro que quiere eliminar el "+ (string)dataGridView1.Rows[e.RowIndex].Cells[1].Value + "  ?", "Eliminar", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                    if (ask == MsgBoxResult.Yes)
+                    {
+                        LogicaClase.aulaActiva("NO", dataGridView1, e);
+                    }
+                    
                 }
             }
         }
@@ -151,7 +156,7 @@ namespace ProyectoIntegradorTaller.views.admin
         private void BProfesores_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Profesores profesores = new Profesores();
+            ReservasPendientes profesores = new ReservasPendientes();
             profesores.Show();
 
         }

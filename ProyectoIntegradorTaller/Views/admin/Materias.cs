@@ -15,6 +15,9 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
+using System.Runtime.Remoting.Messaging;
+using Microsoft.VisualBasic;
+
 namespace ProyectoIntegradorTaller.views.admin
 {
     public partial class Materias : FormPersonalisado
@@ -37,13 +40,7 @@ namespace ProyectoIntegradorTaller.views.admin
             dataGridView1.Columns.Add(buttonColumn4);
             try
             {
-
-                using (classroom_managerEntities db = new classroom_managerEntities())
-                {
-
-                    dataGridView1.DataSource = db.materias.ToList();
-
-                }
+                LogicaMaterias.listarMaterias(dataGridView1);
             }
             catch (DataException ex)
             {
@@ -92,16 +89,10 @@ namespace ProyectoIntegradorTaller.views.admin
         {
             if (!string.IsNullOrEmpty(TMateria.Texts))
             {
-                materias sub = new materias { 
-                        materia = TMateria.Texts
-                    };
-                using (classroom_managerEntities db = new classroom_managerEntities())
-                {
-                    db.materias.Add(sub);
-                    db.SaveChanges();
+                LogicaMaterias.agregarMateria(this.TMateria.Texts);
                     MessageBox.Show("materia ingresada correctamente!", "Insersion", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     this.TMateria.Texts  = " ";
-                }
+                
 
             }
             else
@@ -113,7 +104,20 @@ namespace ProyectoIntegradorTaller.views.admin
 
         private void BBuscar_Click(object sender, EventArgs e)
         {
-            MateriasLogica.busqueda(TBBusqueda.Texts, dataGridView1);
+            LogicaMaterias.busqueda(TBBusqueda.Texts, dataGridView1);
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dataGridView1.Columns[e.ColumnIndex].Name == "Eliminar")
+            {
+                MsgBoxResult ask = (MsgBoxResult)MessageBox.Show("Seguro que quiere eliminar la materia " + (string)dataGridView1.Rows[e.RowIndex].Cells[1].Value + "  ?", "Eliminar", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (ask == MsgBoxResult.Yes)
+                {
+                    LogicaMaterias.materiaActiva("NO", dataGridView1, e);
+                }
+
+            }
         }
     }
   

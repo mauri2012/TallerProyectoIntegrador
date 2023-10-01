@@ -49,7 +49,7 @@ namespace ProyectoIntegradorTaller.views
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex >= 1 && e.ColumnIndex >= 1) // Asegúrate de que se hizo clic dentro de una celda válida
+            if (e.RowIndex >= 0 && e.ColumnIndex >= 1) // Asegúrate de que se hizo clic dentro de una celda válida
             {
                 string dia = DGHorarios.Columns[e.ColumnIndex].Name; // Obtén el nombre de la columna
                 string hora = DGHorarios.Rows[e.RowIndex].Cells[0].Value.ToString(); // Obtén el primer elemento de la fila

@@ -113,6 +113,7 @@ advertencia 6002: La tabla o vista 'classroom_manager.dbo.aula_recursos' no tien
           </Key>
           <Property Name="id_materia" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="materia" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="activo" Type="varchar" MaxLength="2" />
         </EntityType>
         <EntityType Name="producto">
           <Key>
@@ -133,6 +134,7 @@ advertencia 6002: La tabla o vista 'classroom_manager.dbo.aula_recursos' no tien
           <Property Name="id_aula" Type="int" Nullable="false" />
           <Property Name="id_dia" Type="int" Nullable="false" />
           <Property Name="id_materia" Type="int" />
+          <Property Name="activo" Type="varchar" MaxLength="2" />
         </EntityType>
         <EntityType Name="respuesta">
           <Key>
@@ -591,6 +593,7 @@ advertencia 6002: La tabla o vista 'classroom_manager.dbo.aula_recursos' no tien
           <NavigationProperty Name="dias_semana" Relationship="classroom_managerModel.FK__reserva__id_dia__5AEE82B9" FromRole="reserva" ToRole="dias_semana" />
           <Property Name="id_materia" Type="Int32" />
           <NavigationProperty Name="materias" Relationship="classroom_managerModel.FK__reserva__id_mate__5FB337D6" FromRole="reserva" ToRole="materias" />
+          <Property Name="activo" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="tipoUsuario">
           <Key>
@@ -791,6 +794,7 @@ advertencia 6002: La tabla o vista 'classroom_manager.dbo.aula_recursos' no tien
           <Property Name="id_materia" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="materia" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="reserva" Relationship="classroom_managerModel.FK__reserva__id_mate__5FB337D6" FromRole="materias" ToRole="reserva" />
+          <Property Name="activo" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
         </EntityType>
         <Association Name="FK__reserva__id_mate__5FB337D6">
           <End Type="classroom_managerModel.materias" Role="materias" Multiplicity="0..1" />
@@ -1108,6 +1112,7 @@ advertencia 6002: La tabla o vista 'classroom_manager.dbo.aula_recursos' no tien
           <EntitySetMapping Name="reserva">
             <EntityTypeMapping TypeName="classroom_managerModel.reserva">
               <MappingFragment StoreEntitySet="reserva">
+                <ScalarProperty Name="activo" ColumnName="activo" />
                 <ScalarProperty Name="id_materia" ColumnName="id_materia" />
                 <ScalarProperty Name="id_dia" ColumnName="id_dia" />
                 <ScalarProperty Name="id_reserva" ColumnName="id_reserva" />
@@ -1158,6 +1163,7 @@ advertencia 6002: La tabla o vista 'classroom_manager.dbo.aula_recursos' no tien
           <EntitySetMapping Name="materias">
             <EntityTypeMapping TypeName="classroom_managerModel.materias">
               <MappingFragment StoreEntitySet="materias">
+                <ScalarProperty Name="activo" ColumnName="activo" />
                 <ScalarProperty Name="materia" ColumnName="materia" />
                 <ScalarProperty Name="id_materia" ColumnName="id_materia" />
               </MappingFragment>

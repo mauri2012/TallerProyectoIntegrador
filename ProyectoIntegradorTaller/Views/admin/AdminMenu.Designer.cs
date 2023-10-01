@@ -44,6 +44,11 @@ namespace ProyectoIntegradorTaller.views.admin
             this.BCrearAula = new ProyectoIntegradorTaller.views.components.BotonPersonalisado();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.itemBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Lugar = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CapacidadMax = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Tipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label1 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
@@ -161,7 +166,7 @@ namespace ProyectoIntegradorTaller.views.admin
             this.BProfesores.Name = "BProfesores";
             this.BProfesores.Size = new System.Drawing.Size(150, 40);
             this.BProfesores.TabIndex = 8;
-            this.BProfesores.Text = "  Profesores";
+            this.BProfesores.Text = "Reservas Pendientes";
             this.BProfesores.TextColor = System.Drawing.Color.White;
             this.BProfesores.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.BProfesores.UseVisualStyleBackColor = false;
@@ -238,7 +243,6 @@ namespace ProyectoIntegradorTaller.views.admin
             // 
             // dataGridView1
             // 
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
@@ -259,64 +263,61 @@ namespace ProyectoIntegradorTaller.views.admin
             this.dataGridView1.GridColor = System.Drawing.SystemColors.ButtonFace;
             this.dataGridView1.Location = new System.Drawing.Point(0, 0);
             this.dataGridView1.Name = "dataGridView1";
-            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Tipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Lugar = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CapacidadMax = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowTemplate.Height = 25;
             this.dataGridView1.Size = new System.Drawing.Size(800, 282);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-                this.Id,
-                this.Name,
-                this.CapacidadMax,
-                this.Tipo,
-                this.Lugar });
+            this.Id,
+            this.Name,
+            this.Lugar,
+            this.CapacidadMax,
+            this.Tipo,
+           });
             // 
-            // id
+            // ID
             // 
+            this.Id.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.Id.DataPropertyName = "Id";
             this.Id.HeaderText = "Id";
             this.Id.Name = "Id";
             this.Id.ReadOnly = true;
-            this.Id.Width = 110;
             // 
-            // name
+            // Nombre
             // 
+            this.Name.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.Name.DataPropertyName = "Name";
-            this.Name.HeaderText = "Name";
+            this.Name.HeaderText = "Nombre";
             this.Name.Name = "Name";
             this.Name.ReadOnly = true;
-            this.Name.Width = 110;
-            // 
-            // CapacidadMax
-            // 
-            this.CapacidadMax.DataPropertyName = "CapacidadMax";
-            this.CapacidadMax.HeaderText = "Capacidad";
-            this.CapacidadMax.Name = "CapacidadMax";
-            this.CapacidadMax.ReadOnly = true;
-            this.CapacidadMax.Width = 110;
-            // 
-            // Tipo
-            // 
-            this.Tipo.DataPropertyName = "Tipo";
-            this.Tipo.HeaderText = "Tipo";
-            this.Tipo.Name = "Tipo";
-            this.Tipo.ReadOnly = true;
-            this.Tipo.Width = 110;
             // 
             // Lugar
             // 
+            this.Lugar.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.Lugar.DataPropertyName = "Lugar";
             this.Lugar.HeaderText = "Lugar";
             this.Lugar.Name = "Lugar";
             this.Lugar.ReadOnly = true;
-
-
+            // 
+            // CapasidadMaxima
+            // 
+            this.CapacidadMax.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.CapacidadMax.DataPropertyName = "CapacidadMax";
+            this.CapacidadMax.HeaderText = "Capasidad Maxima";
+            this.CapacidadMax.Name = "CapasidadMaxima";
+            this.CapacidadMax.ReadOnly = true;
+            // 
+            // Tipo
+            // 
+            this.Tipo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Tipo.DataPropertyName = "Tipo";
+            this.Tipo.HeaderText = "Tipo";
+            this.Tipo.Name = "Tipo";
+            this.Tipo.ReadOnly = true;
+            // 
+            // Reservas
+            // 
             // 
             // itemBindingSource
             // 
@@ -380,7 +381,7 @@ namespace ProyectoIntegradorTaller.views.admin
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-           
+           // this.Name = "AdminMenu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menu";
             this.Load += new System.EventHandler(this.AdminMenu_Load);

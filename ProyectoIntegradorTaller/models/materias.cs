@@ -22,6 +22,7 @@ namespace ProyectoIntegradorTaller.models
     
         public int id_materia { get; set; }
         public string materia { get; set; }
+        public string activo { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<reserva> reserva { get; set; }

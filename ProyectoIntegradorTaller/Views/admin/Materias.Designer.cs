@@ -44,9 +44,7 @@ namespace ProyectoIntegradorTaller.views.admin
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
-            this.materiaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            
             ((System.ComponentModel.ISupportInitialize)(this.PBMaximizar_)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PBMinimizar_)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PBCerrar_)).BeginInit();
@@ -56,8 +54,6 @@ namespace ProyectoIntegradorTaller.views.admin
             this.panel5.SuspendLayout();
             this.panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            
-            
             this.SuspendLayout();
             // 
             // PBMaximizar_
@@ -265,19 +261,40 @@ namespace ProyectoIntegradorTaller.views.admin
             this.dataGridView1.RowTemplate.Height = 25;
             this.dataGridView1.Size = new System.Drawing.Size(800, 280);
             this.dataGridView1.TabIndex = 1;
+            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Materia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Activo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.materiaDataGridViewTextBoxColumn});
-
-
+                this.Id,
+                this.Materia,
+                this.Activo,
+              });
             // 
-            // materiaDataGridViewTextBoxColumn
+            // id
             // 
-            this.materiaDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.materiaDataGridViewTextBoxColumn.DataPropertyName = "Materia";
-            this.materiaDataGridViewTextBoxColumn.HeaderText = "Materia";
-            this.materiaDataGridViewTextBoxColumn.Name = "materiaDataGridViewTextBoxColumn";
-            this.materiaDataGridViewTextBoxColumn.ReadOnly = true;
-         
+            this.Id.DataPropertyName = "Id";
+            this.Id.HeaderText = "Id";
+            this.Id.Name = "Id";
+            this.Id.ReadOnly = true;
+            this.Id.Width = 110;
+            // 
+            // name
+            // 
+            this.Materia.DataPropertyName = "Materia";
+            this.Materia.HeaderText = "Materia";
+            this.Materia.Name = "Materia";
+            this.Materia.ReadOnly = true;
+            this.Materia.Width = 110;
+            // 
+            // CapacidadMax
+            // 
+            this.Activo.DataPropertyName = "Activo";
+            this.Activo.HeaderText = "Activo";
+            this.Activo.Name = "Activo";
+            this.Activo.ReadOnly = true;
+            this.Activo.Width = 110;
             // 
             // Materias
             // 
@@ -312,8 +329,6 @@ namespace ProyectoIntegradorTaller.views.admin
             this.panel5.ResumeLayout(false);
             this.panel6.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-           
-           
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -334,6 +349,9 @@ namespace ProyectoIntegradorTaller.views.admin
         private components.BotonPersonalisado BAgregarMateria;
         private Label label2;
         private DataGridViewTextBoxColumn materiaDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn Id;
+        private DataGridViewTextBoxColumn Materia;
+        private DataGridViewTextBoxColumn Activo;
         private Panel panel3;
         private Panel panel5;
         private Panel panel6;

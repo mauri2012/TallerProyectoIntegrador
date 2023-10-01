@@ -1,4 +1,5 @@
 ﻿using DraggingControl;
+using ProyectoIntegradorTaller.logica;
 using ProyectoIntegradorTaller.views.admin;
 using ProyectoIntegradorTaller.views.components;
 using System;
@@ -18,12 +19,13 @@ namespace ProyectoIntegradorTaller.views.profesor
         public HomeProfesor()
         {
             InitializeComponent();
+            LogicaClase.listarAula(dataGridView1);
         }
 
         private void botonPersonalisado3_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Complementos complementos = new Complementos();
+            misPendientes complementos = new misPendientes();
             complementos.Show();
         }
 
@@ -39,6 +41,17 @@ namespace ProyectoIntegradorTaller.views.profesor
             this.Hide();
             Datos misDatos = new Datos();
             misDatos.Show();
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dataGridView1.Columns[e.ColumnIndex].Name == "Reservas")
+            {
+                this.Hide();
+                VerReservas reservas = new VerReservas((int)dataGridView1.Rows[e.ColumnIndex].Cells["Id"].Value, "profesor");
+                reservas.Show();
+
+            }
         }
     }
 }

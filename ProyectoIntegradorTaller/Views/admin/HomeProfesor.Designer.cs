@@ -1,6 +1,6 @@
-﻿namespace ProyectoIntegradorTaller.views.profesor
+﻿namespace ProyectoIntegradorTaller.views.admin
 {
-    partial class HomeProfesor
+    partial class ReservasPendientes
     {
         /// <summary>
         /// Required designer variable.
@@ -31,22 +31,21 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.BBuscar = new ProyectoIntegradorTaller.views.components.BotonPersonalisado();
             this.TBBusqueda = new CustomControls.RJControls.RJTextBox();
-            this.botonPersonalisado1 = new ProyectoIntegradorTaller.views.components.BotonPersonalisado();
-            this.botonPersonalisado3 = new ProyectoIntegradorTaller.views.components.BotonPersonalisado();
-            this.botonPersonalisado4 = new ProyectoIntegradorTaller.views.components.BotonPersonalisado();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.LBienvenido = new System.Windows.Forms.Label();
             this.CBMateria = new ProyectoIntegradorTaller.views.components.ComboBoxPersonalisado();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.label6 = new System.Windows.Forms.Label();
-            this.Reservas = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.Tipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CapasidadMaxima = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Lugar = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Hora = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.usuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Dia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.materia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Estado = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.label6 = new System.Windows.Forms.Label();
+            this.BVolver = new ProyectoIntegradorTaller.views.components.BotonPersonalisado();
             ((System.ComponentModel.ISupportInitialize)(this.PBMaximizar_)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PBMinimizar_)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PBCerrar_)).BeginInit();
@@ -108,80 +107,9 @@
             this.TBBusqueda.Texts = "";
             this.TBBusqueda.UnderlinedStyle = true;
             // 
-            // botonPersonalisado1
-            // 
-            this.botonPersonalisado1.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.botonPersonalisado1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
-            this.botonPersonalisado1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
-            this.botonPersonalisado1.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.botonPersonalisado1.BorderRadius = 6;
-            this.botonPersonalisado1.BorderSize = 0;
-            this.botonPersonalisado1.FlatAppearance.BorderSize = 0;
-            this.botonPersonalisado1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.botonPersonalisado1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.botonPersonalisado1.ForeColor = System.Drawing.Color.White;
-            this.botonPersonalisado1.Image = global::ProyectoIntegradorTaller.Properties.Resources.cuenta;
-            this.botonPersonalisado1.Location = new System.Drawing.Point(12, 28);
-            this.botonPersonalisado1.Name = "botonPersonalisado1";
-            this.botonPersonalisado1.Size = new System.Drawing.Size(118, 40);
-            this.botonPersonalisado1.TabIndex = 17;
-            this.botonPersonalisado1.Text = " Mi Cuenta";
-            this.botonPersonalisado1.TextColor = System.Drawing.Color.White;
-            this.botonPersonalisado1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.botonPersonalisado1.UseVisualStyleBackColor = false;
-            this.botonPersonalisado1.Click += new System.EventHandler(this.botonPersonalisado1_Click);
-            // 
-            // botonPersonalisado3
-            // 
-            this.botonPersonalisado3.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.botonPersonalisado3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
-            this.botonPersonalisado3.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
-            this.botonPersonalisado3.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.botonPersonalisado3.BorderRadius = 6;
-            this.botonPersonalisado3.BorderSize = 0;
-            this.botonPersonalisado3.FlatAppearance.BorderSize = 0;
-            this.botonPersonalisado3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.botonPersonalisado3.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.botonPersonalisado3.ForeColor = System.Drawing.Color.White;
-            this.botonPersonalisado3.Image = global::ProyectoIntegradorTaller.Properties.Resources.resource;
-            this.botonPersonalisado3.Location = new System.Drawing.Point(514, 28);
-            this.botonPersonalisado3.Name = "botonPersonalisado3";
-            this.botonPersonalisado3.Size = new System.Drawing.Size(141, 40);
-            this.botonPersonalisado3.TabIndex = 19;
-            this.botonPersonalisado3.Text = "Pendientes";
-            this.botonPersonalisado3.TextColor = System.Drawing.Color.White;
-            this.botonPersonalisado3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.botonPersonalisado3.UseVisualStyleBackColor = false;
-            this.botonPersonalisado3.Click += new System.EventHandler(this.botonPersonalisado3_Click);
-            // 
-            // botonPersonalisado4
-            // 
-            this.botonPersonalisado4.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.botonPersonalisado4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
-            this.botonPersonalisado4.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
-            this.botonPersonalisado4.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.botonPersonalisado4.BorderRadius = 6;
-            this.botonPersonalisado4.BorderSize = 0;
-            this.botonPersonalisado4.FlatAppearance.BorderSize = 0;
-            this.botonPersonalisado4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.botonPersonalisado4.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.botonPersonalisado4.ForeColor = System.Drawing.Color.White;
-            this.botonPersonalisado4.Image = global::ProyectoIntegradorTaller.Properties.Resources.history;
-            this.botonPersonalisado4.Location = new System.Drawing.Point(658, 28);
-            this.botonPersonalisado4.Name = "botonPersonalisado4";
-            this.botonPersonalisado4.Size = new System.Drawing.Size(130, 40);
-            this.botonPersonalisado4.TabIndex = 20;
-            this.botonPersonalisado4.Text = " Mis Reservas";
-            this.botonPersonalisado4.TextColor = System.Drawing.Color.White;
-            this.botonPersonalisado4.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.botonPersonalisado4.UseVisualStyleBackColor = false;
-            this.botonPersonalisado4.Click += new System.EventHandler(this.botonPersonalisado4_Click);
-            // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.botonPersonalisado1);
-            this.panel1.Controls.Add(this.botonPersonalisado4);
-            this.panel1.Controls.Add(this.botonPersonalisado3);
+            this.panel1.Controls.Add(this.BVolver);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel1.Location = new System.Drawing.Point(0, 370);
             this.panel1.Name = "panel1";
@@ -206,9 +134,9 @@
             this.LBienvenido.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Bold);
             this.LBienvenido.Location = new System.Drawing.Point(3, 38);
             this.LBienvenido.Name = "LBienvenido";
-            this.LBienvenido.Size = new System.Drawing.Size(53, 18);
+            this.LBienvenido.Size = new System.Drawing.Size(85, 18);
             this.LBienvenido.TabIndex = 37;
-            this.LBienvenido.Text = "Aulas";
+            this.LBienvenido.Text = "Reservas";
             // 
             // CBMateria
             // 
@@ -243,68 +171,6 @@
             this.panel3.Size = new System.Drawing.Size(800, 269);
             this.panel3.TabIndex = 23;
             // 
-            // label6
-            // 
-            this.label6.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
-            this.label6.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(361, 7);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(54, 19);
-            this.label6.TabIndex = 56;
-            this.label6.Text = "Home";
-            // 
-            // Reservas
-            // 
-            this.Reservas.HeaderText = "reservas";
-            this.Reservas.Name = "Reservas";
-            this.Reservas.ReadOnly = true;
-            this.Reservas.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Reservas.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.Reservas.Text = "ver reservas";
-            // 
-            // Tipo
-            // 
-            this.Tipo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Tipo.DataPropertyName = "Tipo";
-            this.Tipo.HeaderText = "Tipo";
-            this.Tipo.Name = "Tipo";
-            this.Tipo.ReadOnly = true;
-            // 
-            // CapasidadMaxima
-            // 
-            this.CapasidadMaxima.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.CapasidadMaxima.DataPropertyName = "CapacidadMax";
-            this.CapasidadMaxima.HeaderText = "Capasidad Maxima";
-            this.CapasidadMaxima.Name = "CapasidadMaxima";
-            this.CapasidadMaxima.ReadOnly = true;
-            // 
-            // Lugar
-            // 
-            this.Lugar.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Lugar.DataPropertyName = "Lugar";
-            this.Lugar.HeaderText = "Lugar";
-            this.Lugar.Name = "Lugar";
-            this.Lugar.ReadOnly = true;
-            // 
-            // Nombre
-            // 
-            this.Nombre.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Nombre.DataPropertyName = "Name";
-            this.Nombre.HeaderText = "Nombre";
-            this.Nombre.Name = "Nombre";
-            this.Nombre.ReadOnly = true;
-            // 
-            // ID
-            // 
-            this.ID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.ID.DataPropertyName = "Id";
-            this.ID.HeaderText = "ID";
-            this.ID.Name = "ID";
-            this.ID.ReadOnly = true;
-            // 
             // dataGridView1
             // 
             this.dataGridView1.AllowUserToAddRows = false;
@@ -325,10 +191,11 @@
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ID,
             this.Nombre,
-            this.Lugar,
-            this.CapasidadMaxima,
-            this.Tipo,
-            this.Reservas});
+            this.Hora,
+            this.usuario,
+            this.Dia,
+            this.materia,
+            this.Estado});
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.EnableHeadersVisualStyles = false;
             this.dataGridView1.GridColor = System.Drawing.SystemColors.ButtonFace;
@@ -341,7 +208,98 @@
             this.dataGridView1.TabIndex = 1;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
-            // HomeProfesor
+            // ID
+            // 
+            this.ID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.ID.DataPropertyName = "Id";
+            this.ID.HeaderText = "ID";
+            this.ID.Name = "ID";
+            this.ID.ReadOnly = true;
+            // 
+            // Nombre
+            // 
+            this.Nombre.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Nombre.DataPropertyName = "Name";
+            this.Nombre.HeaderText = "Nombre";
+            this.Nombre.Name = "Nombre";
+            this.Nombre.ReadOnly = true;
+            // 
+            // Hora
+            // 
+            this.Hora.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Hora.DataPropertyName = "Hora";
+            this.Hora.HeaderText = "Hora";
+            this.Hora.Name = "Hora";
+            this.Hora.ReadOnly = true;
+            // 
+            // usuario
+            // 
+            this.usuario.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.usuario.DataPropertyName = "usuario";
+            this.usuario.HeaderText = "Usuario";
+            this.usuario.Name = "usuario";
+            this.usuario.ReadOnly = true;
+            // 
+            // Dia
+            // 
+            this.Dia.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Dia.DataPropertyName = "Dia";
+            this.Dia.HeaderText = "Dia";
+            this.Dia.Name = "Dia";
+            this.Dia.ReadOnly = true;
+            // 
+            // materia
+            // 
+            this.materia.DataPropertyName = "materia";
+            this.materia.HeaderText = "materia";
+            this.materia.Name = "materia";
+            this.materia.ReadOnly = true;
+            this.materia.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
+            // Estado
+            // 
+            this.Estado.HeaderText = "Autorizar";
+            this.Estado.Name = "Estado";
+            this.Estado.ReadOnly = true;
+            this.Estado.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Estado.Text = "autorizar";
+            // 
+            // label6
+            // 
+            this.label6.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
+            this.label6.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.White;
+            this.label6.Location = new System.Drawing.Point(361, 7);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(95, 19);
+            this.label6.TabIndex = 56;
+            this.label6.Text = "Pendientes";
+            // 
+            // BVolver
+            // 
+            this.BVolver.BackColor = System.Drawing.Color.LimeGreen;
+            this.BVolver.BackgroundColor = System.Drawing.Color.LimeGreen;
+            this.BVolver.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.BVolver.BorderRadius = 6;
+            this.BVolver.BorderSize = 0;
+            this.BVolver.FlatAppearance.BorderSize = 0;
+            this.BVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BVolver.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BVolver.ForeColor = System.Drawing.Color.AliceBlue;
+            this.BVolver.Image = global::ProyectoIntegradorTaller.Properties.Resources.path30;
+            this.BVolver.Location = new System.Drawing.Point(12, 28);
+            this.BVolver.Name = "BVolver";
+            this.BVolver.Size = new System.Drawing.Size(100, 40);
+            this.BVolver.TabIndex = 53;
+            this.BVolver.Text = "  Volver";
+            this.BVolver.TextColor = System.Drawing.Color.AliceBlue;
+            this.BVolver.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.BVolver.UseVisualStyleBackColor = false;
+            this.BVolver.Click += new System.EventHandler(this.BVolver_Click);
+            // 
+            // ReservasPendientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -352,7 +310,7 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "HomeProfesor";
+            this.Name = "ReservasPendientes";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "HomeProfesor";
             this.Controls.SetChildIndex(this.PBEsconder_, 0);
@@ -381,21 +339,21 @@
 
         private components.BotonPersonalisado BBuscar;
         private CustomControls.RJControls.RJTextBox TBBusqueda;
-        private components.BotonPersonalisado botonPersonalisado1;
-        private components.BotonPersonalisado botonPersonalisado3;
-        private components.BotonPersonalisado botonPersonalisado4;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.DataGridView dataGridView1;
         private components.ComboBoxPersonalisado CBMateria;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label LBienvenido;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Tipo;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Lugar;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CapasidadMaxima;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Tipo;
-        private System.Windows.Forms.DataGridViewButtonColumn Reservas;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Hora;
+        private System.Windows.Forms.DataGridViewTextBoxColumn usuario;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Dia;
+        private System.Windows.Forms.DataGridViewTextBoxColumn materia;
+        private System.Windows.Forms.DataGridViewButtonColumn Estado;
+        private components.BotonPersonalisado BVolver;
     }
 }

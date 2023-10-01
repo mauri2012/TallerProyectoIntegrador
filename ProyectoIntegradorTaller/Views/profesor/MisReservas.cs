@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ProyectoIntegradorTaller.logica;
 using ProyectoIntegradorTaller.views.components;
 
 namespace ProyectoIntegradorTaller.views.profesor
@@ -16,6 +17,7 @@ namespace ProyectoIntegradorTaller.views.profesor
         public MisReservas()
         {
             InitializeComponent();
+            reservaLogica.listarReservas(dataGridView1,"SI");
         }
 
         private void BVolver_Click(object sender, EventArgs e)
@@ -23,6 +25,11 @@ namespace ProyectoIntegradorTaller.views.profesor
             this.Hide();
             HomeProfesor homeProfesor = new HomeProfesor();
             homeProfesor.Show();
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
