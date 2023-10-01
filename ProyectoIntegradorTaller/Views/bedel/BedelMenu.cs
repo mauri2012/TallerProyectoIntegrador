@@ -1,5 +1,6 @@
 ﻿using DraggingControl;
 using Microsoft.VisualBasic;
+using ProyectoIntegradorTaller.views.components;
 //using ProyectoIntegradorTaller.formularios;
 using System;
 using System.Collections.Generic;
@@ -14,7 +15,7 @@ using System.Windows.Forms;
 
 namespace ProyectoIntegradorTaller.views.admin
 {
-    public partial class BedelMenu : DraggablePanelUserControl
+    public partial class BedelMenu : FormPersonalisado
     {
         public BedelMenu()
         {

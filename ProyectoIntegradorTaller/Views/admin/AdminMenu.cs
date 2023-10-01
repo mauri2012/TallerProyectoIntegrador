@@ -2,6 +2,7 @@
 using Microsoft.VisualBasic;
 using ProyectoIntegradorTaller.logica;
 using ProyectoIntegradorTaller.models;
+using ProyectoIntegradorTaller.views.components;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -11,7 +12,7 @@ using System.Windows.Forms;
 
 namespace ProyectoIntegradorTaller.views.admin
 {
-    public partial class AdminMenu : DraggablePanelUserControl
+    public partial class AdminMenu : FormPersonalisado
     {
         public AdminMenu()
         {
@@ -20,8 +21,6 @@ namespace ProyectoIntegradorTaller.views.admin
  
 
         }
-
-
 
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -92,9 +91,6 @@ namespace ProyectoIntegradorTaller.views.admin
             dataGridView1.Columns.Add(buttonColumn3);
             dataGridView1.Columns.Add(buttonColumn4);
 
-            PBMaximizar_.Location = new Point(746, 11);
-            PBCerrar_.Location = new Point(766, 11);
-            PBEsconder_.Location = new Point(726, 11);
 
 
             try

@@ -35,7 +35,6 @@ namespace ProyectoIntegradorTaller.views.admin
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.LBienvenido = new System.Windows.Forms.Label();
-            this.panel7 = new System.Windows.Forms.Panel();
             this.botonPersonalisado1 = new ProyectoIntegradorTaller.views.components.BotonPersonalisado();
             this.BBuscar = new ProyectoIntegradorTaller.views.components.BotonPersonalisado();
             this.TBBusqueda = new CustomControls.RJControls.RJTextBox();
@@ -46,52 +45,41 @@ namespace ProyectoIntegradorTaller.views.admin
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.itemBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label1 = new System.Windows.Forms.Label();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.panel6 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.PBMaximizar_)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PBMinimizar_)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PBCerrar_)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PBEsconder_)).BeginInit();
-            this.panel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.itemBindingSource)).BeginInit();
+            this.panel3.SuspendLayout();
+            this.panel5.SuspendLayout();
+            this.panel6.SuspendLayout();
             this.SuspendLayout();
             // 
             // PBMaximizar_
             // 
-            this.PBMaximizar_.Location = new System.Drawing.Point(646, 11);
+            this.PBMaximizar_.Location = new System.Drawing.Point(752, 11);
             // 
             // PBCerrar_
             // 
-            this.PBCerrar_.Location = new System.Drawing.Point(666, 11);
+            this.PBCerrar_.Location = new System.Drawing.Point(773, 11);
             // 
             // LBienvenido
             // 
             this.LBienvenido.AutoSize = true;
             this.LBienvenido.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Bold);
-            this.LBienvenido.Location = new System.Drawing.Point(17, 45);
+            this.LBienvenido.Location = new System.Drawing.Point(12, 46);
             this.LBienvenido.Name = "LBienvenido";
             this.LBienvenido.Size = new System.Drawing.Size(53, 18);
             this.LBienvenido.TabIndex = 3;
             this.LBienvenido.Text = "Aulas";
             // 
-            // panel7
-            // 
-            this.panel7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.panel7.Controls.Add(this.botonPersonalisado1);
-            this.panel7.Controls.Add(this.BBuscar);
-            this.panel7.Controls.Add(this.TBBusqueda);
-            this.panel7.Controls.Add(this.BProfesores);
-            this.panel7.Controls.Add(this.BMaterias);
-            this.panel7.Controls.Add(this.BUsuarios);
-            this.panel7.Controls.Add(this.BCrearAula);
-            this.panel7.Controls.Add(this.LBienvenido);
-            this.panel7.Controls.Add(this.dataGridView1);
-            this.panel7.Location = new System.Drawing.Point(2, 32);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(903, 426);
-            this.panel7.TabIndex = 11;
-            // 
             // botonPersonalisado1
             // 
+            this.botonPersonalisado1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.botonPersonalisado1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
             this.botonPersonalisado1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
             this.botonPersonalisado1.BorderColor = System.Drawing.Color.PaleVioletRed;
@@ -102,7 +90,7 @@ namespace ProyectoIntegradorTaller.views.admin
             this.botonPersonalisado1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.botonPersonalisado1.ForeColor = System.Drawing.Color.White;
             this.botonPersonalisado1.Image = global::ProyectoIntegradorTaller.Properties.Resources.cuenta;
-            this.botonPersonalisado1.Location = new System.Drawing.Point(40, 330);
+            this.botonPersonalisado1.Location = new System.Drawing.Point(12, 13);
             this.botonPersonalisado1.Name = "botonPersonalisado1";
             this.botonPersonalisado1.Size = new System.Drawing.Size(118, 40);
             this.botonPersonalisado1.TabIndex = 15;
@@ -114,6 +102,7 @@ namespace ProyectoIntegradorTaller.views.admin
             // 
             // BBuscar
             // 
+            this.BBuscar.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.BBuscar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
             this.BBuscar.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
             this.BBuscar.BorderColor = System.Drawing.Color.PaleVioletRed;
@@ -124,7 +113,7 @@ namespace ProyectoIntegradorTaller.views.admin
             this.BBuscar.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BBuscar.ForeColor = System.Drawing.Color.White;
             this.BBuscar.Image = global::ProyectoIntegradorTaller.Properties.Resources.search_white;
-            this.BBuscar.Location = new System.Drawing.Point(736, 18);
+            this.BBuscar.Location = new System.Drawing.Point(742, 33);
             this.BBuscar.Name = "BBuscar";
             this.BBuscar.Size = new System.Drawing.Size(46, 32);
             this.BBuscar.TabIndex = 10;
@@ -133,6 +122,7 @@ namespace ProyectoIntegradorTaller.views.admin
             // 
             // TBBusqueda
             // 
+            this.TBBusqueda.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.TBBusqueda.BackColor = System.Drawing.SystemColors.Menu;
             this.TBBusqueda.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
             this.TBBusqueda.BorderFocusColor = System.Drawing.Color.HotPink;
@@ -140,7 +130,7 @@ namespace ProyectoIntegradorTaller.views.admin
             this.TBBusqueda.BorderSize = 2;
             this.TBBusqueda.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TBBusqueda.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.TBBusqueda.Location = new System.Drawing.Point(543, 19);
+            this.TBBusqueda.Location = new System.Drawing.Point(549, 33);
             this.TBBusqueda.Margin = new System.Windows.Forms.Padding(4);
             this.TBBusqueda.Multiline = false;
             this.TBBusqueda.Name = "TBBusqueda";
@@ -156,6 +146,7 @@ namespace ProyectoIntegradorTaller.views.admin
             // 
             // BProfesores
             // 
+            this.BProfesores.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.BProfesores.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
             this.BProfesores.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
             this.BProfesores.BorderColor = System.Drawing.Color.PaleVioletRed;
@@ -166,7 +157,7 @@ namespace ProyectoIntegradorTaller.views.admin
             this.BProfesores.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BProfesores.ForeColor = System.Drawing.Color.White;
             this.BProfesores.Image = global::ProyectoIntegradorTaller.Properties.Resources.badge;
-            this.BProfesores.Location = new System.Drawing.Point(164, 330);
+            this.BProfesores.Location = new System.Drawing.Point(170, 13);
             this.BProfesores.Name = "BProfesores";
             this.BProfesores.Size = new System.Drawing.Size(150, 40);
             this.BProfesores.TabIndex = 8;
@@ -178,6 +169,7 @@ namespace ProyectoIntegradorTaller.views.admin
             // 
             // BMaterias
             // 
+            this.BMaterias.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.BMaterias.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
             this.BMaterias.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
             this.BMaterias.BorderColor = System.Drawing.Color.PaleVioletRed;
@@ -188,7 +180,7 @@ namespace ProyectoIntegradorTaller.views.admin
             this.BMaterias.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BMaterias.ForeColor = System.Drawing.Color.White;
             this.BMaterias.Image = global::ProyectoIntegradorTaller.Properties.Resources.book;
-            this.BMaterias.Location = new System.Drawing.Point(320, 330);
+            this.BMaterias.Location = new System.Drawing.Point(326, 13);
             this.BMaterias.Name = "BMaterias";
             this.BMaterias.Size = new System.Drawing.Size(150, 40);
             this.BMaterias.TabIndex = 7;
@@ -200,6 +192,7 @@ namespace ProyectoIntegradorTaller.views.admin
             // 
             // BUsuarios
             // 
+            this.BUsuarios.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.BUsuarios.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
             this.BUsuarios.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
             this.BUsuarios.BorderColor = System.Drawing.Color.PaleVioletRed;
@@ -210,7 +203,7 @@ namespace ProyectoIntegradorTaller.views.admin
             this.BUsuarios.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BUsuarios.ForeColor = System.Drawing.Color.White;
             this.BUsuarios.Image = global::ProyectoIntegradorTaller.Properties.Resources.person_groups;
-            this.BUsuarios.Location = new System.Drawing.Point(476, 330);
+            this.BUsuarios.Location = new System.Drawing.Point(482, 13);
             this.BUsuarios.Name = "BUsuarios";
             this.BUsuarios.Size = new System.Drawing.Size(150, 40);
             this.BUsuarios.TabIndex = 6;
@@ -222,6 +215,7 @@ namespace ProyectoIntegradorTaller.views.admin
             // 
             // BCrearAula
             // 
+            this.BCrearAula.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.BCrearAula.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
             this.BCrearAula.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
             this.BCrearAula.BorderColor = System.Drawing.Color.PaleVioletRed;
@@ -232,7 +226,7 @@ namespace ProyectoIntegradorTaller.views.admin
             this.BCrearAula.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BCrearAula.ForeColor = System.Drawing.Color.White;
             this.BCrearAula.Image = global::ProyectoIntegradorTaller.Properties.Resources.room;
-            this.BCrearAula.Location = new System.Drawing.Point(632, 330);
+            this.BCrearAula.Location = new System.Drawing.Point(638, 13);
             this.BCrearAula.Name = "BCrearAula";
             this.BCrearAula.Size = new System.Drawing.Size(150, 40);
             this.BCrearAula.TabIndex = 5;
@@ -244,8 +238,7 @@ namespace ProyectoIntegradorTaller.views.admin
             // 
             // dataGridView1
             // 
-            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
@@ -261,9 +254,10 @@ namespace ProyectoIntegradorTaller.views.admin
             this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.ColumnHeadersHeight = 35;
             this.dataGridView1.DataSource = this.itemBindingSource;
+            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.EnableHeadersVisualStyles = false;
             this.dataGridView1.GridColor = System.Drawing.SystemColors.ButtonFace;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 73);
+            this.dataGridView1.Location = new System.Drawing.Point(0, 0);
             this.dataGridView1.Name = "dataGridView1";
             this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -272,9 +266,10 @@ namespace ProyectoIntegradorTaller.views.admin
             this.CapacidadMax = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowTemplate.Height = 25;
-            this.dataGridView1.Size = new System.Drawing.Size(770, 243);
+            this.dataGridView1.Size = new System.Drawing.Size(800, 282);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
                 this.Id,
                 this.Name,
@@ -320,6 +315,8 @@ namespace ProyectoIntegradorTaller.views.admin
             this.Lugar.HeaderText = "Lugar";
             this.Lugar.Name = "Lugar";
             this.Lugar.ReadOnly = true;
+
+
             // 
             // itemBindingSource
             // 
@@ -339,16 +336,51 @@ namespace ProyectoIntegradorTaller.views.admin
             this.label1.TabIndex = 11;
             this.label1.Text = "Home";
             // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.botonPersonalisado1);
+            this.panel3.Controls.Add(this.BCrearAula);
+            this.panel3.Controls.Add(this.BUsuarios);
+            this.panel3.Controls.Add(this.BMaterias);
+            this.panel3.Controls.Add(this.BProfesores);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel3.Location = new System.Drawing.Point(0, 385);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(800, 65);
+            this.panel3.TabIndex = 12;
+            // 
+            // panel5
+            // 
+            this.panel5.Controls.Add(this.LBienvenido);
+            this.panel5.Controls.Add(this.TBBusqueda);
+            this.panel5.Controls.Add(this.BBuscar);
+            this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel5.Location = new System.Drawing.Point(0, 32);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(800, 71);
+            this.panel5.TabIndex = 13;
+            // 
+            // panel6
+            // 
+            this.panel6.Controls.Add(this.dataGridView1);
+            this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel6.Location = new System.Drawing.Point(0, 103);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(800, 282);
+            this.panel6.TabIndex = 14;
+            // 
             // AdminMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Snow;
-            this.ClientSize = new System.Drawing.Size(796, 413);
+            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.panel6);
+            this.Controls.Add(this.panel5);
+            this.Controls.Add(this.panel3);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.panel7);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-           // this.Name = "AdminMenu";
+           
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menu";
             this.Load += new System.EventHandler(this.AdminMenu_Load);
@@ -356,16 +388,20 @@ namespace ProyectoIntegradorTaller.views.admin
             this.Controls.SetChildIndex(this.PBMinimizar_, 0);
             this.Controls.SetChildIndex(this.PBMaximizar_, 0);
             this.Controls.SetChildIndex(this.PBCerrar_, 0);
-            this.Controls.SetChildIndex(this.panel7, 0);
             this.Controls.SetChildIndex(this.label1, 0);
+            this.Controls.SetChildIndex(this.panel3, 0);
+            this.Controls.SetChildIndex(this.panel5, 0);
+            this.Controls.SetChildIndex(this.panel6, 0);
             ((System.ComponentModel.ISupportInitialize)(this.PBMaximizar_)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PBMinimizar_)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PBCerrar_)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PBEsconder_)).EndInit();
-            this.panel7.ResumeLayout(false);
-            this.panel7.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.itemBindingSource)).EndInit();
+            this.panel3.ResumeLayout(false);
+            this.panel5.ResumeLayout(false);
+            this.panel5.PerformLayout();
+            this.panel6.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -378,7 +414,6 @@ namespace ProyectoIntegradorTaller.views.admin
         private Label LBienvenido;
         private TextBox textBox1;
         private TextBox textBox2;
-        private Panel panel7;
         private DataGridView dataGridView1;
         private views.components.BotonPersonalisado BCrearAula;
         private views.components.BotonPersonalisado BProfesores;
@@ -394,6 +429,9 @@ namespace ProyectoIntegradorTaller.views.admin
         private DataGridViewTextBoxColumn Lugar;
         private DataGridViewTextBoxColumn CapacidadMax;
         private DataGridViewTextBoxColumn Tipo;
+        private Panel panel3;
+        private Panel panel5;
+        private Panel panel6;
     }
 
     #endregion
