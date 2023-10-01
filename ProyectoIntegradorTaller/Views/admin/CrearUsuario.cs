@@ -60,16 +60,24 @@ namespace ProyectoIntegradorTaller.views.admin
                     }
                     else
                     {
-                        int tipoU = 1;
-                        if (this.CBTipo.Texts=="bedel")
+                        int tipoU = 3;
+                        if (this.CBTipo.Texts=="Admin")
                         {
-                            tipoU = 3;
+                            tipoU = 1;
+                    }
+                        else if (this.CBTipo.Texts == "bedel")
+                        {
+                            tipoU = 2;
                         }
-                        if (!isEdit)
+                        else if (this.CBTipo.Texts == "Profesor")
+                        {
+                            tipoU = 4;
+                        }
+
+
+                    if (!isEdit)
                         {
                             UsuarioLogica.agregar(int.Parse(TDni.Texts),this.TApellido.Texts, this.TEmail.Texts, this.TNombre.Texts,tipoU);
-
-
                         }
                         else
                         {
@@ -99,11 +107,6 @@ namespace ProyectoIntegradorTaller.views.admin
                 MessageBox.Show("El campo Capacidad solo acepta valores numericos", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             }
-        }
-
-        private void CBTipo_OnSelectedIndexChanged(object sender, EventArgs e)
-        {
-
         }
 
         private void CBTipo_Load(object sender, EventArgs e)

@@ -15,11 +15,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using ProyectoIntegradorTaller.logica;
+using ProyectoIntegradorTaller.views.components;
 
 namespace ProyectoIntegradorTaller.views.admin
 {
-    public partial class Usuarios : DraggablePanelUserControl
+    public partial class Usuarios : FormPersonalisado
     {
+        SqlConnection connection = new SqlConnection("");
+
         public Usuarios()
         {
             InitializeComponent();
@@ -37,51 +40,51 @@ namespace ProyectoIntegradorTaller.views.admin
             this.Hide();
             CrearUsuario crearUsuario = new CrearUsuario();
             crearUsuario.Show();
-              
+
         }
-        SqlConnection connection = new SqlConnection("");
+
+
         private void Usuarios_Load(object sender, EventArgs e)
         {
-            
+
             try
             {
-
-                UsuarioLogica.listarUsuarios(RBActivo,dataGridView1);
+                UsuarioLogica.listarUsuarios(RBActivo, dataGridView1);
             }
-            catch(DataException ex)
+            catch (DataException ex)
             {
                 MessageBox.Show(ex.Message);
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
-               MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.Message);
             }
 
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-      
-            
-                if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
+
+
+            if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
+            {
+                if (dataGridView1.Columns[e.ColumnIndex].Name == "Editar")
                 {
-                    if(dataGridView1.Columns[e.ColumnIndex].Name == "Editar")
-                    {
-                        this.Hide();
+                    this.Hide();
                     int tipo = 1;
                     if ((string)dataGridView1.Rows[e.RowIndex].Cells["Tipo"].Value == "bedel")
                     {
                         tipo = 3;
                     }
-                   // MessageBox.Show((string)dataGridView1.Rows[e.RowIndex].Cells["Nombre"].Value);
-                        CrearUsuario usuario = new CrearUsuario((string)dataGridView1.Rows[e.RowIndex].Cells["Nombre"].Value,
-                        (string)dataGridView1.Rows[e.RowIndex].Cells["Apellido"].Value,
-                        (string)dataGridView1.Rows[e.RowIndex].Cells["Email"].Value,
-                        (int)dataGridView1.Rows[e.RowIndex].Cells["DNI"].Value,
-                        tipo, 
-                        (int)dataGridView1.Rows[e.RowIndex].Cells["Id"].Value);
+                    // MessageBox.Show((string)dataGridView1.Rows[e.RowIndex].Cells["Nombre"].Value);
+                    CrearUsuario usuario = new CrearUsuario((string)dataGridView1.Rows[e.RowIndex].Cells["Nombre"].Value,
+                    (string)dataGridView1.Rows[e.RowIndex].Cells["Apellido"].Value,
+                    (string)dataGridView1.Rows[e.RowIndex].Cells["Email"].Value,
+                    (int)dataGridView1.Rows[e.RowIndex].Cells["DNI"].Value,
+                    tipo,
+                    (int)dataGridView1.Rows[e.RowIndex].Cells["Id"].Value);
 
-                        usuario.Show();
+                    usuario.Show();
                 }
 
                 if (dataGridView1.Columns[e.ColumnIndex].Name == "Desactivar")
@@ -102,18 +105,33 @@ namespace ProyectoIntegradorTaller.views.admin
 
                     UsuarioLogica.listarUsuarios(RBActivo, dataGridView1);
                 }
+                if (dataGridView1.Columns[e.ColumnIndex].Name == "blanquear")
+                {
+
+                    String dni = dataGridView1.Rows[e.RowIndex].Cells["DNI"].Value.ToString();
+                    int id = (int)dataGridView1.Rows[e.RowIndex].Cells["id"].Value;
+                    UsuarioLogica.BlanquearPassword(dni, id);
+                    MessageBox.Show("Se blanque la contraseña correctamente!", "Contraseña", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
-            
+            }
+
         }
 
         private void RBDesactivados_CheckedChanged(object sender, EventArgs e)
         {
-            UsuarioLogica.listarUsuarios(RBActivo,dataGridView1);
+            UsuarioLogica.listarUsuarios(RBActivo, dataGridView1);
         }
 
         private void rjTextBox1__TextChanged(object sender, EventArgs e)
         {
-            UsuarioLogica.busqueda(this.rjTextBox1.Texts,dataGridView1);
+            UsuarioLogica.busqueda(this.rjTextBox1.Texts, dataGridView1, RBActivo);
         }
+
+        private void BBuscar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+
     }
 }

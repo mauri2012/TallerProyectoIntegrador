@@ -260,7 +260,6 @@
             this.CBTipo.TabIndex = 54;
             this.CBTipo.Texts = "";
             this.CBTipo.ValueMember = "asdsdsadsadsadasd";
-            this.CBTipo.OnSelectedIndexChanged += new System.EventHandler(this.CBTipo_OnSelectedIndexChanged);
             this.CBTipo.Load += new System.EventHandler(this.CBTipo_Load);
             // 
             // label5

@@ -17,7 +17,7 @@ namespace ProyectoIntegradorTaller.views.admin
 {
     public partial class Datos :DraggablePanelUserControl
     {
-        private string isAdmin;
+        
         public Datos()
         {
             InitializeComponent();

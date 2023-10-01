@@ -16,7 +16,7 @@ namespace ProyectoIntegradorTaller.logica
             using (classroom_managerEntities db = new classroom_managerEntities())
             {
                 box.DataSource = db.tipoUsuario.ToList();
-                box.DisplayMember = "tipo"; // Specify the property to display in the ComboBox
+                box.DisplayMember = "tipo"; 
                 box.ValueMember = "id_tipoUsuario";
             }
         }
@@ -27,7 +27,7 @@ namespace ProyectoIntegradorTaller.logica
             {
                 var query = from usuario in db.usuario
                             join tipoUsuario in db.tipoUsuario on usuario.id_tipoUsuario equals tipoUsuario.id_tipoUsuario
-                            where usuario.desactivar == (RBActivo.Checked ? "NO" : "SI")
+                            where usuario.desactivar == (RBActivo.Checked ? "SI" : "NO")
                             select new
                             {
                                 Id = usuario.id_usuario,
@@ -45,17 +45,27 @@ namespace ProyectoIntegradorTaller.logica
 
             }
         }
-        public static void busqueda(string valor,DataGridView dataGrid)
+        public static void busqueda(string valor,DataGridView dataGrid, RadioButton RBActivo)
         {
             using (classroom_managerEntities dbContext = new classroom_managerEntities())
             {
-                var query = dbContext.usuario
-                    .Where(entity => entity.nombre.Contains(valor)
-                           || entity.apellido.Contains(valor))
-                    .ToList();
+                var query = from usuario in dbContext.usuario
+                            join tipoUsuario in dbContext.tipoUsuario
+                            on usuario.id_tipoUsuario equals tipoUsuario.id_tipoUsuario
+                            where (usuario.nombre.Contains(valor) || usuario.apellido.Contains(valor)) && usuario.desactivar == (RBActivo.Checked ? "SI" : "NO")
+                            select new
+                            {
+                                Id = usuario.id_usuario,
+                                Nombre = usuario.nombre,
+                                Apellido = usuario.apellido,
+                                DNI = usuario.dni,
+                                Email = usuario.correo,
+                                Tipo = tipoUsuario.tipo,
+                                Activo = usuario.desactivar
+                            };
 
-                // Bind the filtered data to your DataGridView
-                dataGrid.DataSource = query;
+                
+                dataGrid.DataSource = query.ToList();
             }
         }
         public static void update(int id,int dni_, string apellido_, string emial, string nombre, int tipoU)
@@ -104,6 +114,7 @@ namespace ProyectoIntegradorTaller.logica
         public static void UsuarioActivo(string estado,DataGridView dataGrid, DataGridViewCellEventArgs e)
         {
             dataGrid.Rows[e.RowIndex].Cells["Desactivar"].Value = estado;
+
             using (classroom_managerEntities db = new classroom_managerEntities())
             {
 
@@ -126,7 +137,7 @@ namespace ProyectoIntegradorTaller.logica
             using (classroom_managerEntities dbContext = new classroom_managerEntities())
             {
 
-                var entityToUpdate = dbContext.usuario.Find(Session.SessionCacheData.Id); // Replace YourEntities with your actual DbSet and id with the primary key value.
+                var entityToUpdate = dbContext.usuario.Find(Session.SessionCacheData.Id); 
 
                 if (entityToUpdate != null)
                 {
@@ -135,6 +146,26 @@ namespace ProyectoIntegradorTaller.logica
                      
                     dbContext.SaveChanges();
                     
+                }
+            }
+        }
+
+
+        public static void BlanquearPassword(string password,int id)
+        {
+
+            using (classroom_managerEntities dbContext = new classroom_managerEntities())
+            {
+
+                var entityToUpdate = dbContext.usuario.Find(id);
+
+                if (entityToUpdate != null)
+                {
+
+                    entityToUpdate.password = Encrypt.GetSHA256(password);
+
+                    dbContext.SaveChanges();
+
                 }
             }
         }
