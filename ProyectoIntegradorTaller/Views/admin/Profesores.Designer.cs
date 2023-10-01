@@ -42,7 +42,6 @@
             this.Apellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CorreoElectronico = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DNI = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Eliminar = new System.Windows.Forms.DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)(this.PBMaximizar_)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PBMinimizar_)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PBCerrar_)).BeginInit();
@@ -222,8 +221,7 @@
             this.Nombre,
             this.Apellido,
             this.CorreoElectronico,
-            this.DNI,
-            this.Eliminar});
+            this.DNI});
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.EnableHeadersVisualStyles = false;
             this.dataGridView1.Location = new System.Drawing.Point(0, 0);
@@ -235,36 +233,39 @@
             // 
             // Nombre
             // 
+            this.Nombre.DataPropertyName = "Nombre";
             this.Nombre.HeaderText = "Nombre";
             this.Nombre.Name = "Nombre";
             this.Nombre.ReadOnly = true;
+            
             // 
             // Apellido
             // 
+            this.Apellido.DataPropertyName = "Apellido";
             this.Apellido.HeaderText = "Apellido";
             this.Apellido.Name = "Apellido";
             this.Apellido.ReadOnly = true;
-            // 
-            // CorreoElectronico
-            // 
-            this.CorreoElectronico.HeaderText = "Correo Electronico";
-            this.CorreoElectronico.Name = "CorreoElectronico";
-            this.CorreoElectronico.ReadOnly = true;
+            
             // 
             // DNI
             // 
+            this.DNI.DataPropertyName = "DNI";
             this.DNI.HeaderText = "DNI";
             this.DNI.Name = "DNI";
             this.DNI.ReadOnly = true;
+            
             // 
-            // Eliminar
+            // Email
             // 
-            this.Eliminar.HeaderText = "Eliminar";
-            this.Eliminar.Name = "Eliminar";
-            this.Eliminar.ReadOnly = true;
+            this.CorreoElectronico.DataPropertyName = "Email";
+            this.CorreoElectronico.HeaderText = "Email";
+            this.CorreoElectronico.Name = "Email";
+            this.CorreoElectronico.ReadOnly = true;
+            this.CorreoElectronico.Width = 110;
             // 
             // Profesores
             // 
+            this.Load += new System.EventHandler(this.Profesores_Load);
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
@@ -313,6 +314,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Apellido;
         private System.Windows.Forms.DataGridViewTextBoxColumn CorreoElectronico;
         private System.Windows.Forms.DataGridViewTextBoxColumn DNI;
-        private System.Windows.Forms.DataGridViewButtonColumn Eliminar;
     }
 }

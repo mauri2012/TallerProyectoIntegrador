@@ -100,7 +100,8 @@ namespace ProyectoIntegradorTaller.logica
                 apellido = apellido_,
                 correo = emial,
                 id_tipoUsuario = tipoU,
-                password=Encrypt.GetSHA256(dni_.ToString())
+                password=Encrypt.GetSHA256(dni_.ToString()),
+                desactivar="NO"
             };
 
             using (classroom_managerEntities db = new classroom_managerEntities())
@@ -132,12 +133,12 @@ namespace ProyectoIntegradorTaller.logica
         }
 
 
-        public static void CambiarPassword(string password) {
+        public static void CambiarPassword(string password, int id) {
 
             using (classroom_managerEntities dbContext = new classroom_managerEntities())
             {
 
-                var entityToUpdate = dbContext.usuario.Find(Session.SessionCacheData.Id); 
+                var entityToUpdate = dbContext.usuario.Find(id); 
 
                 if (entityToUpdate != null)
                 {
@@ -150,24 +151,26 @@ namespace ProyectoIntegradorTaller.logica
             }
         }
 
-
-        public static void BlanquearPassword(string password,int id)
+        public static void ListarUsuariosPorId(int id, DataGridView dataGridView)
         {
-
             using (classroom_managerEntities dbContext = new classroom_managerEntities())
             {
+                var query = dbContext.usuario
+                    .Where(usuario => usuario.tipoUsuario.id_tipoUsuario == id)
+                    .Select(usuario => new
+                    {
+                       
+                        Nombre = usuario.nombre,
+                        Apellido = usuario.apellido,
+                        DNI = usuario.dni,
+                        Email = usuario.correo,
+                    })
+                    .ToList();
 
-                var entityToUpdate = dbContext.usuario.Find(id);
-
-                if (entityToUpdate != null)
-                {
-
-                    entityToUpdate.password = Encrypt.GetSHA256(password);
-
-                    dbContext.SaveChanges();
-
-                }
+               
+                dataGridView.DataSource = query;
             }
         }
+
     }
 }

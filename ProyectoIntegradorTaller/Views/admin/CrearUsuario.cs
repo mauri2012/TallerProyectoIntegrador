@@ -67,9 +67,9 @@ namespace ProyectoIntegradorTaller.views.admin
                     }
                         else if (this.CBTipo.Texts == "bedel")
                         {
-                            tipoU = 2;
+                            tipoU = 3;
                         }
-                        else if (this.CBTipo.Texts == "Profesor")
+                        else if (this.CBTipo.Texts == "profesor")
                         {
                             tipoU = 4;
                         }

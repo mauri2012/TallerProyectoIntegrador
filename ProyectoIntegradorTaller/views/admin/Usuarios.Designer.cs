@@ -42,13 +42,13 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Apellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DNI = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Tipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Activo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Editar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.Desactivar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.blanquear = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.DNI = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.PBMaximizar_)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PBMinimizar_)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PBCerrar_)).BeginInit();
@@ -248,13 +248,13 @@
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Nombre,
             this.Apellido,
+            this.DNI,
             this.Tipo,
             this.Email,
             this.Activo,
             this.Editar,
             this.Desactivar,
-            this.blanquear,
-            this.DNI});
+            this.blanquear});
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.EnableHeadersVisualStyles = false;
             this.dataGridView1.GridColor = System.Drawing.Color.White;
@@ -282,6 +282,13 @@
             this.Apellido.Name = "Apellido";
             this.Apellido.ReadOnly = true;
             this.Apellido.Width = 110;
+            // 
+            // DNI
+            // 
+            this.DNI.DataPropertyName = "DNI";
+            this.DNI.HeaderText = "DNI";
+            this.DNI.Name = "DNI";
+            this.DNI.ReadOnly = true;
             // 
             // Tipo
             // 
@@ -331,13 +338,6 @@
             this.blanquear.ReadOnly = true;
             this.blanquear.Text = "Blanquear";
             this.blanquear.UseColumnTextForButtonValue = true;
-            // 
-            // DNI
-            // 
-            this.DNI.DataPropertyName = "DNI";
-            this.DNI.HeaderText = "DNI";
-            this.DNI.Name = "DNI";
-            this.DNI.ReadOnly = true;
             // 
             // Usuarios
             // 
@@ -390,12 +390,12 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn Apellido;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DNI;
         private System.Windows.Forms.DataGridViewTextBoxColumn Tipo;
         private System.Windows.Forms.DataGridViewTextBoxColumn Email;
         private System.Windows.Forms.DataGridViewTextBoxColumn Activo;
         private System.Windows.Forms.DataGridViewButtonColumn Editar;
         private System.Windows.Forms.DataGridViewButtonColumn Desactivar;
         private System.Windows.Forms.DataGridViewButtonColumn blanquear;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DNI;
     }
 }

@@ -42,7 +42,7 @@ namespace ProyectoIntegradorTaller.views.admin
                         menuAdmin.Show();
                         this.Hide();
                         break;
-                    case 3:
+                    case 2:
                         BedelMenu menuBedel = new BedelMenu();
                         menuBedel.Show();
                         this.Hide();

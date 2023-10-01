@@ -110,7 +110,7 @@ namespace ProyectoIntegradorTaller.views.admin
 
                     String dni = dataGridView1.Rows[e.RowIndex].Cells["DNI"].Value.ToString();
                     int id = (int)dataGridView1.Rows[e.RowIndex].Cells["id"].Value;
-                    UsuarioLogica.BlanquearPassword(dni, id);
+                    UsuarioLogica.CambiarPassword(dni, id);
                     MessageBox.Show("Se blanque la contraseña correctamente!", "Contraseña", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }

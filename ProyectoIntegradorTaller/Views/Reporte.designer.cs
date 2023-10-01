@@ -48,6 +48,10 @@ namespace ProyectoIntegradorTaller.views.admin
             this.BVolver = new ProyectoIntegradorTaller.views.components.BotonPersonalisado();
             this.BReservarAula = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.PBMaximizar_)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PBMinimizar_)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PBCerrar_)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PBEsconder_)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chart2)).BeginInit();
@@ -57,6 +61,22 @@ namespace ProyectoIntegradorTaller.views.admin
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             this.SuspendLayout();
             // 
+            // PBMaximizar_
+            // 
+            this.PBMaximizar_.Location = new System.Drawing.Point(760, 11);
+            // 
+            // PBMinimizar_
+            // 
+            this.PBMinimizar_.Location = new System.Drawing.Point(760, 11);
+            // 
+            // PBCerrar_
+            // 
+            this.PBCerrar_.Location = new System.Drawing.Point(780, 11);
+            // 
+            // PBEsconder_
+            // 
+            this.PBEsconder_.Location = new System.Drawing.Point(738, 11);
+            // 
             // panel2
             // 
             this.panel2.Controls.Add(this.panel4);
@@ -65,7 +85,7 @@ namespace ProyectoIntegradorTaller.views.admin
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(0, 32);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(686, 358);
+            this.panel2.Size = new System.Drawing.Size(800, 418);
             this.panel2.TabIndex = 6;
             // 
             // panel4
@@ -75,9 +95,9 @@ namespace ProyectoIntegradorTaller.views.admin
             this.panel4.Controls.Add(this.pictureBox5);
             this.panel4.Controls.Add(this.pictureBox6);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel4.Location = new System.Drawing.Point(329, 0);
+            this.panel4.Location = new System.Drawing.Point(408, 0);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(357, 358);
+            this.panel4.Size = new System.Drawing.Size(392, 418);
             this.panel4.TabIndex = 32;
             // 
             // chart2
@@ -99,6 +119,7 @@ namespace ProyectoIntegradorTaller.views.admin
             // 
             // BGuardar
             // 
+            this.BGuardar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.BGuardar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
             this.BGuardar.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
             this.BGuardar.BorderColor = System.Drawing.Color.PaleVioletRed;
@@ -109,7 +130,7 @@ namespace ProyectoIntegradorTaller.views.admin
             this.BGuardar.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BGuardar.ForeColor = System.Drawing.Color.White;
             this.BGuardar.Image = global::ProyectoIntegradorTaller.Properties.Resources.save;
-            this.BGuardar.Location = new System.Drawing.Point(195, 306);
+            this.BGuardar.Location = new System.Drawing.Point(230, 366);
             this.BGuardar.Name = "BGuardar";
             this.BGuardar.Size = new System.Drawing.Size(150, 40);
             this.BGuardar.TabIndex = 38;
@@ -146,7 +167,7 @@ namespace ProyectoIntegradorTaller.views.admin
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(332, 358);
+            this.panel1.Size = new System.Drawing.Size(413, 418);
             this.panel1.TabIndex = 31;
             // 
             // chart1
@@ -155,7 +176,7 @@ namespace ProyectoIntegradorTaller.views.admin
             this.chart1.ChartAreas.Add(chartArea2);
             legend2.Name = "Legend1";
             this.chart1.Legends.Add(legend2);
-            this.chart1.Location = new System.Drawing.Point(28, 21);
+            this.chart1.Location = new System.Drawing.Point(26, 46);
             this.chart1.Name = "chart1";
             this.chart1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Pastel;
             series2.ChartArea = "ChartArea1";
@@ -180,7 +201,7 @@ namespace ProyectoIntegradorTaller.views.admin
             this.BVolver.ForeColor = System.Drawing.Color.White;
             this.BVolver.Image = global::ProyectoIntegradorTaller.Properties.Resources.path30;
             this.BVolver.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BVolver.Location = new System.Drawing.Point(12, 306);
+            this.BVolver.Location = new System.Drawing.Point(12, 366);
             this.BVolver.Name = "BVolver";
             this.BVolver.Size = new System.Drawing.Size(100, 40);
             this.BVolver.TabIndex = 49;
@@ -199,11 +220,12 @@ namespace ProyectoIntegradorTaller.views.admin
             // 
             // label6
             // 
+            this.label6.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label6.AutoSize = true;
             this.label6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
             this.label6.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(297, 7);
+            this.label6.Location = new System.Drawing.Point(370, 9);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(70, 19);
             this.label6.TabIndex = 49;
@@ -213,7 +235,7 @@ namespace ProyectoIntegradorTaller.views.admin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(686, 390);
+            this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.label6);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -221,8 +243,16 @@ namespace ProyectoIntegradorTaller.views.admin
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ReservarAula";
             this.Load += new System.EventHandler(this.Reporte_Load);
+            this.Controls.SetChildIndex(this.PBEsconder_, 0);
+            this.Controls.SetChildIndex(this.PBMinimizar_, 0);
+            this.Controls.SetChildIndex(this.PBMaximizar_, 0);
+            this.Controls.SetChildIndex(this.PBCerrar_, 0);
             this.Controls.SetChildIndex(this.label6, 0);
             this.Controls.SetChildIndex(this.panel2, 0);
+            ((System.ComponentModel.ISupportInitialize)(this.PBMaximizar_)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PBMinimizar_)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PBCerrar_)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PBEsconder_)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.chart2)).EndInit();

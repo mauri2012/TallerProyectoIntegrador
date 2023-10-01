@@ -80,7 +80,7 @@ namespace ProyectoIntegradorTaller.views.admin
                 return;
             }
 
-            UsuarioLogica.CambiarPassword(nuevaContrasena);
+            UsuarioLogica.CambiarPassword(nuevaContrasena,Session.SessionCacheData.IdProfile);
             MessageBox.Show("Se cambio correctamente la contraseña del usuario!", "Editar", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }

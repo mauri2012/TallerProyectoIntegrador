@@ -2,6 +2,7 @@
 using ProyectoIntegradorTaller.logica;
 using ProyectoIntegradorTaller.models;
 using ProyectoIntegradorTaller.views.components;
+using ProyectoIntegradorTaller.views.profesor;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -12,6 +13,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace ProyectoIntegradorTaller.views.admin
 {
@@ -65,9 +67,23 @@ namespace ProyectoIntegradorTaller.views.admin
 
         private void BVolver_Click(object sender, EventArgs e)
         {
+
+            switch (Session.SessionCacheData.IdProfile)
+            {
+
+                case 1:
+                    AdminMenu menuAdmin = new AdminMenu();
+                    menuAdmin.Show();
+                    break;
+                case 3:
+                    BedelMenu menuBedel = new BedelMenu();
+                    menuBedel.Show();
+                    break;
+                
+            }
+
             this.Hide();
-            AdminMenu admin=new AdminMenu();
-            admin.Show();
+
         }
 
        

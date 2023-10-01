@@ -1,5 +1,7 @@
 ﻿using DraggingControl;
+using ProyectoIntegradorTaller.logica;
 using ProyectoIntegradorTaller.views.components;
+using ProyectoIntegradorTaller.views.profesor;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -9,6 +11,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace ProyectoIntegradorTaller.views.admin
 {
@@ -19,26 +22,27 @@ namespace ProyectoIntegradorTaller.views.admin
             InitializeComponent();
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
+        private void Profesores_Load(object sender, EventArgs e)
         {
-
+            UsuarioLogica.ListarUsuariosPorId(4, dataGridView1);
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+            private void BVolver_Click(object sender, EventArgs e)
         {
+            switch (Session.SessionCacheData.IdProfile)
+            {
 
-        }
-
-        private void dataGridView1_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void BVolver_Click(object sender, EventArgs e)
-        {
+                case 1:
+                    AdminMenu menuAdmin = new AdminMenu();
+                    menuAdmin.Show();
+                    break;
+                case 3:
+                    BedelMenu menuBedel = new BedelMenu();
+                    menuBedel.Show();
+                    break;
+              
+            }
             this.Hide();
-            AdminMenu admin = new AdminMenu();
-            admin.Show();
         }
 
         private void BCrearProfesor_Click(object sender, EventArgs e)

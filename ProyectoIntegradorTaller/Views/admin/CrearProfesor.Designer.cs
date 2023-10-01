@@ -29,17 +29,17 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label5 = new System.Windows.Forms.Label();
+            this.TBCorreo = new CustomControls.RJControls.RJTextBox();
             this.BVolver = new ProyectoIntegradorTaller.views.components.BotonPersonalisado();
             this.BInicioSesion = new ProyectoIntegradorTaller.views.components.BotonPersonalisado();
-            this.TCapacidad = new CustomControls.RJControls.RJTextBox();
-            this.rjTextBox2 = new CustomControls.RJControls.RJTextBox();
+            this.TBNombre = new CustomControls.RJControls.RJTextBox();
+            this.TBDNI = new CustomControls.RJControls.RJTextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.rjTextBox1 = new CustomControls.RJControls.RJTextBox();
+            this.TBApellido = new CustomControls.RJControls.RJTextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.rjTextBox3 = new CustomControls.RJControls.RJTextBox();
-            this.label5 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.PBMaximizar_)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PBMinimizar_)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PBCerrar_)).BeginInit();
@@ -59,20 +59,54 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
             this.panel1.Controls.Add(this.label5);
-            this.panel1.Controls.Add(this.rjTextBox3);
+            this.panel1.Controls.Add(this.TBCorreo);
             this.panel1.Controls.Add(this.BVolver);
             this.panel1.Controls.Add(this.BInicioSesion);
-            this.panel1.Controls.Add(this.TCapacidad);
-            this.panel1.Controls.Add(this.rjTextBox2);
+            this.panel1.Controls.Add(this.TBNombre);
+            this.panel1.Controls.Add(this.TBDNI);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.rjTextBox1);
+            this.panel1.Controls.Add(this.TBApellido);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 32);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(686, 358);
             this.panel1.TabIndex = 0;
+            // 
+            // label5
+            // 
+            this.label5.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
+            this.label5.Location = new System.Drawing.Point(232, 211);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(140, 16);
+            this.label5.TabIndex = 53;
+            this.label5.Text = "Correo Electronico";
+            // 
+            // TBCorreo
+            // 
+            this.TBCorreo.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.TBCorreo.BackColor = System.Drawing.SystemColors.Menu;
+            this.TBCorreo.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
+            this.TBCorreo.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.TBCorreo.BorderRadius = 6;
+            this.TBCorreo.BorderSize = 2;
+            this.TBCorreo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TBCorreo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.TBCorreo.Location = new System.Drawing.Point(235, 231);
+            this.TBCorreo.Margin = new System.Windows.Forms.Padding(4);
+            this.TBCorreo.Multiline = false;
+            this.TBCorreo.Name = "TBCorreo";
+            this.TBCorreo.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this.TBCorreo.PasswordChar = false;
+            this.TBCorreo.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.TBCorreo.PlaceholderText = "";
+            this.TBCorreo.Size = new System.Drawing.Size(200, 31);
+            this.TBCorreo.TabIndex = 52;
+            this.TBCorreo.Texts = "";
+            this.TBCorreo.UnderlinedStyle = true;
             // 
             // BVolver
             // 
@@ -119,51 +153,53 @@
             this.BInicioSesion.UseVisualStyleBackColor = false;
             this.BInicioSesion.Click += new System.EventHandler(this.BInicioSesion_Click);
             // 
-            // TCapacidad
+            // TBNombre
             // 
-            this.TCapacidad.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.TCapacidad.BackColor = System.Drawing.SystemColors.Menu;
-            this.TCapacidad.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
-            this.TCapacidad.BorderFocusColor = System.Drawing.Color.HotPink;
-            this.TCapacidad.BorderRadius = 6;
-            this.TCapacidad.BorderSize = 2;
-            this.TCapacidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TCapacidad.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.TCapacidad.Location = new System.Drawing.Point(235, 66);
-            this.TCapacidad.Margin = new System.Windows.Forms.Padding(4);
-            this.TCapacidad.Multiline = false;
-            this.TCapacidad.Name = "TCapacidad";
-            this.TCapacidad.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.TCapacidad.PasswordChar = false;
-            this.TCapacidad.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.TCapacidad.PlaceholderText = "";
-            this.TCapacidad.Size = new System.Drawing.Size(200, 31);
-            this.TCapacidad.TabIndex = 31;
-            this.TCapacidad.Texts = "";
-            this.TCapacidad.UnderlinedStyle = true;
+            this.TBNombre.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.TBNombre.BackColor = System.Drawing.SystemColors.Menu;
+            this.TBNombre.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
+            this.TBNombre.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.TBNombre.BorderRadius = 6;
+            this.TBNombre.BorderSize = 2;
+            this.TBNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TBNombre.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.TBNombre.Location = new System.Drawing.Point(235, 66);
+            this.TBNombre.Margin = new System.Windows.Forms.Padding(4);
+            this.TBNombre.Multiline = false;
+            this.TBNombre.Name = "TBNombre";
+            this.TBNombre.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this.TBNombre.PasswordChar = false;
+            this.TBNombre.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.TBNombre.PlaceholderText = "";
+            this.TBNombre.Size = new System.Drawing.Size(200, 31);
+            this.TBNombre.TabIndex = 31;
+            this.TBNombre.Texts = "";
+            this.TBNombre.UnderlinedStyle = true;
+            this.TBNombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxTexto_KeyPress);
             // 
-            // rjTextBox2
+            // TBDNI
             // 
-            this.rjTextBox2.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.rjTextBox2.BackColor = System.Drawing.SystemColors.Menu;
-            this.rjTextBox2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
-            this.rjTextBox2.BorderFocusColor = System.Drawing.Color.HotPink;
-            this.rjTextBox2.BorderRadius = 6;
-            this.rjTextBox2.BorderSize = 2;
-            this.rjTextBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rjTextBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.rjTextBox2.Location = new System.Drawing.Point(235, 176);
-            this.rjTextBox2.Margin = new System.Windows.Forms.Padding(4);
-            this.rjTextBox2.Multiline = false;
-            this.rjTextBox2.Name = "rjTextBox2";
-            this.rjTextBox2.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.rjTextBox2.PasswordChar = false;
-            this.rjTextBox2.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.rjTextBox2.PlaceholderText = "";
-            this.rjTextBox2.Size = new System.Drawing.Size(200, 31);
-            this.rjTextBox2.TabIndex = 30;
-            this.rjTextBox2.Texts = "";
-            this.rjTextBox2.UnderlinedStyle = true;
+            this.TBDNI.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.TBDNI.BackColor = System.Drawing.SystemColors.Menu;
+            this.TBDNI.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
+            this.TBDNI.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.TBDNI.BorderRadius = 6;
+            this.TBDNI.BorderSize = 2;
+            this.TBDNI.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TBDNI.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.TBDNI.Location = new System.Drawing.Point(235, 176);
+            this.TBDNI.Margin = new System.Windows.Forms.Padding(4);
+            this.TBDNI.Multiline = false;
+            this.TBDNI.Name = "TBDNI";
+            this.TBDNI.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this.TBDNI.PasswordChar = false;
+            this.TBDNI.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.TBDNI.PlaceholderText = "";
+            this.TBDNI.Size = new System.Drawing.Size(200, 31);
+            this.TBDNI.TabIndex = 30;
+            this.TBDNI.Texts = "";
+            this.TBDNI.UnderlinedStyle = true;
+            this.TBDNI.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxNumerico_KeyPress);
             // 
             // label2
             // 
@@ -187,28 +223,29 @@
             this.label1.TabIndex = 28;
             this.label1.Text = "Apellido";
             // 
-            // rjTextBox1
+            // TBApellido
             // 
-            this.rjTextBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.rjTextBox1.BackColor = System.Drawing.SystemColors.Menu;
-            this.rjTextBox1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
-            this.rjTextBox1.BorderFocusColor = System.Drawing.Color.HotPink;
-            this.rjTextBox1.BorderRadius = 6;
-            this.rjTextBox1.BorderSize = 2;
-            this.rjTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rjTextBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.rjTextBox1.Location = new System.Drawing.Point(235, 121);
-            this.rjTextBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.rjTextBox1.Multiline = false;
-            this.rjTextBox1.Name = "rjTextBox1";
-            this.rjTextBox1.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.rjTextBox1.PasswordChar = false;
-            this.rjTextBox1.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.rjTextBox1.PlaceholderText = "";
-            this.rjTextBox1.Size = new System.Drawing.Size(200, 31);
-            this.rjTextBox1.TabIndex = 27;
-            this.rjTextBox1.Texts = "";
-            this.rjTextBox1.UnderlinedStyle = true;
+            this.TBApellido.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.TBApellido.BackColor = System.Drawing.SystemColors.Menu;
+            this.TBApellido.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
+            this.TBApellido.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.TBApellido.BorderRadius = 6;
+            this.TBApellido.BorderSize = 2;
+            this.TBApellido.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TBApellido.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.TBApellido.Location = new System.Drawing.Point(235, 121);
+            this.TBApellido.Margin = new System.Windows.Forms.Padding(4);
+            this.TBApellido.Multiline = false;
+            this.TBApellido.Name = "TBApellido";
+            this.TBApellido.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this.TBApellido.PasswordChar = false;
+            this.TBApellido.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.TBApellido.PlaceholderText = "";
+            this.TBApellido.Size = new System.Drawing.Size(200, 31);
+            this.TBApellido.TabIndex = 27;
+            this.TBApellido.Texts = "";
+            this.TBApellido.UnderlinedStyle = true;
+            this.TBApellido.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxTexto_KeyPress);
             // 
             // label4
             // 
@@ -233,40 +270,6 @@
             this.label3.Size = new System.Drawing.Size(129, 19);
             this.label3.TabIndex = 54;
             this.label3.Text = "Nuevo Profesor";
-            // 
-            // rjTextBox3
-            // 
-            this.rjTextBox3.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.rjTextBox3.BackColor = System.Drawing.SystemColors.Menu;
-            this.rjTextBox3.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
-            this.rjTextBox3.BorderFocusColor = System.Drawing.Color.HotPink;
-            this.rjTextBox3.BorderRadius = 6;
-            this.rjTextBox3.BorderSize = 2;
-            this.rjTextBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rjTextBox3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.rjTextBox3.Location = new System.Drawing.Point(235, 231);
-            this.rjTextBox3.Margin = new System.Windows.Forms.Padding(4);
-            this.rjTextBox3.Multiline = false;
-            this.rjTextBox3.Name = "rjTextBox3";
-            this.rjTextBox3.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.rjTextBox3.PasswordChar = false;
-            this.rjTextBox3.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.rjTextBox3.PlaceholderText = "";
-            this.rjTextBox3.Size = new System.Drawing.Size(200, 31);
-            this.rjTextBox3.TabIndex = 52;
-            this.rjTextBox3.Texts = "";
-            this.rjTextBox3.UnderlinedStyle = true;
-            // 
-            // label5
-            // 
-            this.label5.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
-            this.label5.Location = new System.Drawing.Point(232, 211);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(140, 16);
-            this.label5.TabIndex = 53;
-            this.label5.Text = "Correo Electronico";
             // 
             // CrearProfesor
             // 
@@ -301,16 +304,16 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private CustomControls.RJControls.RJTextBox rjTextBox2;
+        private CustomControls.RJControls.RJTextBox TBDNI;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private CustomControls.RJControls.RJTextBox rjTextBox1;
+        private CustomControls.RJControls.RJTextBox TBApellido;
         private System.Windows.Forms.Label label4;
-        private CustomControls.RJControls.RJTextBox TCapacidad;
+        private CustomControls.RJControls.RJTextBox TBNombre;
         private components.BotonPersonalisado BInicioSesion;
         private components.BotonPersonalisado BVolver;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label5;
-        private CustomControls.RJControls.RJTextBox rjTextBox3;
+        private CustomControls.RJControls.RJTextBox TBCorreo;
     }
 }
