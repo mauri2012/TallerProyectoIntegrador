@@ -33,6 +33,9 @@ namespace ProyectoIntegradorTaller.views.admin
             this.CBTipo.ValueMember = tipo.ToString();
             isEdit= true;
             id_ = id;
+
+            BInicioSesion.Text = "  Editar Usuario";
+            this.BInicioSesion.Image = global::ProyectoIntegradorTaller.Properties.Resources.edit;
         }
 
         private void BVolver_Click(object sender, EventArgs e)

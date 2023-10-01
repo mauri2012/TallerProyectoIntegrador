@@ -11,6 +11,17 @@ namespace ProyectoIntegradorTaller.logica
 {
     internal class reservaLogica
     {
+
+        public static void CBHoraListar(ComboBoxPersonalisado box)
+        {
+            using (classroom_managerEntities db = new classroom_managerEntities())
+            {
+                box.DataSource = db.horas.ToList();
+                box.DisplayMember = "horario"; // Specify the property to display in the ComboBox
+                box.ValueMember = "id_hora";
+            }
+        }
+
         public static void CBHoraListar(ComboBoxPersonalisado box)
         {
             using (classroom_managerEntities db = new classroom_managerEntities())

@@ -2,6 +2,7 @@
 using ProyectoIntegradorTaller.logica;
 using ProyectoIntegradorTaller.views.admin;
 using ProyectoIntegradorTaller.views.components;
+using ProyectoIntegradorTaller.views.profesor;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -11,12 +12,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace ProyectoIntegradorTaller.views
 {
     public partial class VerReservas : FormPersonalisado
     {
-        private string isAdmin { get; set; }
+
         private int id_aula;
 
         public VerReservas()
@@ -24,25 +26,25 @@ namespace ProyectoIntegradorTaller.views
             InitializeComponent();
             RellenarHorarios();
         }
-        public VerReservas(int id,string isAdmin)
+        public VerReservas(int id, string isAdmin)
         {
-            this.isAdmin=isAdmin;
-            id_aula=id;
+
+            id_aula = id;
             InitializeComponent();
             RellenarHorarios();
         }
 
         void RellenarHorarios()
         {
-            for (int i = 8; i < 22; i+=2)
+            for (int i = 8; i < 22; i += 2)
             {
-                DGHorarios.Rows.Add( i+":00-"+(i+2)+":00");
+                DGHorarios.Rows.Add(i + ":00-" + (i + 2) + ":00");
             }
         }
         private void Reservas_load(object sender, EventArgs e)
         {
             reservaLogica.mostrarReserva(DGHorarios);
-         //   reservaLogica.mostrarReserva(DGHorarios.Columns["lunes"].Name, DGHorarios.Rows[0].Cells[0].Value.ToString(), DGHorarios);
+            //   reservaLogica.mostrarReserva(DGHorarios.Columns["lunes"].Name, DGHorarios.Rows[0].Cells[0].Value.ToString(), DGHorarios);
         }
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -51,32 +53,44 @@ namespace ProyectoIntegradorTaller.views
             {
                 string dia = DGHorarios.Columns[e.ColumnIndex].Name; // Obtén el nombre de la columna
                 string hora = DGHorarios.Rows[e.RowIndex].Cells[0].Value.ToString(); // Obtén el primer elemento de la fila
-              // int id = DGHorarios.Rows[e.RowIndex].Cells[0].Value;
-                // Llama a la función que necesita el nombre de la columna y el primer elemento de la fila
-               SeleccionarReserva(dia, hora);
+                                                                                     // int id = DGHorarios.Rows[e.RowIndex].Cells[0].Value;
+                                                                                     // Llama a la función que necesita el nombre de la columna y el primer elemento de la fila
+                SeleccionarReserva(dia, hora);
             }
         }
 
         private void SeleccionarReserva(string dia, string hora)
         {
             this.Hide();
-            ReservarAula reserva = new ReservarAula(id_aula,hora,dia);
+            ReservarAula reserva = new ReservarAula(id_aula, hora, dia);
             reserva.Show();
         }
 
         private void BVolver_Click(object sender, EventArgs e)
         {
-            if (this.isAdmin == "admin")
+            switch (Session.SessionCacheData.IdProfile)
             {
-                AdminMenu adminMenu = new AdminMenu();
-                adminMenu.Show();
-            }
-            else { 
-                BedelMenu bedelMenu = new BedelMenu();
-                bedelMenu.Show();
+
+                case 1:
+                    AdminMenu menuAdmin = new AdminMenu();
+
+                    menuAdmin.Show();
+
+                    break;
+                case 3:
+                    BedelMenu menuBedel = new BedelMenu();
+                    menuBedel.Show();
+
+                    break;
+                default:
+                    HomeProfesor homeProfesor = new HomeProfesor();
+                    homeProfesor.Show();
+
+                    break;
+
             }
             this.Hide();
-            
+
         }
     }
 }
