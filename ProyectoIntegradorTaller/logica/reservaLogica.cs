@@ -85,7 +85,7 @@ namespace ProyectoIntegradorTaller.logica
 
             
         }
-        public static void insertarReserva(int id_aula, string CBHora,string CBMateria,string CBPRofesor, string CBDia, DateTime fechad, DateTime fechah)
+        public static void insertarReserva(int id_aula, string CBHora,string CBMateria,string CBPRofesor, string CBDia, DateTime fechad, DateTime fechah,string Estado)
         {
             using (classroom_managerEntities db = new classroom_managerEntities())
             {
@@ -102,6 +102,7 @@ namespace ProyectoIntegradorTaller.logica
                     id_materia = materiaElegida.id_materia,
                     id_dia = diaElegido.id_dias,
                     id_aula = id_aula,
+                    activo=Estado,
                     fecha_desde=fechad,
                     fecha_hasta=fechah,
                 };

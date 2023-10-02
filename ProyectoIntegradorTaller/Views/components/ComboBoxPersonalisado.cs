@@ -299,8 +299,9 @@ namespace ProyectoIntegradorTaller.views.components
         //-> Default event
         private void ComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
+            lblText.Text = cmbList.Text;
             if (OnSelectedIndexChanged != null) {
-                lblText.Text = cmbList.Text;
+                
                 OnSelectedIndexChanged.Invoke(sender, e);
             }
                

@@ -25,6 +25,7 @@ namespace ProyectoIntegradorTaller.views.admin
             CBDia.Texts = dia;
             id_aula = id;
             reservaLogica.CBMateriasListar(CBMateria);
+            fecha.Visible = false;
         }
 
         public ReservarAula()
@@ -85,8 +86,16 @@ namespace ProyectoIntegradorTaller.views.admin
             }
             else
             {
-                
-                reservaLogica.insertarReserva(id_aula,this.CBHora.Texts,this.CBMateria.Texts,this.CBPRofesor.Texts,this.CBDia.Texts,fecha_desde.Value.Date,fecha_hasta.Value.Date);
+                string estado;
+                if(Session.SessionCacheData.IdProfile == 1)
+                {
+                    estado = "SI";
+                }
+                else
+                {
+                    estado = "NO";
+                }
+                reservaLogica.insertarReserva(id_aula,this.CBHora.Texts,this.CBMateria.Texts,this.CBPRofesor.Texts,this.CBDia.Texts,fecha_desde.Value.Date,fecha_hasta.Value.Date,estado);
                 MessageBox.Show("Insercion echa exitosamente!", "insersion", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             
@@ -97,8 +106,59 @@ namespace ProyectoIntegradorTaller.views.admin
 
             reservaLogica.CBMateriasListar(CBMateria);
             reservaLogica.CBPRofesorListar(CBPRofesor);
+            List<rango> listaAlumnos = new List<rango>
+            {
+                new rango { Id = 1, Periodo = "Primer Cuatrimestre" },
+                new rango { Id = 2, Periodo = "Segundo Cuatrimestre" },
+                new rango { Id = 3, Periodo = "Dia Puntual" },
+                new rango { Id = 4, Periodo = "Personalizado" }
+            };
+
+            Periodo.DataSource = listaAlumnos;
+
+            Periodo.DisplayMember = "Periodo";
+            ;
+            Periodo.ValueMember = "Id";
+        }
+
+        private void Periodo_OnSelectedIndexChanged(object sender, EventArgs e)
+        {
+            switch (this.Periodo.Texts.ToString())
+            {
+
+                case "Primer Cuatrimestre":
+                    fecha_desde.Value = new DateTime(2023, 3, 10);
+                    fecha_hasta.Value = new DateTime(2023, 6, 15);
+                    fecha_desde.Visible = false;
+                    fecha_hasta.Visible = false;
+                    break;
+                case "Segundo Cuatrimestre":
+                    fecha_hasta.Visible = false;
+                    fecha_desde.Visible = false;
+                    fecha_desde.Value = new DateTime(2023, 7, 10);
+                    fecha_hasta.Value = new DateTime(2023, 11, 20);
+                    break;
+                case "Dia Puntual":
+                    fecha.Visible = true;
+                    fecha_desde.Visible = true;
+                    fecha_hasta.Visible = false;
+                    fecha_desde = fecha_hasta;
+                    break;
+                default:
+                    fecha_desde.Visible = true;
+                    fecha_hasta.Visible = true;
+
+                    break;
+            }
+
         }
     }
 
+    public class rango
+    {
+        public int Id { get; set; }
+        public string Periodo { get; set; }
 
+       
+    }
 }
