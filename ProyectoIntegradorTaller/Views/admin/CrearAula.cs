@@ -19,7 +19,7 @@ namespace ProyectoIntegradorTaller.views.admin
     public partial class CrearAula : DraggablePanelUserControl 
     {
         private int id_;
-        public CrearAula(int Id, string Name,  int CapacidadMax, String Tipo, String Lugar)
+        public CrearAula(int Id, string Name, String Lugar ,int CapacidadMax, String Tipo)
         {
             InitializeComponent();
             id_ = Id;

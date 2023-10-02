@@ -411,8 +411,8 @@ namespace ProyectoIntegradorTaller.views.admin
 
         }
 
-        private Panel panel1;
-        private Panel panel2;
+    
+        
         private Panel panel4;
         private Label LCerrar;
         private Label LBienvenido;
