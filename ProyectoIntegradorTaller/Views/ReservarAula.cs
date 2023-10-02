@@ -46,19 +46,7 @@ namespace ProyectoIntegradorTaller.views.admin
         {
 
         }
-        private void LoadReservarAula1(object sender,EventArgs e)
-        {
-            dias_semana dias = new dias_semana();
-            using (classroom_managerEntities db = new classroom_managerEntities())
-            {
-                CBDia.DataSource = db.tipoUsuario.ToList();
-                CBDia.DisplayMember = "dias"; // Specify the property to display in the ComboBox
-                CBDia.ValueMember = "id_dias";
-            }
-            reservaLogica.CBHoraListar(CBHora);
-            reservaLogica.CBMateriasListar(CBMateria);
 
-        }
 
        
 
@@ -105,7 +93,15 @@ namespace ProyectoIntegradorTaller.views.admin
         {
 
             reservaLogica.CBMateriasListar(CBMateria);
-            reservaLogica.CBPRofesorListar(CBPRofesor);
+            if (Session.SessionCacheData.IdProfile == 1 || Session.SessionCacheData.IdProfile==3)
+            {
+                reservaLogica.CBPRofesorListar(CBPRofesor);
+            }
+            else
+            {
+                CBPRofesor.Texts = Session.SessionCacheData.Name;
+            }
+            
             List<rango> listaAlumnos = new List<rango>
             {
                 new rango { Id = 1, Periodo = "Primer Cuatrimestre" },
@@ -117,7 +113,7 @@ namespace ProyectoIntegradorTaller.views.admin
             Periodo.DataSource = listaAlumnos;
 
             Periodo.DisplayMember = "Periodo";
-            ;
+            
             Periodo.ValueMember = "Id";
         }
 

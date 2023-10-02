@@ -40,13 +40,13 @@
             this.CBMateria = new ProyectoIntegradorTaller.views.components.ComboBoxPersonalisado();
             this.panel3 = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.label6 = new System.Windows.Forms.Label();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Lugar = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CapasidadMaxima = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Tipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Reservas = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.label6 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.PBMaximizar_)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PBMinimizar_)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PBCerrar_)).BeginInit();
@@ -279,6 +279,19 @@
             this.dataGridView1.TabIndex = 1;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
+            // label6
+            // 
+            this.label6.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
+            this.label6.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.White;
+            this.label6.Location = new System.Drawing.Point(361, 7);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(54, 19);
+            this.label6.TabIndex = 56;
+            this.label6.Text = "Home";
+            // 
             // ID
             // 
             this.ID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
@@ -327,19 +340,7 @@
             this.Reservas.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.Reservas.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.Reservas.Text = "ver reservas";
-            // 
-            // label6
-            // 
-            this.label6.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
-            this.label6.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(361, 7);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(54, 19);
-            this.label6.TabIndex = 56;
-            this.label6.Text = "Home";
+            this.Reservas.UseColumnTextForButtonValue = true;
             // 
             // HomeProfesor
             // 
