@@ -299,10 +299,13 @@ namespace ProyectoIntegradorTaller.views.components
         //-> Default event
         private void ComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (OnSelectedIndexChanged != null)
+            if (OnSelectedIndexChanged != null) {
+                lblText.Text = cmbList.Text;
                 OnSelectedIndexChanged.Invoke(sender, e);
-            //Refresh text
-            lblText.Text = cmbList.Text;
+            }
+               
+            
+            
         }
 
         //-> Draw icon
