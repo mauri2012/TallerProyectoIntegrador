@@ -199,7 +199,7 @@
             this.TBDNI.TabIndex = 30;
             this.TBDNI.Texts = "";
             this.TBDNI.UnderlinedStyle = true;
-            this.TBDNI.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxNumerico_KeyPress);
+            
             // 
             // label2
             // 

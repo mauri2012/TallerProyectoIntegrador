@@ -32,21 +32,22 @@ namespace ProyectoIntegradorTaller.views.admin
         {
             if (string.IsNullOrEmpty(TBApellido.Texts) && string.IsNullOrEmpty(TBCorreo.Texts) && string.IsNullOrEmpty(TBDNI.Texts) && string.IsNullOrEmpty(TBNombre.Texts))
             {
+                MessageBox.Show("Debe completar todos los campos!", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                
 
+            }
+            else {
                 if (IsValidEmail(TBCorreo.Texts))
                 {
                     UsuarioLogica.agregar(int.Parse(TBDNI.Texts), TBApellido.Texts, TBCorreo.Texts, TBNombre.Texts, 4);
                     MessageBox.Show("Se agrego un profesor con exito!", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
-                else {
+                else
+                {
 
                     MessageBox.Show("El correo electronico ingresado no cumple el formato!", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
 
-            }
-            else {
-
-                MessageBox.Show("Debe completar todos los campos!", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
@@ -66,11 +67,7 @@ namespace ProyectoIntegradorTaller.views.admin
             }
         }
 
-        private void textBoxNumerico_KeyPress(object sender, KeyPressEventArgs e)
-        {
-
-        }
-
+       
         public static bool IsValidEmail(string email)
         {
             // Define una expresión regular para validar direcciones de correo electrónico.
