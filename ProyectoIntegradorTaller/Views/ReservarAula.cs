@@ -86,7 +86,7 @@ namespace ProyectoIntegradorTaller.views.admin
             else
             {
                 
-                reservaLogica.insertarReserva(id_aula,this.CBHora.Texts,this.CBMateria.Texts,this.CBPRofesor.Texts,this.CBDia.Texts);
+                reservaLogica.insertarReserva(id_aula,this.CBHora.Texts,this.CBMateria.Texts,this.CBPRofesor.Texts,this.CBDia.Texts,fecha_desde.Value.Date,fecha_hasta.Value.Date);
                 MessageBox.Show("Insercion echa exitosamente!", "insersion", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             

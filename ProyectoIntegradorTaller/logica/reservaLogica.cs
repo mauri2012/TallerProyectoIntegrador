@@ -85,7 +85,7 @@ namespace ProyectoIntegradorTaller.logica
 
             
         }
-        public static void insertarReserva(int id_aula, string CBHora,string CBMateria,string CBPRofesor, string CBDia)
+        public static void insertarReserva(int id_aula, string CBHora,string CBMateria,string CBPRofesor, string CBDia, DateTime fechad, DateTime fechah)
         {
             using (classroom_managerEntities db = new classroom_managerEntities())
             {
@@ -101,8 +101,9 @@ namespace ProyectoIntegradorTaller.logica
                     id_usuario = usuarioProfesor.id_usuario,
                     id_materia = materiaElegida.id_materia,
                     id_dia = diaElegido.id_dias,
-                    id_aula = id_aula
-                   
+                    id_aula = id_aula,
+                    fecha_desde=fechad,
+                    fecha_hasta=fechah,
                 };
                 db.reserva.Add(unaReserva);
                 db.SaveChanges();
@@ -143,7 +144,7 @@ namespace ProyectoIntegradorTaller.logica
 
                 //   var diaElegido = db.dias_semana.FirstOrDefault(dia => dia.dias == diaColumna);
                 //  var horaElegido = db.horas.FirstOrDefault(hora => hora.horario == Horario);
-                var diaColumna=dataGrid.Columns["lunes"].Name;
+              /*  var diaColumna=dataGrid.Columns["lunes"].Name;
                 Dictionary<int, string> dict = new Dictionary<int, string>()
                 {
                     {0,"Lunes"},
