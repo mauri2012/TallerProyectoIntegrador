@@ -17,6 +17,7 @@ namespace ProyectoIntegradorTaller.logica
             using (classroom_managerEntities db = new classroom_managerEntities())
             {
                 var query = from ubicacion in db.ubicacion
+                            where ubicacion.activo == "SI"
                             select new
                             {
                                 Id = ubicacion.id_ubicacion,
@@ -32,7 +33,8 @@ namespace ProyectoIntegradorTaller.logica
         {
             ubicacion sub = new ubicacion
             {
-                lugar = tlugar
+                lugar = tlugar,
+                activo = "SI"
                
             };
             using (classroom_managerEntities db = new classroom_managerEntities())
@@ -49,7 +51,7 @@ namespace ProyectoIntegradorTaller.logica
             using (classroom_managerEntities dbContext = new classroom_managerEntities())
             {
                 var query = dbContext.ubicacion
-                     .Where(lugar => lugar.lugar.Contains(valor))
+                     .Where(lugar => lugar.lugar.Contains(valor) && lugar.activo == "SI")
                     .Select(lugar => new
                     {
                         Id = lugar.id_ubicacion,
@@ -58,6 +60,23 @@ namespace ProyectoIntegradorTaller.logica
                     .ToList();
 
                 dataGrid.DataSource = query;
+            }
+        }
+
+        public static void desactivarLugar(string estado, DataGridView dataGrid, DataGridViewCellEventArgs e)
+        {
+            
+            using (classroom_managerEntities db = new classroom_managerEntities())
+            {
+                int idLugar = Convert.ToInt32(dataGrid.Rows[e.RowIndex].Cells["Id"].Value); // 
+
+                ubicacion aulaDesactivar = db.ubicacion.FirstOrDefault(u => u.id_ubicacion == idLugar);
+                if (aulaDesactivar != null)
+                {
+                    aulaDesactivar.activo = estado;
+                    db.SaveChanges();
+
+                }
             }
         }
     }

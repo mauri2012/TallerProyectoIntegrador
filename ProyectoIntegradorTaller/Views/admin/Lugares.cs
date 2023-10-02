@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Microsoft.VisualBasic;
 using ProyectoIntegradorTaller.logica;
 using ProyectoIntegradorTaller.views.components;
 
@@ -23,7 +24,7 @@ namespace ProyectoIntegradorTaller.views.admin
         private void Lugares_Load(object sender, EventArgs e)
         {
 
-           
+
             try
             {
                 LugaresLogica.listarLugares(dataGridView1);
@@ -36,6 +37,13 @@ namespace ProyectoIntegradorTaller.views.admin
             {
                 MessageBox.Show(ex.Message);
             }
+
+            DataGridViewButtonColumn buttonColumn4 = new DataGridViewButtonColumn();
+            buttonColumn4.Name = "Eliminar";
+            buttonColumn4.Text = "Eliminar";
+            buttonColumn4.UseColumnTextForButtonValue = true;
+
+            dataGridView1.Columns.Add(buttonColumn4);
         }
 
         private void BVolver_Click(object sender, EventArgs e)
@@ -57,6 +65,21 @@ namespace ProyectoIntegradorTaller.views.admin
 
             }
         }
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dataGridView1.Columns[e.ColumnIndex].Name == "Eliminar")
+            {
+                MsgBoxResult ask = (MsgBoxResult)MessageBox.Show("Seguro que quiere eliminar la ubicaion " + (string)dataGridView1.Rows[e.RowIndex].Cells[1].Value + "  ?", "Eliminar", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (ask == MsgBoxResult.Yes)
+                {
+                    LugaresLogica.desactivarLugar("NO", dataGridView1, e);
+                   
+                }
+                LugaresLogica.listarLugares(dataGridView1);
+                
+            }
+        }
+
 
         private void BBuscar_Click(object sender, EventArgs e)
         {
