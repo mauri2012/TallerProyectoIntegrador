@@ -42,8 +42,8 @@ namespace ProyectoIntegradorTaller.views.admin
         private void BVolver_Click(object sender, EventArgs e)
         {
             this.Close();
-            AdminMenu admin = new AdminMenu();
-            admin.Show();
+            BedelMenu bedel = new BedelMenu();
+            bedel.Show();
         }
     }
 }
