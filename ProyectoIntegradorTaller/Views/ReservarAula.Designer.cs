@@ -37,9 +37,9 @@ namespace ProyectoIntegradorTaller.views.admin
             this.CBHora = new ProyectoIntegradorTaller.views.components.ComboBoxPersonalisado();
             this.CBPRofesor = new ProyectoIntegradorTaller.views.components.ComboBoxPersonalisado();
             this.CBMateria = new ProyectoIntegradorTaller.views.components.ComboBoxPersonalisado();
-            this.timePickerPersonalisado2 = new ProyectoIntegradorTaller.views.components.TimePickerPersonalisado();
+            this.fecha_desde = new ProyectoIntegradorTaller.views.components.TimePickerPersonalisado();
             this.BReservarAula = new ProyectoIntegradorTaller.views.components.BotonPersonalisado();
-            this.timePickerPersonalisado1 = new ProyectoIntegradorTaller.views.components.TimePickerPersonalisado();
+            this.fecha_hasta = new ProyectoIntegradorTaller.views.components.TimePickerPersonalisado();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -74,9 +74,9 @@ namespace ProyectoIntegradorTaller.views.admin
             this.panel1.Controls.Add(this.CBHora);
             this.panel1.Controls.Add(this.CBPRofesor);
             this.panel1.Controls.Add(this.CBMateria);
-            this.panel1.Controls.Add(this.timePickerPersonalisado2);
+            this.panel1.Controls.Add(this.fecha_desde);
             this.panel1.Controls.Add(this.BReservarAula);
-            this.panel1.Controls.Add(this.timePickerPersonalisado1);
+            this.panel1.Controls.Add(this.fecha_hasta);
             this.panel1.Controls.Add(this.pictureBox4);
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.label5);
@@ -188,18 +188,18 @@ namespace ProyectoIntegradorTaller.views.admin
             this.CBMateria.TabIndex = 35;
             this.CBMateria.Texts = "";
             // 
-            // timePickerPersonalisado2
+            // fecha_desde
             // 
-            this.timePickerPersonalisado2.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.timePickerPersonalisado2.BorderSize = 0;
-            this.timePickerPersonalisado2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F);
-            this.timePickerPersonalisado2.Location = new System.Drawing.Point(92, 184);
-            this.timePickerPersonalisado2.MinimumSize = new System.Drawing.Size(4, 35);
-            this.timePickerPersonalisado2.Name = "timePickerPersonalisado2";
-            this.timePickerPersonalisado2.Size = new System.Drawing.Size(244, 35);
-            this.timePickerPersonalisado2.SkinColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
-            this.timePickerPersonalisado2.TabIndex = 34;
-            this.timePickerPersonalisado2.TextColor = System.Drawing.Color.White;
+            this.fecha_desde.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.fecha_desde.BorderSize = 0;
+            this.fecha_desde.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F);
+            this.fecha_desde.Location = new System.Drawing.Point(92, 184);
+            this.fecha_desde.MinimumSize = new System.Drawing.Size(4, 35);
+            this.fecha_desde.Name = "fecha_desde";
+            this.fecha_desde.Size = new System.Drawing.Size(244, 35);
+            this.fecha_desde.SkinColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
+            this.fecha_desde.TabIndex = 34;
+            this.fecha_desde.TextColor = System.Drawing.Color.White;
             // 
             // BReservarAula
             // 
@@ -221,18 +221,18 @@ namespace ProyectoIntegradorTaller.views.admin
             this.BReservarAula.UseVisualStyleBackColor = false;
             this.BReservarAula.Click += new System.EventHandler(this.botonPersonalisado1_Click);
             // 
-            // timePickerPersonalisado1
+            // fecha_hasta
             // 
-            this.timePickerPersonalisado1.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.timePickerPersonalisado1.BorderSize = 0;
-            this.timePickerPersonalisado1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F);
-            this.timePickerPersonalisado1.Location = new System.Drawing.Point(386, 184);
-            this.timePickerPersonalisado1.MinimumSize = new System.Drawing.Size(4, 35);
-            this.timePickerPersonalisado1.Name = "timePickerPersonalisado1";
-            this.timePickerPersonalisado1.Size = new System.Drawing.Size(244, 35);
-            this.timePickerPersonalisado1.SkinColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
-            this.timePickerPersonalisado1.TabIndex = 9;
-            this.timePickerPersonalisado1.TextColor = System.Drawing.Color.White;
+            this.fecha_hasta.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.fecha_hasta.BorderSize = 0;
+            this.fecha_hasta.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F);
+            this.fecha_hasta.Location = new System.Drawing.Point(386, 184);
+            this.fecha_hasta.MinimumSize = new System.Drawing.Size(4, 35);
+            this.fecha_hasta.Name = "fecha_hasta";
+            this.fecha_hasta.Size = new System.Drawing.Size(244, 35);
+            this.fecha_hasta.SkinColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
+            this.fecha_hasta.TabIndex = 9;
+            this.fecha_hasta.TextColor = System.Drawing.Color.White;
             // 
             // pictureBox4
             // 
@@ -371,9 +371,9 @@ namespace ProyectoIntegradorTaller.views.admin
         private Panel panel2;
         private Label label8;
         private views.components.BotonPersonalisado BReservarAula;
-        private views.components.TimePickerPersonalisado timePickerPersonalisado1;
+        private views.components.TimePickerPersonalisado fecha_hasta;
         private views.components.ComboBoxPersonalisado CBMateria;
-        private views.components.TimePickerPersonalisado timePickerPersonalisado2;
+        private views.components.TimePickerPersonalisado fecha_desde;
         private views.components.ComboBoxPersonalisado CBPRofesor;
         private views.components.ComboBoxPersonalisado CBDia;
         private views.components.ComboBoxPersonalisado CBHora;
