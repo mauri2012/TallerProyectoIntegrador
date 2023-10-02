@@ -44,7 +44,7 @@ namespace ProyectoIntegradorTaller.logica
         {
             using (classroom_managerEntities db = new classroom_managerEntities())
             {
-                box.DataSource = db.materias.ToList();
+                box.DataSource = db.materias.Where(m => m.activo=="SI").ToList();
                 box.DisplayMember = "materia"; // Specify the property to display in the ComboBox
                 box.ValueMember = "id_materia";
             }
