@@ -76,6 +76,7 @@
   <ItemGroup>
     <Compile Include="logica\Encript.cs" />
     <Compile Include="logica\LogicaMaterias.cs" />
+    <Compile Include="logica\LugaresLogica.cs" />
     <Compile Include="logica\reservaLogica.cs" />
     <Compile Include="logica\Session.cs" />
     <Compile Include="logica\LogicaClase.cs" />
@@ -170,6 +171,12 @@
     </Compile>
     <Compile Include="views\admin\CrearUsuario.Designer.cs">
       <DependentUpon>CrearUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="views\admin\Lugares.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="views\admin\Lugares.Designer.cs">
+      <DependentUpon>Lugares.cs</DependentUpon>
     </Compile>
     <Compile Include="views\bedel\ReservasPendientes.cs">
       <SubType>Form</SubType>
@@ -301,6 +308,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="views\admin\CrearUsuario.resx">
       <DependentUpon>CrearUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="views\admin\Lugares.resx">
+      <DependentUpon>Lugares.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="views\bedel\Profesores.resx">
       <DependentUpon>Profesores.cs</DependentUpon>
@@ -485,6 +495,7 @@
       <DependentUpon>Model1.edmx</DependentUpon>
       <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\map.png" />
     <None Include="Resources\alert.png" />
     <None Include="Resources\pending.png" />
     <None Include="Resources\resource.png" />

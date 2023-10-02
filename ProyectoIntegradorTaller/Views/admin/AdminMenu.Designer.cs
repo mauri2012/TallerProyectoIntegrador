@@ -42,6 +42,7 @@ namespace ProyectoIntegradorTaller.views.admin
             this.BMaterias = new ProyectoIntegradorTaller.views.components.BotonPersonalisado();
             this.BUsuarios = new ProyectoIntegradorTaller.views.components.BotonPersonalisado();
             this.BCrearAula = new ProyectoIntegradorTaller.views.components.BotonPersonalisado();
+            this.BLugares = new ProyectoIntegradorTaller.views.components.BotonPersonalisado();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.itemBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -149,6 +150,11 @@ namespace ProyectoIntegradorTaller.views.admin
             this.CBMateria.Size = new System.Drawing.Size(200, 30);
             this.CBMateria.TabIndex = 37;
             this.CBMateria.Texts = "";
+
+
+
+
+
             // 
             // TBBusqueda
             // 
@@ -197,6 +203,31 @@ namespace ProyectoIntegradorTaller.views.admin
             this.BMaterias.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.BMaterias.UseVisualStyleBackColor = false;
             this.BMaterias.Click += new System.EventHandler(this.BMaterias_Click);
+
+            // 
+            // BLugares
+            // 
+            this.BLugares.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.BLugares.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
+            this.BLugares.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
+            this.BLugares.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.BLugares.BorderRadius = 6;
+            this.BLugares.BorderSize = 0;
+            this.BLugares.FlatAppearance.BorderSize = 0;
+            this.BLugares.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BLugares.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BLugares.ForeColor = System.Drawing.Color.White;
+            this.BLugares.Image = global::ProyectoIntegradorTaller.Properties.Resources.map;
+            this.BLugares.Location = new System.Drawing.Point(170, 13);
+            this.BLugares.Name = "BLugares";
+            this.BLugares.Size = new System.Drawing.Size(150, 40);
+            this.BLugares.TabIndex = 7;
+            this.BLugares.Text = "  Lugares";
+            this.BLugares.TextColor = System.Drawing.Color.White;
+            this.BLugares.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.BLugares.UseVisualStyleBackColor = false;
+            this.BLugares.Click += new System.EventHandler(this.BLugares_Click);
+
             // 
             // BUsuarios
             // 
@@ -346,6 +377,7 @@ namespace ProyectoIntegradorTaller.views.admin
             this.panel3.Controls.Add(this.BCrearAula);
             this.panel3.Controls.Add(this.BUsuarios);
             this.panel3.Controls.Add(this.BMaterias);
+            this.panel3.Controls.Add(this.BLugares);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel3.Location = new System.Drawing.Point(0, 385);
             this.panel3.Name = "panel3";
@@ -424,6 +456,7 @@ namespace ProyectoIntegradorTaller.views.admin
         private views.components.BotonPersonalisado BMaterias;
         private views.components.BotonPersonalisado BUsuarios;
         private views.components.BotonPersonalisado BBuscar;
+        private views.components.BotonPersonalisado BLugares;
         private CustomControls.RJControls.RJTextBox TBBusqueda;
         private BindingSource itemBindingSource;
         private Label label1;

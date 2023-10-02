@@ -66,9 +66,14 @@ namespace ProyectoIntegradorTaller.logica
             using (classroom_managerEntities dbContext = new classroom_managerEntities())
             {
                 var query = dbContext.materias
-                    .Where(materia_ => materia_.materia.Contains(valor))
+                    .Where(materia => materia.materia.Contains(valor) && materia.activo == "SI")
+                    .Select(materia => new
+                    {
+                        Id = materia.id_materia,
+                        Materia = materia.materia,
+                        Activo = materia.activo
+                    })
                     .ToList();
-
 
                 dataGrid.DataSource = query;
             }

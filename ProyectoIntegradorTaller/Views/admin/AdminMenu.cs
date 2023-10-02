@@ -135,6 +135,13 @@ namespace ProyectoIntegradorTaller.views.admin
             aula.Show();
         }
 
+        private void BLugares_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Lugares lugares=new Lugares();  
+            lugares.Show();
+        }
+
         private void BMaterias_Click(object sender, EventArgs e)
         {
             this.Hide();
