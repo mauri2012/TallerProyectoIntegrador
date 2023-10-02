@@ -153,13 +153,6 @@ namespace ProyectoIntegradorTaller.views.admin
             usuarios.Show();
         }
 
-        private void BProfesores_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            ReservasPendientes profesores = new ReservasPendientes();
-            profesores.Show();
-
-        }
 
         
         private void botonPersonalisado1_Click(object sender, EventArgs e)

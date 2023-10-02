@@ -27,21 +27,11 @@ namespace ProyectoIntegradorTaller.views.admin
             UsuarioLogica.ListarUsuariosPorId(4, dataGridView1);
         }
 
-            private void BVolver_Click(object sender, EventArgs e)
+        private void BVolver_Click(object sender, EventArgs e)
         {
-            switch (Session.SessionCacheData.IdProfile)
-            {
 
-                case 1:
-                    AdminMenu menuAdmin = new AdminMenu();
-                    menuAdmin.Show();
-                    break;
-                case 3:
-                    BedelMenu menuBedel = new BedelMenu();
-                    menuBedel.Show();
-                    break;
-              
-            }
+            BedelMenu menuBedel = new BedelMenu();
+            menuBedel.Show();
             this.Hide();
         }
 

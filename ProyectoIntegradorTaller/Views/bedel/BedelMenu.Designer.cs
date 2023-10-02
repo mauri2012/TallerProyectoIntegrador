@@ -32,7 +32,7 @@ namespace ProyectoIntegradorTaller.views.admin
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.LBienvenido = new System.Windows.Forms.Label();
             this.CBMateria = new ProyectoIntegradorTaller.views.components.ComboBoxPersonalisado();
@@ -48,6 +48,7 @@ namespace ProyectoIntegradorTaller.views.admin
             this.capacidadMaxDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.itemProfesorBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panel3 = new System.Windows.Forms.Panel();
+            this.BPendientes = new ProyectoIntegradorTaller.views.components.BotonPersonalisado();
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.PBMaximizar_)).BeginInit();
@@ -60,7 +61,14 @@ namespace ProyectoIntegradorTaller.views.admin
             this.panel5.SuspendLayout();
             this.panel6.SuspendLayout();
             this.SuspendLayout();
-           
+            // 
+            // PBMaximizar_
+            // 
+            this.PBMaximizar_.Location = new System.Drawing.Point(752, 11);
+            // 
+            // PBCerrar_
+            // 
+            this.PBCerrar_.Location = new System.Drawing.Point(773, 11);
             // 
             // label1
             // 
@@ -229,14 +237,14 @@ namespace ProyectoIntegradorTaller.views.admin
             this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView1.ColumnHeadersHeight = 40;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idDataGridViewTextBoxColumn,
@@ -294,6 +302,7 @@ namespace ProyectoIntegradorTaller.views.admin
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.BPendientes);
             this.panel3.Controls.Add(this.BProfesores);
             this.panel3.Controls.Add(this.BMaterias);
             this.panel3.Controls.Add(this.botonPersonalisado1);
@@ -302,6 +311,29 @@ namespace ProyectoIntegradorTaller.views.admin
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(800, 96);
             this.panel3.TabIndex = 12;
+            // 
+            // BPendientes
+            // 
+            this.BPendientes.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.BPendientes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
+            this.BPendientes.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
+            this.BPendientes.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.BPendientes.BorderRadius = 6;
+            this.BPendientes.BorderSize = 0;
+            this.BPendientes.FlatAppearance.BorderSize = 0;
+            this.BPendientes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BPendientes.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BPendientes.ForeColor = System.Drawing.Color.White;
+            this.BPendientes.Image = global::ProyectoIntegradorTaller.Properties.Resources.alert;
+            this.BPendientes.Location = new System.Drawing.Point(294, 44);
+            this.BPendientes.Name = "BPendientes";
+            this.BPendientes.Size = new System.Drawing.Size(182, 40);
+            this.BPendientes.TabIndex = 17;
+            this.BPendientes.Text = "  Reservas Pendientes";
+            this.BPendientes.TextColor = System.Drawing.Color.White;
+            this.BPendientes.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.BPendientes.UseVisualStyleBackColor = false;
+            this.BPendientes.Click += new System.EventHandler(this.BPendientes_Click);
             // 
             // panel5
             // 
@@ -385,6 +417,7 @@ namespace ProyectoIntegradorTaller.views.admin
         private Panel panel3;
         private Panel panel5;
         private Panel panel6;
+        private components.BotonPersonalisado BPendientes;
     }
 
     #endregion

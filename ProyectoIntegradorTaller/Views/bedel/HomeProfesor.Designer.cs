@@ -32,9 +32,9 @@
             this.BBuscar = new ProyectoIntegradorTaller.views.components.BotonPersonalisado();
             this.TBBusqueda = new CustomControls.RJControls.RJTextBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.BVolver = new ProyectoIntegradorTaller.views.components.BotonPersonalisado();
             this.panel2 = new System.Windows.Forms.Panel();
             this.LBienvenido = new System.Windows.Forms.Label();
-            this.CBMateria = new ProyectoIntegradorTaller.views.components.ComboBoxPersonalisado();
             this.panel3 = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -45,7 +45,6 @@
             this.materia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Estado = new System.Windows.Forms.DataGridViewButtonColumn();
             this.label6 = new System.Windows.Forms.Label();
-            this.BVolver = new ProyectoIntegradorTaller.views.components.BotonPersonalisado();
             ((System.ComponentModel.ISupportInitialize)(this.PBMaximizar_)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PBMinimizar_)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PBCerrar_)).BeginInit();
@@ -116,10 +115,31 @@
             this.panel1.Size = new System.Drawing.Size(800, 80);
             this.panel1.TabIndex = 21;
             // 
+            // BVolver
+            // 
+            this.BVolver.BackColor = System.Drawing.Color.LimeGreen;
+            this.BVolver.BackgroundColor = System.Drawing.Color.LimeGreen;
+            this.BVolver.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.BVolver.BorderRadius = 6;
+            this.BVolver.BorderSize = 0;
+            this.BVolver.FlatAppearance.BorderSize = 0;
+            this.BVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BVolver.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BVolver.ForeColor = System.Drawing.Color.AliceBlue;
+            this.BVolver.Image = global::ProyectoIntegradorTaller.Properties.Resources.path30;
+            this.BVolver.Location = new System.Drawing.Point(12, 28);
+            this.BVolver.Name = "BVolver";
+            this.BVolver.Size = new System.Drawing.Size(100, 40);
+            this.BVolver.TabIndex = 53;
+            this.BVolver.Text = "  Volver";
+            this.BVolver.TextColor = System.Drawing.Color.AliceBlue;
+            this.BVolver.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.BVolver.UseVisualStyleBackColor = false;
+            this.BVolver.Click += new System.EventHandler(this.BVolver_Click);
+            // 
             // panel2
             // 
             this.panel2.Controls.Add(this.LBienvenido);
-            this.panel2.Controls.Add(this.CBMateria);
             this.panel2.Controls.Add(this.BBuscar);
             this.panel2.Controls.Add(this.TBBusqueda);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
@@ -137,30 +157,6 @@
             this.LBienvenido.Size = new System.Drawing.Size(85, 18);
             this.LBienvenido.TabIndex = 37;
             this.LBienvenido.Text = "Reservas";
-            // 
-            // CBMateria
-            // 
-            this.CBMateria.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.CBMateria.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.CBMateria.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
-            this.CBMateria.BorderSize = 2;
-            this.CBMateria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.CBMateria.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.CBMateria.ForeColor = System.Drawing.Color.DimGray;
-            this.CBMateria.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
-            this.CBMateria.Items.AddRange(new object[] {
-            "Nombre",
-            "Capacidad",
-            "Equipamiento"});
-            this.CBMateria.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(228)))), ((int)(((byte)(245)))));
-            this.CBMateria.ListTextColor = System.Drawing.Color.DimGray;
-            this.CBMateria.Location = new System.Drawing.Point(342, 26);
-            this.CBMateria.MinimumSize = new System.Drawing.Size(200, 30);
-            this.CBMateria.Name = "CBMateria";
-            this.CBMateria.Padding = new System.Windows.Forms.Padding(2);
-            this.CBMateria.Size = new System.Drawing.Size(200, 30);
-            this.CBMateria.TabIndex = 36;
-            this.CBMateria.Texts = "";
             // 
             // panel3
             // 
@@ -277,28 +273,6 @@
             this.label6.TabIndex = 56;
             this.label6.Text = "Pendientes";
             // 
-            // BVolver
-            // 
-            this.BVolver.BackColor = System.Drawing.Color.LimeGreen;
-            this.BVolver.BackgroundColor = System.Drawing.Color.LimeGreen;
-            this.BVolver.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.BVolver.BorderRadius = 6;
-            this.BVolver.BorderSize = 0;
-            this.BVolver.FlatAppearance.BorderSize = 0;
-            this.BVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BVolver.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BVolver.ForeColor = System.Drawing.Color.AliceBlue;
-            this.BVolver.Image = global::ProyectoIntegradorTaller.Properties.Resources.path30;
-            this.BVolver.Location = new System.Drawing.Point(12, 28);
-            this.BVolver.Name = "BVolver";
-            this.BVolver.Size = new System.Drawing.Size(100, 40);
-            this.BVolver.TabIndex = 53;
-            this.BVolver.Text = "  Volver";
-            this.BVolver.TextColor = System.Drawing.Color.AliceBlue;
-            this.BVolver.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.BVolver.UseVisualStyleBackColor = false;
-            this.BVolver.Click += new System.EventHandler(this.BVolver_Click);
-            // 
             // ReservasPendientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -343,7 +317,6 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private components.ComboBoxPersonalisado CBMateria;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label LBienvenido;
         private System.Windows.Forms.DataGridViewTextBoxColumn Tipo;

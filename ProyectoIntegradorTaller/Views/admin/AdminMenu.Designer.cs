@@ -38,7 +38,7 @@ namespace ProyectoIntegradorTaller.views.admin
             this.botonPersonalisado1 = new ProyectoIntegradorTaller.views.components.BotonPersonalisado();
             this.BBuscar = new ProyectoIntegradorTaller.views.components.BotonPersonalisado();
             this.TBBusqueda = new CustomControls.RJControls.RJTextBox();
-            this.BProfesores = new ProyectoIntegradorTaller.views.components.BotonPersonalisado();
+            this.CBMateria = new ProyectoIntegradorTaller.views.components.ComboBoxPersonalisado();
             this.BMaterias = new ProyectoIntegradorTaller.views.components.BotonPersonalisado();
             this.BUsuarios = new ProyectoIntegradorTaller.views.components.BotonPersonalisado();
             this.BCrearAula = new ProyectoIntegradorTaller.views.components.BotonPersonalisado();
@@ -124,6 +124,31 @@ namespace ProyectoIntegradorTaller.views.admin
             this.BBuscar.TabIndex = 10;
             this.BBuscar.TextColor = System.Drawing.Color.White;
             this.BBuscar.UseVisualStyleBackColor = false;
+
+            // 
+            // CBMateria
+            // 
+            this.CBMateria.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.CBMateria.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.CBMateria.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
+            this.CBMateria.BorderSize = 2;
+            this.CBMateria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CBMateria.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.CBMateria.ForeColor = System.Drawing.Color.DimGray;
+            this.CBMateria.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
+            this.CBMateria.Items.AddRange(new object[] {
+            "Nombre",
+            "Capacidad",
+            "Equipamiento"});
+            this.CBMateria.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(228)))), ((int)(((byte)(245)))));
+            this.CBMateria.ListTextColor = System.Drawing.Color.DimGray;
+            this.CBMateria.Location = new System.Drawing.Point(342, 33);
+            this.CBMateria.MinimumSize = new System.Drawing.Size(200, 30);
+            this.CBMateria.Name = "CBMateria";
+            this.CBMateria.Padding = new System.Windows.Forms.Padding(2);
+            this.CBMateria.Size = new System.Drawing.Size(200, 30);
+            this.CBMateria.TabIndex = 37;
+            this.CBMateria.Texts = "";
             // 
             // TBBusqueda
             // 
@@ -148,29 +173,7 @@ namespace ProyectoIntegradorTaller.views.admin
             this.TBBusqueda.Texts = "";
             this.TBBusqueda.UnderlinedStyle = true;
             this.TBBusqueda._TextChanged += new System.EventHandler(this.TBBusqueda__TextChanged);
-            // 
-            // BProfesores
-            // 
-            this.BProfesores.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.BProfesores.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
-            this.BProfesores.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
-            this.BProfesores.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.BProfesores.BorderRadius = 6;
-            this.BProfesores.BorderSize = 0;
-            this.BProfesores.FlatAppearance.BorderSize = 0;
-            this.BProfesores.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BProfesores.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BProfesores.ForeColor = System.Drawing.Color.White;
-            this.BProfesores.Image = global::ProyectoIntegradorTaller.Properties.Resources.badge;
-            this.BProfesores.Location = new System.Drawing.Point(170, 13);
-            this.BProfesores.Name = "BProfesores";
-            this.BProfesores.Size = new System.Drawing.Size(150, 40);
-            this.BProfesores.TabIndex = 8;
-            this.BProfesores.Text = "Reservas Pendientes";
-            this.BProfesores.TextColor = System.Drawing.Color.White;
-            this.BProfesores.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.BProfesores.UseVisualStyleBackColor = false;
-            this.BProfesores.Click += new System.EventHandler(this.BProfesores_Click);
+            
             // 
             // BMaterias
             // 
@@ -343,7 +346,6 @@ namespace ProyectoIntegradorTaller.views.admin
             this.panel3.Controls.Add(this.BCrearAula);
             this.panel3.Controls.Add(this.BUsuarios);
             this.panel3.Controls.Add(this.BMaterias);
-            this.panel3.Controls.Add(this.BProfesores);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel3.Location = new System.Drawing.Point(0, 385);
             this.panel3.Name = "panel3";
@@ -352,6 +354,7 @@ namespace ProyectoIntegradorTaller.views.admin
             // 
             // panel5
             // 
+            this.panel5.Controls.Add(this.CBMateria);
             this.panel5.Controls.Add(this.LBienvenido);
             this.panel5.Controls.Add(this.TBBusqueda);
             this.panel5.Controls.Add(this.BBuscar);
@@ -417,7 +420,7 @@ namespace ProyectoIntegradorTaller.views.admin
         private TextBox textBox2;
         private DataGridView dataGridView1;
         private views.components.BotonPersonalisado BCrearAula;
-        private views.components.BotonPersonalisado BProfesores;
+       
         private views.components.BotonPersonalisado BMaterias;
         private views.components.BotonPersonalisado BUsuarios;
         private views.components.BotonPersonalisado BBuscar;
@@ -430,6 +433,7 @@ namespace ProyectoIntegradorTaller.views.admin
         private DataGridViewTextBoxColumn Lugar;
         private DataGridViewTextBoxColumn CapacidadMax;
         private DataGridViewTextBoxColumn Tipo;
+        private components.ComboBoxPersonalisado CBMateria;
         private Panel panel3;
         private Panel panel5;
         private Panel panel6;

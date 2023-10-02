@@ -27,7 +27,7 @@ namespace ProyectoIntegradorTaller.logica
             {
                 var query = from usuario in db.usuario
                             join tipoUsuario in db.tipoUsuario on usuario.id_tipoUsuario equals tipoUsuario.id_tipoUsuario
-                            where usuario.desactivar == (RBActivo.Checked ? "SI" : "NO")
+                            where usuario.desactivar == (RBActivo.Checked ? "NO" : "SI")
                             select new
                             {
                                 Id = usuario.id_usuario,

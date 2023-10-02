@@ -98,6 +98,13 @@ namespace ProyectoIntegradorTaller.views.admin
             Datos datos = new Datos();
             datos.Show();
         }
+
+        private void BPendientes_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            ReservasPendientes reservasPendientes = new ReservasPendientes();
+            reservasPendientes.Show();
+        }
     }
     public class ItemProfesor
     {

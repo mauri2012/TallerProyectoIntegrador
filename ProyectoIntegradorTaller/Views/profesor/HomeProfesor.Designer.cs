@@ -39,14 +39,14 @@
             this.LBienvenido = new System.Windows.Forms.Label();
             this.CBMateria = new ProyectoIntegradorTaller.views.components.ComboBoxPersonalisado();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.label6 = new System.Windows.Forms.Label();
-            this.Reservas = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.Tipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CapasidadMaxima = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Lugar = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Lugar = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CapasidadMaxima = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Tipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Reservas = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.label6 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.PBMaximizar_)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PBMinimizar_)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PBCerrar_)).BeginInit();
@@ -143,12 +143,12 @@
             this.botonPersonalisado3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.botonPersonalisado3.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.botonPersonalisado3.ForeColor = System.Drawing.Color.White;
-            this.botonPersonalisado3.Image = global::ProyectoIntegradorTaller.Properties.Resources.resource;
+            this.botonPersonalisado3.Image = global::ProyectoIntegradorTaller.Properties.Resources.pending;
             this.botonPersonalisado3.Location = new System.Drawing.Point(514, 28);
             this.botonPersonalisado3.Name = "botonPersonalisado3";
             this.botonPersonalisado3.Size = new System.Drawing.Size(141, 40);
             this.botonPersonalisado3.TabIndex = 19;
-            this.botonPersonalisado3.Text = "Pendientes";
+            this.botonPersonalisado3.Text = "  Pendientes";
             this.botonPersonalisado3.TextColor = System.Drawing.Color.White;
             this.botonPersonalisado3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.botonPersonalisado3.UseVisualStyleBackColor = false;
@@ -243,68 +243,6 @@
             this.panel3.Size = new System.Drawing.Size(800, 269);
             this.panel3.TabIndex = 23;
             // 
-            // label6
-            // 
-            this.label6.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
-            this.label6.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(361, 7);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(54, 19);
-            this.label6.TabIndex = 56;
-            this.label6.Text = "Home";
-            // 
-            // Reservas
-            // 
-            this.Reservas.HeaderText = "reservas";
-            this.Reservas.Name = "Reservas";
-            this.Reservas.ReadOnly = true;
-            this.Reservas.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Reservas.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.Reservas.Text = "ver reservas";
-            // 
-            // Tipo
-            // 
-            this.Tipo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Tipo.DataPropertyName = "Tipo";
-            this.Tipo.HeaderText = "Tipo";
-            this.Tipo.Name = "Tipo";
-            this.Tipo.ReadOnly = true;
-            // 
-            // CapasidadMaxima
-            // 
-            this.CapasidadMaxima.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.CapasidadMaxima.DataPropertyName = "CapacidadMax";
-            this.CapasidadMaxima.HeaderText = "Capasidad Maxima";
-            this.CapasidadMaxima.Name = "CapasidadMaxima";
-            this.CapasidadMaxima.ReadOnly = true;
-            // 
-            // Lugar
-            // 
-            this.Lugar.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Lugar.DataPropertyName = "Lugar";
-            this.Lugar.HeaderText = "Lugar";
-            this.Lugar.Name = "Lugar";
-            this.Lugar.ReadOnly = true;
-            // 
-            // Nombre
-            // 
-            this.Nombre.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Nombre.DataPropertyName = "Name";
-            this.Nombre.HeaderText = "Nombre";
-            this.Nombre.Name = "Nombre";
-            this.Nombre.ReadOnly = true;
-            // 
-            // ID
-            // 
-            this.ID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.ID.DataPropertyName = "Id";
-            this.ID.HeaderText = "ID";
-            this.ID.Name = "ID";
-            this.ID.ReadOnly = true;
-            // 
             // dataGridView1
             // 
             this.dataGridView1.AllowUserToAddRows = false;
@@ -340,6 +278,68 @@
             this.dataGridView1.Size = new System.Drawing.Size(800, 269);
             this.dataGridView1.TabIndex = 1;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
+            // ID
+            // 
+            this.ID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.ID.DataPropertyName = "Id";
+            this.ID.HeaderText = "ID";
+            this.ID.Name = "ID";
+            this.ID.ReadOnly = true;
+            // 
+            // Nombre
+            // 
+            this.Nombre.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Nombre.DataPropertyName = "Name";
+            this.Nombre.HeaderText = "Nombre";
+            this.Nombre.Name = "Nombre";
+            this.Nombre.ReadOnly = true;
+            // 
+            // Lugar
+            // 
+            this.Lugar.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Lugar.DataPropertyName = "Lugar";
+            this.Lugar.HeaderText = "Lugar";
+            this.Lugar.Name = "Lugar";
+            this.Lugar.ReadOnly = true;
+            // 
+            // CapasidadMaxima
+            // 
+            this.CapasidadMaxima.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.CapasidadMaxima.DataPropertyName = "CapacidadMax";
+            this.CapasidadMaxima.HeaderText = "Capasidad Maxima";
+            this.CapasidadMaxima.Name = "CapasidadMaxima";
+            this.CapasidadMaxima.ReadOnly = true;
+            // 
+            // Tipo
+            // 
+            this.Tipo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Tipo.DataPropertyName = "Tipo";
+            this.Tipo.HeaderText = "Tipo";
+            this.Tipo.Name = "Tipo";
+            this.Tipo.ReadOnly = true;
+            // 
+            // Reservas
+            // 
+            this.Reservas.HeaderText = "reservas";
+            this.Reservas.Name = "Reservas";
+            this.Reservas.ReadOnly = true;
+            this.Reservas.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Reservas.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.Reservas.Text = "ver reservas";
+            // 
+            // label6
+            // 
+            this.label6.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
+            this.label6.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.White;
+            this.label6.Location = new System.Drawing.Point(361, 7);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(54, 19);
+            this.label6.TabIndex = 56;
+            this.label6.Text = "Home";
             // 
             // HomeProfesor
             // 

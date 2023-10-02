@@ -309,7 +309,7 @@
             // Activo
             // 
             this.Activo.DataPropertyName = "Activo";
-            this.Activo.HeaderText = "Activo";
+            this.Activo.HeaderText = "Inactivo";
             this.Activo.Name = "Activo";
             this.Activo.ReadOnly = true;
             // 
