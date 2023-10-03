@@ -1,7 +1,7 @@
 # ProyectoIntegradorTaller
 
 
-# Instrucciones de Acceso - Usuario Admin
+# Instrucciones de Acceso - Usuario 
 
 Para acceder a la cuenta de usuario con privilegios de administrador, utilice las siguientes credenciales:
 
