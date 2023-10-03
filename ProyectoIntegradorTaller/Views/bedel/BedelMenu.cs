@@ -1,5 +1,6 @@
 ﻿using DraggingControl;
 using Microsoft.VisualBasic;
+using ProyectoIntegradorTaller.logica;
 using ProyectoIntegradorTaller.views.components;
 //using ProyectoIntegradorTaller.formularios;
 using System;
@@ -21,14 +22,7 @@ namespace ProyectoIntegradorTaller.views.admin
         {
 
             InitializeComponent();
-            List<ItemProfesor> staticData = new List<ItemProfesor>()
-            {
-
-                new ItemProfesor {Id=1, Name= "Aula 5",Lugar="9 de julio", CapacidadMax=40},
-                new ItemProfesor{Id=2, Name= "Aula Magna",Lugar = "libertad",CapacidadMax=100},
-            };
-
-            dataGridView1.DataSource = staticData;
+            reservaLogica.listarReservas(dataGridView1,"SI");
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)

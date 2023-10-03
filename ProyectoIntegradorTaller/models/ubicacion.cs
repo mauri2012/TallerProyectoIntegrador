@@ -23,6 +23,7 @@ namespace ProyectoIntegradorTaller.models
     
         public int id_ubicacion { get; set; }
         public string lugar { get; set; }
+        public string activo { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<aula> aula { get; set; }

@@ -36,56 +36,6 @@ advertencia 6002: La tabla o vista 'classroom_manager.dbo.aula_recursos' no tien
           <Property Name="id_recursos" Type="int" Nullable="false" />
           <Property Name="disponible" Type="varchar" MaxLength="2" />
         </EntityType>
-        <EntityType Name="categoria">
-          <Key>
-            <PropertyRef Name="id_categoria" />
-          </Key>
-          <Property Name="id_categoria" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="fecha_creacion" Type="datetime" />
-          <Property Name="usuario_creacion" Type="varchar" MaxLength="255" />
-          <Property Name="categoria" Type="varchar" MaxLength="255" />
-        </EntityType>
-        <EntityType Name="cliente">
-          <Key>
-            <PropertyRef Name="id_cliente" />
-          </Key>
-          <Property Name="id_cliente" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="fecha_creacion" Type="datetime" />
-          <Property Name="nombre" Type="varchar" MaxLength="1" />
-          <Property Name="fecha_nacimiento" Type="date" />
-          <Property Name="gmail" Type="varchar" MaxLength="255" />
-          <Property Name="dni" Type="int" />
-        </EntityType>
-        <EntityType Name="consulta">
-          <Key>
-            <PropertyRef Name="id_consulta" />
-          </Key>
-          <Property Name="id_consulta" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="fecha_creacion" Type="datetime" />
-          <Property Name="id_cliente" Type="int" />
-          <Property Name="id_producto" Type="int" />
-          <Property Name="id_detalles" Type="int" />
-        </EntityType>
-        <EntityType Name="departamento">
-          <Key>
-            <PropertyRef Name="id_departamento" />
-          </Key>
-          <Property Name="id_departamento" Type="int" Nullable="false" />
-          <Property Name="fecha_creacion" Type="datetime" />
-          <Property Name="usuario_creacion" Type="varchar" MaxLength="255" />
-          <Property Name="departamento" Type="varchar" MaxLength="255" />
-        </EntityType>
-        <EntityType Name="detalles">
-          <Key>
-            <PropertyRef Name="id_detalles" />
-          </Key>
-          <Property Name="id_detalles" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="fecha_creacion" Type="datetime" />
-          <Property Name="fecha_consulta" Type="datetime" />
-          <Property Name="usuario_creacion" Type="varchar" MaxLength="255" />
-          <Property Name="id_categoria" Type="int" />
-          <Property Name="id_respuesta" Type="int" />
-        </EntityType>
         <EntityType Name="dias_semana">
           <Key>
             <PropertyRef Name="id_dias" />
@@ -115,15 +65,6 @@ advertencia 6002: La tabla o vista 'classroom_manager.dbo.aula_recursos' no tien
           <Property Name="materia" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="activo" Type="varchar" MaxLength="2" />
         </EntityType>
-        <EntityType Name="producto">
-          <Key>
-            <PropertyRef Name="id_producto" />
-          </Key>
-          <Property Name="id_producto" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="fecha_creacion" Type="datetime" />
-          <Property Name="nombre_producto" Type="varchar" MaxLength="255" />
-          <Property Name="usuario_creacion" Type="varchar" MaxLength="255" />
-        </EntityType>
         <EntityType Name="reserva">
           <Key>
             <PropertyRef Name="id_reserva" />
@@ -137,17 +78,6 @@ advertencia 6002: La tabla o vista 'classroom_manager.dbo.aula_recursos' no tien
           <Property Name="activo" Type="varchar" MaxLength="2" />
           <Property Name="fecha_desde" Type="datetime" />
           <Property Name="fecha_hasta" Type="datetime" />
-        </EntityType>
-        <EntityType Name="respuesta">
-          <Key>
-            <PropertyRef Name="id_respuesta" />
-          </Key>
-          <Property Name="id_respuesta" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="fecha_creacion" Type="datetime" />
-          <Property Name="dni_vendedor" Type="int" />
-          <Property Name="fecha_respuesta" Type="date" />
-          <Property Name="usuario_creacion" Type="varchar" MaxLength="255" />
-          <Property Name="respuesta" Type="varchar" MaxLength="255" />
         </EntityType>
         <EntityType Name="tipoSala">
           <Key>
@@ -169,6 +99,7 @@ advertencia 6002: La tabla o vista 'classroom_manager.dbo.aula_recursos' no tien
           </Key>
           <Property Name="id_ubicacion" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="lugar" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="activo" Type="varchar" MaxLength="2" />
         </EntityType>
         <EntityType Name="usuario">
           <Key>
@@ -182,17 +113,6 @@ advertencia 6002: La tabla o vista 'classroom_manager.dbo.aula_recursos' no tien
           <Property Name="id_tipoUsuario" Type="int" Nullable="false" />
           <Property Name="desactivar" Type="varchar" MaxLength="2" />
           <Property Name="password" Type="varchar" MaxLength="150" />
-        </EntityType>
-        <EntityType Name="vendedor">
-          <Key>
-            <PropertyRef Name="dni" />
-          </Key>
-          <Property Name="dni" Type="int" Nullable="false" />
-          <Property Name="fecha_creacion" Type="datetime" />
-          <Property Name="usuario_creacion" Type="varchar" MaxLength="255" />
-          <Property Name="nombre" Type="varchar" MaxLength="255" />
-          <Property Name="apellido" Type="varchar" MaxLength="255" />
-          <Property Name="id_departamento" Type="int" />
         </EntityType>
         <Association Name="FK__aula__id_tipo__6C190EBB">
           <End Role="tipoSala" Type="Self.tipoSala" Multiplicity="1" />
@@ -338,66 +258,6 @@ advertencia 6002: La tabla o vista 'classroom_manager.dbo.aula_recursos' no tien
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="fk_categoria">
-          <End Role="categoria" Type="Self.categoria" Multiplicity="0..1" />
-          <End Role="detalles" Type="Self.detalles" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="categoria">
-              <PropertyRef Name="id_categoria" />
-            </Principal>
-            <Dependent Role="detalles">
-              <PropertyRef Name="id_categoria" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="fk_cliente">
-          <End Role="cliente" Type="Self.cliente" Multiplicity="0..1" />
-          <End Role="consulta" Type="Self.consulta" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="cliente">
-              <PropertyRef Name="id_cliente" />
-            </Principal>
-            <Dependent Role="consulta">
-              <PropertyRef Name="id_cliente" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="fk_departamento">
-          <End Role="departamento" Type="Self.departamento" Multiplicity="0..1" />
-          <End Role="vendedor" Type="Self.vendedor" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="departamento">
-              <PropertyRef Name="id_departamento" />
-            </Principal>
-            <Dependent Role="vendedor">
-              <PropertyRef Name="id_departamento" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="fk_detalle">
-          <End Role="detalles" Type="Self.detalles" Multiplicity="0..1" />
-          <End Role="consulta" Type="Self.consulta" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="detalles">
-              <PropertyRef Name="id_detalles" />
-            </Principal>
-            <Dependent Role="consulta">
-              <PropertyRef Name="id_detalles" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="fk_dni_vendedor">
-          <End Role="vendedor" Type="Self.vendedor" Multiplicity="0..1" />
-          <End Role="respuesta" Type="Self.respuesta" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="vendedor">
-              <PropertyRef Name="dni" />
-            </Principal>
-            <Dependent Role="respuesta">
-              <PropertyRef Name="dni_vendedor" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="fk_equipamiento">
           <End Role="equipamiento" Type="Self.equipamiento" Multiplicity="1" />
           <End Role="aula_equipamiento" Type="Self.aula_equipamiento" Multiplicity="*" />
@@ -410,50 +270,18 @@ advertencia 6002: La tabla o vista 'classroom_manager.dbo.aula_recursos' no tien
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="fk_producto">
-          <End Role="producto" Type="Self.producto" Multiplicity="0..1" />
-          <End Role="consulta" Type="Self.consulta" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="producto">
-              <PropertyRef Name="id_producto" />
-            </Principal>
-            <Dependent Role="consulta">
-              <PropertyRef Name="id_producto" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="fk_respuesta">
-          <End Role="respuesta" Type="Self.respuesta" Multiplicity="0..1" />
-          <End Role="detalles" Type="Self.detalles" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="respuesta">
-              <PropertyRef Name="id_respuesta" />
-            </Principal>
-            <Dependent Role="detalles">
-              <PropertyRef Name="id_respuesta" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <EntityContainer Name="classroom_managerModelStoreContainer">
           <EntitySet Name="aula" EntityType="Self.aula" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="aula_equipamiento" EntityType="Self.aula_equipamiento" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="categoria" EntityType="Self.categoria" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="cliente" EntityType="Self.cliente" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="consulta" EntityType="Self.consulta" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="departamento" EntityType="Self.departamento" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="detalles" EntityType="Self.detalles" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="dias_semana" EntityType="Self.dias_semana" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="equipamiento" EntityType="Self.equipamiento" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="horas" EntityType="Self.horas" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="materias" EntityType="Self.materias" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="producto" EntityType="Self.producto" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="reserva" EntityType="Self.reserva" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="respuesta" EntityType="Self.respuesta" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tipoSala" EntityType="Self.tipoSala" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tipoUsuario" EntityType="Self.tipoUsuario" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ubicacion" EntityType="Self.ubicacion" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="usuario" EntityType="Self.usuario" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="vendedor" EntityType="Self.vendedor" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="aula_recursos" EntityType="Self.aula_recursos" store:Type="Tables" store:Schema="dbo">
             <DefiningQuery>SELECT 
     [aula_recursos].[id_aula] AS [id_aula], 
@@ -509,37 +337,9 @@ advertencia 6002: La tabla o vista 'classroom_manager.dbo.aula_recursos' no tien
             <End Role="aula" EntitySet="aula" />
             <End Role="aula_equipamiento" EntitySet="aula_equipamiento" />
           </AssociationSet>
-          <AssociationSet Name="fk_categoria" Association="Self.fk_categoria">
-            <End Role="categoria" EntitySet="categoria" />
-            <End Role="detalles" EntitySet="detalles" />
-          </AssociationSet>
-          <AssociationSet Name="fk_cliente" Association="Self.fk_cliente">
-            <End Role="cliente" EntitySet="cliente" />
-            <End Role="consulta" EntitySet="consulta" />
-          </AssociationSet>
-          <AssociationSet Name="fk_departamento" Association="Self.fk_departamento">
-            <End Role="departamento" EntitySet="departamento" />
-            <End Role="vendedor" EntitySet="vendedor" />
-          </AssociationSet>
-          <AssociationSet Name="fk_detalle" Association="Self.fk_detalle">
-            <End Role="detalles" EntitySet="detalles" />
-            <End Role="consulta" EntitySet="consulta" />
-          </AssociationSet>
-          <AssociationSet Name="fk_dni_vendedor" Association="Self.fk_dni_vendedor">
-            <End Role="vendedor" EntitySet="vendedor" />
-            <End Role="respuesta" EntitySet="respuesta" />
-          </AssociationSet>
           <AssociationSet Name="fk_equipamiento" Association="Self.fk_equipamiento">
             <End Role="equipamiento" EntitySet="equipamiento" />
             <End Role="aula_equipamiento" EntitySet="aula_equipamiento" />
-          </AssociationSet>
-          <AssociationSet Name="fk_producto" Association="Self.fk_producto">
-            <End Role="producto" EntitySet="producto" />
-            <End Role="consulta" EntitySet="consulta" />
-          </AssociationSet>
-          <AssociationSet Name="fk_respuesta" Association="Self.fk_respuesta">
-            <End Role="respuesta" EntitySet="respuesta" />
-            <End Role="detalles" EntitySet="detalles" />
           </AssociationSet>
         </EntityContainer>
       </Schema></edmx:StorageModels>
@@ -734,43 +534,7 @@ advertencia 6002: La tabla o vista 'classroom_manager.dbo.aula_recursos' no tien
             <End Role="tipoSala" EntitySet="tipoSala" />
             <End Role="aula" EntitySet="aula" />
           </AssociationSet>
-          <EntitySet Name="categoria" EntityType="classroom_managerModel.categoria" />
-          <EntitySet Name="cliente" EntityType="classroom_managerModel.cliente" />
-          <EntitySet Name="consulta" EntityType="classroom_managerModel.consulta" />
-          <EntitySet Name="departamento" EntityType="classroom_managerModel.departamento" />
-          <EntitySet Name="detalles" EntityType="classroom_managerModel.detalles" />
-          <EntitySet Name="producto" EntityType="classroom_managerModel.producto" />
-          <EntitySet Name="respuesta" EntityType="classroom_managerModel.respuesta" />
-          <EntitySet Name="vendedor" EntityType="classroom_managerModel.vendedor" />
-          <AssociationSet Name="fk_categoria" Association="classroom_managerModel.fk_categoria">
-            <End Role="categoria" EntitySet="categoria" />
-            <End Role="detalles" EntitySet="detalles" />
-          </AssociationSet>
-          <AssociationSet Name="fk_cliente" Association="classroom_managerModel.fk_cliente">
-            <End Role="cliente" EntitySet="cliente" />
-            <End Role="consulta" EntitySet="consulta" />
-          </AssociationSet>
-          <AssociationSet Name="fk_detalle" Association="classroom_managerModel.fk_detalle">
-            <End Role="detalles" EntitySet="detalles" />
-            <End Role="consulta" EntitySet="consulta" />
-          </AssociationSet>
-          <AssociationSet Name="fk_producto" Association="classroom_managerModel.fk_producto">
-            <End Role="producto" EntitySet="producto" />
-            <End Role="consulta" EntitySet="consulta" />
-          </AssociationSet>
-          <AssociationSet Name="fk_departamento" Association="classroom_managerModel.fk_departamento">
-            <End Role="departamento" EntitySet="departamento" />
-            <End Role="vendedor" EntitySet="vendedor" />
-          </AssociationSet>
-          <AssociationSet Name="fk_respuesta" Association="classroom_managerModel.fk_respuesta">
-            <End Role="respuesta" EntitySet="respuesta" />
-            <End Role="detalles" EntitySet="detalles" />
-          </AssociationSet>
-          <AssociationSet Name="fk_dni_vendedor" Association="classroom_managerModel.fk_dni_vendedor">
-            <End Role="vendedor" EntitySet="vendedor" />
-            <End Role="respuesta" EntitySet="respuesta" />
-          </AssociationSet>
-        </EntityContainer>
+          </EntityContainer>
         <EntityType Name="dias_semana">
           <Key>
             <PropertyRef Name="id_dias" />
@@ -820,6 +584,7 @@ advertencia 6002: La tabla o vista 'classroom_manager.dbo.aula_recursos' no tien
           <Property Name="lugar" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="aula" Relationship="classroom_managerModel.FK__aula__id_ubicaci__628FA481" FromRole="ubicacion" ToRole="aula" />
           <NavigationProperty Name="aula1" Relationship="classroom_managerModel.FK__aula__id_ubicaci__6383C8BA" FromRole="ubicacion" ToRole="aula" />
+          <Property Name="activo" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
         </EntityType>
         <Association Name="FK__aula__id_ubicaci__628FA481">
           <End Type="classroom_managerModel.ubicacion" Role="ubicacion" Multiplicity="1" />
@@ -900,186 +665,7 @@ advertencia 6002: La tabla o vista 'classroom_manager.dbo.aula_recursos' no tien
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityType Name="categoria">
-          <Key>
-            <PropertyRef Name="id_categoria" />
-          </Key>
-          <Property Name="id_categoria" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="fecha_creacion" Type="DateTime" Precision="3" />
-          <Property Name="usuario_creacion" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
-          <Property Name="categoria1" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="detalles" Relationship="classroom_managerModel.fk_categoria" FromRole="categoria" ToRole="detalles" />
-        </EntityType>
-        <EntityType Name="cliente">
-          <Key>
-            <PropertyRef Name="id_cliente" />
-          </Key>
-          <Property Name="id_cliente" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="fecha_creacion" Type="DateTime" Precision="3" />
-          <Property Name="nombre" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
-          <Property Name="fecha_nacimiento" Type="DateTime" Precision="0" />
-          <Property Name="gmail" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
-          <Property Name="dni" Type="Int32" />
-          <NavigationProperty Name="consulta" Relationship="classroom_managerModel.fk_cliente" FromRole="cliente" ToRole="consulta" />
-        </EntityType>
-        <EntityType Name="consulta">
-          <Key>
-            <PropertyRef Name="id_consulta" />
-          </Key>
-          <Property Name="id_consulta" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="fecha_creacion" Type="DateTime" Precision="3" />
-          <Property Name="id_cliente" Type="Int32" />
-          <Property Name="id_producto" Type="Int32" />
-          <Property Name="id_detalles" Type="Int32" />
-          <NavigationProperty Name="cliente" Relationship="classroom_managerModel.fk_cliente" FromRole="consulta" ToRole="cliente" />
-          <NavigationProperty Name="detalles" Relationship="classroom_managerModel.fk_detalle" FromRole="consulta" ToRole="detalles" />
-          <NavigationProperty Name="producto" Relationship="classroom_managerModel.fk_producto" FromRole="consulta" ToRole="producto" />
-        </EntityType>
-        <EntityType Name="departamento">
-          <Key>
-            <PropertyRef Name="id_departamento" />
-          </Key>
-          <Property Name="id_departamento" Type="Int32" Nullable="false" />
-          <Property Name="fecha_creacion" Type="DateTime" Precision="3" />
-          <Property Name="usuario_creacion" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
-          <Property Name="departamento1" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="vendedor" Relationship="classroom_managerModel.fk_departamento" FromRole="departamento" ToRole="vendedor" />
-        </EntityType>
-        <EntityType Name="detalles">
-          <Key>
-            <PropertyRef Name="id_detalles" />
-          </Key>
-          <Property Name="id_detalles" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="fecha_creacion" Type="DateTime" Precision="3" />
-          <Property Name="fecha_consulta" Type="DateTime" Precision="3" />
-          <Property Name="usuario_creacion" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
-          <Property Name="id_categoria" Type="Int32" />
-          <Property Name="id_respuesta" Type="Int32" />
-          <NavigationProperty Name="categoria" Relationship="classroom_managerModel.fk_categoria" FromRole="detalles" ToRole="categoria" />
-          <NavigationProperty Name="consulta" Relationship="classroom_managerModel.fk_detalle" FromRole="detalles" ToRole="consulta" />
-          <NavigationProperty Name="respuesta" Relationship="classroom_managerModel.fk_respuesta" FromRole="detalles" ToRole="respuesta" />
-        </EntityType>
-        <EntityType Name="producto">
-          <Key>
-            <PropertyRef Name="id_producto" />
-          </Key>
-          <Property Name="id_producto" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="fecha_creacion" Type="DateTime" Precision="3" />
-          <Property Name="nombre_producto" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
-          <Property Name="usuario_creacion" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="consulta" Relationship="classroom_managerModel.fk_producto" FromRole="producto" ToRole="consulta" />
-        </EntityType>
-        <EntityType Name="respuesta">
-          <Key>
-            <PropertyRef Name="id_respuesta" />
-          </Key>
-          <Property Name="id_respuesta" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="fecha_creacion" Type="DateTime" Precision="3" />
-          <Property Name="dni_vendedor" Type="Int32" />
-          <Property Name="fecha_respuesta" Type="DateTime" Precision="0" />
-          <Property Name="usuario_creacion" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
-          <Property Name="respuesta1" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="detalles" Relationship="classroom_managerModel.fk_respuesta" FromRole="respuesta" ToRole="detalles" />
-          <NavigationProperty Name="vendedor" Relationship="classroom_managerModel.fk_dni_vendedor" FromRole="respuesta" ToRole="vendedor" />
-        </EntityType>
-        <EntityType Name="vendedor">
-          <Key>
-            <PropertyRef Name="dni" />
-          </Key>
-          <Property Name="dni" Type="Int32" Nullable="false" />
-          <Property Name="fecha_creacion" Type="DateTime" Precision="3" />
-          <Property Name="usuario_creacion" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
-          <Property Name="nombre" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
-          <Property Name="apellido" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
-          <Property Name="id_departamento" Type="Int32" />
-          <NavigationProperty Name="departamento" Relationship="classroom_managerModel.fk_departamento" FromRole="vendedor" ToRole="departamento" />
-          <NavigationProperty Name="respuesta" Relationship="classroom_managerModel.fk_dni_vendedor" FromRole="vendedor" ToRole="respuesta" />
-        </EntityType>
-        <Association Name="fk_categoria">
-          <End Type="classroom_managerModel.categoria" Role="categoria" Multiplicity="0..1" />
-          <End Type="classroom_managerModel.detalles" Role="detalles" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="categoria">
-              <PropertyRef Name="id_categoria" />
-            </Principal>
-            <Dependent Role="detalles">
-              <PropertyRef Name="id_categoria" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="fk_cliente">
-          <End Type="classroom_managerModel.cliente" Role="cliente" Multiplicity="0..1" />
-          <End Type="classroom_managerModel.consulta" Role="consulta" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="cliente">
-              <PropertyRef Name="id_cliente" />
-            </Principal>
-            <Dependent Role="consulta">
-              <PropertyRef Name="id_cliente" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="fk_detalle">
-          <End Type="classroom_managerModel.detalles" Role="detalles" Multiplicity="0..1" />
-          <End Type="classroom_managerModel.consulta" Role="consulta" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="detalles">
-              <PropertyRef Name="id_detalles" />
-            </Principal>
-            <Dependent Role="consulta">
-              <PropertyRef Name="id_detalles" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="fk_producto">
-          <End Type="classroom_managerModel.producto" Role="producto" Multiplicity="0..1" />
-          <End Type="classroom_managerModel.consulta" Role="consulta" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="producto">
-              <PropertyRef Name="id_producto" />
-            </Principal>
-            <Dependent Role="consulta">
-              <PropertyRef Name="id_producto" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="fk_departamento">
-          <End Type="classroom_managerModel.departamento" Role="departamento" Multiplicity="0..1" />
-          <End Type="classroom_managerModel.vendedor" Role="vendedor" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="departamento">
-              <PropertyRef Name="id_departamento" />
-            </Principal>
-            <Dependent Role="vendedor">
-              <PropertyRef Name="id_departamento" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="fk_respuesta">
-          <End Type="classroom_managerModel.respuesta" Role="respuesta" Multiplicity="0..1" />
-          <End Type="classroom_managerModel.detalles" Role="detalles" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="respuesta">
-              <PropertyRef Name="id_respuesta" />
-            </Principal>
-            <Dependent Role="detalles">
-              <PropertyRef Name="id_respuesta" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="fk_dni_vendedor">
-          <End Type="classroom_managerModel.vendedor" Role="vendedor" Multiplicity="0..1" />
-          <End Type="classroom_managerModel.respuesta" Role="respuesta" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="vendedor">
-              <PropertyRef Name="dni" />
-            </Principal>
-            <Dependent Role="respuesta">
-              <PropertyRef Name="dni_vendedor" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-      </Schema>
+        </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
@@ -1178,6 +764,7 @@ advertencia 6002: La tabla o vista 'classroom_manager.dbo.aula_recursos' no tien
           <EntitySetMapping Name="ubicacion">
             <EntityTypeMapping TypeName="classroom_managerModel.ubicacion">
               <MappingFragment StoreEntitySet="ubicacion">
+                <ScalarProperty Name="activo" ColumnName="activo" />
                 <ScalarProperty Name="lugar" ColumnName="lugar" />
                 <ScalarProperty Name="id_ubicacion" ColumnName="id_ubicacion" />
               </MappingFragment>
@@ -1200,96 +787,7 @@ advertencia 6002: La tabla o vista 'classroom_manager.dbo.aula_recursos' no tien
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="categoria">
-            <EntityTypeMapping TypeName="classroom_managerModel.categoria">
-              <MappingFragment StoreEntitySet="categoria">
-                <ScalarProperty Name="categoria1" ColumnName="categoria" />
-                <ScalarProperty Name="usuario_creacion" ColumnName="usuario_creacion" />
-                <ScalarProperty Name="fecha_creacion" ColumnName="fecha_creacion" />
-                <ScalarProperty Name="id_categoria" ColumnName="id_categoria" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="cliente">
-            <EntityTypeMapping TypeName="classroom_managerModel.cliente">
-              <MappingFragment StoreEntitySet="cliente">
-                <ScalarProperty Name="dni" ColumnName="dni" />
-                <ScalarProperty Name="gmail" ColumnName="gmail" />
-                <ScalarProperty Name="fecha_nacimiento" ColumnName="fecha_nacimiento" />
-                <ScalarProperty Name="nombre" ColumnName="nombre" />
-                <ScalarProperty Name="fecha_creacion" ColumnName="fecha_creacion" />
-                <ScalarProperty Name="id_cliente" ColumnName="id_cliente" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="consulta">
-            <EntityTypeMapping TypeName="classroom_managerModel.consulta">
-              <MappingFragment StoreEntitySet="consulta">
-                <ScalarProperty Name="id_detalles" ColumnName="id_detalles" />
-                <ScalarProperty Name="id_producto" ColumnName="id_producto" />
-                <ScalarProperty Name="id_cliente" ColumnName="id_cliente" />
-                <ScalarProperty Name="fecha_creacion" ColumnName="fecha_creacion" />
-                <ScalarProperty Name="id_consulta" ColumnName="id_consulta" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="departamento">
-            <EntityTypeMapping TypeName="classroom_managerModel.departamento">
-              <MappingFragment StoreEntitySet="departamento">
-                <ScalarProperty Name="departamento1" ColumnName="departamento" />
-                <ScalarProperty Name="usuario_creacion" ColumnName="usuario_creacion" />
-                <ScalarProperty Name="fecha_creacion" ColumnName="fecha_creacion" />
-                <ScalarProperty Name="id_departamento" ColumnName="id_departamento" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="detalles">
-            <EntityTypeMapping TypeName="classroom_managerModel.detalles">
-              <MappingFragment StoreEntitySet="detalles">
-                <ScalarProperty Name="id_respuesta" ColumnName="id_respuesta" />
-                <ScalarProperty Name="id_categoria" ColumnName="id_categoria" />
-                <ScalarProperty Name="usuario_creacion" ColumnName="usuario_creacion" />
-                <ScalarProperty Name="fecha_consulta" ColumnName="fecha_consulta" />
-                <ScalarProperty Name="fecha_creacion" ColumnName="fecha_creacion" />
-                <ScalarProperty Name="id_detalles" ColumnName="id_detalles" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="producto">
-            <EntityTypeMapping TypeName="classroom_managerModel.producto">
-              <MappingFragment StoreEntitySet="producto">
-                <ScalarProperty Name="usuario_creacion" ColumnName="usuario_creacion" />
-                <ScalarProperty Name="nombre_producto" ColumnName="nombre_producto" />
-                <ScalarProperty Name="fecha_creacion" ColumnName="fecha_creacion" />
-                <ScalarProperty Name="id_producto" ColumnName="id_producto" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="respuesta">
-            <EntityTypeMapping TypeName="classroom_managerModel.respuesta">
-              <MappingFragment StoreEntitySet="respuesta">
-                <ScalarProperty Name="respuesta1" ColumnName="respuesta" />
-                <ScalarProperty Name="usuario_creacion" ColumnName="usuario_creacion" />
-                <ScalarProperty Name="fecha_respuesta" ColumnName="fecha_respuesta" />
-                <ScalarProperty Name="dni_vendedor" ColumnName="dni_vendedor" />
-                <ScalarProperty Name="fecha_creacion" ColumnName="fecha_creacion" />
-                <ScalarProperty Name="id_respuesta" ColumnName="id_respuesta" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="vendedor">
-            <EntityTypeMapping TypeName="classroom_managerModel.vendedor">
-              <MappingFragment StoreEntitySet="vendedor">
-                <ScalarProperty Name="id_departamento" ColumnName="id_departamento" />
-                <ScalarProperty Name="apellido" ColumnName="apellido" />
-                <ScalarProperty Name="nombre" ColumnName="nombre" />
-                <ScalarProperty Name="usuario_creacion" ColumnName="usuario_creacion" />
-                <ScalarProperty Name="fecha_creacion" ColumnName="fecha_creacion" />
-                <ScalarProperty Name="dni" ColumnName="dni" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-        </EntityContainerMapping>
+          </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
   </edmx:Runtime>

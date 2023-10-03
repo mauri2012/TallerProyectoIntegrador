@@ -36,13 +36,5 @@ namespace ProyectoIntegradorTaller.models
         public virtual DbSet<ubicacion> ubicacion { get; set; }
         public virtual DbSet<aula_equipamiento> aula_equipamiento { get; set; }
         public virtual DbSet<tipoSala> tipoSala { get; set; }
-        public virtual DbSet<categoria> categoria { get; set; }
-        public virtual DbSet<cliente> cliente { get; set; }
-        public virtual DbSet<consulta> consulta { get; set; }
-        public virtual DbSet<departamento> departamento { get; set; }
-        public virtual DbSet<detalles> detalles { get; set; }
-        public virtual DbSet<producto> producto { get; set; }
-        public virtual DbSet<respuesta> respuesta { get; set; }
-        public virtual DbSet<vendedor> vendedor { get; set; }
     }
 }
