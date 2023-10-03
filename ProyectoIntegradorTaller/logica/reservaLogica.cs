@@ -94,7 +94,7 @@ namespace ProyectoIntegradorTaller.logica
             using (classroom_managerEntities db = new classroom_managerEntities())
             {
                 var usuario = db.usuario
-                              .Where(u => u.id_tipoUsuario == 3).ToList();
+                              .Where(u => u.id_tipoUsuario == 4).ToList();
                 box.DataSource = usuario;
                 box.DisplayMember = "nombre"; // Specify the property to display in the ComboBox
                 box.ValueMember = "id_usuario";

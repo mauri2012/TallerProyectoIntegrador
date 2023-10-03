@@ -190,6 +190,7 @@ namespace ProyectoIntegradorTaller.views.admin
             this.CBPRofesor.Size = new System.Drawing.Size(244, 30);
             this.CBPRofesor.TabIndex = 36;
             this.CBPRofesor.Texts = "";
+            this.CBPRofesor.OnSelectedIndexChanged += new System.EventHandler(this.CBPRofesor_OnSelectedIndexChanged);
             // 
             // CBMateria
             // 

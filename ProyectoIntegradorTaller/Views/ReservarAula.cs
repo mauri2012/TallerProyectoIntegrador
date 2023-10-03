@@ -148,6 +148,11 @@ namespace ProyectoIntegradorTaller.views.admin
             }
 
         }
+
+        private void CBPRofesor_OnSelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 
     public class rango
