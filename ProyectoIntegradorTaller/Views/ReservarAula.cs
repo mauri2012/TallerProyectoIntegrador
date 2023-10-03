@@ -54,7 +54,7 @@ namespace ProyectoIntegradorTaller.views.admin
         {
             //discriminar a usuarios con if cuando se pueda
             this.Hide();
-             VerReservas reservas = new VerReservas();
+             VerReservas reservas = new VerReservas(id_aula);
             reservas.Show();
            
         }

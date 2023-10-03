@@ -26,7 +26,7 @@ namespace ProyectoIntegradorTaller.views
             InitializeComponent();
             RellenarHorarios();
         }
-        public VerReservas(int id, string isAdmin)
+        public VerReservas(int id)
         {
 
             id_aula = id;
