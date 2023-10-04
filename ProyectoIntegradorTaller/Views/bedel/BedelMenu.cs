@@ -22,7 +22,7 @@ namespace ProyectoIntegradorTaller.views.admin
         {
 
             InitializeComponent();
-            reservaLogica.listarReservas(dataGridView1,"SI");
+            LogicaClase.listarAula(dataGridView1);
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
