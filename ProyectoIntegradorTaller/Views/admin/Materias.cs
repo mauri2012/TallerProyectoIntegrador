@@ -92,8 +92,8 @@ namespace ProyectoIntegradorTaller.views.admin
                 LogicaMaterias.agregarMateria(this.TMateria.Texts);
                     MessageBox.Show("materia ingresada correctamente!", "Insersion", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     this.TMateria.Texts  = " ";
-                
 
+                LogicaMaterias.listarMaterias(dataGridView1);
             }
             else
             {
@@ -115,6 +115,7 @@ namespace ProyectoIntegradorTaller.views.admin
                 if (ask == MsgBoxResult.Yes)
                 {
                     LogicaMaterias.materiaActiva("NO", dataGridView1, e);
+                    LogicaMaterias.listarMaterias(dataGridView1);
                 }
 
             }

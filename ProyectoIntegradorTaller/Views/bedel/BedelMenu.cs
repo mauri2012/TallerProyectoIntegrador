@@ -33,7 +33,8 @@ namespace ProyectoIntegradorTaller.views.admin
                 if (dataGridView1.Columns[e.ColumnIndex].Name == "Reserva")
                 {
                     this.Hide();
-                    VerReservas reservas = new VerReservas();
+                    VerReservas reservas = new VerReservas((int)dataGridView1.Rows[e.RowIndex].Cells[0].Value);
+                    //VerReservas reservas = new VerReservas();
                     reservas.Show();
 
                 }

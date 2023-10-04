@@ -28,12 +28,13 @@ namespace ProyectoIntegradorTaller.views.admin
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (dataGridView1.Columns[e.ColumnIndex].Name == "autorizar")
+            if (dataGridView1.Columns[e.ColumnIndex].Name == "Estado")
             {
-                MsgBoxResult ask = (MsgBoxResult)MessageBox.Show("Seguro que quiere autorizar la reserva en el  " + (string)dataGridView1.Rows[e.RowIndex].Cells[1].Value + "  ?", "Reservar", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                MsgBoxResult ask = (MsgBoxResult)MessageBox.Show("Seguro que quiere autorizar la reserva en el  " + (string)dataGridView1.Rows[e.RowIndex].Cells[2].Value + "  ?", "Reservar", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                 if (ask == MsgBoxResult.Yes)
                 {
                     reservaLogica.reservaActiva("SI", dataGridView1, e);
+                    reservaLogica.listarReservas(dataGridView1, "NO");
                 }
 
             }

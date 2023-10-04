@@ -29,7 +29,7 @@ namespace ProyectoIntegradorTaller.logica
             {
 
 
-                reservas = db.reserva.Where(reserva => reserva.id_aula == id_aula).ToList();
+                reservas = db.reserva.Where(reserva => reserva.id_aula == id_aula && reserva.activo =="SI").ToList();
             }
 
             foreach (var res in reservas)
@@ -37,7 +37,7 @@ namespace ProyectoIntegradorTaller.logica
 
                 int dia = res.id_dia;
                 int horario = res.id_hora;
-                grillaHorarios[horario-1, dia] = "OCUPADO";
+                grillaHorarios[horario - 1, dia] = "OCUPADO";
             }
             dataGrid.Rows.Clear();
 
