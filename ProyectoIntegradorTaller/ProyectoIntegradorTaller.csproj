@@ -136,10 +136,10 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>AdminMenu.resx</DependentUpon>
     </Compile>
-    <Compile Include="views\admin\CrearProfesor.cs">
+    <Compile Include="views\bedel\CrearProfesor.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="views\admin\CrearProfesor.Designer.cs">
+    <Compile Include="views\bedel\CrearProfesor.Designer.cs">
       <DependentUpon>CrearProfesor.cs</DependentUpon>
     </Compile>
     <Compile Include="views\admin\CrearUsuario.cs">
@@ -279,7 +279,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="views\admin\CrearProfesor.resx">
+    <EmbeddedResource Include="views\bedel\CrearProfesor.resx">
       <DependentUpon>CrearProfesor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="views\admin\CrearUsuario.resx">
