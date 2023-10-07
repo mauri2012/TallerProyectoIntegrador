@@ -26,8 +26,24 @@ namespace ProyectoIntegradorTaller.views.admin
             id_aula = id;
             reservaLogica.CBMateriasListar(CBMateria);
             fecha.Visible = false;
+            BReservarAula.Visible = true;
+            editar.Visible = false;
         }
-
+        //editar aula
+        public ReservarAula(int id, string hora, string dia,string materia,string profesor)
+        {
+            InitializeComponent();
+            CBHora.Texts = hora;
+            CBDia.Texts = dia;
+            
+            CBPRofesor.Texts=profesor;
+            id_aula = id;
+            reservaLogica.CBMateriasListar(CBMateria);
+            CBMateria.Texts = materia;
+            fecha.Visible = false;
+            editar.Visible=true;
+            BReservarAula.Visible=false;
+        }
         public ReservarAula()
         {
             InitializeComponent();
@@ -75,7 +91,7 @@ namespace ProyectoIntegradorTaller.views.admin
             else
             {
                 string estado;
-                if(Session.SessionCacheData.IdProfile == 1)
+                if(Session.SessionCacheData.IdProfile == 1 || Session.SessionCacheData.IdProfile ==3)
                 {
                     estado = "SI";
                 }
@@ -125,20 +141,20 @@ namespace ProyectoIntegradorTaller.views.admin
                 case "Primer Cuatrimestre":
                     fecha_desde.Value = new DateTime(2023, 3, 10);
                     fecha_hasta.Value = new DateTime(2023, 6, 15);
-                    fecha_desde.Visible = false;
+                    fecha_desde.Visible =false;
                     fecha_hasta.Visible = false;
                     break;
                 case "Segundo Cuatrimestre":
                     fecha_hasta.Visible = false;
-                    fecha_desde.Visible = false;
+                    fecha_desde.Visible =false;
                     fecha_desde.Value = new DateTime(2023, 7, 10);
                     fecha_hasta.Value = new DateTime(2023, 11, 20);
                     break;
                 case "Dia Puntual":
                     fecha.Visible = true;
-                    fecha_desde.Visible = true;
+                    fecha_desde.Visible = true; 
                     fecha_hasta.Visible = false;
-                    fecha_desde = fecha_hasta;
+                    fecha_desde.Value = fecha_hasta.Value;
                     break;
                 default:
                     fecha_desde.Visible = true;
@@ -151,6 +167,24 @@ namespace ProyectoIntegradorTaller.views.admin
 
         private void CBPRofesor_OnSelectedIndexChanged(object sender, EventArgs e)
         {
+
+        }
+        // intento fallido de editar aula 
+        private void editar_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(this.CBHora.Texts) || string.IsNullOrEmpty(this.CBMateria.Texts) || string.IsNullOrEmpty(CBPRofesor.Texts) || string.IsNullOrEmpty(this.CBDia.Texts))
+            {
+
+                MessageBox.Show("Existen campos incompletos", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+              
+                var reservaid=reservaLogica.reservaVacia(this.CBDia.Texts, this.CBHora.Texts, id_aula);
+      
+                reservaLogica.actualizarReserva(reservaid.id_reserva, this.CBHora.Texts, this.CBMateria.Texts, this.CBPRofesor.Texts, this.CBDia.Texts, fecha_desde.Value.Date, fecha_hasta.Value.Date);
+                MessageBox.Show("Insercion echa exitosamente!", "insersion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
 
         }
     }

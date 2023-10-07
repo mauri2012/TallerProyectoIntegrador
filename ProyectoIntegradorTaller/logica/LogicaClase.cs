@@ -34,10 +34,11 @@ namespace ProyectoIntegradorTaller.logica
         {
             using (classroom_managerEntities db = new classroom_managerEntities())
             {
-
+        
                 var query = from aula in db.aula
                             join ubicacion in db.ubicacion on aula.id_ubicacion equals ubicacion.id_ubicacion
                             join tipoSala in db.tipoSala on aula.id_tipo equals tipoSala.id_sala
+                           
                             where aula.activa=="SI"
                             select new
                             {
@@ -45,7 +46,8 @@ namespace ProyectoIntegradorTaller.logica
                                 Name = aula.nombre,
                                 CapacidadMax = aula.capacidad,
                                 Lugar = ubicacion.lugar, // Assuming ubicacion has a "Nombre" property
-                                Tipo = tipoSala.tipo // Assuming tipo has a "Nombre" property
+                                Tipo = tipoSala.tipo, // Assuming tipo has a "Nombre" property
+                          
                             };
 
 
@@ -151,64 +153,83 @@ namespace ProyectoIntegradorTaller.logica
                         
                     }
                     dbContext.SaveChanges();
-                    MessageBox.Show("se edito la clase correctamente correctamente!", "editar", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                
                 }
             }
         }
-        public static void addClassroom(string ttipo,string CBubicacion,string tnombre,string tcapacidad,CheckBox CBAire,CheckBox CBWIFI,CheckBox CBProyector,CheckBox CBTelevisor)
+        public static bool valNomAula(string tnombre)
+        {
+            using (classroom_managerEntities db = new classroom_managerEntities())
+            {
+                var nomaula = db.aula.FirstOrDefault(nom => nom.nombre == tnombre && nom.activa == "SI");
+                if (nomaula == null)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+        }
+        public static void addClassroom(string ttipo,string CBubicacion,string tnombre,string tcapacidad,bool CBAire,bool CBWIFI,bool CBProyector,bool CBTelevisor)
         {
             using (classroom_managerEntities db = new classroom_managerEntities())
             {
                 var tipoSala = db.tipoSala.FirstOrDefault(tipoS => tipoS.tipo == ttipo);
                 var ubicacion = db.ubicacion.FirstOrDefault(tipoU => tipoU.lugar == CBubicacion);
-      
-            
-                aula aula1 = new aula()
-                {
-                    nombre = tnombre,
-                    capacidad = int.Parse(tcapacidad),
-                    id_ubicacion = ubicacion.id_ubicacion,
-                    id_tipo = tipoSala.id_sala,
-                    activa = "SI",
-                };
+                var  nomaula=db.aula.FirstOrDefault(nom=> nom.nombre == tnombre && nom.activa=="SI");
+             
 
 
-                List<aula_equipamiento> aula_equi=new List<aula_equipamiento>();
-                List<string> equipamiento = new List<string>();
-            
-       
-                string disponibleCA = CBAire.Checked ? "SI" : "NO";
-                string disponibleWIFI = CBWIFI.Checked ? "SI" : "NO";
-                string disponibleProyector = CBProyector.Checked ? "SI" : "NO";
-                string disponibleTelevisor = CBTelevisor.Checked ? "SI" : "NO";
-                equipamiento.Add(disponibleCA);
-                equipamiento.Add(disponibleWIFI);
-                equipamiento.Add(disponibleProyector);
-                equipamiento.Add(disponibleTelevisor);
-
-
-                for (int i=0; i<4;i++){
-                    aula_equi.Add(new aula_equipamiento()
+                    aula aula1 = new aula()
                     {
-                        id_aula = aula1.id_aula,
-                        id_equipamiento = i+1,
-                        disponible = equipamiento[i],
-                    });
+                        nombre = tnombre,
+                        capacidad = int.Parse(tcapacidad),
+                        id_ubicacion = ubicacion.id_ubicacion,
+                        id_tipo = tipoSala.id_sala,
+                        activa = "SI",
+                    };
 
-                }
-          
-                db.aula.Add(aula1);
 
-                for (int i = 0; i < 4; i++)
-                {
-                     db.aula_equipamiento.Add(aula_equi[i]);
-                };
+                    List<aula_equipamiento> aula_equi = new List<aula_equipamiento>();
+                    List<string> equipamiento = new List<string>();
 
+
+                    string disponibleCA = CBAire ? "SI" : "NO";
+                    string disponibleWIFI = CBWIFI ? "SI" : "NO";
+                    string disponibleProyector = CBProyector ? "SI" : "NO";
+                    string disponibleTelevisor = CBTelevisor ? "SI" : "NO";
+                    equipamiento.Add(disponibleCA);
+                    equipamiento.Add(disponibleWIFI);
+                    equipamiento.Add(disponibleProyector);
+                    equipamiento.Add(disponibleTelevisor);
+
+
+                    for (int i = 0; i < 4; i++)
+                    {
+                        aula_equi.Add(new aula_equipamiento()
+                        {
+                            id_aula = aula1.id_aula,
+                            id_equipamiento = i + 1,
+                            disponible = equipamiento[i],
+                        });
+
+                    }
+
+                    db.aula.Add(aula1);
+
+                    for (int i = 0; i < 4; i++)
+                    {
+                        db.aula_equipamiento.Add(aula_equi[i]);
+                    };
+
+
+
+                    db.SaveChanges();
+                   
+                
                
-
-                db.SaveChanges();
-                MessageBox.Show("se inserto el aula correctamente!", "Insersion", MessageBoxButtons.OK, MessageBoxIcon.Information);
-              
 
             }
         }

@@ -12,6 +12,36 @@ namespace ProyectoIntegradorTaller.logica
 {
     internal class reservaLogica
     {
+        public static string GetUsuario(int id_usuario)
+        {
+            using (classroom_managerEntities db = new classroom_managerEntities())
+            {
+                var usuarioElejido = db.usuario.FirstOrDefault(u => u.id_usuario == id_usuario);
+                return usuarioElejido.nombre;
+            }
+        }
+        public static string GetMateria(int id_materia) { 
+            using (classroom_managerEntities db = new classroom_managerEntities())
+            {
+                var materiaElejida= db.materias.FirstOrDefault(m=> m.id_materia == id_materia);
+                return materiaElejida.materia;
+            }
+        }
+        public static reserva reservaVacia(string dia, string hora,int id_aula)
+        {
+            using (classroom_managerEntities db = new classroom_managerEntities()) { 
+
+                var horarioElejido = db.horas.FirstOrDefault(h =>h.horario ==hora);
+                var diaElegida = db.dias_semana.FirstOrDefault(d => d.dias == dia);
+   
+            
+               var reservas = db.reserva.FirstOrDefault(reserva => reserva.id_aula == id_aula && reserva.activo == "SI"  &&  reserva.id_dia== diaElegida.id_dias && reserva.id_hora==horarioElejido.id_hora);
+
+               // MessageBox.Show(reservas.ToString());
+                return reservas;
+
+            }
+        }
         public static void mostrarGrilla(int id_aula, DataGridView dataGrid)
         {
             List<reserva> reservas;
@@ -29,15 +59,19 @@ namespace ProyectoIntegradorTaller.logica
             {
 
 
-                reservas = db.reserva.Where(reserva => reserva.id_aula == id_aula && reserva.activo =="SI").ToList();
-            }
+                reservas = db.reserva.Where(reserva => reserva.id_aula == id_aula && reserva.activo == "SI").ToList();
+            
 
-            foreach (var res in reservas)
-            {
-
-                int dia = res.id_dia;
-                int horario = res.id_hora;
-                grillaHorarios[horario - 1, dia] = "OCUPADO";
+                foreach (var res in reservas)
+                {
+                    var m = db.materias.FirstOrDefault(ma=> ma.id_materia == res.id_materia);
+                    var p = db.usuario.FirstOrDefault(pr=> pr.id_usuario==res.id_usuario);
+                    int dia = res.id_dia;
+                    int horario = res.id_hora;
+                
+                    
+                    grillaHorarios[horario - 1, dia] = m.materia +"("+ p.nombre+" " + p.apellido +")";
+                }
             }
             dataGrid.Rows.Clear();
 
@@ -61,10 +95,10 @@ namespace ProyectoIntegradorTaller.logica
 
                 int idUsuario = Convert.ToInt32(dataGrid.Rows[e.RowIndex].Cells["Id"].Value); // 
 
-                reserva aulaDesactivar = db.reserva.FirstOrDefault(u => u.id_reserva == idUsuario);
-                if (aulaDesactivar != null)
+                reserva reservaDesactivar = db.reserva.FirstOrDefault(u => u.id_reserva == idUsuario);
+                if (reservaDesactivar != null)
                 {
-                    aulaDesactivar.activo = estado;
+                    reservaDesactivar.activo = estado;
                     db.SaveChanges();
 
                 }
@@ -125,6 +159,36 @@ namespace ProyectoIntegradorTaller.logica
                 db.reserva.Add(unaReserva);
                 db.SaveChanges();
 
+            }
+        }
+        public static void actualizarReserva(int id, string CBHora, string CBMateria, string CBPRofesor, string CBDia, DateTime fechad, DateTime fechah)
+        {
+            
+            using (classroom_managerEntities db = new classroom_managerEntities())
+            {
+
+                var usuarioProfesor = db.usuario.FirstOrDefault(usuario => usuario.nombre == CBPRofesor);
+                var materiaElegida = db.materias.FirstOrDefault(materia => materia.materia == CBMateria);
+                var diaElegido = db.dias_semana.FirstOrDefault(dia => dia.dias == CBDia);
+                var horarioElegido = db.horas.FirstOrDefault(horario => horario.horario == CBHora);
+            
+
+
+                var entityToUpdate = db.reserva.Find(id);
+
+                if (entityToUpdate != null)
+                {
+                    
+                    entityToUpdate.id_usuario = usuarioProfesor.id_usuario;
+                    entityToUpdate.id_materia = materiaElegida.id_materia;
+                    entityToUpdate.id_dia = diaElegido.id_dias;
+                    entityToUpdate.id_hora = horarioElegido.id_hora;
+                    entityToUpdate.fecha_desde = fechad;
+                    entityToUpdate.fecha_hasta = fechah;
+                    
+                    db.SaveChanges();
+
+                }
             }
         }
         public static void listarReservas(DataGridView dataGrid, string estado)

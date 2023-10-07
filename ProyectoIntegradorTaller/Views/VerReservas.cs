@@ -20,7 +20,8 @@ namespace ProyectoIntegradorTaller.views
     {
 
         private int id_aula;
-
+        private string materia;
+        private string nom_profesor;
         public VerReservas()
         {
             InitializeComponent();
@@ -30,6 +31,7 @@ namespace ProyectoIntegradorTaller.views
         {
 
             id_aula = id;
+            
             InitializeComponent();
         }
 
@@ -52,8 +54,7 @@ namespace ProyectoIntegradorTaller.views
             {
                 string dia = DGHorarios.Columns[e.ColumnIndex].Name; // Obtén el nombre de la columna
                 string hora = DGHorarios.Rows[e.RowIndex].Cells[0].Value.ToString(); // Obtén el primer elemento de la fila
-                                                                                     // int id = DGHorarios.Rows[e.RowIndex].Cells[0].Value;
-                                                                                     // Llama a la función que necesita el nombre de la columna y el primer elemento de la fila
+                
                 SeleccionarReserva(dia, hora);
             }
         }
@@ -61,8 +62,19 @@ namespace ProyectoIntegradorTaller.views
         private void SeleccionarReserva(string dia, string hora)
         {
             this.Hide();
-            ReservarAula reserva = new ReservarAula(id_aula, hora, dia);
-            reserva.Show();
+            var reservaQuery = reservaLogica.reservaVacia(dia, hora, id_aula);
+            if (reservaQuery == null)
+            {
+                ReservarAula reserva = new ReservarAula(id_aula, hora, dia);
+                reserva.Show();
+            }
+            else
+            {
+                
+                ReservarAula reserva = new ReservarAula(id_aula, hora, dia,reservaLogica.GetMateria((int)reservaQuery.id_materia),reservaLogica.GetUsuario((int)reservaQuery.id_usuario));
+                reserva.Show();
+            }
+           // reserva.Show();
         }
 
         private void BVolver_Click(object sender, EventArgs e)
