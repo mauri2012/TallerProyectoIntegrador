@@ -353,7 +353,7 @@ namespace ProyectoIntegradorTaller.views.admin
             // 
             // itemBindingSource
             // 
-            this.itemBindingSource.CurrentChanged += new System.EventHandler(this.itemBindingSource_CurrentChanged);
+ 
             // 
             // label1
             // 

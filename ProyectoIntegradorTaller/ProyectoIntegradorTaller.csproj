@@ -274,6 +274,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="views\admin\HomeAdmin.resx">
+      <DependentUpon>HomeAdmin.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="views\bedel\CrearProfesor.resx">
       <DependentUpon>CrearProfesor.cs</DependentUpon>
     </EmbeddedResource>
@@ -460,6 +463,8 @@
       <DependentUpon>Model1.edmx</DependentUpon>
       <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\delete.png" />
+    <None Include="Resources\database.png" />
     <None Include="Resources\map.png" />
     <None Include="Resources\alert.png" />
     <None Include="Resources\pending.png" />

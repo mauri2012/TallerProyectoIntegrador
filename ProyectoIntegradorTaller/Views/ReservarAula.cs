@@ -18,67 +18,51 @@ namespace ProyectoIntegradorTaller.views.admin
     {
 
         private int id_aula;
-        public ReservarAula(int id,string hora, string dia)
+        private reserva res;
+        
+
+        public ReservarAula(int idAula,int idHora, int idDia)
         {
             InitializeComponent();
-            CBHora.Texts = hora;
-            CBDia.Texts = dia;
-            id_aula = id;
+            CBHora.Texts = LogicaReserva.ObtenerHorarioPorID(idHora).horario;
+            CBDia.Texts = LogicaReserva.ObtenerDiaPorID(idDia).dias;
+            id_aula = idAula;
             LogicaReserva.CBMateriasListar(CBMateria);
             fecha.Visible = false;
-            BReservarAula.Visible = true;
-            editar.Visible = false;
+            BEliminar.Visible = false;
+            this.BReservarAula.Click += new System.EventHandler(this.botonPersonalisado1_Click);
+
         }
-        //editar aula
-        public ReservarAula(int id, string hora, string dia,string materia,string profesor)
+
+
+
+        //Editar aula
+        public ReservarAula(reserva reserva1)
         {
             InitializeComponent();
-            CBHora.Texts = hora;
-            CBDia.Texts = dia;
-            
-            CBPRofesor.Texts=profesor;
-            id_aula = id;
+            CBHora.Texts = LogicaReserva.ObtenerHorarioPorID(reserva1.id_hora).horario;
+            CBDia.Texts = LogicaReserva.ObtenerDiaPorID(reserva1.id_dia).dias;
+            CBPRofesor.Texts=LogicaUsuarios.getUsuario(reserva1.id_usuario).nombre;
+            id_aula = reserva1.id_aula;
+            res= reserva1;
             LogicaReserva.CBMateriasListar(CBMateria);
-            CBMateria.Texts = materia;
+            //Cambiar el ?? 1 cuando se resuelva el problema de nulos
+            CBMateria.Texts = LogicaMaterias.getMateria(reserva1.id_materia ?? 1).materia;
             fecha.Visible = false;
-            editar.Visible=true;
-            BReservarAula.Visible=false;
-        }
-        public ReservarAula()
-        {
-            InitializeComponent();
+            BReservarAula.Text = "Editar Aula";
+            BReservarAula.Click += new System.EventHandler(this.editar_Click);
         }
 
-
-
-        private void BCrearAula_Click(object sender, EventArgs e)
-        {
-
-        }
-
-
-
-        private void comboBox3_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-
-       
-
+        
         private void BVolver_Click_1(object sender, EventArgs e)
         {
-            //discriminar a usuarios con if cuando se pueda
             this.Hide();
-             VerReservas reservas = new VerReservas(id_aula);
+            VerReservas reservas = new VerReservas(id_aula);
             reservas.Show();
            
         }
 
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
+        
 
         private void botonPersonalisado1_Click(object sender, EventArgs e)
         {
@@ -99,7 +83,7 @@ namespace ProyectoIntegradorTaller.views.admin
                 {
                     estado = "NO";
                 }
-                LogicaReserva.insertarReserva(id_aula,this.CBHora.Texts,this.CBMateria.Texts,this.CBPRofesor.Texts,this.CBDia.Texts,fecha_desde.Value.Date,fecha_hasta.Value.Date,estado);
+                LogicaReserva.InsertarReserva(id_aula,this.CBHora.Texts,this.CBMateria.Texts,this.CBPRofesor.Texts,this.CBDia.Texts,fecha_desde.Value.Date,fecha_hasta.Value.Date,estado);
                 MessageBox.Show("Insercion echa exitosamente!", "insersion", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             
@@ -118,7 +102,7 @@ namespace ProyectoIntegradorTaller.views.admin
                 CBPRofesor.Texts = Session.SessionCacheData.Name;
             }
             
-            List<rango> listaAlumnos = new List<rango>
+            List<rango> listaPeriodo = new List<rango>
             {
                 new rango { Id = 1, Periodo = "Primer Cuatrimestre" },
                 new rango { Id = 2, Periodo = "Segundo Cuatrimestre" },
@@ -126,7 +110,7 @@ namespace ProyectoIntegradorTaller.views.admin
                 new rango { Id = 4, Periodo = "Personalizado" }
             };
 
-            Periodo.DataSource = listaAlumnos;
+            Periodo.DataSource = listaPeriodo;
 
             Periodo.DisplayMember = "Periodo";
             
@@ -165,11 +149,8 @@ namespace ProyectoIntegradorTaller.views.admin
 
         }
 
-        private void CBPRofesor_OnSelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-        // intento fallido de editar aula 
+        
+        // Editar Aula
         private void editar_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(this.CBHora.Texts) || string.IsNullOrEmpty(this.CBMateria.Texts) || string.IsNullOrEmpty(CBPRofesor.Texts) || string.IsNullOrEmpty(this.CBDia.Texts))
@@ -179,13 +160,20 @@ namespace ProyectoIntegradorTaller.views.admin
             }
             else
             {
-              
-                var reservaid=LogicaReserva.reservaVacia(this.CBDia.Texts, this.CBHora.Texts, id_aula);
-      
-                LogicaReserva.actualizarReserva(reservaid.id_reserva, this.CBHora.Texts, this.CBMateria.Texts, this.CBPRofesor.Texts, this.CBDia.Texts, fecha_desde.Value.Date, fecha_hasta.Value.Date);
-                MessageBox.Show("Insercion echa exitosamente!", "insersion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                LogicaReserva.EditarReserva(res.id_reserva, res.id_hora, CBMateria.Texts, CBPRofesor.Texts, res.id_dia, fecha_desde.Value.Date, fecha_hasta.Value.Date, "SI");
+                MessageBox.Show("Se edito con exito la reserva!", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
             }
 
+        }
+
+        private void BEliminar_Click(object sender, EventArgs e)
+        {
+            LogicaReserva.EliminarReserva(res.id_reserva);
+            this.Hide();
+            VerReservas reservas = new VerReservas(id_aula);
+            reservas.Show();
         }
     }
 

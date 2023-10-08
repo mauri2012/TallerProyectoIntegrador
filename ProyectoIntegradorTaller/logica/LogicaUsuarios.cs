@@ -11,6 +11,16 @@ namespace ProyectoIntegradorTaller.logica
 {
     internal class LogicaUsuarios
     {
+
+        public static usuario getUsuario(int id_usuario)
+        {
+            using (classroom_managerEntities db = new classroom_managerEntities())
+            {
+                var usuarioElejido = db.usuario.FirstOrDefault(u => u.id_usuario == id_usuario);
+                return usuarioElejido;
+            }
+        }
+
         public static void CBTipoListar(ComboBoxPersonalisado box)
         {
             using (classroom_managerEntities db = new classroom_managerEntities())

@@ -60,7 +60,17 @@ namespace ProyectoIntegradorTaller.views.admin
             }
             else
             {
-               
+                if (LogicaClase.valNomAula(TNombre.Texts))
+                {
+                    LogicaClase.addClassroom(this.TTipo.Texts, this.CBUbicacion.Texts, this.TNombre.Texts, this.TCapacidad.Texts, this.CAireAcondicionado.Checked, this.CWifi.Checked, this.CProyector.Checked, this.CTelevisor.Checked);
+                    this.TCapacidad.Texts = this.TNombre.Texts = " ";
+                    MessageBox.Show("se inserto el aula correctamente!", "Insersion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("el" + this.TNombre.Texts + "ya existe", "Insersion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+
             }
         }
 
@@ -74,15 +84,7 @@ namespace ProyectoIntegradorTaller.views.admin
             }
         }
 
-        private void checkBox3_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
+       
 
 
 

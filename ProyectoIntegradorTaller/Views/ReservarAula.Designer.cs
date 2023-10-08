@@ -32,6 +32,7 @@ namespace ProyectoIntegradorTaller.views.admin
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.BEliminar = new ProyectoIntegradorTaller.views.components.BotonPersonalisado();
             this.Periodo = new ProyectoIntegradorTaller.views.components.ComboBoxPersonalisado();
             this.BVolver = new ProyectoIntegradorTaller.views.components.BotonPersonalisado();
             this.CBDia = new ProyectoIntegradorTaller.views.components.ComboBoxPersonalisado();
@@ -50,7 +51,6 @@ namespace ProyectoIntegradorTaller.views.admin
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label8 = new System.Windows.Forms.Label();
-            this.editar = new ProyectoIntegradorTaller.views.components.BotonPersonalisado();
             ((System.ComponentModel.ISupportInitialize)(this.PBMaximizar_)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PBMinimizar_)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PBCerrar_)).BeginInit();
@@ -71,7 +71,7 @@ namespace ProyectoIntegradorTaller.views.admin
             // panel1
             // 
             this.panel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.panel1.Controls.Add(this.editar);
+            this.panel1.Controls.Add(this.BEliminar);
             this.panel1.Controls.Add(this.Periodo);
             this.panel1.Controls.Add(this.BVolver);
             this.panel1.Controls.Add(this.CBDia);
@@ -92,7 +92,28 @@ namespace ProyectoIntegradorTaller.views.admin
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(686, 388);
             this.panel1.TabIndex = 0;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // BEliminar
+            // 
+            this.BEliminar.BackColor = System.Drawing.Color.Red;
+            this.BEliminar.BackgroundColor = System.Drawing.Color.Red;
+            this.BEliminar.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.BEliminar.BorderRadius = 6;
+            this.BEliminar.BorderSize = 0;
+            this.BEliminar.FlatAppearance.BorderSize = 0;
+            this.BEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BEliminar.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BEliminar.ForeColor = System.Drawing.Color.White;
+            this.BEliminar.Image = global::ProyectoIntegradorTaller.Properties.Resources.delete;
+            this.BEliminar.Location = new System.Drawing.Point(368, 309);
+            this.BEliminar.Name = "BEliminar";
+            this.BEliminar.Size = new System.Drawing.Size(150, 40);
+            this.BEliminar.TabIndex = 54;
+            this.BEliminar.Text = "  Eliminar ";
+            this.BEliminar.TextColor = System.Drawing.Color.White;
+            this.BEliminar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.BEliminar.UseVisualStyleBackColor = false;
+            this.BEliminar.Click += new System.EventHandler(this.BEliminar_Click);
             // 
             // Periodo
             // 
@@ -192,7 +213,6 @@ namespace ProyectoIntegradorTaller.views.admin
             this.CBPRofesor.Size = new System.Drawing.Size(244, 30);
             this.CBPRofesor.TabIndex = 36;
             this.CBPRofesor.Texts = "";
-            this.CBPRofesor.OnSelectedIndexChanged += new System.EventHandler(this.CBPRofesor_OnSelectedIndexChanged);
             // 
             // CBMateria
             // 
@@ -246,7 +266,6 @@ namespace ProyectoIntegradorTaller.views.admin
             this.BReservarAula.Text = "Reservar Aula";
             this.BReservarAula.TextColor = System.Drawing.Color.White;
             this.BReservarAula.UseVisualStyleBackColor = false;
-            this.BReservarAula.Click += new System.EventHandler(this.botonPersonalisado1_Click);
             // 
             // fecha_hasta
             // 
@@ -343,8 +362,7 @@ namespace ProyectoIntegradorTaller.views.admin
             // 
             // label8
             // 
-            this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label8.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label8.AutoSize = true;
             this.label8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
             this.label8.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
@@ -354,26 +372,6 @@ namespace ProyectoIntegradorTaller.views.admin
             this.label8.Size = new System.Drawing.Size(115, 19);
             this.label8.TabIndex = 7;
             this.label8.Text = "Reservar Aula";
-            // 
-            // editar
-            // 
-            this.editar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
-            this.editar.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
-            this.editar.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.editar.BorderRadius = 6;
-            this.editar.BorderSize = 0;
-            this.editar.FlatAppearance.BorderSize = 0;
-            this.editar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.editar.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.editar.ForeColor = System.Drawing.Color.White;
-            this.editar.Location = new System.Drawing.Point(368, 309);
-            this.editar.Name = "editar";
-            this.editar.Size = new System.Drawing.Size(150, 40);
-            this.editar.TabIndex = 54;
-            this.editar.Text = "Editar Reserva";
-            this.editar.TextColor = System.Drawing.Color.White;
-            this.editar.UseVisualStyleBackColor = false;
-            this.editar.Click += new System.EventHandler(this.editar_Click);
             // 
             // ReservarAula
             // 
@@ -426,6 +424,6 @@ namespace ProyectoIntegradorTaller.views.admin
         private views.components.ComboBoxPersonalisado CBHora;
         private components.BotonPersonalisado BVolver;
         private components.ComboBoxPersonalisado Periodo;
-        private components.BotonPersonalisado editar;
+        private components.BotonPersonalisado BEliminar;
     }
 }

@@ -58,6 +58,7 @@ namespace ProyectoIntegradorTaller.views.admin
                     if (ask == MsgBoxResult.Yes)
                     {
                         LogicaClase.aulaActiva("NO", dataGridView1, e);
+                        LogicaClase.listarAula(dataGridView1);
                     }
 
                 }
@@ -150,11 +151,7 @@ namespace ProyectoIntegradorTaller.views.admin
             materias.Show();
         }
 
-        private void utils2_Load(object sender, EventArgs e)
-        {
-
-        }
-
+       
         private void BUsuarios_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -171,11 +168,7 @@ namespace ProyectoIntegradorTaller.views.admin
             misDatos.Show();
         }
 
-        private void itemBindingSource_CurrentChanged(object sender, EventArgs e)
-        {
-
-        }
-
+       
         private void TBBusqueda__TextChanged(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(this.TBBusqueda.Texts))

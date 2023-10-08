@@ -11,8 +11,15 @@ namespace ProyectoIntegradorTaller.logica
 {
     internal class LogicaMaterias
     {
-        public static void listarMaterias(DataGridView datagrid
-            )
+        public static materias getMateria(int id_materia)
+        {
+            using (classroom_managerEntities db = new classroom_managerEntities())
+            {
+                var materiaElejida = db.materias.FirstOrDefault(m => m.id_materia == id_materia);
+                return materiaElejida;
+            }
+        }
+        public static void listarMaterias(DataGridView datagrid)
         {
             using (classroom_managerEntities db = new classroom_managerEntities())
             {
@@ -22,7 +29,7 @@ namespace ProyectoIntegradorTaller.logica
                             {
                                 Id = materias.id_materia,
                                 Materia = materias.materia,
-                                Activo= materias.activo
+                                Activo = materias.activo
 
                             };
                 datagrid.DataSource = query.ToList();
@@ -34,13 +41,13 @@ namespace ProyectoIntegradorTaller.logica
             materias sub = new materias
             {
                 materia = tmateria,
-                activo="SI"
+                activo = "SI"
             };
             using (classroom_managerEntities db = new classroom_managerEntities())
             {
                 db.materias.Add(sub);
                 db.SaveChanges();
-            
+
             }
         }
         public static void materiaActiva(string estado, DataGridView dataGrid, DataGridViewCellEventArgs e)

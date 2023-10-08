@@ -1,5 +1,6 @@
 ﻿using DraggingControl;
 using ProyectoIntegradorTaller.logica;
+using ProyectoIntegradorTaller.models;
 using ProyectoIntegradorTaller.views.admin;
 using ProyectoIntegradorTaller.views.components;
 using ProyectoIntegradorTaller.views.profesor;
@@ -44,7 +45,7 @@ namespace ProyectoIntegradorTaller.views
         }
         private void Reservas_load(object sender, EventArgs e)
         {
-            LogicaReserva.mostrarGrilla(id_aula, DGHorarios);
+            LogicaReserva.MostrarGrilla(id_aula, DGHorarios);
             
         }
 
@@ -52,29 +53,31 @@ namespace ProyectoIntegradorTaller.views
         {
             if (e.RowIndex >= 0 && e.ColumnIndex >= 1) // Asegúrate de que se hizo clic dentro de una celda válida
             {
-                string dia = DGHorarios.Columns[e.ColumnIndex].Name; // Obtén el nombre de la columna
-                string hora = DGHorarios.Rows[e.RowIndex].Cells[0].Value.ToString(); // Obtén el primer elemento de la fila
+                int idDia = e.ColumnIndex; // Obtén el indice de la columna
+                int idHora = e.RowIndex + 1; // obten el indice de la fila, sumamos uno para corregir el indice
                 
-                SeleccionarReserva(dia, hora);
+                SeleccionarReserva(idDia, idHora);
             }
         }
 
-        private void SeleccionarReserva(string dia, string hora)
+        private void SeleccionarReserva(int idDia, int idHora)
         {
+
+
             this.Hide();
-            var reservaQuery = LogicaReserva.reservaVacia(dia, hora, id_aula);
-            if (reservaQuery == null)
+            reserva reserva1 = LogicaReserva.BuscarReserva(idDia, idHora, id_aula);
+            if (reserva1 == null)
             {
-                ReservarAula reserva = new ReservarAula(id_aula, hora, dia);
+                ReservarAula reserva = new ReservarAula(id_aula, idHora, idDia);
                 reserva.Show();
             }
             else
             {
                 
-                ReservarAula reserva = new ReservarAula(id_aula, hora, dia,LogicaReserva.GetMateria((int)reservaQuery.id_materia),LogicaReserva.GetUsuario((int)reservaQuery.id_usuario));
+                ReservarAula reserva = new ReservarAula(reserva1);
                 reserva.Show();
             }
-           // reserva.Show();
+           
         }
 
         private void BVolver_Click(object sender, EventArgs e)

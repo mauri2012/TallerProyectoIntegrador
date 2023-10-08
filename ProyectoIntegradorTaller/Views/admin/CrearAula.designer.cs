@@ -101,7 +101,7 @@ namespace ProyectoIntegradorTaller.views.admin
             this.CTelevisor.TabIndex = 27;
             this.CTelevisor.Text = "Televisor";
             this.CTelevisor.UseVisualStyleBackColor = true;
-            this.CTelevisor.CheckedChanged += new System.EventHandler(this.checkBox3_CheckedChanged);
+           
             // 
             // TTipo
             // 
@@ -370,7 +370,7 @@ namespace ProyectoIntegradorTaller.views.admin
             this.label1.Size = new System.Drawing.Size(43, 19);
             this.label1.TabIndex = 12;
             this.label1.Text = "Aula";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
+            
             // 
             // CrearAula
             // 

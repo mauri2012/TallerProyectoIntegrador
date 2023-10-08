@@ -63,13 +63,12 @@
             // 
             // label1
             // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
             this.label1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label1.Location = new System.Drawing.Point(334, 9);
+            this.label1.Location = new System.Drawing.Point(352, 8);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(81, 19);
             this.label1.TabIndex = 8;
@@ -180,34 +179,34 @@
             // Lunes
             // 
             this.Lunes.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Lunes.DataPropertyName = "Lunes";
             this.Lunes.HeaderText = "Lunes";
             this.Lunes.Name = "Lunes";
             this.Lunes.ReadOnly = true;
-            this.Lunes.DataPropertyName = "Lunes";
             // 
             // Martes
             // 
             this.Martes.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Martes.DataPropertyName = "Martes";
             this.Martes.HeaderText = "Martes";
             this.Martes.Name = "Martes";
             this.Martes.ReadOnly = true;
-            this.Martes.DataPropertyName = "Martes";
             // 
             // Miercoles
             // 
             this.Miercoles.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Miercoles.DataPropertyName = "Miercoles";
             this.Miercoles.HeaderText = "Miercoles";
             this.Miercoles.Name = "Miercoles";
             this.Miercoles.ReadOnly = true;
-            this.Miercoles.DataPropertyName = "Miercoles";
             // 
             // Jueves
             // 
             this.Jueves.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Jueves.DataPropertyName = "Jueves";
             this.Jueves.HeaderText = "Jueves";
             this.Jueves.Name = "Jueves";
             this.Jueves.ReadOnly = true;
-            this.Jueves.DataPropertyName = "Jueves";
             // 
             // Viernes
             // 
