@@ -78,6 +78,7 @@
     <Compile Include="logica\LogicaMaterias.cs" />
     <Compile Include="logica\LogicaLugares.cs" />
     <Compile Include="logica\LogicaReserva.cs" />
+    <Compile Include="logica\ReporteLogica.cs" />
     <Compile Include="logica\Session.cs" />
     <Compile Include="logica\LogicaClase.cs" />
     <Compile Include="logica\LogicaUsuarios.cs" />

@@ -39,7 +39,7 @@ namespace ProyectoIntegradorTaller.views.admin
                 if (dataGridView1.Columns[e.ColumnIndex].Name == "Informe")
                 {
                     this.Hide();
-                    Reporte unReporte = new Reporte();
+                    Reporte unReporte = new Reporte((int)dataGridView1.Rows[e.RowIndex].Cells[0].Value);
                     unReporte.Show();
 
                 }

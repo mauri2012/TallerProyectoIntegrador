@@ -1,22 +1,19 @@
 ﻿using DraggingControl;
+using ProyectoIntegradorTaller.logica;
+using ProyectoIntegradorTaller.models;
 using ProyectoIntegradorTaller.views.components;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace ProyectoIntegradorTaller.views.admin
 {
+   
     public partial class Reporte : FormPersonalisado
     {
-        public Reporte()
+        public int id_aula;
+        public Reporte(int id)
         {
             InitializeComponent();
+            id_aula = id;
         }
 
 
@@ -28,6 +25,9 @@ namespace ProyectoIntegradorTaller.views.admin
 
         private void Reporte_Load(object sender, EventArgs e)
         {
+            ReporteLogica.diasListar(chart1,id_aula);
+            ReporteLogica.materiasListar(chart2, id_aula);
+            ReporteLogica.horasListar(chart3, id_aula);
 
         }
 
@@ -42,5 +42,16 @@ namespace ProyectoIntegradorTaller.views.admin
         {
 
         }
+
+        private void chart3_Click(object sender, EventArgs e)
+        {
+
+        }
+    }
+    public class HorarioList
+    {
+            public string campo { set; get; }
+            public string aula { set; get; }
+            public int cantcampo { set; get; }
     }
 }
