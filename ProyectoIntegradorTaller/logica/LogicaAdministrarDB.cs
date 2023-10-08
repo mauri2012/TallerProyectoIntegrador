@@ -13,13 +13,15 @@ namespace ProyectoIntegradorTaller.logica
     {
         public static void RealizarBackup(string backupPath)
         {
-            string backupQuery = $"BACKUP DATABASE taller TO DISK = '{backupPath}'";
+            string backupQuery;
             string connectionString;
 
             using (var context = new classroom_managerEntities())
             {
                 connectionString = context.Database.Connection.ConnectionString;
-                
+                string databaseName = context.Database.Connection.Database;
+                backupQuery = $"BACKUP DATABASE {databaseName} TO DISK = '{backupPath}'";
+
             }
 
             using (SqlConnection connection = new SqlConnection(connectionString))
