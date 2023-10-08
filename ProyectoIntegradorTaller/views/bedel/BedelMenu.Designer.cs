@@ -32,7 +32,7 @@ namespace ProyectoIntegradorTaller.views.admin
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.LBienvenido = new System.Windows.Forms.Label();
             this.CBMateria = new ProyectoIntegradorTaller.views.components.ComboBoxPersonalisado();
@@ -48,6 +48,7 @@ namespace ProyectoIntegradorTaller.views.admin
             this.capacidadMaxDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.itemProfesorBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panel3 = new System.Windows.Forms.Panel();
+            this.BDatabase = new ProyectoIntegradorTaller.views.components.BotonPersonalisado();
             this.BPendientes = new ProyectoIntegradorTaller.views.components.BotonPersonalisado();
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
@@ -238,14 +239,14 @@ namespace ProyectoIntegradorTaller.views.admin
             this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView1.ColumnHeadersHeight = 40;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idDataGridViewTextBoxColumn,
@@ -299,6 +300,7 @@ namespace ProyectoIntegradorTaller.views.admin
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.BDatabase);
             this.panel3.Controls.Add(this.BPendientes);
             this.panel3.Controls.Add(this.BProfesores);
             this.panel3.Controls.Add(this.BMaterias);
@@ -308,6 +310,29 @@ namespace ProyectoIntegradorTaller.views.admin
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(800, 96);
             this.panel3.TabIndex = 12;
+            // 
+            // BDatabase
+            // 
+            this.BDatabase.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.BDatabase.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
+            this.BDatabase.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
+            this.BDatabase.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.BDatabase.BorderRadius = 6;
+            this.BDatabase.BorderSize = 0;
+            this.BDatabase.FlatAppearance.BorderSize = 0;
+            this.BDatabase.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BDatabase.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BDatabase.ForeColor = System.Drawing.Color.White;
+            this.BDatabase.Image = global::ProyectoIntegradorTaller.Properties.Resources.database1;
+            this.BDatabase.Location = new System.Drawing.Point(166, 44);
+            this.BDatabase.Name = "BDatabase";
+            this.BDatabase.Size = new System.Drawing.Size(122, 40);
+            this.BDatabase.TabIndex = 18;
+            this.BDatabase.Text = "  Database";
+            this.BDatabase.TextColor = System.Drawing.Color.White;
+            this.BDatabase.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.BDatabase.UseVisualStyleBackColor = false;
+            this.BDatabase.Click += new System.EventHandler(this.BDatabase_Click);
             // 
             // BPendientes
             // 
@@ -413,6 +438,7 @@ namespace ProyectoIntegradorTaller.views.admin
         private Panel panel5;
         private Panel panel6;
         private components.BotonPersonalisado BPendientes;
+        private components.BotonPersonalisado BDatabase;
     }
 
     #endregion

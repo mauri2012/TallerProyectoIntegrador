@@ -100,6 +100,13 @@ namespace ProyectoIntegradorTaller.views.admin
             ReservasPendientes reservasPendientes = new ReservasPendientes();
             reservasPendientes.Show();
         }
+
+        private void BDatabase_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            AdministracionDatabase admin = new AdministracionDatabase();
+            admin.Show();
+        }
     }
     public class ItemProfesor
     {
