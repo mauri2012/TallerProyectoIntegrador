@@ -39,7 +39,7 @@ namespace ProyectoIntegradorTaller.views.admin
             else {
                 if (IsValidEmail(TBCorreo.Texts))
                 {
-                    UsuarioLogica.agregar(int.Parse(TBDNI.Texts), TBApellido.Texts, TBCorreo.Texts, TBNombre.Texts, 4);
+                    LogicaUsuarios.agregar(int.Parse(TBDNI.Texts), TBApellido.Texts, TBCorreo.Texts, TBNombre.Texts, 4);
                     MessageBox.Show("Se agrego un profesor con exito!", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else

@@ -22,7 +22,7 @@ namespace ProyectoIntegradorTaller.views.admin
         public ReservasPendientes()
         {
             InitializeComponent();
-            reservaLogica.listarReservas(dataGridView1,"NO");
+            LogicaReserva.listarReservas(dataGridView1,"NO");
         }
 
 
@@ -33,8 +33,8 @@ namespace ProyectoIntegradorTaller.views.admin
                 MsgBoxResult ask = (MsgBoxResult)MessageBox.Show("Seguro que quiere autorizar la reserva en el  " + (string)dataGridView1.Rows[e.RowIndex].Cells[2].Value + "  ?", "Reservar", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                 if (ask == MsgBoxResult.Yes)
                 {
-                    reservaLogica.reservaActiva("SI", dataGridView1, e);
-                    reservaLogica.listarReservas(dataGridView1, "NO");
+                    LogicaReserva.reservaActiva("SI", dataGridView1, e);
+                    LogicaReserva.listarReservas(dataGridView1, "NO");
                 }
 
             }

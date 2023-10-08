@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace ProyectoIntegradorTaller.logica
 {
-    internal class reservaLogica
+    public class LogicaReserva
     {
         public static string GetUsuario(int id_usuario)
         {

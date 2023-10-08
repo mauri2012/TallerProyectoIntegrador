@@ -37,9 +37,9 @@ namespace ProyectoIntegradorTaller.views.admin
                 {
 
                     case 1:
-                        AdminMenu menuAdmin = new AdminMenu();
-                        isAdmin = TEmail.Texts;
-                        menuAdmin.Show();
+                       
+                        HomeAdmin homeAdmin= new HomeAdmin();
+                        homeAdmin.Show();
 
                         break;
                     case 3:

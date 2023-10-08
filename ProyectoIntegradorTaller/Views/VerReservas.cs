@@ -44,7 +44,7 @@ namespace ProyectoIntegradorTaller.views
         }
         private void Reservas_load(object sender, EventArgs e)
         {
-            reservaLogica.mostrarGrilla(id_aula, DGHorarios);
+            LogicaReserva.mostrarGrilla(id_aula, DGHorarios);
             
         }
 
@@ -62,7 +62,7 @@ namespace ProyectoIntegradorTaller.views
         private void SeleccionarReserva(string dia, string hora)
         {
             this.Hide();
-            var reservaQuery = reservaLogica.reservaVacia(dia, hora, id_aula);
+            var reservaQuery = LogicaReserva.reservaVacia(dia, hora, id_aula);
             if (reservaQuery == null)
             {
                 ReservarAula reserva = new ReservarAula(id_aula, hora, dia);
@@ -71,7 +71,7 @@ namespace ProyectoIntegradorTaller.views
             else
             {
                 
-                ReservarAula reserva = new ReservarAula(id_aula, hora, dia,reservaLogica.GetMateria((int)reservaQuery.id_materia),reservaLogica.GetUsuario((int)reservaQuery.id_usuario));
+                ReservarAula reserva = new ReservarAula(id_aula, hora, dia,LogicaReserva.GetMateria((int)reservaQuery.id_materia),LogicaReserva.GetUsuario((int)reservaQuery.id_usuario));
                 reserva.Show();
             }
            // reserva.Show();
@@ -83,9 +83,8 @@ namespace ProyectoIntegradorTaller.views
             {
 
                 case 1:
-                    AdminMenu menuAdmin = new AdminMenu();
-
-                    menuAdmin.Show();
+                   HomeAdmin homeAdmin = new HomeAdmin();
+                    homeAdmin.Show();
 
                     break;
                 case 3:

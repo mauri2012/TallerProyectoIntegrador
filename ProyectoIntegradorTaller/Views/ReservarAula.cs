@@ -24,7 +24,7 @@ namespace ProyectoIntegradorTaller.views.admin
             CBHora.Texts = hora;
             CBDia.Texts = dia;
             id_aula = id;
-            reservaLogica.CBMateriasListar(CBMateria);
+            LogicaReserva.CBMateriasListar(CBMateria);
             fecha.Visible = false;
             BReservarAula.Visible = true;
             editar.Visible = false;
@@ -38,7 +38,7 @@ namespace ProyectoIntegradorTaller.views.admin
             
             CBPRofesor.Texts=profesor;
             id_aula = id;
-            reservaLogica.CBMateriasListar(CBMateria);
+            LogicaReserva.CBMateriasListar(CBMateria);
             CBMateria.Texts = materia;
             fecha.Visible = false;
             editar.Visible=true;
@@ -99,7 +99,7 @@ namespace ProyectoIntegradorTaller.views.admin
                 {
                     estado = "NO";
                 }
-                reservaLogica.insertarReserva(id_aula,this.CBHora.Texts,this.CBMateria.Texts,this.CBPRofesor.Texts,this.CBDia.Texts,fecha_desde.Value.Date,fecha_hasta.Value.Date,estado);
+                LogicaReserva.insertarReserva(id_aula,this.CBHora.Texts,this.CBMateria.Texts,this.CBPRofesor.Texts,this.CBDia.Texts,fecha_desde.Value.Date,fecha_hasta.Value.Date,estado);
                 MessageBox.Show("Insercion echa exitosamente!", "insersion", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             
@@ -108,10 +108,10 @@ namespace ProyectoIntegradorTaller.views.admin
         private void panel2_Paint(object sender, PaintEventArgs e)
         {
 
-            reservaLogica.CBMateriasListar(CBMateria);
+            LogicaReserva.CBMateriasListar(CBMateria);
             if (Session.SessionCacheData.IdProfile == 1 || Session.SessionCacheData.IdProfile==3)
             {
-                reservaLogica.CBPRofesorListar(CBPRofesor);
+                LogicaReserva.CBPRofesorListar(CBPRofesor);
             }
             else
             {
@@ -180,9 +180,9 @@ namespace ProyectoIntegradorTaller.views.admin
             else
             {
               
-                var reservaid=reservaLogica.reservaVacia(this.CBDia.Texts, this.CBHora.Texts, id_aula);
+                var reservaid=LogicaReserva.reservaVacia(this.CBDia.Texts, this.CBHora.Texts, id_aula);
       
-                reservaLogica.actualizarReserva(reservaid.id_reserva, this.CBHora.Texts, this.CBMateria.Texts, this.CBPRofesor.Texts, this.CBDia.Texts, fecha_desde.Value.Date, fecha_hasta.Value.Date);
+                LogicaReserva.actualizarReserva(reservaid.id_reserva, this.CBHora.Texts, this.CBMateria.Texts, this.CBPRofesor.Texts, this.CBDia.Texts, fecha_desde.Value.Date, fecha_hasta.Value.Date);
                 MessageBox.Show("Insercion echa exitosamente!", "insersion", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
 

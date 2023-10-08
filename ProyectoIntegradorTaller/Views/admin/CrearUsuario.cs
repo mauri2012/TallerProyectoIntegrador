@@ -80,11 +80,11 @@ namespace ProyectoIntegradorTaller.views.admin
 
                     if (!isEdit)
                         {
-                            UsuarioLogica.agregar(int.Parse(TDni.Texts),this.TApellido.Texts, this.TEmail.Texts, this.TNombre.Texts,tipoU);
+                            LogicaUsuarios.agregar(int.Parse(TDni.Texts),this.TApellido.Texts, this.TEmail.Texts, this.TNombre.Texts,tipoU);
                         }
                         else
                         {
-                            UsuarioLogica.update(id_,int.Parse(TDni.Texts), this.TApellido.Texts, this.TEmail.Texts, this.TNombre.Texts, tipoU);
+                            LogicaUsuarios.update(id_,int.Parse(TDni.Texts), this.TApellido.Texts, this.TEmail.Texts, this.TNombre.Texts, tipoU);
                         }
                     this.TDni.Texts = this.TApellido.Texts = this.TEmail.Texts = this.TNombre.Texts = " ";
                 }
@@ -114,7 +114,7 @@ namespace ProyectoIntegradorTaller.views.admin
 
         private void CBTipo_Load(object sender, EventArgs e)
         {
-            UsuarioLogica.CBTipoListar(CBTipo);
+            LogicaUsuarios.CBTipoListar(CBTipo);
         }
         
     }

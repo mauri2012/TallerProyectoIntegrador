@@ -69,8 +69,9 @@ namespace ProyectoIntegradorTaller.views.admin
             {
 
                 case 1:
-                    AdminMenu menuAdmin = new AdminMenu();
-                    menuAdmin.Show();
+                    HomeAdmin homeAdmin = new HomeAdmin();
+
+                    homeAdmin.Show();
                     break;
                 case 3:
                     BedelMenu menuBedel = new BedelMenu();

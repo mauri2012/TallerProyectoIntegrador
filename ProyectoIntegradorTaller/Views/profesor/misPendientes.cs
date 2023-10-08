@@ -17,7 +17,7 @@ namespace ProyectoIntegradorTaller.views.profesor
         public misPendientes()
         {
             InitializeComponent();
-            reservaLogica.listarReservas(dataGridView1, "NO");
+            LogicaReserva.listarReservas(dataGridView1, "NO");
         }
 
         private void BVolver_Click(object sender, EventArgs e)

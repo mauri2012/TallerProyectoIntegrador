@@ -31,8 +31,8 @@ namespace ProyectoIntegradorTaller.views.admin
         private void BVolver_Click(object sender, EventArgs e)
         {
             this.Hide();
-            AdminMenu admin = new AdminMenu();
-            admin.Show();
+            HomeAdmin homeAdmin = new HomeAdmin();
+            homeAdmin.Show();
         }
 
         private void BCrearUsuario_Click(object sender, EventArgs e)
@@ -49,7 +49,7 @@ namespace ProyectoIntegradorTaller.views.admin
 
             try
             {
-                UsuarioLogica.listarUsuarios(RBActivo, dataGridView1);
+                LogicaUsuarios.listarUsuarios(RBActivo, dataGridView1);
             }
             catch (DataException ex)
             {
@@ -96,21 +96,21 @@ namespace ProyectoIntegradorTaller.views.admin
 
 
 
-                        UsuarioLogica.UsuarioActivo("SI", this.dataGridView1, e);
+                        LogicaUsuarios.UsuarioActivo("SI", this.dataGridView1, e);
                     }
                     else
                     {
-                        UsuarioLogica.UsuarioActivo("NO", this.dataGridView1, e);
+                        LogicaUsuarios.UsuarioActivo("NO", this.dataGridView1, e);
                     }
 
-                    UsuarioLogica.listarUsuarios(RBActivo, dataGridView1);
+                    LogicaUsuarios.listarUsuarios(RBActivo, dataGridView1);
                 }
                 if (dataGridView1.Columns[e.ColumnIndex].Name == "blanquear")
                 {
 
                     String dni = dataGridView1.Rows[e.RowIndex].Cells["DNI"].Value.ToString();
                     int id = (int)dataGridView1.Rows[e.RowIndex].Cells["id"].Value;
-                    UsuarioLogica.CambiarPassword(dni, id);
+                    LogicaUsuarios.CambiarPassword(dni, id);
                     MessageBox.Show("Se blanque la contraseña correctamente!", "Contraseña", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
@@ -119,12 +119,12 @@ namespace ProyectoIntegradorTaller.views.admin
 
         private void RBDesactivados_CheckedChanged(object sender, EventArgs e)
         {
-            UsuarioLogica.listarUsuarios(RBActivo, dataGridView1);
+            LogicaUsuarios.listarUsuarios(RBActivo, dataGridView1);
         }
 
         private void rjTextBox1__TextChanged(object sender, EventArgs e)
         {
-            UsuarioLogica.busqueda(this.rjTextBox1.Texts, dataGridView1, RBActivo);
+            LogicaUsuarios.busqueda(this.rjTextBox1.Texts, dataGridView1, RBActivo);
         }
 
         private void BBuscar_Click(object sender, EventArgs e)

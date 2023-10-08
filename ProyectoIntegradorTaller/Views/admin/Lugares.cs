@@ -27,7 +27,7 @@ namespace ProyectoIntegradorTaller.views.admin
 
             try
             {
-                LugaresLogica.listarLugares(dataGridView1);
+                LogicaLugares.listarLugares(dataGridView1);
             }
             catch (DataException ex)
             {
@@ -49,15 +49,15 @@ namespace ProyectoIntegradorTaller.views.admin
         private void BVolver_Click(object sender, EventArgs e)
         {
             this.Hide();
-            AdminMenu adminMenu = new AdminMenu();
-            adminMenu.Show();
+            HomeAdmin homeAdmin = new HomeAdmin();
+                homeAdmin.Show();
         }
 
         private void BAgregar_Click(object sender, EventArgs e)
         {
             if (!string.IsNullOrEmpty(TLugar.Texts))
             {
-                LugaresLogica.agregarLugar(TLugar.Texts);
+                LogicaLugares.agregarLugar(TLugar.Texts);
                 MessageBox.Show("Se agrego con exito una nueva ubicacion!", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else {
@@ -72,10 +72,10 @@ namespace ProyectoIntegradorTaller.views.admin
                 MsgBoxResult ask = (MsgBoxResult)MessageBox.Show("Seguro que quiere eliminar la ubicaion " + (string)dataGridView1.Rows[e.RowIndex].Cells[1].Value + "  ?", "Eliminar", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                 if (ask == MsgBoxResult.Yes)
                 {
-                    LugaresLogica.desactivarLugar("NO", dataGridView1, e);
+                    LogicaLugares.desactivarLugar("NO", dataGridView1, e);
                    
                 }
-                LugaresLogica.listarLugares(dataGridView1);
+                LogicaLugares.listarLugares(dataGridView1);
                 
             }
         }
@@ -83,7 +83,7 @@ namespace ProyectoIntegradorTaller.views.admin
 
         private void BBuscar_Click(object sender, EventArgs e)
         {
-            LugaresLogica.busquedaLugares(TBBusqueda.Texts, dataGridView1);
+            LogicaLugares.busquedaLugares(TBBusqueda.Texts, dataGridView1);
         }
     }
 }

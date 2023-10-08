@@ -29,8 +29,8 @@ namespace ProyectoIntegradorTaller.views.admin
             {
 
                 case 1:
-                    AdminMenu menuAdmin = new AdminMenu();
-                    menuAdmin.Show();
+                    HomeAdmin homeAdmin = new HomeAdmin();
+                    homeAdmin.Show();
                     this.Hide();
                     break;
                 case 3:
@@ -80,7 +80,7 @@ namespace ProyectoIntegradorTaller.views.admin
                 return;
             }
 
-            UsuarioLogica.CambiarPassword(nuevaContrasena,Session.SessionCacheData.Id);
+            LogicaUsuarios.CambiarPassword(nuevaContrasena,Session.SessionCacheData.Id);
             MessageBox.Show("Se cambio correctamente la contraseña del usuario!", "Editar", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }

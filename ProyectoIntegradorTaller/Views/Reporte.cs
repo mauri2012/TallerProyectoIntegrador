@@ -34,8 +34,8 @@ namespace ProyectoIntegradorTaller.views.admin
         private void BVolver_Click(object sender, EventArgs e)
         {
             this.Hide();
-            AdminMenu admin = new AdminMenu();
-            admin.Show();
+            HomeAdmin homeAdmin = new HomeAdmin();
+            homeAdmin.Show();
         }
 
         private void BGuardar_Click(object sender, EventArgs e)

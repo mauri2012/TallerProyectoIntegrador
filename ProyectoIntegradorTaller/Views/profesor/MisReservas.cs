@@ -17,7 +17,7 @@ namespace ProyectoIntegradorTaller.views.profesor
         public MisReservas()
         {
             InitializeComponent();
-            reservaLogica.listarReservas(dataGridView1,"SI");
+            LogicaReserva.listarReservas(dataGridView1,"SI");
         }
 
         private void BVolver_Click(object sender, EventArgs e)

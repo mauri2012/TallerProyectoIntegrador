@@ -8,7 +8,7 @@ using System.Windows.Forms;
 
 namespace ProyectoIntegradorTaller.logica
 {
-    internal class LugaresLogica
+    internal class LogicaLugares
     {
 
         public static void listarLugares(DataGridView datagrid

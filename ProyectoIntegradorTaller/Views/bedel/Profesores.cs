@@ -24,7 +24,7 @@ namespace ProyectoIntegradorTaller.views.admin
 
         private void Profesores_Load(object sender, EventArgs e)
         {
-            UsuarioLogica.ListarUsuariosPorId(4, dataGridView1);
+            LogicaUsuarios.ListarUsuariosPorId(4, dataGridView1);
         }
 
         private void BVolver_Click(object sender, EventArgs e)

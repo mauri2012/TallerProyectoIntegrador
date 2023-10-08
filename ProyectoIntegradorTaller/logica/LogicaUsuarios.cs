@@ -9,7 +9,7 @@ using System.Windows.Forms;
 
 namespace ProyectoIntegradorTaller.logica
 {
-    internal class UsuarioLogica
+    internal class LogicaUsuarios
     {
         public static void CBTipoListar(ComboBoxPersonalisado box)
         {

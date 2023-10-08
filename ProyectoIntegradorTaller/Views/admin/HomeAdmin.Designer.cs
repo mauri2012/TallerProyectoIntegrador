@@ -1,10 +1,8 @@
-﻿using System.Drawing;
-using System.Resources;
-using System.Windows.Forms;
+﻿using System.Windows.Forms;
 
 namespace ProyectoIntegradorTaller.views.admin
 {
-    partial class AdminMenu
+    partial class HomeAdmin
     {
         /// <summary>
         /// Required designer variable.
@@ -179,7 +177,7 @@ namespace ProyectoIntegradorTaller.views.admin
             this.TBBusqueda.Texts = "";
             this.TBBusqueda.UnderlinedStyle = true;
             this.TBBusqueda._TextChanged += new System.EventHandler(this.TBBusqueda__TextChanged);
-            
+
             // 
             // BMaterias
             // 
@@ -359,7 +357,7 @@ namespace ProyectoIntegradorTaller.views.admin
             // 
             // label1
             // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
@@ -416,7 +414,7 @@ namespace ProyectoIntegradorTaller.views.admin
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-           // this.Name = "AdminMenu";
+            // this.Name = "AdminMenu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menu";
             this.Load += new System.EventHandler(this.AdminMenu_Load);
@@ -443,8 +441,8 @@ namespace ProyectoIntegradorTaller.views.admin
 
         }
 
-    
-        
+
+
         private Panel panel4;
         private Label LCerrar;
         private Label LBienvenido;
@@ -452,7 +450,7 @@ namespace ProyectoIntegradorTaller.views.admin
         private TextBox textBox2;
         private DataGridView dataGridView1;
         private views.components.BotonPersonalisado BCrearAula;
-       
+
         private views.components.BotonPersonalisado BMaterias;
         private views.components.BotonPersonalisado BUsuarios;
         private views.components.BotonPersonalisado BBuscar;
@@ -470,8 +468,6 @@ namespace ProyectoIntegradorTaller.views.admin
         private Panel panel3;
         private Panel panel5;
         private Panel panel6;
+        #endregion
     }
-
-    #endregion
-
 }
