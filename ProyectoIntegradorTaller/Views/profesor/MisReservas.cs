@@ -17,7 +17,7 @@ namespace ProyectoIntegradorTaller.views.profesor
         public MisReservas()
         {
             InitializeComponent();
-            LogicaReserva.ListarReservas(dataGridView1,"SI");
+            LogicaReserva.ListarReservas(dataGridView2,"SI",Session.SessionCacheData.Id);
         }
 
         private void BVolver_Click(object sender, EventArgs e)
@@ -28,6 +28,11 @@ namespace ProyectoIntegradorTaller.views.profesor
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }

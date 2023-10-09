@@ -17,7 +17,8 @@ namespace ProyectoIntegradorTaller.views.profesor
         public misPendientes()
         {
             InitializeComponent();
-            LogicaReserva.ListarReservas(dataGridView1, "NO");
+            
+            LogicaReserva.ListarReservas(dataGridView1, "NO",Session.SessionCacheData.Id);
         }
 
         private void BVolver_Click(object sender, EventArgs e)

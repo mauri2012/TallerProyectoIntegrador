@@ -48,7 +48,7 @@ namespace ProyectoIntegradorTaller.views.profesor
             if (dataGridView1.Columns[e.ColumnIndex].Name == "Reservas")
             {
                 this.Hide();
-                VerReservas reservas = new VerReservas((int)dataGridView1.Rows[e.ColumnIndex].Cells["Id"].Value);
+                VerReservas reservas = new VerReservas((int)dataGridView1.Rows[e.RowIndex].Cells["ID"].Value);
                 reservas.Show();
 
             }
