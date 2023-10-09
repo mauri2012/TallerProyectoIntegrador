@@ -31,7 +31,7 @@ namespace ProyectoIntegradorTaller.views.admin
         private void BVolver_Click(object sender, EventArgs e)
         {
             this.Hide();
-            HomeAdmin homeAdmin = new HomeAdmin();
+            homeAdmin homeAdmin = new homeAdmin();
             homeAdmin.Show();
         }
 

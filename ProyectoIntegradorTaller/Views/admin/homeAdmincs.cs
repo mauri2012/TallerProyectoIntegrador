@@ -13,9 +13,9 @@ using System.Windows.Forms;
 
 namespace ProyectoIntegradorTaller.views.admin
 {
-    public partial class HomeAdmin : FormPersonalisado
+    public partial class homeAdmin : FormPersonalisado
     {
-        public HomeAdmin()
+        public homeAdmin()
         {
 
             InitializeComponent();
@@ -151,7 +151,7 @@ namespace ProyectoIntegradorTaller.views.admin
             materias.Show();
         }
 
-       
+
         private void BUsuarios_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -168,7 +168,7 @@ namespace ProyectoIntegradorTaller.views.admin
             misDatos.Show();
         }
 
-       
+
         private void TBBusqueda__TextChanged(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(this.TBBusqueda.Texts))

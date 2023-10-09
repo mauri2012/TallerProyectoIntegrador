@@ -29,7 +29,7 @@ namespace ProyectoIntegradorTaller.views.admin
             {
 
                 case 1:
-                    HomeAdmin homeAdmin = new HomeAdmin();
+                    homeAdmin homeAdmin = new homeAdmin();
                     homeAdmin.Show();
                     this.Hide();
                     break;

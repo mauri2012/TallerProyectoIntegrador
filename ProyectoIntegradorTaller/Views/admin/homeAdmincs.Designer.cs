@@ -2,7 +2,7 @@
 
 namespace ProyectoIntegradorTaller.views.admin
 {
-    partial class HomeAdmin
+    partial class homeAdmin
     {
         /// <summary>
         /// Required designer variable.
@@ -353,7 +353,7 @@ namespace ProyectoIntegradorTaller.views.admin
             // 
             // itemBindingSource
             // 
- 
+
             // 
             // label1
             // 
