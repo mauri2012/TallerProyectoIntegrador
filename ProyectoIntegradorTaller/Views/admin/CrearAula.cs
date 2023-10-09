@@ -29,6 +29,7 @@ namespace ProyectoIntegradorTaller.views.admin
             TTipo.Texts = Tipo;
             BEditarAula.Visible = true;
             BCrearAula.Visible = false;
+            TNombre.Enabled= false;// no se debe poder editar el nombre segun el profesor
         }
         public CrearAula()
         {
@@ -68,7 +69,7 @@ namespace ProyectoIntegradorTaller.views.admin
                 }
                 else
                 {
-                    MessageBox.Show("el" + this.TNombre.Texts + "ya existe", "Insersion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("el " + this.TNombre.Texts + " ya existe", "Insersion", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
 
             }
@@ -126,16 +127,11 @@ namespace ProyectoIntegradorTaller.views.admin
             }
             else
             {
-                if (LogicaClase.valNomAula(TNombre.Texts))
-                {
+        
                     LogicaClase.updateClassroom(id_, this.TTipo.Texts, this.CBUbicacion.Texts, this.TNombre.Texts, this.TCapacidad.Texts, this.CAireAcondicionado, this.CWifi, this.CProyector, this.CTelevisor);
                     this.TCapacidad.Texts = this.TNombre.Texts = " ";
                     MessageBox.Show("se edito la clase correctamente correctamente!", "editar", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                else
-                {
-                    MessageBox.Show("el" + this.TNombre.Texts + "ya existe", "editar", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
+          
             }
         }
     }
