@@ -13,19 +13,67 @@ using System.Windows.Forms;
 
 namespace ProyectoIntegradorTaller.views.admin
 {
-    public partial class homeAdmin : FormPersonalisado
+    public partial class menuAdmin : FormPersonalisado
     {
-        public homeAdmin()
+        public menuAdmin()
+        {
+            InitializeComponent();
+        }
+
+        private void menuAdmin_Load(object sender, EventArgs e)
         {
 
-            InitializeComponent();
+            try
+            {
+
+                LogicaClase.listarAula(dataGridView1);
+            }
+            catch (DataException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            DataGridViewButtonColumn buttonColumn1 = new DataGridViewButtonColumn();
+            buttonColumn1.Name = "Reservas"; // Name the column
+            buttonColumn1.Text = "Ver Reservas";    // Text for buttons in the column
+            buttonColumn1.UseColumnTextForButtonValue = true; // Display the Text value on buttons
+
+
+
+
+            DataGridViewButtonColumn buttonColumn2 = new DataGridViewButtonColumn();
+            buttonColumn2.Name = "Informe"; // Name the column
+            buttonColumn2.Text = "Nuevo Informe";    // Text for buttons in the column
+            buttonColumn2.UseColumnTextForButtonValue = true; // Display the Text value on buttons
+
+
+            DataGridViewButtonColumn buttonColumn3 = new DataGridViewButtonColumn();
+            buttonColumn3.Name = "Editar"; // Name the column
+            buttonColumn3.Text = "Editar";    // Text for buttons in the column
+            buttonColumn3.UseColumnTextForButtonValue = true; // Display the Text value on buttons
+
+
+            DataGridViewButtonColumn buttonColumn4 = new DataGridViewButtonColumn();
+            buttonColumn4.Name = "Eliminar"; // Name the column
+            buttonColumn4.Text = "Eliminar";    // Text for buttons in the column
+            buttonColumn4.UseColumnTextForButtonValue = true; // Display the Text value on buttons
+
+
+            dataGridView1.Columns.Add(buttonColumn1);
+            dataGridView1.Columns.Add(buttonColumn2);
+            dataGridView1.Columns.Add(buttonColumn3);
+            dataGridView1.Columns.Add(buttonColumn4);
+
 
 
         }
 
-
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+
             if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
             {
                 // Verificar si el clic ocurrió en la columna "Informe"
@@ -60,71 +108,6 @@ namespace ProyectoIntegradorTaller.views.admin
                         LogicaClase.aulaActiva("NO", dataGridView1, e);
                         LogicaClase.listarAula(dataGridView1);
                     }
-
-                }
-            }
-        }
-        private void AdminMenu_Load(object sender, EventArgs e)
-        {
-
-            DataGridViewButtonColumn buttonColumn1 = new DataGridViewButtonColumn();
-            buttonColumn1.Name = "Reservas"; // Name the column
-            buttonColumn1.Text = "Ver Reservas";    // Text for buttons in the column
-            buttonColumn1.UseColumnTextForButtonValue = true; // Display the Text value on buttons
-
-
-
-
-            DataGridViewButtonColumn buttonColumn2 = new DataGridViewButtonColumn();
-            buttonColumn2.Name = "Informe"; // Name the column
-            buttonColumn2.Text = "Nuevo Informe";    // Text for buttons in the column
-            buttonColumn2.UseColumnTextForButtonValue = true; // Display the Text value on buttons
-
-
-            DataGridViewButtonColumn buttonColumn3 = new DataGridViewButtonColumn();
-            buttonColumn3.Name = "Editar"; // Name the column
-            buttonColumn3.Text = "Editar";    // Text for buttons in the column
-            buttonColumn3.UseColumnTextForButtonValue = true; // Display the Text value on buttons
-
-
-            DataGridViewButtonColumn buttonColumn4 = new DataGridViewButtonColumn();
-            buttonColumn4.Name = "Eliminar"; // Name the column
-            buttonColumn4.Text = "Eliminar";    // Text for buttons in the column
-            buttonColumn4.UseColumnTextForButtonValue = true; // Display the Text value on buttons
-
-
-            dataGridView1.Columns.Add(buttonColumn1);
-            dataGridView1.Columns.Add(buttonColumn2);
-            dataGridView1.Columns.Add(buttonColumn3);
-            dataGridView1.Columns.Add(buttonColumn4);
-
-
-
-            try
-            {
-
-                LogicaClase.listarAula(dataGridView1);
-            }
-            catch (DataException ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
-
-        private void DataGridView1_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
-        {
-            if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
-            {
-                DataGridViewColumn column = dataGridView1.Columns[e.ColumnIndex];
-                if (column is DataGridViewButtonColumn && column.Name == "Reservar")
-                {
-                    DataGridViewButtonCell buttonCell = dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex] as DataGridViewButtonCell;
-                    buttonCell.Style.BackColor = Color.Green;
-                    //buttonCell.Style.ForeColor = Color.White;
 
                 }
             }
@@ -183,6 +166,19 @@ namespace ProyectoIntegradorTaller.views.admin
 
 
         }
-    }
 
+        private void BBusqueda__TextChanged(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(this.TBBusqueda.Texts))
+            {
+                LogicaClase.listarAula(dataGridView1);
+            }
+            else
+            {
+
+                LogicaClase.busquedaAula(this.TBBusqueda.Texts, dataGridView1);
+            }
+
+        }
+    }
 }

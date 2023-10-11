@@ -92,7 +92,7 @@ namespace ProyectoIntegradorTaller.views.admin
         private void BVolver_Click(object sender, EventArgs e)
         {
 
-            homeAdmin homeAdmin = new homeAdmin();
+            menuAdmin homeAdmin = new menuAdmin();
             homeAdmin.Show();
             this.Hide();
         }

@@ -38,7 +38,7 @@ namespace ProyectoIntegradorTaller.views.admin
 
                     case 1:
                        
-                        homeAdmin homeAdmin= new homeAdmin();
+                        menuAdmin homeAdmin= new menuAdmin();
                         homeAdmin.Show();
 
                         break;
