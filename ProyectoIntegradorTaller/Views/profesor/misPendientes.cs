@@ -19,6 +19,7 @@ namespace ProyectoIntegradorTaller.views.profesor
             InitializeComponent();
             
             LogicaReserva.ListarReservas(dataGridView1, "NO",Session.SessionCacheData.Id);
+            dataGridView1.Columns[0].Visible = false;
         }
 
         private void BVolver_Click(object sender, EventArgs e)

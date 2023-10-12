@@ -20,6 +20,7 @@ namespace ProyectoIntegradorTaller.views.profesor
         {
             InitializeComponent();
             LogicaClase.listarAula(dataGridView1);
+            dataGridView1.Columns[0].Visible=false;
         }
 
         private void botonPersonalisado3_Click(object sender, EventArgs e)

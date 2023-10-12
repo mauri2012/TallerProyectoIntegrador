@@ -31,31 +31,23 @@ namespace ProyectoIntegradorTaller.views.admin
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea22 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend22 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series22 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea23 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend23 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series23 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea24 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend24 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series24 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.Periodo = new ProyectoIntegradorTaller.views.components.ComboBoxPersonalisado();
+            this.fecha_desde = new ProyectoIntegradorTaller.views.components.TimePickerPersonalisado();
+            this.fecha_hasta = new ProyectoIntegradorTaller.views.components.TimePickerPersonalisado();
+            this.fecha = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.BVolver = new ProyectoIntegradorTaller.views.components.BotonPersonalisado();
+            this.CBFiltro = new ProyectoIntegradorTaller.views.components.ComboBoxPersonalisado();
             this.label2 = new System.Windows.Forms.Label();
             this.chart2 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.BGuardar = new ProyectoIntegradorTaller.views.components.BotonPersonalisado();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.pictureBox6 = new System.Windows.Forms.PictureBox();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.chart3 = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.BVolver = new ProyectoIntegradorTaller.views.components.BotonPersonalisado();
             this.BReservarAula = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
-            this.printDocument1 = new System.Drawing.Printing.PrintDocument();
             ((System.ComponentModel.ISupportInitialize)(this.PBMaximizar_)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PBMinimizar_)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PBCerrar_)).BeginInit();
@@ -63,11 +55,6 @@ namespace ProyectoIntegradorTaller.views.admin
             this.panel2.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chart2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
-            this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chart3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             this.SuspendLayout();
             // 
             // PBMaximizar_
@@ -78,172 +65,107 @@ namespace ProyectoIntegradorTaller.views.admin
             // 
             this.PBCerrar_.Location = new System.Drawing.Point(773, 11);
             // 
+            // PBEsconder_
+            // 
+            this.PBEsconder_.Location = new System.Drawing.Point(775, 12);
+            // 
             // panel2
             // 
             this.panel2.Controls.Add(this.panel4);
-            this.panel2.Controls.Add(this.panel1);
             this.panel2.Controls.Add(this.BReservarAula);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(0, 32);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(800, 418);
+            this.panel2.Size = new System.Drawing.Size(800, 556);
             this.panel2.TabIndex = 6;
             // 
             // panel4
             // 
+            this.panel4.Controls.Add(this.Periodo);
+            this.panel4.Controls.Add(this.fecha_desde);
+            this.panel4.Controls.Add(this.fecha_hasta);
+            this.panel4.Controls.Add(this.fecha);
+            this.panel4.Controls.Add(this.label3);
+            this.panel4.Controls.Add(this.BVolver);
+            this.panel4.Controls.Add(this.CBFiltro);
             this.panel4.Controls.Add(this.label2);
             this.panel4.Controls.Add(this.chart2);
             this.panel4.Controls.Add(this.BGuardar);
-            this.panel4.Controls.Add(this.pictureBox5);
-            this.panel4.Controls.Add(this.pictureBox6);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel4.Location = new System.Drawing.Point(408, 0);
+            this.panel4.Location = new System.Drawing.Point(0, 0);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(392, 418);
+            this.panel4.Size = new System.Drawing.Size(800, 556);
             this.panel4.TabIndex = 32;
             // 
-            // label2
+            // Periodo
             // 
-            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(47, 46);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(130, 19);
-            this.label2.TabIndex = 62;
-            this.label2.Text = "Uso por materia";
+            this.Periodo.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.Periodo.BorderColor = System.Drawing.Color.MediumSlateBlue;
+            this.Periodo.BorderSize = 1;
+            this.Periodo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
+            this.Periodo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.Periodo.ForeColor = System.Drawing.Color.DimGray;
+            this.Periodo.IconColor = System.Drawing.Color.MediumSlateBlue;
+            this.Periodo.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(228)))), ((int)(((byte)(245)))));
+            this.Periodo.ListTextColor = System.Drawing.Color.DimGray;
+            this.Periodo.Location = new System.Drawing.Point(37, 46);
+            this.Periodo.MinimumSize = new System.Drawing.Size(200, 30);
+            this.Periodo.Name = "Periodo";
+            this.Periodo.Padding = new System.Windows.Forms.Padding(1);
+            this.Periodo.Size = new System.Drawing.Size(244, 30);
+            this.Periodo.TabIndex = 68;
+            this.Periodo.Texts = "";
+            this.Periodo.OnSelectedIndexChanged += new System.EventHandler(this.Periodo_OnSelectedIndexChanged);
             // 
-            // chart2
+            // fecha_desde
             // 
-            chartArea22.Name = "ChartArea1";
-            this.chart2.ChartAreas.Add(chartArea22);
-            legend22.Name = "Legend1";
-            this.chart2.Legends.Add(legend22);
-            this.chart2.Location = new System.Drawing.Point(51, 81);
-            this.chart2.Name = "chart2";
-            series22.ChartArea = "ChartArea1";
-            series22.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Funnel;
-            series22.Legend = "Legend1";
-            series22.Name = "Series1";
-            this.chart2.Series.Add(series22);
-            this.chart2.Size = new System.Drawing.Size(308, 279);
-            this.chart2.TabIndex = 46;
-            this.chart2.Text = "chart2";
+            this.fecha_desde.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.fecha_desde.BorderSize = 0;
+            this.fecha_desde.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F);
+            this.fecha_desde.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.fecha_desde.Location = new System.Drawing.Point(331, 46);
+            this.fecha_desde.MaxDate = new System.DateTime(2024, 12, 31, 0, 0, 0, 0);
+            this.fecha_desde.MinDate = new System.DateTime(2023, 1, 18, 0, 0, 0, 0);
+            this.fecha_desde.MinimumSize = new System.Drawing.Size(4, 35);
+            this.fecha_desde.Name = "fecha_desde";
+            this.fecha_desde.Size = new System.Drawing.Size(202, 35);
+            this.fecha_desde.SkinColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
+            this.fecha_desde.TabIndex = 67;
+            this.fecha_desde.TextColor = System.Drawing.Color.White;
             // 
-            // BGuardar
+            // fecha_hasta
             // 
-            this.BGuardar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.BGuardar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
-            this.BGuardar.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
-            this.BGuardar.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.BGuardar.BorderRadius = 6;
-            this.BGuardar.BorderSize = 0;
-            this.BGuardar.FlatAppearance.BorderSize = 0;
-            this.BGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BGuardar.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BGuardar.ForeColor = System.Drawing.Color.White;
-            this.BGuardar.Image = global::ProyectoIntegradorTaller.Properties.Resources.save;
-            this.BGuardar.Location = new System.Drawing.Point(230, 366);
-            this.BGuardar.Name = "BGuardar";
-            this.BGuardar.Size = new System.Drawing.Size(150, 40);
-            this.BGuardar.TabIndex = 38;
-            this.BGuardar.Text = "  Exportar";
-            this.BGuardar.TextColor = System.Drawing.Color.White;
-            this.BGuardar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.BGuardar.UseVisualStyleBackColor = false;
-            this.BGuardar.Click += new System.EventHandler(this.BGuardar_Click);
+            this.fecha_hasta.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.fecha_hasta.BorderSize = 0;
+            this.fecha_hasta.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F);
+            this.fecha_hasta.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.fecha_hasta.Location = new System.Drawing.Point(544, 46);
+            this.fecha_hasta.MinimumSize = new System.Drawing.Size(4, 35);
+            this.fecha_hasta.Name = "fecha_hasta";
+            this.fecha_hasta.Size = new System.Drawing.Size(202, 35);
+            this.fecha_hasta.SkinColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
+            this.fecha_hasta.TabIndex = 66;
+            this.fecha_hasta.TextColor = System.Drawing.Color.White;
             // 
-            // pictureBox5
+            // fecha
             // 
-            this.pictureBox5.Image = global::ProyectoIntegradorTaller.Properties.Resources.Time;
-            this.pictureBox5.Location = new System.Drawing.Point(450, 220);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(26, 30);
-            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox5.TabIndex = 45;
-            this.pictureBox5.TabStop = false;
+            this.fecha.AutoSize = true;
+            this.fecha.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.fecha.Location = new System.Drawing.Point(328, 20);
+            this.fecha.Name = "fecha";
+            this.fecha.Size = new System.Drawing.Size(51, 18);
+            this.fecha.TabIndex = 65;
+            this.fecha.Text = "Fecha";
             // 
-            // pictureBox6
+            // label3
             // 
-            this.pictureBox6.Image = global::ProyectoIntegradorTaller.Properties.Resources.Time;
-            this.pictureBox6.Location = new System.Drawing.Point(450, 161);
-            this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(26, 30);
-            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox6.TabIndex = 44;
-            this.pictureBox6.TabStop = false;
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.chart3);
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.label9);
-            this.panel1.Controls.Add(this.chart1);
-            this.panel1.Controls.Add(this.BVolver);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(413, 418);
-            this.panel1.TabIndex = 31;
-            // 
-            // chart3
-            // 
-            chartArea23.Name = "ChartArea1";
-            this.chart3.ChartAreas.Add(chartArea23);
-            legend23.Name = "Legend1";
-            this.chart3.Legends.Add(legend23);
-            this.chart3.Location = new System.Drawing.Point(26, 215);
-            this.chart3.Name = "chart3";
-            this.chart3.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Pastel;
-            series23.ChartArea = "ChartArea1";
-            series23.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
-            series23.Legend = "Legend1";
-            series23.Name = "Ocupacion";
-            this.chart3.Series.Add(series23);
-            this.chart3.Size = new System.Drawing.Size(321, 145);
-            this.chart3.TabIndex = 63;
-            this.chart3.Text = "chart3";
-            this.chart3.Click += new System.EventHandler(this.chart3_Click);
-            // 
-            // label1
-            // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(22, 194);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(180, 19);
-            this.label1.TabIndex = 62;
-            this.label1.Text = "Horario de mayor uso:";
-            // 
-            // label9
-            // 
-            this.label9.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(22, 23);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(161, 19);
-            this.label9.TabIndex = 61;
-            this.label9.Text = "Dias de mayor  uso:";
-            // 
-            // chart1
-            // 
-            chartArea24.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea24);
-            legend24.Name = "Legend1";
-            this.chart1.Legends.Add(legend24);
-            this.chart1.Location = new System.Drawing.Point(26, 46);
-            this.chart1.Name = "chart1";
-            this.chart1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Pastel;
-            series24.ChartArea = "ChartArea1";
-            series24.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
-            series24.Legend = "Legend1";
-            series24.Name = "Ocupacion";
-            this.chart1.Series.Add(series24);
-            this.chart1.Size = new System.Drawing.Size(321, 145);
-            this.chart1.TabIndex = 50;
-            this.chart1.Text = "chart1";
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Arial", 11F, System.Drawing.FontStyle.Bold);
+            this.label3.Location = new System.Drawing.Point(37, 20);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(64, 18);
+            this.label3.TabIndex = 64;
+            this.label3.Text = "Periodo";
             // 
             // BVolver
             // 
@@ -258,7 +180,7 @@ namespace ProyectoIntegradorTaller.views.admin
             this.BVolver.ForeColor = System.Drawing.Color.White;
             this.BVolver.Image = global::ProyectoIntegradorTaller.Properties.Resources.path30;
             this.BVolver.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BVolver.Location = new System.Drawing.Point(12, 366);
+            this.BVolver.Location = new System.Drawing.Point(22, 486);
             this.BVolver.Name = "BVolver";
             this.BVolver.Size = new System.Drawing.Size(100, 40);
             this.BVolver.TabIndex = 49;
@@ -267,6 +189,78 @@ namespace ProyectoIntegradorTaller.views.admin
             this.BVolver.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.BVolver.UseVisualStyleBackColor = false;
             this.BVolver.Click += new System.EventHandler(this.BVolver_Click);
+            // 
+            // CBFiltro
+            // 
+            this.CBFiltro.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.CBFiltro.BorderColor = System.Drawing.Color.MediumSlateBlue;
+            this.CBFiltro.BorderSize = 1;
+            this.CBFiltro.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
+            this.CBFiltro.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.CBFiltro.ForeColor = System.Drawing.Color.DimGray;
+            this.CBFiltro.IconColor = System.Drawing.Color.MediumSlateBlue;
+            this.CBFiltro.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(228)))), ((int)(((byte)(245)))));
+            this.CBFiltro.ListTextColor = System.Drawing.Color.DimGray;
+            this.CBFiltro.Location = new System.Drawing.Point(546, 108);
+            this.CBFiltro.MinimumSize = new System.Drawing.Size(200, 30);
+            this.CBFiltro.Name = "CBFiltro";
+            this.CBFiltro.Padding = new System.Windows.Forms.Padding(1);
+            this.CBFiltro.Size = new System.Drawing.Size(200, 30);
+            this.CBFiltro.TabIndex = 63;
+            this.CBFiltro.Texts = "";
+            this.CBFiltro.OnSelectedIndexChanged += new System.EventHandler(this.comboBoxPersonalisado1_OnSelectedIndexChanged);
+            // 
+            // label2
+            // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(37, 119);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(130, 19);
+            this.label2.TabIndex = 62;
+            this.label2.Text = "Uso por materia";
+            // 
+            // chart2
+            // 
+            chartArea1.Name = "ChartArea1";
+            this.chart2.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chart2.Legends.Add(legend1);
+            this.chart2.Location = new System.Drawing.Point(22, 160);
+            this.chart2.Name = "chart2";
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.chart2.Series.Add(series1);
+            this.chart2.Size = new System.Drawing.Size(724, 279);
+            this.chart2.TabIndex = 46;
+            this.chart2.Text = "chart2";
+            this.chart2.Click += new System.EventHandler(this.chart2_Click);
+            // 
+            // BGuardar
+            // 
+            this.BGuardar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.BGuardar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
+            this.BGuardar.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
+            this.BGuardar.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.BGuardar.BorderRadius = 6;
+            this.BGuardar.BorderSize = 0;
+            this.BGuardar.FlatAppearance.BorderSize = 0;
+            this.BGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BGuardar.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BGuardar.ForeColor = System.Drawing.Color.White;
+            this.BGuardar.Image = global::ProyectoIntegradorTaller.Properties.Resources.save;
+            this.BGuardar.Location = new System.Drawing.Point(617, 486);
+            this.BGuardar.Name = "BGuardar";
+            this.BGuardar.Size = new System.Drawing.Size(150, 40);
+            this.BGuardar.TabIndex = 38;
+            this.BGuardar.Text = "  Exportar";
+            this.BGuardar.TextColor = System.Drawing.Color.White;
+            this.BGuardar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.BGuardar.UseVisualStyleBackColor = false;
+            this.BGuardar.Click += new System.EventHandler(this.BGuardar_Click);
             // 
             // BReservarAula
             // 
@@ -288,15 +282,11 @@ namespace ProyectoIntegradorTaller.views.admin
             this.label6.TabIndex = 49;
             this.label6.Text = "Reporte";
             // 
-            // printDocument1
-            // 
-            this.printDocument1.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument1_PrintPage_1);
-            // 
             // Reporte
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(800, 588);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.label6);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -318,12 +308,6 @@ namespace ProyectoIntegradorTaller.views.admin
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chart2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chart3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -332,19 +316,17 @@ namespace ProyectoIntegradorTaller.views.admin
         #endregion
         private Panel panel2;
         private Button BReservarAula;
-        private Panel panel1;
         private Panel panel4;
         private views.components.BotonPersonalisado BGuardar;
-        private PictureBox pictureBox5;
-        private PictureBox pictureBox6;
         private Label label6;
         private components.BotonPersonalisado BVolver;
         private System.Windows.Forms.DataVisualization.Charting.Chart chart2;
-        private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
-        private Label label1;
-        private Label label9;
         private Label label2;
-        private System.Windows.Forms.DataVisualization.Charting.Chart chart3;
-        private System.Drawing.Printing.PrintDocument printDocument1;
+        private components.ComboBoxPersonalisado CBFiltro;
+        private components.ComboBoxPersonalisado Periodo;
+        private components.TimePickerPersonalisado fecha_desde;
+        private components.TimePickerPersonalisado fecha_hasta;
+        private Label fecha;
+        private Label label3;
     }
 }

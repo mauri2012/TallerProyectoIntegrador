@@ -27,6 +27,7 @@ namespace ProyectoIntegradorTaller.views.admin
             {
 
                 LogicaClase.listarAula(dataGridView1);
+                
             }
             catch (DataException ex)
             {
@@ -36,6 +37,8 @@ namespace ProyectoIntegradorTaller.views.admin
             {
                 MessageBox.Show(ex.Message);
             }
+            dataGridView1.Columns[0].Visible = false;
+            
             DataGridViewButtonColumn buttonColumn1 = new DataGridViewButtonColumn();
             buttonColumn1.Name = "Reservas"; // Name the column
             buttonColumn1.Text = "Ver Reservas";    // Text for buttons in the column
@@ -179,6 +182,13 @@ namespace ProyectoIntegradorTaller.views.admin
                 LogicaClase.busquedaAula(this.TBBusqueda.Texts, dataGridView1);
             }
 
+        }
+
+        private void BDatabase_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            AdministracionDatabase admin = new AdministracionDatabase();
+            admin.Show();
         }
     }
 }

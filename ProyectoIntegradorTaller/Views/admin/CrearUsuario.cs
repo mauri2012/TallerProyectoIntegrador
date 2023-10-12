@@ -81,11 +81,13 @@ namespace ProyectoIntegradorTaller.views.admin
                     if (!isEdit)
                         {
                             LogicaUsuarios.agregar(int.Parse(TDni.Texts),this.TApellido.Texts, this.TEmail.Texts, this.TNombre.Texts,tipoU);
-                        }
+                        MessageBox.Show("se inserto el usuario correctamente!", "Insersion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
                         else
                         {
                             LogicaUsuarios.update(id_,int.Parse(TDni.Texts), this.TApellido.Texts, this.TEmail.Texts, this.TNombre.Texts, tipoU);
-                        }
+                            MessageBox.Show("se edito al usuario correctamente!", "editar", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
                     this.TDni.Texts = this.TApellido.Texts = this.TEmail.Texts = this.TNombre.Texts = " ";
                 }
                 }

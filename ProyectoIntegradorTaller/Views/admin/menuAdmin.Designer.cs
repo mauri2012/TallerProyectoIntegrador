@@ -30,7 +30,7 @@ namespace ProyectoIntegradorTaller.views.admin
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.botonPersonalisado1 = new ProyectoIntegradorTaller.views.components.BotonPersonalisado();
             this.BLugares = new ProyectoIntegradorTaller.views.components.BotonPersonalisado();
@@ -41,6 +41,7 @@ namespace ProyectoIntegradorTaller.views.admin
             this.CBMateria = new ProyectoIntegradorTaller.views.components.ComboBoxPersonalisado();
             this.TBBusqueda = new CustomControls.RJControls.RJTextBox();
             this.BBuscar = new ProyectoIntegradorTaller.views.components.BotonPersonalisado();
+            this.BDatabase = new ProyectoIntegradorTaller.views.components.BotonPersonalisado();
             ((System.ComponentModel.ISupportInitialize)(this.PBMaximizar_)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PBMinimizar_)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PBCerrar_)).BeginInit();
@@ -110,9 +111,9 @@ namespace ProyectoIntegradorTaller.views.admin
             this.BLugares.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BLugares.ForeColor = System.Drawing.Color.White;
             this.BLugares.Image = global::ProyectoIntegradorTaller.Properties.Resources.map;
-            this.BLugares.Location = new System.Drawing.Point(203, 416);
+            this.BLugares.Location = new System.Drawing.Point(326, 416);
             this.BLugares.Name = "BLugares";
-            this.BLugares.Size = new System.Drawing.Size(150, 40);
+            this.BLugares.Size = new System.Drawing.Size(120, 40);
             this.BLugares.TabIndex = 17;
             this.BLugares.Text = "  Lugares";
             this.BLugares.TextColor = System.Drawing.Color.White;
@@ -133,9 +134,9 @@ namespace ProyectoIntegradorTaller.views.admin
             this.BMaterias.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BMaterias.ForeColor = System.Drawing.Color.White;
             this.BMaterias.Image = global::ProyectoIntegradorTaller.Properties.Resources.book;
-            this.BMaterias.Location = new System.Drawing.Point(360, 416);
+            this.BMaterias.Location = new System.Drawing.Point(456, 416);
             this.BMaterias.Name = "BMaterias";
-            this.BMaterias.Size = new System.Drawing.Size(150, 40);
+            this.BMaterias.Size = new System.Drawing.Size(120, 40);
             this.BMaterias.TabIndex = 18;
             this.BMaterias.Text = "  Materias";
             this.BMaterias.TextColor = System.Drawing.Color.White;
@@ -156,9 +157,9 @@ namespace ProyectoIntegradorTaller.views.admin
             this.BCrearAula.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BCrearAula.ForeColor = System.Drawing.Color.White;
             this.BCrearAula.Image = global::ProyectoIntegradorTaller.Properties.Resources.room;
-            this.BCrearAula.Location = new System.Drawing.Point(674, 416);
+            this.BCrearAula.Location = new System.Drawing.Point(714, 416);
             this.BCrearAula.Name = "BCrearAula";
-            this.BCrearAula.Size = new System.Drawing.Size(150, 40);
+            this.BCrearAula.Size = new System.Drawing.Size(120, 40);
             this.BCrearAula.TabIndex = 19;
             this.BCrearAula.Text = "  Crear Aula";
             this.BCrearAula.TextColor = System.Drawing.Color.White;
@@ -179,9 +180,9 @@ namespace ProyectoIntegradorTaller.views.admin
             this.BUsuarios.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BUsuarios.ForeColor = System.Drawing.Color.White;
             this.BUsuarios.Image = global::ProyectoIntegradorTaller.Properties.Resources.person_groups;
-            this.BUsuarios.Location = new System.Drawing.Point(518, 416);
+            this.BUsuarios.Location = new System.Drawing.Point(586, 416);
             this.BUsuarios.Name = "BUsuarios";
-            this.BUsuarios.Size = new System.Drawing.Size(150, 40);
+            this.BUsuarios.Size = new System.Drawing.Size(120, 40);
             this.BUsuarios.TabIndex = 20;
             this.BUsuarios.Text = "  Usuarios";
             this.BUsuarios.TextColor = System.Drawing.Color.White;
@@ -195,14 +196,14 @@ namespace ProyectoIntegradorTaller.views.admin
             this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridView1.ColumnHeadersHeight = 35;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dataGridView1.EnableHeadersVisualStyles = false;
@@ -282,12 +283,36 @@ namespace ProyectoIntegradorTaller.views.admin
             this.BBuscar.TextColor = System.Drawing.Color.White;
             this.BBuscar.UseVisualStyleBackColor = false;
             // 
+            // BDatabase
+            // 
+            this.BDatabase.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.BDatabase.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
+            this.BDatabase.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
+            this.BDatabase.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.BDatabase.BorderRadius = 6;
+            this.BDatabase.BorderSize = 0;
+            this.BDatabase.FlatAppearance.BorderSize = 0;
+            this.BDatabase.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BDatabase.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BDatabase.ForeColor = System.Drawing.Color.White;
+            this.BDatabase.Image = global::ProyectoIntegradorTaller.Properties.Resources.database1;
+            this.BDatabase.Location = new System.Drawing.Point(198, 416);
+            this.BDatabase.Name = "BDatabase";
+            this.BDatabase.Size = new System.Drawing.Size(122, 40);
+            this.BDatabase.TabIndex = 41;
+            this.BDatabase.Text = "  Database";
+            this.BDatabase.TextColor = System.Drawing.Color.White;
+            this.BDatabase.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.BDatabase.UseVisualStyleBackColor = false;
+            this.BDatabase.Click += new System.EventHandler(this.BDatabase_Click);
+            // 
             // menuAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(844, 484);
+            this.Controls.Add(this.BDatabase);
             this.Controls.Add(this.TBBusqueda);
             this.Controls.Add(this.BBuscar);
             this.Controls.Add(this.CBMateria);
@@ -316,6 +341,7 @@ namespace ProyectoIntegradorTaller.views.admin
             this.Controls.SetChildIndex(this.CBMateria, 0);
             this.Controls.SetChildIndex(this.BBuscar, 0);
             this.Controls.SetChildIndex(this.TBBusqueda, 0);
+            this.Controls.SetChildIndex(this.BDatabase, 0);
             ((System.ComponentModel.ISupportInitialize)(this.PBMaximizar_)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PBMinimizar_)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PBCerrar_)).EndInit();
@@ -338,5 +364,6 @@ namespace ProyectoIntegradorTaller.views.admin
         private components.ComboBoxPersonalisado CBMateria;
         private CustomControls.RJControls.RJTextBox TBBusqueda;
         private components.BotonPersonalisado BBuscar;
+        private components.BotonPersonalisado BDatabase;
     }
 }

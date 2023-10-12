@@ -49,7 +49,7 @@ namespace ProyectoIntegradorTaller.views.admin
 
             try
             {
-                LogicaUsuarios.listarUsuarios(RBActivo, dataGridView1);
+                dataGridView1.DataSource=LogicaUsuarios.listarUsuarios(RBActivo.Checked);
             }
             catch (DataException ex)
             {
@@ -90,20 +90,12 @@ namespace ProyectoIntegradorTaller.views.admin
                 if (dataGridView1.Columns[e.ColumnIndex].Name == "Desactivar")
                 {
                     string valorCelda = dataGridView1.Rows[e.RowIndex].Cells["Activo"].Value.ToString();
+                    int idUsuario = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells["Id"].Value);
 
-                    if (valorCelda == "NO")
-                    {
+                    dataGridView1.Rows[e.RowIndex].Cells["Desactivar"].Value = valorCelda;
 
-
-
-                        LogicaUsuarios.UsuarioActivo("SI", this.dataGridView1, e);
-                    }
-                    else
-                    {
-                        LogicaUsuarios.UsuarioActivo("NO", this.dataGridView1, e);
-                    }
-
-                    LogicaUsuarios.listarUsuarios(RBActivo, dataGridView1);
+                    LogicaUsuarios.UsuarioActivo(valorCelda,idUsuario);
+                    dataGridView1.DataSource=LogicaUsuarios.listarUsuarios(RBActivo.Checked);
                 }
                 if (dataGridView1.Columns[e.ColumnIndex].Name == "blanquear")
                 {
@@ -119,12 +111,12 @@ namespace ProyectoIntegradorTaller.views.admin
 
         private void RBDesactivados_CheckedChanged(object sender, EventArgs e)
         {
-            LogicaUsuarios.listarUsuarios(RBActivo, dataGridView1);
+            dataGridView1.DataSource = LogicaUsuarios.listarUsuarios(RBActivo.Checked);
         }
 
         private void rjTextBox1__TextChanged(object sender, EventArgs e)
         {
-            LogicaUsuarios.busqueda(this.rjTextBox1.Texts, dataGridView1, RBActivo);
+            dataGridView1.DataSource= LogicaUsuarios.busqueda(this.rjTextBox1.Texts, RBActivo.Checked);
         }
 
         private void BBuscar_Click(object sender, EventArgs e)

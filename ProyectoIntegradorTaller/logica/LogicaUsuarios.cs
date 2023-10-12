@@ -2,10 +2,13 @@
 using ProyectoIntegradorTaller.views.components;
 using System;
 using System.Collections.Generic;
+using System.IO.Pipes;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Forms;
+
+using System.Collections;
+
 
 namespace ProyectoIntegradorTaller.logica
 {
@@ -31,13 +34,13 @@ namespace ProyectoIntegradorTaller.logica
             }
         }
     
-        public static void listarUsuarios(RadioButton RBActivo ,DataGridView dataGrid)
+        public static IList listarUsuarios(bool RBActivo)
         {
             using (classroom_managerEntities db = new classroom_managerEntities())
             {
                 var query = from usuario in db.usuario
                             join tipoUsuario in db.tipoUsuario on usuario.id_tipoUsuario equals tipoUsuario.id_tipoUsuario
-                            where usuario.desactivar == (RBActivo.Checked ? "NO" : "SI")
+                            where usuario.desactivar == (RBActivo? "NO" : "SI")
                             select new
                             {
                                 Id = usuario.id_usuario,
@@ -48,21 +51,21 @@ namespace ProyectoIntegradorTaller.logica
                                 Tipo = tipoUsuario.tipo,
                                 Activo = usuario.desactivar,
                             };
-
-                dataGrid.DataSource = query.ToList();
+                return query.ToList();
+              
 
 
 
             }
         }
-        public static void busqueda(string valor,DataGridView dataGrid, RadioButton RBActivo)
+        public static IList busqueda(string valor, bool RBActivo)
         {
             using (classroom_managerEntities dbContext = new classroom_managerEntities())
             {
                 var query = from usuario in dbContext.usuario
                             join tipoUsuario in dbContext.tipoUsuario
                             on usuario.id_tipoUsuario equals tipoUsuario.id_tipoUsuario
-                            where (usuario.nombre.Contains(valor) || usuario.apellido.Contains(valor)) && usuario.desactivar == (RBActivo.Checked ? "SI" : "NO")
+                            where (usuario.nombre.Contains(valor) || usuario.apellido.Contains(valor)) && usuario.desactivar == (RBActivo? "SI" : "NO")
                             select new
                             {
                                 Id = usuario.id_usuario,
@@ -75,7 +78,7 @@ namespace ProyectoIntegradorTaller.logica
                             };
 
                 
-                dataGrid.DataSource = query.ToList();
+                return query.ToList();
             }
         }
         public static void update(int id,int dni_, string apellido_, string emial, string nombre, int tipoU)
@@ -96,7 +99,7 @@ namespace ProyectoIntegradorTaller.logica
 
                     // Step 4: Save changes to the database
                     dbContext.SaveChanges();
-                    MessageBox.Show("se edito al usuario correctamente!", "editar", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
                 }
             }
 
@@ -118,19 +121,16 @@ namespace ProyectoIntegradorTaller.logica
             {
                 db.usuario.Add(user);
                 db.SaveChanges();
-                MessageBox.Show("se inserto el usuario correctamente!", "Insersion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+      
 
             }
         }
-        public static void UsuarioActivo(string estado,DataGridView dataGrid, DataGridViewCellEventArgs e)
+        public static void UsuarioActivo(string estado,int idUsuario)
         {
-            dataGrid.Rows[e.RowIndex].Cells["Desactivar"].Value = estado;
+          
 
             using (classroom_managerEntities db = new classroom_managerEntities())
             {
-
-
-                int idUsuario = Convert.ToInt32(dataGrid.Rows[e.RowIndex].Cells["Id"].Value); // 
 
                 usuario usuarioDesactivar = db.usuario.FirstOrDefault(u => u.id_usuario == idUsuario);
                 if (usuarioDesactivar != null)
@@ -161,7 +161,7 @@ namespace ProyectoIntegradorTaller.logica
             }
         }
 
-        public static void ListarUsuariosPorId(int id, DataGridView dataGridView)
+        public static IList ListarUsuariosPorId(int id)
         {
             using (classroom_managerEntities dbContext = new classroom_managerEntities())
             {
@@ -178,7 +178,7 @@ namespace ProyectoIntegradorTaller.logica
                     .ToList();
 
                
-                dataGridView.DataSource = query;
+                return query;
             }
         }
 

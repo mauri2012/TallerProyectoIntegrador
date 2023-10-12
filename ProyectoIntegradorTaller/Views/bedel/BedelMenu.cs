@@ -22,7 +22,7 @@ namespace ProyectoIntegradorTaller.views.admin
         {
 
             InitializeComponent();
-            LogicaClase.listarAula(dataGridView1);
+        
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -45,7 +45,8 @@ namespace ProyectoIntegradorTaller.views.admin
 
         private void BedelMenu_Load(object sender, EventArgs e)
         {
-        
+            LogicaClase.listarAula(dataGridView1);
+            dataGridView1.Columns[0].Visible= false;
             DataGridViewButtonColumn buttonColumn2 = new DataGridViewButtonColumn();
             buttonColumn2.Name = "Reserva"; // Name the column
             buttonColumn2.Text = "Ver Reservas";    // Text for buttons in the column
@@ -53,7 +54,7 @@ namespace ProyectoIntegradorTaller.views.admin
  
             dataGridView1.Columns.Add(buttonColumn2);
 
-
+            dataGridView1.Columns[0].Visible = false;
         }
         private void DataGridView1_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
@@ -103,9 +104,7 @@ namespace ProyectoIntegradorTaller.views.admin
 
         private void BDatabase_Click(object sender, EventArgs e)
         {
-            this.Close();
-            AdministracionDatabase admin = new AdministracionDatabase();
-            admin.Show();
+
         }
     }
     public class ItemProfesor

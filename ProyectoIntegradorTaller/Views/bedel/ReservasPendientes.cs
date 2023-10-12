@@ -23,6 +23,7 @@ namespace ProyectoIntegradorTaller.views.admin
         {
             InitializeComponent();
             LogicaReserva.ListarReservas(dataGridView1,"NO");
+            dataGridView1.Columns[0].Visible = false;
         }
 
 

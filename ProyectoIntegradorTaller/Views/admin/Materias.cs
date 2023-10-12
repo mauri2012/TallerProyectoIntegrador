@@ -41,6 +41,7 @@ namespace ProyectoIntegradorTaller.views.admin
             try
             {
                 LogicaMaterias.listarMaterias(dataGridView1);
+                dataGridView1.Columns[0].Visible = false;
             }
             catch (DataException ex)
             {

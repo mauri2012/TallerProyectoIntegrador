@@ -25,18 +25,18 @@ namespace ProyectoIntegradorTaller.views.admin
         private void BVolver_Click(object sender, EventArgs e)
         {
             this.Hide();
-            BedelMenu bedelMenu = new BedelMenu();
-            bedelMenu.Show();
+            menuAdmin unAdminMenu = new menuAdmin();
+            unAdminMenu.Show();
         }
 
         private void BBuscarRuta_Click(object sender, EventArgs e)
         {
 
 
-            // Configura el cuadro de diálogo para buscar una carpeta
+  
             FolderBrowserDialog folderBrowserDialog = new FolderBrowserDialog();
 
-            // Mostrar el cuadro de diálogo
+
             DialogResult result = folderBrowserDialog.ShowDialog();
 
             // Verificar si el usuario hizo clic en el botón Aceptar

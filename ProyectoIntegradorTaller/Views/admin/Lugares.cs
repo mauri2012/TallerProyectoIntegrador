@@ -28,6 +28,7 @@ namespace ProyectoIntegradorTaller.views.admin
             try
             {
                 LogicaLugares.listarLugares(dataGridView1);
+                dataGridView1.Columns[0].Visible = false;
             }
             catch (DataException ex)
             {

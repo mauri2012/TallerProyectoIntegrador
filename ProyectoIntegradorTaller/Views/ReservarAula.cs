@@ -43,12 +43,14 @@ namespace ProyectoIntegradorTaller.views.admin
             CBHora.Texts = LogicaReserva.ObtenerHorarioPorID(reserva1.id_hora).horario;
             CBDia.Texts = LogicaReserva.ObtenerDiaPorID(reserva1.id_dia).dias;
             CBPRofesor.Texts=LogicaUsuarios.getUsuario(reserva1.id_usuario).nombre;
+
             id_aula = reserva1.id_aula;
             res= reserva1;
             LogicaReserva.CBMateriasListar(CBMateria);
             //Cambiar el ?? 1 cuando se resuelva el problema de nulos
             CBMateria.Texts = LogicaMaterias.getMateria(reserva1.id_materia ?? 1).materia;
             fecha.Visible = false;
+           // CBMateria.SelectedIndex =reserva1.id_materia.Value;
             BReservarAula.Text = "Editar Aula";
             BReservarAula.Click += new System.EventHandler(this.editar_Click);
         }
@@ -174,6 +176,26 @@ namespace ProyectoIntegradorTaller.views.admin
             this.Hide();
             VerReservas reservas = new VerReservas(id_aula);
             reservas.Show();
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void fecha_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void fecha_desde_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void fecha_hasta_ValueChanged(object sender, EventArgs e)
+        {
+
         }
     }
 
