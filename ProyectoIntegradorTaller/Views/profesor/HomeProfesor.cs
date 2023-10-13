@@ -19,7 +19,7 @@ namespace ProyectoIntegradorTaller.views.profesor
         public HomeProfesor()
         {
             InitializeComponent();
-            LogicaClase.listarAula(dataGridView1);
+            dataGridView1.DataSource = LogicaClase.listarAula();
             dataGridView1.Columns[0].Visible=false;
         }
 

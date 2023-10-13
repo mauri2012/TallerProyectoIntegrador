@@ -34,7 +34,8 @@ namespace ProyectoIntegradorTaller.views.admin
                 MsgBoxResult ask = (MsgBoxResult)MessageBox.Show("Seguro que quiere autorizar la reserva en el  " + (string)dataGridView1.Rows[e.RowIndex].Cells[2].Value + "  ?", "Reservar", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                 if (ask == MsgBoxResult.Yes)
                 {
-                    LogicaReserva.ReservaActiva("SI", dataGridView1, e);
+                    int idUsuario = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells["Id"].Value);
+                    LogicaReserva.ReservaActiva("SI", idUsuario);
                     LogicaReserva.ListarReservas(dataGridView1, "NO");
                 }
 

@@ -45,7 +45,7 @@ namespace ProyectoIntegradorTaller.views.admin
 
         private void BedelMenu_Load(object sender, EventArgs e)
         {
-            LogicaClase.listarAula(dataGridView1);
+            dataGridView1.DataSource = LogicaClase.listarAula();
             dataGridView1.Columns[0].Visible= false;
             DataGridViewButtonColumn buttonColumn2 = new DataGridViewButtonColumn();
             buttonColumn2.Name = "Reserva"; // Name the column

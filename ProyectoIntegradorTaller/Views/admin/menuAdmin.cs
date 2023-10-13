@@ -26,7 +26,7 @@ namespace ProyectoIntegradorTaller.views.admin
             try
             {
 
-                LogicaClase.listarAula(dataGridView1);
+                dataGridView1.DataSource= LogicaClase.listarAula();
                 DataGridViewColumn data = new DataGridViewTextBoxColumn();
     
             }
@@ -117,8 +117,10 @@ namespace ProyectoIntegradorTaller.views.admin
                     MsgBoxResult ask = (MsgBoxResult)MessageBox.Show("Seguro que quiere eliminar el " + (string)dataGridView1.Rows[e.RowIndex].Cells[1].Value + "  ?", "Eliminar", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                     if (ask == MsgBoxResult.Yes)
                     {
-                        LogicaClase.aulaActiva("NO", dataGridView1, e);
-                        LogicaClase.listarAula(dataGridView1);
+                        int idUsuario = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells["Id"].Value);
+
+                        LogicaClase.aulaActiva("NO",idUsuario);
+                        dataGridView1.DataSource=LogicaClase.listarAula();
                     }
 
                 }
@@ -168,12 +170,12 @@ namespace ProyectoIntegradorTaller.views.admin
         {
             if (string.IsNullOrEmpty(this.TBBusqueda.Texts))
             {
-                LogicaClase.listarAula(dataGridView1);
+                dataGridView1.DataSource = LogicaClase.listarAula();
             }
             else
             {
 
-                LogicaClase.busquedaAula(this.TBBusqueda.Texts, dataGridView1);
+                dataGridView1.DataSource= LogicaClase.busquedaAula(this.TBBusqueda.Texts);
             }
 
 
@@ -183,12 +185,12 @@ namespace ProyectoIntegradorTaller.views.admin
         {
             if (string.IsNullOrEmpty(this.TBBusqueda.Texts))
             {
-                LogicaClase.listarAula(dataGridView1);
+                dataGridView1.DataSource=LogicaClase.listarAula();
             }
             else
             {
 
-                LogicaClase.busquedaAula(this.TBBusqueda.Texts, dataGridView1);
+                dataGridView1.DataSource=LogicaClase.busquedaAula(this.TBBusqueda.Texts);
             }
 
         }

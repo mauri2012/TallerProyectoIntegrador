@@ -17,7 +17,7 @@ namespace ProyectoIntegradorTaller.views.profesor
         public MisReservas()
         {
             InitializeComponent();
-            LogicaReserva.ListarReservas(dataGridView2,"SI",Session.SessionCacheData.Id);
+            dataGridView2.DataSource=LogicaReserva.ListarReservas("SI",Session.SessionCacheData.Id);
             dataGridView2.Columns[0].Visible = false;
         }
 

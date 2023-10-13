@@ -1,11 +1,10 @@
 ﻿using ProyectoIntegradorTaller.models;
 using ProyectoIntegradorTaller.views.components;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using System.Security.Cryptography;
-using System.Text;
-using System.Threading.Tasks;
+
 using System.Windows.Forms;
 
 namespace ProyectoIntegradorTaller.logica
@@ -107,15 +106,10 @@ namespace ProyectoIntegradorTaller.logica
         }
 
 
-        public static void ReservaActiva(string estado, DataGridView dataGrid, DataGridViewCellEventArgs e)
+        public static void ReservaActiva(string estado,int idUsuario)
         {
-
             using (classroom_managerEntities db = new classroom_managerEntities())
             {
-
-
-                int idUsuario = Convert.ToInt32(dataGrid.Rows[e.RowIndex].Cells["Id"].Value); // 
-
                 reserva reservaDesactivar = db.reserva.FirstOrDefault(u => u.id_reserva == idUsuario);
                 if (reservaDesactivar != null)
                 {
@@ -257,7 +251,7 @@ namespace ProyectoIntegradorTaller.logica
                 dataGrid.DataSource = query.ToList();
             }
         }
-        public static void ListarReservas(DataGridView dataGrid, string estado,int id)
+        public static IList ListarReservas(string estado,int id)
         {
             using (classroom_managerEntities db = new classroom_managerEntities())
             {
@@ -282,7 +276,7 @@ namespace ProyectoIntegradorTaller.logica
 
                             };
 
-                dataGrid.DataSource = query.ToList();
+                return query.ToList();
             }
         }
 

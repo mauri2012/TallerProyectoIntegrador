@@ -1,26 +1,18 @@
 ﻿using ProyectoIntegradorTaller.models;
-using System;
+using System.Collections;
 using System.Collections.Generic;
-using System.Data.Entity;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+
 
 namespace ProyectoIntegradorTaller.logica
 {
     internal class LogicaClase
     {
-        public static void aulaActiva(string estado, DataGridView dataGrid, DataGridViewCellEventArgs e)
+        public static void aulaActiva(string estado, int idUsuario)
         {
-           // dataGrid.Rows[e.RowIndex].Cells["Desactivar"].Value = estado;
+
             using (classroom_managerEntities db = new classroom_managerEntities())
             {
-
-
-                int idUsuario = Convert.ToInt32(dataGrid.Rows[e.RowIndex].Cells["Id"].Value); // 
-
                 aula aulaDesactivar = db.aula.FirstOrDefault(u => u.id_aula == idUsuario);
                 if (aulaDesactivar != null)
                 {
@@ -30,11 +22,11 @@ namespace ProyectoIntegradorTaller.logica
                 }
             }
         }
-        public static void listarAula(DataGridView dataGrid)
+        public static IList listarAula()
         {
             using (classroom_managerEntities db = new classroom_managerEntities())
             {
-              //  var equipamiento_wifi = db.aula_equipamiento.FirstOrDefault(r=> r.id_equipamiento==4 && r.id_aula==id_aula);
+             
                 var query = from aula in db.aula
                             join ubicacion in db.ubicacion on aula.id_ubicacion equals ubicacion.id_ubicacion
                             join tipoSala in db.tipoSala on aula.id_tipo equals tipoSala.id_sala
@@ -54,11 +46,11 @@ namespace ProyectoIntegradorTaller.logica
                             };
 
 
-                dataGrid.DataSource = query.ToList();
+                return query.ToList();
 
             }
         }
-        public static void busquedaAula(string valor, DataGridView dataGrid)
+        public static IList busquedaAula(string valor)
         {
             int valorInt;
 
@@ -77,19 +69,12 @@ namespace ProyectoIntegradorTaller.logica
                                     Id = aula.id_aula,
                                     Name = aula.nombre,
                                     CapacidadMax = aula.capacidad,
-                                    Lugar = ubicacion.lugar, // Assuming ubicacion has a "Nombre" property
-                                    Tipo = tipoSala.tipo // Assuming tipo has a "Nombre" property
+                                    Lugar = ubicacion.lugar, 
+                                    Tipo = tipoSala.tipo
                                 };
 
-                    dataGrid.DataSource = query.ToList();
-                    /*var query =  dbContext.aula
-                        .Where(entity =>
-                               entity.capacidad.Equals(valorInt)
-                                 )
-                        .ToList();*/
-                
-                // Bind the filtered data to your DataGridView
-                //dataGrid.DataSource = query;
+                    return query.ToList();
+            
                 }
                 else
                 {
@@ -102,11 +87,11 @@ namespace ProyectoIntegradorTaller.logica
                                     Id = aula.id_aula,
                                     Name = aula.nombre,
                                     CapacidadMax = aula.capacidad,
-                                    Lugar = ubicacion.lugar, // Assuming ubicacion has a "Nombre" property
-                                    Tipo = tipoSala.tipo // Assuming tipo has a "Nombre" property
+                                    Lugar = ubicacion.lugar, 
+                                    Tipo = tipoSala.tipo 
                                 };
                  
-                    dataGrid.DataSource = query.ToList();
+                    return query.ToList();
                 }
             }
         }
@@ -134,7 +119,7 @@ namespace ProyectoIntegradorTaller.logica
                         disponible = equipamiento[i],
                         
                     });
-                    MessageBox.Show(aula_equi[i].id_equipamiento +" "+ aula_equi[i].disponible);
+           
                 }
            
 
