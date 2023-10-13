@@ -79,6 +79,7 @@ namespace ProyectoIntegradorTaller.views.admin
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(686, 358);
             this.panel7.TabIndex = 11;
+            this.panel7.Paint += new System.Windows.Forms.PaintEventHandler(this.panel7_Paint);
             // 
             // CWifi
             // 
@@ -101,7 +102,6 @@ namespace ProyectoIntegradorTaller.views.admin
             this.CTelevisor.TabIndex = 27;
             this.CTelevisor.Text = "Televisor";
             this.CTelevisor.UseVisualStyleBackColor = true;
-           
             // 
             // TTipo
             // 
@@ -370,7 +370,6 @@ namespace ProyectoIntegradorTaller.views.admin
             this.label1.Size = new System.Drawing.Size(43, 19);
             this.label1.TabIndex = 12;
             this.label1.Text = "Aula";
-            
             // 
             // CrearAula
             // 

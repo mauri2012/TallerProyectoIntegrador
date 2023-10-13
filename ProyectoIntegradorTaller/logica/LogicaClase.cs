@@ -34,12 +34,12 @@ namespace ProyectoIntegradorTaller.logica
         {
             using (classroom_managerEntities db = new classroom_managerEntities())
             {
-        
+              //  var equipamiento_wifi = db.aula_equipamiento.FirstOrDefault(r=> r.id_equipamiento==4 && r.id_aula==id_aula);
                 var query = from aula in db.aula
                             join ubicacion in db.ubicacion on aula.id_ubicacion equals ubicacion.id_ubicacion
                             join tipoSala in db.tipoSala on aula.id_tipo equals tipoSala.id_sala
-                           
-                            where aula.activa=="SI"
+
+                            where aula.activa == "SI"
                             select new
                             {
                                 Id = aula.id_aula,
@@ -47,7 +47,10 @@ namespace ProyectoIntegradorTaller.logica
                                 CapacidadMax = aula.capacidad,
                                 Lugar = ubicacion.lugar, // Assuming ubicacion has a "Nombre" property
                                 Tipo = tipoSala.tipo, // Assuming tipo has a "Nombre" property
-                          
+                                Wifi = db.aula_equipamiento.FirstOrDefault(r => r.id_equipamiento == 4 && r.id_aula == aula.id_aula).disponible,
+                                Proyector= db.aula_equipamiento.FirstOrDefault(r => r.id_equipamiento == 3 && r.id_aula == aula.id_aula).disponible,
+                                AC= db.aula_equipamiento.FirstOrDefault(r => r.id_equipamiento == 2 && r.id_aula == aula.id_aula).disponible,
+                                Televisor= db.aula_equipamiento.FirstOrDefault(r => r.id_equipamiento == 1 && r.id_aula == aula.id_aula).disponible,
                             };
 
 
@@ -107,7 +110,7 @@ namespace ProyectoIntegradorTaller.logica
                 }
             }
         }
-        public static void updateClassroom(int id, string ttipo,string CBubicacion, string tnombre, string tcapacidad, CheckBox CBAire, CheckBox CBWIFI, CheckBox CBProyector, CheckBox CBTelevisor)
+        public static void updateClassroom(int id, string ttipo,string CBubicacion, string tnombre, string tcapacidad,  bool CBAire, bool CBWIFI, bool CBProyector, bool CBTelevisor)
         {
             List<aula_equipamiento> aula_equi = new List<aula_equipamiento>();
             List<string> equipamiento = new List<string>();
@@ -116,10 +119,10 @@ namespace ProyectoIntegradorTaller.logica
                 var tipoSala = dbContext.tipoSala.FirstOrDefault(tipoS => tipoS.tipo ==ttipo);
                 var ubicacion = dbContext.ubicacion.FirstOrDefault(tipoU => tipoU.lugar == CBubicacion);
             
-                equipamiento.Add(CBAire.Checked ? "SI" : "NO");
-                equipamiento.Add(CBWIFI.Checked ? "SI" : "NO");
-                equipamiento.Add(CBProyector.Checked ? "SI" : "NO");
-                equipamiento.Add(CBTelevisor.Checked ? "SI" : "NO");
+                equipamiento.Add(CBAire ? "SI" : "NO");
+                equipamiento.Add(CBWIFI ? "SI" : "NO");
+                equipamiento.Add(CBProyector ? "SI" : "NO");
+                equipamiento.Add(CBTelevisor ? "SI" : "NO");
 
 
                 for (int i = 0; i < 4; i++)
@@ -127,15 +130,16 @@ namespace ProyectoIntegradorTaller.logica
                     aula_equi.Add(new aula_equipamiento()
                     {
                         id_aula = id,
-                        id_equipamiento = i,
+                        id_equipamiento = i+1,
                         disponible = equipamiento[i],
-                   
-                    }); 
+                        
+                    });
+                    MessageBox.Show(aula_equi[i].id_equipamiento +" "+ aula_equi[i].disponible);
                 }
            
 
                 var entityToUpdate = dbContext.aula.Find(id);
-                var entityToUpdate1 = dbContext.aula_equipamiento;
+                var entityToUpdate1 = dbContext.aula_equipamiento.Where(ae => ae.id_aula==id);
                 if (entityToUpdate != null)
                 {
                     entityToUpdate.nombre = tnombre;
@@ -145,10 +149,12 @@ namespace ProyectoIntegradorTaller.logica
 
                     for (int i = 0; i < 4; i++)
                     {
-                        var property = entityToUpdate1.GetType().GetProperty("aula_equi"+i);
-                        if(property != null)
+                        //var property = entityToUpdate1.GetType().GetProperty("aula_equi"+i);
+                        var equipToUpdate = entityToUpdate1.FirstOrDefault(ae=> ae.id_equipamiento==i+1);
+                        if(equipToUpdate != null)
                         {
-                            property.SetValue(entityToUpdate1, aula_equi[i]);
+                            equipToUpdate.disponible = aula_equi[i].disponible;
+                            //property.SetValue(entityToUpdate1, aula_equi[i]);
                         }
                         
                     }

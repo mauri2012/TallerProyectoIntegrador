@@ -19,7 +19,7 @@ namespace ProyectoIntegradorTaller.views.admin
     public partial class CrearAula : DraggablePanelUserControl 
     {
         private int id_;
-        public CrearAula(int Id, string Name, String Lugar ,int CapacidadMax, String Tipo)
+        public CrearAula(int Id, string Name, int CapacidadMax, String Lugar , String Tipo,string wifi,string proyecto,string AC,string tv)
         {
             InitializeComponent();
             id_ = Id;
@@ -27,6 +27,22 @@ namespace ProyectoIntegradorTaller.views.admin
             CBUbicacion.Texts = Lugar;
             TCapacidad.Texts = CapacidadMax.ToString();
             TTipo.Texts = Tipo;
+            if (wifi == "SI")
+            {
+                CWifi.Checked=true;
+            }
+            if (AC == "SI")
+            {
+                CAireAcondicionado.Checked = true;
+            }
+            if (proyecto == "SI")
+            {
+                CProyector.Checked = true;
+            }
+            if (tv == "SI")
+            {
+                CTelevisor.Checked = true;
+            }
             BEditarAula.Visible = true;
             BCrearAula.Visible = false;
             TNombre.Enabled= false;// no se debe poder editar el nombre segun el profesor
@@ -128,11 +144,16 @@ namespace ProyectoIntegradorTaller.views.admin
             else
             {
         
-                    LogicaClase.updateClassroom(id_, this.TTipo.Texts, this.CBUbicacion.Texts, this.TNombre.Texts, this.TCapacidad.Texts, this.CAireAcondicionado, this.CWifi, this.CProyector, this.CTelevisor);
+                    LogicaClase.updateClassroom(id_, this.TTipo.Texts, this.CBUbicacion.Texts, this.TNombre.Texts, this.TCapacidad.Texts, this.CAireAcondicionado.Checked, this.CWifi.Checked, this.CProyector.Checked, this.CTelevisor.Checked);
                     this.TCapacidad.Texts = this.TNombre.Texts = " ";
                     MessageBox.Show("se edito la clase correctamente correctamente!", "editar", MessageBoxButtons.OK, MessageBoxIcon.Information);
           
             }
+        }
+
+        private void panel7_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
