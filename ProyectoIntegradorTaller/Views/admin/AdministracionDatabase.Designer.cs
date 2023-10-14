@@ -37,7 +37,10 @@
             this.BBuscarRuta = new ProyectoIntegradorTaller.views.components.BotonPersonalisado();
             this.BExportarDB = new ProyectoIntegradorTaller.views.components.BotonPersonalisado();
             this.label3 = new System.Windows.Forms.Label();
-            this.TBNombreArchivo = new CustomControls.RJControls.RJTextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.TBRutaArchivo = new CustomControls.RJControls.RJTextBox();
+            this.BBuscarArchivo = new ProyectoIntegradorTaller.views.components.BotonPersonalisado();
+            this.BRestaurarDB = new ProyectoIntegradorTaller.views.components.BotonPersonalisado();
             ((System.ComponentModel.ISupportInitialize)(this.PBMaximizar_)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PBMinimizar_)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PBCerrar_)).BeginInit();
@@ -52,6 +55,10 @@
             // PBCerrar_
             // 
             this.PBCerrar_.Location = new System.Drawing.Point(773, 11);
+            // 
+            // PBEsconder_
+            // 
+            this.PBEsconder_.Location = new System.Drawing.Point(775, 12);
             // 
             // label1
             // 
@@ -99,7 +106,7 @@
             // 
             // TBRutaExport
             // 
-            this.TBRutaExport.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.TBRutaExport.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.TBRutaExport.BackColor = System.Drawing.SystemColors.Menu;
             this.TBRutaExport.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
             this.TBRutaExport.BorderFocusColor = System.Drawing.Color.HotPink;
@@ -107,7 +114,7 @@
             this.TBRutaExport.BorderSize = 2;
             this.TBRutaExport.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TBRutaExport.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.TBRutaExport.Location = new System.Drawing.Point(103, 121);
+            this.TBRutaExport.Location = new System.Drawing.Point(102, 86);
             this.TBRutaExport.Margin = new System.Windows.Forms.Padding(4);
             this.TBRutaExport.Multiline = false;
             this.TBRutaExport.Name = "TBRutaExport";
@@ -122,10 +129,10 @@
             // 
             // label4
             // 
-            this.label4.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label4.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(26, 133);
+            this.label4.Location = new System.Drawing.Point(26, 91);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(69, 19);
             this.label4.TabIndex = 20;
@@ -133,7 +140,7 @@
             // 
             // label2
             // 
-            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(26, 63);
@@ -144,7 +151,7 @@
             // 
             // BBuscarRuta
             // 
-            this.BBuscarRuta.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.BBuscarRuta.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.BBuscarRuta.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
             this.BBuscarRuta.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
             this.BBuscarRuta.BorderColor = System.Drawing.Color.PaleVioletRed;
@@ -155,7 +162,7 @@
             this.BBuscarRuta.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BBuscarRuta.ForeColor = System.Drawing.Color.White;
             this.BBuscarRuta.Image = global::ProyectoIntegradorTaller.Properties.Resources.folder;
-            this.BBuscarRuta.Location = new System.Drawing.Point(396, 121);
+            this.BBuscarRuta.Location = new System.Drawing.Point(386, 86);
             this.BBuscarRuta.Name = "BBuscarRuta";
             this.BBuscarRuta.Size = new System.Drawing.Size(89, 31);
             this.BBuscarRuta.TabIndex = 53;
@@ -167,7 +174,7 @@
             // 
             // BExportarDB
             // 
-            this.BExportarDB.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.BExportarDB.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.BExportarDB.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
             this.BExportarDB.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
             this.BExportarDB.BorderColor = System.Drawing.Color.PaleVioletRed;
@@ -178,9 +185,9 @@
             this.BExportarDB.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BExportarDB.ForeColor = System.Drawing.Color.White;
             this.BExportarDB.Image = global::ProyectoIntegradorTaller.Properties.Resources.export;
-            this.BExportarDB.Location = new System.Drawing.Point(491, 121);
+            this.BExportarDB.Location = new System.Drawing.Point(481, 86);
             this.BExportarDB.Name = "BExportarDB";
-            this.BExportarDB.Size = new System.Drawing.Size(99, 31);
+            this.BExportarDB.Size = new System.Drawing.Size(116, 31);
             this.BExportarDB.TabIndex = 54;
             this.BExportarDB.Text = "  Exportar";
             this.BExportarDB.TextColor = System.Drawing.Color.White;
@@ -190,37 +197,94 @@
             // 
             // label3
             // 
-            this.label3.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label3.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(26, 98);
+            this.label3.Location = new System.Drawing.Point(26, 121);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(70, 19);
+            this.label3.Size = new System.Drawing.Size(269, 19);
             this.label3.TabIndex = 55;
-            this.label3.Text = "Nombre";
+            this.label3.Text = "Hacer restore de la base de datos:";
             // 
-            // TBNombreArchivo
+            // label5
             // 
-            this.TBNombreArchivo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.TBNombreArchivo.BackColor = System.Drawing.SystemColors.Menu;
-            this.TBNombreArchivo.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
-            this.TBNombreArchivo.BorderFocusColor = System.Drawing.Color.HotPink;
-            this.TBNombreArchivo.BorderRadius = 6;
-            this.TBNombreArchivo.BorderSize = 2;
-            this.TBNombreArchivo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TBNombreArchivo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.TBNombreArchivo.Location = new System.Drawing.Point(103, 86);
-            this.TBNombreArchivo.Margin = new System.Windows.Forms.Padding(4);
-            this.TBNombreArchivo.Multiline = false;
-            this.TBNombreArchivo.Name = "TBNombreArchivo";
-            this.TBNombreArchivo.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.TBNombreArchivo.PasswordChar = false;
-            this.TBNombreArchivo.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.TBNombreArchivo.PlaceholderText = "";
-            this.TBNombreArchivo.Size = new System.Drawing.Size(277, 31);
-            this.TBNombreArchivo.TabIndex = 56;
-            this.TBNombreArchivo.Texts = "";
-            this.TBNombreArchivo.UnderlinedStyle = true;
+            this.label5.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(26, 152);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(68, 19);
+            this.label5.TabIndex = 56;
+            this.label5.Text = "Archivo";
+            // 
+            // TBRutaArchivo
+            // 
+            this.TBRutaArchivo.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.TBRutaArchivo.BackColor = System.Drawing.SystemColors.Menu;
+            this.TBRutaArchivo.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
+            this.TBRutaArchivo.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.TBRutaArchivo.BorderRadius = 6;
+            this.TBRutaArchivo.BorderSize = 2;
+            this.TBRutaArchivo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TBRutaArchivo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.TBRutaArchivo.Location = new System.Drawing.Point(102, 144);
+            this.TBRutaArchivo.Margin = new System.Windows.Forms.Padding(4);
+            this.TBRutaArchivo.Multiline = false;
+            this.TBRutaArchivo.Name = "TBRutaArchivo";
+            this.TBRutaArchivo.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this.TBRutaArchivo.PasswordChar = false;
+            this.TBRutaArchivo.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.TBRutaArchivo.PlaceholderText = "";
+            this.TBRutaArchivo.Size = new System.Drawing.Size(277, 31);
+            this.TBRutaArchivo.TabIndex = 57;
+            this.TBRutaArchivo.Texts = "";
+            this.TBRutaArchivo.UnderlinedStyle = true;
+            // 
+            // BBuscarArchivo
+            // 
+            this.BBuscarArchivo.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.BBuscarArchivo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
+            this.BBuscarArchivo.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
+            this.BBuscarArchivo.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.BBuscarArchivo.BorderRadius = 6;
+            this.BBuscarArchivo.BorderSize = 0;
+            this.BBuscarArchivo.FlatAppearance.BorderSize = 0;
+            this.BBuscarArchivo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BBuscarArchivo.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BBuscarArchivo.ForeColor = System.Drawing.Color.White;
+            this.BBuscarArchivo.Image = global::ProyectoIntegradorTaller.Properties.Resources.folder;
+            this.BBuscarArchivo.Location = new System.Drawing.Point(386, 144);
+            this.BBuscarArchivo.Name = "BBuscarArchivo";
+            this.BBuscarArchivo.Size = new System.Drawing.Size(89, 31);
+            this.BBuscarArchivo.TabIndex = 58;
+            this.BBuscarArchivo.Text = "  Buscar";
+            this.BBuscarArchivo.TextColor = System.Drawing.Color.White;
+            this.BBuscarArchivo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.BBuscarArchivo.UseVisualStyleBackColor = false;
+            this.BBuscarArchivo.Click += new System.EventHandler(this.BBuscarArchivo_Click);
+            // 
+            // BRestaurarDB
+            // 
+            this.BRestaurarDB.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.BRestaurarDB.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
+            this.BRestaurarDB.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
+            this.BRestaurarDB.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.BRestaurarDB.BorderRadius = 6;
+            this.BRestaurarDB.BorderSize = 0;
+            this.BRestaurarDB.FlatAppearance.BorderSize = 0;
+            this.BRestaurarDB.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BRestaurarDB.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BRestaurarDB.ForeColor = System.Drawing.Color.White;
+            this.BRestaurarDB.Image = global::ProyectoIntegradorTaller.Properties.Resources.export;
+            this.BRestaurarDB.Location = new System.Drawing.Point(481, 144);
+            this.BRestaurarDB.Name = "BRestaurarDB";
+            this.BRestaurarDB.Size = new System.Drawing.Size(116, 31);
+            this.BRestaurarDB.TabIndex = 59;
+            this.BRestaurarDB.Text = "  Restaurar";
+            this.BRestaurarDB.TextColor = System.Drawing.Color.White;
+            this.BRestaurarDB.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.BRestaurarDB.UseVisualStyleBackColor = false;
+            this.BRestaurarDB.Click += new System.EventHandler(this.BRestaurarDB_Click);
             // 
             // AdministracionDatabase
             // 
@@ -228,7 +292,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.TBNombreArchivo);
+            this.Controls.Add(this.BRestaurarDB);
+            this.Controls.Add(this.BBuscarArchivo);
+            this.Controls.Add(this.TBRutaArchivo);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.BExportarDB);
             this.Controls.Add(this.BBuscarRuta);
@@ -252,7 +319,10 @@
             this.Controls.SetChildIndex(this.BBuscarRuta, 0);
             this.Controls.SetChildIndex(this.BExportarDB, 0);
             this.Controls.SetChildIndex(this.label3, 0);
-            this.Controls.SetChildIndex(this.TBNombreArchivo, 0);
+            this.Controls.SetChildIndex(this.label5, 0);
+            this.Controls.SetChildIndex(this.TBRutaArchivo, 0);
+            this.Controls.SetChildIndex(this.BBuscarArchivo, 0);
+            this.Controls.SetChildIndex(this.BRestaurarDB, 0);
             ((System.ComponentModel.ISupportInitialize)(this.PBMaximizar_)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PBMinimizar_)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PBCerrar_)).EndInit();
@@ -274,6 +344,9 @@
         private components.BotonPersonalisado BBuscarRuta;
         private components.BotonPersonalisado BExportarDB;
         private System.Windows.Forms.Label label3;
-        private CustomControls.RJControls.RJTextBox TBNombreArchivo;
+        private System.Windows.Forms.Label label5;
+        private CustomControls.RJControls.RJTextBox TBRutaArchivo;
+        private components.BotonPersonalisado BBuscarArchivo;
+        private components.BotonPersonalisado BRestaurarDB;
     }
 }

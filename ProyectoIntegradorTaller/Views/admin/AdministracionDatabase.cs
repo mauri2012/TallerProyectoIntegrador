@@ -52,21 +52,61 @@ namespace ProyectoIntegradorTaller.views.admin
 
         private void BExportarDB_Click(object sender, EventArgs e)
         {
-            // Verifica si los TextBox no están vacíos
-            if (string.IsNullOrWhiteSpace(TBRutaExport.Texts) || string.IsNullOrWhiteSpace(TBNombreArchivo.Texts))
+            
+            if (string.IsNullOrWhiteSpace(TBRutaExport.Texts))
             {
-                MessageBox.Show("Por favor, complete todos los campos.");
+                MessageBox.Show("Por favor, cargue la ruta de la carpeta.");
                 
             }
             else {
+                string fechaActual = DateTime.Now.ToString("dd-MM-yyyy_HHmmss");
 
-                string backupPath = Path.Combine(TBRutaExport.Texts, TBNombreArchivo.Texts + ".bak");
+                string backupPath = Path.Combine(TBRutaExport.Texts, fechaActual + ".bak");
 
                 LogicaAdministrarDB.RealizarBackup(backupPath);
-                MessageBox.Show("Se exporto correctamente la copia");
+               
             }
 
             
         }
+
+        private void BBuscarArchivo_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Filter = "Archivos .bak|*.bak";
+
+            // Muestra el cuadro de diálogo para seleccionar un archivo .bak
+            DialogResult result = openFileDialog.ShowDialog();
+
+            if (result == DialogResult.OK)
+            {
+                try
+                {
+                    string rutaArchivo = openFileDialog.FileName;
+
+
+                    // Muestra el contenido en el TextBox
+                    TBRutaArchivo.Texts = rutaArchivo;
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Ocurrió un error al cargar el archivo .bak: " + ex.Message);
+                }
+            }
+        }
+
+        private void BRestaurarDB_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(TBRutaArchivo.Texts))
+            {
+                MessageBox.Show("Por favor, cargue la ruta del archivo.");
+            }
+            else
+            {
+                LogicaAdministrarDB.RealisarRestauracion(TBRutaArchivo.Texts);
+            }
+        }
     }
+    
 }
