@@ -187,9 +187,9 @@ namespace ProyectoIntegradorTaller.views.components
         }
         private void panel1_load(object sender, EventArgs e)
         {
-            PBMaximizar_.Location = new Point(796, 11);
-            PBCerrar_.Location = new Point(817, 11);
-            PBEsconder_.Location = new Point(775, 12);
+            PBMaximizar_.Location = new Point(752, 11);
+            PBCerrar_.Location = new Point(773, 11);
+            PBEsconder_.Location = new Point(731, 12);
         }
     }
 }

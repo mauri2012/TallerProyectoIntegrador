@@ -31,9 +31,9 @@ namespace ProyectoIntegradorTaller.views.admin
 
         private void Reporte_Load(object sender, EventArgs e)
         {
-            PBEsconder_.Location = new Point(732, 11);
-            PBMaximizar_.Location = new Point(752,11);
-            PBCerrar_.Location = new Point(775, 11);
+          //  PBEsconder_.Location = new Point(732, 11);
+           // PBMaximizar_.Location = new Point(752,11);
+           // PBCerrar_.Location = new Point(775, 11);
 
             List<rango> listaPeriodo = new List<rango>
             {

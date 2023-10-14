@@ -22,7 +22,9 @@ namespace ProyectoIntegradorTaller.views.admin
 
         private void menuAdmin_Load(object sender, EventArgs e)
         {
-            
+            PBEsconder_.Location = new Point(775, 11);
+            PBMaximizar_.Location = new Point(796,11);
+            PBCerrar_.Location = new Point(817, 11);
             try
             {
 
