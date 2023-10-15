@@ -1,22 +1,44 @@
-﻿using ProyectoIntegradorTaller.models;
+﻿using iTextSharp.text;
+using iTextSharp.text.pdf;
+using ProyectoIntegradorTaller.models;
 using ProyectoIntegradorTaller.views.components;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace ProyectoIntegradorTaller.logica
 {
     public class LogicaReserva
     {
+
         public static horas ObtenerHorarioPorID(int idHorario)
         {
             using (classroom_managerEntities db = new classroom_managerEntities())
             {
                 var horario = db.horas.FirstOrDefault(h => h.id_hora == idHorario);
                 return horario;
+            }
+        }
+        public static reserva BuscarReservaPorId(int idReserva)
+        {
+            using (classroom_managerEntities db = new classroom_managerEntities())
+            {
+                try
+                {
+                    var reservaEncontrada = db.reserva.FirstOrDefault(r => r.id_reserva == idReserva);
+
+                    return reservaEncontrada;
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("Error al buscar reserva por ID: " + ex.Message);
+                    return null;  // O puedes lanzar la excepción si lo prefieres
+                }
             }
         }
 
@@ -119,6 +141,59 @@ namespace ProyectoIntegradorTaller.logica
                 }
             }
         }
+
+        public static void ImprimirComprobante(int id)
+        {
+                reserva reserva1= LogicaReserva.BuscarReservaPorId(id);
+                // Crear un objeto de la clase Document
+                Document document = new Document();
+
+                try
+                {
+                    // Guardar el documento PDF
+                    string ruta = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\reserva.pdf";
+                    PdfWriter writer = PdfWriter.GetInstance(document, new FileStream(ruta, FileMode.Create));
+
+                    // Abrir el documento
+                    document.Open();
+
+                    // Agregar una página al documento (no es necesario, iTextSharp añade automáticamente la primera página)
+                    // document.NewPage();
+
+                    // Agregar texto al documento
+                    Font font = FontFactory.GetFont("Arial", 12);
+                    Paragraph paragraph = new Paragraph("Comprobante de Reserva", font);
+                    paragraph.Alignment = Element.ALIGN_CENTER;
+                    document.Add(paragraph);
+
+                    // Agregar una línea
+                    document.Add(Chunk.NEWLINE);
+
+                    // Agregar los datos de la reserva
+                    Paragraph datosReserva = new Paragraph();
+                    datosReserva.Add(new Chunk("ID de reserva: " + reserva1.id_reserva +"Hora: "+ LogicaReserva.ObtenerHorarioPorID(reserva1.id_hora).horario + "Dia: " + LogicaReserva.ObtenerDiaPorID(reserva1.id_dia).dias, font));
+                    datosReserva.Add(Chunk.NEWLINE);
+                    usuario usuario1 = LogicaUsuarios.getUsuario(reserva1.id_usuario);
+                    datosReserva.Add(new Chunk("Nombre: " + usuario1.nombre +" Apellido:"+ usuario1.apellido+" Dni:"+ usuario1.dni , font));
+                    datosReserva.Add(Chunk.NEWLINE);
+
+
+                document.Add(datosReserva);
+                }
+                catch (Exception ex)
+                {
+                    // Manejar excepciones
+                    MessageBox.Show("Error al crear el PDF: " + ex.Message);
+                }
+                finally
+                {
+                    // Cerrar el documento
+                    if (document.IsOpen())
+                        document.Close();
+                MessageBox.Show("Se creo comprobante en documentos!");
+                }
+
+            }
 
         public static void CBHoraListar(ComboBoxPersonalisado box)
         {

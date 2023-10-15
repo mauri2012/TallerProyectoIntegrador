@@ -51,6 +51,7 @@ namespace ProyectoIntegradorTaller.views.admin
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label8 = new System.Windows.Forms.Label();
+            this.BImprimir = new ProyectoIntegradorTaller.views.components.BotonPersonalisado();
             ((System.ComponentModel.ISupportInitialize)(this.PBMaximizar_)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PBMinimizar_)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PBCerrar_)).BeginInit();
@@ -71,6 +72,7 @@ namespace ProyectoIntegradorTaller.views.admin
             // panel1
             // 
             this.panel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.panel1.Controls.Add(this.BImprimir);
             this.panel1.Controls.Add(this.BEliminar);
             this.panel1.Controls.Add(this.Periodo);
             this.panel1.Controls.Add(this.BVolver);
@@ -377,6 +379,28 @@ namespace ProyectoIntegradorTaller.views.admin
             this.label8.TabIndex = 7;
             this.label8.Text = "Reservar Aula";
             // 
+            // BImprimir
+            // 
+            this.BImprimir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
+            this.BImprimir.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
+            this.BImprimir.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.BImprimir.BorderRadius = 6;
+            this.BImprimir.BorderSize = 0;
+            this.BImprimir.FlatAppearance.BorderSize = 0;
+            this.BImprimir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BImprimir.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BImprimir.ForeColor = System.Drawing.Color.White;
+            this.BImprimir.Image = global::ProyectoIntegradorTaller.Properties.Resources.save;
+            this.BImprimir.Location = new System.Drawing.Point(175, 309);
+            this.BImprimir.Name = "BImprimir";
+            this.BImprimir.Size = new System.Drawing.Size(187, 40);
+            this.BImprimir.TabIndex = 55;
+            this.BImprimir.Text = " Imprimir Comprobante";
+            this.BImprimir.TextColor = System.Drawing.Color.White;
+            this.BImprimir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.BImprimir.UseVisualStyleBackColor = false;
+            this.BImprimir.Click += new System.EventHandler(this.BImprimir_Click);
+            // 
             // ReservarAula
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -429,5 +453,6 @@ namespace ProyectoIntegradorTaller.views.admin
         private components.BotonPersonalisado BVolver;
         private components.ComboBoxPersonalisado Periodo;
         private components.BotonPersonalisado BEliminar;
+        private components.BotonPersonalisado BImprimir;
     }
 }

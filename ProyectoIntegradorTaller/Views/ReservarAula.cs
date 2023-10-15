@@ -31,7 +31,7 @@ namespace ProyectoIntegradorTaller.views.admin
             fecha.Visible = false;
             BEliminar.Visible = false;
             this.BReservarAula.Click += new System.EventHandler(this.botonPersonalisado1_Click);
-
+            this.BImprimir.Visible= false; 
         }
 
 
@@ -196,6 +196,11 @@ namespace ProyectoIntegradorTaller.views.admin
         private void fecha_hasta_ValueChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void BImprimir_Click(object sender, EventArgs e)
+        {
+            LogicaReserva.ImprimirComprobante(res.id_reserva);
         }
     }
 
