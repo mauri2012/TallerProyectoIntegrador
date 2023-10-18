@@ -1,6 +1,7 @@
 ﻿using ProyectoIntegradorTaller.models;
 using ProyectoIntegradorTaller.views.admin;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,7 +20,7 @@ namespace ProyectoIntegradorTaller.logica
                 return materiaElejida;
             }
         }
-        public static void listarMaterias(DataGridView datagrid)
+        public static void listarMaterias(DataGridView a)
         {
             using (classroom_managerEntities db = new classroom_managerEntities())
             {
@@ -32,7 +33,24 @@ namespace ProyectoIntegradorTaller.logica
                                 Activo = materias.activo
 
                             };
-                datagrid.DataSource = query.ToList();
+                a.DataSource= query.ToList();
+
+            }
+        }
+        public static IList listarMaterias()
+        {
+            using (classroom_managerEntities db = new classroom_managerEntities())
+            {
+                var query = from materias in db.materias
+                            where materias.activo == "SI"
+                            select new
+                            {
+                                Id = materias.id_materia,
+                                Materia = materias.materia,
+                                Activo = materias.activo
+
+                            };
+                return  query.ToList();
 
             }
         }
@@ -68,7 +86,7 @@ namespace ProyectoIntegradorTaller.logica
                 }
             }
         }
-        public static void busqueda(string valor, DataGridView dataGrid)
+        public static IList busqueda(string valor)
         {
             using (classroom_managerEntities dbContext = new classroom_managerEntities())
             {
@@ -82,7 +100,7 @@ namespace ProyectoIntegradorTaller.logica
                     })
                     .ToList();
 
-                dataGrid.DataSource = query;
+                return query;
             }
         }
     }

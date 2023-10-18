@@ -203,5 +203,12 @@ namespace ProyectoIntegradorTaller.views.admin
             AdministracionDatabase admin = new AdministracionDatabase();
             admin.Show();
         }
+
+        private void BPeriodos_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            Periodos unPeriodo = new Periodos();
+            unPeriodo.Show();
+        }
     }
 }

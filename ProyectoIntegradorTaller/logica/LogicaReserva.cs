@@ -204,6 +204,13 @@ namespace ProyectoIntegradorTaller.logica
                 box.ValueMember = "id_hora";
             }
         }
+        public static IList listarPeriodo()
+        {
+            using(classroom_managerEntities db= new classroom_managerEntities())
+            {
+                return db.Periodo.ToList();
+            }
+        }
         public static void CBMateriasListar(ComboBoxPersonalisado box)
         {
             using (classroom_managerEntities db = new classroom_managerEntities())
@@ -270,7 +277,7 @@ namespace ProyectoIntegradorTaller.logica
             }
         }
 
-        public static void InsertarReserva(int id_aula, string CBHora, string CBMateria, string CBPRofesor, string CBDia, DateTime fechad, DateTime fechah, string Estado)
+        public static void InsertarReserva(int id_aula, string CBHora, string CBMateria, string CBPRofesor, string CBDia,string periodo, string Estado)
         {
             using (classroom_managerEntities db = new classroom_managerEntities())
             {
@@ -279,7 +286,7 @@ namespace ProyectoIntegradorTaller.logica
                 var materiaElegida = db.materias.FirstOrDefault(materia => materia.materia == CBMateria);
                 var diaElegido = db.dias_semana.FirstOrDefault(dia => dia.dias == CBDia);
                 var horarioElegido = db.horas.FirstOrDefault(horario => horario.horario == CBHora);
-
+                var periodoElegido = db.Periodo.FirstOrDefault(p => p.periodo_nombre == periodo);
                 reserva unaReserva = new reserva()
                 {
                     id_hora = horarioElegido.id_hora,
@@ -288,8 +295,8 @@ namespace ProyectoIntegradorTaller.logica
                     id_dia = diaElegido.id_dias,
                     id_aula = id_aula,
                     activo = Estado,
-                    fecha_desde = fechad,
-                    fecha_hasta = fechah,
+                    fecha_desde = periodoElegido.fecha_desde,
+                    fecha_hasta = periodoElegido.fecha_hasta,
                 };
 
                 db.reserva.Add(unaReserva);
@@ -298,7 +305,7 @@ namespace ProyectoIntegradorTaller.logica
             }
         }
         
-        public static void ListarReservas(DataGridView dataGrid, string estado)
+        public static IList ListarReservas(string estado)
         {
             using (classroom_managerEntities db = new classroom_managerEntities())
             {
@@ -323,7 +330,7 @@ namespace ProyectoIntegradorTaller.logica
 
                             };
 
-                dataGrid.DataSource = query.ToList();
+                return query.ToList();
             }
         }
         public static IList ListarReservas(string estado,int id)
@@ -338,7 +345,7 @@ namespace ProyectoIntegradorTaller.logica
                             join materias in db.materias on reserva.id_materia equals materias.id_materia
                             join aula in db.aula on reserva.id_aula equals aula.id_aula
                             join usuario in db.usuario on reserva.id_usuario equals usuario.id_usuario
-                            where reserva.activo == estado && reserva.id_usuario== id
+                            where reserva.activo == estado && reserva.id_usuario== id  
                             select new
                             {
                                 ID = reserva.id_reserva,

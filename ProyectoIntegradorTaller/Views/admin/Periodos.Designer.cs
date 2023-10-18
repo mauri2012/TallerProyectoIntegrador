@@ -3,7 +3,7 @@ using System.Windows.Forms;
 
 namespace ProyectoIntegradorTaller.views.admin
 {
-    partial class Materias
+    partial class Periodos
     {
         /// <summary>
         /// Required designer variable.
@@ -34,9 +34,6 @@ namespace ProyectoIntegradorTaller.views.admin
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
-            this.TMateria = new CustomControls.RJControls.RJTextBox();
-            this.BAgregarMateria = new ProyectoIntegradorTaller.views.components.BotonPersonalisado();
-            this.label2 = new System.Windows.Forms.Label();
             this.BVolver = new ProyectoIntegradorTaller.views.components.BotonPersonalisado();
             this.BBuscar = new ProyectoIntegradorTaller.views.components.BotonPersonalisado();
             this.TBBusqueda = new CustomControls.RJControls.RJTextBox();
@@ -74,66 +71,9 @@ namespace ProyectoIntegradorTaller.views.admin
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.label1.Location = new System.Drawing.Point(322, 11);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(73, 19);
+            this.label1.Size = new System.Drawing.Size(69, 19);
             this.label1.TabIndex = 7;
-            this.label1.Text = "Materias";
-            // 
-            // TMateria
-            // 
-            this.TMateria.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.TMateria.BackColor = System.Drawing.SystemColors.Menu;
-            this.TMateria.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
-            this.TMateria.BorderFocusColor = System.Drawing.Color.HotPink;
-            this.TMateria.BorderRadius = 6;
-            this.TMateria.BorderSize = 2;
-            this.TMateria.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TMateria.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.TMateria.Location = new System.Drawing.Point(506, 28);
-            this.TMateria.Margin = new System.Windows.Forms.Padding(4);
-            this.TMateria.Multiline = false;
-            this.TMateria.Name = "TMateria";
-            this.TMateria.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.TMateria.PasswordChar = false;
-            this.TMateria.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.TMateria.PlaceholderText = "";
-            this.TMateria.Size = new System.Drawing.Size(170, 31);
-            this.TMateria.TabIndex = 55;
-            this.TMateria.Texts = "";
-            this.TMateria.UnderlinedStyle = true;
-            // 
-            // BAgregarMateria
-            // 
-            this.BAgregarMateria.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.BAgregarMateria.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
-            this.BAgregarMateria.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
-            this.BAgregarMateria.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.BAgregarMateria.BorderRadius = 6;
-            this.BAgregarMateria.BorderSize = 0;
-            this.BAgregarMateria.FlatAppearance.BorderSize = 0;
-            this.BAgregarMateria.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BAgregarMateria.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BAgregarMateria.ForeColor = System.Drawing.Color.White;
-            this.BAgregarMateria.Image = global::ProyectoIntegradorTaller.Properties.Resources.add;
-            this.BAgregarMateria.Location = new System.Drawing.Point(683, 28);
-            this.BAgregarMateria.Name = "BAgregarMateria";
-            this.BAgregarMateria.Size = new System.Drawing.Size(105, 31);
-            this.BAgregarMateria.TabIndex = 53;
-            this.BAgregarMateria.Text = "  Agregar";
-            this.BAgregarMateria.TextColor = System.Drawing.Color.White;
-            this.BAgregarMateria.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.BAgregarMateria.UseVisualStyleBackColor = false;
-            this.BAgregarMateria.Click += new System.EventHandler(this.BAgregarMateria_Click);
-            // 
-            // label2
-            // 
-            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
-            this.label2.Location = new System.Drawing.Point(437, 35);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(62, 16);
-            this.label2.TabIndex = 54;
-            this.label2.Text = "Nombre";
+            this.label1.Text = "Periodo";
             // 
             // BVolver
             // 
@@ -204,10 +144,7 @@ namespace ProyectoIntegradorTaller.views.admin
             // 
             // panel3
             // 
-            this.panel3.Controls.Add(this.label2);
-            this.panel3.Controls.Add(this.TMateria);
             this.panel3.Controls.Add(this.BVolver);
-            this.panel3.Controls.Add(this.BAgregarMateria);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel3.Location = new System.Drawing.Point(0, 379);
             this.panel3.Name = "panel3";
@@ -264,7 +201,7 @@ namespace ProyectoIntegradorTaller.views.admin
             this.dataGridView1.TabIndex = 1;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
-            // Materias
+            // Periodos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -275,7 +212,7 @@ namespace ProyectoIntegradorTaller.views.admin
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "Materias";
+            this.Name = "Periodos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Materias";
             this.Load += new System.EventHandler(this.Materias_Load);
@@ -293,7 +230,6 @@ namespace ProyectoIntegradorTaller.views.admin
             ((System.ComponentModel.ISupportInitialize)(this.PBEsconder_)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.itemMateriasBindingSource)).EndInit();
             this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
             this.panel5.ResumeLayout(false);
             this.panel6.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -313,20 +249,18 @@ namespace ProyectoIntegradorTaller.views.admin
         private views.components.BotonPersonalisado BBuscar;
         private BindingSource itemMateriasBindingSource;
         private components.BotonPersonalisado BVolver;
-        private CustomControls.RJControls.RJTextBox TMateria;
-        private components.BotonPersonalisado BAgregarMateria;
-        private Label label2;
         private DataGridViewTextBoxColumn materiaDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn Id;
-        private DataGridViewTextBoxColumn Materia;
-        private DataGridViewTextBoxColumn Activo;
+        private DataGridViewTextBoxColumn periodo;
+        private DataGridViewTextBoxColumn desde;
+        private DataGridViewTextBoxColumn hasta;
         private Panel panel3;
         private Panel panel5;
         private Panel panel6;
         private DataGridView dataGridView1;
-       
+
         private BindingSource materiasBindingSource;
-        
+
     }
 
     #endregion

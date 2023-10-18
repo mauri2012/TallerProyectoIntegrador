@@ -1,29 +1,15 @@
 ﻿using DraggingControl;
 using ProyectoIntegradorTaller.logica;
-using ProyectoIntegradorTaller.models;
 using ProyectoIntegradorTaller.views.components;
-using ProyectoIntegradorTaller.views.profesor;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Drawing.Drawing2D;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
-
-using System.Runtime.Remoting.Messaging;
-using Microsoft.VisualBasic;
-using System.Runtime.ConstrainedExecution;
 
 namespace ProyectoIntegradorTaller.views.admin
 {
-    public partial class Materias : FormPersonalisado
+    public partial class Periodos : FormPersonalisado
     {
-        public Materias()
+        public Periodos()
         {
 
             InitializeComponent();
@@ -32,17 +18,28 @@ namespace ProyectoIntegradorTaller.views.admin
 
         private void Materias_Load(object sender, EventArgs e)
         {
-            
+  
+
             DataGridViewButtonColumn buttonColumn4 = new DataGridViewButtonColumn();
-            buttonColumn4.Name = "Eliminar"; // Name the column
-            buttonColumn4.Text = "Eliminar";    // Text for buttons in the column
+            buttonColumn4.Name = "Editar"; // Name the column
+            buttonColumn4.Text = "Editar";    // Text for buttons in the column
             buttonColumn4.UseColumnTextForButtonValue = true; // Display the Text value on buttons
 
 
-            DataGridViewTextBoxColumn materias = new DataGridViewTextBoxColumn();
-            materias.Name = "materia"; // Name the column
-            materias.HeaderText = "materia";
-            materias.DataPropertyName = "Materia";
+            DataGridViewTextBoxColumn per = new DataGridViewTextBoxColumn();
+            per.Name = "periodo"; // Name the column
+            per.HeaderText = "periodo";
+            per.DataPropertyName = "Periodo";
+
+            DataGridViewTextBoxColumn Desde = new DataGridViewTextBoxColumn();
+            Desde.Name = "desde"; // Name the column
+            Desde.HeaderText = "Desde";
+            Desde.DataPropertyName = "Desde";
+
+            DataGridViewTextBoxColumn hasta = new DataGridViewTextBoxColumn();
+            hasta.Name = "hasta"; // Name the column
+            hasta.HeaderText = "hasta";
+            hasta.DataPropertyName = "Hasta";
 
             DataGridViewTextBoxColumn id = new DataGridViewTextBoxColumn();
             id.Name = "id"; // Name the column
@@ -50,12 +47,13 @@ namespace ProyectoIntegradorTaller.views.admin
             id.DataPropertyName = "Id";
 
             dataGridView1.Columns.Add(id);
-            dataGridView1.Columns.Add(materias);
+            dataGridView1.Columns.Add(per);
+            dataGridView1.Columns.Add(Desde);
+            dataGridView1.Columns.Add(hasta);
             dataGridView1.Columns.Add(buttonColumn4);
             try
             {
-                dataGridView1.DataSource=LogicaMaterias.listarMaterias();
-               // LogicaMaterias.listarMaterias(dataGridView1);
+                dataGridView1.DataSource= LogicaPeriodo.listarPeriodos();
                 dataGridView1.Columns[0].Visible = false;
             }
             catch (DataException ex)
@@ -104,37 +102,25 @@ namespace ProyectoIntegradorTaller.views.admin
 
         private void BAgregarMateria_Click(object sender, EventArgs e)
         {
-            if (!string.IsNullOrEmpty(TMateria.Texts))
-            {
-                LogicaMaterias.agregarMateria(this.TMateria.Texts);
-                    MessageBox.Show("materia ingresada correctamente!", "Insersion", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    this.TMateria.Texts  = " ";
-
-                dataGridView1.DataSource = LogicaMaterias.listarMaterias();
-            }
-            else
-            {
-                MessageBox.Show("El campo esta vacio!");
-            }
+        
 
         }
 
         private void BBuscar_Click(object sender, EventArgs e)
         {
-            dataGridView1.DataSource= LogicaMaterias.busqueda(TBBusqueda.Texts);
+            dataGridView1.DataSource = LogicaMaterias.busqueda(TBBusqueda.Texts);
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (dataGridView1.Columns[e.ColumnIndex].Name == "Eliminar")
+            if (dataGridView1.Columns[e.ColumnIndex].Name == "Editar")
             {
-                MsgBoxResult ask = (MsgBoxResult)MessageBox.Show("Seguro que quiere eliminar la materia " + (string)dataGridView1.Rows[e.RowIndex].Cells[1].Value + "  ?", "Eliminar", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-                if (ask == MsgBoxResult.Yes)
-                {
-                    LogicaMaterias.materiaActiva("NO", dataGridView1, e);
-                    dataGridView1.DataSource = LogicaMaterias.listarMaterias();
-                }
 
+                this.Hide();
+                editarPeriodo unPeriodo = new editarPeriodo((int)dataGridView1.Rows[e.RowIndex].Cells[0].Value,
+                                                             (DateTime)dataGridView1.Rows[e.RowIndex].Cells[2].Value,
+                                                             (DateTime)dataGridView1.Rows[e.RowIndex].Cells[3].Value);
+                unPeriodo.Show();
             }
         }
 
@@ -142,13 +128,13 @@ namespace ProyectoIntegradorTaller.views.admin
         {
             if (string.IsNullOrEmpty(this.TBBusqueda.Texts))
             {
-                dataGridView1.DataSource = LogicaMaterias.listarMaterias();
+                dataGridView1.DataSource = LogicaPeriodo.listarPeriodos();
                 dataGridView1.Columns[0].Visible = false;
             }
             else
             {
                 //hacer el busqueda
-                dataGridView1.DataSource = LogicaMaterias.busqueda(this.TBBusqueda.Texts);
+                dataGridView1.DataSource = LogicaPeriodo.busquedaPeriodo(this.TBBusqueda.Texts);
             }
         }
     }

@@ -1,16 +1,9 @@
 ﻿using DraggingControl;
 using ProyectoIntegradorTaller.models;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Security.Cryptography.X509Certificates;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using ProyectoIntegradorTaller.logica;
+using System.Collections.Generic;
 
 namespace ProyectoIntegradorTaller.views.admin
 {
@@ -31,7 +24,8 @@ namespace ProyectoIntegradorTaller.views.admin
             fecha.Visible = false;
             BEliminar.Visible = false;
             this.BReservarAula.Click += new System.EventHandler(this.botonPersonalisado1_Click);
-            this.BImprimir.Visible= false; 
+            this.BImprimir.Visible= false;
+            
         }
 
 
@@ -85,7 +79,7 @@ namespace ProyectoIntegradorTaller.views.admin
                 {
                     estado = "NO";
                 }
-                LogicaReserva.InsertarReserva(id_aula,this.CBHora.Texts,this.CBMateria.Texts,this.CBPRofesor.Texts,this.CBDia.Texts,fecha_desde.Value.Date,fecha_hasta.Value.Date,estado);
+                LogicaReserva.InsertarReserva(id_aula,this.CBHora.Texts,this.CBMateria.Texts,this.CBPRofesor.Texts,this.CBDia.Texts,this.Periodo.Texts,estado);
                 MessageBox.Show("Insercion echa exitosamente!", "insersion", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             
@@ -93,7 +87,8 @@ namespace ProyectoIntegradorTaller.views.admin
 
         private void panel2_Paint(object sender, PaintEventArgs e)
         {
-
+            fecha_desde.Visible = false;
+            fecha_hasta.Visible = false;
             LogicaReserva.CBMateriasListar(CBMateria);
             if (Session.SessionCacheData.IdProfile == 1 || Session.SessionCacheData.IdProfile==3)
             {
@@ -103,20 +98,22 @@ namespace ProyectoIntegradorTaller.views.admin
             {
                 CBPRofesor.Texts = Session.SessionCacheData.Name;
             }
-            
-            List<rango> listaPeriodo = new List<rango>
+
+      /*      List<string> items = new List<string>(); 
+           foreach(var item in LogicaReserva.listarPeriodo())
             {
-                new rango { Id = 1, Periodo = "Primer Cuatrimestre" },
-                new rango { Id = 2, Periodo = "Segundo Cuatrimestre" },
-                new rango { Id = 3, Periodo = "Dia Puntual" },
-                new rango { Id = 4, Periodo = "Personalizado" }
-            };
+                
+                items.Add(item.ToString());
+            }*/
+            //Periodo.Items.Add("Dia Puntual");
+            //Periodo.Items.Add("Personalizado");
+            Periodo.DataSource = LogicaReserva.listarPeriodo();
+            //Periodo.DataSource = items;
+            Periodo.DisplayMember = "periodo_nombre";
+            Periodo.ValueMember = "id_periodo";
 
-            Periodo.DataSource = listaPeriodo;
-
-            Periodo.DisplayMember = "Periodo";
-            
-            Periodo.ValueMember = "Id";
+            //Periodo.Items.Add("Dia Puntual");
+            //Periodo.Items.Add("Personalizado");
         }
 
         private void Periodo_OnSelectedIndexChanged(object sender, EventArgs e)
@@ -124,25 +121,14 @@ namespace ProyectoIntegradorTaller.views.admin
             switch (this.Periodo.Texts.ToString())
             {
 
-                case "Primer Cuatrimestre":
-                    fecha_desde.Value = new DateTime(2023, 3, 10);
-                    fecha_hasta.Value = new DateTime(2023, 6, 15);
-                    fecha_desde.Visible =false;
-                    fecha_hasta.Visible = false;
-                    break;
-                case "Segundo Cuatrimestre":
-                    fecha_hasta.Visible = false;
-                    fecha_desde.Visible =false;
-                    fecha_desde.Value = new DateTime(2023, 7, 10);
-                    fecha_hasta.Value = new DateTime(2023, 11, 20);
-                    break;
+       
                 case "Dia Puntual":
                     fecha.Visible = true;
                     fecha_desde.Visible = true; 
                     fecha_hasta.Visible = false;
                     fecha_desde.Value = fecha_hasta.Value;
                     break;
-                default:
+                case "Personalizado":
                     fecha_desde.Visible = true;
                     fecha_hasta.Visible = true;
 

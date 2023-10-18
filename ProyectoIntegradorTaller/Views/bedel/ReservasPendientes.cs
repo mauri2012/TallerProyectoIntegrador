@@ -22,7 +22,7 @@ namespace ProyectoIntegradorTaller.views.admin
         public ReservasPendientes()
         {
             InitializeComponent();
-            LogicaReserva.ListarReservas(dataGridView1,"NO");
+            dataGridView1.DataSource= LogicaReserva.ListarReservas("NO");
             dataGridView1.Columns[0].Visible = false;
         }
 
@@ -36,7 +36,7 @@ namespace ProyectoIntegradorTaller.views.admin
                 {
                     int idUsuario = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells["Id"].Value);
                     LogicaReserva.ReservaActiva("SI", idUsuario);
-                    LogicaReserva.ListarReservas(dataGridView1, "NO");
+                    dataGridView1.DataSource= LogicaReserva.ListarReservas("NO");
                 }
 
             }
