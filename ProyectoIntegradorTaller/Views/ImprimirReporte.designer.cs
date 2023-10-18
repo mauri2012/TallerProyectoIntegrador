@@ -58,6 +58,7 @@ namespace ProyectoIntegradorTaller.views.admin
             this.BReservarAula = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.printDocument1 = new System.Drawing.Printing.PrintDocument();
+            this.botonPersonalisado1 = new ProyectoIntegradorTaller.views.components.BotonPersonalisado();
             ((System.ComponentModel.ISupportInitialize)(this.PBMaximizar_)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PBMinimizar_)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PBCerrar_)).BeginInit();
@@ -89,11 +90,12 @@ namespace ProyectoIntegradorTaller.views.admin
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(0, 32);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(800, 756);
+            this.panel2.Size = new System.Drawing.Size(800, 556);
             this.panel2.TabIndex = 6;
             // 
             // panel4
             // 
+            this.panel4.Controls.Add(this.botonPersonalisado1);
             this.panel4.Controls.Add(this.BGuardar);
             this.panel4.Controls.Add(this.label5);
             this.panel4.Controls.Add(this.label4);
@@ -107,7 +109,7 @@ namespace ProyectoIntegradorTaller.views.admin
             this.panel4.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel4.Location = new System.Drawing.Point(0, 0);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(800, 756);
+            this.panel4.Size = new System.Drawing.Size(800, 556);
             this.panel4.TabIndex = 32;
             // 
             // BGuardar
@@ -123,7 +125,7 @@ namespace ProyectoIntegradorTaller.views.admin
             this.BGuardar.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BGuardar.ForeColor = System.Drawing.Color.White;
             this.BGuardar.Image = global::ProyectoIntegradorTaller.Properties.Resources.save;
-            this.BGuardar.Location = new System.Drawing.Point(617, 22);
+            this.BGuardar.Location = new System.Drawing.Point(617, -178);
             this.BGuardar.Name = "BGuardar";
             this.BGuardar.Size = new System.Drawing.Size(150, 40);
             this.BGuardar.TabIndex = 71;
@@ -280,6 +282,29 @@ namespace ProyectoIntegradorTaller.views.admin
             // 
             this.printDocument1.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument1_PrintPage_1);
             // 
+            // botonPersonalisado1
+            // 
+            this.botonPersonalisado1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.botonPersonalisado1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
+            this.botonPersonalisado1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
+            this.botonPersonalisado1.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.botonPersonalisado1.BorderRadius = 6;
+            this.botonPersonalisado1.BorderSize = 0;
+            this.botonPersonalisado1.FlatAppearance.BorderSize = 0;
+            this.botonPersonalisado1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.botonPersonalisado1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.botonPersonalisado1.ForeColor = System.Drawing.Color.White;
+            this.botonPersonalisado1.Image = global::ProyectoIntegradorTaller.Properties.Resources.save;
+            this.botonPersonalisado1.Location = new System.Drawing.Point(617, 11);
+            this.botonPersonalisado1.Name = "botonPersonalisado1";
+            this.botonPersonalisado1.Size = new System.Drawing.Size(150, 40);
+            this.botonPersonalisado1.TabIndex = 72;
+            this.botonPersonalisado1.Text = "  Exportar";
+            this.botonPersonalisado1.TextColor = System.Drawing.Color.White;
+            this.botonPersonalisado1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.botonPersonalisado1.UseVisualStyleBackColor = false;
+            this.botonPersonalisado1.Click += new System.EventHandler(this.BGuardar_Click);
+            // 
             // ImprimirReporte
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -330,5 +355,6 @@ namespace ProyectoIntegradorTaller.views.admin
         private Label label4;
         private Label label5;
         private components.BotonPersonalisado BGuardar;
+        private components.BotonPersonalisado botonPersonalisado1;
     }
 }

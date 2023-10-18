@@ -22,6 +22,14 @@ namespace ProyectoIntegradorTaller.logica
                 }
             }
         }
+        public static string nombreAula(int id_aula)
+        {
+            using (classroom_managerEntities db = new classroom_managerEntities())
+            {
+                var aula= db.aula.FirstOrDefault(u => u.id_aula==id_aula);
+                return aula.nombre;
+            }
+        }
         public static IList listarAula()
         {
             using (classroom_managerEntities db = new classroom_managerEntities())
