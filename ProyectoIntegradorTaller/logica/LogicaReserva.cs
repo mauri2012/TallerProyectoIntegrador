@@ -264,8 +264,6 @@ namespace ProyectoIntegradorTaller.logica
                     reserva.id_usuario =usuarioProfesor.id_usuario;
                     reserva.id_dia = idDia;
                     reserva.activo = estado;
-                    reserva.fecha_desde = periodoElegido.fecha_desde;
-                    reserva.fecha_hasta = periodoElegido.fecha_hasta;
                     reserva.id_periodo = periodoElegido.id_periodo;
 
                     // Guardar los cambios en la base de datos
@@ -316,8 +314,6 @@ namespace ProyectoIntegradorTaller.logica
                         id_dia = diaElegido.id_dias,
                         id_aula = id_aula,
                         activo = Estado,
-                        fecha_desde = periodoElejido.fecha_desde,
-                        fecha_hasta = periodoElejido.fecha_hasta,
                         id_periodo = periodoElejido.id_periodo,
                     };
 
