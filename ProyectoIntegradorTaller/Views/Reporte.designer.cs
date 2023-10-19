@@ -39,7 +39,6 @@ namespace ProyectoIntegradorTaller.views.admin
             this.Periodo = new ProyectoIntegradorTaller.views.components.ComboBoxPersonalisado();
             this.fecha_desde = new ProyectoIntegradorTaller.views.components.TimePickerPersonalisado();
             this.fecha_hasta = new ProyectoIntegradorTaller.views.components.TimePickerPersonalisado();
-            this.fecha = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.BVolver = new ProyectoIntegradorTaller.views.components.BotonPersonalisado();
             this.CBFiltro = new ProyectoIntegradorTaller.views.components.ComboBoxPersonalisado();
@@ -84,7 +83,6 @@ namespace ProyectoIntegradorTaller.views.admin
             this.panel4.Controls.Add(this.Periodo);
             this.panel4.Controls.Add(this.fecha_desde);
             this.panel4.Controls.Add(this.fecha_hasta);
-            this.panel4.Controls.Add(this.fecha);
             this.panel4.Controls.Add(this.label3);
             this.panel4.Controls.Add(this.BVolver);
             this.panel4.Controls.Add(this.CBFiltro);
@@ -146,16 +144,6 @@ namespace ProyectoIntegradorTaller.views.admin
             this.fecha_hasta.SkinColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
             this.fecha_hasta.TabIndex = 66;
             this.fecha_hasta.TextColor = System.Drawing.Color.White;
-            // 
-            // fecha
-            // 
-            this.fecha.AutoSize = true;
-            this.fecha.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.fecha.Location = new System.Drawing.Point(328, 20);
-            this.fecha.Name = "fecha";
-            this.fecha.Size = new System.Drawing.Size(51, 18);
-            this.fecha.TabIndex = 65;
-            this.fecha.Text = "Fecha";
             // 
             // label3
             // 
@@ -326,7 +314,6 @@ namespace ProyectoIntegradorTaller.views.admin
         private components.ComboBoxPersonalisado Periodo;
         private components.TimePickerPersonalisado fecha_desde;
         private components.TimePickerPersonalisado fecha_hasta;
-        private Label fecha;
         private Label label3;
     }
 }

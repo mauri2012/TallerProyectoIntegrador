@@ -45,8 +45,14 @@ namespace ProyectoIntegradorTaller.views
         }
         private void Reservas_load(object sender, EventArgs e)
         {
-            LogicaReserva.MostrarGrilla(id_aula, DGHorarios);
-            
+
+            Periodo.DataSource = LogicaReserva.listarPeriodo();
+           
+            Periodo.DisplayMember = "periodo_nombre";
+            Periodo.ValueMember = "id_periodo";
+     
+            LogicaReserva.MostrarGrilla(id_aula, DGHorarios,this.Periodo.Texts);
+                       
         }
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -103,6 +109,13 @@ namespace ProyectoIntegradorTaller.views
 
             }
             this.Hide();
+
+        }
+
+        private void Periodo_OnSelectedIndexChanged(object sender, EventArgs e)
+        {
+
+            LogicaReserva.MostrarGrilla(id_aula, DGHorarios, this.Periodo.Texts);
 
         }
     }

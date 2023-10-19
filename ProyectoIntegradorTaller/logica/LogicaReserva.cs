@@ -68,7 +68,7 @@ namespace ProyectoIntegradorTaller.logica
 
             }
         }
-        public static void MostrarGrilla(int id_aula, DataGridView dataGrid)
+        public static void MostrarGrilla(int id_aula, DataGridView dataGrid,string periodo)
         {
             List<reserva> reservas;
 
@@ -83,20 +83,33 @@ namespace ProyectoIntegradorTaller.logica
 
             using (classroom_managerEntities db = new classroom_managerEntities())
             {
+                var periodoElejido = db.Periodo.FirstOrDefault(p=> p.periodo_nombre==periodo);
 
-
-                reservas = db.reserva.Where(reserva => reserva.id_aula == id_aula && reserva.activo == "SI").ToList();
-
-
-                foreach (var res in reservas)
+                if (periodoElejido != null)
                 {
-                    var m = db.materias.FirstOrDefault(ma => ma.id_materia == res.id_materia);
-                    var p = db.usuario.FirstOrDefault(pr => pr.id_usuario == res.id_usuario);
-                    int dia = res.id_dia;
-                    int horario = res.id_hora;
 
 
-                    grillaHorarios[horario - 1, dia] = m.materia + "( " + p.nombre + " " + p.apellido+ " )";
+                    var reservas1 = db.reserva
+                        .Where(r => r.id_aula == id_aula && r.activo == "SI")
+                        .AsEnumerable()
+                        .Join(db.Periodo, reserva => reserva.id_periodo, p => p.id_periodo, (reserva, p) => new { Reserva = reserva, Periodo = p }
+                    ).Where(r =>  r.Periodo.fecha_hasta >= periodoElejido.fecha_hasta).Select(r => r.Reserva).ToList();
+
+
+                    foreach (var res in reservas1)
+                    {
+                        var m = db.materias.FirstOrDefault(ma => ma.id_materia == res.id_materia);
+                        var p = db.usuario.FirstOrDefault(pr => pr.id_usuario == res.id_usuario);
+                        int dia = res.id_dia;
+                        int horario = res.id_hora;
+
+
+                        grillaHorarios[horario - 1, dia] = m.materia + "( " + p.nombre + " " + p.apellido + " )";
+                    }
+                }
+                else
+                {
+              
                 }
             }
             dataGrid.Rows.Clear();
@@ -231,13 +244,13 @@ namespace ProyectoIntegradorTaller.logica
                 box.ValueMember = "id_usuario";
             }
         }
-        public static void EditarReserva(int idReserva, int idHora, string CBMateria, string CBProfesor, int idDia, DateTime fechad, DateTime fechah, string estado)
+        public static void EditarReserva(int idReserva, int idHora, string CBMateria, string CBProfesor, int idDia, string periodo, string estado)
         {
             using (classroom_managerEntities db = new classroom_managerEntities())
             {
                 // Obtener la reserva a editar
                 var reserva = db.reserva.FirstOrDefault(r => r.id_reserva == idReserva);
-
+                var periodoElegido = db.Periodo.FirstOrDefault(p => p.periodo_nombre == periodo);
                 if (reserva != null)
                 {
                     // Obtener los objetos asociados a los nombre
@@ -251,8 +264,9 @@ namespace ProyectoIntegradorTaller.logica
                     reserva.id_usuario =usuarioProfesor.id_usuario;
                     reserva.id_dia = idDia;
                     reserva.activo = estado;
-                    reserva.fecha_desde = fechad;
-                    reserva.fecha_hasta = fechah;
+                    reserva.fecha_desde = periodoElegido.fecha_desde;
+                    reserva.fecha_hasta = periodoElegido.fecha_hasta;
+                    reserva.id_periodo = periodoElegido.id_periodo;
 
                     // Guardar los cambios en la base de datos
                     db.SaveChanges();
@@ -281,26 +295,41 @@ namespace ProyectoIntegradorTaller.logica
         {
             using (classroom_managerEntities db = new classroom_managerEntities())
             {
-
-                var usuarioProfesor = db.usuario.FirstOrDefault(usuario => usuario.nombre == CBPRofesor);
-                var materiaElegida = db.materias.FirstOrDefault(materia => materia.materia == CBMateria);
-                var diaElegido = db.dias_semana.FirstOrDefault(dia => dia.dias == CBDia);
-                var horarioElegido = db.horas.FirstOrDefault(horario => horario.horario == CBHora);
-                var periodoElegido = db.Periodo.FirstOrDefault(p => p.periodo_nombre == periodo);
-                reserva unaReserva = new reserva()
+                var periodoElejido = db.Periodo.FirstOrDefault(p => p.periodo_nombre == periodo);
+                var reservas1 = db.reserva
+                    .Where(r => r.id_aula == id_aula && r.activo == "SI")
+                    .AsEnumerable()
+                    .Join(db.Periodo, reserva => reserva.id_periodo, p => p.id_periodo, (reserva, p) => new { Reserva = reserva, Periodo = p }
+                ).Where(r => r.Periodo.fecha_hasta >= periodoElejido.fecha_hasta).Select(r => r.Reserva).ToList();
+                if(reservas1 == null)
                 {
-                    id_hora = horarioElegido.id_hora,
-                    id_usuario = usuarioProfesor.id_usuario,
-                    id_materia = materiaElegida.id_materia,
-                    id_dia = diaElegido.id_dias,
-                    id_aula = id_aula,
-                    activo = Estado,
-                    fecha_desde = periodoElegido.fecha_desde,
-                    fecha_hasta = periodoElegido.fecha_hasta,
-                };
+                    var usuarioProfesor = db.usuario.FirstOrDefault(usuario => usuario.nombre == CBPRofesor);
+                    var materiaElegida = db.materias.FirstOrDefault(materia => materia.materia == CBMateria);
+                    var diaElegido = db.dias_semana.FirstOrDefault(dia => dia.dias == CBDia);
+                    var horarioElegido = db.horas.FirstOrDefault(horario => horario.horario == CBHora);
 
-                db.reserva.Add(unaReserva);
-                db.SaveChanges();
+                    reserva unaReserva = new reserva()
+                    {
+                        id_hora = horarioElegido.id_hora,
+                        id_usuario = usuarioProfesor.id_usuario,
+                        id_materia = materiaElegida.id_materia,
+                        id_dia = diaElegido.id_dias,
+                        id_aula = id_aula,
+                        activo = Estado,
+                        fecha_desde = periodoElejido.fecha_desde,
+                        fecha_hasta = periodoElejido.fecha_hasta,
+                        id_periodo = periodoElejido.id_periodo,
+                    };
+
+                    db.reserva.Add(unaReserva);
+                    db.SaveChanges();
+                }
+                else
+                {
+                    MessageBox.Show("no se puede elejir el periodo " + periodoElejido.periodo_nombre + " debido a que entraria en conflicto con otra reserva echa en otro periodo");
+
+                }
+
 
             }
         }

@@ -87,6 +87,7 @@ advertencia 6002: La tabla o vista 'classroom_manager.dbo.aula_recursos' no tien
           <Property Name="activo" Type="varchar" MaxLength="2" />
           <Property Name="fecha_desde" Type="datetime" />
           <Property Name="fecha_hasta" Type="datetime" />
+          <Property Name="id_periodo" Type="int" />
         </EntityType>
         <EntityType Name="tipoSala">
           <Key>
@@ -279,6 +280,18 @@ advertencia 6002: La tabla o vista 'classroom_manager.dbo.aula_recursos' no tien
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="reserva_FK_id_periodo">
+          <End Role="Periodo" Type="Self.Periodo" Multiplicity="0..1" />
+          <End Role="reserva" Type="Self.reserva" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Periodo">
+              <PropertyRef Name="id_periodo" />
+            </Principal>
+            <Dependent Role="reserva">
+              <PropertyRef Name="id_periodo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <EntityContainer Name="classroom_managerModelStoreContainer">
           <EntitySet Name="aula" EntityType="Self.aula" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="aula_equipamiento" EntityType="Self.aula_equipamiento" Schema="dbo" store:Type="Tables" />
@@ -351,6 +364,10 @@ advertencia 6002: La tabla o vista 'classroom_manager.dbo.aula_recursos' no tien
             <End Role="equipamiento" EntitySet="equipamiento" />
             <End Role="aula_equipamiento" EntitySet="aula_equipamiento" />
           </AssociationSet>
+          <AssociationSet Name="reserva_FK_id_periodo" Association="Self.reserva_FK_id_periodo">
+            <End Role="Periodo" EntitySet="Periodo" />
+            <End Role="reserva" EntitySet="reserva" />
+          </AssociationSet>
         </EntityContainer>
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
@@ -408,6 +425,8 @@ advertencia 6002: La tabla o vista 'classroom_manager.dbo.aula_recursos' no tien
           <Property Name="activo" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
           <Property Name="fecha_desde" Type="DateTime" Precision="3" />
           <Property Name="fecha_hasta" Type="DateTime" Precision="3" />
+          <Property Name="id_periodo" Type="Int32" />
+          <NavigationProperty Name="Periodo" Relationship="classroom_managerModel.reserva_FK_id_periodo" FromRole="reserva" ToRole="Periodo" />
         </EntityType>
         <EntityType Name="tipoUsuario">
           <Key>
@@ -545,6 +564,10 @@ advertencia 6002: La tabla o vista 'classroom_manager.dbo.aula_recursos' no tien
             <End Role="aula" EntitySet="aula" />
           </AssociationSet>
           <EntitySet Name="Periodo" EntityType="classroom_managerModel.Periodo" />
+          <AssociationSet Name="reserva_FK_id_periodo" Association="classroom_managerModel.reserva_FK_id_periodo">
+            <End Role="Periodo" EntitySet="Periodo" />
+            <End Role="reserva" EntitySet="reserva" />
+          </AssociationSet>
           </EntityContainer>
         <EntityType Name="dias_semana">
           <Key>
@@ -684,7 +707,20 @@ advertencia 6002: La tabla o vista 'classroom_manager.dbo.aula_recursos' no tien
           <Property Name="periodo_nombre" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
           <Property Name="fecha_desde" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="fecha_hasta" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="reserva" Relationship="classroom_managerModel.reserva_FK_id_periodo" FromRole="Periodo" ToRole="reserva" />
         </EntityType>
+        <Association Name="reserva_FK_id_periodo">
+          <End Type="classroom_managerModel.Periodo" Role="Periodo" Multiplicity="0..1" />
+          <End Type="classroom_managerModel.reserva" Role="reserva" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Periodo">
+              <PropertyRef Name="id_periodo" />
+            </Principal>
+            <Dependent Role="reserva">
+              <PropertyRef Name="id_periodo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -722,6 +758,7 @@ advertencia 6002: La tabla o vista 'classroom_manager.dbo.aula_recursos' no tien
           <EntitySetMapping Name="reserva">
             <EntityTypeMapping TypeName="classroom_managerModel.reserva">
               <MappingFragment StoreEntitySet="reserva">
+                <ScalarProperty Name="id_periodo" ColumnName="id_periodo" />
                 <ScalarProperty Name="fecha_hasta" ColumnName="fecha_hasta" />
                 <ScalarProperty Name="fecha_desde" ColumnName="fecha_desde" />
                 <ScalarProperty Name="activo" ColumnName="activo" />

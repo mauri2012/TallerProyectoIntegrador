@@ -23,11 +23,13 @@ namespace ProyectoIntegradorTaller.models
         public string activo { get; set; }
         public Nullable<System.DateTime> fecha_desde { get; set; }
         public Nullable<System.DateTime> fecha_hasta { get; set; }
+        public Nullable<int> id_periodo { get; set; }
     
         public virtual aula aula { get; set; }
         public virtual horas horas { get; set; }
         public virtual usuario usuario { get; set; }
         public virtual dias_semana dias_semana { get; set; }
         public virtual materias materias { get; set; }
+        public virtual Periodo Periodo { get; set; }
     }
 }

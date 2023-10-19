@@ -17,12 +17,14 @@ namespace ProyectoIntegradorTaller.views.admin
         private Bitmap memoryImage;
         public DateTime fecha_desde;
         public DateTime fecha_hasta;
-        public ImprimirReporte(int id,DateTime fecha_d,DateTime fecha_h)
+        public string pperiodo;
+        public ImprimirReporte(int id,DateTime fecha_d,DateTime fecha_h,string periodo)
         {
             InitializeComponent();
             id_aula = id;
             fecha_desde = fecha_d;
             fecha_hasta= fecha_h;
+            pperiodo= periodo;
         }
 
 
@@ -35,13 +37,13 @@ namespace ProyectoIntegradorTaller.views.admin
         private void Reporte_Load(object sender, EventArgs e)
         {
         
-            ReporteLogica.diasListar(chart1, id_aula, fecha_desde, fecha_hasta);
+            ReporteLogica.diasListar(chart1, id_aula, pperiodo);
          
-            ReporteLogica.materiasListar(chart2, id_aula, fecha_desde, fecha_hasta);
+            ReporteLogica.materiasListar(chart2, id_aula,pperiodo);
         
-            ReporteLogica.horasListar(chart3, id_aula, fecha_desde, fecha_hasta);
+            ReporteLogica.horasListar(chart3, id_aula, pperiodo);
 
-            ReporteLogica.profesorListar(chart4, id_aula, fecha_desde, fecha_hasta);
+            ReporteLogica.profesorListar(chart4, id_aula, pperiodo);
 
             PBEsconder_.Location = new Point(732, 11);
             PBMaximizar_.Location = new Point(752,11);

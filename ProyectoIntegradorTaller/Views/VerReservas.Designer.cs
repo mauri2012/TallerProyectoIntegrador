@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.BVolver = new ProyectoIntegradorTaller.views.components.BotonPersonalisado();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -44,11 +44,14 @@
             this.Jueves = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Viernes = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Sabado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Periodo = new ProyectoIntegradorTaller.views.components.ComboBoxPersonalisado();
+            this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.PBMaximizar_)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PBMinimizar_)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PBCerrar_)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PBEsconder_)).BeginInit();
             this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGHorarios)).BeginInit();
             this.SuspendLayout();
@@ -107,6 +110,8 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.Periodo);
+            this.panel2.Controls.Add(this.label3);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 32);
             this.panel2.Name = "panel2";
@@ -129,14 +134,14 @@
             this.DGHorarios.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.DGHorarios.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
             this.DGHorarios.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DGHorarios.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DGHorarios.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.DGHorarios.ColumnHeadersHeight = 35;
             this.DGHorarios.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Horario,
@@ -147,14 +152,14 @@
             this.Viernes,
             this.Sabado});
             this.DGHorarios.Cursor = System.Windows.Forms.Cursors.Default;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.HotTrack;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DGHorarios.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.HotTrack;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DGHorarios.DefaultCellStyle = dataGridViewCellStyle5;
             this.DGHorarios.Dock = System.Windows.Forms.DockStyle.Fill;
             this.DGHorarios.EnableHeadersVisualStyles = false;
             this.DGHorarios.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
@@ -162,9 +167,9 @@
             this.DGHorarios.Name = "DGHorarios";
             this.DGHorarios.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.DGHorarios.RowHeadersVisible = false;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            this.DGHorarios.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
+            this.DGHorarios.RowsDefaultCellStyle = dataGridViewCellStyle6;
             this.DGHorarios.Size = new System.Drawing.Size(800, 286);
             this.DGHorarios.TabIndex = 7;
             this.DGHorarios.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
@@ -222,6 +227,36 @@
             this.Sabado.Name = "Sabado";
             this.Sabado.ReadOnly = true;
             // 
+            // Periodo
+            // 
+            this.Periodo.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.Periodo.BorderColor = System.Drawing.Color.MediumSlateBlue;
+            this.Periodo.BorderSize = 1;
+            this.Periodo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
+            this.Periodo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.Periodo.ForeColor = System.Drawing.Color.DimGray;
+            this.Periodo.IconColor = System.Drawing.Color.MediumSlateBlue;
+            this.Periodo.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(228)))), ((int)(((byte)(245)))));
+            this.Periodo.ListTextColor = System.Drawing.Color.DimGray;
+            this.Periodo.Location = new System.Drawing.Point(96, 25);
+            this.Periodo.MinimumSize = new System.Drawing.Size(200, 30);
+            this.Periodo.Name = "Periodo";
+            this.Periodo.Padding = new System.Windows.Forms.Padding(1);
+            this.Periodo.Size = new System.Drawing.Size(244, 30);
+            this.Periodo.TabIndex = 55;
+            this.Periodo.Texts = "";
+            this.Periodo.OnSelectedIndexChanged += new System.EventHandler(this.Periodo_OnSelectedIndexChanged);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Arial", 11F, System.Drawing.FontStyle.Bold);
+            this.label3.Location = new System.Drawing.Point(12, 38);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(64, 18);
+            this.label3.TabIndex = 54;
+            this.label3.Text = "Periodo";
+            // 
             // VerReservas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -250,6 +285,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.PBCerrar_)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PBEsconder_)).EndInit();
             this.panel1.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.DGHorarios)).EndInit();
             this.ResumeLayout(false);
@@ -271,5 +308,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Jueves;
         private System.Windows.Forms.DataGridViewTextBoxColumn Viernes;
         private System.Windows.Forms.DataGridViewTextBoxColumn Sabado;
+        private components.ComboBoxPersonalisado Periodo;
+        private System.Windows.Forms.Label label3;
     }
 }

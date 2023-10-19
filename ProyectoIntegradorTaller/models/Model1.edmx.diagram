@@ -29,6 +29,7 @@
         <EntityTypeShape EntityType="classroom_managerModel.tipoSala" Width="1.5" PointX="9.25" PointY="1" />
         <AssociationConnector Association="classroom_managerModel.FK__aula__id_tipo__6C190EBB" />
         <EntityTypeShape EntityType="classroom_managerModel.Periodo" Width="1.5" PointX="8.375" PointY="6.75" />
+        <AssociationConnector Association="classroom_managerModel.reserva_FK_id_periodo" />
         </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

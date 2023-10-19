@@ -149,7 +149,7 @@ namespace ProyectoIntegradorTaller.views.admin
             else
             {
 
-                LogicaReserva.EditarReserva(res.id_reserva, res.id_hora, CBMateria.Texts, CBPRofesor.Texts, res.id_dia, fecha_desde.Value.Date, fecha_hasta.Value.Date, "SI");
+                LogicaReserva.EditarReserva(res.id_reserva, res.id_hora, CBMateria.Texts, CBPRofesor.Texts, res.id_dia, this.Periodo.Texts, "SI");
                 MessageBox.Show("Se edito con exito la reserva!", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             }
@@ -188,13 +188,5 @@ namespace ProyectoIntegradorTaller.views.admin
         {
             LogicaReserva.ImprimirComprobante(res.id_reserva);
         }
-    }
-
-    public class rango
-    {
-        public int Id { get; set; }
-        public string Periodo { get; set; }
-
-       
     }
 }

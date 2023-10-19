@@ -14,9 +14,18 @@ namespace ProyectoIntegradorTaller.models
     
     public partial class Periodo
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Periodo()
+        {
+            this.reserva = new HashSet<reserva>();
+        }
+    
         public int id_periodo { get; set; }
         public string periodo_nombre { get; set; }
         public System.DateTime fecha_desde { get; set; }
         public System.DateTime fecha_hasta { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<reserva> reserva { get; set; }
     }
 }

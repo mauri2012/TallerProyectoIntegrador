@@ -20,6 +20,9 @@ namespace ProyectoIntegradorTaller.views.admin
         {
             InitializeComponent();
             id_aula = id;
+            
+            fecha_desde.Visible = false;
+            fecha_desde.Visible = true;
         }
 
 
@@ -35,19 +38,12 @@ namespace ProyectoIntegradorTaller.views.admin
            // PBMaximizar_.Location = new Point(752,11);
            // PBCerrar_.Location = new Point(775, 11);
 
-            List<rango> listaPeriodo = new List<rango>
-            {
-                new rango { Id = 1, Periodo = "Primer Cuatrimestre" },
-                new rango { Id = 2, Periodo = "Segundo Cuatrimestre" },
-                new rango { Id = 3, Periodo = "Dia Puntual" },
-                new rango { Id = 4, Periodo = "Personalizado" }
-            };
 
-            Periodo.DataSource = listaPeriodo;
+            Periodo.DataSource = LogicaReserva.listarPeriodo();
+            //Periodo.DataSource = items;
+            Periodo.DisplayMember = "periodo_nombre";
+            Periodo.ValueMember = "id_periodo";
 
-            Periodo.DisplayMember = "Periodo";
-
-            Periodo.ValueMember = "Id";
 
 
 
@@ -80,7 +76,7 @@ namespace ProyectoIntegradorTaller.views.admin
         private void BGuardar_Click(object sender, EventArgs e)
         {
             this.Hide();
-            ImprimirReporte unReporte =new ImprimirReporte(id_aula, fecha_desde.Value, fecha_hasta.Value);
+            ImprimirReporte unReporte =new ImprimirReporte(id_aula, fecha_desde.Value, fecha_hasta.Value,this.Periodo.Texts);
             unReporte.Show();
         
         }
@@ -111,22 +107,22 @@ namespace ProyectoIntegradorTaller.views.admin
 
                 case "Dias de mayor uso":
                     label2.Text = "Dias de mayor uso";
-                    ReporteLogica.diasListar(chart2, id_aula,fecha_desde.Value,fecha_hasta.Value);
+                    ReporteLogica.diasListar(chart2, id_aula,this.Periodo.Texts);
 
                     break;
                 case "Uso por materia":
                     label2.Text = "Uso por materia";
-                    ReporteLogica.materiasListar(chart2, id_aula,fecha_desde.Value,fecha_hasta.Value);
+                    ReporteLogica.materiasListar(chart2, id_aula,this.Periodo.Texts);
 
                     break;
                 case "Horario de mayor uso":
                     label2.Text = "Horario de mayor uso";
-                    ReporteLogica.horasListar(chart2, id_aula,fecha_desde.Value,fecha_hasta.Value);
+                    ReporteLogica.horasListar(chart2, id_aula,this.Periodo.Texts);
   
                     break;
                 default:
                     label2.Text = "Frecuencia por profesor";
-                    ReporteLogica.profesorListar(chart2, id_aula,fecha_desde.Value,fecha_hasta.Value);
+                    ReporteLogica.profesorListar(chart2, id_aula,this.Periodo.Texts);
                     break;
             }
 
@@ -134,54 +130,28 @@ namespace ProyectoIntegradorTaller.views.admin
 
         private void Periodo_OnSelectedIndexChanged(object sender, EventArgs e)
         {
-            switch (this.Periodo.Texts.ToString())
-            {
-
-                case "Primer Cuatrimestre":
-                    fecha_desde.Value = new DateTime(2023, 3, 10);
-                    fecha_hasta.Value = new DateTime(2023, 6, 15);
-                    fecha_desde.Visible = false;
-                    fecha_hasta.Visible = false;
-                    break;
-                case "Segundo Cuatrimestre":
-                    fecha_hasta.Visible = false;
-                    fecha_desde.Visible = false;
-                    fecha_desde.Value = new DateTime(2023, 7, 10);
-                    fecha_hasta.Value = new DateTime(2023, 11, 20);
-                    break;
-                case "Dia Puntual":
-                    fecha.Visible = true;
-                    fecha_desde.Visible = true;
-                    fecha_hasta.Visible = false;
-                    fecha_desde.Value = fecha_hasta.Value;
-                    break;
-                default:
-                    fecha_desde.Visible = true;
-                    fecha_hasta.Visible = true;
-
-                    break;
-            }
+          
             switch (this.CBFiltro.Texts)
             {
 
                 case "Dias de mayor uso":
                     label2.Text = "Dias de mayor uso";
-                    ReporteLogica.diasListar(chart2, id_aula, fecha_desde.Value, fecha_hasta.Value);
+                    ReporteLogica.diasListar(chart2, id_aula, this.Periodo.Texts);
 
                     break;
                 case "Uso por materia":
                     label2.Text = "Uso por materia";
-                    ReporteLogica.materiasListar(chart2, id_aula, fecha_desde.Value, fecha_hasta.Value);
+                    ReporteLogica.materiasListar(chart2, id_aula, this.Periodo.Texts);
 
                     break;
                 case "Horario de mayor uso":
                     label2.Text = "Horario de mayor uso";
-                    ReporteLogica.horasListar(chart2, id_aula,fecha_desde.Value,fecha_hasta.Value);
+                    ReporteLogica.horasListar(chart2, id_aula,this.Periodo.Texts);
 
                     break;
                 default:
                     label2.Text = "Frecuencia por profesor";
-                    ReporteLogica.profesorListar(chart2, id_aula, fecha_desde.Value, fecha_hasta.Value);
+                    ReporteLogica.profesorListar(chart2, id_aula, this.Periodo.Texts);
                     break;
             }
         }
