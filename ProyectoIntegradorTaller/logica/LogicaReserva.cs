@@ -350,17 +350,20 @@ namespace ProyectoIntegradorTaller.logica
             using (classroom_managerEntities db = new classroom_managerEntities())
             {
                 var periodoElejido = db.Periodo.FirstOrDefault(p => p.periodo_nombre == periodo);
+                var usuarioProfesor = db.usuario.FirstOrDefault(usuario => usuario.nombre == CBPRofesor);
+                var materiaElegida = db.materias.FirstOrDefault(materia => materia.materia == CBMateria);
+                var diaElegido = db.dias_semana.FirstOrDefault(dia => dia.dias == CBDia);
+                var horarioElegido = db.horas.FirstOrDefault(horario => horario.horario == CBHora);
+
                 var reservas1 = db.reserva
-                    .Where(r => r.id_aula == id_aula && r.activo == "SI")
+                    .Where(r => r.id_aula == id_aula && r.activo == "SI" && r.id_hora==horarioElegido.id_hora && r.id_dia==diaElegido.id_dias)
                     .AsEnumerable()
                     .Join(db.Periodo, reserva => reserva.id_periodo, p => p.id_periodo, (reserva, p) => new { Reserva = reserva, Periodo = p }
                 ).Where(r => r.Periodo.fecha_hasta >= periodoElejido.fecha_hasta).Select(r => r.Reserva).ToList();
-                if (reservas1 == null)
+               
+                if (reservas1.Count == 0)
                 {
-                    var usuarioProfesor = db.usuario.FirstOrDefault(usuario => usuario.nombre == CBPRofesor);
-                    var materiaElegida = db.materias.FirstOrDefault(materia => materia.materia == CBMateria);
-                    var diaElegido = db.dias_semana.FirstOrDefault(dia => dia.dias == CBDia);
-                    var horarioElegido = db.horas.FirstOrDefault(horario => horario.horario == CBHora);
+
 
                     reserva unaReserva = new reserva()
                     {
