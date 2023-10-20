@@ -1,6 +1,8 @@
 ﻿using iTextSharp.text;
 using iTextSharp.text.pdf;
+using iTextSharp.text.pdf.draw;
 using ProyectoIntegradorTaller.models;
+using ProyectoIntegradorTaller.views.admin;
 using ProyectoIntegradorTaller.views.components;
 using System;
 using System.Collections;
@@ -64,11 +66,11 @@ namespace ProyectoIntegradorTaller.logica
                     && r.id_aula == idAula
                     && r.activo == "SI");
 
-                return reserva1 ;
+                return reserva1;
 
             }
         }
-        public static void MostrarGrilla(int id_aula, DataGridView dataGrid,string periodo)
+        public static void MostrarGrilla(int id_aula, DataGridView dataGrid, string periodo)
         {
             List<reserva> reservas;
 
@@ -83,7 +85,7 @@ namespace ProyectoIntegradorTaller.logica
 
             using (classroom_managerEntities db = new classroom_managerEntities())
             {
-                var periodoElejido = db.Periodo.FirstOrDefault(p=> p.periodo_nombre==periodo);
+                var periodoElejido = db.Periodo.FirstOrDefault(p => p.periodo_nombre == periodo);
 
                 if (periodoElejido != null)
                 {
@@ -93,7 +95,7 @@ namespace ProyectoIntegradorTaller.logica
                         .Where(r => r.id_aula == id_aula && r.activo == "SI")
                         .AsEnumerable()
                         .Join(db.Periodo, reserva => reserva.id_periodo, p => p.id_periodo, (reserva, p) => new { Reserva = reserva, Periodo = p }
-                    ).Where(r =>  r.Periodo.fecha_hasta >= periodoElejido.fecha_hasta).Select(r => r.Reserva).ToList();
+                    ).Where(r => r.Periodo.fecha_hasta >= periodoElejido.fecha_hasta).Select(r => r.Reserva).ToList();
 
 
                     foreach (var res in reservas1)
@@ -109,7 +111,7 @@ namespace ProyectoIntegradorTaller.logica
                 }
                 else
                 {
-              
+
                 }
             }
             dataGrid.Rows.Clear();
@@ -136,12 +138,12 @@ namespace ProyectoIntegradorTaller.logica
                     db.reserva.Remove(reserva);
                     db.SaveChanges();
                 }
-                
+
             }
         }
 
 
-        public static void ReservaActiva(string estado,int idUsuario)
+        public static void ReservaActiva(string estado, int idUsuario)
         {
             using (classroom_managerEntities db = new classroom_managerEntities())
             {
@@ -157,56 +159,110 @@ namespace ProyectoIntegradorTaller.logica
 
         public static void ImprimirComprobante(int id)
         {
-                reserva reserva1= LogicaReserva.BuscarReservaPorId(id);
-                // Crear un objeto de la clase Document
-                Document document = new Document();
+            reserva reserva1 = LogicaReserva.BuscarReservaPorId(id);
+            usuario usuario1 = LogicaUsuarios.getUsuario(reserva1.id_usuario);
+            string materia = LogicaMaterias.getMateria(reserva1.id_materia ?? 1).materia;
+            Document document = new Document();
 
-                try
+            try
+            {
+                string folderPath;
+
+                FolderBrowserDialog folderBrowserDialog = new FolderBrowserDialog();
+
+
+                DialogResult result = folderBrowserDialog.ShowDialog();
+
+                // Verificar si el usuario hizo clic en el botón Aceptar
+                if (result != DialogResult.OK)
                 {
-                    // Guardar el documento PDF
-                    string ruta = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\reserva.pdf";
-                    PdfWriter writer = PdfWriter.GetInstance(document, new FileStream(ruta, FileMode.Create));
-
-                    // Abrir el documento
-                    document.Open();
-
-                    // Agregar una página al documento (no es necesario, iTextSharp añade automáticamente la primera página)
-                    // document.NewPage();
-
-                    // Agregar texto al documento
-                    Font font = FontFactory.GetFont("Arial", 12);
-                    Paragraph paragraph = new Paragraph("Comprobante de Reserva", font);
-                    paragraph.Alignment = Element.ALIGN_CENTER;
-                    document.Add(paragraph);
-
-                    // Agregar una línea
-                    document.Add(Chunk.NEWLINE);
-
-                    // Agregar los datos de la reserva
-                    Paragraph datosReserva = new Paragraph();
-                    datosReserva.Add(new Chunk("ID de reserva: " + reserva1.id_reserva +"Hora: "+ LogicaReserva.ObtenerHorarioPorID(reserva1.id_hora).horario + "Dia: " + LogicaReserva.ObtenerDiaPorID(reserva1.id_dia).dias, font));
-                    datosReserva.Add(Chunk.NEWLINE);
-                    usuario usuario1 = LogicaUsuarios.getUsuario(reserva1.id_usuario);
-                    datosReserva.Add(new Chunk("Nombre: " + usuario1.nombre +" Apellido:"+ usuario1.apellido+" Dni:"+ usuario1.dni , font));
-                    datosReserva.Add(Chunk.NEWLINE);
-
-
-                document.Add(datosReserva);
-                }
-                catch (Exception ex)
-                {
-                    // Manejar excepciones
-                    MessageBox.Show("Error al crear el PDF: " + ex.Message);
-                }
-                finally
-                {
-                    // Cerrar el documento
-                    if (document.IsOpen())
-                        document.Close();
-                MessageBox.Show("Se creo comprobante en documentos!");
+                    return;
                 }
 
+                folderPath = folderBrowserDialog.SelectedPath;
+
+                string ruta = Path.Combine(folderPath,"reserva"+reserva1.id_reserva+".pdf");
+              
+
+
+                PdfWriter writer = PdfWriter.GetInstance(document, new FileStream(ruta, FileMode.Create));
+
+                // Abrir el documento
+                document.Open();
+
+
+
+                // Fuente y formato para el título
+                Font titleFont = FontFactory.GetFont(FontFactory.HELVETICA_BOLD, 16);
+                titleFont.Color = BaseColor.BLUE;
+
+                // Título
+                Paragraph title = new Paragraph("Comprobante de Reserva", titleFont);
+                title.Alignment = Element.ALIGN_CENTER;
+                document.Add(title);
+
+                // Línea separadora
+                document.Add(new Chunk(new LineSeparator(0.0F, 100.0F, BaseColor.BLACK, Element.ALIGN_CENTER, 1)));
+
+                // Espacio en blanco
+                document.Add(Chunk.NEWLINE);
+
+                // Crear los objetos BaseColor para los colores
+                BaseColor colorAzul = new BaseColor(17, 97, 238);
+                BaseColor colorBlanco = BaseColor.WHITE;
+
+                // Crear la tabla
+                PdfPTable table = new PdfPTable(2);
+                table.WidthPercentage = 100;
+                table.SetWidths(new float[] { 3, 7 }); // Ancho de las columnas
+
+                // Función para crear celdas con fondo de color
+                PdfPCell CreateColoredCell(string label, BaseColor backgroundColor)
+                {
+                    PdfPCell cell = new PdfPCell(new Phrase(label));
+                    cell.BackgroundColor = backgroundColor;
+                    return cell;
+                }
+
+                // Agregar las celdas a la tabla
+                table.AddCell(CreateColoredCell("ID de Reserva:", BaseColor.LIGHT_GRAY));
+                table.AddCell(CreateColoredCell(reserva1.id_reserva.ToString(), BaseColor.WHITE));
+                table.AddCell(CreateColoredCell("Hora:", BaseColor.LIGHT_GRAY));
+                table.AddCell(CreateColoredCell(LogicaReserva.ObtenerHorarioPorID(reserva1.id_hora).horario, BaseColor.WHITE));
+                table.AddCell(CreateColoredCell("Día:", BaseColor.LIGHT_GRAY));
+                table.AddCell(CreateColoredCell(LogicaReserva.ObtenerDiaPorID(reserva1.id_dia).dias, BaseColor.WHITE));
+                table.AddCell(CreateColoredCell("Nombre:", BaseColor.LIGHT_GRAY));
+                table.AddCell(CreateColoredCell(usuario1.nombre, BaseColor.WHITE));
+                table.AddCell(CreateColoredCell("Apellido:", BaseColor.LIGHT_GRAY));
+                table.AddCell(CreateColoredCell(usuario1.apellido, BaseColor.WHITE));
+                table.AddCell(CreateColoredCell("DNI:", BaseColor.LIGHT_GRAY));
+                table.AddCell(CreateColoredCell(usuario1.dni.ToString(), BaseColor.WHITE));
+                table.AddCell(CreateColoredCell("Materia:", BaseColor.LIGHT_GRAY));
+                table.AddCell(CreateColoredCell(materia, BaseColor.WHITE));
+
+                document.Add(table);
+                // Espacio en blanco
+                document.Add(Chunk.NEWLINE);
+
+                // Pie de página
+                Paragraph footer = new Paragraph("Gracias por su reserva. ¡Esperamos verlo pronto!");
+                footer.Alignment = Element.ALIGN_CENTER;
+                document.Add(footer);
             }
+            catch (Exception ex)
+            {
+                // Manejar excepciones
+                MessageBox.Show("Error al crear el PDF: " + ex.Message);
+            }
+            finally
+            {
+                // Cerrar el documento
+                if (document.IsOpen())
+                    document.Close();
+                MessageBox.Show("Se creo comprobante en documentos!");
+            }
+
+        }
 
         public static void CBHoraListar(ComboBoxPersonalisado box)
         {
@@ -219,7 +275,7 @@ namespace ProyectoIntegradorTaller.logica
         }
         public static IList listarPeriodo()
         {
-            using(classroom_managerEntities db= new classroom_managerEntities())
+            using (classroom_managerEntities db = new classroom_managerEntities())
             {
                 return db.Periodo.ToList();
             }
@@ -260,8 +316,8 @@ namespace ProyectoIntegradorTaller.logica
 
                     // Actualizar los campos de la reserva con los nuevos valores
                     reserva.id_hora = idHora;
-                    reserva.id_materia =materiaElegida.id_materia ;
-                    reserva.id_usuario =usuarioProfesor.id_usuario;
+                    reserva.id_materia = materiaElegida.id_materia;
+                    reserva.id_usuario = usuarioProfesor.id_usuario;
                     reserva.id_dia = idDia;
                     reserva.activo = estado;
                     reserva.id_periodo = periodoElegido.id_periodo;
@@ -269,7 +325,7 @@ namespace ProyectoIntegradorTaller.logica
                     // Guardar los cambios en la base de datos
                     db.SaveChanges();
                 }
-                
+
             }
         }
         public static void DesactivarReserva(int idReserva)
@@ -285,11 +341,11 @@ namespace ProyectoIntegradorTaller.logica
                     // Guarda los cambios en la base de datos
                     db.SaveChanges();
                 }
-                
+
             }
         }
 
-        public static void InsertarReserva(int id_aula, string CBHora, string CBMateria, string CBPRofesor, string CBDia,string periodo, string Estado)
+        public static void InsertarReserva(int id_aula, string CBHora, string CBMateria, string CBPRofesor, string CBDia, string periodo, string Estado)
         {
             using (classroom_managerEntities db = new classroom_managerEntities())
             {
@@ -299,7 +355,7 @@ namespace ProyectoIntegradorTaller.logica
                     .AsEnumerable()
                     .Join(db.Periodo, reserva => reserva.id_periodo, p => p.id_periodo, (reserva, p) => new { Reserva = reserva, Periodo = p }
                 ).Where(r => r.Periodo.fecha_hasta >= periodoElejido.fecha_hasta).Select(r => r.Reserva).ToList();
-                if(reservas1 == null)
+                if (reservas1 == null)
                 {
                     var usuarioProfesor = db.usuario.FirstOrDefault(usuario => usuario.nombre == CBPRofesor);
                     var materiaElegida = db.materias.FirstOrDefault(materia => materia.materia == CBMateria);
@@ -329,7 +385,7 @@ namespace ProyectoIntegradorTaller.logica
 
             }
         }
-        
+
         public static IList ListarReservas(string estado)
         {
             using (classroom_managerEntities db = new classroom_managerEntities())
@@ -358,7 +414,7 @@ namespace ProyectoIntegradorTaller.logica
                 return query.ToList();
             }
         }
-        public static IList ListarReservas(string estado,int id)
+        public static IList ListarReservas(string estado, int id)
         {
             using (classroom_managerEntities db = new classroom_managerEntities())
             {
@@ -370,7 +426,7 @@ namespace ProyectoIntegradorTaller.logica
                             join materias in db.materias on reserva.id_materia equals materias.id_materia
                             join aula in db.aula on reserva.id_aula equals aula.id_aula
                             join usuario in db.usuario on reserva.id_usuario equals usuario.id_usuario
-                            where reserva.activo == estado && reserva.id_usuario== id  
+                            where reserva.activo == estado && reserva.id_usuario == id
                             select new
                             {
                                 ID = reserva.id_reserva,
