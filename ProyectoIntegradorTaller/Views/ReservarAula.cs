@@ -14,11 +14,12 @@ namespace ProyectoIntegradorTaller.views.admin
         private reserva res;
         
 
-        public ReservarAula(int idAula,int idHora, int idDia)
+        public ReservarAula(int idAula,int idHora, int idDia,string nombre)
         {
             InitializeComponent();
             CBHora.Texts = LogicaReserva.ObtenerHorarioPorID(idHora).horario;
             CBDia.Texts = LogicaReserva.ObtenerDiaPorID(idDia).dias;
+            Periodo.Texts = nombre;
             id_aula = idAula;
             LogicaReserva.CBMateriasListar(CBMateria);
             fecha.Visible = false;
@@ -37,7 +38,7 @@ namespace ProyectoIntegradorTaller.views.admin
             CBHora.Texts = LogicaReserva.ObtenerHorarioPorID(reserva1.id_hora).horario;
             CBDia.Texts = LogicaReserva.ObtenerDiaPorID(reserva1.id_dia).dias;
             CBPRofesor.Texts=LogicaUsuarios.getUsuario(reserva1.id_usuario).nombre;
-
+            Periodo.Texts = LogicaReserva.obtenerPeriodoPorId(reserva1.id_periodo ?? 1).periodo_nombre;
             id_aula = reserva1.id_aula;
             res= reserva1;
             LogicaReserva.CBMateriasListar(CBMateria);
@@ -107,11 +108,11 @@ namespace ProyectoIntegradorTaller.views.admin
             }*/
             //Periodo.Items.Add("Dia Puntual");
             //Periodo.Items.Add("Personalizado");
-            Periodo.DataSource = LogicaReserva.listarPeriodo();
+          /*  Periodo.DataSource = LogicaReserva.listarPeriodo();
             //Periodo.DataSource = items;
             Periodo.DisplayMember = "periodo_nombre";
             Periodo.ValueMember = "id_periodo";
-
+          */
             //Periodo.Items.Add("Dia Puntual");
             //Periodo.Items.Add("Personalizado");
         }

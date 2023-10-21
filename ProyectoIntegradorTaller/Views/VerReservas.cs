@@ -71,10 +71,11 @@ namespace ProyectoIntegradorTaller.views
 
 
             this.Hide();
-            reserva reserva1 = LogicaReserva.BuscarReserva(idDia, idHora, id_aula);
+            var periodo = LogicaReserva.obtenerPeriodo(this.Periodo.Texts);
+            reserva reserva1 = LogicaReserva.BuscarReserva(idDia, idHora, id_aula,periodo.id_periodo);
             if (reserva1 == null)
             {
-                ReservarAula reserva = new ReservarAula(id_aula, idHora, idDia);
+                ReservarAula reserva = new ReservarAula(id_aula, idHora, idDia,periodo.periodo_nombre);
                 reserva.Show();
             }
             else

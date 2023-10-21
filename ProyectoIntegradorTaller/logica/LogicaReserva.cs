@@ -52,10 +52,23 @@ namespace ProyectoIntegradorTaller.logica
                 return dia;
             }
         }
-
-
+        public static Periodo obtenerPeriodo(string nombrePeriodo)
+        {
+            using (classroom_managerEntities db = new classroom_managerEntities())
+            {
+                return db.Periodo.FirstOrDefault(p => p.periodo_nombre == nombrePeriodo);
+            }
+        }
+        public static Periodo obtenerPeriodoPorId(int idPeriodo)
+        {
+            using (classroom_managerEntities db = new classroom_managerEntities())
+            {
+                var periodo= db.Periodo.FirstOrDefault(p => p.id_periodo == idPeriodo);
+                return periodo;
+            }
+        }
         //Retorna verdadero en caso de no haber encontrado reservas en en ese horario y dia
-        public static reserva BuscarReserva(int idDia, int idHora, int idAula)
+        public static reserva BuscarReserva(int idDia, int idHora, int idAula,int idPeriodo)
         {
             using (classroom_managerEntities db = new classroom_managerEntities())
             {
@@ -64,6 +77,7 @@ namespace ProyectoIntegradorTaller.logica
                     r => r.id_hora == idHora
                     && r.id_dia == idDia
                     && r.id_aula == idAula
+                    && r.id_periodo==idPeriodo       
                     && r.activo == "SI");
 
                 return reserva1;
@@ -95,7 +109,7 @@ namespace ProyectoIntegradorTaller.logica
                         .Where(r => r.id_aula == id_aula && r.activo == "SI")
                         .AsEnumerable()
                         .Join(db.Periodo, reserva => reserva.id_periodo, p => p.id_periodo, (reserva, p) => new { Reserva = reserva, Periodo = p }
-                    ).Where(r => r.Periodo.fecha_hasta >= periodoElejido.fecha_hasta).Select(r => r.Reserva).ToList();
+                           ).Where(r => r.Periodo.fecha_hasta <= periodoElejido.fecha_hasta &&  r.Periodo.fecha_desde >= periodoElejido.fecha_desde ).Select(r => r.Reserva).ToList();
 
 
                     foreach (var res in reservas1)
@@ -359,9 +373,9 @@ namespace ProyectoIntegradorTaller.logica
                     .Where(r => r.id_aula == id_aula && r.activo == "SI" && r.id_hora==horarioElegido.id_hora && r.id_dia==diaElegido.id_dias)
                     .AsEnumerable()
                     .Join(db.Periodo, reserva => reserva.id_periodo, p => p.id_periodo, (reserva, p) => new { Reserva = reserva, Periodo = p }
-                ).Where(r => r.Periodo.fecha_hasta >= periodoElejido.fecha_hasta).Select(r => r.Reserva).ToList();
+                ).Where(r => r.Periodo.fecha_hasta <= periodoElejido.fecha_hasta).Select(r => r.Reserva).ToList();
                
-                if (reservas1.Count == 0)
+                if ( reservas1.Count == 0)
                 {
 
 

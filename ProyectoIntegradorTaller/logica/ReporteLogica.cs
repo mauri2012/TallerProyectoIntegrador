@@ -27,37 +27,45 @@ namespace ProyectoIntegradorTaller.logica
             }
             else
             {
-                int total;
-                if(query != null)
+                int total = 10;
+                try
                 {
-                    if (query.Any(r => !string.IsNullOrEmpty(r.cantcampo.ToString())))
-                    {
-                        total = query.Sum(reserva => reserva.cantcampo);
-                    }
-                    else
-                    {
-                        total = 10;
-                    }
-           
-                }
-                else
-                {
-                    total = 10;
-                }
-                
-                var series = new Series("reserva");
-                foreach (var reserva in query)
-                { 
-                    series.ChartType = SeriesChartType.Doughnut;
 
-                    var porcentaje = reserva.cantcampo * 100 / total;
-                     
-                    series.Points.Add(new DataPoint { AxisLabel = $"{reserva.campo} ({porcentaje:F2})", YValues = new double[] { porcentaje } });
- 
+
+                    if (query != null && query.Any())
+                    {
+                        //if (query.Any(r => !string.IsNullOrEmpty(r.cantcampo.ToString())))
+                        var suma = query.Sum(reserva => reserva.cantcampo);
+                        if (suma != 0)
+                        {
+                            total = suma;
+                        }
+
+
+                    }
+                    var series = new Series("reserva");
+                    foreach (var reserva in query)
+                    {
+                        series.ChartType = SeriesChartType.Doughnut;
+
+                        var porcentaje = reserva.cantcampo * 100 / total;
+
+                        series.Points.Add(new DataPoint { AxisLabel = $"{reserva.campo} ({porcentaje:F2})", YValues = new double[] { porcentaje } });
+
+                    }
+                    chart.Series.Add(series);
                 }
-                chart.Series.Add(series);
+                catch(Exception ex) { }
+
             }
 
+        }
+        public static Periodo obtenerPeriodo(string nombrePeriodo)
+        {
+            using (classroom_managerEntities db = new classroom_managerEntities())
+            {
+                return db.Periodo.FirstOrDefault(p=> p.periodo_nombre==nombrePeriodo);
+            }
         }
         public static void diasListar(Chart chart,int id_aula,string periodo)
         {
