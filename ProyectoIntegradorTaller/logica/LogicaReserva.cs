@@ -109,8 +109,19 @@ namespace ProyectoIntegradorTaller.logica
                         .Where(r => r.id_aula == id_aula && r.activo == "SI")
                         .AsEnumerable()
                         .Join(db.Periodo, reserva => reserva.id_periodo, p => p.id_periodo, (reserva, p) => new { Reserva = reserva, Periodo = p }
-                           ).Where(r => r.Periodo.fecha_hasta <= periodoElejido.fecha_hasta &&  r.Periodo.fecha_desde >= periodoElejido.fecha_desde ).Select(r => r.Reserva).ToList();
-
+                           ).Where
+                           (r => (r.Periodo.fecha_hasta <= periodoElejido.fecha_hasta &&  r.Periodo.fecha_desde >=                        periodoElejido.fecha_desde  && periodoElejido.id_periodo==1 ) || 
+                                   (r.Periodo.fecha_hasta >= periodoElejido.fecha_hasta && r.Periodo.fecha_desde <= periodoElejido.fecha_desde && (periodoElejido.id_periodo == 7 || periodoElejido.id_periodo==2  ))
+                                   || ( r.Periodo.fecha_desde == periodoElejido.fecha_desde && (periodoElejido.id_periodo == 6 || periodoElejido.id_periodo==3))  ).Select(r => r.Reserva).ToList();
+                    /*(Periodo.fecha_hasta <= '2023-06-10' 
+AND Periodo.fecha_desde >= '2023-03-02'
+AND reserva.id_periodo = 1)
+or 
+ (and Periodo.fecha_desde == '2023-03-02'
+AND reserva.id_periodo = 6)
+or ( Periodo.fecha_hasta >= '2023-05-31'
+AND Periodo.fecha_desde <= '2023-04-30'
+AND reserva.id_periodo = 7)*/
 
                     foreach (var res in reservas1)
                     {
@@ -373,8 +384,11 @@ namespace ProyectoIntegradorTaller.logica
                     .Where(r => r.id_aula == id_aula && r.activo == "SI" && r.id_hora==horarioElegido.id_hora && r.id_dia==diaElegido.id_dias)
                     .AsEnumerable()
                     .Join(db.Periodo, reserva => reserva.id_periodo, p => p.id_periodo, (reserva, p) => new { Reserva = reserva, Periodo = p }
-                ).Where(r => r.Periodo.fecha_hasta <= periodoElejido.fecha_hasta).Select(r => r.Reserva).ToList();
-               
+                ).Where
+                           (r => (r.Periodo.fecha_hasta <= periodoElejido.fecha_hasta && r.Periodo.fecha_desde >= periodoElejido.fecha_desde && (periodoElejido.id_periodo == 1)) ||
+                                   (r.Periodo.fecha_hasta >= periodoElejido.fecha_hasta && r.Periodo.fecha_desde <= periodoElejido.fecha_desde && (periodoElejido.id_periodo == 7 || periodoElejido.id_periodo == 2 ||  periodoElejido.id_periodo == 3))
+                                   || (r.Periodo.fecha_desde == periodoElejido.fecha_desde && periodoElejido.id_periodo == 6)).Select(r => r.Reserva).ToList();
+
                 if ( reservas1.Count == 0)
                 {
 
