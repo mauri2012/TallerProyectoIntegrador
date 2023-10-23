@@ -13,40 +13,35 @@ namespace ProyectoIntegradorTaller.logica
     internal class LogicaAdministrarDB
     {
 
-        public static void RealisarRestauracion( string backupPath)
+        public static void RealizarRestauracion(string backupPath)
         {
-
-
-
-            string restoreQuery;
+            string databaseName;
             string connectionString;
 
             using (var context = new classroom_managerEntities())
             {
                 connectionString = context.Database.Connection.ConnectionString;
-                string databaseName = context.Database.Connection.Database;
-                restoreQuery = $"BACKUP DATABASE {databaseName} TO DISK = '{backupPath}'";
-
+                databaseName = context.Database.Connection.Database;
             }
 
             try
             {
+                
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
                     connection.Open();
-
-                    using (SqlCommand command = new SqlCommand(restoreQuery, connection))
+                    string sqlRestore = $"RESTORE DATABASE {databaseName} FROM DISK = '{backupPath}';";
+                    using (SqlCommand restoreCommand = new SqlCommand(sqlRestore, connection))
                     {
-                        command.CommandType = CommandType.Text;
-                        command.ExecuteNonQuery();
+                        restoreCommand.ExecuteNonQuery();
                     }
-
-                    MessageBox.Show("Restauración exitosa.");
                 }
+
+                MessageBox.Show("Restauración completada con éxito.");
             }
-            catch (Exception ex)
+            catch (SqlException ex)
             {
-                MessageBox.Show($"Error en la restauración: {ex.Message}");
+                MessageBox.Show("Error al restaurar la base de datos: " + ex.Message);
             }
         }
 
@@ -59,6 +54,7 @@ namespace ProyectoIntegradorTaller.logica
             {
                 connectionString = context.Database.Connection.ConnectionString;
                 string databaseName = context.Database.Connection.Database;
+               
                 backupQuery = $"BACKUP DATABASE {databaseName} TO DISK = '{backupPath}'";
 
             }
@@ -73,6 +69,7 @@ namespace ProyectoIntegradorTaller.logica
                         connection.Open();
 
                         command.ExecuteNonQuery();
+
                         MessageBox.Show("Backup realisado con exito!");
                     }
                     catch (Exception ex)

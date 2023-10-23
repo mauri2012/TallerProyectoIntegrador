@@ -104,7 +104,7 @@ namespace ProyectoIntegradorTaller.views.admin
             }
             else
             {
-                LogicaAdministrarDB.RealisarRestauracion(TBRutaArchivo.Texts);
+                LogicaAdministrarDB.RealizarRestauracion(TBRutaArchivo.Texts);
             }
         }
     }
