@@ -30,6 +30,16 @@ namespace ProyectoIntegradorTaller.logica
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
                     connection.Open();
+                    string sqlsingleuser = $"ALTER DATABASE {databaseName} SET SINGLE_USER WITH ROLLBACK IMMEDIATE;";
+                    using(SqlCommand singleusercommand= new SqlCommand(sqlsingleuser,connection))
+                    {
+                        singleusercommand.ExecuteNonQuery();
+                    }
+                    string sqlUseMaster = "USE master;";
+                    using (SqlCommand useMasterCommand = new SqlCommand(sqlUseMaster, connection))
+                    {
+                        useMasterCommand.ExecuteNonQuery();
+                    }
                     string sqlRestore = $"RESTORE DATABASE {databaseName} FROM DISK = '{backupPath}';";
                     using (SqlCommand restoreCommand = new SqlCommand(sqlRestore, connection))
                     {

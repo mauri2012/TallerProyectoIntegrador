@@ -106,13 +106,17 @@ namespace ProyectoIntegradorTaller.logica
 
 
                     var reservas1 = db.reserva
-                        .Where(r => r.id_aula == id_aula && r.activo == "SI")
+                        .Where(r => r.id_aula == id_aula && r.activo == "SI" )
                         .AsEnumerable()
                         .Join(db.Periodo, reserva => reserva.id_periodo, p => p.id_periodo, (reserva, p) => new { Reserva = reserva, Periodo = p }
                            ).Where
                            (r => (r.Periodo.fecha_hasta <= periodoElejido.fecha_hasta &&  r.Periodo.fecha_desde >=                        periodoElejido.fecha_desde  && periodoElejido.id_periodo==1 ) || 
-                                   (r.Periodo.fecha_hasta >= periodoElejido.fecha_hasta && r.Periodo.fecha_desde <= periodoElejido.fecha_desde && (periodoElejido.id_periodo == 7 || periodoElejido.id_periodo==2  ))
-                                   || ( r.Periodo.fecha_desde == periodoElejido.fecha_desde && (periodoElejido.id_periodo == 6 || periodoElejido.id_periodo==3))  ).Select(r => r.Reserva).ToList();
+                                   (r.Periodo.fecha_hasta >= periodoElejido.fecha_hasta && r.Periodo.fecha_desde <= periodoElejido.fecha_desde && (periodoElejido.id_periodo == 7 ))
+                                   || ( r.Periodo.fecha_desde == periodoElejido.fecha_desde && (periodoElejido.id_periodo == 6 || periodoElejido.id_periodo==8))
+                                   || (r.Periodo.fecha_desde >= periodoElejido.fecha_desde && (periodoElejido.id_periodo == 2))
+                                   || (r.Periodo.fecha_hasta == periodoElejido.fecha_hasta && periodoElejido.id_periodo == 9 )
+                                   || (r.Periodo.fecha_desde <= periodoElejido.fecha_hasta && periodoElejido.id_periodo==3)
+                                   || (r.Periodo.fecha_desde<= periodoElejido.fecha_desde && periodoElejido.id_periodo==10)).Select(r => r.Reserva).ToList();
                     /*(Periodo.fecha_hasta <= '2023-06-10' 
 AND Periodo.fecha_desde >= '2023-03-02'
 AND reserva.id_periodo = 1)
