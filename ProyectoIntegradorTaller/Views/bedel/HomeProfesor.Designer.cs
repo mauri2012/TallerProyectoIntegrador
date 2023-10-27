@@ -44,7 +44,7 @@
             this.usuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Dia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.materia = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Estado = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.Autorizar = new System.Windows.Forms.DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)(this.PBMaximizar_)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PBMinimizar_)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PBCerrar_)).BeginInit();
@@ -170,7 +170,6 @@
             // dataGridView1
             // 
             this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
             this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
@@ -191,7 +190,7 @@
             this.usuario,
             this.Dia,
             this.materia,
-            this.Estado});
+            this.Autorizar});
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.EnableHeadersVisualStyles = false;
             this.dataGridView1.GridColor = System.Drawing.SystemColors.ButtonFace;
@@ -265,14 +264,13 @@
             this.materia.ReadOnly = true;
             this.materia.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             // 
-            // Estado
+            // Autorizar
             // 
-            this.Estado.HeaderText = "Autorizar";
-            this.Estado.Name = "Estado";
-            this.Estado.ReadOnly = true;
-            this.Estado.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Estado.Text = "autorizar";
-            this.Estado.UseColumnTextForButtonValue = true;
+            this.Autorizar.HeaderText = "Autorizar";
+            this.Autorizar.Name = "Autorizar";
+            this.Autorizar.ReadOnly = true;
+            this.Autorizar.Text = "autorizar";
+            this.Autorizar.UseColumnTextForButtonValue = true;
             // 
             // ReservasPendientes
             // 
@@ -328,6 +326,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn usuario;
         private System.Windows.Forms.DataGridViewTextBoxColumn Dia;
         private System.Windows.Forms.DataGridViewTextBoxColumn materia;
-        private System.Windows.Forms.DataGridViewButtonColumn Estado;
+        private System.Windows.Forms.DataGridViewButtonColumn Autorizar;
     }
 }

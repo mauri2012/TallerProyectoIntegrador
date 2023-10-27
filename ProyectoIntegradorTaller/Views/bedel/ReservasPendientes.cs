@@ -23,22 +23,23 @@ namespace ProyectoIntegradorTaller.views.admin
         {
             InitializeComponent();
             dataGridView1.DataSource= LogicaReserva.ListarReservas("NO");
-            dataGridView1.Columns[0].Visible = false;
+            dataGridView1.Columns["Id"].Visible = false;
+
         }
 
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (dataGridView1.Columns[e.ColumnIndex].Name == "Estado")
+  
+            if (dataGridView1.Columns[e.ColumnIndex].Name == "Autorizar")
             {
-                MsgBoxResult ask = (MsgBoxResult)MessageBox.Show("Seguro que quiere autorizar la reserva en el  " + (string)dataGridView1.Rows[e.RowIndex].Cells[2].Value + "  ?", "Reservar", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                MsgBoxResult ask = (MsgBoxResult)MessageBox.Show("Seguro que quiere autorizar la reserva en el  " + (string)dataGridView1.Rows[e.RowIndex].Cells["Nombre"].Value + "  ?", "Reservar", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                 if (ask == MsgBoxResult.Yes)
                 {
                     int idUsuario = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells["Id"].Value);
                     LogicaReserva.ReservaActiva("SI", idUsuario);
-                    dataGridView1.DataSource= LogicaReserva.ListarReservas("NO");
+                    dataGridView1.DataSource = LogicaReserva.ListarReservas("NO");
                 }
-
             }
         }
 

@@ -71,7 +71,7 @@ namespace ProyectoIntegradorTaller.logica
                     var query = from aula in db.aula
                                 join ubicacion in db.ubicacion on aula.id_ubicacion equals ubicacion.id_ubicacion
                                 join tipoSala in db.tipoSala on aula.id_tipo equals tipoSala.id_sala
-                                where aula.activa=="SI" && aula.capacidad==valorInt
+                                where aula.activa=="SI" && aula.capacidad>=valorInt
                                 select new
                                 {
                                     Id = aula.id_aula,
