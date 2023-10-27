@@ -210,5 +210,10 @@ namespace ProyectoIntegradorTaller.views.admin
             Periodos unPeriodo = new Periodos();
             unPeriodo.Show();
         }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
