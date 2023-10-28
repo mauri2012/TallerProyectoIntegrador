@@ -20,9 +20,6 @@ namespace ProyectoIntegradorTaller.views.admin
         {
             InitializeComponent();
             id_aula = id;
-            
-            fecha_desde.Visible = false;
-            fecha_desde.Visible = true;
         }
 
 

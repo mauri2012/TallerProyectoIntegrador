@@ -39,6 +39,8 @@ namespace ProyectoIntegradorTaller.views.admin
             this.fecha = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label8 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.CBPeriodo = new ProyectoIntegradorTaller.views.components.ComboBoxPersonalisado();
             ((System.ComponentModel.ISupportInitialize)(this.PBMaximizar_)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PBMinimizar_)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PBCerrar_)).BeginInit();
@@ -58,6 +60,8 @@ namespace ProyectoIntegradorTaller.views.admin
             // panel1
             // 
             this.panel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.panel1.Controls.Add(this.CBPeriodo);
+            this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.BVolver);
             this.panel1.Controls.Add(this.fecha_desde);
             this.panel1.Controls.Add(this.BReservarAula);
@@ -95,7 +99,7 @@ namespace ProyectoIntegradorTaller.views.admin
             this.fecha_desde.BorderColor = System.Drawing.Color.PaleVioletRed;
             this.fecha_desde.BorderSize = 0;
             this.fecha_desde.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F);
-            this.fecha_desde.Location = new System.Drawing.Point(224, 84);
+            this.fecha_desde.Location = new System.Drawing.Point(228, 129);
             this.fecha_desde.MaxDate = new System.DateTime(2024, 12, 31, 0, 0, 0, 0);
             this.fecha_desde.MinDate = new System.DateTime(2023, 1, 18, 0, 0, 0, 0);
             this.fecha_desde.MinimumSize = new System.Drawing.Size(4, 35);
@@ -131,7 +135,7 @@ namespace ProyectoIntegradorTaller.views.admin
             this.fecha_hasta.BorderColor = System.Drawing.Color.PaleVioletRed;
             this.fecha_hasta.BorderSize = 0;
             this.fecha_hasta.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F);
-            this.fecha_hasta.Location = new System.Drawing.Point(228, 150);
+            this.fecha_hasta.Location = new System.Drawing.Point(228, 199);
             this.fecha_hasta.MinimumSize = new System.Drawing.Size(4, 35);
             this.fecha_hasta.Name = "fecha_hasta";
             this.fecha_hasta.Size = new System.Drawing.Size(244, 35);
@@ -144,11 +148,11 @@ namespace ProyectoIntegradorTaller.views.admin
             // 
             this.fecha.AutoSize = true;
             this.fecha.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.fecha.Location = new System.Drawing.Point(223, 41);
+            this.fecha.Location = new System.Drawing.Point(225, 108);
             this.fecha.Name = "fecha";
-            this.fecha.Size = new System.Drawing.Size(51, 18);
+            this.fecha.Size = new System.Drawing.Size(101, 18);
             this.fecha.TabIndex = 8;
-            this.fecha.Text = "Fecha";
+            this.fecha.Text = "Fecha Desde";
             this.fecha.Click += new System.EventHandler(this.fecha_Click);
             // 
             // panel2
@@ -173,6 +177,35 @@ namespace ProyectoIntegradorTaller.views.admin
             this.label8.Size = new System.Drawing.Size(115, 19);
             this.label8.TabIndex = 7;
             this.label8.Text = "Reservar Aula";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(225, 178);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(95, 18);
+            this.label1.TabIndex = 53;
+            this.label1.Text = "Fecha Hasta";
+            // 
+            // CBPeriodo
+            // 
+            this.CBPeriodo.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.CBPeriodo.BorderColor = System.Drawing.Color.MediumSlateBlue;
+            this.CBPeriodo.BorderSize = 1;
+            this.CBPeriodo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
+            this.CBPeriodo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.CBPeriodo.ForeColor = System.Drawing.Color.DimGray;
+            this.CBPeriodo.IconColor = System.Drawing.Color.MediumSlateBlue;
+            this.CBPeriodo.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(228)))), ((int)(((byte)(245)))));
+            this.CBPeriodo.ListTextColor = System.Drawing.Color.DimGray;
+            this.CBPeriodo.Location = new System.Drawing.Point(228, 64);
+            this.CBPeriodo.MinimumSize = new System.Drawing.Size(200, 30);
+            this.CBPeriodo.Name = "CBPeriodo";
+            this.CBPeriodo.Padding = new System.Windows.Forms.Padding(1);
+            this.CBPeriodo.Size = new System.Drawing.Size(244, 30);
+            this.CBPeriodo.TabIndex = 54;
+            this.CBPeriodo.Texts = "";
             // 
             // editarPeriodo
             // 
@@ -213,5 +246,7 @@ namespace ProyectoIntegradorTaller.views.admin
         private views.components.TimePickerPersonalisado fecha_hasta;
         private components.BotonPersonalisado BVolver;
         private components.TimePickerPersonalisado fecha_desde;
+        private components.ComboBoxPersonalisado CBPeriodo;
+        private Label label1;
     }
 }

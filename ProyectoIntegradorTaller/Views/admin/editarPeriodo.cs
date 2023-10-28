@@ -28,7 +28,8 @@ namespace ProyectoIntegradorTaller.views.admin
             id_periodo = idPeriodo;
             fecha_desde.Value = desde;
             fecha_hasta.Value = hasta;
-       
+            
+            CBPeriodo.Texts =LogicaPeriodo.getPeriodo(idPeriodo);
         }
 
         private void BVolver_Click_1(object sender, EventArgs e)

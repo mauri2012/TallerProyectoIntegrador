@@ -44,6 +44,12 @@ namespace ProyectoIntegradorTaller.logica
 
             }
         }
+        public static string getPeriodo(int id_periodo) { 
+            using(classroom_managerEntities db=new classroom_managerEntities())
+            {
+                return db.Periodo.FirstOrDefault(r => r.id_periodo==id_periodo).periodo_nombre;
+            }
+        }
         public static IList busquedaPeriodo(string valor)
         {
 
