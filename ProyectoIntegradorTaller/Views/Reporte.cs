@@ -76,7 +76,7 @@ namespace ProyectoIntegradorTaller.views.admin
         private void BGuardar_Click(object sender, EventArgs e)
         {
             this.Hide();
-            ImprimirReporte unReporte =new ImprimirReporte(id_aula, fecha_desde.Value, fecha_hasta.Value,this.Periodo.Texts);
+            ImprimirReporte unReporte =new ImprimirReporte(id_aula,this.Periodo.Texts);
             unReporte.Show();
         
         }

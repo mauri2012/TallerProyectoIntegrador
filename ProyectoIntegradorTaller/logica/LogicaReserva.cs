@@ -117,15 +117,7 @@ namespace ProyectoIntegradorTaller.logica
                                    || (r.Periodo.fecha_hasta == periodoElejido.fecha_hasta && periodoElejido.id_periodo == 9 )
                                    || (r.Periodo.fecha_desde <= periodoElejido.fecha_hasta && periodoElejido.id_periodo==3)
                                    || (r.Periodo.fecha_desde<= periodoElejido.fecha_desde && periodoElejido.id_periodo==10)).Select(r => r.Reserva).ToList();
-                    /*(Periodo.fecha_hasta <= '2023-06-10' 
-AND Periodo.fecha_desde >= '2023-03-02'
-AND reserva.id_periodo = 1)
-or 
- (and Periodo.fecha_desde == '2023-03-02'
-AND reserva.id_periodo = 6)
-or ( Periodo.fecha_hasta >= '2023-05-31'
-AND Periodo.fecha_desde <= '2023-04-30'
-AND reserva.id_periodo = 7)*/
+           
 
                     foreach (var res in reservas1)
                     {

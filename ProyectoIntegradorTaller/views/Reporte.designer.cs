@@ -37,8 +37,6 @@ namespace ProyectoIntegradorTaller.views.admin
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.Periodo = new ProyectoIntegradorTaller.views.components.ComboBoxPersonalisado();
-            this.fecha_desde = new ProyectoIntegradorTaller.views.components.TimePickerPersonalisado();
-            this.fecha_hasta = new ProyectoIntegradorTaller.views.components.TimePickerPersonalisado();
             this.label3 = new System.Windows.Forms.Label();
             this.BVolver = new ProyectoIntegradorTaller.views.components.BotonPersonalisado();
             this.CBFiltro = new ProyectoIntegradorTaller.views.components.ComboBoxPersonalisado();
@@ -81,8 +79,6 @@ namespace ProyectoIntegradorTaller.views.admin
             // panel4
             // 
             this.panel4.Controls.Add(this.Periodo);
-            this.panel4.Controls.Add(this.fecha_desde);
-            this.panel4.Controls.Add(this.fecha_hasta);
             this.panel4.Controls.Add(this.label3);
             this.panel4.Controls.Add(this.BVolver);
             this.panel4.Controls.Add(this.CBFiltro);
@@ -114,36 +110,6 @@ namespace ProyectoIntegradorTaller.views.admin
             this.Periodo.TabIndex = 68;
             this.Periodo.Texts = "";
             this.Periodo.OnSelectedIndexChanged += new System.EventHandler(this.Periodo_OnSelectedIndexChanged);
-            // 
-            // fecha_desde
-            // 
-            this.fecha_desde.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.fecha_desde.BorderSize = 0;
-            this.fecha_desde.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F);
-            this.fecha_desde.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.fecha_desde.Location = new System.Drawing.Point(331, 46);
-            this.fecha_desde.MaxDate = new System.DateTime(2024, 12, 31, 0, 0, 0, 0);
-            this.fecha_desde.MinDate = new System.DateTime(2023, 1, 18, 0, 0, 0, 0);
-            this.fecha_desde.MinimumSize = new System.Drawing.Size(4, 35);
-            this.fecha_desde.Name = "fecha_desde";
-            this.fecha_desde.Size = new System.Drawing.Size(202, 35);
-            this.fecha_desde.SkinColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
-            this.fecha_desde.TabIndex = 67;
-            this.fecha_desde.TextColor = System.Drawing.Color.White;
-            // 
-            // fecha_hasta
-            // 
-            this.fecha_hasta.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.fecha_hasta.BorderSize = 0;
-            this.fecha_hasta.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F);
-            this.fecha_hasta.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.fecha_hasta.Location = new System.Drawing.Point(544, 46);
-            this.fecha_hasta.MinimumSize = new System.Drawing.Size(4, 35);
-            this.fecha_hasta.Name = "fecha_hasta";
-            this.fecha_hasta.Size = new System.Drawing.Size(202, 35);
-            this.fecha_hasta.SkinColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
-            this.fecha_hasta.TabIndex = 66;
-            this.fecha_hasta.TextColor = System.Drawing.Color.White;
             // 
             // label3
             // 
@@ -312,8 +278,6 @@ namespace ProyectoIntegradorTaller.views.admin
         private Label label2;
         private components.ComboBoxPersonalisado CBFiltro;
         private components.ComboBoxPersonalisado Periodo;
-        private components.TimePickerPersonalisado fecha_desde;
-        private components.TimePickerPersonalisado fecha_hasta;
         private Label label3;
     }
 }

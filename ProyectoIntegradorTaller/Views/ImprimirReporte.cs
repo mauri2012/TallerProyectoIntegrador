@@ -18,12 +18,10 @@ namespace ProyectoIntegradorTaller.views.admin
         public DateTime fecha_desde;
         public DateTime fecha_hasta;
         public string pperiodo;
-        public ImprimirReporte(int id,DateTime fecha_d,DateTime fecha_h,string periodo)
+        public ImprimirReporte(int id,string periodo)
         {
             InitializeComponent();
             id_aula = id;
-            fecha_desde = fecha_d;
-            fecha_hasta= fecha_h;
             pperiodo= periodo;
         }
 
