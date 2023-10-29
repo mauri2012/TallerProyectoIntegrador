@@ -21,7 +21,11 @@ namespace ProyectoIntegradorTaller.views.admin
             CBDia.Texts = LogicaReserva.ObtenerDiaPorID(idDia).dias;
             Periodo.Texts = nombre;
             id_aula = idAula;
-            LogicaReserva.CBMateriasListar(CBMateria);
+            
+            CBMateria.DataSource = LogicaReserva.CBMateriasListar();
+            CBMateria.DisplayMember = "materia";
+            CBMateria.ValueMember = "id_materia";
+
             fecha.Visible = false;
             BEliminar.Visible = false;
             this.BReservarAula.Click += new System.EventHandler(this.botonPersonalisado1_Click);
@@ -41,7 +45,12 @@ namespace ProyectoIntegradorTaller.views.admin
             Periodo.Texts = LogicaReserva.obtenerPeriodoPorId(reserva1.id_periodo ?? 1).periodo_nombre;
             id_aula = reserva1.id_aula;
             res= reserva1;
-            LogicaReserva.CBMateriasListar(CBMateria);
+
+            CBMateria.DataSource=LogicaReserva.CBMateriasListar();
+            CBMateria.DisplayMember = "materia";
+            CBMateria.ValueMember = "id_materia";
+
+
             //Cambiar el ?? 1 cuando se resuelva el problema de nulos
             CBMateria.Texts = LogicaMaterias.getMateria(reserva1.id_materia ?? 1).materia;
             fecha.Visible = false;
@@ -90,10 +99,14 @@ namespace ProyectoIntegradorTaller.views.admin
         {
             fecha_desde.Visible = false;
             fecha_hasta.Visible = false;
-            LogicaReserva.CBMateriasListar(CBMateria);
+            CBMateria.DataSource = LogicaReserva.CBMateriasListar();
+            CBMateria.DisplayMember = "materia";
+            CBMateria.ValueMember = "id_materia";
             if (Session.SessionCacheData.IdProfile == 1 || Session.SessionCacheData.IdProfile==3)
             {
-                LogicaReserva.CBPRofesorListar(CBPRofesor);
+                CBPRofesor.DataSource= LogicaReserva.CBPRofesorListar();
+                CBPRofesor.DisplayMember = "nombre";
+                CBPRofesor.ValueMember = "id_usuario";
             }
             else
             {

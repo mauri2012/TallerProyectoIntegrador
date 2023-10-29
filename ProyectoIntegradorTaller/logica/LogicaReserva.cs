@@ -11,7 +11,7 @@ using System.IO;
 using System.Linq;
 
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
+
 
 namespace ProyectoIntegradorTaller.logica
 {
@@ -285,15 +285,7 @@ namespace ProyectoIntegradorTaller.logica
 
         }
 
-        public static void CBHoraListar(ComboBoxPersonalisado box)
-        {
-            using (classroom_managerEntities db = new classroom_managerEntities())
-            {
-                box.DataSource = db.horas.ToList();
-                box.DisplayMember = "horario"; // Specify the property to display in the ComboBox
-                box.ValueMember = "id_hora";
-            }
-        }
+ 
         public static IList listarPeriodo()
         {
             using (classroom_managerEntities db = new classroom_managerEntities())
@@ -301,24 +293,20 @@ namespace ProyectoIntegradorTaller.logica
                 return db.Periodo.ToList();
             }
         }
-        public static void CBMateriasListar(ComboBoxPersonalisado box)
+        public static IList CBMateriasListar()
         {
             using (classroom_managerEntities db = new classroom_managerEntities())
             {
-                box.DataSource = db.materias.Where(m => m.activo == "SI").ToList();
-                box.DisplayMember = "materia";
-                box.ValueMember = "id_materia";
+                return db.materias.Where(m => m.activo == "SI").ToList();
             }
         }
-        public static void CBPRofesorListar(ComboBoxPersonalisado box)
+        public static IList CBPRofesorListar()
         {
             using (classroom_managerEntities db = new classroom_managerEntities())
             {
                 var usuario = db.usuario
                               .Where(u => u.id_tipoUsuario == 4).ToList();
-                box.DataSource = usuario;
-                box.DisplayMember = "nombre";
-                box.ValueMember = "id_usuario";
+                return usuario;
             }
         }
         public static void EditarReserva(int idReserva, int idHora, string CBMateria, string CBProfesor, int idDia, string periodo, string estado)
