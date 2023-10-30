@@ -200,6 +200,7 @@
             this.TBBusqueda.TabIndex = 10;
             this.TBBusqueda.Texts = "";
             this.TBBusqueda.UnderlinedStyle = true;
+            this.TBBusqueda._TextChanged += new System.EventHandler(this.TBBusqueda__TextChanged);
             // 
             // dataGridView1
             // 

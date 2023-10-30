@@ -1,8 +1,9 @@
 ﻿using ProyectoIntegradorTaller.models;
+using ProyectoIntegradorTaller.views.admin;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-
+using System.Windows.Forms;
 
 namespace ProyectoIntegradorTaller.logica
 {
@@ -58,6 +59,7 @@ namespace ProyectoIntegradorTaller.logica
 
             }
         }
+       
         public static IList busquedaAula(string valor)
         {
             int valorInt;
@@ -78,7 +80,11 @@ namespace ProyectoIntegradorTaller.logica
                                     Name = aula.nombre,
                                     CapacidadMax = aula.capacidad,
                                     Lugar = ubicacion.lugar, 
-                                    Tipo = tipoSala.tipo
+                                    Tipo = tipoSala.tipo,
+                                    Wifi = db.aula_equipamiento.FirstOrDefault(r => r.id_equipamiento == 4 && r.id_aula == aula.id_aula).disponible,
+                                    Proyector = db.aula_equipamiento.FirstOrDefault(r => r.id_equipamiento == 3 && r.id_aula == aula.id_aula).disponible,
+                                    AC = db.aula_equipamiento.FirstOrDefault(r => r.id_equipamiento == 2 && r.id_aula == aula.id_aula).disponible,
+                                    Televisor = db.aula_equipamiento.FirstOrDefault(r => r.id_equipamiento == 1 && r.id_aula == aula.id_aula).disponible,
                                 };
 
                     return query.ToList();
@@ -96,7 +102,11 @@ namespace ProyectoIntegradorTaller.logica
                                     Name = aula.nombre,
                                     CapacidadMax = aula.capacidad,
                                     Lugar = ubicacion.lugar, 
-                                    Tipo = tipoSala.tipo 
+                                    Tipo = tipoSala.tipo,
+                                    Wifi = db.aula_equipamiento.FirstOrDefault(r => r.id_equipamiento == 4 && r.id_aula == aula.id_aula).disponible,
+                                    Proyector = db.aula_equipamiento.FirstOrDefault(r => r.id_equipamiento == 3 && r.id_aula == aula.id_aula).disponible,
+                                    AC = db.aula_equipamiento.FirstOrDefault(r => r.id_equipamiento == 2 && r.id_aula == aula.id_aula).disponible,
+                                    Televisor = db.aula_equipamiento.FirstOrDefault(r => r.id_equipamiento == 1 && r.id_aula == aula.id_aula).disponible,
                                 };
                  
                     return query.ToList();

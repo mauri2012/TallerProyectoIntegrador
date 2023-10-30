@@ -20,7 +20,7 @@ namespace ProyectoIntegradorTaller.views.profesor
         {
             InitializeComponent();
             dataGridView1.DataSource = LogicaClase.listarAula();
-            dataGridView1.Columns[0].Visible=false;
+            dataGridView1.Columns["Id"].Visible=false;
         }
 
         private void botonPersonalisado3_Click(object sender, EventArgs e)
@@ -53,6 +53,11 @@ namespace ProyectoIntegradorTaller.views.profesor
                 reservas.Show();
 
             }
+        }
+
+        private void TBBusqueda__TextChanged(object sender, EventArgs e)
+        {
+            dataGridView1.DataSource = LogicaClase.busquedaAula(TBBusqueda.Texts);
         }
     }
 }

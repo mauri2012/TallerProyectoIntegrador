@@ -58,14 +58,14 @@ namespace ProyectoIntegradorTaller.logica
 
             }
         }
-        public static IList busqueda(string valor, bool RBActivo)
+        public static IList busqueda(string valor)
         {
             using (classroom_managerEntities dbContext = new classroom_managerEntities())
             {
                 var query = from usuario in dbContext.usuario
                             join tipoUsuario in dbContext.tipoUsuario
                             on usuario.id_tipoUsuario equals tipoUsuario.id_tipoUsuario
-                            where (usuario.nombre.Contains(valor) || usuario.apellido.Contains(valor)) && usuario.desactivar == (RBActivo? "SI" : "NO")
+                            where (usuario.nombre.Contains(valor) || usuario.apellido.Contains(valor))
                             select new
                             {
                                 Id = usuario.id_usuario,
@@ -160,7 +160,29 @@ namespace ProyectoIntegradorTaller.logica
                 }
             }
         }
+        public static IList busquedaProfesor(string valor)
+        {
+            using (classroom_managerEntities dbContext = new classroom_managerEntities())
+            {
+                var query = from usuario in dbContext.usuario
+                            join tipoUsuario in dbContext.tipoUsuario
+                            on usuario.id_tipoUsuario equals tipoUsuario.id_tipoUsuario
+                            where (usuario.id_tipoUsuario == 4) && (usuario.nombre.Contains(valor) || usuario.apellido.Contains(valor))
+                            select new
+                            {
+                                Id = usuario.id_usuario,
+                                Nombre = usuario.nombre,
+                                Apellido = usuario.apellido,
+                                DNI = usuario.dni,
+                                Email = usuario.correo,
+                                Tipo = tipoUsuario.tipo,
+                                Activo = usuario.desactivar
+                            };
 
+
+                return query.ToList();
+            }
+        }
         public static IList ListarUsuariosPorId(int id)
         {
             using (classroom_managerEntities dbContext = new classroom_managerEntities())

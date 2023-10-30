@@ -306,6 +306,7 @@
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "AdministracionDatabase";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AdministracionDatabase";
             this.Controls.SetChildIndex(this.PBEsconder_, 0);
             this.Controls.SetChildIndex(this.PBMinimizar_, 0);

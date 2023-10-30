@@ -40,7 +40,7 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Apellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CorreoElectronico = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DNI = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.PBMaximizar_)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PBMinimizar_)).BeginInit();
@@ -110,6 +110,7 @@
             this.rjTextBox1.TabIndex = 8;
             this.rjTextBox1.Texts = "";
             this.rjTextBox1.UnderlinedStyle = true;
+            this.rjTextBox1._TextChanged += new System.EventHandler(this.rjTextBox1__TextChanged);
             // 
             // BCrearProfesor
             // 
@@ -220,7 +221,7 @@
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Nombre,
             this.Apellido,
-            this.CorreoElectronico,
+            this.Email,
             this.DNI});
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.EnableHeadersVisualStyles = false;
@@ -237,7 +238,6 @@
             this.Nombre.HeaderText = "Nombre";
             this.Nombre.Name = "Nombre";
             this.Nombre.ReadOnly = true;
-            
             // 
             // Apellido
             // 
@@ -245,7 +245,13 @@
             this.Apellido.HeaderText = "Apellido";
             this.Apellido.Name = "Apellido";
             this.Apellido.ReadOnly = true;
-            
+            // 
+            // Email
+            // 
+            this.Email.DataPropertyName = "Email";
+            this.Email.HeaderText = "Email";
+            this.Email.Name = "Email";
+            this.Email.ReadOnly = true;
             // 
             // DNI
             // 
@@ -253,19 +259,9 @@
             this.DNI.HeaderText = "DNI";
             this.DNI.Name = "DNI";
             this.DNI.ReadOnly = true;
-            
-            // 
-            // Email
-            // 
-            this.CorreoElectronico.DataPropertyName = "Email";
-            this.CorreoElectronico.HeaderText = "Email";
-            this.CorreoElectronico.Name = "Email";
-            this.CorreoElectronico.ReadOnly = true;
-            this.CorreoElectronico.Width = 110;
             // 
             // Profesores
             // 
-            this.Load += new System.EventHandler(this.Profesores_Load);
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
@@ -278,6 +274,7 @@
             this.Name = "Profesores";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Profesores";
+            this.Load += new System.EventHandler(this.Profesores_Load);
             this.Controls.SetChildIndex(this.PBEsconder_, 0);
             this.Controls.SetChildIndex(this.PBMinimizar_, 0);
             this.Controls.SetChildIndex(this.PBMaximizar_, 0);
@@ -314,5 +311,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Apellido;
         private System.Windows.Forms.DataGridViewTextBoxColumn CorreoElectronico;
         private System.Windows.Forms.DataGridViewTextBoxColumn DNI;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Email;
     }
 }

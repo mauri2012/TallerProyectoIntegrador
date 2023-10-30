@@ -60,6 +60,7 @@ namespace ProyectoIntegradorTaller.views.admin
             {
                 LogicaLugares.agregarLugar(TLugar.Texts);
                 MessageBox.Show("Se agrego con exito una nueva ubicacion!", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                LogicaLugares.listarLugares(dataGridView1);
             }
             else {
                 MessageBox.Show("El campo esta vacio!", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -83,6 +84,11 @@ namespace ProyectoIntegradorTaller.views.admin
 
 
         private void BBuscar_Click(object sender, EventArgs e)
+        {
+            LogicaLugares.busquedaLugares(TBBusqueda.Texts, dataGridView1);
+        }
+
+        private void TBBusqueda__TextChanged(object sender, EventArgs e)
         {
             LogicaLugares.busquedaLugares(TBBusqueda.Texts, dataGridView1);
         }

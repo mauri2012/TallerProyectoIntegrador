@@ -41,5 +41,10 @@ namespace ProyectoIntegradorTaller.views.admin
             CrearProfesor crearProfesor = new CrearProfesor();
             crearProfesor.Show();
         }
+
+        private void rjTextBox1__TextChanged(object sender, EventArgs e)
+        {
+            dataGridView1.DataSource=LogicaUsuarios.busquedaProfesor(rjTextBox1.Texts);
+        }
     }
 }

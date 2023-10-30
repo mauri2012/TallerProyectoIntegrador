@@ -457,7 +457,35 @@ namespace ProyectoIntegradorTaller.logica
                 return query.ToList();
             }
         }
+        public static IList busquedaReservas(string estado, int id,string valor)
+        {
+            using (classroom_managerEntities db = new classroom_managerEntities())
+            {
 
+
+                var query = from reserva in db.reserva
+                            join dias_semana in db.dias_semana on reserva.id_dia equals dias_semana.id_dias
+                            join horas in db.horas on reserva.id_hora equals horas.id_hora
+                            join materias in db.materias on reserva.id_materia equals materias.id_materia
+                            join aula in db.aula on reserva.id_aula equals aula.id_aula
+                            join usuario in db.usuario on reserva.id_usuario equals usuario.id_usuario
+                            where reserva.activo == estado && reserva.id_usuario == id 
+                            && (aula.nombre.Contains(valor) || dias_semana.dias.Contains(valor) || materias.materia.Contains(valor) || horas.horario.Contains(valor))
+                            select new
+                            {
+                                ID = reserva.id_reserva,
+                                Name = aula.nombre,
+                                Hora = horas.horario,
+                                usuario = usuario.nombre,
+                                materia = materias.materia,
+                                Estado = reserva.activo,
+                                Dia = dias_semana.dias,
+
+                            };
+
+                return query.ToList();
+            }
+        }
     }
 
 }

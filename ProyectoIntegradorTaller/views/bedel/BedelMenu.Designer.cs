@@ -42,10 +42,6 @@ namespace ProyectoIntegradorTaller.views.admin
             this.TBBusqueda = new CustomControls.RJControls.RJTextBox();
             this.BBuscar = new ProyectoIntegradorTaller.views.components.BotonPersonalisado();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lugarDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.capacidadMaxDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.itemProfesorBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panel3 = new System.Windows.Forms.Panel();
             this.BPendientes = new ProyectoIntegradorTaller.views.components.BotonPersonalisado();
@@ -211,6 +207,7 @@ namespace ProyectoIntegradorTaller.views.admin
             this.TBBusqueda.TabIndex = 12;
             this.TBBusqueda.Texts = "";
             this.TBBusqueda.UnderlinedStyle = true;
+            this.TBBusqueda._TextChanged += new System.EventHandler(this.TBBusqueda__TextChanged);
             // 
             // BBuscar
             // 
@@ -236,7 +233,6 @@ namespace ProyectoIntegradorTaller.views.admin
             // 
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
             this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
@@ -251,12 +247,6 @@ namespace ProyectoIntegradorTaller.views.admin
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.ColumnHeadersHeight = 40;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idDataGridViewTextBoxColumn,
-            this.nameDataGridViewTextBoxColumn,
-            this.lugarDataGridViewTextBoxColumn,
-            this.capacidadMaxDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.itemProfesorBindingSource;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.EnableHeadersVisualStyles = false;
             this.dataGridView1.GridColor = System.Drawing.SystemColors.ButtonFace;
@@ -268,38 +258,6 @@ namespace ProyectoIntegradorTaller.views.admin
             this.dataGridView1.Size = new System.Drawing.Size(800, 270);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
-            // idDataGridViewTextBoxColumn
-            // 
-            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
-            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
-            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            this.idDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // nameDataGridViewTextBoxColumn
-            // 
-            this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
-            this.nameDataGridViewTextBoxColumn.HeaderText = "Name";
-            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
-            this.nameDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // lugarDataGridViewTextBoxColumn
-            // 
-            this.lugarDataGridViewTextBoxColumn.DataPropertyName = "Lugar";
-            this.lugarDataGridViewTextBoxColumn.HeaderText = "Lugar";
-            this.lugarDataGridViewTextBoxColumn.Name = "lugarDataGridViewTextBoxColumn";
-            this.lugarDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // capacidadMaxDataGridViewTextBoxColumn
-            // 
-            this.capacidadMaxDataGridViewTextBoxColumn.DataPropertyName = "CapacidadMax";
-            this.capacidadMaxDataGridViewTextBoxColumn.HeaderText = "CapacidadMax";
-            this.capacidadMaxDataGridViewTextBoxColumn.Name = "capacidadMaxDataGridViewTextBoxColumn";
-            this.capacidadMaxDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // itemProfesorBindingSource
-            // 
-            this.itemProfesorBindingSource.DataSource = typeof(ProyectoIntegradorTaller.views.admin.ItemProfesor);
             // 
             // panel3
             // 

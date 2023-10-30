@@ -33,8 +33,8 @@ namespace ProyectoIntegradorTaller.views.admin
                 if (dataGridView1.Columns[e.ColumnIndex].Name == "Reserva")
                 {
                     this.Hide();
-                    VerReservas reservas = new VerReservas((int)dataGridView1.Rows[e.RowIndex].Cells[0].Value);
-                    //VerReservas reservas = new VerReservas();
+                    VerReservas reservas = new VerReservas((int)dataGridView1.Rows[e.RowIndex].Cells["Id"].Value);
+                   
                     reservas.Show();
 
                 }
@@ -45,7 +45,7 @@ namespace ProyectoIntegradorTaller.views.admin
 
         private void BedelMenu_Load(object sender, EventArgs e)
         {
-            dataGridView1.DataSource = LogicaClase.listarAula();
+           dataGridView1.DataSource = LogicaClase.listarAula();
             dataGridView1.Columns[0].Visible= false;
             DataGridViewButtonColumn buttonColumn2 = new DataGridViewButtonColumn();
             buttonColumn2.Name = "Reserva"; // Name the column
@@ -54,22 +54,10 @@ namespace ProyectoIntegradorTaller.views.admin
  
             dataGridView1.Columns.Add(buttonColumn2);
 
-            dataGridView1.Columns[0].Visible = false;
         }
         private void DataGridView1_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
-            if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
-            {
-                DataGridViewColumn column = dataGridView1.Columns[e.ColumnIndex];
-    
-                if (column is DataGridViewButtonColumn && column.Name == "Reservar")
-                {
-                    DataGridViewButtonCell buttonCell = dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex] as DataGridViewButtonCell;
-                    buttonCell.Style.BackColor = Color.Green;
-                    //buttonCell.Style.ForeColor = Color.White;
-
-                }
-            }
+       
         }
 
         
@@ -106,8 +94,13 @@ namespace ProyectoIntegradorTaller.views.admin
         {
 
         }
+
+        private void TBBusqueda__TextChanged(object sender, EventArgs e)
+        {
+            dataGridView1.DataSource = LogicaClase.busquedaAula(this.TBBusqueda.Texts);
+        }
     }
-    public class ItemProfesor
+   /* public class ItemProfesor
     {
         public int Id { get; set; }
         public string Name { get; set; }
@@ -115,5 +108,5 @@ namespace ProyectoIntegradorTaller.views.admin
         public int CapacidadMax { get; set; }
 
 
-    }
+    }*/
 }

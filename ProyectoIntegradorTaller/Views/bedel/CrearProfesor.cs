@@ -76,5 +76,25 @@ namespace ProyectoIntegradorTaller.views.admin
             // Utiliza Regex.IsMatch para verificar si la cadena coincide con el patrón.
             return Regex.IsMatch(email, pattern);
         }
+
+        private void TBDNI__TextChanged(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void TBDNI_KeyDown(object sender, KeyEventArgs e)
+        {
+
+        }
+
+        private void TBDNI_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                // Si no es un número ni una tecla de control, suprime la pulsación de tecla.
+                e.Handled = true;
+                MessageBox.Show("EL campo DNI solo acepta valores numericos");
+            }
+        }
     }
 }

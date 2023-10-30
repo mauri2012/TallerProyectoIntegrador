@@ -89,6 +89,9 @@ namespace ProyectoIntegradorTaller.views.admin
                             MessageBox.Show("se edito al usuario correctamente!", "editar", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     this.TDni.Texts = this.TApellido.Texts = this.TEmail.Texts = this.TNombre.Texts = " ";
+                    this.Close();
+                    Usuarios usuarios = new Usuarios();
+                    usuarios.Show();
                 }
                 }
             

@@ -66,6 +66,7 @@ namespace ProyectoIntegradorTaller.views.admin
             {
                 // Si no es un número ni una tecla de control, suprime la pulsación de tecla.
                 e.Handled = true;
+                MessageBox.Show("EL campo cantidad solo acepta valores numericos");
             }
         }
 
@@ -89,6 +90,9 @@ namespace ProyectoIntegradorTaller.views.admin
                 }
 
             }
+            this.Hide();
+            menuAdmin admin = new menuAdmin();
+            admin.Show();
         }
 
         private void TCapacidad_KeyPress(object sender, KeyPressEventArgs e)
@@ -149,6 +153,9 @@ namespace ProyectoIntegradorTaller.views.admin
                     MessageBox.Show("se edito la clase correctamente correctamente!", "editar", MessageBoxButtons.OK, MessageBoxIcon.Information);
           
             }
+            this.Hide();
+            menuAdmin admin = new menuAdmin();
+            admin.Show();
         }
 
         private void panel7_Paint(object sender, PaintEventArgs e)

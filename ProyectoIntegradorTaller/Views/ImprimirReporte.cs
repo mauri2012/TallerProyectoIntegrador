@@ -112,6 +112,13 @@ namespace ProyectoIntegradorTaller.views.admin
         {
 
         }
+
+        private void BVolver_Click_1(object sender, EventArgs e)
+        {
+            this.Close();
+            Reporte unReporte = new Reporte(id_aula);
+            unReporte.Show();
+        }
     }
  
 }

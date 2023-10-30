@@ -116,7 +116,15 @@ namespace ProyectoIntegradorTaller.views.admin
 
         private void rjTextBox1__TextChanged(object sender, EventArgs e)
         {
-            dataGridView1.DataSource= LogicaUsuarios.busqueda(this.rjTextBox1.Texts, RBActivo.Checked);
+            if (!string.IsNullOrEmpty(rjTextBox1.Texts))
+            {
+                dataGridView1.DataSource = LogicaUsuarios.busqueda(this.rjTextBox1.Texts);
+            }
+            else
+            {
+                dataGridView1.DataSource = LogicaUsuarios.listarUsuarios(RBActivo.Checked);
+            }
+            
         }
 
         private void BBuscar_Click(object sender, EventArgs e)

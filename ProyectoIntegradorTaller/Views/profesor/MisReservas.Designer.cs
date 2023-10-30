@@ -149,6 +149,7 @@
             this.TBBusqueda.TabIndex = 13;
             this.TBBusqueda.Texts = "";
             this.TBBusqueda.UnderlinedStyle = true;
+            this.TBBusqueda._TextChanged += new System.EventHandler(this.TBBusqueda__TextChanged);
             // 
             // panel2
             // 
