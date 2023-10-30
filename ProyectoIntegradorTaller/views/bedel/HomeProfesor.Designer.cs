@@ -28,13 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.BBuscar = new ProyectoIntegradorTaller.views.components.BotonPersonalisado();
             this.TBBusqueda = new CustomControls.RJControls.RJTextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.BVolver = new ProyectoIntegradorTaller.views.components.BotonPersonalisado();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.LBienvenido = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label6 = new System.Windows.Forms.Label();
@@ -45,6 +44,7 @@
             this.Dia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.materia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Autorizar = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.Eliminar = new System.Windows.Forms.DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)(this.PBMaximizar_)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PBMinimizar_)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PBCerrar_)).BeginInit();
@@ -139,7 +139,6 @@
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.LBienvenido);
             this.panel2.Controls.Add(this.BBuscar);
             this.panel2.Controls.Add(this.TBBusqueda);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
@@ -147,16 +146,6 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(800, 69);
             this.panel2.TabIndex = 22;
-            // 
-            // LBienvenido
-            // 
-            this.LBienvenido.AutoSize = true;
-            this.LBienvenido.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Bold);
-            this.LBienvenido.Location = new System.Drawing.Point(3, 38);
-            this.LBienvenido.Name = "LBienvenido";
-            this.LBienvenido.Size = new System.Drawing.Size(85, 18);
-            this.LBienvenido.TabIndex = 37;
-            this.LBienvenido.Text = "Reservas";
             // 
             // panel3
             // 
@@ -174,14 +163,14 @@
             this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridView1.ColumnHeadersHeight = 40;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ID,
@@ -190,7 +179,8 @@
             this.usuario,
             this.Dia,
             this.materia,
-            this.Autorizar});
+            this.Autorizar,
+            this.Eliminar});
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.EnableHeadersVisualStyles = false;
             this.dataGridView1.GridColor = System.Drawing.SystemColors.ButtonFace;
@@ -210,11 +200,11 @@
             this.label6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
             this.label6.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(361, 7);
+            this.label6.Location = new System.Drawing.Point(344, 7);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(95, 19);
+            this.label6.Size = new System.Drawing.Size(184, 19);
             this.label6.TabIndex = 56;
-            this.label6.Text = "Pendientes";
+            this.label6.Text = "Solicitudes Pendientes";
             // 
             // ID
             // 
@@ -269,8 +259,16 @@
             this.Autorizar.HeaderText = "Autorizar";
             this.Autorizar.Name = "Autorizar";
             this.Autorizar.ReadOnly = true;
-            this.Autorizar.Text = "autorizar";
+            this.Autorizar.Text = "Autorizar";
             this.Autorizar.UseColumnTextForButtonValue = true;
+            // 
+            // Eliminar
+            // 
+            this.Eliminar.HeaderText = "Eliminar";
+            this.Eliminar.Name = "Eliminar";
+            this.Eliminar.ReadOnly = true;
+            this.Eliminar.Text = "Eliminar";
+            this.Eliminar.UseColumnTextForButtonValue = true;
             // 
             // ReservasPendientes
             // 
@@ -300,7 +298,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.PBEsconder_)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
@@ -317,7 +314,6 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label LBienvenido;
         private System.Windows.Forms.DataGridViewTextBoxColumn Tipo;
         private components.BotonPersonalisado BVolver;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID;
@@ -327,5 +323,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Dia;
         private System.Windows.Forms.DataGridViewTextBoxColumn materia;
         private System.Windows.Forms.DataGridViewButtonColumn Autorizar;
+        private System.Windows.Forms.DataGridViewButtonColumn Eliminar;
     }
 }

@@ -276,16 +276,16 @@
     <Compile Include="views\profesor\MisReservas.Designer.cs">
       <DependentUpon>MisReservas.cs</DependentUpon>
     </Compile>
-    <Compile Include="views\ImprimirReporte.cs">
+    <Compile Include="views\admin\ImprimirReporte.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="views\ImprimirReporte.designer.cs">
+    <Compile Include="views\admin\ImprimirReporte.designer.cs">
       <DependentUpon>ImprimirReporte.cs</DependentUpon>
     </Compile>
-    <Compile Include="views\Reporte.cs">
+    <Compile Include="views\admin\Reporte.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="views\Reporte.designer.cs">
+    <Compile Include="views\admin\Reporte.designer.cs">
       <DependentUpon>Reporte.cs</DependentUpon>
     </Compile>
     <Compile Include="views\ReservarAula.cs">
@@ -367,10 +367,10 @@
     <EmbeddedResource Include="views\profesor\MisReservas.resx">
       <DependentUpon>MisReservas.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="views\ImprimirReporte.resx">
+    <EmbeddedResource Include="views\admin\ImprimirReporte.resx">
       <DependentUpon>ImprimirReporte.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="views\Reporte.resx">
+    <EmbeddedResource Include="views\admin\Reporte.resx">
       <DependentUpon>Reporte.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="views\ReservarAula.resx">

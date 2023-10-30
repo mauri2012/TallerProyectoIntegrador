@@ -106,7 +106,6 @@
             // 
             // TBRutaExport
             // 
-            this.TBRutaExport.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.TBRutaExport.BackColor = System.Drawing.SystemColors.Menu;
             this.TBRutaExport.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
             this.TBRutaExport.BorderFocusColor = System.Drawing.Color.HotPink;
@@ -129,7 +128,6 @@
             // 
             // label4
             // 
-            this.label4.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(26, 91);
@@ -140,7 +138,6 @@
             // 
             // label2
             // 
-            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(26, 63);
@@ -151,7 +148,6 @@
             // 
             // BBuscarRuta
             // 
-            this.BBuscarRuta.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.BBuscarRuta.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
             this.BBuscarRuta.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
             this.BBuscarRuta.BorderColor = System.Drawing.Color.PaleVioletRed;
@@ -174,7 +170,6 @@
             // 
             // BExportarDB
             // 
-            this.BExportarDB.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.BExportarDB.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
             this.BExportarDB.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
             this.BExportarDB.BorderColor = System.Drawing.Color.PaleVioletRed;
@@ -197,7 +192,6 @@
             // 
             // label3
             // 
-            this.label3.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(26, 121);
@@ -208,7 +202,6 @@
             // 
             // label5
             // 
-            this.label5.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(26, 152);
@@ -219,7 +212,6 @@
             // 
             // TBRutaArchivo
             // 
-            this.TBRutaArchivo.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.TBRutaArchivo.BackColor = System.Drawing.SystemColors.Menu;
             this.TBRutaArchivo.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
             this.TBRutaArchivo.BorderFocusColor = System.Drawing.Color.HotPink;
@@ -242,7 +234,6 @@
             // 
             // BBuscarArchivo
             // 
-            this.BBuscarArchivo.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.BBuscarArchivo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
             this.BBuscarArchivo.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
             this.BBuscarArchivo.BorderColor = System.Drawing.Color.PaleVioletRed;
@@ -265,7 +256,6 @@
             // 
             // BRestaurarDB
             // 
-            this.BRestaurarDB.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.BRestaurarDB.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
             this.BRestaurarDB.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
             this.BRestaurarDB.BorderColor = System.Drawing.Color.PaleVioletRed;

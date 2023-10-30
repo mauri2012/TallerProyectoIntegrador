@@ -32,6 +32,7 @@ namespace ProyectoIntegradorTaller.views.admin
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.BImprimir = new ProyectoIntegradorTaller.views.components.BotonPersonalisado();
             this.BEliminar = new ProyectoIntegradorTaller.views.components.BotonPersonalisado();
             this.Periodo = new ProyectoIntegradorTaller.views.components.ComboBoxPersonalisado();
             this.BVolver = new ProyectoIntegradorTaller.views.components.BotonPersonalisado();
@@ -42,7 +43,6 @@ namespace ProyectoIntegradorTaller.views.admin
             this.fecha_desde = new ProyectoIntegradorTaller.views.components.TimePickerPersonalisado();
             this.BReservarAula = new ProyectoIntegradorTaller.views.components.BotonPersonalisado();
             this.fecha_hasta = new ProyectoIntegradorTaller.views.components.TimePickerPersonalisado();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.fecha = new System.Windows.Forms.Label();
@@ -51,13 +51,11 @@ namespace ProyectoIntegradorTaller.views.admin
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label8 = new System.Windows.Forms.Label();
-            this.BImprimir = new ProyectoIntegradorTaller.views.components.BotonPersonalisado();
             ((System.ComponentModel.ISupportInitialize)(this.PBMaximizar_)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PBMinimizar_)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PBCerrar_)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PBEsconder_)).BeginInit();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -83,7 +81,6 @@ namespace ProyectoIntegradorTaller.views.admin
             this.panel1.Controls.Add(this.fecha_desde);
             this.panel1.Controls.Add(this.BReservarAula);
             this.panel1.Controls.Add(this.fecha_hasta);
-            this.panel1.Controls.Add(this.pictureBox4);
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.fecha);
@@ -94,6 +91,28 @@ namespace ProyectoIntegradorTaller.views.admin
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(686, 388);
             this.panel1.TabIndex = 0;
+            // 
+            // BImprimir
+            // 
+            this.BImprimir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
+            this.BImprimir.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
+            this.BImprimir.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.BImprimir.BorderRadius = 6;
+            this.BImprimir.BorderSize = 0;
+            this.BImprimir.FlatAppearance.BorderSize = 0;
+            this.BImprimir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BImprimir.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BImprimir.ForeColor = System.Drawing.Color.White;
+            this.BImprimir.Image = global::ProyectoIntegradorTaller.Properties.Resources.save;
+            this.BImprimir.Location = new System.Drawing.Point(175, 309);
+            this.BImprimir.Name = "BImprimir";
+            this.BImprimir.Size = new System.Drawing.Size(187, 40);
+            this.BImprimir.TabIndex = 55;
+            this.BImprimir.Text = " Imprimir Comprobante";
+            this.BImprimir.TextColor = System.Drawing.Color.White;
+            this.BImprimir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.BImprimir.UseVisualStyleBackColor = false;
+            this.BImprimir.Click += new System.EventHandler(this.BImprimir_Click);
             // 
             // BEliminar
             // 
@@ -120,18 +139,18 @@ namespace ProyectoIntegradorTaller.views.admin
             // Periodo
             // 
             this.Periodo.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.Periodo.BorderColor = System.Drawing.Color.MediumSlateBlue;
-            this.Periodo.BorderSize = 1;
+            this.Periodo.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
+            this.Periodo.BorderSize = 2;
             this.Periodo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
             this.Periodo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.Periodo.ForeColor = System.Drawing.Color.DimGray;
-            this.Periodo.IconColor = System.Drawing.Color.MediumSlateBlue;
+            this.Periodo.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
             this.Periodo.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(228)))), ((int)(((byte)(245)))));
             this.Periodo.ListTextColor = System.Drawing.Color.DimGray;
             this.Periodo.Location = new System.Drawing.Point(92, 189);
             this.Periodo.MinimumSize = new System.Drawing.Size(200, 30);
             this.Periodo.Name = "Periodo";
-            this.Periodo.Padding = new System.Windows.Forms.Padding(1);
+            this.Periodo.Padding = new System.Windows.Forms.Padding(2);
             this.Periodo.Size = new System.Drawing.Size(244, 30);
             this.Periodo.TabIndex = 53;
             this.Periodo.Texts = "";
@@ -284,16 +303,6 @@ namespace ProyectoIntegradorTaller.views.admin
             this.fecha_hasta.TextColor = System.Drawing.Color.White;
             this.fecha_hasta.ValueChanged += new System.EventHandler(this.fecha_hasta_ValueChanged);
             // 
-            // pictureBox4
-            // 
-            this.pictureBox4.Image = global::ProyectoIntegradorTaller.Properties.Resources.Time;
-            this.pictureBox4.Location = new System.Drawing.Point(342, 76);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(30, 30);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox4.TabIndex = 26;
-            this.pictureBox4.TabStop = false;
-            // 
             // label6
             // 
             this.label6.AutoSize = true;
@@ -379,28 +388,6 @@ namespace ProyectoIntegradorTaller.views.admin
             this.label8.TabIndex = 7;
             this.label8.Text = "Reservar Aula";
             // 
-            // BImprimir
-            // 
-            this.BImprimir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
-            this.BImprimir.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
-            this.BImprimir.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.BImprimir.BorderRadius = 6;
-            this.BImprimir.BorderSize = 0;
-            this.BImprimir.FlatAppearance.BorderSize = 0;
-            this.BImprimir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BImprimir.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BImprimir.ForeColor = System.Drawing.Color.White;
-            this.BImprimir.Image = global::ProyectoIntegradorTaller.Properties.Resources.save;
-            this.BImprimir.Location = new System.Drawing.Point(175, 309);
-            this.BImprimir.Name = "BImprimir";
-            this.BImprimir.Size = new System.Drawing.Size(187, 40);
-            this.BImprimir.TabIndex = 55;
-            this.BImprimir.Text = " Imprimir Comprobante";
-            this.BImprimir.TextColor = System.Drawing.Color.White;
-            this.BImprimir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.BImprimir.UseVisualStyleBackColor = false;
-            this.BImprimir.Click += new System.EventHandler(this.BImprimir_Click);
-            // 
             // ReservarAula
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -424,7 +411,6 @@ namespace ProyectoIntegradorTaller.views.admin
             ((System.ComponentModel.ISupportInitialize)(this.PBEsconder_)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -440,7 +426,6 @@ namespace ProyectoIntegradorTaller.views.admin
         private Label label1;
         private Label label6;
         private Label label5;
-        private PictureBox pictureBox4;
         private Panel panel2;
         private Label label8;
         private views.components.BotonPersonalisado BReservarAula;

@@ -30,7 +30,7 @@ namespace ProyectoIntegradorTaller.views.admin
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.botonPersonalisado1 = new ProyectoIntegradorTaller.views.components.BotonPersonalisado();
             this.BLugares = new ProyectoIntegradorTaller.views.components.BotonPersonalisado();
@@ -38,7 +38,6 @@ namespace ProyectoIntegradorTaller.views.admin
             this.BCrearAula = new ProyectoIntegradorTaller.views.components.BotonPersonalisado();
             this.BUsuarios = new ProyectoIntegradorTaller.views.components.BotonPersonalisado();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.CBMateria = new ProyectoIntegradorTaller.views.components.ComboBoxPersonalisado();
             this.TBBusqueda = new CustomControls.RJControls.RJTextBox();
             this.BBuscar = new ProyectoIntegradorTaller.views.components.BotonPersonalisado();
             this.BDatabase = new ProyectoIntegradorTaller.views.components.BotonPersonalisado();
@@ -46,6 +45,7 @@ namespace ProyectoIntegradorTaller.views.admin
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.label6 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.PBMaximizar_)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PBMinimizar_)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PBCerrar_)).BeginInit();
@@ -203,14 +203,14 @@ namespace ProyectoIntegradorTaller.views.admin
             this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridView1.ColumnHeadersHeight = 35;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -222,30 +222,6 @@ namespace ProyectoIntegradorTaller.views.admin
             this.dataGridView1.Size = new System.Drawing.Size(844, 277);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
-            // CBMateria
-            // 
-            this.CBMateria.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.CBMateria.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.CBMateria.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
-            this.CBMateria.BorderSize = 2;
-            this.CBMateria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.CBMateria.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.CBMateria.ForeColor = System.Drawing.Color.DimGray;
-            this.CBMateria.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
-            this.CBMateria.Items.AddRange(new object[] {
-            "Nombre",
-            "Capacidad",
-            "Equipamiento"});
-            this.CBMateria.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(228)))), ((int)(((byte)(245)))));
-            this.CBMateria.ListTextColor = System.Drawing.Color.DimGray;
-            this.CBMateria.Location = new System.Drawing.Point(386, 42);
-            this.CBMateria.MinimumSize = new System.Drawing.Size(200, 30);
-            this.CBMateria.Name = "CBMateria";
-            this.CBMateria.Padding = new System.Windows.Forms.Padding(2);
-            this.CBMateria.Size = new System.Drawing.Size(200, 30);
-            this.CBMateria.TabIndex = 38;
-            this.CBMateria.Texts = "";
             // 
             // TBBusqueda
             // 
@@ -326,7 +302,7 @@ namespace ProyectoIntegradorTaller.views.admin
             this.BPeriodos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BPeriodos.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BPeriodos.ForeColor = System.Drawing.Color.White;
-            this.BPeriodos.Image = global::ProyectoIntegradorTaller.Properties.Resources.map;
+            this.BPeriodos.Image = global::ProyectoIntegradorTaller.Properties.Resources.calendarWhite;
             this.BPeriodos.Location = new System.Drawing.Point(507, 48);
             this.BPeriodos.Name = "BPeriodos";
             this.BPeriodos.Size = new System.Drawing.Size(102, 40);
@@ -357,7 +333,6 @@ namespace ProyectoIntegradorTaller.views.admin
             // 
             this.panel2.Controls.Add(this.BBuscar);
             this.panel2.Controls.Add(this.TBBusqueda);
-            this.panel2.Controls.Add(this.CBMateria);
             this.panel2.Controls.Add(this.label1);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 32);
@@ -374,12 +349,26 @@ namespace ProyectoIntegradorTaller.views.admin
             this.panel3.Size = new System.Drawing.Size(844, 277);
             this.panel3.TabIndex = 45;
             // 
+            // label6
+            // 
+            this.label6.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
+            this.label6.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.White;
+            this.label6.Location = new System.Drawing.Point(375, 7);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(54, 19);
+            this.label6.TabIndex = 57;
+            this.label6.Text = "Home";
+            // 
             // menuAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(844, 484);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
@@ -395,6 +384,7 @@ namespace ProyectoIntegradorTaller.views.admin
             this.Controls.SetChildIndex(this.panel1, 0);
             this.Controls.SetChildIndex(this.panel2, 0);
             this.Controls.SetChildIndex(this.panel3, 0);
+            this.Controls.SetChildIndex(this.label6, 0);
             ((System.ComponentModel.ISupportInitialize)(this.PBMaximizar_)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PBMinimizar_)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PBCerrar_)).EndInit();
@@ -405,6 +395,7 @@ namespace ProyectoIntegradorTaller.views.admin
             this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -417,7 +408,6 @@ namespace ProyectoIntegradorTaller.views.admin
         private components.BotonPersonalisado BCrearAula;
         private components.BotonPersonalisado BUsuarios;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private components.ComboBoxPersonalisado CBMateria;
         private CustomControls.RJControls.RJTextBox TBBusqueda;
         private components.BotonPersonalisado BBuscar;
         private components.BotonPersonalisado BDatabase;
@@ -425,5 +415,6 @@ namespace ProyectoIntegradorTaller.views.admin
         private Panel panel1;
         private Panel panel2;
         private Panel panel3;
+        private Label label6;
     }
 }

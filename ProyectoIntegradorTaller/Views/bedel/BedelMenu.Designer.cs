@@ -35,7 +35,6 @@ namespace ProyectoIntegradorTaller.views.admin
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.LBienvenido = new System.Windows.Forms.Label();
-            this.CBMateria = new ProyectoIntegradorTaller.views.components.ComboBoxPersonalisado();
             this.botonPersonalisado1 = new ProyectoIntegradorTaller.views.components.BotonPersonalisado();
             this.BProfesores = new ProyectoIntegradorTaller.views.components.BotonPersonalisado();
             this.BMaterias = new ProyectoIntegradorTaller.views.components.BotonPersonalisado();
@@ -92,30 +91,6 @@ namespace ProyectoIntegradorTaller.views.admin
             this.LBienvenido.Size = new System.Drawing.Size(53, 18);
             this.LBienvenido.TabIndex = 3;
             this.LBienvenido.Text = "Aulas";
-            // 
-            // CBMateria
-            // 
-            this.CBMateria.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.CBMateria.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.CBMateria.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
-            this.CBMateria.BorderSize = 2;
-            this.CBMateria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.CBMateria.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.CBMateria.ForeColor = System.Drawing.Color.DimGray;
-            this.CBMateria.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
-            this.CBMateria.Items.AddRange(new object[] {
-            "Nombre",
-            "Capacidad",
-            "Equipamiento"});
-            this.CBMateria.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(228)))), ((int)(((byte)(245)))));
-            this.CBMateria.ListTextColor = System.Drawing.Color.DimGray;
-            this.CBMateria.Location = new System.Drawing.Point(342, 15);
-            this.CBMateria.MinimumSize = new System.Drawing.Size(200, 30);
-            this.CBMateria.Name = "CBMateria";
-            this.CBMateria.Padding = new System.Windows.Forms.Padding(2);
-            this.CBMateria.Size = new System.Drawing.Size(200, 30);
-            this.CBMateria.TabIndex = 37;
-            this.CBMateria.Texts = "";
             // 
             // botonPersonalisado1
             // 
@@ -298,7 +273,6 @@ namespace ProyectoIntegradorTaller.views.admin
             // 
             this.panel5.Controls.Add(this.BBuscar);
             this.panel5.Controls.Add(this.TBBusqueda);
-            this.panel5.Controls.Add(this.CBMateria);
             this.panel5.Controls.Add(this.LBienvenido);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel5.Location = new System.Drawing.Point(0, 32);
@@ -370,7 +344,6 @@ namespace ProyectoIntegradorTaller.views.admin
         private components.BotonPersonalisado BProfesores;
         private components.BotonPersonalisado BMaterias;
         private components.BotonPersonalisado botonPersonalisado1;
-        private components.ComboBoxPersonalisado CBMateria;
         private Panel panel3;
         private Panel panel5;
         private Panel panel6;

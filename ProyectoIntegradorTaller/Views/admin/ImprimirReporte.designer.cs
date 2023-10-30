@@ -45,6 +45,7 @@ namespace ProyectoIntegradorTaller.views.admin
             System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.BVolver = new ProyectoIntegradorTaller.views.components.BotonPersonalisado();
             this.botonPersonalisado1 = new ProyectoIntegradorTaller.views.components.BotonPersonalisado();
             this.BGuardar = new ProyectoIntegradorTaller.views.components.BotonPersonalisado();
             this.label5 = new System.Windows.Forms.Label();
@@ -59,7 +60,6 @@ namespace ProyectoIntegradorTaller.views.admin
             this.BReservarAula = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.printDocument1 = new System.Drawing.Printing.PrintDocument();
-            this.BVolver = new ProyectoIntegradorTaller.views.components.BotonPersonalisado();
             ((System.ComponentModel.ISupportInitialize)(this.PBMaximizar_)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PBMinimizar_)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PBCerrar_)).BeginInit();
@@ -113,6 +113,29 @@ namespace ProyectoIntegradorTaller.views.admin
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(800, 556);
             this.panel4.TabIndex = 32;
+            // 
+            // BVolver
+            // 
+            this.BVolver.BackColor = System.Drawing.Color.LimeGreen;
+            this.BVolver.BackgroundColor = System.Drawing.Color.LimeGreen;
+            this.BVolver.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.BVolver.BorderRadius = 6;
+            this.BVolver.BorderSize = 0;
+            this.BVolver.FlatAppearance.BorderSize = 0;
+            this.BVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BVolver.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BVolver.ForeColor = System.Drawing.Color.White;
+            this.BVolver.Image = global::ProyectoIntegradorTaller.Properties.Resources.path30;
+            this.BVolver.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BVolver.Location = new System.Drawing.Point(12, 516);
+            this.BVolver.Name = "BVolver";
+            this.BVolver.Size = new System.Drawing.Size(100, 40);
+            this.BVolver.TabIndex = 73;
+            this.BVolver.Text = "  Volver";
+            this.BVolver.TextColor = System.Drawing.Color.White;
+            this.BVolver.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.BVolver.UseVisualStyleBackColor = false;
+            this.BVolver.Click += new System.EventHandler(this.BVolver_Click_1);
             // 
             // botonPersonalisado1
             // 
@@ -248,7 +271,7 @@ namespace ProyectoIntegradorTaller.views.admin
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Arial", 11F, System.Drawing.FontStyle.Bold);
-            this.label3.Location = new System.Drawing.Point(347, 22);
+            this.label3.Location = new System.Drawing.Point(355, 22);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(64, 18);
             this.label3.TabIndex = 64;
@@ -306,29 +329,6 @@ namespace ProyectoIntegradorTaller.views.admin
             // printDocument1
             // 
             this.printDocument1.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument1_PrintPage_1);
-            // 
-            // BVolver
-            // 
-            this.BVolver.BackColor = System.Drawing.Color.LimeGreen;
-            this.BVolver.BackgroundColor = System.Drawing.Color.LimeGreen;
-            this.BVolver.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.BVolver.BorderRadius = 6;
-            this.BVolver.BorderSize = 0;
-            this.BVolver.FlatAppearance.BorderSize = 0;
-            this.BVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BVolver.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BVolver.ForeColor = System.Drawing.Color.White;
-            this.BVolver.Image = global::ProyectoIntegradorTaller.Properties.Resources.path30;
-            this.BVolver.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BVolver.Location = new System.Drawing.Point(12, 516);
-            this.BVolver.Name = "BVolver";
-            this.BVolver.Size = new System.Drawing.Size(100, 40);
-            this.BVolver.TabIndex = 73;
-            this.BVolver.Text = "  Volver";
-            this.BVolver.TextColor = System.Drawing.Color.White;
-            this.BVolver.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.BVolver.UseVisualStyleBackColor = false;
-            this.BVolver.Click += new System.EventHandler(this.BVolver_Click_1);
             // 
             // ImprimirReporte
             // 

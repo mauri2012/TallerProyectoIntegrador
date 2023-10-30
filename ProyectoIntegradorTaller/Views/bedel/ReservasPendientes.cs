@@ -41,6 +41,16 @@ namespace ProyectoIntegradorTaller.views.admin
                     dataGridView1.DataSource = LogicaReserva.ListarReservas("NO");
                 }
             }
+            else if (dataGridView1.Columns[e.ColumnIndex].Name == "Eliminar")
+            {
+                MsgBoxResult ask = (MsgBoxResult)MessageBox.Show("Seguro que quiere eliminar la reserva en el  " + (string)dataGridView1.Rows[e.RowIndex].Cells["Nombre"].Value + "  ?", "Reservar", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (ask == MsgBoxResult.Yes)
+                {
+                    int idReserva = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells["Id"].Value);
+                    LogicaReserva.EliminarReserva(idReserva);
+                    dataGridView1.DataSource = LogicaReserva.ListarReservas("NO");
+                }
+            }
         }
 
         private void BVolver_Click(object sender, EventArgs e)

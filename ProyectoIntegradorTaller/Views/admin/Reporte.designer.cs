@@ -31,9 +31,9 @@ namespace ProyectoIntegradorTaller.views.admin
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.Periodo = new ProyectoIntegradorTaller.views.components.ComboBoxPersonalisado();
@@ -78,6 +78,7 @@ namespace ProyectoIntegradorTaller.views.admin
             // 
             // panel4
             // 
+            this.panel4.BackColor = System.Drawing.Color.White;
             this.panel4.Controls.Add(this.Periodo);
             this.panel4.Controls.Add(this.label3);
             this.panel4.Controls.Add(this.BVolver);
@@ -94,18 +95,18 @@ namespace ProyectoIntegradorTaller.views.admin
             // Periodo
             // 
             this.Periodo.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.Periodo.BorderColor = System.Drawing.Color.MediumSlateBlue;
-            this.Periodo.BorderSize = 1;
+            this.Periodo.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
+            this.Periodo.BorderSize = 2;
             this.Periodo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
             this.Periodo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.Periodo.ForeColor = System.Drawing.Color.DimGray;
-            this.Periodo.IconColor = System.Drawing.Color.MediumSlateBlue;
+            this.Periodo.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
             this.Periodo.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(228)))), ((int)(((byte)(245)))));
             this.Periodo.ListTextColor = System.Drawing.Color.DimGray;
             this.Periodo.Location = new System.Drawing.Point(37, 46);
             this.Periodo.MinimumSize = new System.Drawing.Size(200, 30);
             this.Periodo.Name = "Periodo";
-            this.Periodo.Padding = new System.Windows.Forms.Padding(1);
+            this.Periodo.Padding = new System.Windows.Forms.Padding(2);
             this.Periodo.Size = new System.Drawing.Size(244, 30);
             this.Periodo.TabIndex = 68;
             this.Periodo.Texts = "";
@@ -134,7 +135,7 @@ namespace ProyectoIntegradorTaller.views.admin
             this.BVolver.ForeColor = System.Drawing.Color.White;
             this.BVolver.Image = global::ProyectoIntegradorTaller.Properties.Resources.path30;
             this.BVolver.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BVolver.Location = new System.Drawing.Point(22, 486);
+            this.BVolver.Location = new System.Drawing.Point(12, 504);
             this.BVolver.Name = "BVolver";
             this.BVolver.Size = new System.Drawing.Size(100, 40);
             this.BVolver.TabIndex = 49;
@@ -147,18 +148,18 @@ namespace ProyectoIntegradorTaller.views.admin
             // CBFiltro
             // 
             this.CBFiltro.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.CBFiltro.BorderColor = System.Drawing.Color.MediumSlateBlue;
-            this.CBFiltro.BorderSize = 1;
+            this.CBFiltro.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
+            this.CBFiltro.BorderSize = 2;
             this.CBFiltro.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
             this.CBFiltro.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.CBFiltro.ForeColor = System.Drawing.Color.DimGray;
-            this.CBFiltro.IconColor = System.Drawing.Color.MediumSlateBlue;
+            this.CBFiltro.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
             this.CBFiltro.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(228)))), ((int)(((byte)(245)))));
             this.CBFiltro.ListTextColor = System.Drawing.Color.DimGray;
             this.CBFiltro.Location = new System.Drawing.Point(546, 108);
             this.CBFiltro.MinimumSize = new System.Drawing.Size(200, 30);
             this.CBFiltro.Name = "CBFiltro";
-            this.CBFiltro.Padding = new System.Windows.Forms.Padding(1);
+            this.CBFiltro.Padding = new System.Windows.Forms.Padding(2);
             this.CBFiltro.Size = new System.Drawing.Size(200, 30);
             this.CBFiltro.TabIndex = 63;
             this.CBFiltro.Texts = "";
@@ -177,17 +178,17 @@ namespace ProyectoIntegradorTaller.views.admin
             // 
             // chart2
             // 
-            chartArea1.Name = "ChartArea1";
-            this.chart2.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.chart2.Legends.Add(legend1);
+            chartArea2.Name = "ChartArea1";
+            this.chart2.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.chart2.Legends.Add(legend2);
             this.chart2.Location = new System.Drawing.Point(22, 160);
             this.chart2.Name = "chart2";
-            series1.ChartArea = "ChartArea1";
-            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            this.chart2.Series.Add(series1);
+            series2.ChartArea = "ChartArea1";
+            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
+            series2.Legend = "Legend1";
+            series2.Name = "Series1";
+            this.chart2.Series.Add(series2);
             this.chart2.Size = new System.Drawing.Size(724, 279);
             this.chart2.TabIndex = 46;
             this.chart2.Text = "chart2";
@@ -206,7 +207,7 @@ namespace ProyectoIntegradorTaller.views.admin
             this.BGuardar.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BGuardar.ForeColor = System.Drawing.Color.White;
             this.BGuardar.Image = global::ProyectoIntegradorTaller.Properties.Resources.save;
-            this.BGuardar.Location = new System.Drawing.Point(617, 486);
+            this.BGuardar.Location = new System.Drawing.Point(638, 504);
             this.BGuardar.Name = "BGuardar";
             this.BGuardar.Size = new System.Drawing.Size(150, 40);
             this.BGuardar.TabIndex = 38;
