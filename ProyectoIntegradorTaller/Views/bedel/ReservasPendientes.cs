@@ -59,5 +59,10 @@ namespace ProyectoIntegradorTaller.views.admin
             BedelMenu bedel = new BedelMenu();
             bedel.Show();
         }
+
+        private void TBBusqueda__TextChanged(object sender, EventArgs e)
+        {
+            dataGridView1.DataSource = LogicaReserva.ListarReservasBusqueda("NO",TBBusqueda.Texts);
+        }
     }
 }

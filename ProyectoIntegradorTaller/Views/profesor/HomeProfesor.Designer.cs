@@ -37,7 +37,6 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.LBienvenido = new System.Windows.Forms.Label();
-            this.CBMateria = new ProyectoIntegradorTaller.views.components.ComboBoxPersonalisado();
             this.panel3 = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -192,7 +191,6 @@
             // panel2
             // 
             this.panel2.Controls.Add(this.LBienvenido);
-            this.panel2.Controls.Add(this.CBMateria);
             this.panel2.Controls.Add(this.BBuscar);
             this.panel2.Controls.Add(this.TBBusqueda);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
@@ -210,30 +208,6 @@
             this.LBienvenido.Size = new System.Drawing.Size(53, 18);
             this.LBienvenido.TabIndex = 37;
             this.LBienvenido.Text = "Aulas";
-            // 
-            // CBMateria
-            // 
-            this.CBMateria.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.CBMateria.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.CBMateria.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
-            this.CBMateria.BorderSize = 2;
-            this.CBMateria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.CBMateria.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.CBMateria.ForeColor = System.Drawing.Color.DimGray;
-            this.CBMateria.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
-            this.CBMateria.Items.AddRange(new object[] {
-            "Nombre",
-            "Capacidad",
-            "Equipamiento"});
-            this.CBMateria.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(228)))), ((int)(((byte)(245)))));
-            this.CBMateria.ListTextColor = System.Drawing.Color.DimGray;
-            this.CBMateria.Location = new System.Drawing.Point(342, 26);
-            this.CBMateria.MinimumSize = new System.Drawing.Size(200, 30);
-            this.CBMateria.Name = "CBMateria";
-            this.CBMateria.Padding = new System.Windows.Forms.Padding(2);
-            this.CBMateria.Size = new System.Drawing.Size(200, 30);
-            this.CBMateria.TabIndex = 36;
-            this.CBMateria.Texts = "";
             // 
             // panel3
             // 
@@ -389,7 +363,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
-        private components.ComboBoxPersonalisado CBMateria;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label LBienvenido;
         private System.Windows.Forms.DataGridView dataGridView1;
