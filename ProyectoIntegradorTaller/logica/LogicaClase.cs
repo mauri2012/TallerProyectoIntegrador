@@ -62,18 +62,18 @@ namespace ProyectoIntegradorTaller.logica
        
         public static IList busquedaAula(string valor)
         {
-            int valorInt;
+            int valorInt = 0;
 
 
             using (classroom_managerEntities db = new classroom_managerEntities())
             {
-                if (int.TryParse(valor, out valorInt))
-                {
+                int.TryParse(valor, out valorInt);
 
-                    var query = from aula in db.aula
-                                join ubicacion in db.ubicacion on aula.id_ubicacion equals ubicacion.id_ubicacion
-                                join tipoSala in db.tipoSala on aula.id_tipo equals tipoSala.id_sala
-                                where aula.activa=="SI" && aula.capacidad>=valorInt
+
+                var query = from aula in db.aula
+                            join ubicacion in db.ubicacion on aula.id_ubicacion equals ubicacion.id_ubicacion
+                            join tipoSala in db.tipoSala on aula.id_tipo equals tipoSala.id_sala
+                            where aula.activa == "SI" && (aula.capacidad >= valorInt || aula.nombre.Contains(valor))
                                 select new
                                 {
                                     Id = aula.id_aula,
@@ -89,28 +89,7 @@ namespace ProyectoIntegradorTaller.logica
 
                     return query.ToList();
             
-                }
-                else
-                {
-                    var query =from  aula in db.aula
-                                join ubicacion in db.ubicacion on aula.id_ubicacion equals ubicacion.id_ubicacion
-                                join tipoSala in db.tipoSala on aula.id_tipo equals tipoSala.id_sala
-                                where aula.activa=="SI" && aula.nombre.Contains(valor)
-                                select new
-                                {
-                                    Id = aula.id_aula,
-                                    Name = aula.nombre,
-                                    CapacidadMax = aula.capacidad,
-                                    Lugar = ubicacion.lugar, 
-                                    Tipo = tipoSala.tipo,
-                                    Wifi = db.aula_equipamiento.FirstOrDefault(r => r.id_equipamiento == 4 && r.id_aula == aula.id_aula).disponible,
-                                    Proyector = db.aula_equipamiento.FirstOrDefault(r => r.id_equipamiento == 3 && r.id_aula == aula.id_aula).disponible,
-                                    AC = db.aula_equipamiento.FirstOrDefault(r => r.id_equipamiento == 2 && r.id_aula == aula.id_aula).disponible,
-                                    Televisor = db.aula_equipamiento.FirstOrDefault(r => r.id_equipamiento == 1 && r.id_aula == aula.id_aula).disponible,
-                                };
-                 
-                    return query.ToList();
-                }
+                
             }
         }
         public static void updateClassroom(int id, string ttipo,string CBubicacion, string tnombre, string tcapacidad,  bool CBAire, bool CBWIFI, bool CBProyector, bool CBTelevisor)
