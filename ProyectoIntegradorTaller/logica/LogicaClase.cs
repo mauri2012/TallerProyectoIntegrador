@@ -92,7 +92,7 @@ namespace ProyectoIntegradorTaller.logica
                 
             }
         }
-        public static void updateClassroom(int id, string ttipo,string CBubicacion, string tnombre, string tcapacidad,  bool CBAire, bool CBWIFI, bool CBProyector, bool CBTelevisor)
+        public static void updateClassroom(int id, string ttipo,string CBubicacion, string tnombre, string tcapacidad, bool CBAire, bool CBWIFI, bool CBProyector, bool CBTelevisor)
         {
             List<aula_equipamiento> aula_equi = new List<aula_equipamiento>();
             List<string> equipamiento = new List<string>();

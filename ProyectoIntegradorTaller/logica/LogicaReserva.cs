@@ -110,11 +110,15 @@ namespace ProyectoIntegradorTaller.logica
                         .AsEnumerable()
                         .Join(db.Periodo, reserva => reserva.id_periodo, p => p.id_periodo, (reserva, p) => new { Reserva = reserva, Periodo = p }
                            ).Where
-                           (r => (r.Periodo.fecha_hasta <= periodoElejido.fecha_hasta &&  r.Periodo.fecha_desde >=                        periodoElejido.fecha_desde  && periodoElejido.id_periodo==1 ) || 
+                           (r =>  (((r.Periodo.fecha_hasta <= periodoElejido.fecha_hasta &&  r.Periodo.fecha_desde >=                        periodoElejido.fecha_desde) || r.Periodo.id_periodo==5) && periodoElejido.id_periodo==1 ) || 
                                    (r.Periodo.fecha_hasta >= periodoElejido.fecha_hasta && r.Periodo.fecha_desde <= periodoElejido.fecha_desde && (periodoElejido.id_periodo == 7 ))
                                    || ( r.Periodo.fecha_desde == periodoElejido.fecha_desde && (periodoElejido.id_periodo == 6 || periodoElejido.id_periodo==8))
                                    || (r.Periodo.fecha_desde >= periodoElejido.fecha_desde && (periodoElejido.id_periodo == 2))
-                                   || (r.Periodo.fecha_hasta == periodoElejido.fecha_hasta && periodoElejido.id_periodo == 9 )
+                                   || (r.Periodo.fecha_hasta == periodoElejido.fecha_hasta  && (periodoElejido.id_periodo == 9) )
+                                   || (((r.Periodo.fecha_desde <= periodoElejido.fecha_desde && r.Periodo.fecha_hasta>=periodoElejido.fecha_desde) || r.Periodo.fecha_hasta==periodoElejido.fecha_hasta) && (periodoElejido.id_periodo==5) )
+                                   || ((r.Periodo.id_periodo == 1 || r.Periodo.id_periodo == 7 || r.Periodo.id_periodo == 3
+                                      || r.Periodo.id_periodo == 2 || r.Periodo.id_periodo == 5 || r.Periodo.id_periodo == 8
+                                      || r.Periodo.id_periodo == 10 || r.Periodo.id_periodo==4) && periodoElejido.id_periodo==4)
                                    || (r.Periodo.fecha_desde <= periodoElejido.fecha_hasta && periodoElejido.id_periodo==3)
                                    || (r.Periodo.fecha_desde<= periodoElejido.fecha_desde && periodoElejido.id_periodo==10)).Select(r => r.Reserva).ToList();
            

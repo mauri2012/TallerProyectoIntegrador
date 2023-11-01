@@ -101,15 +101,15 @@ namespace ProyectoIntegradorTaller.views.admin
                 {
                     this.Hide();
 
-                    CrearAula aula = new CrearAula((int)dataGridView1.Rows[e.RowIndex].Cells[0].Value,
-                        (string)dataGridView1.Rows[e.RowIndex].Cells[1].Value,
-                        (int)dataGridView1.Rows[e.RowIndex].Cells[2].Value,
-                        (string)dataGridView1.Rows[e.RowIndex].Cells[3].Value,
-                        (string)dataGridView1.Rows[e.RowIndex].Cells[4].Value,
-                        (string)dataGridView1.Rows[e.RowIndex].Cells[5].Value,
-                        (string)dataGridView1.Rows[e.RowIndex].Cells[6].Value,
-                        (string)dataGridView1.Rows[e.RowIndex].Cells[7].Value,
-                        (string)dataGridView1.Rows[e.RowIndex].Cells[8].Value);
+                    CrearAula aula = new CrearAula((int)dataGridView1.Rows[e.RowIndex].Cells["Id"].Value,
+                        (string)dataGridView1.Rows[e.RowIndex].Cells["Name"].Value,
+                        (int)dataGridView1.Rows[e.RowIndex].Cells["CapacidadMax"].Value,
+                        (string)dataGridView1.Rows[e.RowIndex].Cells["Lugar"].Value,
+                        (string)dataGridView1.Rows[e.RowIndex].Cells["Tipo"].Value,
+                        (string)dataGridView1.Rows[e.RowIndex].Cells["Wifi"].Value,
+                        (string)dataGridView1.Rows[e.RowIndex].Cells["Proyector"].Value,
+                        (string)dataGridView1.Rows[e.RowIndex].Cells["AC"].Value,
+                        (string)dataGridView1.Rows[e.RowIndex].Cells["Televisor"].Value);
 
                     aula.Show();
 
