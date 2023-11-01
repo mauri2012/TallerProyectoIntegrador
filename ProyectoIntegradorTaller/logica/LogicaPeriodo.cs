@@ -37,6 +37,40 @@ namespace ProyectoIntegradorTaller.logica
                 {
                     periodo.fecha_desde = desde;
                     periodo.fecha_hasta = hasta;
+
+                    if (periodo.id_periodo == 1 || periodo.id_periodo==3 || periodo.id_periodo==6 || periodo.id_periodo==10)
+                    {
+                        var pperiodo = db.Periodo.FirstOrDefault(r => r.id_periodo == 1);
+                        var periodo2 = db.Periodo.FirstOrDefault(r => r.id_periodo == 3);
+                        var periodo3 = db.Periodo.FirstOrDefault(r =>r.id_periodo == 6);
+                        var periodo4 = db.Periodo.FirstOrDefault(r => r.id_periodo == 10);
+                        periodo2.fecha_desde= periodo3.fecha_desde=periodo4.fecha_desde=pperiodo.fecha_desde= desde;
+         
+                    }
+                    if (periodo.id_periodo == 1 || periodo.id_periodo == 7)
+                    {
+                       
+                        var periodo2 = db.Periodo.FirstOrDefault(r => r.id_periodo == 7);
+                        var periodo3 = db.Periodo.FirstOrDefault(r => r.id_periodo == 1);
+                    
+                        periodo2.fecha_hasta= periodo3.fecha_hasta= hasta;
+                    }
+                    if(periodo.id_periodo==2 || periodo.id_periodo==8)
+                    {
+                        var periodo2 = db.Periodo.FirstOrDefault(r => r.id_periodo == 2);
+                        var periodo3 = db.Periodo.FirstOrDefault(r => r.id_periodo == 8);
+                        
+                        periodo2.fecha_desde = periodo3.fecha_desde = desde;
+                    }
+                    if (periodo.id_periodo == 2 || periodo.id_periodo == 5 || periodo.id_periodo==9 || periodo.id_periodo==10)
+                    {
+                        var pperiodo = db.Periodo.FirstOrDefault(r => r.id_periodo == 2);
+                        var periodo2 = db.Periodo.FirstOrDefault(r => r.id_periodo == 5);
+                        var periodo3 = db.Periodo.FirstOrDefault(r => r.id_periodo == 9);
+                        var periodo4 = db.Periodo.FirstOrDefault(r => r.id_periodo == 10);
+                        periodo2.fecha_desde = periodo3.fecha_desde = periodo4.fecha_desde = pperiodo.fecha_desde = hasta;
+                        
+                    }
                     db.SaveChanges();
                 }
 

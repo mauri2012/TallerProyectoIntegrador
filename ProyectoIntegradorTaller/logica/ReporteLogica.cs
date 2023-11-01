@@ -84,13 +84,17 @@ namespace ProyectoIntegradorTaller.logica
                              join Periodo in db.Periodo on  reserva.id_periodo equals Periodo.id_periodo
                             join usuario in db.usuario on reserva.id_usuario equals usuario.id_usuario 
                             where aula.activa == "SI" && aula.id_aula == id_aula && reserva.activo=="SI" && usuario.desactivar=="NO"
-                             && ((Periodo.fecha_hasta <= periodoElejido.fecha_hasta && Periodo.fecha_desde >= periodoElejido.fecha_desde && (periodoElejido.id_periodo == 1)) ||
-                                   (Periodo.fecha_hasta >= periodoElejido.fecha_hasta && Periodo.fecha_desde <= periodoElejido.fecha_desde && (periodoElejido.id_periodo == 7))
-                                   || (Periodo.fecha_desde == periodoElejido.fecha_desde && (periodoElejido.id_periodo == 6 || periodoElejido.id_periodo == 8))
-                                   || (Periodo.fecha_desde >= periodoElejido.fecha_desde && (periodoElejido.id_periodo == 2))
-                                   || (Periodo.fecha_hasta == periodoElejido.fecha_hasta && periodoElejido.id_periodo == 9)
+                             && ((((Periodo.fecha_hasta <= periodoElejido.fecha_hasta && Periodo.fecha_desde >= periodoElejido.fecha_desde) || Periodo.id_periodo == 4) && periodoElejido.id_periodo == 1) ||
+                                   (((Periodo.fecha_hasta >= periodoElejido.fecha_hasta && Periodo.fecha_desde <= periodoElejido.fecha_desde) || Periodo.id_periodo == 4) && (periodoElejido.id_periodo == 7))
+                                   || ((Periodo.fecha_desde == periodoElejido.fecha_desde || Periodo.id_periodo == 4) && (periodoElejido.id_periodo == 6 || periodoElejido.id_periodo == 8))
+                                   || ((Periodo.fecha_desde >= periodoElejido.fecha_desde || Periodo.id_periodo == 4) && (periodoElejido.id_periodo == 2))
+                                   || (Periodo.fecha_hasta == periodoElejido.fecha_hasta && (periodoElejido.id_periodo == 9))
+                                   || (((Periodo.fecha_desde <= periodoElejido.fecha_desde && Periodo.fecha_hasta >= periodoElejido.fecha_desde) || Periodo.fecha_hasta == periodoElejido.fecha_hasta) && (periodoElejido.id_periodo == 5))
+                                   || ((Periodo.id_periodo == 1 || Periodo.id_periodo == 7 || Periodo.id_periodo == 3
+                                      || Periodo.id_periodo == 2 || Periodo.id_periodo == 5 || Periodo.id_periodo == 8
+                                      || Periodo.id_periodo == 10 || Periodo.id_periodo == 4) && periodoElejido.id_periodo == 4)
                                    || (Periodo.fecha_desde <= periodoElejido.fecha_hasta && periodoElejido.id_periodo == 3)
-                                   || (Periodo.fecha_desde <= periodoElejido.fecha_desde && periodoElejido.id_periodo == 10))
+                                   || ((Periodo.fecha_desde >= periodoElejido.fecha_desde || periodoElejido.id_periodo == 4) && periodoElejido.id_periodo == 10))
                             group new {  reserva, aula, dias_semana }
                              by new { reserva.id_dia, aula.nombre, dias_semana.dias } into g
                              select new HorarioList
@@ -112,13 +116,17 @@ namespace ProyectoIntegradorTaller.logica
                             join usuario in db.usuario on reserva.id_usuario equals usuario.id_usuario
                             join aula in db.aula on reserva.id_aula equals aula.id_aula
                             join Periodo in db.Periodo on reserva.id_periodo equals Periodo.id_periodo
-                            where usuario.desactivar == "NO"  && aula.activa=="SI"  && aula.id_aula == id_aula &&  reserva.activo=="SI" && ((reserva.Periodo.fecha_hasta <= periodoElejido.fecha_hasta && reserva.Periodo.fecha_desde >= periodoElejido.fecha_desde && periodoElejido.id_periodo == 1) 
-                                   ||(reserva.Periodo.fecha_hasta >= periodoElejido.fecha_hasta && reserva.Periodo.fecha_desde <= periodoElejido.fecha_desde && (periodoElejido.id_periodo == 7))
-                                   || (reserva.Periodo.fecha_desde == periodoElejido.fecha_desde && (periodoElejido.id_periodo == 6 || periodoElejido.id_periodo == 8))
-                                   || (reserva.Periodo.fecha_desde >= periodoElejido.fecha_desde && (periodoElejido.id_periodo == 2))
-                                   || (reserva.Periodo.fecha_hasta == periodoElejido.fecha_hasta && periodoElejido.id_periodo == 9)
-                                   || (reserva.Periodo.fecha_desde <= periodoElejido.fecha_hasta && periodoElejido.id_periodo == 3)
-                                   || (reserva.Periodo.fecha_desde <= periodoElejido.fecha_desde && periodoElejido.id_periodo == 10))
+                            where usuario.desactivar == "NO"  && aula.activa=="SI"  && aula.id_aula == id_aula &&  reserva.activo=="SI" && ((((Periodo.fecha_hasta <= periodoElejido.fecha_hasta && Periodo.fecha_desde >= periodoElejido.fecha_desde) || Periodo.id_periodo == 4) && periodoElejido.id_periodo == 1) ||
+                                   (((Periodo.fecha_hasta >= periodoElejido.fecha_hasta && Periodo.fecha_desde <= periodoElejido.fecha_desde) || Periodo.id_periodo == 4) && (periodoElejido.id_periodo == 7))
+                                   || ((Periodo.fecha_desde == periodoElejido.fecha_desde || Periodo.id_periodo == 4) && (periodoElejido.id_periodo == 6 || periodoElejido.id_periodo == 8))
+                                   || ((Periodo.fecha_desde >= periodoElejido.fecha_desde || Periodo.id_periodo == 4) && (periodoElejido.id_periodo == 2))
+                                   || (Periodo.fecha_hasta == periodoElejido.fecha_hasta && (periodoElejido.id_periodo == 9))
+                                   || (((Periodo.fecha_desde <= periodoElejido.fecha_desde && Periodo.fecha_hasta >= periodoElejido.fecha_desde) || Periodo.fecha_hasta == periodoElejido.fecha_hasta) && (periodoElejido.id_periodo == 5))
+                                   || ((Periodo.id_periodo == 1 || Periodo.id_periodo == 7 || Periodo.id_periodo == 3
+                                      || Periodo.id_periodo == 2 || Periodo.id_periodo == 5 || Periodo.id_periodo == 8
+                                      || Periodo.id_periodo == 10 || Periodo.id_periodo == 4) && periodoElejido.id_periodo == 4)
+                                   || (Periodo.fecha_desde <= periodoElejido.fecha_hasta && periodoElejido.id_periodo == 3)
+                                   || ((Periodo.fecha_desde >= periodoElejido.fecha_desde || periodoElejido.id_periodo == 4) && periodoElejido.id_periodo == 10))
                             group new {reserva, usuario,aula }
                             by new { reserva.id_usuario, usuario.apellido,aula.nombre} into g
                             select new HorarioList
@@ -142,13 +150,17 @@ namespace ProyectoIntegradorTaller.logica
                             join aula in db.aula on reserva.id_aula equals aula.id_aula
                             join materias in db.materias on reserva.id_materia equals materias.id_materia
                             join Periodo in db.Periodo on reserva.id_periodo equals Periodo.id_periodo
-                            where aula.activa == "SI" &&  aula.id_aula == id_aula && reserva.activo=="SI" && ((Periodo.fecha_hasta <= periodoElejido.fecha_hasta && Periodo.fecha_desde >= periodoElejido.fecha_desde && periodoElejido.id_periodo == 1) ||
-                                   (Periodo.fecha_hasta >= periodoElejido.fecha_hasta && Periodo.fecha_desde <= periodoElejido.fecha_desde && (periodoElejido.id_periodo == 7))
-                                   || (Periodo.fecha_desde == periodoElejido.fecha_desde && (periodoElejido.id_periodo == 6 || periodoElejido.id_periodo == 8))
-                                   || (Periodo.fecha_desde >= periodoElejido.fecha_desde && periodoElejido.id_periodo == 2)
-                                   || (Periodo.fecha_hasta == periodoElejido.fecha_hasta && periodoElejido.id_periodo == 9)
+                            where aula.activa == "SI" &&  aula.id_aula == id_aula && reserva.activo=="SI" && ((((Periodo.fecha_hasta <= periodoElejido.fecha_hasta && Periodo.fecha_desde >= periodoElejido.fecha_desde) || Periodo.id_periodo == 4) && periodoElejido.id_periodo == 1) ||
+                                   (((Periodo.fecha_hasta >= periodoElejido.fecha_hasta && Periodo.fecha_desde <= periodoElejido.fecha_desde) || Periodo.id_periodo == 4) && (periodoElejido.id_periodo == 7))
+                                   || ((Periodo.fecha_desde == periodoElejido.fecha_desde || Periodo.id_periodo == 4) && (periodoElejido.id_periodo == 6 || periodoElejido.id_periodo == 8))
+                                   || ((Periodo.fecha_desde >= periodoElejido.fecha_desde || Periodo.id_periodo == 4) && (periodoElejido.id_periodo == 2))
+                                   || (Periodo.fecha_hasta == periodoElejido.fecha_hasta && (periodoElejido.id_periodo == 9))
+                                   || (((Periodo.fecha_desde <= periodoElejido.fecha_desde && Periodo.fecha_hasta >= periodoElejido.fecha_desde) || Periodo.fecha_hasta == periodoElejido.fecha_hasta) && (periodoElejido.id_periodo == 5))
+                                   || ((Periodo.id_periodo == 1 || Periodo.id_periodo == 7 || Periodo.id_periodo == 3
+                                      || Periodo.id_periodo == 2 || Periodo.id_periodo == 5 || Periodo.id_periodo == 8
+                                      || Periodo.id_periodo == 10 || Periodo.id_periodo == 4) && periodoElejido.id_periodo == 4)
                                    || (Periodo.fecha_desde <= periodoElejido.fecha_hasta && periodoElejido.id_periodo == 3)
-                                   || (Periodo.fecha_desde <= periodoElejido.fecha_desde && periodoElejido.id_periodo == 10))
+                                   || ((Periodo.fecha_desde >= periodoElejido.fecha_desde || periodoElejido.id_periodo == 4) && periodoElejido.id_periodo == 10))
                             group new { aula, materias }
                             by new {  aula.nombre, materias.materia } into g
                             select new HorarioList
@@ -171,13 +183,17 @@ namespace ProyectoIntegradorTaller.logica
                                join aula in db.aula on reserva.id_aula equals aula.id_aula
                                join horas in db.horas on reserva.id_hora equals horas.id_hora
                                join Periodo in db.Periodo on reserva.id_periodo equals Periodo.id_periodo
-                            where aula.activa == "SI" && aula.id_aula == id_aula && aula.id_aula == id_aula && reserva.activo == "SI" && ((reserva.Periodo.fecha_hasta <= periodoElejido.fecha_hasta && reserva.Periodo.fecha_desde >= periodoElejido.fecha_desde && periodoElejido.id_periodo == 1) ||
-                                   (reserva.Periodo.fecha_hasta >= periodoElejido.fecha_hasta && reserva.Periodo.fecha_desde <= periodoElejido.fecha_desde && (periodoElejido.id_periodo == 7))
-                                   || (reserva.Periodo.fecha_desde == periodoElejido.fecha_desde && (periodoElejido.id_periodo == 6 || periodoElejido.id_periodo == 8))
-                                   || (reserva.Periodo.fecha_desde >= periodoElejido.fecha_desde && (periodoElejido.id_periodo == 2))
-                                   || (reserva.Periodo.fecha_hasta == periodoElejido.fecha_hasta && periodoElejido.id_periodo == 9)
-                                   || (reserva.Periodo.fecha_desde <= periodoElejido.fecha_hasta && periodoElejido.id_periodo == 3)
-                                   || (reserva.Periodo.fecha_desde <= periodoElejido.fecha_desde && periodoElejido.id_periodo == 10))
+                            where aula.activa == "SI" && aula.id_aula == id_aula && aula.id_aula == id_aula && reserva.activo == "SI" && ((((Periodo.fecha_hasta <= periodoElejido.fecha_hasta && Periodo.fecha_desde >= periodoElejido.fecha_desde) || Periodo.id_periodo == 4) && periodoElejido.id_periodo == 1) ||
+                                   (((Periodo.fecha_hasta >= periodoElejido.fecha_hasta && Periodo.fecha_desde <= periodoElejido.fecha_desde) || Periodo.id_periodo == 4) && (periodoElejido.id_periodo == 7))
+                                   || ((Periodo.fecha_desde == periodoElejido.fecha_desde || Periodo.id_periodo == 4) && (periodoElejido.id_periodo == 6 || periodoElejido.id_periodo == 8))
+                                   || ((Periodo.fecha_desde >= periodoElejido.fecha_desde || Periodo.id_periodo == 4) && (periodoElejido.id_periodo == 2))
+                                   || (Periodo.fecha_hasta == periodoElejido.fecha_hasta && (periodoElejido.id_periodo == 9))
+                                   || (((Periodo.fecha_desde <= periodoElejido.fecha_desde && Periodo.fecha_hasta >= periodoElejido.fecha_desde) || Periodo.fecha_hasta == periodoElejido.fecha_hasta) && (periodoElejido.id_periodo == 5))
+                                   || ((Periodo.id_periodo == 1 || Periodo.id_periodo == 7 || Periodo.id_periodo == 3
+                                      || Periodo.id_periodo == 2 || Periodo.id_periodo == 5 || Periodo.id_periodo == 8
+                                      || Periodo.id_periodo == 10 || Periodo.id_periodo == 4) && periodoElejido.id_periodo == 4)
+                                   || (Periodo.fecha_desde <= periodoElejido.fecha_hasta && periodoElejido.id_periodo == 3)
+                                   || ((Periodo.fecha_desde >= periodoElejido.fecha_desde || periodoElejido.id_periodo == 4) && periodoElejido.id_periodo == 10))
                             group new { reserva, aula, horas }
                                by new { reserva.id_hora, aula.nombre, horas.horario } into g
                                select new HorarioList

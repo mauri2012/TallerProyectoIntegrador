@@ -34,7 +34,7 @@ namespace ProyectoIntegradorTaller.views.admin
 
         private void BVolver_Click_1(object sender, EventArgs e)
         {
-            this.Hide();
+            this.Close();
             Periodos unPeriodo = new Periodos();
             unPeriodo.Show();
            
@@ -47,8 +47,11 @@ namespace ProyectoIntegradorTaller.views.admin
             LogicaPeriodo.InsertarPeriodo(id_periodo,this.fecha_desde.Value,this.fecha_hasta.Value);
          
             MessageBox.Show("Insercion echa exitosamente!", "insersion", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            
-            
+
+            this.Close();
+            Periodos unPeriodo = new Periodos();
+            unPeriodo.Show();
+
         }
 
         private void panel2_Paint(object sender, PaintEventArgs e)
