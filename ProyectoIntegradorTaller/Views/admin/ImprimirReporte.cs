@@ -17,6 +17,7 @@ namespace ProyectoIntegradorTaller.views.admin
         private Bitmap memoryImage;
         public DateTime fecha_desde;
         public DateTime fecha_hasta;
+
         public string pperiodo;
         public ImprimirReporte(int id,string periodo)
         {
@@ -118,6 +119,16 @@ namespace ProyectoIntegradorTaller.views.admin
             this.Close();
             Reporte unReporte = new Reporte(id_aula);
             unReporte.Show();
+        }
+
+        private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
         }
     }
  

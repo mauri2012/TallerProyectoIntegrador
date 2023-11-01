@@ -57,6 +57,12 @@ namespace ProyectoIntegradorTaller.views.admin
            // CBMateria.SelectedIndex =reserva1.id_materia.Value;
             BReservarAula.Text = "Editar Aula";
             BReservarAula.Click += new System.EventHandler(this.editar_Click);
+
+            if (Session.SessionCacheData.IdProfile==4) {
+                BEliminar.Visible = false;
+                BReservarAula.Visible = false;
+                BImprimir.Visible = false;
+            }
         }
 
         
@@ -112,22 +118,6 @@ namespace ProyectoIntegradorTaller.views.admin
             {
                 CBPRofesor.Texts = Session.SessionCacheData.Name;
             }
-
-      /*      List<string> items = new List<string>(); 
-           foreach(var item in LogicaReserva.listarPeriodo())
-            {
-                
-                items.Add(item.ToString());
-            }*/
-            //Periodo.Items.Add("Dia Puntual");
-            //Periodo.Items.Add("Personalizado");
-          /*  Periodo.DataSource = LogicaReserva.listarPeriodo();
-            //Periodo.DataSource = items;
-            Periodo.DisplayMember = "periodo_nombre";
-            Periodo.ValueMember = "id_periodo";
-          */
-            //Periodo.Items.Add("Dia Puntual");
-            //Periodo.Items.Add("Personalizado");
         }
 
         private void Periodo_OnSelectedIndexChanged(object sender, EventArgs e)
@@ -178,25 +168,7 @@ namespace ProyectoIntegradorTaller.views.admin
             reservas.Show();
         }
 
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void fecha_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void fecha_desde_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void fecha_hasta_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
+        
 
         private void BImprimir_Click(object sender, EventArgs e)
         {

@@ -104,7 +104,7 @@ namespace ProyectoIntegradorTaller.views.admin
             this.BImprimir.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BImprimir.ForeColor = System.Drawing.Color.White;
             this.BImprimir.Image = global::ProyectoIntegradorTaller.Properties.Resources.save;
-            this.BImprimir.Location = new System.Drawing.Point(175, 309);
+            this.BImprimir.Location = new System.Drawing.Point(331, 309);
             this.BImprimir.Name = "BImprimir";
             this.BImprimir.Size = new System.Drawing.Size(187, 40);
             this.BImprimir.TabIndex = 55;
@@ -126,7 +126,7 @@ namespace ProyectoIntegradorTaller.views.admin
             this.BEliminar.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BEliminar.ForeColor = System.Drawing.Color.White;
             this.BEliminar.Image = global::ProyectoIntegradorTaller.Properties.Resources.delete;
-            this.BEliminar.Location = new System.Drawing.Point(368, 309);
+            this.BEliminar.Location = new System.Drawing.Point(175, 309);
             this.BEliminar.Name = "BEliminar";
             this.BEliminar.Size = new System.Drawing.Size(150, 40);
             this.BEliminar.TabIndex = 54;
@@ -268,7 +268,6 @@ namespace ProyectoIntegradorTaller.views.admin
             this.fecha_desde.SkinColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
             this.fecha_desde.TabIndex = 34;
             this.fecha_desde.TextColor = System.Drawing.Color.White;
-            this.fecha_desde.ValueChanged += new System.EventHandler(this.fecha_desde_ValueChanged);
             // 
             // BReservarAula
             // 
@@ -301,7 +300,6 @@ namespace ProyectoIntegradorTaller.views.admin
             this.fecha_hasta.SkinColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
             this.fecha_hasta.TabIndex = 9;
             this.fecha_hasta.TextColor = System.Drawing.Color.White;
-            this.fecha_hasta.ValueChanged += new System.EventHandler(this.fecha_hasta_ValueChanged);
             // 
             // label6
             // 
@@ -332,7 +330,6 @@ namespace ProyectoIntegradorTaller.views.admin
             this.fecha.Size = new System.Drawing.Size(51, 18);
             this.fecha.TabIndex = 8;
             this.fecha.Text = "Fecha";
-            this.fecha.Click += new System.EventHandler(this.fecha_Click);
             // 
             // label3
             // 
@@ -343,7 +340,6 @@ namespace ProyectoIntegradorTaller.views.admin
             this.label3.Size = new System.Drawing.Size(64, 18);
             this.label3.TabIndex = 7;
             this.label3.Text = "Periodo";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // label2
             // 
