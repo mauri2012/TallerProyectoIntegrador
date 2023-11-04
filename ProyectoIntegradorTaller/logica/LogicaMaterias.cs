@@ -1,5 +1,6 @@
 ﻿using ProyectoIntegradorTaller.models;
 using ProyectoIntegradorTaller.views.admin;
+using ProyectoIntegradorTaller.views.components;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -101,6 +102,22 @@ namespace ProyectoIntegradorTaller.logica
                     .ToList();
 
                 return query;
+            }
+        }
+        public static void listarMateriasCB(ComboBoxPersonalisado cb,reserva res)
+        {
+            using (classroom_managerEntities db = new classroom_managerEntities())
+            {
+                cb.DataSource = db.materias.ToList();
+                cb.DisplayMember = "materia";
+                cb.ValueMember = "id_materia";
+
+                cb.BindingContext[cb.DataSource].EndCurrentEdit();
+       
+                cb.SelectedItem = db.materias.FirstOrDefault(r => r.id_materia == res.id_materia);
+
+                
+
             }
         }
     }

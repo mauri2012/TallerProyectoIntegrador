@@ -32,6 +32,8 @@ namespace ProyectoIntegradorTaller.views.admin
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.CBPeriodo = new ProyectoIntegradorTaller.views.components.ComboBoxPersonalisado();
+            this.label1 = new System.Windows.Forms.Label();
             this.BVolver = new ProyectoIntegradorTaller.views.components.BotonPersonalisado();
             this.fecha_desde = new ProyectoIntegradorTaller.views.components.TimePickerPersonalisado();
             this.BReservarAula = new ProyectoIntegradorTaller.views.components.BotonPersonalisado();
@@ -39,8 +41,6 @@ namespace ProyectoIntegradorTaller.views.admin
             this.fecha = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label8 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.CBPeriodo = new ProyectoIntegradorTaller.views.components.ComboBoxPersonalisado();
             ((System.ComponentModel.ISupportInitialize)(this.PBMaximizar_)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PBMinimizar_)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PBCerrar_)).BeginInit();
@@ -71,6 +71,35 @@ namespace ProyectoIntegradorTaller.views.admin
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(686, 388);
             this.panel1.TabIndex = 0;
+            // 
+            // CBPeriodo
+            // 
+            this.CBPeriodo.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.CBPeriodo.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
+            this.CBPeriodo.BorderSize = 2;
+            this.CBPeriodo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
+            this.CBPeriodo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.CBPeriodo.ForeColor = System.Drawing.Color.DimGray;
+            this.CBPeriodo.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
+            this.CBPeriodo.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(228)))), ((int)(((byte)(245)))));
+            this.CBPeriodo.ListTextColor = System.Drawing.Color.DimGray;
+            this.CBPeriodo.Location = new System.Drawing.Point(228, 64);
+            this.CBPeriodo.MinimumSize = new System.Drawing.Size(200, 30);
+            this.CBPeriodo.Name = "CBPeriodo";
+            this.CBPeriodo.Padding = new System.Windows.Forms.Padding(2);
+            this.CBPeriodo.Size = new System.Drawing.Size(244, 30);
+            this.CBPeriodo.TabIndex = 54;
+            this.CBPeriodo.Texts = "";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(225, 178);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(95, 18);
+            this.label1.TabIndex = 53;
+            this.label1.Text = "Fecha Hasta";
             // 
             // BVolver
             // 
@@ -125,7 +154,7 @@ namespace ProyectoIntegradorTaller.views.admin
             this.BReservarAula.Name = "BReservarAula";
             this.BReservarAula.Size = new System.Drawing.Size(150, 40);
             this.BReservarAula.TabIndex = 8;
-            this.BReservarAula.Text = "Reservar Aula";
+            this.BReservarAula.Text = "Editar Periodo";
             this.BReservarAula.TextColor = System.Drawing.Color.White;
             this.BReservarAula.UseVisualStyleBackColor = false;
             this.BReservarAula.Click += new System.EventHandler(this.botonPersonalisado1_Click);
@@ -177,35 +206,6 @@ namespace ProyectoIntegradorTaller.views.admin
             this.label8.Size = new System.Drawing.Size(115, 19);
             this.label8.TabIndex = 7;
             this.label8.Text = "Reservar Aula";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(225, 178);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(95, 18);
-            this.label1.TabIndex = 53;
-            this.label1.Text = "Fecha Hasta";
-            // 
-            // CBPeriodo
-            // 
-            this.CBPeriodo.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.CBPeriodo.BorderColor = System.Drawing.Color.MediumSlateBlue;
-            this.CBPeriodo.BorderSize = 1;
-            this.CBPeriodo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
-            this.CBPeriodo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.CBPeriodo.ForeColor = System.Drawing.Color.DimGray;
-            this.CBPeriodo.IconColor = System.Drawing.Color.MediumSlateBlue;
-            this.CBPeriodo.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(228)))), ((int)(((byte)(245)))));
-            this.CBPeriodo.ListTextColor = System.Drawing.Color.DimGray;
-            this.CBPeriodo.Location = new System.Drawing.Point(228, 64);
-            this.CBPeriodo.MinimumSize = new System.Drawing.Size(200, 30);
-            this.CBPeriodo.Name = "CBPeriodo";
-            this.CBPeriodo.Padding = new System.Windows.Forms.Padding(1);
-            this.CBPeriodo.Size = new System.Drawing.Size(244, 30);
-            this.CBPeriodo.TabIndex = 54;
-            this.CBPeriodo.Texts = "";
             // 
             // editarPeriodo
             // 

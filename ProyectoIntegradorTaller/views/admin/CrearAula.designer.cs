@@ -33,7 +33,9 @@ namespace ProyectoIntegradorTaller.views.admin
             this.BEditarAula = new ProyectoIntegradorTaller.views.components.BotonPersonalisado();
             this.BCrearAula = new ProyectoIntegradorTaller.views.components.BotonPersonalisado();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.cantPC = new CustomControls.RJControls.RJTextBox();
             this.BVolver = new ProyectoIntegradorTaller.views.components.BotonPersonalisado();
+            this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -58,6 +60,7 @@ namespace ProyectoIntegradorTaller.views.admin
             // 
             // panel7
             // 
+            this.panel7.AllowDrop = true;
             this.panel7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.panel7.Controls.Add(this.CWifi);
             this.panel7.Controls.Add(this.CTelevisor);
@@ -105,6 +108,7 @@ namespace ProyectoIntegradorTaller.views.admin
             // 
             // TTipo
             // 
+            this.TTipo.AllowDrop = true;
             this.TTipo.BackColor = System.Drawing.Color.WhiteSmoke;
             this.TTipo.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
             this.TTipo.BorderSize = 2;
@@ -121,10 +125,12 @@ namespace ProyectoIntegradorTaller.views.admin
             this.TTipo.Size = new System.Drawing.Size(203, 30);
             this.TTipo.TabIndex = 26;
             this.TTipo.Texts = "";
+            this.TTipo.OnSelectedIndexChanged += new System.EventHandler(this.TTipo_OnSelectedIndexChanged);
             this.TTipo.Load += new System.EventHandler(this.TTipo_Load);
             // 
             // CBUbicacion
             // 
+            this.CBUbicacion.AllowDrop = true;
             this.CBUbicacion.BackColor = System.Drawing.Color.WhiteSmoke;
             this.CBUbicacion.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
             this.CBUbicacion.BorderSize = 2;
@@ -308,12 +314,38 @@ namespace ProyectoIntegradorTaller.views.admin
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.cantPC);
             this.panel1.Controls.Add(this.BVolver);
+            this.panel1.Controls.Add(this.label3);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(219, 358);
             this.panel1.TabIndex = 12;
+            // 
+            // cantPC
+            // 
+            this.cantPC.BackColor = System.Drawing.SystemColors.Menu;
+            this.cantPC.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
+            this.cantPC.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.cantPC.BorderRadius = 6;
+            this.cantPC.BorderSize = 2;
+            this.cantPC.Enabled = false;
+            this.cantPC.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cantPC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.cantPC.Location = new System.Drawing.Point(12, 216);
+            this.cantPC.Margin = new System.Windows.Forms.Padding(4);
+            this.cantPC.Multiline = false;
+            this.cantPC.Name = "cantPC";
+            this.cantPC.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this.cantPC.PasswordChar = false;
+            this.cantPC.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.cantPC.PlaceholderText = "";
+            this.cantPC.Size = new System.Drawing.Size(91, 31);
+            this.cantPC.TabIndex = 30;
+            this.cantPC.Texts = "";
+            this.cantPC.UnderlinedStyle = true;
+            this.cantPC.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cantPC_KeyPress);
             // 
             // BVolver
             // 
@@ -336,6 +368,17 @@ namespace ProyectoIntegradorTaller.views.admin
             this.BVolver.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.BVolver.UseVisualStyleBackColor = false;
             this.BVolver.Click += new System.EventHandler(this.BVolver_Click);
+            // 
+            // label3
+            // 
+            this.label3.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
+            this.label3.Location = new System.Drawing.Point(12, 196);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(175, 16);
+            this.label3.TabIndex = 29;
+            this.label3.Text = "Cantidad Computadoras";
             // 
             // label2
             // 
@@ -399,6 +442,7 @@ namespace ProyectoIntegradorTaller.views.admin
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -427,6 +471,8 @@ namespace ProyectoIntegradorTaller.views.admin
         private CheckBox CWifi;
         private Label label1;
         private components.BotonPersonalisado BVolver;
+        private CustomControls.RJControls.RJTextBox cantPC;
+        private Label label3;
     }
 
     #region Windows Form Designer generated code

@@ -18,7 +18,6 @@ namespace ProyectoIntegradorTaller.models
         public aula()
         {
             this.reserva = new HashSet<reserva>();
-            this.equipamiento = new HashSet<equipamiento>();
             this.aula_equipamiento = new HashSet<aula_equipamiento>();
         }
     
@@ -28,11 +27,10 @@ namespace ProyectoIntegradorTaller.models
         public int id_ubicacion { get; set; }
         public int id_tipo { get; set; }
         public string activa { get; set; }
+        public int cantComputadoras { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<reserva> reserva { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<equipamiento> equipamiento { get; set; }
         public virtual ubicacion ubicacion { get; set; }
         public virtual ubicacion ubicacion1 { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

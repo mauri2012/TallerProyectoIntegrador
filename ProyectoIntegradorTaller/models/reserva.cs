@@ -19,9 +19,9 @@ namespace ProyectoIntegradorTaller.models
         public int id_usuario { get; set; }
         public int id_aula { get; set; }
         public int id_dia { get; set; }
-        public Nullable<int> id_materia { get; set; }
+        public int id_materia { get; set; }
         public string activo { get; set; }
-        public Nullable<int> id_periodo { get; set; }
+        public int id_periodo { get; set; }
     
         public virtual aula aula { get; set; }
         public virtual horas horas { get; set; }

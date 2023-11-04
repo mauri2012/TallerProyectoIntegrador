@@ -46,8 +46,9 @@ namespace ProyectoIntegradorTaller.logica
                                 Id = aula.id_aula,
                                 Name = aula.nombre,
                                 CapacidadMax = aula.capacidad,
-                                Lugar = ubicacion.lugar, // Assuming ubicacion has a "Nombre" property
-                                Tipo = tipoSala.tipo, // Assuming tipo has a "Nombre" property
+                                Lugar = ubicacion.lugar, 
+                                Tipo = tipoSala.tipo, 
+                                Cantidad_PCs=aula.cantComputadoras,
                                 Wifi = db.aula_equipamiento.FirstOrDefault(r => r.id_equipamiento == 4 && r.id_aula == aula.id_aula).disponible,
                                 Proyector= db.aula_equipamiento.FirstOrDefault(r => r.id_equipamiento == 3 && r.id_aula == aula.id_aula).disponible,
                                 AC= db.aula_equipamiento.FirstOrDefault(r => r.id_equipamiento == 2 && r.id_aula == aula.id_aula).disponible,
@@ -73,7 +74,7 @@ namespace ProyectoIntegradorTaller.logica
                 var query = from aula in db.aula
                             join ubicacion in db.ubicacion on aula.id_ubicacion equals ubicacion.id_ubicacion
                             join tipoSala in db.tipoSala on aula.id_tipo equals tipoSala.id_sala
-                            where aula.activa == "SI" && (aula.capacidad >= valorInt || aula.nombre.Contains(valor))
+                            where aula.activa == "SI" && ( aula.capacidad >= valorInt || aula.nombre.Contains(valor))
                                 select new
                                 {
                                     Id = aula.id_aula,
@@ -81,6 +82,7 @@ namespace ProyectoIntegradorTaller.logica
                                     CapacidadMax = aula.capacidad,
                                     Lugar = ubicacion.lugar, 
                                     Tipo = tipoSala.tipo,
+                                    Cantidad_PCs = aula.cantComputadoras,
                                     Wifi = db.aula_equipamiento.FirstOrDefault(r => r.id_equipamiento == 4 && r.id_aula == aula.id_aula).disponible,
                                     Proyector = db.aula_equipamiento.FirstOrDefault(r => r.id_equipamiento == 3 && r.id_aula == aula.id_aula).disponible,
                                     AC = db.aula_equipamiento.FirstOrDefault(r => r.id_equipamiento == 2 && r.id_aula == aula.id_aula).disponible,
@@ -92,7 +94,7 @@ namespace ProyectoIntegradorTaller.logica
                 
             }
         }
-        public static void updateClassroom(int id, string ttipo,string CBubicacion, string tnombre, string tcapacidad, bool CBAire, bool CBWIFI, bool CBProyector, bool CBTelevisor)
+        public static void updateClassroom(int id, string ttipo,string CBubicacion, string tnombre, string tcapacidad,string tcantPCs, bool CBAire, bool CBWIFI, bool CBProyector, bool CBTelevisor)
         {
             List<aula_equipamiento> aula_equi = new List<aula_equipamiento>();
             List<string> equipamiento = new List<string>();
@@ -128,7 +130,7 @@ namespace ProyectoIntegradorTaller.logica
                     entityToUpdate.capacidad = int.Parse(tcapacidad);
                     entityToUpdate.id_ubicacion = ubicacion.id_ubicacion;
                     entityToUpdate.id_tipo = tipoSala.id_sala;
-
+                    entityToUpdate.cantComputadoras = int.Parse(tcantPCs);
                     for (int i = 0; i < 4; i++)
                     {
                         //var property = entityToUpdate1.GetType().GetProperty("aula_equi"+i);
@@ -160,7 +162,7 @@ namespace ProyectoIntegradorTaller.logica
                 }
             }
         }
-        public static void addClassroom(string ttipo,string CBubicacion,string tnombre,string tcapacidad,bool CBAire,bool CBWIFI,bool CBProyector,bool CBTelevisor)
+        public static void addClassroom(string ttipo,string CBubicacion,string tnombre,string tcantPCs,string tcapacidad,bool CBAire,bool CBWIFI,bool CBProyector,bool CBTelevisor)
         {
             using (classroom_managerEntities db = new classroom_managerEntities())
             {
@@ -176,6 +178,7 @@ namespace ProyectoIntegradorTaller.logica
                         capacidad = int.Parse(tcapacidad),
                         id_ubicacion = ubicacion.id_ubicacion,
                         id_tipo = tipoSala.id_sala,
+                        cantComputadoras=int.Parse(tcantPCs),
                         activa = "SI",
                     };
 

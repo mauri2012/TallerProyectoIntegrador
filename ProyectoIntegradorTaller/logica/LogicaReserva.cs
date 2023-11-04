@@ -17,7 +17,21 @@ namespace ProyectoIntegradorTaller.logica
 {
     public class LogicaReserva
     {
+        public static void listarProfesoresCB(ComboBoxPersonalisado cb, reserva res)
+        {
+            using (classroom_managerEntities db = new classroom_managerEntities())
+            {
+                cb.DataSource = db.usuario.Where(r => r.id_tipoUsuario == 4).ToList();
+                cb.DisplayMember = "nombre";
+                cb.ValueMember = "id_usuario";
 
+                cb.BindingContext[cb.DataSource].EndCurrentEdit();
+
+                cb.SelectedItem = db.usuario.FirstOrDefault(r => r.id_usuario == res.id_usuario);
+
+
+            }
+        }
         public static horas ObtenerHorarioPorID(int idHorario)
         {
             using (classroom_managerEntities db = new classroom_managerEntities())
@@ -77,7 +91,11 @@ namespace ProyectoIntegradorTaller.logica
                     r => r.id_hora == idHora
                     && r.id_dia == idDia
                     && r.id_aula == idAula
-                    && r.id_periodo==idPeriodo       
+                    && (((r.id_periodo==1 || r.id_periodo==3 || r.id_periodo==6 || r.id_periodo==7) && (idPeriodo==1 || idPeriodo==3))
+                       || ((r.id_periodo == 1 || r.id_periodo == 3 || r.id_periodo == idPeriodo) && (idPeriodo == 6 || idPeriodo==7))
+                        || ((r.id_periodo == 2 || r.id_periodo == 4 || r.id_periodo==8 || r.id_periodo==9) && (idPeriodo == 2 || idPeriodo == 4))
+                        || ((r.id_periodo == 2 || r.id_periodo == 4 || r.id_periodo == idPeriodo) && (idPeriodo == 8 || idPeriodo == 9))
+                       )
                     && r.activo == "SI");
 
                 return reserva1;
@@ -88,13 +106,15 @@ namespace ProyectoIntegradorTaller.logica
         {
             List<reserva> reservas;
 
-            string[,] grillaHorarios = new string[6, 7] {
+            string[,] grillaHorarios = new string[7, 7] {
             { "8:00-10:00", "" ,"","","","",""},
             { "10:00-12:00", "" ,"","","","",""},
             { "12:00-14:00", "" ,"","","","",""},
             { "14:00-16:00", "" ,"","","","",""},
             { "16:00-18:00", "" ,"","","","",""},
-            { "18:00-20:00", "" ,"","","","",""}};
+            { "18:00-20:00", "" ,"","","","",""},
+            { "20:00-22:00", "" ,"","","","",""}
+            };
 
 
             using (classroom_managerEntities db = new classroom_managerEntities())
@@ -141,7 +161,7 @@ namespace ProyectoIntegradorTaller.logica
             }
             dataGrid.Rows.Clear();
 
-            for (int i = 0; i < 6; i++)
+            for (int i = 0; i < 7; i++)
             {
 
                 dataGrid.Rows.Add(grillaHorarios[i, 0], grillaHorarios[i, 1], grillaHorarios[i, 2], grillaHorarios[i, 3], grillaHorarios[i, 4], grillaHorarios[i, 5], grillaHorarios[i, 6]);
@@ -186,7 +206,7 @@ namespace ProyectoIntegradorTaller.logica
         {
             reserva reserva1 = LogicaReserva.BuscarReservaPorId(id);
             usuario usuario1 = LogicaUsuarios.getUsuario(reserva1.id_usuario);
-            string materia = LogicaMaterias.getMateria(reserva1.id_materia ?? 1).materia;
+            string materia = LogicaMaterias.getMateria(reserva1.id_materia).materia;
             Document document = new Document();
 
             try

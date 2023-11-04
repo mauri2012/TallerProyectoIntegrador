@@ -4,12 +4,14 @@ using System;
 using System.Windows.Forms;
 using ProyectoIntegradorTaller.logica;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace ProyectoIntegradorTaller.views.admin
 {
+
     public partial class ReservarAula : DraggablePanelUserControl
     {
-
+ 
         private int id_aula;
         private reserva res;
         
@@ -17,7 +19,7 @@ namespace ProyectoIntegradorTaller.views.admin
         public ReservarAula(int idAula,int idHora, int idDia,string nombre)
         {
             InitializeComponent();
-            CBHora.Texts = LogicaReserva.ObtenerHorarioPorID(idHora).horario;
+            CBHora.Texts = LogicaReserva.ObtenerHorarioPorID(idHora-1).horario;
             CBDia.Texts = LogicaReserva.ObtenerDiaPorID(idDia).dias;
             Periodo.Texts = nombre;
             id_aula = idAula;
@@ -25,12 +27,28 @@ namespace ProyectoIntegradorTaller.views.admin
             CBMateria.DataSource = LogicaReserva.CBMateriasListar();
             CBMateria.DisplayMember = "materia";
             CBMateria.ValueMember = "id_materia";
-
-            fecha.Visible = false;
+            CBMateria.SelectedIndex = 1;
+          
+           
             BEliminar.Visible = false;
             this.BReservarAula.Click += new System.EventHandler(this.botonPersonalisado1_Click);
             this.BImprimir.Visible= false;
-            
+            if (Session.SessionCacheData.IdProfile == 1 || Session.SessionCacheData.IdProfile == 3)
+            {
+                CBPRofesor.DataSource = LogicaReserva.CBPRofesorListar();
+                CBPRofesor.DisplayMember = "nombre";
+                CBPRofesor.ValueMember = "id_usuario";
+                CBPRofesor.SelectedIndex = 1;
+            }
+            else
+            {
+                CBPRofesor.Texts = Session.SessionCacheData.Name;
+
+
+                BEliminar.Visible = false;
+                BReservarAula.Visible = false;
+                BImprimir.Visible = false;
+            }
         }
 
 
@@ -41,24 +59,51 @@ namespace ProyectoIntegradorTaller.views.admin
             InitializeComponent();
             CBHora.Texts = LogicaReserva.ObtenerHorarioPorID(reserva1.id_hora).horario;
             CBDia.Texts = LogicaReserva.ObtenerDiaPorID(reserva1.id_dia).dias;
-            CBPRofesor.Texts=LogicaUsuarios.getUsuario(reserva1.id_usuario).nombre;
-            Periodo.Texts = LogicaReserva.obtenerPeriodoPorId(reserva1.id_periodo ?? 1).periodo_nombre;
+            
+            Periodo.Texts = LogicaReserva.obtenerPeriodoPorId(reserva1.id_periodo).periodo_nombre;
             id_aula = reserva1.id_aula;
-            res= reserva1;
+            res = reserva1;
 
-            CBMateria.DataSource=LogicaReserva.CBMateriasListar();
-            CBMateria.DisplayMember = "materia";
-            CBMateria.ValueMember = "id_materia";
+            //            CBMateria.DataSource = LogicaReserva.CBMateriasListar();
+            using (classroom_managerEntities db = new classroom_managerEntities())
+            {
+                CBMateria.DataSource=db.materias.ToList();
+                CBMateria.DisplayMember = "materia";
+                CBMateria.ValueMember = "id_materia";
+       
+                CBMateria.BindingContext[CBMateria.DataSource].EndCurrentEdit();
+                if (res.id_materia == 1)
+                {
+                    CBMateria.SelectedIndex = -1;
+                }
+                else
+                {
+                    CBMateria.SelectedItem = db.materias.FirstOrDefault(r => r.id_materia == res.id_materia);
+                }
 
+            }
+            LogicaMaterias.listarMateriasCB(CBMateria,res);
 
-            //Cambiar el ?? 1 cuando se resuelva el problema de nulos
-            CBMateria.Texts = LogicaMaterias.getMateria(reserva1.id_materia ?? 1).materia;
-            fecha.Visible = false;
-           // CBMateria.SelectedIndex =reserva1.id_materia.Value;
+       
             BReservarAula.Text = "Editar Aula";
             BReservarAula.Click += new System.EventHandler(this.editar_Click);
-
-            if (Session.SessionCacheData.IdProfile==4) {
+            if (Session.SessionCacheData.IdProfile == 1 || Session.SessionCacheData.IdProfile == 3)
+            {
+                using (classroom_managerEntities db=new classroom_managerEntities())
+                {
+                    CBPRofesor.DataSource = db.usuario.Where(t=>t.id_tipoUsuario==4).ToList();
+                    CBPRofesor.DisplayMember = "nombre";
+                    CBPRofesor.ValueMember = "id_usuario";
+                    CBPRofesor.SelectedIndex = -1;
+                }
+         
+                LogicaReserva.listarProfesoresCB(CBPRofesor,res);
+            }
+            else
+            {
+                CBPRofesor.Texts = Session.SessionCacheData.Name;
+            
+ 
                 BEliminar.Visible = false;
                 BReservarAula.Visible = false;
                 BImprimir.Visible = false;
@@ -103,41 +148,15 @@ namespace ProyectoIntegradorTaller.views.admin
 
         private void panel2_Paint(object sender, PaintEventArgs e)
         {
-            fecha_desde.Visible = false;
-            fecha_hasta.Visible = false;
-            CBMateria.DataSource = LogicaReserva.CBMateriasListar();
-            CBMateria.DisplayMember = "materia";
-            CBMateria.ValueMember = "id_materia";
-            if (Session.SessionCacheData.IdProfile == 1 || Session.SessionCacheData.IdProfile==3)
-            {
-                CBPRofesor.DataSource= LogicaReserva.CBPRofesorListar();
-                CBPRofesor.DisplayMember = "nombre";
-                CBPRofesor.ValueMember = "id_usuario";
-            }
-            else
-            {
-                CBPRofesor.Texts = Session.SessionCacheData.Name;
-            }
+
+            
+ 
         }
 
         private void Periodo_OnSelectedIndexChanged(object sender, EventArgs e)
         {
-            switch (this.Periodo.Texts.ToString())
-            {
-
-       
-                case "Dia Puntual":
-                    fecha.Visible = true;
-                    fecha_desde.Visible = true; 
-                    fecha_hasta.Visible = false;
-                    fecha_desde.Value = fecha_hasta.Value;
-                    break;
-                case "Personalizado":
-                    fecha_desde.Visible = true;
-                    fecha_hasta.Visible = true;
-
-                    break;
-            }
+          
+            
 
         }
 
@@ -173,6 +192,13 @@ namespace ProyectoIntegradorTaller.views.admin
         private void BImprimir_Click(object sender, EventArgs e)
         {
             LogicaReserva.ImprimirComprobante(res.id_reserva);
+        }
+
+        private void ReservarAula_Load(object sender, EventArgs e)
+        {
+            // TODO: esta línea de código carga datos en la tabla 'classroom_managerDataSet.materias' Puede moverla o quitarla según sea necesario.
+            this.materiasTableAdapter.Fill(this.classroom_managerDataSet.materias);
+
         }
     }
 }

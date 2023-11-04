@@ -17,15 +17,12 @@ namespace ProyectoIntegradorTaller.models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public equipamiento()
         {
-            this.aula = new HashSet<aula>();
             this.aula_equipamiento = new HashSet<aula_equipamiento>();
         }
     
         public int id_equipamiento { get; set; }
         public string recurso { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<aula> aula { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<aula_equipamiento> aula_equipamiento { get; set; }
     }

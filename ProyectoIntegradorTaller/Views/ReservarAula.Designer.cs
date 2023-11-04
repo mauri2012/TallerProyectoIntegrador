@@ -31,6 +31,7 @@ namespace ProyectoIntegradorTaller.views.admin
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
             this.BImprimir = new ProyectoIntegradorTaller.views.components.BotonPersonalisado();
             this.BEliminar = new ProyectoIntegradorTaller.views.components.BotonPersonalisado();
@@ -40,22 +41,24 @@ namespace ProyectoIntegradorTaller.views.admin
             this.CBHora = new ProyectoIntegradorTaller.views.components.ComboBoxPersonalisado();
             this.CBPRofesor = new ProyectoIntegradorTaller.views.components.ComboBoxPersonalisado();
             this.CBMateria = new ProyectoIntegradorTaller.views.components.ComboBoxPersonalisado();
-            this.fecha_desde = new ProyectoIntegradorTaller.views.components.TimePickerPersonalisado();
+            this.materiasBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.classroom_managerDataSet = new ProyectoIntegradorTaller.classroom_managerDataSet();
             this.BReservarAula = new ProyectoIntegradorTaller.views.components.BotonPersonalisado();
-            this.fecha_hasta = new ProyectoIntegradorTaller.views.components.TimePickerPersonalisado();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.fecha = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label8 = new System.Windows.Forms.Label();
+            this.materiasTableAdapter = new ProyectoIntegradorTaller.classroom_managerDataSetTableAdapters.materiasTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.PBMaximizar_)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PBMinimizar_)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PBCerrar_)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PBEsconder_)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.materiasBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.classroom_managerDataSet)).BeginInit();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -78,12 +81,9 @@ namespace ProyectoIntegradorTaller.views.admin
             this.panel1.Controls.Add(this.CBHora);
             this.panel1.Controls.Add(this.CBPRofesor);
             this.panel1.Controls.Add(this.CBMateria);
-            this.panel1.Controls.Add(this.fecha_desde);
             this.panel1.Controls.Add(this.BReservarAula);
-            this.panel1.Controls.Add(this.fecha_hasta);
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.label5);
-            this.panel1.Controls.Add(this.fecha);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
@@ -240,6 +240,7 @@ namespace ProyectoIntegradorTaller.views.admin
             this.CBMateria.BackColor = System.Drawing.Color.WhiteSmoke;
             this.CBMateria.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
             this.CBMateria.BorderSize = 2;
+            this.CBMateria.DataSource = this.materiasBindingSource;
             this.CBMateria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
             this.CBMateria.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.CBMateria.ForeColor = System.Drawing.Color.DimGray;
@@ -254,20 +255,15 @@ namespace ProyectoIntegradorTaller.views.admin
             this.CBMateria.TabIndex = 35;
             this.CBMateria.Texts = "";
             // 
-            // fecha_desde
+            // materiasBindingSource
             // 
-            this.fecha_desde.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.fecha_desde.BorderSize = 0;
-            this.fecha_desde.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F);
-            this.fecha_desde.Location = new System.Drawing.Point(386, 189);
-            this.fecha_desde.MaxDate = new System.DateTime(2024, 12, 31, 0, 0, 0, 0);
-            this.fecha_desde.MinDate = new System.DateTime(2023, 1, 18, 0, 0, 0, 0);
-            this.fecha_desde.MinimumSize = new System.Drawing.Size(4, 35);
-            this.fecha_desde.Name = "fecha_desde";
-            this.fecha_desde.Size = new System.Drawing.Size(244, 35);
-            this.fecha_desde.SkinColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
-            this.fecha_desde.TabIndex = 34;
-            this.fecha_desde.TextColor = System.Drawing.Color.White;
+            this.materiasBindingSource.DataMember = "materias";
+            this.materiasBindingSource.DataSource = this.classroom_managerDataSet;
+            // 
+            // classroom_managerDataSet
+            // 
+            this.classroom_managerDataSet.DataSetName = "classroom_managerDataSet";
+            this.classroom_managerDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // BReservarAula
             // 
@@ -288,19 +284,6 @@ namespace ProyectoIntegradorTaller.views.admin
             this.BReservarAula.TextColor = System.Drawing.Color.White;
             this.BReservarAula.UseVisualStyleBackColor = false;
             // 
-            // fecha_hasta
-            // 
-            this.fecha_hasta.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.fecha_hasta.BorderSize = 0;
-            this.fecha_hasta.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F);
-            this.fecha_hasta.Location = new System.Drawing.Point(386, 246);
-            this.fecha_hasta.MinimumSize = new System.Drawing.Size(4, 35);
-            this.fecha_hasta.Name = "fecha_hasta";
-            this.fecha_hasta.Size = new System.Drawing.Size(244, 35);
-            this.fecha_hasta.SkinColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
-            this.fecha_hasta.TabIndex = 9;
-            this.fecha_hasta.TextColor = System.Drawing.Color.White;
-            // 
             // label6
             // 
             this.label6.AutoSize = true;
@@ -320,16 +303,6 @@ namespace ProyectoIntegradorTaller.views.admin
             this.label5.Size = new System.Drawing.Size(31, 18);
             this.label5.TabIndex = 11;
             this.label5.Text = "Dia";
-            // 
-            // fecha
-            // 
-            this.fecha.AutoSize = true;
-            this.fecha.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.fecha.Location = new System.Drawing.Point(383, 163);
-            this.fecha.Name = "fecha";
-            this.fecha.Size = new System.Drawing.Size(51, 18);
-            this.fecha.TabIndex = 8;
-            this.fecha.Text = "Fecha";
             // 
             // label3
             // 
@@ -384,6 +357,10 @@ namespace ProyectoIntegradorTaller.views.admin
             this.label8.TabIndex = 7;
             this.label8.Text = "Reservar Aula";
             // 
+            // materiasTableAdapter
+            // 
+            this.materiasTableAdapter.ClearBeforeFill = true;
+            // 
             // ReservarAula
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -395,6 +372,7 @@ namespace ProyectoIntegradorTaller.views.admin
             this.Name = "ReservarAula";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ReservarAula";
+            this.Load += new System.EventHandler(this.ReservarAula_Load);
             this.Controls.SetChildIndex(this.PBEsconder_, 0);
             this.Controls.SetChildIndex(this.PBMinimizar_, 0);
             this.Controls.SetChildIndex(this.PBMaximizar_, 0);
@@ -407,6 +385,8 @@ namespace ProyectoIntegradorTaller.views.admin
             ((System.ComponentModel.ISupportInitialize)(this.PBEsconder_)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.materiasBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.classroom_managerDataSet)).EndInit();
             this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -416,7 +396,6 @@ namespace ProyectoIntegradorTaller.views.admin
         #endregion
 
         private Panel panel1;
-        private Label fecha;
         private Label label3;
         private Label label2;
         private Label label1;
@@ -425,9 +404,7 @@ namespace ProyectoIntegradorTaller.views.admin
         private Panel panel2;
         private Label label8;
         private views.components.BotonPersonalisado BReservarAula;
-        private views.components.TimePickerPersonalisado fecha_hasta;
         private views.components.ComboBoxPersonalisado CBMateria;
-        private views.components.TimePickerPersonalisado fecha_desde;
         private views.components.ComboBoxPersonalisado CBPRofesor;
         private views.components.ComboBoxPersonalisado CBDia;
         private views.components.ComboBoxPersonalisado CBHora;
@@ -435,5 +412,8 @@ namespace ProyectoIntegradorTaller.views.admin
         private components.ComboBoxPersonalisado Periodo;
         private components.BotonPersonalisado BEliminar;
         private components.BotonPersonalisado BImprimir;
+        private classroom_managerDataSet classroom_managerDataSet;
+        private BindingSource materiasBindingSource;
+        private classroom_managerDataSetTableAdapters.materiasTableAdapter materiasTableAdapter;
     }
 }

@@ -19,14 +19,20 @@ namespace ProyectoIntegradorTaller.views.admin
     public partial class CrearAula : DraggablePanelUserControl 
     {
         private int id_;
-        public CrearAula(int Id, string Name, int CapacidadMax, String Lugar , String Tipo,string wifi,string proyecto,string AC,string tv)
+        private string ttipo;
+        private int tcantPCs;
+        private string tlugar;
+        public CrearAula(int Id, string Name, int CapacidadMax, String Lugar , String Tipo,string wifi,string proyecto,string AC,string tv,int cantPCs)
         {
             InitializeComponent();
             id_ = Id;
+            ttipo= Tipo;
             TNombre.Texts = Name;
-            CBUbicacion.Texts = Lugar;
+            tlugar= Lugar;
             TCapacidad.Texts = CapacidadMax.ToString();
-            TTipo.Texts = Tipo;
+            cantPC.Texts = cantPCs.ToString();
+            tcantPCs = cantPCs;
+   
             if (wifi == "SI")
             {
                 CWifi.Checked=true;
@@ -45,7 +51,9 @@ namespace ProyectoIntegradorTaller.views.admin
             }
             BEditarAula.Visible = true;
             BCrearAula.Visible = false;
+           
             TNombre.Enabled= false;// no se debe poder editar el nombre segun el profesor
+            
         }
         public CrearAula()
         {
@@ -72,7 +80,7 @@ namespace ProyectoIntegradorTaller.views.admin
 
         private void BCrearAula_Click(object sender, EventArgs e)
         {
-            if(string.IsNullOrEmpty(this.TNombre.Texts) || string.IsNullOrEmpty(CBUbicacion.Texts) || string.IsNullOrEmpty(TTipo.Texts) || string.IsNullOrEmpty(TCapacidad.Texts))
+            if(string.IsNullOrEmpty(this.TNombre.Texts) || string.IsNullOrEmpty(CBUbicacion.Texts) || string.IsNullOrEmpty(TTipo.Texts) || string.IsNullOrEmpty(TCapacidad.Texts) || string.IsNullOrEmpty(cantPC.Texts))
             {
                 MessageBox.Show("Existen campos incompletos", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
@@ -80,7 +88,7 @@ namespace ProyectoIntegradorTaller.views.admin
             {
                 if (LogicaClase.valNomAula(TNombre.Texts))
                 {
-                    LogicaClase.addClassroom(this.TTipo.Texts, this.CBUbicacion.Texts, this.TNombre.Texts, this.TCapacidad.Texts, this.CAireAcondicionado.Checked, this.CWifi.Checked, this.CProyector.Checked, this.CTelevisor.Checked);
+                    LogicaClase.addClassroom(this.TTipo.Texts, this.CBUbicacion.Texts, this.TNombre.Texts,this.cantPC.Texts, this.TCapacidad.Texts, this.CAireAcondicionado.Checked, this.CWifi.Checked, this.CProyector.Checked, this.CTelevisor.Checked);
                     this.TCapacidad.Texts = this.TNombre.Texts = " ";
                     MessageBox.Show("se inserto el aula correctamente!", "Insersion", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
@@ -125,6 +133,7 @@ namespace ProyectoIntegradorTaller.views.admin
                 CBUbicacion.DataSource = db.ubicacion.ToList();
                 CBUbicacion.DisplayMember = "lugar"; // Specify the property to display in the ComboBox
                 CBUbicacion.ValueMember = "id_ubicacion";
+                CBUbicacion.SelectedItem = db.ubicacion.FirstOrDefault(ubi => ubi.lugar==tlugar);
             }
         }
 
@@ -136,19 +145,24 @@ namespace ProyectoIntegradorTaller.views.admin
                 TTipo.DataSource = db.tipoSala.ToList();
                 TTipo.DisplayMember = "tipo"; // Specify the property to display in the ComboBox
                 TTipo.ValueMember = "id_sala";
+                TTipo.SelectedItem = db.tipoSala.FirstOrDefault(r=> r.tipo==ttipo);
+          
+                cantPC.Texts = db.aula.FirstOrDefault(cant => cant.cantComputadoras == tcantPCs).cantComputadoras.ToString();
+               
             }
+            
         }
 
         private void BEditarAula_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(this.TNombre.Texts) || string.IsNullOrEmpty(CBUbicacion.Texts) || string.IsNullOrEmpty(TTipo.Texts) || string.IsNullOrEmpty(TCapacidad.Texts))
+            if (string.IsNullOrEmpty(this.TNombre.Texts) || string.IsNullOrEmpty(CBUbicacion.Texts) || string.IsNullOrEmpty(TTipo.Texts) || string.IsNullOrEmpty(TCapacidad.Texts) || string.IsNullOrEmpty(cantPC.Texts))
             {
                 MessageBox.Show("Existen campos incompletos", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
         
-                    LogicaClase.updateClassroom(id_, this.TTipo.Texts, this.CBUbicacion.Texts, this.TNombre.Texts, this.TCapacidad.Texts, this.CAireAcondicionado.Checked, this.CWifi.Checked, this.CProyector.Checked, this.CTelevisor.Checked);
+                    LogicaClase.updateClassroom(id_, this.TTipo.Texts, this.CBUbicacion.Texts, this.TNombre.Texts, this.TCapacidad.Texts,this.cantPC.Texts, this.CAireAcondicionado.Checked, this.CWifi.Checked, this.CProyector.Checked, this.CTelevisor.Checked);
                     this.TCapacidad.Texts = this.TNombre.Texts = " ";
                     MessageBox.Show("se edito la clase correctamente correctamente!", "editar", MessageBoxButtons.OK, MessageBoxIcon.Information);
           
@@ -161,6 +175,31 @@ namespace ProyectoIntegradorTaller.views.admin
         private void panel7_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void TTipo_OnSelectedIndexChanged(object sender, EventArgs e)
+        {
+            
+            if (TTipo.Texts == "laboratorio")
+            {
+                cantPC.Enabled = true;
+            }
+            else
+            {
+                cantPC.Texts = 0.ToString();
+                cantPC.Enabled = false;
+            }
+        }
+
+        private void cantPC_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Verifica si la tecla presionada es un número (0-9), retroceso o una tecla de control.
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                // Si no es un número ni una tecla de control, suprime la pulsación de tecla.
+                e.Handled = true;
+                MessageBox.Show("EL campo Cantidad PCs solo acepta valores numericos");
+            }
         }
     }
 }

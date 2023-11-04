@@ -80,6 +80,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="classroom_managerDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>classroom_managerDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="logica\Encript.cs" />
     <Compile Include="logica\LogicaAdministrarDB.cs" />
     <Compile Include="logica\LogicaMaterias.cs" />
@@ -384,6 +389,17 @@
       <LastGenOutput>Model1.Designer.cs</LastGenOutput>
     </EntityDeploy>
     <None Include="ClassDiagram1.cd" />
+    <None Include="classroom_managerDataSet.xsc">
+      <DependentUpon>classroom_managerDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="classroom_managerDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>classroom_managerDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="classroom_managerDataSet.xss">
+      <DependentUpon>classroom_managerDataSet.xsd</DependentUpon>
+    </None>
     <None Include="models\Model1.edmx.diagram">
       <DependentUpon>Model1.edmx</DependentUpon>
     </None>

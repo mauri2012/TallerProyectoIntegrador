@@ -109,7 +109,8 @@ namespace ProyectoIntegradorTaller.views.admin
                         (string)dataGridView1.Rows[e.RowIndex].Cells["Wifi"].Value,
                         (string)dataGridView1.Rows[e.RowIndex].Cells["Proyector"].Value,
                         (string)dataGridView1.Rows[e.RowIndex].Cells["AC"].Value,
-                        (string)dataGridView1.Rows[e.RowIndex].Cells["Televisor"].Value);
+                        (string)dataGridView1.Rows[e.RowIndex].Cells["Televisor"].Value,
+                        (int)dataGridView1.Rows[e.RowIndex].Cells["Cantidad_PCs"].Value);
 
                     aula.Show();
 
