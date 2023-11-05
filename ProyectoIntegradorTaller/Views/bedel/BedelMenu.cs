@@ -55,10 +55,7 @@ namespace ProyectoIntegradorTaller.views.admin
             dataGridView1.Columns.Add(buttonColumn2);
 
         }
-        private void DataGridView1_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
-        {
        
-        }
 
         
 
@@ -90,23 +87,31 @@ namespace ProyectoIntegradorTaller.views.admin
             reservasPendientes.Show();
         }
 
-        private void BDatabase_Click(object sender, EventArgs e)
-        {
-
-        }
-
+       
         private void TBBusqueda__TextChanged(object sender, EventArgs e)
         {
-            dataGridView1.DataSource = LogicaClase.busquedaAula(this.TBBusqueda.Texts);
+            if (string.IsNullOrEmpty(this.TBBusqueda.Texts))
+            {
+                dataGridView1.DataSource = LogicaClase.listarAula();
+            }
+            else
+            {
+                if (this.CBFiltro.Texts == "Nombre")
+                {
+                    dataGridView1.DataSource = LogicaClase.BusquedaAulaPorNombre(this.TBBusqueda.Texts);
+
+                }
+                else if (this.CBFiltro.Texts == "Capacidad")
+                {
+
+                    dataGridView1.DataSource = LogicaClase.BusquedaAulaPorCapacidad(this.TBBusqueda.Texts);
+                }
+                else if (this.CBFiltro.Texts == "Lugar")
+                {
+                    dataGridView1.DataSource = LogicaClase.BusquedaAulaPorLugar(this.TBBusqueda.Texts);
+                }
+            }
         }
     }
-   /* public class ItemProfesor
-    {
-        public int Id { get; set; }
-        public string Name { get; set; }
-        public string Lugar { get; set; }
-        public int CapacidadMax { get; set; }
-
-
-    }*/
+   
 }

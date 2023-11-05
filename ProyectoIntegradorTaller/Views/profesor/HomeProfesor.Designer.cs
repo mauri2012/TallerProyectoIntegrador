@@ -46,6 +46,7 @@
             this.Tipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Reservas = new System.Windows.Forms.DataGridViewButtonColumn();
             this.label6 = new System.Windows.Forms.Label();
+            this.CBFiltro = new ProyectoIntegradorTaller.views.components.ComboBoxPersonalisado();
             ((System.ComponentModel.ISupportInitialize)(this.PBMaximizar_)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PBMinimizar_)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PBCerrar_)).BeginInit();
@@ -190,6 +191,7 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.CBFiltro);
             this.panel2.Controls.Add(this.LBienvenido);
             this.panel2.Controls.Add(this.BBuscar);
             this.panel2.Controls.Add(this.TBBusqueda);
@@ -317,6 +319,30 @@
             this.label6.TabIndex = 56;
             this.label6.Text = "Home";
             // 
+            // CBFiltro
+            // 
+            this.CBFiltro.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.CBFiltro.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.CBFiltro.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
+            this.CBFiltro.BorderSize = 2;
+            this.CBFiltro.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CBFiltro.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.CBFiltro.ForeColor = System.Drawing.Color.DimGray;
+            this.CBFiltro.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
+            this.CBFiltro.Items.AddRange(new object[] {
+            "Nombre",
+            "Capacidad",
+            "Lugar"});
+            this.CBFiltro.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(228)))), ((int)(((byte)(245)))));
+            this.CBFiltro.ListTextColor = System.Drawing.Color.DimGray;
+            this.CBFiltro.Location = new System.Drawing.Point(335, 27);
+            this.CBFiltro.MinimumSize = new System.Drawing.Size(200, 30);
+            this.CBFiltro.Name = "CBFiltro";
+            this.CBFiltro.Padding = new System.Windows.Forms.Padding(2);
+            this.CBFiltro.Size = new System.Drawing.Size(207, 30);
+            this.CBFiltro.TabIndex = 57;
+            this.CBFiltro.Texts = "Nombre";
+            // 
             // HomeProfesor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -372,5 +398,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn CapasidadMaxima;
         private System.Windows.Forms.DataGridViewTextBoxColumn Tipo;
         private System.Windows.Forms.DataGridViewButtonColumn Reservas;
+        private components.ComboBoxPersonalisado CBFiltro;
     }
 }

@@ -57,7 +57,27 @@ namespace ProyectoIntegradorTaller.views.profesor
 
         private void TBBusqueda__TextChanged(object sender, EventArgs e)
         {
-            dataGridView1.DataSource = LogicaClase.busquedaAula(TBBusqueda.Texts);
+            if (string.IsNullOrEmpty(this.TBBusqueda.Texts))
+            {
+                dataGridView1.DataSource = LogicaClase.listarAula();
+            }
+            else
+            {
+                if (this.CBFiltro.Texts == "Nombre")
+                {
+                    dataGridView1.DataSource = LogicaClase.BusquedaAulaPorNombre(this.TBBusqueda.Texts);
+
+                }
+                else if (this.CBFiltro.Texts == "Capacidad")
+                {
+
+                    dataGridView1.DataSource = LogicaClase.BusquedaAulaPorCapacidad(this.TBBusqueda.Texts);
+                }
+                else if (this.CBFiltro.Texts == "Lugar")
+                {
+                    dataGridView1.DataSource = LogicaClase.BusquedaAulaPorLugar(this.TBBusqueda.Texts);
+                }
+            }
         }
     }
 }

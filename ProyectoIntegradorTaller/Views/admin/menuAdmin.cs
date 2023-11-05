@@ -169,20 +169,7 @@ namespace ProyectoIntegradorTaller.views.admin
         }
 
 
-        private void TBBusqueda__TextChanged(object sender, EventArgs e)
-        {
-            if (string.IsNullOrEmpty(this.TBBusqueda.Texts))
-            {
-                dataGridView1.DataSource = LogicaClase.listarAula();
-            }
-            else
-            {
-
-                dataGridView1.DataSource= LogicaClase.busquedaAula(this.TBBusqueda.Texts);
-            }
-
-
-        }
+        
 
         private void BBusqueda__TextChanged(object sender, EventArgs e)
         {
@@ -192,7 +179,20 @@ namespace ProyectoIntegradorTaller.views.admin
             }
             else
             {
-                dataGridView1.DataSource=LogicaClase.busquedaAula(this.TBBusqueda.Texts);
+                if (this.CBFiltro.Texts == "Nombre")
+                {
+                    dataGridView1.DataSource = LogicaClase.BusquedaAulaPorNombre(this.TBBusqueda.Texts);
+
+                }
+                else if (this.CBFiltro.Texts == "Capacidad")
+                {
+
+                    dataGridView1.DataSource = LogicaClase.BusquedaAulaPorCapacidad(this.TBBusqueda.Texts);
+                }
+                else if (this.CBFiltro.Texts == "Lugar")
+                {
+                    dataGridView1.DataSource = LogicaClase.BusquedaAulaPorLugar(this.TBBusqueda.Texts);
+                }
             }
 
         }
@@ -211,9 +211,6 @@ namespace ProyectoIntegradorTaller.views.admin
             unPeriodo.Show();
         }
 
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
+       
     }
 }

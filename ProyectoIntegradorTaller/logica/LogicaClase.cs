@@ -15,6 +15,7 @@ namespace ProyectoIntegradorTaller.logica
             using (classroom_managerEntities db = new classroom_managerEntities())
             {
                 aula aulaDesactivar = db.aula.FirstOrDefault(u => u.id_aula == idUsuario);
+
                 if (aulaDesactivar != null)
                 {
                     aulaDesactivar.activa = estado;
@@ -23,6 +24,8 @@ namespace ProyectoIntegradorTaller.logica
                 }
             }
         }
+
+
         public static string nombreAula(int id_aula)
         {
             using (classroom_managerEntities db = new classroom_managerEntities())
@@ -31,6 +34,8 @@ namespace ProyectoIntegradorTaller.logica
                 return aula.nombre;
             }
         }
+
+
         public static IList listarAula()
         {
             using (classroom_managerEntities db = new classroom_managerEntities())
@@ -61,6 +66,7 @@ namespace ProyectoIntegradorTaller.logica
             }
         }
        
+
         public static IList busquedaAula(string valor)
         {
             int valorInt = 0;
@@ -94,6 +100,101 @@ namespace ProyectoIntegradorTaller.logica
                 
             }
         }
+
+        public static IList BusquedaAulaPorNombre(string valor)
+        {
+            
+            using (classroom_managerEntities db = new classroom_managerEntities())
+            {
+                var query = from aula in db.aula
+                            join ubicacion in db.ubicacion on aula.id_ubicacion equals ubicacion.id_ubicacion
+                            join tipoSala in db.tipoSala on aula.id_tipo equals tipoSala.id_sala
+                            where aula.activa == "SI" && aula.nombre.Contains(valor)
+                            select new
+                            {
+                                Id = aula.id_aula,
+                                Name = aula.nombre,
+                                CapacidadMax = aula.capacidad,
+                                Lugar = ubicacion.lugar,
+                                Tipo = tipoSala.tipo,
+                                Cantidad_PCs = aula.cantComputadoras,
+                                Wifi = db.aula_equipamiento.FirstOrDefault(r => r.id_equipamiento == 4 && r.id_aula == aula.id_aula).disponible,
+                                Proyector = db.aula_equipamiento.FirstOrDefault(r => r.id_equipamiento == 3 && r.id_aula == aula.id_aula).disponible,
+                                AC = db.aula_equipamiento.FirstOrDefault(r => r.id_equipamiento == 2 && r.id_aula == aula.id_aula).disponible,
+                                Televisor = db.aula_equipamiento.FirstOrDefault(r => r.id_equipamiento == 1 && r.id_aula == aula.id_aula).disponible,
+                            };
+
+                return query.ToList();
+
+
+            }
+        }
+
+        public static IList BusquedaAulaPorCapacidad(string valor)
+        {
+            int valorInt = 0;
+
+
+            using (classroom_managerEntities db = new classroom_managerEntities())
+            {
+                int.TryParse(valor, out valorInt);
+
+
+                var query = from aula in db.aula
+                            join ubicacion in db.ubicacion on aula.id_ubicacion equals ubicacion.id_ubicacion
+                            join tipoSala in db.tipoSala on aula.id_tipo equals tipoSala.id_sala
+                            where aula.activa == "SI" && aula.capacidad >= valorInt 
+                            select new
+                            {
+                                Id = aula.id_aula,
+                                Name = aula.nombre,
+                                CapacidadMax = aula.capacidad,
+                                Lugar = ubicacion.lugar,
+                                Tipo = tipoSala.tipo,
+                                Cantidad_PCs = aula.cantComputadoras,
+                                Wifi = db.aula_equipamiento.FirstOrDefault(r => r.id_equipamiento == 4 && r.id_aula == aula.id_aula).disponible,
+                                Proyector = db.aula_equipamiento.FirstOrDefault(r => r.id_equipamiento == 3 && r.id_aula == aula.id_aula).disponible,
+                                AC = db.aula_equipamiento.FirstOrDefault(r => r.id_equipamiento == 2 && r.id_aula == aula.id_aula).disponible,
+                                Televisor = db.aula_equipamiento.FirstOrDefault(r => r.id_equipamiento == 1 && r.id_aula == aula.id_aula).disponible,
+                            };
+
+                return query.ToList();
+
+
+            }
+        }
+
+        public static IList BusquedaAulaPorLugar(string valor)
+        {
+            
+
+            using (classroom_managerEntities db = new classroom_managerEntities())
+            {
+              
+                var query = from aula in db.aula
+                            join ubicacion in db.ubicacion on aula.id_ubicacion equals ubicacion.id_ubicacion
+                            join tipoSala in db.tipoSala on aula.id_tipo equals tipoSala.id_sala
+                            where aula.activa == "SI" && ubicacion.lugar.Contains(valor)
+                            select new
+                            {
+                                Id = aula.id_aula,
+                                Name = aula.nombre,
+                                CapacidadMax = aula.capacidad,
+                                Lugar = ubicacion.lugar,
+                                Tipo = tipoSala.tipo,
+                                Cantidad_PCs = aula.cantComputadoras,
+                                Wifi = db.aula_equipamiento.FirstOrDefault(r => r.id_equipamiento == 4 && r.id_aula == aula.id_aula).disponible,
+                                Proyector = db.aula_equipamiento.FirstOrDefault(r => r.id_equipamiento == 3 && r.id_aula == aula.id_aula).disponible,
+                                AC = db.aula_equipamiento.FirstOrDefault(r => r.id_equipamiento == 2 && r.id_aula == aula.id_aula).disponible,
+                                Televisor = db.aula_equipamiento.FirstOrDefault(r => r.id_equipamiento == 1 && r.id_aula == aula.id_aula).disponible,
+                            };
+
+                return query.ToList();
+
+
+            }
+        }
+
         public static void updateClassroom(int id, string ttipo,string CBubicacion, string tnombre, string tcapacidad,string tcantPCs, bool CBAire, bool CBWIFI, bool CBProyector, bool CBTelevisor)
         {
             List<aula_equipamiento> aula_equi = new List<aula_equipamiento>();
