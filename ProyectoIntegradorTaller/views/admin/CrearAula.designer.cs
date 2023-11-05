@@ -17,6 +17,11 @@ namespace ProyectoIntegradorTaller.views.admin
         private void InitializeComponent()
         {
             this.panel7 = new System.Windows.Forms.Panel();
+            this.LPcs = new System.Windows.Forms.Label();
+            this.TBCantidadPcs = new CustomControls.RJControls.RJTextBox();
+            this.BEditarAula = new ProyectoIntegradorTaller.views.components.BotonPersonalisado();
+            this.BVolver = new ProyectoIntegradorTaller.views.components.BotonPersonalisado();
+            this.BCrearAula = new ProyectoIntegradorTaller.views.components.BotonPersonalisado();
             this.CWifi = new System.Windows.Forms.CheckBox();
             this.CTelevisor = new System.Windows.Forms.CheckBox();
             this.TTipo = new ProyectoIntegradorTaller.views.components.ComboBoxPersonalisado();
@@ -29,13 +34,6 @@ namespace ProyectoIntegradorTaller.views.admin
             this.CAireAcondicionado = new System.Windows.Forms.CheckBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.BEditarAula = new ProyectoIntegradorTaller.views.components.BotonPersonalisado();
-            this.BCrearAula = new ProyectoIntegradorTaller.views.components.BotonPersonalisado();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.cantPC = new CustomControls.RJControls.RJTextBox();
-            this.BVolver = new ProyectoIntegradorTaller.views.components.BotonPersonalisado();
-            this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -46,8 +44,6 @@ namespace ProyectoIntegradorTaller.views.admin
             this.panel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.panel2.SuspendLayout();
-            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // PBMaximizar_
@@ -61,7 +57,11 @@ namespace ProyectoIntegradorTaller.views.admin
             // panel7
             // 
             this.panel7.AllowDrop = true;
-            this.panel7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.panel7.Controls.Add(this.LPcs);
+            this.panel7.Controls.Add(this.TBCantidadPcs);
+            this.panel7.Controls.Add(this.BEditarAula);
+            this.panel7.Controls.Add(this.BVolver);
+            this.panel7.Controls.Add(this.BCrearAula);
             this.panel7.Controls.Add(this.CWifi);
             this.panel7.Controls.Add(this.CTelevisor);
             this.panel7.Controls.Add(this.TTipo);
@@ -74,18 +74,121 @@ namespace ProyectoIntegradorTaller.views.admin
             this.panel7.Controls.Add(this.CAireAcondicionado);
             this.panel7.Controls.Add(this.label5);
             this.panel7.Controls.Add(this.label6);
-            this.panel7.Controls.Add(this.panel2);
-            this.panel7.Controls.Add(this.panel1);
             this.panel7.Controls.Add(this.label2);
             this.panel7.Controls.Add(this.label4);
+            this.panel7.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel7.Location = new System.Drawing.Point(0, 32);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(686, 358);
             this.panel7.TabIndex = 11;
-            this.panel7.Paint += new System.Windows.Forms.PaintEventHandler(this.panel7_Paint);
+            // 
+            // LPcs
+            // 
+            this.LPcs.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.LPcs.AutoSize = true;
+            this.LPcs.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
+            this.LPcs.Location = new System.Drawing.Point(480, 228);
+            this.LPcs.Name = "LPcs";
+            this.LPcs.Size = new System.Drawing.Size(34, 16);
+            this.LPcs.TabIndex = 29;
+            this.LPcs.Text = "PCs";
+            // 
+            // TBCantidadPcs
+            // 
+            this.TBCantidadPcs.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.TBCantidadPcs.BackColor = System.Drawing.SystemColors.Menu;
+            this.TBCantidadPcs.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
+            this.TBCantidadPcs.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.TBCantidadPcs.BorderRadius = 6;
+            this.TBCantidadPcs.BorderSize = 2;
+            this.TBCantidadPcs.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TBCantidadPcs.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.TBCantidadPcs.Location = new System.Drawing.Point(524, 217);
+            this.TBCantidadPcs.Margin = new System.Windows.Forms.Padding(4);
+            this.TBCantidadPcs.Multiline = false;
+            this.TBCantidadPcs.Name = "TBCantidadPcs";
+            this.TBCantidadPcs.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this.TBCantidadPcs.PasswordChar = false;
+            this.TBCantidadPcs.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.TBCantidadPcs.PlaceholderText = "";
+            this.TBCantidadPcs.Size = new System.Drawing.Size(91, 31);
+            this.TBCantidadPcs.TabIndex = 30;
+            this.TBCantidadPcs.Texts = "";
+            this.TBCantidadPcs.UnderlinedStyle = true;
+            this.TBCantidadPcs.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cantPC_KeyPress);
+            // 
+            // BEditarAula
+            // 
+            this.BEditarAula.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.BEditarAula.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
+            this.BEditarAula.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
+            this.BEditarAula.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.BEditarAula.BorderRadius = 6;
+            this.BEditarAula.BorderSize = 0;
+            this.BEditarAula.FlatAppearance.BorderSize = 0;
+            this.BEditarAula.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BEditarAula.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BEditarAula.ForeColor = System.Drawing.Color.White;
+            this.BEditarAula.Image = global::ProyectoIntegradorTaller.Properties.Resources.edit;
+            this.BEditarAula.Location = new System.Drawing.Point(524, 306);
+            this.BEditarAula.Name = "BEditarAula";
+            this.BEditarAula.Size = new System.Drawing.Size(150, 40);
+            this.BEditarAula.TabIndex = 6;
+            this.BEditarAula.Text = "  Editar Aula";
+            this.BEditarAula.TextColor = System.Drawing.Color.White;
+            this.BEditarAula.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.BEditarAula.UseVisualStyleBackColor = false;
+            this.BEditarAula.Click += new System.EventHandler(this.BEditarAula_Click);
+            // 
+            // BVolver
+            // 
+            this.BVolver.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.BVolver.BackColor = System.Drawing.Color.LimeGreen;
+            this.BVolver.BackgroundColor = System.Drawing.Color.LimeGreen;
+            this.BVolver.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.BVolver.BorderRadius = 6;
+            this.BVolver.BorderSize = 0;
+            this.BVolver.FlatAppearance.BorderSize = 0;
+            this.BVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BVolver.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BVolver.ForeColor = System.Drawing.Color.White;
+            this.BVolver.Image = global::ProyectoIntegradorTaller.Properties.Resources.path30;
+            this.BVolver.Location = new System.Drawing.Point(12, 306);
+            this.BVolver.Name = "BVolver";
+            this.BVolver.Size = new System.Drawing.Size(100, 40);
+            this.BVolver.TabIndex = 50;
+            this.BVolver.Text = "  Volver";
+            this.BVolver.TextColor = System.Drawing.Color.White;
+            this.BVolver.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.BVolver.UseVisualStyleBackColor = false;
+            this.BVolver.Click += new System.EventHandler(this.BVolver_Click);
+            // 
+            // BCrearAula
+            // 
+            this.BCrearAula.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.BCrearAula.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
+            this.BCrearAula.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
+            this.BCrearAula.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.BCrearAula.BorderRadius = 6;
+            this.BCrearAula.BorderSize = 0;
+            this.BCrearAula.FlatAppearance.BorderSize = 0;
+            this.BCrearAula.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BCrearAula.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BCrearAula.ForeColor = System.Drawing.Color.White;
+            this.BCrearAula.Image = global::ProyectoIntegradorTaller.Properties.Resources.add1;
+            this.BCrearAula.Location = new System.Drawing.Point(524, 306);
+            this.BCrearAula.Name = "BCrearAula";
+            this.BCrearAula.Size = new System.Drawing.Size(150, 40);
+            this.BCrearAula.TabIndex = 5;
+            this.BCrearAula.Text = "  Crear Aula";
+            this.BCrearAula.TextColor = System.Drawing.Color.White;
+            this.BCrearAula.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.BCrearAula.UseVisualStyleBackColor = false;
+            this.BCrearAula.Click += new System.EventHandler(this.BCrearAula_Click);
             // 
             // CWifi
             // 
+            this.CWifi.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.CWifi.AutoSize = true;
             this.CWifi.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CWifi.Location = new System.Drawing.Point(391, 279);
@@ -97,6 +200,7 @@ namespace ProyectoIntegradorTaller.views.admin
             // 
             // CTelevisor
             // 
+            this.CTelevisor.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.CTelevisor.AutoSize = true;
             this.CTelevisor.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CTelevisor.Location = new System.Drawing.Point(391, 253);
@@ -109,10 +213,11 @@ namespace ProyectoIntegradorTaller.views.admin
             // TTipo
             // 
             this.TTipo.AllowDrop = true;
+            this.TTipo.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.TTipo.BackColor = System.Drawing.Color.WhiteSmoke;
             this.TTipo.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
             this.TTipo.BorderSize = 2;
-            this.TTipo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
+            this.TTipo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.TTipo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.TTipo.ForeColor = System.Drawing.Color.DimGray;
             this.TTipo.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
@@ -131,10 +236,11 @@ namespace ProyectoIntegradorTaller.views.admin
             // CBUbicacion
             // 
             this.CBUbicacion.AllowDrop = true;
+            this.CBUbicacion.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.CBUbicacion.BackColor = System.Drawing.Color.WhiteSmoke;
             this.CBUbicacion.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
             this.CBUbicacion.BorderSize = 2;
-            this.CBUbicacion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
+            this.CBUbicacion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CBUbicacion.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.CBUbicacion.ForeColor = System.Drawing.Color.DimGray;
             this.CBUbicacion.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
@@ -151,6 +257,7 @@ namespace ProyectoIntegradorTaller.views.admin
             // 
             // TCapacidad
             // 
+            this.TCapacidad.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.TCapacidad.BackColor = System.Drawing.SystemColors.Menu;
             this.TCapacidad.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
             this.TCapacidad.BorderFocusColor = System.Drawing.Color.HotPink;
@@ -174,6 +281,7 @@ namespace ProyectoIntegradorTaller.views.admin
             // 
             // TNombre
             // 
+            this.TNombre.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.TNombre.BackColor = System.Drawing.SystemColors.Menu;
             this.TNombre.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
             this.TNombre.BorderFocusColor = System.Drawing.Color.HotPink;
@@ -196,6 +304,7 @@ namespace ProyectoIntegradorTaller.views.admin
             // 
             // pictureBox2
             // 
+            this.pictureBox2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.pictureBox2.Image = global::ProyectoIntegradorTaller.Properties.Resources.Group;
             this.pictureBox2.Location = new System.Drawing.Point(457, 167);
             this.pictureBox2.Name = "pictureBox2";
@@ -206,6 +315,7 @@ namespace ProyectoIntegradorTaller.views.admin
             // 
             // pictureBox1
             // 
+            this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.pictureBox1.Image = global::ProyectoIntegradorTaller.Properties.Resources.Location;
             this.pictureBox1.Location = new System.Drawing.Point(457, 113);
             this.pictureBox1.Name = "pictureBox1";
@@ -216,6 +326,7 @@ namespace ProyectoIntegradorTaller.views.admin
             // 
             // CProyector
             // 
+            this.CProyector.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.CProyector.AutoSize = true;
             this.CProyector.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CProyector.Location = new System.Drawing.Point(248, 279);
@@ -227,6 +338,7 @@ namespace ProyectoIntegradorTaller.views.admin
             // 
             // CAireAcondicionado
             // 
+            this.CAireAcondicionado.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.CAireAcondicionado.AutoSize = true;
             this.CAireAcondicionado.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CAireAcondicionado.Location = new System.Drawing.Point(248, 253);
@@ -258,128 +370,6 @@ namespace ProyectoIntegradorTaller.views.admin
             this.label6.TabIndex = 16;
             this.label6.Text = "Capacidad";
             // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.BEditarAula);
-            this.panel2.Controls.Add(this.BCrearAula);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel2.Location = new System.Drawing.Point(503, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(183, 358);
-            this.panel2.TabIndex = 13;
-            // 
-            // BEditarAula
-            // 
-            this.BEditarAula.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
-            this.BEditarAula.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
-            this.BEditarAula.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.BEditarAula.BorderRadius = 6;
-            this.BEditarAula.BorderSize = 0;
-            this.BEditarAula.FlatAppearance.BorderSize = 0;
-            this.BEditarAula.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BEditarAula.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BEditarAula.ForeColor = System.Drawing.Color.White;
-            this.BEditarAula.Image = global::ProyectoIntegradorTaller.Properties.Resources.edit;
-            this.BEditarAula.Location = new System.Drawing.Point(21, 306);
-            this.BEditarAula.Name = "BEditarAula";
-            this.BEditarAula.Size = new System.Drawing.Size(150, 40);
-            this.BEditarAula.TabIndex = 6;
-            this.BEditarAula.Text = "  Editar Aula";
-            this.BEditarAula.TextColor = System.Drawing.Color.White;
-            this.BEditarAula.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.BEditarAula.UseVisualStyleBackColor = false;
-            this.BEditarAula.Click += new System.EventHandler(this.BEditarAula_Click);
-            // 
-            // BCrearAula
-            // 
-            this.BCrearAula.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
-            this.BCrearAula.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
-            this.BCrearAula.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.BCrearAula.BorderRadius = 6;
-            this.BCrearAula.BorderSize = 0;
-            this.BCrearAula.FlatAppearance.BorderSize = 0;
-            this.BCrearAula.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BCrearAula.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BCrearAula.ForeColor = System.Drawing.Color.White;
-            this.BCrearAula.Image = global::ProyectoIntegradorTaller.Properties.Resources.add1;
-            this.BCrearAula.Location = new System.Drawing.Point(21, 306);
-            this.BCrearAula.Name = "BCrearAula";
-            this.BCrearAula.Size = new System.Drawing.Size(150, 40);
-            this.BCrearAula.TabIndex = 5;
-            this.BCrearAula.Text = "  Crear Aula";
-            this.BCrearAula.TextColor = System.Drawing.Color.White;
-            this.BCrearAula.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.BCrearAula.UseVisualStyleBackColor = false;
-            this.BCrearAula.Click += new System.EventHandler(this.BCrearAula_Click);
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.cantPC);
-            this.panel1.Controls.Add(this.BVolver);
-            this.panel1.Controls.Add(this.label3);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(219, 358);
-            this.panel1.TabIndex = 12;
-            // 
-            // cantPC
-            // 
-            this.cantPC.BackColor = System.Drawing.SystemColors.Menu;
-            this.cantPC.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
-            this.cantPC.BorderFocusColor = System.Drawing.Color.HotPink;
-            this.cantPC.BorderRadius = 6;
-            this.cantPC.BorderSize = 2;
-            this.cantPC.Enabled = false;
-            this.cantPC.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cantPC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.cantPC.Location = new System.Drawing.Point(12, 216);
-            this.cantPC.Margin = new System.Windows.Forms.Padding(4);
-            this.cantPC.Multiline = false;
-            this.cantPC.Name = "cantPC";
-            this.cantPC.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.cantPC.PasswordChar = false;
-            this.cantPC.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.cantPC.PlaceholderText = "";
-            this.cantPC.Size = new System.Drawing.Size(91, 31);
-            this.cantPC.TabIndex = 30;
-            this.cantPC.Texts = "";
-            this.cantPC.UnderlinedStyle = true;
-            this.cantPC.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cantPC_KeyPress);
-            // 
-            // BVolver
-            // 
-            this.BVolver.BackColor = System.Drawing.Color.LimeGreen;
-            this.BVolver.BackgroundColor = System.Drawing.Color.LimeGreen;
-            this.BVolver.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.BVolver.BorderRadius = 6;
-            this.BVolver.BorderSize = 0;
-            this.BVolver.FlatAppearance.BorderSize = 0;
-            this.BVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BVolver.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BVolver.ForeColor = System.Drawing.Color.White;
-            this.BVolver.Image = global::ProyectoIntegradorTaller.Properties.Resources.path30;
-            this.BVolver.Location = new System.Drawing.Point(12, 306);
-            this.BVolver.Name = "BVolver";
-            this.BVolver.Size = new System.Drawing.Size(100, 40);
-            this.BVolver.TabIndex = 50;
-            this.BVolver.Text = "  Volver";
-            this.BVolver.TextColor = System.Drawing.Color.White;
-            this.BVolver.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.BVolver.UseVisualStyleBackColor = false;
-            this.BVolver.Click += new System.EventHandler(this.BVolver_Click);
-            // 
-            // label3
-            // 
-            this.label3.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
-            this.label3.Location = new System.Drawing.Point(12, 196);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(175, 16);
-            this.label3.TabIndex = 29;
-            this.label3.Text = "Cantidad Computadoras";
-            // 
             // label2
             // 
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.Top;
@@ -404,6 +394,7 @@ namespace ProyectoIntegradorTaller.views.admin
             // 
             // label1
             // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
             this.label1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -440,16 +431,10 @@ namespace ProyectoIntegradorTaller.views.admin
             this.panel7.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.panel2.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
-
-        private Panel panel1;
-        private Panel panel2;
    
     
         private Panel panel7;
@@ -471,8 +456,8 @@ namespace ProyectoIntegradorTaller.views.admin
         private CheckBox CWifi;
         private Label label1;
         private components.BotonPersonalisado BVolver;
-        private CustomControls.RJControls.RJTextBox cantPC;
-        private Label label3;
+        private CustomControls.RJControls.RJTextBox TBCantidadPcs;
+        private Label LPcs;
     }
 
     #region Windows Form Designer generated code

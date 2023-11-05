@@ -30,7 +30,7 @@ namespace ProyectoIntegradorTaller.views.admin
             TNombre.Texts = Name;
             tlugar= Lugar;
             TCapacidad.Texts = CapacidadMax.ToString();
-            cantPC.Texts = cantPCs.ToString();
+            TBCantidadPcs.Texts = cantPCs.ToString();
             tcantPCs = cantPCs;
    
             if (wifi == "SI")
@@ -51,13 +51,17 @@ namespace ProyectoIntegradorTaller.views.admin
             }
             BEditarAula.Visible = true;
             BCrearAula.Visible = false;
-           
+            TBCantidadPcs.Visible = false;
+            LPcs.Visible = false;
+
             TNombre.Enabled= false;// no se debe poder editar el nombre segun el profesor
             
         }
         public CrearAula()
         {
             InitializeComponent();
+            TBCantidadPcs.Visible = false;
+            LPcs.Visible = false;
             BEditarAula.Visible = false;
             BCrearAula.Visible = true;
             
@@ -80,7 +84,7 @@ namespace ProyectoIntegradorTaller.views.admin
 
         private void BCrearAula_Click(object sender, EventArgs e)
         {
-            if(string.IsNullOrEmpty(this.TNombre.Texts) || string.IsNullOrEmpty(CBUbicacion.Texts) || string.IsNullOrEmpty(TTipo.Texts) || string.IsNullOrEmpty(TCapacidad.Texts) || string.IsNullOrEmpty(cantPC.Texts))
+            if(string.IsNullOrEmpty(this.TNombre.Texts) || string.IsNullOrEmpty(CBUbicacion.Texts) || string.IsNullOrEmpty(TTipo.Texts) || string.IsNullOrEmpty(TCapacidad.Texts) || string.IsNullOrEmpty(TBCantidadPcs.Texts))
             {
                 MessageBox.Show("Existen campos incompletos", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
@@ -88,7 +92,7 @@ namespace ProyectoIntegradorTaller.views.admin
             {
                 if (LogicaClase.valNomAula(TNombre.Texts))
                 {
-                    LogicaClase.addClassroom(this.TTipo.Texts, this.CBUbicacion.Texts, this.TNombre.Texts,this.cantPC.Texts, this.TCapacidad.Texts, this.CAireAcondicionado.Checked, this.CWifi.Checked, this.CProyector.Checked, this.CTelevisor.Checked);
+                    LogicaClase.addClassroom(this.TTipo.Texts, this.CBUbicacion.Texts, this.TNombre.Texts,this.TBCantidadPcs.Texts, this.TCapacidad.Texts, this.CAireAcondicionado.Checked, this.CWifi.Checked, this.CProyector.Checked, this.CTelevisor.Checked);
                     this.TCapacidad.Texts = this.TNombre.Texts = " ";
                     MessageBox.Show("se inserto el aula correctamente!", "Insersion", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
@@ -147,7 +151,7 @@ namespace ProyectoIntegradorTaller.views.admin
                 TTipo.ValueMember = "id_sala";
                 TTipo.SelectedItem = db.tipoSala.FirstOrDefault(r=> r.tipo==ttipo);
           
-                cantPC.Texts = db.aula.FirstOrDefault(cant => cant.cantComputadoras == tcantPCs).cantComputadoras.ToString();
+                TBCantidadPcs.Texts = db.aula.FirstOrDefault(cant => cant.cantComputadoras == tcantPCs).cantComputadoras.ToString();
                
             }
             
@@ -155,14 +159,14 @@ namespace ProyectoIntegradorTaller.views.admin
 
         private void BEditarAula_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(this.TNombre.Texts) || string.IsNullOrEmpty(CBUbicacion.Texts) || string.IsNullOrEmpty(TTipo.Texts) || string.IsNullOrEmpty(TCapacidad.Texts) || string.IsNullOrEmpty(cantPC.Texts))
+            if (string.IsNullOrEmpty(this.TNombre.Texts) || string.IsNullOrEmpty(CBUbicacion.Texts) || string.IsNullOrEmpty(TTipo.Texts) || string.IsNullOrEmpty(TCapacidad.Texts) || string.IsNullOrEmpty(TBCantidadPcs.Texts))
             {
                 MessageBox.Show("Existen campos incompletos", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
         
-                    LogicaClase.updateClassroom(id_, this.TTipo.Texts, this.CBUbicacion.Texts, this.TNombre.Texts, this.TCapacidad.Texts,this.cantPC.Texts, this.CAireAcondicionado.Checked, this.CWifi.Checked, this.CProyector.Checked, this.CTelevisor.Checked);
+                    LogicaClase.updateClassroom(id_, this.TTipo.Texts, this.CBUbicacion.Texts, this.TNombre.Texts, this.TCapacidad.Texts,this.TBCantidadPcs.Texts, this.CAireAcondicionado.Checked, this.CWifi.Checked, this.CProyector.Checked, this.CTelevisor.Checked);
                     this.TCapacidad.Texts = this.TNombre.Texts = " ";
                     MessageBox.Show("se edito la clase correctamente correctamente!", "editar", MessageBoxButtons.OK, MessageBoxIcon.Information);
           
@@ -172,22 +176,20 @@ namespace ProyectoIntegradorTaller.views.admin
             admin.Show();
         }
 
-        private void panel7_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
+      
         private void TTipo_OnSelectedIndexChanged(object sender, EventArgs e)
         {
             
             if (TTipo.Texts == "laboratorio")
             {
-                cantPC.Enabled = true;
+                TBCantidadPcs.Visible = true;
+                LPcs.Visible = true;
             }
             else
             {
-                cantPC.Texts = 0.ToString();
-                cantPC.Enabled = false;
+                TBCantidadPcs.Texts = 0.ToString();
+                TBCantidadPcs.Visible = false;
+                LPcs.Visible = false;
             }
         }
 
