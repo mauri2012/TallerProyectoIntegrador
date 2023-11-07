@@ -194,11 +194,6 @@ namespace ProyectoIntegradorTaller.views.admin
             LogicaReserva.ImprimirComprobante(res.id_reserva);
         }
 
-        private void ReservarAula_Load(object sender, EventArgs e)
-        {
-            // TODO: esta línea de código carga datos en la tabla 'classroom_managerDataSet.materias' Puede moverla o quitarla según sea necesario.
-            this.materiasTableAdapter.Fill(this.classroom_managerDataSet.materias);
-
-        }
+        
     }
 }

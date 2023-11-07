@@ -293,6 +293,7 @@ namespace ProyectoIntegradorTaller.logica
                 Paragraph footer = new Paragraph("Gracias por su reserva. ¡Esperamos verlo pronto!");
                 footer.Alignment = Element.ALIGN_CENTER;
                 document.Add(footer);
+                MessageBox.Show("Se creo comprobante en la ruta "+ ruta );
             }
             catch (Exception ex)
             {
@@ -304,7 +305,7 @@ namespace ProyectoIntegradorTaller.logica
                 // Cerrar el documento
                 if (document.IsOpen())
                     document.Close();
-                MessageBox.Show("Se creo comprobante en documentos!");
+                
             }
 
         }

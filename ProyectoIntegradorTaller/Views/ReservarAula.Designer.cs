@@ -372,7 +372,7 @@ namespace ProyectoIntegradorTaller.views.admin
             this.Name = "ReservarAula";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ReservarAula";
-            this.Load += new System.EventHandler(this.ReservarAula_Load);
+            
             this.Controls.SetChildIndex(this.PBEsconder_, 0);
             this.Controls.SetChildIndex(this.PBMinimizar_, 0);
             this.Controls.SetChildIndex(this.PBMaximizar_, 0);
