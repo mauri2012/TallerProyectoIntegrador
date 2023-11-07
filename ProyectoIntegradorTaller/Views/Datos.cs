@@ -56,6 +56,7 @@ namespace ProyectoIntegradorTaller.views.admin
             {
                 this.Close();
                 LogIn log = new LogIn();
+                Session.SessionCacheData = null;
                 log.Show();
             }
         }

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace ProyectoIntegradorTaller.logica
@@ -25,14 +26,20 @@ namespace ProyectoIntegradorTaller.logica
                           select d;
 
                 if (lst.Count() > 0) {
-                    Console.WriteLine(lst.First());
                     var user = lst.FirstOrDefault();
 
-                    SessionCacheData = new SessionCache(user.correo,user.nombre, user.apellido,user.id_usuario, user.id_tipoUsuario);
-                    
-                    return true;
-                
-                }else { 
+                    if (user.desactivar=="NO") {
+                        SessionCacheData = new SessionCache(user.correo, user.nombre, user.apellido, user.id_usuario, user.id_tipoUsuario);
+
+                        return true;
+                    } else {
+
+                        MessageBox.Show("La cuenta no esta habilitada!");
+                        return false;
+                    }
+
+                }else {
+                    MessageBox.Show("Verifique que los datos ingresados sean correctos!");
                     return false; 
                 
                 }

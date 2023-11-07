@@ -140,7 +140,7 @@ namespace ProyectoIntegradorTaller.views.admin
             this.Periodo.BackColor = System.Drawing.Color.WhiteSmoke;
             this.Periodo.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
             this.Periodo.BorderSize = 2;
-            this.Periodo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
+            this.Periodo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.Periodo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.Periodo.ForeColor = System.Drawing.Color.DimGray;
             this.Periodo.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
@@ -182,7 +182,7 @@ namespace ProyectoIntegradorTaller.views.admin
             this.CBFiltro.BackColor = System.Drawing.Color.WhiteSmoke;
             this.CBFiltro.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
             this.CBFiltro.BorderSize = 2;
-            this.CBFiltro.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
+            this.CBFiltro.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CBFiltro.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.CBFiltro.ForeColor = System.Drawing.Color.DimGray;
             this.CBFiltro.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));

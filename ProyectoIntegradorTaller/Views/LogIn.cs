@@ -57,10 +57,7 @@ namespace ProyectoIntegradorTaller.views.admin
                 this.Hide();
 
             }
-            else
-            {
-                MessageBox.Show("Verifique que los datos ingresados sean correctos!");
-            }
+            
         }
         
 
