@@ -110,7 +110,7 @@
             this.BBuscar.TabIndex = 15;
             this.BBuscar.TextColor = System.Drawing.Color.White;
             this.BBuscar.UseVisualStyleBackColor = false;
-            this.BBuscar.Click += new System.EventHandler(this.BBuscar_Click);
+            
             // 
             // BCrearUsuario
             // 

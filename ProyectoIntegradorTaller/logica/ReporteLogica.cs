@@ -10,7 +10,7 @@ namespace ProyectoIntegradorTaller.logica
 {
     internal class ReporteLogica
     {
-        private static void agregarChart(Chart chart,IQueryable<HorarioList> query,int tipo)
+        private static void AgregarChart(Chart chart,IQueryable<HorarioList> query,int tipo)
         {
             chart.Series.Clear();
             
@@ -72,7 +72,7 @@ namespace ProyectoIntegradorTaller.logica
                 return db.Periodo.FirstOrDefault(p=> p.periodo_nombre==nombrePeriodo);
             }
         }
-        public static void diasListar(Chart chart,int id_aula,string periodo)
+        public static void ListarDias(Chart chart,int id_aula,string periodo)
         {
 
             using (classroom_managerEntities db = new classroom_managerEntities())
@@ -103,11 +103,11 @@ namespace ProyectoIntegradorTaller.logica
                                  campo = g.Key.dias.ToString(),
                                  aula = g.Key.nombre.ToString(),
                              };
-                agregarChart(chart,query,1);
+                AgregarChart(chart,query,1);
 
             }
         }
-        public static void profesorListar(Chart chart, int id_aula, string periodo)
+        public static void ListarProfesores(Chart chart, int id_aula, string periodo)
         {
             using (classroom_managerEntities db = new classroom_managerEntities())
             {
@@ -136,11 +136,11 @@ namespace ProyectoIntegradorTaller.logica
                                 aula = g.Key.nombre.ToString(),
                             };
 
-                agregarChart(chart, query, 2);
+                AgregarChart(chart, query, 2);
 
             }
         }
-        public static void materiasListar(Chart chart, int id_aula,string periodo)
+        public static void ListarMaterias(Chart chart, int id_aula,string periodo)
         {
 
             using (classroom_managerEntities db = new classroom_managerEntities())
@@ -170,11 +170,11 @@ namespace ProyectoIntegradorTaller.logica
                                 aula = g.Key.nombre.ToString(),
                             };
            
-                agregarChart(chart, query,2);
+                AgregarChart(chart, query,2);
 
             }
         }
-        public static void horasListar(Chart chart, int id_aula, string periodo)
+        public static void ListarHoras(Chart chart, int id_aula, string periodo)
         {
             using (classroom_managerEntities db = new classroom_managerEntities())
             {
@@ -203,7 +203,7 @@ namespace ProyectoIntegradorTaller.logica
                                    aula = g.Key.nombre.ToString(),
                                };
 
-                agregarChart(chart, query, 1 );
+                AgregarChart(chart, query, 1 );
 
             }
         }

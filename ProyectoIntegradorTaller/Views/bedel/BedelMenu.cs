@@ -45,7 +45,7 @@ namespace ProyectoIntegradorTaller.views.admin
 
         private void BedelMenu_Load(object sender, EventArgs e)
         {
-           dataGridView1.DataSource = LogicaClase.listarAula();
+           dataGridView1.DataSource = LogicaClase.ListarAula();
             dataGridView1.Columns[0].Visible= false;
             DataGridViewButtonColumn buttonColumn2 = new DataGridViewButtonColumn();
             buttonColumn2.Name = "Reserva"; // Name the column
@@ -92,7 +92,7 @@ namespace ProyectoIntegradorTaller.views.admin
         {
             if (string.IsNullOrEmpty(this.TBBusqueda.Texts))
             {
-                dataGridView1.DataSource = LogicaClase.listarAula();
+                dataGridView1.DataSource = LogicaClase.ListarAula();
             }
             else
             {

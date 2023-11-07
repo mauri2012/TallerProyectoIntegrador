@@ -205,8 +205,8 @@ namespace ProyectoIntegradorTaller.logica
         public static void ImprimirComprobante(int id)
         {
             reserva reserva1 = LogicaReserva.BuscarReservaPorId(id);
-            usuario usuario1 = LogicaUsuarios.getUsuario(reserva1.id_usuario);
-            string materia = LogicaMaterias.getMateria(reserva1.id_materia).materia;
+            usuario usuario1 = LogicaUsuarios.ObtenerUsuarioPorID(reserva1.id_usuario);
+            string materia = LogicaMaterias.ObtenerMateriaPorID(reserva1.id_materia).materia;
             Document document = new Document();
 
             try

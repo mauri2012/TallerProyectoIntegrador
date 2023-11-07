@@ -49,7 +49,7 @@ namespace ProyectoIntegradorTaller.views.admin
 
             try
             {
-                dataGridView1.DataSource=LogicaUsuarios.listarUsuarios(RBActivo.Checked);
+                dataGridView1.DataSource=LogicaUsuarios.ListarUsuarios(RBActivo.Checked);
             }
             catch (DataException ex)
             {
@@ -94,8 +94,8 @@ namespace ProyectoIntegradorTaller.views.admin
 
                     dataGridView1.Rows[e.RowIndex].Cells["Desactivar"].Value = valorCelda;
 
-                    LogicaUsuarios.UsuarioActivo(valorCelda,idUsuario);
-                    dataGridView1.DataSource=LogicaUsuarios.listarUsuarios(RBActivo.Checked);
+                    LogicaUsuarios.UsuarioCambiarEstado(valorCelda,idUsuario);
+                    dataGridView1.DataSource=LogicaUsuarios.ListarUsuarios(RBActivo.Checked);
                 }
                 if (dataGridView1.Columns[e.ColumnIndex].Name == "blanquear")
                 {
@@ -111,25 +111,20 @@ namespace ProyectoIntegradorTaller.views.admin
 
         private void RBDesactivados_CheckedChanged(object sender, EventArgs e)
         {
-            dataGridView1.DataSource = LogicaUsuarios.listarUsuarios(RBActivo.Checked);
+            dataGridView1.DataSource = LogicaUsuarios.ListarUsuarios(RBActivo.Checked);
         }
 
         private void rjTextBox1__TextChanged(object sender, EventArgs e)
         {
             if (!string.IsNullOrEmpty(rjTextBox1.Texts))
             {
-                dataGridView1.DataSource = LogicaUsuarios.busqueda(this.rjTextBox1.Texts);
+                dataGridView1.DataSource = LogicaUsuarios.BuscarUsuario(this.rjTextBox1.Texts);
             }
             else
             {
-                dataGridView1.DataSource = LogicaUsuarios.listarUsuarios(RBActivo.Checked);
+                dataGridView1.DataSource = LogicaUsuarios.ListarUsuarios(RBActivo.Checked);
             }
             
-        }
-
-        private void BBuscar_Click(object sender, EventArgs e)
-        {
-
         }
 
 

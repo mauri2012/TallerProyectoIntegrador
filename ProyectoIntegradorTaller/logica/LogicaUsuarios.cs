@@ -15,7 +15,7 @@ namespace ProyectoIntegradorTaller.logica
     internal class LogicaUsuarios
     {
 
-        public static usuario getUsuario(int id_usuario)
+        public static usuario ObtenerUsuarioPorID(int id_usuario)
         {
             using (classroom_managerEntities db = new classroom_managerEntities())
             {
@@ -34,7 +34,7 @@ namespace ProyectoIntegradorTaller.logica
             }
         }
     
-        public static IList listarUsuarios(bool RBActivo)
+        public static IList ListarUsuarios(bool RBActivo)
         {
             using (classroom_managerEntities db = new classroom_managerEntities())
             {
@@ -58,7 +58,7 @@ namespace ProyectoIntegradorTaller.logica
 
             }
         }
-        public static IList busqueda(string valor)
+        public static IList BuscarUsuario(string valor)
         {
             using (classroom_managerEntities dbContext = new classroom_managerEntities())
             {
@@ -81,30 +81,31 @@ namespace ProyectoIntegradorTaller.logica
                 return query.ToList();
             }
         }
-        public static void update(int id,int dni_, string apellido_, string emial, string nombre, int tipoU)
+
+        public static void ActualisarUsuario(int id,int dni_, string apellido_, string emial, string nombre, int tipoU)
         {
             using (classroom_managerEntities dbContext = new classroom_managerEntities())
             {
               
-                var entityToUpdate = dbContext.usuario.Find(id); // Replace YourEntities with your actual DbSet and id with the primary key value.
+                var entityToUpdate = dbContext.usuario.Find(id); 
 
                 if (entityToUpdate != null)
                 {
-                    // Step 3: Modify the properties of the entity
+                   
                     entityToUpdate.nombre = nombre;
                     entityToUpdate.apellido = apellido_;
                     entityToUpdate.correo = emial;
                     entityToUpdate.id_tipoUsuario = tipoU;
                     entityToUpdate.dni = dni_;
 
-                    // Step 4: Save changes to the database
+                   
                     dbContext.SaveChanges();
 
                 }
             }
 
         }
-        public static void agregar(int dni_, string apellido_ , string emial, string nombre,int tipoU)
+        public static void AgregarUsuario(int dni_, string apellido_ , string emial, string nombre,int tipoU)
         {
             usuario user = new usuario
             {
@@ -125,7 +126,8 @@ namespace ProyectoIntegradorTaller.logica
 
             }
         }
-        public static void UsuarioActivo(string estado,int idUsuario)
+
+        public static void UsuarioCambiarEstado(string estado,int idUsuario)
         {
           
 
@@ -160,7 +162,7 @@ namespace ProyectoIntegradorTaller.logica
                 }
             }
         }
-        public static IList busquedaProfesor(string valor)
+        public static IList BuscarUsuarioProfesor(string valor)
         {
             using (classroom_managerEntities dbContext = new classroom_managerEntities())
             {

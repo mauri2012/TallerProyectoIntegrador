@@ -77,25 +77,9 @@ namespace ProyectoIntegradorTaller.views.admin
             unReporte.Show();
         
         }
-      //  private void PrintDocument1_PrintPage(System.Object sender,
-     // System.Drawing.Printing.PrintPageEventArgs e) =>
-       //   e.Graphics.DrawImage(memoryImage, 0, 0);
+      
 
-
-        private void chart3_Click(object sender, EventArgs e)
-        {
-          
-        }
-
-        private void printDocument1_PrintPage_1(object sender, PrintPageEventArgs e)
-        {
-         //   e.Graphics.DrawImage(memoryImage, 0, 0);
-        }
-
-        private void chart2_Click(object sender, EventArgs e)
-        {
-
-        }
+       
 
         private void comboBoxPersonalisado1_OnSelectedIndexChanged(object sender, EventArgs e)
         {
@@ -104,22 +88,22 @@ namespace ProyectoIntegradorTaller.views.admin
 
                 case "Dias de mayor uso":
                     label2.Text = "Dias de mayor uso";
-                    ReporteLogica.diasListar(chart2, id_aula,this.Periodo.Texts);
+                    ReporteLogica.ListarDias(chart2, id_aula,this.Periodo.Texts);
 
                     break;
                 case "Uso por materia":
                     label2.Text = "Uso por materia";
-                    ReporteLogica.materiasListar(chart2, id_aula,this.Periodo.Texts);
+                    ReporteLogica.ListarMaterias(chart2, id_aula,this.Periodo.Texts);
 
                     break;
                 case "Horario de mayor uso":
                     label2.Text = "Horario de mayor uso";
-                    ReporteLogica.horasListar(chart2, id_aula,this.Periodo.Texts);
+                    ReporteLogica.ListarHoras(chart2, id_aula,this.Periodo.Texts);
   
                     break;
                 default:
                     label2.Text = "Frecuencia por profesor";
-                    ReporteLogica.profesorListar(chart2, id_aula,this.Periodo.Texts);
+                    ReporteLogica.ListarProfesores(chart2, id_aula,this.Periodo.Texts);
                     break;
             }
 
@@ -133,22 +117,22 @@ namespace ProyectoIntegradorTaller.views.admin
 
                 case "Dias de mayor uso":
                     label2.Text = "Dias de mayor uso";
-                    ReporteLogica.diasListar(chart2, id_aula, this.Periodo.Texts);
+                    ReporteLogica.ListarDias(chart2, id_aula, this.Periodo.Texts);
 
                     break;
                 case "Uso por materia":
                     label2.Text = "Uso por materia";
-                    ReporteLogica.materiasListar(chart2, id_aula, this.Periodo.Texts);
+                    ReporteLogica.ListarMaterias(chart2, id_aula, this.Periodo.Texts);
 
                     break;
                 case "Horario de mayor uso":
                     label2.Text = "Horario de mayor uso";
-                    ReporteLogica.horasListar(chart2, id_aula,this.Periodo.Texts);
+                    ReporteLogica.ListarHoras(chart2, id_aula,this.Periodo.Texts);
 
                     break;
                 default:
                     label2.Text = "Frecuencia por profesor";
-                    ReporteLogica.profesorListar(chart2, id_aula, this.Periodo.Texts);
+                    ReporteLogica.ListarProfesores(chart2, id_aula, this.Periodo.Texts);
                     break;
             }
         }

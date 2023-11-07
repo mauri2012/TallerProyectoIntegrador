@@ -33,10 +33,7 @@ namespace ProyectoIntegradorTaller.views.profesor
             homeProfesor.Show();
         }
 
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
+       
 
         private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {

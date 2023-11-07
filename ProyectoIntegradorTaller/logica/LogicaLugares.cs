@@ -11,8 +11,7 @@ namespace ProyectoIntegradorTaller.logica
     internal class LogicaLugares
     {
 
-        public static void listarLugares(DataGridView datagrid
-            )
+        public static void ListarLugaresAcivos(DataGridView datagrid)
         {
             using (classroom_managerEntities db = new classroom_managerEntities())
             {
@@ -29,13 +28,13 @@ namespace ProyectoIntegradorTaller.logica
             }
         }
 
-        public static void agregarLugar(string tlugar)
+        public static void AgregarLugar(string tlugar)
         {
             ubicacion sub = new ubicacion
             {
                 lugar = tlugar,
                 activo = "SI"
-               
+
             };
             using (classroom_managerEntities db = new classroom_managerEntities())
             {
@@ -45,9 +44,9 @@ namespace ProyectoIntegradorTaller.logica
             }
         }
 
-        public static void busquedaLugares(string valor, DataGridView dataGrid)
+        public static void BuscarLugaresActivos(string valor, DataGridView dataGrid)
         {
-           
+
             using (classroom_managerEntities dbContext = new classroom_managerEntities())
             {
                 var query = dbContext.ubicacion
@@ -63,12 +62,12 @@ namespace ProyectoIntegradorTaller.logica
             }
         }
 
-        public static void desactivarLugar(string estado, DataGridView dataGrid, DataGridViewCellEventArgs e)
+        public static void DesactivarLugares(string estado, DataGridView dataGrid, DataGridViewCellEventArgs e)
         {
-            
+
             using (classroom_managerEntities db = new classroom_managerEntities())
             {
-                int idLugar = Convert.ToInt32(dataGrid.Rows[e.RowIndex].Cells["Id"].Value); // 
+                int idLugar = Convert.ToInt32(dataGrid.Rows[e.RowIndex].Cells["Id"].Value); 
 
                 ubicacion aulaDesactivar = db.ubicacion.FirstOrDefault(u => u.id_ubicacion == idLugar);
                 if (aulaDesactivar != null)

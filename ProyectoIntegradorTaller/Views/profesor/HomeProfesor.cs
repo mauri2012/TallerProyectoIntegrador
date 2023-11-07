@@ -19,7 +19,7 @@ namespace ProyectoIntegradorTaller.views.profesor
         public HomeProfesor()
         {
             InitializeComponent();
-            dataGridView1.DataSource = LogicaClase.listarAula();
+            dataGridView1.DataSource = LogicaClase.ListarAula();
             dataGridView1.Columns["Id"].Visible=false;
         }
 
@@ -59,7 +59,7 @@ namespace ProyectoIntegradorTaller.views.profesor
         {
             if (string.IsNullOrEmpty(this.TBBusqueda.Texts))
             {
-                dataGridView1.DataSource = LogicaClase.listarAula();
+                dataGridView1.DataSource = LogicaClase.ListarAula();
             }
             else
             {

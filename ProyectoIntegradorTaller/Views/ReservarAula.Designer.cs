@@ -154,7 +154,7 @@ namespace ProyectoIntegradorTaller.views.admin
             this.Periodo.Size = new System.Drawing.Size(244, 30);
             this.Periodo.TabIndex = 53;
             this.Periodo.Texts = "";
-            this.Periodo.OnSelectedIndexChanged += new System.EventHandler(this.Periodo_OnSelectedIndexChanged);
+            
             // 
             // BVolver
             // 
@@ -342,7 +342,7 @@ namespace ProyectoIntegradorTaller.views.admin
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(686, 358);
             this.panel2.TabIndex = 6;
-            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
+      
             // 
             // label8
             // 

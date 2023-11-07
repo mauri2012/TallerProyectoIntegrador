@@ -29,7 +29,7 @@ namespace ProyectoIntegradorTaller.views.admin
             fecha_desde.Value = desde;
             fecha_hasta.Value = hasta;
             
-            CBPeriodo.Texts =LogicaPeriodo.getPeriodo(idPeriodo);
+            CBPeriodo.Texts =LogicaPeriodo.ObtenerPeriodoPorID(idPeriodo);
         }
 
         private void BVolver_Click_1(object sender, EventArgs e)
@@ -54,53 +54,7 @@ namespace ProyectoIntegradorTaller.views.admin
 
         }
 
-        private void panel2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void Periodo_OnSelectedIndexChanged(object sender, EventArgs e)
-        {
-    
-        }
-
         
-        // Editar Aula
-        private void editar_Click(object sender, EventArgs e)
-        {
-          
-
-        }
-
-        private void BEliminar_Click(object sender, EventArgs e)
-        {
-    
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void fecha_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void fecha_desde_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void fecha_hasta_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void BImprimir_Click(object sender, EventArgs e)
-        {
-    //        LogicaReserva.ImprimirComprobante(res.id_reserva);
-        }
     }
 
 

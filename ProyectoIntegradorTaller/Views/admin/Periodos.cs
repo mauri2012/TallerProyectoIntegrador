@@ -53,7 +53,7 @@ namespace ProyectoIntegradorTaller.views.admin
             dataGridView1.Columns.Add(buttonColumn4);
             try
             {
-                dataGridView1.DataSource= LogicaPeriodo.listarPeriodos();
+                dataGridView1.DataSource= LogicaPeriodo.ListarPeriodos();
                 dataGridView1.Columns[0].Visible = false;
             }
             catch (DataException ex)
@@ -100,15 +100,11 @@ namespace ProyectoIntegradorTaller.views.admin
 
        
 
-        private void BAgregarMateria_Click(object sender, EventArgs e)
-        {
         
-
-        }
 
         private void BBuscar_Click(object sender, EventArgs e)
         {
-            dataGridView1.DataSource = LogicaMaterias.busqueda(TBBusqueda.Texts);
+            dataGridView1.DataSource = LogicaMaterias.BuscarMateria(TBBusqueda.Texts);
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -128,13 +124,13 @@ namespace ProyectoIntegradorTaller.views.admin
         {
             if (string.IsNullOrEmpty(this.TBBusqueda.Texts))
             {
-                dataGridView1.DataSource = LogicaPeriodo.listarPeriodos();
+                dataGridView1.DataSource = LogicaPeriodo.ListarPeriodos();
                 dataGridView1.Columns[0].Visible = false;
             }
             else
             {
                 //hacer el busqueda
-                dataGridView1.DataSource = LogicaPeriodo.busquedaPeriodo(this.TBBusqueda.Texts);
+                dataGridView1.DataSource = LogicaPeriodo.BuscarPeriodo(this.TBBusqueda.Texts);
             }
         }
     }

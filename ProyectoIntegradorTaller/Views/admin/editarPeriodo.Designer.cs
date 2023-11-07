@@ -137,7 +137,7 @@ namespace ProyectoIntegradorTaller.views.admin
             this.fecha_desde.SkinColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
             this.fecha_desde.TabIndex = 34;
             this.fecha_desde.TextColor = System.Drawing.Color.White;
-            this.fecha_desde.ValueChanged += new System.EventHandler(this.fecha_desde_ValueChanged);
+            
             // 
             // BReservarAula
             // 
@@ -171,7 +171,7 @@ namespace ProyectoIntegradorTaller.views.admin
             this.fecha_hasta.SkinColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
             this.fecha_hasta.TabIndex = 9;
             this.fecha_hasta.TextColor = System.Drawing.Color.White;
-            this.fecha_hasta.ValueChanged += new System.EventHandler(this.fecha_hasta_ValueChanged);
+            
             // 
             // fecha
             // 
@@ -182,7 +182,7 @@ namespace ProyectoIntegradorTaller.views.admin
             this.fecha.Size = new System.Drawing.Size(101, 18);
             this.fecha.TabIndex = 8;
             this.fecha.Text = "Fecha Desde";
-            this.fecha.Click += new System.EventHandler(this.fecha_Click);
+            
             // 
             // panel2
             // 
@@ -192,7 +192,7 @@ namespace ProyectoIntegradorTaller.views.admin
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(686, 358);
             this.panel2.TabIndex = 6;
-            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
+            
             // 
             // label8
             // 

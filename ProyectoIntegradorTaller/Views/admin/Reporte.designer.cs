@@ -120,7 +120,7 @@ namespace ProyectoIntegradorTaller.views.admin
             this.chart2.Size = new System.Drawing.Size(800, 299);
             this.chart2.TabIndex = 46;
             this.chart2.Text = "chart2";
-            this.chart2.Click += new System.EventHandler(this.chart2_Click);
+            
             // 
             // panel3
             // 

@@ -82,7 +82,7 @@ namespace ProyectoIntegradorTaller.views.admin
                 }
 
             }
-            LogicaMaterias.listarMateriasCB(CBMateria,res);
+            LogicaMaterias.ListarMateriasCB(CBMateria,res);
 
        
             BReservarAula.Text = "Editar Aula";
@@ -146,19 +146,7 @@ namespace ProyectoIntegradorTaller.views.admin
             
         }
 
-        private void panel2_Paint(object sender, PaintEventArgs e)
-        {
-
-            
- 
-        }
-
-        private void Periodo_OnSelectedIndexChanged(object sender, EventArgs e)
-        {
-          
-            
-
-        }
+       
 
         
         // Editar Aula

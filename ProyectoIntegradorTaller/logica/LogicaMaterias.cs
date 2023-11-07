@@ -13,7 +13,7 @@ namespace ProyectoIntegradorTaller.logica
 {
     internal class LogicaMaterias
     {
-        public static materias getMateria(int id_materia)
+        public static materias ObtenerMateriaPorID(int id_materia)
         {
             using (classroom_managerEntities db = new classroom_managerEntities())
             {
@@ -21,24 +21,9 @@ namespace ProyectoIntegradorTaller.logica
                 return materiaElejida;
             }
         }
-        public static void listarMaterias(DataGridView a)
-        {
-            using (classroom_managerEntities db = new classroom_managerEntities())
-            {
-                var query = from materias in db.materias
-                            where materias.activo == "SI"
-                            select new
-                            {
-                                Id = materias.id_materia,
-                                Materia = materias.materia,
-                                Activo = materias.activo
-
-                            };
-                a.DataSource= query.ToList();
-
-            }
-        }
-        public static IList listarMaterias()
+       
+       
+        public static IList ListarMateriasActivas()
         {
             using (classroom_managerEntities db = new classroom_managerEntities())
             {
@@ -55,7 +40,8 @@ namespace ProyectoIntegradorTaller.logica
 
             }
         }
-        public static void agregarMateria(string tmateria)
+
+        public static void AgregarMateria(string tmateria)
         {
             materias sub = new materias
             {
@@ -69,16 +55,18 @@ namespace ProyectoIntegradorTaller.logica
 
             }
         }
-        public static void materiaActiva(string estado, DataGridView dataGrid, DataGridViewCellEventArgs e)
+
+        public static void MateriasCambiarEstado(string estado, DataGridView dataGrid, DataGridViewCellEventArgs e)
         {
-            // dataGrid.Rows[e.RowIndex].Cells["Desactivar"].Value = estado;
+            
             using (classroom_managerEntities db = new classroom_managerEntities())
             {
 
 
-                int idUsuario = Convert.ToInt32(dataGrid.Rows[e.RowIndex].Cells["Id"].Value); // 
+                int idMateria = Convert.ToInt32(dataGrid.Rows[e.RowIndex].Cells["Id"].Value);  
 
-                materias aulaDesactivar = db.materias.FirstOrDefault(u => u.id_materia == idUsuario);
+                materias aulaDesactivar = db.materias.FirstOrDefault(u => u.id_materia == idMateria);
+
                 if (aulaDesactivar != null)
                 {
                     aulaDesactivar.activo = estado;
@@ -87,7 +75,7 @@ namespace ProyectoIntegradorTaller.logica
                 }
             }
         }
-        public static IList busqueda(string valor)
+        public static IList BuscarMateria(string valor)
         {
             using (classroom_managerEntities dbContext = new classroom_managerEntities())
             {
@@ -104,7 +92,8 @@ namespace ProyectoIntegradorTaller.logica
                 return query;
             }
         }
-        public static void listarMateriasCB(ComboBoxPersonalisado cb,reserva res)
+
+        public static void ListarMateriasCB(ComboBoxPersonalisado cb,reserva res)
         {
             using (classroom_managerEntities db = new classroom_managerEntities())
             {

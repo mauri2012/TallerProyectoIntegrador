@@ -9,7 +9,7 @@ namespace ProyectoIntegradorTaller.logica
 {
     internal class LogicaClase
     {
-        public static void aulaActiva(string estado, int idUsuario)
+        public static void AulaActiva(string estado, int idUsuario)
         {
 
             using (classroom_managerEntities db = new classroom_managerEntities())
@@ -26,7 +26,7 @@ namespace ProyectoIntegradorTaller.logica
         }
 
 
-        public static string nombreAula(int id_aula)
+        public static string NombreAula(int id_aula)
         {
             using (classroom_managerEntities db = new classroom_managerEntities())
             {
@@ -36,7 +36,7 @@ namespace ProyectoIntegradorTaller.logica
         }
 
 
-        public static IList listarAula()
+        public static IList ListarAula()
         {
             using (classroom_managerEntities db = new classroom_managerEntities())
             {
@@ -67,39 +67,7 @@ namespace ProyectoIntegradorTaller.logica
         }
        
 
-        public static IList busquedaAula(string valor)
-        {
-            int valorInt = 0;
-
-
-            using (classroom_managerEntities db = new classroom_managerEntities())
-            {
-                int.TryParse(valor, out valorInt);
-
-
-                var query = from aula in db.aula
-                            join ubicacion in db.ubicacion on aula.id_ubicacion equals ubicacion.id_ubicacion
-                            join tipoSala in db.tipoSala on aula.id_tipo equals tipoSala.id_sala
-                            where aula.activa == "SI" && ( aula.capacidad >= valorInt || aula.nombre.Contains(valor))
-                                select new
-                                {
-                                    Id = aula.id_aula,
-                                    Name = aula.nombre,
-                                    CapacidadMax = aula.capacidad,
-                                    Lugar = ubicacion.lugar, 
-                                    Tipo = tipoSala.tipo,
-                                    Cantidad_PCs = aula.cantComputadoras,
-                                    Wifi = db.aula_equipamiento.FirstOrDefault(r => r.id_equipamiento == 4 && r.id_aula == aula.id_aula).disponible,
-                                    Proyector = db.aula_equipamiento.FirstOrDefault(r => r.id_equipamiento == 3 && r.id_aula == aula.id_aula).disponible,
-                                    AC = db.aula_equipamiento.FirstOrDefault(r => r.id_equipamiento == 2 && r.id_aula == aula.id_aula).disponible,
-                                    Televisor = db.aula_equipamiento.FirstOrDefault(r => r.id_equipamiento == 1 && r.id_aula == aula.id_aula).disponible,
-                                };
-
-                    return query.ToList();
-            
-                
-            }
-        }
+       
 
         public static IList BusquedaAulaPorNombre(string valor)
         {
@@ -195,7 +163,7 @@ namespace ProyectoIntegradorTaller.logica
             }
         }
 
-        public static void updateClassroom(int id, string ttipo,string CBubicacion, string tnombre, string tcapacidad,string tcantPCs, bool CBAire, bool CBWIFI, bool CBProyector, bool CBTelevisor)
+        public static void ActualisarAula(int id, string ttipo,string CBubicacion, string tnombre, string tcapacidad,string tcantPCs, bool CBAire, bool CBWIFI, bool CBProyector, bool CBTelevisor)
         {
             List<aula_equipamiento> aula_equi = new List<aula_equipamiento>();
             List<string> equipamiento = new List<string>();
@@ -248,7 +216,7 @@ namespace ProyectoIntegradorTaller.logica
                 }
             }
         }
-        public static bool valNomAula(string tnombre)
+        public static bool ValidarNombreAula(string tnombre)
         {
             using (classroom_managerEntities db = new classroom_managerEntities())
             {
@@ -263,7 +231,7 @@ namespace ProyectoIntegradorTaller.logica
                 }
             }
         }
-        public static void addClassroom(string ttipo,string CBubicacion,string tnombre,string tcantPCs,string tcapacidad,bool CBAire,bool CBWIFI,bool CBProyector,bool CBTelevisor)
+        public static void AgregarAula(string ttipo,string CBubicacion,string tnombre,string tcantPCs,string tcapacidad,bool CBAire,bool CBWIFI,bool CBProyector,bool CBTelevisor)
         {
             using (classroom_managerEntities db = new classroom_managerEntities())
             {

@@ -28,7 +28,7 @@ namespace ProyectoIntegradorTaller.views.admin
             try
             {
 
-                dataGridView1.DataSource= LogicaClase.listarAula();
+                dataGridView1.DataSource= LogicaClase.ListarAula();
                 DataGridViewColumn data = new DataGridViewTextBoxColumn();
     
             }
@@ -122,8 +122,8 @@ namespace ProyectoIntegradorTaller.views.admin
                     {
                         int idUsuario = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells["Id"].Value);
 
-                        LogicaClase.aulaActiva("NO",idUsuario);
-                        dataGridView1.DataSource=LogicaClase.listarAula();
+                        LogicaClase.AulaActiva("NO",idUsuario);
+                        dataGridView1.DataSource=LogicaClase.ListarAula();
                     }
 
                 }
@@ -175,7 +175,7 @@ namespace ProyectoIntegradorTaller.views.admin
         {
             if (string.IsNullOrEmpty(this.TBBusqueda.Texts))
             {
-                dataGridView1.DataSource=LogicaClase.listarAula();
+                dataGridView1.DataSource=LogicaClase.ListarAula();
             }
             else
             {

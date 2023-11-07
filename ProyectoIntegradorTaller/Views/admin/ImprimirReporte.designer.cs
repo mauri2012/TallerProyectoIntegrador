@@ -220,7 +220,7 @@ namespace ProyectoIntegradorTaller.views.admin
             this.chart2.Size = new System.Drawing.Size(394, 188);
             this.chart2.TabIndex = 46;
             this.chart2.Text = "chart2";
-            this.chart2.Click += new System.EventHandler(this.chart2_Click);
+           
             // 
             // label1
             // 
@@ -243,7 +243,7 @@ namespace ProyectoIntegradorTaller.views.admin
             this.label2.Size = new System.Drawing.Size(97, 19);
             this.label2.TabIndex = 69;
             this.label2.Text = "Uso por dia";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
+            
             // 
             // chart4
             // 

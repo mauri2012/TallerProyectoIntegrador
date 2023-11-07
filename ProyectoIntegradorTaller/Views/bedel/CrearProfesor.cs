@@ -39,7 +39,7 @@ namespace ProyectoIntegradorTaller.views.admin
             else {
                 if (IsValidEmail(TBCorreo.Texts))
                 {
-                    LogicaUsuarios.agregar(int.Parse(TBDNI.Texts), TBApellido.Texts, TBCorreo.Texts, TBNombre.Texts, 4);
+                    LogicaUsuarios.AgregarUsuario(int.Parse(TBDNI.Texts), TBApellido.Texts, TBCorreo.Texts, TBNombre.Texts, 4);
                     MessageBox.Show("Se agrego un profesor con exito!", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
@@ -77,15 +77,7 @@ namespace ProyectoIntegradorTaller.views.admin
             return Regex.IsMatch(email, pattern);
         }
 
-        private void TBDNI__TextChanged(object sender, EventArgs e)
-        {
-           
-        }
-
-        private void TBDNI_KeyDown(object sender, KeyEventArgs e)
-        {
-
-        }
+       
 
         private void TBDNI_KeyPress(object sender, KeyPressEventArgs e)
         {

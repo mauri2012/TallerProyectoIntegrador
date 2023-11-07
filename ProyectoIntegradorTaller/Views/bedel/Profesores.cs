@@ -44,7 +44,7 @@ namespace ProyectoIntegradorTaller.views.admin
 
         private void rjTextBox1__TextChanged(object sender, EventArgs e)
         {
-            dataGridView1.DataSource=LogicaUsuarios.busquedaProfesor(rjTextBox1.Texts);
+            dataGridView1.DataSource=LogicaUsuarios.BuscarUsuarioProfesor(rjTextBox1.Texts);
         }
     }
 }

@@ -27,7 +27,7 @@ namespace ProyectoIntegradorTaller.views.admin
 
             try
             {
-                LogicaLugares.listarLugares(dataGridView1);
+                LogicaLugares.ListarLugaresAcivos(dataGridView1);
                 dataGridView1.Columns[0].Visible = false;
             }
             catch (DataException ex)
@@ -58,9 +58,9 @@ namespace ProyectoIntegradorTaller.views.admin
         {
             if (!string.IsNullOrEmpty(TLugar.Texts))
             {
-                LogicaLugares.agregarLugar(TLugar.Texts);
+                LogicaLugares.AgregarLugar(TLugar.Texts);
                 MessageBox.Show("Se agrego con exito una nueva ubicacion!", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                LogicaLugares.listarLugares(dataGridView1);
+                LogicaLugares.ListarLugaresAcivos(dataGridView1);
             }
             else {
                 MessageBox.Show("El campo esta vacio!", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -74,10 +74,10 @@ namespace ProyectoIntegradorTaller.views.admin
                 MsgBoxResult ask = (MsgBoxResult)MessageBox.Show("Seguro que quiere eliminar la ubicaion " + (string)dataGridView1.Rows[e.RowIndex].Cells[1].Value + "  ?", "Eliminar", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                 if (ask == MsgBoxResult.Yes)
                 {
-                    LogicaLugares.desactivarLugar("NO", dataGridView1, e);
+                    LogicaLugares.DesactivarLugares("NO", dataGridView1, e);
                    
                 }
-                LogicaLugares.listarLugares(dataGridView1);
+                LogicaLugares.ListarLugaresAcivos(dataGridView1);
                 
             }
         }
@@ -85,12 +85,12 @@ namespace ProyectoIntegradorTaller.views.admin
 
         private void BBuscar_Click(object sender, EventArgs e)
         {
-            LogicaLugares.busquedaLugares(TBBusqueda.Texts, dataGridView1);
+            LogicaLugares.BuscarLugaresActivos(TBBusqueda.Texts, dataGridView1);
         }
 
         private void TBBusqueda__TextChanged(object sender, EventArgs e)
         {
-            LogicaLugares.busquedaLugares(TBBusqueda.Texts, dataGridView1);
+            LogicaLugares.BuscarLugaresActivos(TBBusqueda.Texts, dataGridView1);
         }
     }
 }

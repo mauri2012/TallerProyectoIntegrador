@@ -54,7 +54,7 @@ namespace ProyectoIntegradorTaller.views.admin
             dataGridView1.Columns.Add(buttonColumn4);
             try
             {
-                dataGridView1.DataSource=LogicaMaterias.listarMaterias();
+                dataGridView1.DataSource=LogicaMaterias.ListarMateriasActivas();
                // LogicaMaterias.listarMaterias(dataGridView1);
                 dataGridView1.Columns[0].Visible = false;
             }
@@ -106,11 +106,11 @@ namespace ProyectoIntegradorTaller.views.admin
         {
             if (!string.IsNullOrEmpty(TMateria.Texts))
             {
-                LogicaMaterias.agregarMateria(this.TMateria.Texts);
+                LogicaMaterias.AgregarMateria(this.TMateria.Texts);
                     MessageBox.Show("materia ingresada correctamente!", "Insersion", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     this.TMateria.Texts  = " ";
 
-                dataGridView1.DataSource = LogicaMaterias.listarMaterias();
+                dataGridView1.DataSource = LogicaMaterias.ListarMateriasActivas();
             }
             else
             {
@@ -121,7 +121,7 @@ namespace ProyectoIntegradorTaller.views.admin
 
         private void BBuscar_Click(object sender, EventArgs e)
         {
-            dataGridView1.DataSource= LogicaMaterias.busqueda(TBBusqueda.Texts);
+            dataGridView1.DataSource= LogicaMaterias.BuscarMateria(TBBusqueda.Texts);
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -131,8 +131,8 @@ namespace ProyectoIntegradorTaller.views.admin
                 MsgBoxResult ask = (MsgBoxResult)MessageBox.Show("Seguro que quiere eliminar la materia " + (string)dataGridView1.Rows[e.RowIndex].Cells[1].Value + "  ?", "Eliminar", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                 if (ask == MsgBoxResult.Yes)
                 {
-                    LogicaMaterias.materiaActiva("NO", dataGridView1, e);
-                    dataGridView1.DataSource = LogicaMaterias.listarMaterias();
+                    LogicaMaterias.MateriasCambiarEstado("NO", dataGridView1, e);
+                    dataGridView1.DataSource = LogicaMaterias.ListarMateriasActivas();
                 }
 
             }
@@ -142,13 +142,13 @@ namespace ProyectoIntegradorTaller.views.admin
         {
             if (string.IsNullOrEmpty(this.TBBusqueda.Texts))
             {
-                dataGridView1.DataSource = LogicaMaterias.listarMaterias();
+                dataGridView1.DataSource = LogicaMaterias.ListarMateriasActivas();
                 dataGridView1.Columns[0].Visible = false;
             }
             else
             {
                 //hacer el busqueda
-                dataGridView1.DataSource = LogicaMaterias.busqueda(this.TBBusqueda.Texts);
+                dataGridView1.DataSource = LogicaMaterias.BuscarMateria(this.TBBusqueda.Texts);
             }
         }
     }

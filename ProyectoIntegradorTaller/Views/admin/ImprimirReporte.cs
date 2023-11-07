@@ -28,21 +28,17 @@ namespace ProyectoIntegradorTaller.views.admin
 
 
 
-        private void BCrearAula_Click(object sender, EventArgs e)
-        {
-
-        }
-
+       
         private void Reporte_Load(object sender, EventArgs e)
         {
         
-            ReporteLogica.diasListar(chart1, id_aula, pperiodo);
+            ReporteLogica.ListarDias(chart1, id_aula, pperiodo);
          
-            ReporteLogica.materiasListar(chart2, id_aula,pperiodo);
+            ReporteLogica.ListarMaterias(chart2, id_aula,pperiodo);
         
-            ReporteLogica.horasListar(chart3, id_aula, pperiodo);
+            ReporteLogica.ListarHoras(chart3, id_aula, pperiodo);
 
-            ReporteLogica.profesorListar(chart4, id_aula, pperiodo);
+            ReporteLogica.ListarProfesores(chart4, id_aula, pperiodo);
 
             PBEsconder_.Location = new Point(732, 11);
             PBMaximizar_.Location = new Point(752,11);
@@ -67,7 +63,7 @@ namespace ProyectoIntegradorTaller.views.admin
             memoryImage = new Bitmap(s.Width, s.Height, myGraphics);
             Graphics memoryGraphics = Graphics.FromImage(memoryImage);
             memoryGraphics.CopyFromScreen(this.Location.X, this.Location.Y, 0, 0, s);
-            printDocument1.DocumentName="informe "+ LogicaClase.nombreAula(id_aula)+"-"+DateTime.Now;
+            printDocument1.DocumentName="informe "+ LogicaClase.NombreAula(id_aula)+"-"+DateTime.Now;
             printDocument1.Print();
             
 
@@ -78,10 +74,7 @@ namespace ProyectoIntegradorTaller.views.admin
           e.Graphics.DrawImage(memoryImage, 0, 0);
 
 
-        private void chart3_Click(object sender, EventArgs e)
-        {
-          
-        }
+       
 
         private void printDocument1_PrintPage_1(object sender, PrintPageEventArgs e)
         {
@@ -93,26 +86,7 @@ namespace ProyectoIntegradorTaller.views.admin
             unrepo.Show();
         }
 
-        private void chart2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void comboBoxPersonalisado1_OnSelectedIndexChanged(object sender, EventArgs e)
-        {
-   
-
-        }
-
-        private void Periodo_OnSelectedIndexChanged(object sender, EventArgs e)
-        {
-      
-        }
-
-        private void BGuardar_Click_1(object sender, EventArgs e)
-        {
-
-        }
+        
 
         private void BVolver_Click_1(object sender, EventArgs e)
         {
@@ -121,15 +95,7 @@ namespace ProyectoIntegradorTaller.views.admin
             unReporte.Show();
         }
 
-        private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
+       
     }
  
 }
