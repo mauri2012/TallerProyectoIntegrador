@@ -18,7 +18,7 @@ Para acceder a la cuenta de usuario con privilegios de administrador, utilice la
 Para acceder a la cuenta de usuario con privilegios de bedel, utilice las siguientes credenciales:
 
 - **Correo Electrónico:** gonzalez@gmail.com
-- **Contraseña:**  rodri
+- **Contraseña:**  40232902
 
 - Para acceder a la cuenta de usuario con privilegios de bedel, utilice las siguientes credenciales:
 
