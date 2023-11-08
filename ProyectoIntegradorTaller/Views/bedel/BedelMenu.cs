@@ -47,10 +47,11 @@ namespace ProyectoIntegradorTaller.views.admin
         {
            dataGridView1.DataSource = LogicaClase.ListarAula();
             dataGridView1.Columns[0].Visible= false;
+
             DataGridViewButtonColumn buttonColumn2 = new DataGridViewButtonColumn();
             buttonColumn2.Name = "Reserva"; // Name the column
             buttonColumn2.Text = "Ver Reservas";    // Text for buttons in the column
-            buttonColumn2.UseColumnTextForButtonValue = true; // Display the Text value on buttons
+            buttonColumn2.UseColumnTextForButtonValue = true; 
  
             dataGridView1.Columns.Add(buttonColumn2);
 

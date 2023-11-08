@@ -95,6 +95,9 @@ namespace ProyectoIntegradorTaller.views.admin
                     LogicaClase.AgregarAula(this.TTipo.Texts, this.CBUbicacion.Texts, this.TNombre.Texts,this.TBCantidadPcs.Texts, this.TCapacidad.Texts, this.CAireAcondicionado.Checked, this.CWifi.Checked, this.CProyector.Checked, this.CTelevisor.Checked);
                     this.TCapacidad.Texts = this.TNombre.Texts = " ";
                     MessageBox.Show("se inserto el aula correctamente!", "Insersion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.Hide();
+                    menuAdmin admin = new menuAdmin();
+                    admin.Show();
                 }
                 else
                 {
@@ -102,9 +105,7 @@ namespace ProyectoIntegradorTaller.views.admin
                 }
 
             }
-            this.Hide();
-            menuAdmin admin = new menuAdmin();
-            admin.Show();
+
         }
 
         private void TCapacidad_KeyPress(object sender, KeyPressEventArgs e)
@@ -134,7 +135,7 @@ namespace ProyectoIntegradorTaller.views.admin
             ubicacion tuser = new ubicacion();
             using (classroom_managerEntities db = new classroom_managerEntities())
             {
-                CBUbicacion.DataSource = db.ubicacion.ToList();
+                CBUbicacion.DataSource = db.ubicacion.Where(u=>u.activo=="SI").ToList();
                 CBUbicacion.DisplayMember = "lugar"; // Specify the property to display in the ComboBox
                 CBUbicacion.ValueMember = "id_ubicacion";
                 CBUbicacion.SelectedItem = db.ubicacion.FirstOrDefault(ubi => ubi.lugar==tlugar);

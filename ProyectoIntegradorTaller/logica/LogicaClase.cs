@@ -260,12 +260,15 @@ namespace ProyectoIntegradorTaller.logica
                     string disponibleWIFI = CBWIFI ? "SI" : "NO";
                     string disponibleProyector = CBProyector ? "SI" : "NO";
                     string disponibleTelevisor = CBTelevisor ? "SI" : "NO";
-                    equipamiento.Add(disponibleCA);
-                    equipamiento.Add(disponibleWIFI);
-                    equipamiento.Add(disponibleProyector);
+
                     equipamiento.Add(disponibleTelevisor);
+                    equipamiento.Add(disponibleCA);
+                    equipamiento.Add(disponibleProyector);
+                    equipamiento.Add(disponibleWIFI);
+                    
+                   
 
-
+                    
                     for (int i = 0; i < 4; i++)
                     {
                         aula_equi.Add(new aula_equipamiento()
