@@ -91,10 +91,11 @@ namespace ProyectoIntegradorTaller.logica
                     r => r.id_hora == idHora
                     && r.id_dia == idDia
                     && r.id_aula == idAula
-                    && (((r.id_periodo==1 || r.id_periodo==3 || r.id_periodo==6 || r.id_periodo==7) && (idPeriodo==1 || idPeriodo==3))
+                    && (((r.id_periodo==1 || r.id_periodo==3 || r.id_periodo==6 || r.id_periodo==7 || r.id_periodo==4 ||  r.id_periodo==5 || r.id_periodo==10) && (idPeriodo==1 || idPeriodo==3))
                        || ((r.id_periodo == 1 || r.id_periodo == 3 || r.id_periodo == idPeriodo) && (idPeriodo == 6 || idPeriodo==7))
-                        || ((r.id_periodo == 2 || r.id_periodo == 4 || r.id_periodo==8 || r.id_periodo==9) && (idPeriodo == 2 || idPeriodo == 4))
+                        || ((r.id_periodo == 2 || r.id_periodo == 4 || r.id_periodo==8 || r.id_periodo==9 || r.id_periodo == 5 || r.id_periodo == 10) && (idPeriodo == 2 || idPeriodo == 4 || idPeriodo==5) )
                         || ((r.id_periodo == 2 || r.id_periodo == 4 || r.id_periodo == idPeriodo) && (idPeriodo == 8 || idPeriodo == 9))
+                        || ((r.id_periodo == 1 || r.id_periodo==2 ||r.id_periodo == 3 || r.id_periodo == 6 || r.id_periodo == 7 || r.id_periodo == 4 || r.id_periodo == 5 || r.id_periodo==8  || r.id_periodo==9 || r.id_periodo == 10) && (idPeriodo == 10 ))
                        )
                     && r.activo == "SI");
 
