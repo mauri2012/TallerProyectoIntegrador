@@ -122,7 +122,6 @@ namespace ProyectoIntegradorTaller.views.admin
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.AutoScroll = true;
-            this.tableLayoutPanel1.AutoSize = true;
             this.tableLayoutPanel1.ColumnCount = 2;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -138,10 +137,10 @@ namespace ProyectoIntegradorTaller.views.admin
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 4;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 19.3038F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 80.69621F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 26F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 233F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 90F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 24F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 235F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(800, 500);
             this.tableLayoutPanel1.TabIndex = 67;
             // 
@@ -150,7 +149,7 @@ namespace ProyectoIntegradorTaller.views.admin
             this.label3.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(535, 27);
+            this.label3.Location = new System.Drawing.Point(535, 5);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(130, 19);
             this.label3.TabIndex = 71;
@@ -161,7 +160,7 @@ namespace ProyectoIntegradorTaller.views.admin
             this.label5.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(530, 243);
+            this.label5.Location = new System.Drawing.Point(530, 242);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(139, 19);
             this.label5.TabIndex = 70;
@@ -174,14 +173,14 @@ namespace ProyectoIntegradorTaller.views.admin
             this.chart1.Dock = System.Windows.Forms.DockStyle.Fill;
             legend1.Name = "Legend1";
             this.chart1.Legends.Add(legend1);
-            this.chart1.Location = new System.Drawing.Point(3, 49);
+            this.chart1.Location = new System.Drawing.Point(3, 27);
             this.chart1.Name = "chart1";
             series1.ChartArea = "ChartArea1";
             series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
             series1.Legend = "Legend1";
             series1.Name = "Series1";
             this.chart1.Series.Add(series1);
-            this.chart1.Size = new System.Drawing.Size(394, 188);
+            this.chart1.Size = new System.Drawing.Size(394, 210);
             this.chart1.TabIndex = 65;
             this.chart1.Text = "chart1";
             // 
@@ -192,14 +191,14 @@ namespace ProyectoIntegradorTaller.views.admin
             this.chart3.Dock = System.Windows.Forms.DockStyle.Fill;
             legend2.Name = "Legend1";
             this.chart3.Legends.Add(legend2);
-            this.chart3.Location = new System.Drawing.Point(3, 269);
+            this.chart3.Location = new System.Drawing.Point(3, 267);
             this.chart3.Name = "chart3";
             series2.ChartArea = "ChartArea1";
             series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
             series2.Legend = "Legend1";
             series2.Name = "Series1";
             this.chart3.Series.Add(series2);
-            this.chart3.Size = new System.Drawing.Size(394, 228);
+            this.chart3.Size = new System.Drawing.Size(394, 230);
             this.chart3.TabIndex = 66;
             this.chart3.Text = "chart3";
             // 
@@ -210,24 +209,23 @@ namespace ProyectoIntegradorTaller.views.admin
             this.chart2.Dock = System.Windows.Forms.DockStyle.Fill;
             legend3.Name = "Legend1";
             this.chart2.Legends.Add(legend3);
-            this.chart2.Location = new System.Drawing.Point(403, 49);
+            this.chart2.Location = new System.Drawing.Point(403, 27);
             this.chart2.Name = "chart2";
             series3.ChartArea = "ChartArea1";
             series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
             series3.Legend = "Legend1";
             series3.Name = "Series1";
             this.chart2.Series.Add(series3);
-            this.chart2.Size = new System.Drawing.Size(394, 188);
+            this.chart2.Size = new System.Drawing.Size(394, 210);
             this.chart2.TabIndex = 46;
             this.chart2.Text = "chart2";
-           
             // 
             // label1
             // 
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(112, 243);
+            this.label1.Location = new System.Drawing.Point(112, 242);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(175, 19);
             this.label1.TabIndex = 68;
@@ -238,12 +236,11 @@ namespace ProyectoIntegradorTaller.views.admin
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(151, 27);
+            this.label2.Location = new System.Drawing.Point(151, 5);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(97, 19);
             this.label2.TabIndex = 69;
             this.label2.Text = "Uso por dia";
-            
             // 
             // chart4
             // 
@@ -252,14 +249,14 @@ namespace ProyectoIntegradorTaller.views.admin
             this.chart4.Dock = System.Windows.Forms.DockStyle.Fill;
             legend4.Name = "Legend1";
             this.chart4.Legends.Add(legend4);
-            this.chart4.Location = new System.Drawing.Point(403, 269);
+            this.chart4.Location = new System.Drawing.Point(403, 267);
             this.chart4.Name = "chart4";
             series4.ChartArea = "ChartArea1";
             series4.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
             series4.Legend = "Legend1";
             series4.Name = "Series1";
             this.chart4.Series.Add(series4);
-            this.chart4.Size = new System.Drawing.Size(394, 228);
+            this.chart4.Size = new System.Drawing.Size(394, 230);
             this.chart4.TabIndex = 67;
             this.chart4.Text = "chart4";
             // 
@@ -391,7 +388,6 @@ namespace ProyectoIntegradorTaller.views.admin
             this.panel2.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.panel6.ResumeLayout(false);
-            this.panel6.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();

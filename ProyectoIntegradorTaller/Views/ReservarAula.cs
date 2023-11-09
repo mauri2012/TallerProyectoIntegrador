@@ -19,7 +19,7 @@ namespace ProyectoIntegradorTaller.views.admin
         public ReservarAula(int idAula,int idHora, int idDia,string nombre)
         {
             InitializeComponent();
-            CBHora.Texts = LogicaReserva.ObtenerHorarioPorID(idHora-1).horario;
+            CBHora.Texts = LogicaReserva.ObtenerHorarioPorID(idHora).horario;
             CBDia.Texts = LogicaReserva.ObtenerDiaPorID(idDia).dias;
             Periodo.Texts = nombre;
             id_aula = idAula;
@@ -33,6 +33,7 @@ namespace ProyectoIntegradorTaller.views.admin
             BEliminar.Visible = false;
             this.BReservarAula.Click += new System.EventHandler(this.botonPersonalisado1_Click);
             this.BImprimir.Visible= false;
+
             if (Session.SessionCacheData.IdProfile == 1 || Session.SessionCacheData.IdProfile == 3)
             {
                 CBPRofesor.DataSource = LogicaReserva.CBPRofesorListar();
@@ -46,7 +47,7 @@ namespace ProyectoIntegradorTaller.views.admin
 
 
                 BEliminar.Visible = false;
-                BReservarAula.Visible = false;
+                
                 BImprimir.Visible = false;
             }
         }
@@ -82,6 +83,8 @@ namespace ProyectoIntegradorTaller.views.admin
                 }
 
             }
+
+
             LogicaMaterias.ListarMateriasCB(CBMateria,res);
 
        
@@ -105,7 +108,7 @@ namespace ProyectoIntegradorTaller.views.admin
             
  
                 BEliminar.Visible = false;
-                BReservarAula.Visible = false;
+               
                 BImprimir.Visible = false;
             }
         }

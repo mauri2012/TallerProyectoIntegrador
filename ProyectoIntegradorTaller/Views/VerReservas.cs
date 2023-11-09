@@ -21,13 +21,8 @@ namespace ProyectoIntegradorTaller.views
     {
 
         private int id_aula;
-        private string materia;
-        private string nom_profesor;
-        public VerReservas()
-        {
-            InitializeComponent();
-            RellenarHorarios();
-        }
+      
+       
         public VerReservas(int id)
         {
 
@@ -36,13 +31,7 @@ namespace ProyectoIntegradorTaller.views
             InitializeComponent();
         }
 
-        void RellenarHorarios()
-        {
-            for (int i = 8; i < 22; i += 2)
-            {
-                DGHorarios.Rows.Add(i + ":00-" + (i + 2) + ":00");
-            }
-        }
+       
         private void Reservas_load(object sender, EventArgs e)
         {
 
@@ -60,7 +49,7 @@ namespace ProyectoIntegradorTaller.views
             if (e.RowIndex >= 0 && e.ColumnIndex >= 1) // Asegúrate de que se hizo clic dentro de una celda válida
             {
                 int idDia = e.ColumnIndex; // Obtén el indice de la columna
-                int idHora = e.RowIndex + 1; // obten el indice de la fila, sumamos uno para corregir el indice
+                int idHora = e.RowIndex; // obten el indice de la fila, sumamos uno para corregir el indice
                 
                 SeleccionarReserva(idDia, idHora);
             }

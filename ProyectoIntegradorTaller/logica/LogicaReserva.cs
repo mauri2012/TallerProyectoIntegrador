@@ -151,7 +151,7 @@ namespace ProyectoIntegradorTaller.logica
                         int horario = res.id_hora;
 
 
-                        grillaHorarios[horario - 1, dia] = m.materia + "( " + p.nombre + " " + p.apellido + " )";
+                        grillaHorarios[horario, dia] = m.materia + "( " + p.nombre + " " + p.apellido + " )";
                     }
                 }
                 else
