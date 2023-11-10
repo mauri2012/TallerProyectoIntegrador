@@ -83,7 +83,7 @@ namespace ProyectoIntegradorTaller.logica
                              join dias_semana in db.dias_semana on reserva.id_dia equals dias_semana.id_dias
                              join Periodo in db.Periodo on  reserva.id_periodo equals Periodo.id_periodo
                             join usuario in db.usuario on reserva.id_usuario equals usuario.id_usuario 
-                            where aula.activa == "SI" && aula.id_aula == id_aula && reserva.activo=="SI" && usuario.desactivar=="NO"
+                            where aula.activa == "SI" && aula.id_aula == id_aula && reserva.activo=="SI" && usuario.idtipousuario==4
                              && ((((Periodo.fecha_hasta <= periodoElejido.fecha_hasta && Periodo.fecha_desde >= periodoElejido.fecha_desde) || Periodo.id_periodo == 4) && periodoElejido.id_periodo == 1) ||
                                    (((Periodo.fecha_hasta >= periodoElejido.fecha_hasta && Periodo.fecha_desde <= periodoElejido.fecha_desde) || Periodo.id_periodo == 4) && (periodoElejido.id_periodo == 7))
                                    || ((Periodo.fecha_desde == periodoElejido.fecha_desde || Periodo.id_periodo == 4) && (periodoElejido.id_periodo == 6 || periodoElejido.id_periodo == 8))
@@ -116,7 +116,7 @@ namespace ProyectoIntegradorTaller.logica
                             join usuario in db.usuario on reserva.id_usuario equals usuario.id_usuario
                             join aula in db.aula on reserva.id_aula equals aula.id_aula
                             join Periodo in db.Periodo on reserva.id_periodo equals Periodo.id_periodo
-                            where usuario.desactivar == "NO"  && aula.activa=="SI"  && aula.id_aula == id_aula &&  reserva.activo=="SI" && ((((Periodo.fecha_hasta <= periodoElejido.fecha_hasta && Periodo.fecha_desde >= periodoElejido.fecha_desde) || Periodo.id_periodo == 4) && periodoElejido.id_periodo == 1) ||
+                            where  aula.activa=="SI"  && aula.id_aula == id_aula &&  reserva.activo=="SI" && && usuario.idtipousuario==4&& ((((Periodo.fecha_hasta <= periodoElejido.fecha_hasta && Periodo.fecha_desde >= periodoElejido.fecha_desde) || Periodo.id_periodo == 4) && periodoElejido.id_periodo == 1) ||
                                    (((Periodo.fecha_hasta >= periodoElejido.fecha_hasta && Periodo.fecha_desde <= periodoElejido.fecha_desde) || Periodo.id_periodo == 4) && (periodoElejido.id_periodo == 7))
                                    || ((Periodo.fecha_desde == periodoElejido.fecha_desde || Periodo.id_periodo == 4) && (periodoElejido.id_periodo == 6 || periodoElejido.id_periodo == 8))
                                    || ((Periodo.fecha_desde >= periodoElejido.fecha_desde || Periodo.id_periodo == 4) && (periodoElejido.id_periodo == 2))
