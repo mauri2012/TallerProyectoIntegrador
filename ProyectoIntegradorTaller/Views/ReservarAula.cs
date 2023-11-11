@@ -37,7 +37,7 @@ namespace ProyectoIntegradorTaller.views.admin
             if (Session.SessionCacheData.IdProfile == 1 || Session.SessionCacheData.IdProfile == 3)
             {
                 CBPRofesor.DataSource = LogicaReserva.CBPRofesorListar();
-                CBPRofesor.DisplayMember = "nombre";
+                CBPRofesor.DisplayMember = "fullname";
                 CBPRofesor.ValueMember = "id_usuario";
                 CBPRofesor.SelectedIndex = 1;
             }
@@ -94,8 +94,9 @@ namespace ProyectoIntegradorTaller.views.admin
             {
                 using (classroom_managerEntities db=new classroom_managerEntities())
                 {
-                    CBPRofesor.DataSource = db.usuario.Where(t=>t.id_tipoUsuario==4).ToList();
-                    CBPRofesor.DisplayMember = "nombre";
+                    CBPRofesor.DataSource = db.usuario
+                   .Where(r => r.id_tipoUsuario == 4).Select(p => new { fullname = p.nombre + " " + p.apellido,id_usuario=p.id_usuario }).ToList();
+                    CBPRofesor.DisplayMember = "fullname";
                     CBPRofesor.ValueMember = "id_usuario";
                     CBPRofesor.SelectedIndex = -1;
                 }

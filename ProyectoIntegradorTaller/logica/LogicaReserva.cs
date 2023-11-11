@@ -21,13 +21,18 @@ namespace ProyectoIntegradorTaller.logica
         {
             using (classroom_managerEntities db = new classroom_managerEntities())
             {
-                cb.DataSource = db.usuario.Where(r => r.id_tipoUsuario == 4).ToList();
-                cb.DisplayMember = "nombre";
+                            cb.DataSource = db.usuario
+                    .Where(r => r.id_tipoUsuario == 4).Select(p => new { fullname = p.nombre + " " + p.apellido}).ToList();
+                cb.DisplayMember = "fullname";
+        
                 cb.ValueMember = "id_usuario";
 
                 cb.BindingContext[cb.DataSource].EndCurrentEdit();
 
-                cb.SelectedItem = db.usuario.FirstOrDefault(r => r.id_usuario == res.id_usuario);
+                cb.SelectedItem = db.usuario
+     .Where(r => r.id_usuario == res.id_usuario)
+     .Select(p => new { fullname = p.nombre + " " + p.apellido })
+     .FirstOrDefault();
 
 
             }
@@ -330,9 +335,9 @@ namespace ProyectoIntegradorTaller.logica
         {
             using (classroom_managerEntities db = new classroom_managerEntities())
             {
-                var usuario = db.usuario
-                              .Where(u => u.id_tipoUsuario == 4).ToList();
-                return usuario;
+                return db.usuario
+                 .Where(r => r.id_tipoUsuario == 4).Select(p => new { fullname = p.nombre + " " + p.apellido,id_usuario=p.id_usuario }).ToList();
+               
             }
         }
         public static void EditarReserva(int idReserva, int idHora, string CBMateria, string CBProfesor, int idDia, string periodo, string estado)
