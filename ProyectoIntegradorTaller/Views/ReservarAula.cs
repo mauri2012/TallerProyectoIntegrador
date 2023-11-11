@@ -43,7 +43,7 @@ namespace ProyectoIntegradorTaller.views.admin
             }
             else
             {
-                CBPRofesor.Texts = Session.SessionCacheData.Name;
+                CBPRofesor.Texts = Session.SessionCacheData.Name + " " + Session.SessionCacheData.LastName;
 
                 BReservarAula.Visible = true;
                 BReservarAula.Text = "Solicitar Reserva";
@@ -105,7 +105,7 @@ namespace ProyectoIntegradorTaller.views.admin
             }
             else
             {
-                CBPRofesor.Texts = Session.SessionCacheData.Name;
+                CBPRofesor.Texts = Session.SessionCacheData.Name + " " + Session.SessionCacheData.LastName;
 
        
                 BEliminar.Visible = false;

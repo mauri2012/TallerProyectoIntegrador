@@ -389,8 +389,12 @@ namespace ProyectoIntegradorTaller.logica
         {
             using (classroom_managerEntities db = new classroom_managerEntities())
             {
+                var names = CBPRofesor.Split(' ');
+                var nombre = names[0];
+                var apellido = names.Length > 1 ? names[1] : string.Empty;
+
                 var periodoElejido = db.Periodo.FirstOrDefault(p => p.periodo_nombre == periodo);
-                var usuarioProfesor = db.usuario.FirstOrDefault(usuario => usuario.nombre == CBPRofesor);
+                var usuarioProfesor = db.usuario.FirstOrDefault(usuario => usuario.nombre == nombre && usuario.apellido==apellido);
                 var materiaElegida = db.materias.FirstOrDefault(materia => materia.materia == CBMateria);
                 var diaElegido = db.dias_semana.FirstOrDefault(dia => dia.dias == CBDia);
                 var horarioElegido = db.horas.FirstOrDefault(horario => horario.horario == CBHora);
