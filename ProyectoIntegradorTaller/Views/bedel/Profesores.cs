@@ -24,7 +24,15 @@ namespace ProyectoIntegradorTaller.views.admin
 
         private void Profesores_Load(object sender, EventArgs e)
         {
+
+            DataGridViewButtonColumn buttonColumn1 = new DataGridViewButtonColumn();
+            buttonColumn1.Name = "Editar"; // Name the column
+            buttonColumn1.Text = "Editar";    // Text for buttons in the column
+            buttonColumn1.UseColumnTextForButtonValue = true; // Display the Text value on buttons
+
+
             dataGridView1.DataSource=LogicaUsuarios.ListarUsuariosPorId(4);
+            dataGridView1.Columns.Add(buttonColumn1);
         }
 
         private void BVolver_Click(object sender, EventArgs e)
@@ -45,6 +53,24 @@ namespace ProyectoIntegradorTaller.views.admin
         private void rjTextBox1__TextChanged(object sender, EventArgs e)
         {
             dataGridView1.DataSource=LogicaUsuarios.BuscarUsuarioProfesor(rjTextBox1.Texts);
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dataGridView1.Columns[e.ColumnIndex].Name == "Editar")
+            {
+                this.Hide();
+
+                CrearProfesor unprofesor = new CrearProfesor((int)dataGridView1.Rows[e.RowIndex].Cells["ID"].Value,
+                    (string)dataGridView1.Rows[e.RowIndex].Cells["Nombre"].Value,
+                    (string)dataGridView1.Rows[e.RowIndex].Cells["Apellido"].Value,
+                    (int)dataGridView1.Rows[e.RowIndex].Cells["DNI"].Value,
+                    (string)dataGridView1.Rows[e.RowIndex].Cells["Email"].Value
+              );
+
+                unprofesor.Show();
+
+            }
         }
     }
 }

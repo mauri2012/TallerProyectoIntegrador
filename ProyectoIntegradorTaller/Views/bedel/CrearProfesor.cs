@@ -15,11 +15,25 @@ namespace ProyectoIntegradorTaller.views.admin
 {
     public partial class CrearProfesor : DraggablePanelUserControl
     {
+        private bool isEdit;
+        private int _idprofesor;
         public CrearProfesor()
         {
             InitializeComponent();
+            isEdit = false;
         }
-
+        //editar profesor
+        public CrearProfesor(int idprofesor,string nombre,string apellido,int dni,string mail)
+        {
+            InitializeComponent();
+            this.TBNombre.Texts = nombre;
+            this.TBApellido.Texts= apellido;
+            this.TBDNI.Texts = dni.ToString();
+            this.TBCorreo.Texts = mail;
+            _idprofesor= idprofesor;
+            this.BInicioSesion.Text = " editar profesor";
+            isEdit= true;
+        }
         private void BVolver_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -39,8 +53,23 @@ namespace ProyectoIntegradorTaller.views.admin
             else {
                 if (IsValidEmail(TBCorreo.Texts))
                 {
-                    LogicaUsuarios.AgregarUsuario(int.Parse(TBDNI.Texts), TBApellido.Texts, TBCorreo.Texts, TBNombre.Texts, 4);
-                    MessageBox.Show("Se agrego un profesor con exito!", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    string accion;
+                    if (isEdit)
+                    {
+                        LogicaUsuarios.ActualisarUsuario(_idprofesor,int.Parse(TBDNI.Texts), TBApellido.Texts, TBCorreo.Texts, TBNombre.Texts,4 );
+                        MessageBox.Show("editar");
+                        accion = "edito";
+                    }
+                    else
+                    {
+                        LogicaUsuarios.AgregarUsuario(int.Parse(TBDNI.Texts), TBApellido.Texts, TBCorreo.Texts, TBNombre.Texts, 4);
+                        accion = "agrego";
+                    }
+
+                    MessageBox.Show("Se "+accion+" un profesor con exito!", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.Close();
+                    Profesores unprofe = new Profesores();
+                    unprofe.Show();
                 }
                 else
                 {

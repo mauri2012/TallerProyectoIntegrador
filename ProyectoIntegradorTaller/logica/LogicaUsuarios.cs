@@ -193,7 +193,7 @@ namespace ProyectoIntegradorTaller.logica
                     .Where(usuario => usuario.tipoUsuario.id_tipoUsuario == id)
                     .Select(usuario => new
                     {
-                       
+                        ID=usuario.id_usuario,
                         Nombre = usuario.nombre,
                         Apellido = usuario.apellido,
                         DNI = usuario.dni,
