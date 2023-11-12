@@ -360,9 +360,13 @@ namespace ProyectoIntegradorTaller.logica
                 var periodoElegido = db.Periodo.FirstOrDefault(p => p.periodo_nombre == periodo);
                 if (reserva != null)
                 {
+                    var names = CBProfesor.Split(' ');
+                    var nombre = names[0];
+                    var apellido = names.Length > 1 ? names[1] : string.Empty;
+
                     // Obtener los objetos asociados a los nombre
                     var materiaElegida = db.materias.FirstOrDefault(m => m.materia == CBMateria);
-                    var usuarioProfesor = db.usuario.FirstOrDefault(u => u.nombre == CBProfesor);
+                    var usuarioProfesor = db.usuario.FirstOrDefault(usuario => usuario.nombre == nombre && usuario.apellido == apellido);
 
 
                     // Actualizar los campos de la reserva con los nuevos valores
