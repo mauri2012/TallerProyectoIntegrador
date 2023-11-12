@@ -40,7 +40,7 @@ namespace ProyectoIntegradorTaller.views
             Periodo.DisplayMember = "periodo_nombre";
             Periodo.ValueMember = "id_periodo";
      
-            LogicaReserva.MostrarGrilla(id_aula, DGHorarios,this.Periodo.Texts);
+            LogicaReserva.MostrarGrillaDeReservas(id_aula, DGHorarios,this.Periodo.Texts);
                        
         }
 
@@ -60,8 +60,8 @@ namespace ProyectoIntegradorTaller.views
 
 
             this.Hide();
-            var periodo = LogicaReserva.obtenerPeriodo(this.Periodo.Texts);
-            reserva reserva1 = LogicaReserva.BuscarReserva(idDia, idHora, id_aula,periodo.id_periodo);
+            var periodo = LogicaReserva.ObtenerPeriodoPorNombre(this.Periodo.Texts);
+            reserva reserva1 = LogicaReserva.BuscarReservaParaGrilla(idDia, idHora, id_aula,periodo.id_periodo);
             if (reserva1 == null)
             {
                 ReservarAula reserva = new ReservarAula(id_aula, idHora, idDia,periodo.periodo_nombre);
@@ -105,7 +105,7 @@ namespace ProyectoIntegradorTaller.views
         private void Periodo_OnSelectedIndexChanged(object sender, EventArgs e)
         {
 
-            LogicaReserva.MostrarGrilla(id_aula, DGHorarios, this.Periodo.Texts);
+            LogicaReserva.MostrarGrillaDeReservas(id_aula, DGHorarios, this.Periodo.Texts);
 
         }
     }

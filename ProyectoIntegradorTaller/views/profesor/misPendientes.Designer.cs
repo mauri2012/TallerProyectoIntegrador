@@ -34,6 +34,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.BVolver = new ProyectoIntegradorTaller.views.components.BotonPersonalisado();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.CBFiltro = new ProyectoIntegradorTaller.views.components.ComboBoxPersonalisado();
             this.LBienvenido = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
@@ -141,6 +142,7 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.CBFiltro);
             this.panel2.Controls.Add(this.LBienvenido);
             this.panel2.Controls.Add(this.BBuscar);
             this.panel2.Controls.Add(this.TBBusqueda);
@@ -149,6 +151,31 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(800, 69);
             this.panel2.TabIndex = 22;
+            // 
+            // CBFiltro
+            // 
+            this.CBFiltro.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.CBFiltro.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.CBFiltro.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
+            this.CBFiltro.BorderSize = 2;
+            this.CBFiltro.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CBFiltro.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.CBFiltro.ForeColor = System.Drawing.Color.DimGray;
+            this.CBFiltro.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
+            this.CBFiltro.Items.AddRange(new object[] {
+            "NombreAula",
+            "Hora",
+            "Dia",
+            "Materia"});
+            this.CBFiltro.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(228)))), ((int)(((byte)(245)))));
+            this.CBFiltro.ListTextColor = System.Drawing.Color.DimGray;
+            this.CBFiltro.Location = new System.Drawing.Point(335, 24);
+            this.CBFiltro.MinimumSize = new System.Drawing.Size(200, 30);
+            this.CBFiltro.Name = "CBFiltro";
+            this.CBFiltro.Padding = new System.Windows.Forms.Padding(2);
+            this.CBFiltro.Size = new System.Drawing.Size(207, 30);
+            this.CBFiltro.TabIndex = 56;
+            this.CBFiltro.Texts = "NombreAula";
             // 
             // LBienvenido
             // 
@@ -331,5 +358,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn materia;
         private System.Windows.Forms.DataGridViewTextBoxColumn Estado;
         private components.BotonPersonalisado BVolver;
+        private components.ComboBoxPersonalisado CBFiltro;
     }
 }

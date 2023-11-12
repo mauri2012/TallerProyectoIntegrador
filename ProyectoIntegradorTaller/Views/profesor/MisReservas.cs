@@ -18,12 +18,14 @@ namespace ProyectoIntegradorTaller.views.profesor
         public MisReservas()
         {
             InitializeComponent();
-            dataGridView2.DataSource=LogicaReserva.ListarReservas("SI",Session.SessionCacheData.Id);
+            dataGridView2.DataSource= LogicaReserva.BusquedaReservasPorNombreAula("SI", Session.SessionCacheData.Id, "");
             dataGridView2.Columns[0].Visible = false;
             DataGridViewButtonColumn buttonColumn1 = new DataGridViewButtonColumn();
-            buttonColumn1.Name = "Eliminar"; // Name the column
-            buttonColumn1.Text = "Eliminar";    // Text for buttons in the column
-            buttonColumn1.UseColumnTextForButtonValue = true; // Display the Text value on buttons
+            buttonColumn1.Name = "Eliminar"; 
+            buttonColumn1.Text = "Eliminar";   
+            buttonColumn1.UseColumnTextForButtonValue = true;
+
+            dataGridView2.Columns.Add(buttonColumn1);
         }
 
         private void BVolver_Click(object sender, EventArgs e)
@@ -37,15 +39,15 @@ namespace ProyectoIntegradorTaller.views.profesor
 
         private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (dataGridView1.Columns[e.ColumnIndex].Name == "Eliminar")
+            if (dataGridView2.Columns[e.ColumnIndex].Name == "Eliminar")
             {
-                MsgBoxResult ask = (MsgBoxResult)MessageBox.Show("Seguro que quiere eliminar la reserva en " + (string)dataGridView1.Rows[e.RowIndex].Cells["Nombre"].Value + "  ?", "Eliminar", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                MsgBoxResult ask = (MsgBoxResult)MessageBox.Show("Seguro que quiere eliminar la reserva en " + (string)dataGridView2.Rows[e.RowIndex].Cells["Nombre"].Value + "  ?", "Eliminar", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                 if (ask == MsgBoxResult.Yes)
                 {
-                    int idreserva = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells["Id"].Value);
+                    int idreserva = Convert.ToInt32(dataGridView2.Rows[e.RowIndex].Cells["Id"].Value);
 
                     LogicaReserva.EliminarReserva(idreserva);
-                    dataGridView1.DataSource = LogicaReserva.ListarReservas("SI", Session.SessionCacheData.Id);
+                    dataGridView2.DataSource = LogicaReserva.BusquedaReservasPorNombreAula("SI", Session.SessionCacheData.Id, "");
                 }
 
             }
@@ -53,7 +55,23 @@ namespace ProyectoIntegradorTaller.views.profesor
 
         private void TBBusqueda__TextChanged(object sender, EventArgs e)
         {
-            dataGridView2.DataSource = LogicaReserva.busquedaReservas("SI",Session.SessionCacheData.Id,TBBusqueda.Texts);
+            switch (CBFiltro.Texts)
+            {
+                case "NombreAula":
+                    dataGridView2.DataSource = LogicaReserva.BusquedaReservasPorNombreAula("SI", Session.SessionCacheData.Id, TBBusqueda.Texts);
+                    break;
+                case "Hora":
+                    dataGridView2.DataSource = LogicaReserva.BusquedaReservasPorHora("SI", Session.SessionCacheData.Id, TBBusqueda.Texts);
+                    break;
+                case "Dia":
+                    dataGridView2.DataSource = LogicaReserva.BusquedaReservasPorDia("SI", Session.SessionCacheData.Id, TBBusqueda.Texts);
+                    break;
+                case "Materia":
+                    dataGridView2.DataSource = LogicaReserva.BusquedaReservasMateria("SI", Session.SessionCacheData.Id, TBBusqueda.Texts);
+                    break;
+                default:
+                    break;
+            }
         }
     }
 }

@@ -51,6 +51,7 @@
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CBFiltro = new ProyectoIntegradorTaller.views.components.ComboBoxPersonalisado();
             ((System.ComponentModel.ISupportInitialize)(this.PBMaximizar_)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PBMinimizar_)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PBCerrar_)).BeginInit();
@@ -71,6 +72,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.CBFiltro);
             this.panel1.Controls.Add(this.BBuscar);
             this.panel1.Controls.Add(this.TBBusqueda);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
@@ -78,7 +80,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(800, 63);
             this.panel1.TabIndex = 6;
-            
             // 
             // BBuscar
             // 
@@ -338,6 +339,31 @@
             this.Estado.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.Estado.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
+            // CBFiltro
+            // 
+            this.CBFiltro.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.CBFiltro.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.CBFiltro.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
+            this.CBFiltro.BorderSize = 2;
+            this.CBFiltro.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CBFiltro.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.CBFiltro.ForeColor = System.Drawing.Color.DimGray;
+            this.CBFiltro.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
+            this.CBFiltro.Items.AddRange(new object[] {
+            "NombreAula",
+            "Hora",
+            "Dia",
+            "Materia"});
+            this.CBFiltro.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(228)))), ((int)(((byte)(245)))));
+            this.CBFiltro.ListTextColor = System.Drawing.Color.DimGray;
+            this.CBFiltro.Location = new System.Drawing.Point(335, 27);
+            this.CBFiltro.MinimumSize = new System.Drawing.Size(200, 30);
+            this.CBFiltro.Name = "CBFiltro";
+            this.CBFiltro.Padding = new System.Windows.Forms.Padding(2);
+            this.CBFiltro.Size = new System.Drawing.Size(207, 30);
+            this.CBFiltro.TabIndex = 57;
+            this.CBFiltro.Texts = "NombreAula";
+            // 
             // MisReservas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -398,5 +424,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Estado;
+        private components.ComboBoxPersonalisado CBFiltro;
     }
 }

@@ -19,12 +19,12 @@ namespace ProyectoIntegradorTaller.views.profesor
         {
             InitializeComponent();
             
-            dataGridView1.DataSource= LogicaReserva.ListarReservas("NO",Session.SessionCacheData.Id);
+            dataGridView1.DataSource= LogicaReserva.BusquedaReservasPorNombreAula("NO", Session.SessionCacheData.Id, "");
             dataGridView1.Columns[0].Visible = false;
             DataGridViewButtonColumn buttonColumn1 = new DataGridViewButtonColumn();
-            buttonColumn1.Name = "Eliminar"; // Name the column
-            buttonColumn1.Text = "Eliminar";    // Text for buttons in the column
-            buttonColumn1.UseColumnTextForButtonValue = true; // Display the Text value on buttons
+            buttonColumn1.Name = "Eliminar"; 
+            buttonColumn1.Text = "Eliminar";    
+            buttonColumn1.UseColumnTextForButtonValue = true; 
 
 
             dataGridView1.Columns.Add(buttonColumn1);
@@ -47,7 +47,7 @@ namespace ProyectoIntegradorTaller.views.profesor
                     int idreserva = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells["Id"].Value);
 
                     LogicaReserva.EliminarReserva(idreserva);
-                    dataGridView1.DataSource = LogicaReserva.ListarReservas("NO", Session.SessionCacheData.Id);
+                    dataGridView1.DataSource = LogicaReserva.BusquedaReservasPorNombreAula("NO", Session.SessionCacheData.Id, "");
                 }
 
             }
@@ -62,7 +62,25 @@ namespace ProyectoIntegradorTaller.views.profesor
 
         private void TBBusqueda__TextChanged(object sender, EventArgs e)
         {
-            dataGridView1.DataSource = LogicaReserva.busquedaReservas("NO", Session.SessionCacheData.Id, TBBusqueda.Texts);
+            switch (CBFiltro.Texts)
+            {
+                case "NombreAula":
+                    dataGridView1.DataSource = LogicaReserva.BusquedaReservasPorNombreAula("NO", Session.SessionCacheData.Id, TBBusqueda.Texts);
+                    break;
+                case "Hora":
+                    dataGridView1.DataSource = LogicaReserva.BusquedaReservasPorHora("NO", Session.SessionCacheData.Id, TBBusqueda.Texts);
+                    break;
+                case "Dia":
+                    dataGridView1.DataSource = LogicaReserva.BusquedaReservasPorDia("NO", Session.SessionCacheData.Id, TBBusqueda.Texts);
+                    break;
+                case "Materia":
+                    dataGridView1.DataSource = LogicaReserva.BusquedaReservasMateria("NO", Session.SessionCacheData.Id, TBBusqueda.Texts);
+                    break;
+                default:
+                    
+                    break;
+            }
+            
         }
     }
 }

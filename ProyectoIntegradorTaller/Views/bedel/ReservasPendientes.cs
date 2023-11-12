@@ -22,7 +22,7 @@ namespace ProyectoIntegradorTaller.views.admin
         public ReservasPendientes()
         {
             InitializeComponent();
-            dataGridView1.DataSource= LogicaReserva.ListarReservas("NO");
+            dataGridView1.DataSource= LogicaReserva.ListarReservasPorEstado("NO");
             dataGridView1.Columns["Id"].Visible = false;
 
         }
@@ -38,7 +38,7 @@ namespace ProyectoIntegradorTaller.views.admin
                 {
                     int idUsuario = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells["Id"].Value);
                     LogicaReserva.ReservaActiva("SI", idUsuario);
-                    dataGridView1.DataSource = LogicaReserva.ListarReservas("NO");
+                    dataGridView1.DataSource = LogicaReserva.ListarReservasPorEstado("NO");
                 }
             }
             else if (dataGridView1.Columns[e.ColumnIndex].Name == "Eliminar")
@@ -48,7 +48,7 @@ namespace ProyectoIntegradorTaller.views.admin
                 {
                     int idReserva = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells["Id"].Value);
                     LogicaReserva.EliminarReserva(idReserva);
-                    dataGridView1.DataSource = LogicaReserva.ListarReservas("NO");
+                    dataGridView1.DataSource = LogicaReserva.ListarReservasPorEstado("NO");
                 }
             }
         }

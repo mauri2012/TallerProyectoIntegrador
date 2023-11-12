@@ -61,7 +61,7 @@ namespace ProyectoIntegradorTaller.views.admin
             CBHora.Texts = LogicaReserva.ObtenerHorarioPorID(reserva1.id_hora).horario;
             CBDia.Texts = LogicaReserva.ObtenerDiaPorID(reserva1.id_dia).dias;
             
-            Periodo.Texts = LogicaReserva.obtenerPeriodoPorId(reserva1.id_periodo).periodo_nombre;
+            Periodo.Texts = LogicaReserva.ObtenerPeriodoPorId(reserva1.id_periodo).periodo_nombre;
             id_aula = reserva1.id_aula;
             res = reserva1;
 
@@ -101,7 +101,7 @@ namespace ProyectoIntegradorTaller.views.admin
                     CBPRofesor.SelectedIndex = -1;
                 }
          
-                LogicaReserva.listarProfesoresCB(CBPRofesor,res);
+                LogicaReserva.ListarProfesoresComboBox(CBPRofesor,res);
             }
             else
             {
