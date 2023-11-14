@@ -20,7 +20,7 @@ Para acceder a la cuenta de usuario con privilegios de bedel, utilice las siguie
 - **Correo Electrónico:** gonzalez@gmail.com
 - **Contraseña:**  40232902
 
-- Para acceder a la cuenta de usuario con privilegios de bedel, utilice las siguientes credenciales:
+- Para acceder a la cuenta de usuario con privilegios de Profesor, utilice las siguientes credenciales:
 
 - **Correo Electrónico:** apellido3nom@gmail.com
 - **Contraseña:**  33333333
