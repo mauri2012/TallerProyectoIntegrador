@@ -146,6 +146,9 @@ namespace ProyectoIntegradorTaller.views.admin
                 }
                 LogicaReserva.InsertarReserva(id_aula,this.CBHora.Texts,this.CBMateria.Texts,this.CBPRofesor.Texts,this.CBDia.Texts,this.Periodo.Texts,estado);
                 MessageBox.Show("Insercion echa exitosamente!", "insersion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.Close();
+                VerReservas reservas = new VerReservas(id_aula);
+                reservas.Show();
             }
             
         }
@@ -166,7 +169,9 @@ namespace ProyectoIntegradorTaller.views.admin
 
                 LogicaReserva.EditarReserva(res.id_reserva, res.id_hora, CBMateria.Texts, CBPRofesor.Texts, res.id_dia, this.Periodo.Texts, "SI");
                 MessageBox.Show("Se edito con exito la reserva!", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
+                this.Close();
+                VerReservas reservas = new VerReservas(id_aula);
+                reservas.Show();
             }
 
         }

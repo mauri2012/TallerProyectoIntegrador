@@ -503,7 +503,7 @@ namespace ProyectoIntegradorTaller.logica
                                 ID = reserva.id_reserva,
                                 Name = aula.nombre,
                                 Hora = horas.horario,
-                                usuario = usuario.nombre,
+                                usuario = usuario.nombre + " "+usuario.apellido,
                                 materia = materias.materia,
                                 Estado = reserva.activo,
                                 Dia = dias_semana.dias,
@@ -514,9 +514,35 @@ namespace ProyectoIntegradorTaller.logica
             }
         }
 
+        public static IList BusquedaReservasPorNombreAula(string estado, string valor)
+        {
+            using (classroom_managerEntities db = new classroom_managerEntities())
+            {
 
-        
 
+                var query = from reserva in db.reserva
+                            join dias_semana in db.dias_semana on reserva.id_dia equals dias_semana.id_dias
+                            join horas in db.horas on reserva.id_hora equals horas.id_hora
+                            join materias in db.materias on reserva.id_materia equals materias.id_materia
+                            join aula in db.aula on reserva.id_aula equals aula.id_aula
+                            join usuario in db.usuario on reserva.id_usuario equals usuario.id_usuario
+                            where reserva.activo == estado 
+                            && aula.nombre.Contains(valor)
+                            select new
+                            {
+                                ID = reserva.id_reserva,
+                                Name = aula.nombre,
+                                Hora = horas.horario,
+                                usuario = usuario.nombre + " " + usuario.apellido,
+                                materia = materias.materia,
+                                Estado = reserva.activo,
+                                Dia = dias_semana.dias,
+
+                            };
+
+                return query.ToList();
+            }
+        }
         public static IList BusquedaReservasPorNombreAula(string estado, int id, string valor)
         {
             using (classroom_managerEntities db = new classroom_managerEntities())
@@ -546,7 +572,35 @@ namespace ProyectoIntegradorTaller.logica
                 return query.ToList();
             }
         }
+        public static IList BusquedaReservasPorDia(string estado, string valor)
+        {
+            using (classroom_managerEntities db = new classroom_managerEntities())
+            {
 
+
+                var query = from reserva in db.reserva
+                            join dias_semana in db.dias_semana on reserva.id_dia equals dias_semana.id_dias
+                            join horas in db.horas on reserva.id_hora equals horas.id_hora
+                            join materias in db.materias on reserva.id_materia equals materias.id_materia
+                            join aula in db.aula on reserva.id_aula equals aula.id_aula
+                            join usuario in db.usuario on reserva.id_usuario equals usuario.id_usuario
+
+                            where reserva.activo==estado &&  dias_semana.dias.Contains(valor)
+                            select new
+                            {
+                                ID = reserva.id_reserva,
+                                Name = aula.nombre,
+                                Hora = horas.horario,
+                                usuario = usuario.nombre + " " + usuario.apellido,
+                                materia = materias.materia,
+                                Estado = reserva.activo,
+                                Dia = dias_semana.dias,
+
+                            };
+
+                return query.ToList();
+            }
+        }
         public static IList BusquedaReservasPorDia(string estado, int id, string valor)
         {
             using (classroom_managerEntities db = new classroom_managerEntities())
@@ -576,7 +630,34 @@ namespace ProyectoIntegradorTaller.logica
                 return query.ToList();
             }
         }
+        public static IList BusquedaReservasPorHora(string estado,  string valor)
+        {
+            using (classroom_managerEntities db = new classroom_managerEntities())
+            {
 
+
+                var query = from reserva in db.reserva
+                            join dias_semana in db.dias_semana on reserva.id_dia equals dias_semana.id_dias
+                            join horas in db.horas on reserva.id_hora equals horas.id_hora
+                            join materias in db.materias on reserva.id_materia equals materias.id_materia
+                            join aula in db.aula on reserva.id_aula equals aula.id_aula
+                            join usuario in db.usuario on reserva.id_usuario equals usuario.id_usuario
+                            where reserva.activo == estado && horas.horario.Contains(valor)
+                            select new
+                            {
+                                ID = reserva.id_reserva,
+                                Name = aula.nombre,
+                                Hora = horas.horario,
+                                usuario = usuario.nombre + " " + usuario.apellido,
+                                materia = materias.materia,
+                                Estado = reserva.activo,
+                                Dia = dias_semana.dias,
+
+                            };
+
+                return query.ToList();
+            }
+        }
         public static IList BusquedaReservasPorHora(string estado, int id, string valor)
         {
             using (classroom_managerEntities db = new classroom_managerEntities())
@@ -607,7 +688,35 @@ namespace ProyectoIntegradorTaller.logica
             }
         }
 
+        public static IList BusquedaReservasMateria(string estado, string valor)
+        {
+            using (classroom_managerEntities db = new classroom_managerEntities())
+            {
 
+
+                var query = from reserva in db.reserva
+                            join dias_semana in db.dias_semana on reserva.id_dia equals dias_semana.id_dias
+                            join horas in db.horas on reserva.id_hora equals horas.id_hora
+                            join materias in db.materias on reserva.id_materia equals materias.id_materia
+                            join aula in db.aula on reserva.id_aula equals aula.id_aula
+                            join usuario in db.usuario on reserva.id_usuario equals usuario.id_usuario
+                            where reserva.activo == estado 
+                            && materias.materia.Contains(valor)
+                            select new
+                            {
+                                ID = reserva.id_reserva,
+                                Name = aula.nombre,
+                                Hora = horas.horario,
+                                usuario = usuario.nombre + " " + usuario.apellido,
+                                materia = materias.materia,
+                                Estado = reserva.activo,
+                                Dia = dias_semana.dias,
+
+                            };
+
+                return query.ToList();
+            }
+        }
         public static IList BusquedaReservasMateria(string estado, int id, string valor)
         {
             using (classroom_managerEntities db = new classroom_managerEntities())
@@ -638,10 +747,41 @@ namespace ProyectoIntegradorTaller.logica
             }
         }
 
+        public static IList BusquedaReservasPorUsuario(string estado, string valor)
+        {
+            using (classroom_managerEntities db = new classroom_managerEntities())
+            {
+                var names = valor.Split(' ');
+                var nombre = names[0];
+                var apellido = names.Length > 1 ? names[1] : string.Empty;
+
+
+                var query = from reserva in db.reserva
+                            join dias_semana in db.dias_semana on reserva.id_dia equals dias_semana.id_dias
+                            join horas in db.horas on reserva.id_hora equals horas.id_hora
+                            join materias in db.materias on reserva.id_materia equals materias.id_materia
+                            join aula in db.aula on reserva.id_aula equals aula.id_aula
+                            join usuario in db.usuario on reserva.id_usuario equals usuario.id_usuario
+                            where reserva.activo == estado && usuario.nombre.Contains(nombre) && usuario.apellido.Contains(apellido)
+                           
+                            select new
+                            {
+                                ID = reserva.id_reserva,
+                                Name = aula.nombre,
+                                Hora = horas.horario,
+                                usuario = usuario.nombre + " " + usuario.apellido,
+                                materia = materias.materia,
+                                Estado = reserva.activo,
+                                Dia = dias_semana.dias,
+
+                            };
+
+                return query.ToList();
+            }
+        }
 
 
 
-        
     }
 
 }

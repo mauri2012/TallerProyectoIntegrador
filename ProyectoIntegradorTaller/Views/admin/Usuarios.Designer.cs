@@ -38,6 +38,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.CBFiltro = new ProyectoIntegradorTaller.views.components.ComboBoxPersonalisado();
             this.panel3 = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -110,7 +111,6 @@
             this.BBuscar.TabIndex = 15;
             this.BBuscar.TextColor = System.Drawing.Color.White;
             this.BBuscar.UseVisualStyleBackColor = false;
-            
             // 
             // BCrearUsuario
             // 
@@ -209,6 +209,7 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.CBFiltro);
             this.panel2.Controls.Add(this.BBuscar);
             this.panel2.Controls.Add(this.rjTextBox1);
             this.panel2.Controls.Add(this.RBActivo);
@@ -218,6 +219,32 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(800, 58);
             this.panel2.TabIndex = 55;
+            // 
+            // CBFiltro
+            // 
+            this.CBFiltro.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.CBFiltro.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.CBFiltro.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
+            this.CBFiltro.BorderSize = 2;
+            this.CBFiltro.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CBFiltro.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.CBFiltro.ForeColor = System.Drawing.Color.DimGray;
+            this.CBFiltro.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
+            this.CBFiltro.Items.AddRange(new object[] {
+            "Nombre",
+            "Apellido",
+            "DNI",
+            "Tipo",
+            "Email"});
+            this.CBFiltro.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(228)))), ((int)(((byte)(245)))));
+            this.CBFiltro.ListTextColor = System.Drawing.Color.DimGray;
+            this.CBFiltro.Location = new System.Drawing.Point(335, 24);
+            this.CBFiltro.MinimumSize = new System.Drawing.Size(200, 30);
+            this.CBFiltro.Name = "CBFiltro";
+            this.CBFiltro.Padding = new System.Windows.Forms.Padding(2);
+            this.CBFiltro.Size = new System.Drawing.Size(207, 30);
+            this.CBFiltro.TabIndex = 57;
+            this.CBFiltro.Texts = "Nombre";
             // 
             // panel3
             // 
@@ -397,5 +424,6 @@
         private System.Windows.Forms.DataGridViewButtonColumn Editar;
         private System.Windows.Forms.DataGridViewButtonColumn Desactivar;
         private System.Windows.Forms.DataGridViewButtonColumn blanquear;
+        private components.ComboBoxPersonalisado CBFiltro;
     }
 }

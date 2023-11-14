@@ -62,24 +62,33 @@ namespace ProyectoIntegradorTaller.views.profesor
 
         private void TBBusqueda__TextChanged(object sender, EventArgs e)
         {
-            switch (CBFiltro.Texts)
+            if (string.IsNullOrEmpty(TBBusqueda.Texts))
             {
-                case "NombreAula":
-                    dataGridView1.DataSource = LogicaReserva.BusquedaReservasPorNombreAula("NO", Session.SessionCacheData.Id, TBBusqueda.Texts);
-                    break;
-                case "Hora":
-                    dataGridView1.DataSource = LogicaReserva.BusquedaReservasPorHora("NO", Session.SessionCacheData.Id, TBBusqueda.Texts);
-                    break;
-                case "Dia":
-                    dataGridView1.DataSource = LogicaReserva.BusquedaReservasPorDia("NO", Session.SessionCacheData.Id, TBBusqueda.Texts);
-                    break;
-                case "Materia":
-                    dataGridView1.DataSource = LogicaReserva.BusquedaReservasMateria("NO", Session.SessionCacheData.Id, TBBusqueda.Texts);
-                    break;
-                default:
-                    
-                    break;
+                dataGridView1.DataSource = LogicaReserva.BusquedaReservasPorNombreAula("NO", Session.SessionCacheData.Id, "");
             }
+            else
+            {
+                switch (CBFiltro.Texts)
+                {
+                    case "NombreAula":
+                        dataGridView1.DataSource = LogicaReserva.BusquedaReservasPorNombreAula("NO", Session.SessionCacheData.Id, TBBusqueda.Texts);
+                        break;
+                    case "Hora":
+                        dataGridView1.DataSource = LogicaReserva.BusquedaReservasPorHora("NO", Session.SessionCacheData.Id, TBBusqueda.Texts);
+                        break;
+
+                    case "Dia":
+                        dataGridView1.DataSource = LogicaReserva.BusquedaReservasPorDia("NO", Session.SessionCacheData.Id, TBBusqueda.Texts);
+                        break;
+                    case "Materia":
+                        dataGridView1.DataSource = LogicaReserva.BusquedaReservasMateria("NO", Session.SessionCacheData.Id, TBBusqueda.Texts);
+                        break;
+                    default:
+
+                        break;
+                }
+            }
+     
             
         }
     }

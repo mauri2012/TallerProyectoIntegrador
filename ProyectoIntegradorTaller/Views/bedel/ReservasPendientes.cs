@@ -24,6 +24,7 @@ namespace ProyectoIntegradorTaller.views.admin
             InitializeComponent();
             dataGridView1.DataSource= LogicaReserva.ListarReservasPorEstado("NO");
             dataGridView1.Columns["Id"].Visible = false;
+           
 
         }
 
@@ -62,7 +63,43 @@ namespace ProyectoIntegradorTaller.views.admin
 
         private void TBBusqueda__TextChanged(object sender, EventArgs e)
         {
-            dataGridView1.DataSource = LogicaReserva.ListarReservasBusqueda("NO",TBBusqueda.Texts);
+
+            if (string.IsNullOrEmpty(CBFiltro.Texts))
+            {
+                dataGridView1.DataSource = LogicaReserva.ListarReservasPorEstado("NO");
+                dataGridView1.Columns["Id"].Visible = false;
+            }
+            else
+            {
+                switch (CBFiltro.Texts)
+                {
+                    case "NombreAula":
+                        dataGridView1.DataSource = LogicaReserva.BusquedaReservasPorNombreAula("NO",TBBusqueda.Texts);
+                        break;
+                    case "Hora":
+                        dataGridView1.DataSource = LogicaReserva.BusquedaReservasPorHora("NO",TBBusqueda.Texts);
+                        break;
+                    case "Usuario":
+                        dataGridView1.DataSource = LogicaReserva.BusquedaReservasPorUsuario("NO", TBBusqueda.Texts);
+                        break;
+                    case "Dia":
+                        dataGridView1.DataSource = LogicaReserva.BusquedaReservasPorDia("NO",TBBusqueda.Texts);
+                        break;
+                    case "Materia":
+                        dataGridView1.DataSource = LogicaReserva.BusquedaReservasMateria("NO",TBBusqueda.Texts);
+                        break;
+                    default:
+
+                        break;
+                }
+            }
+
+
         }
+
+        private void CBFiltro_OnSelectedIndexChanged(object sender, EventArgs e)
+        {
+        }
+        
     }
 }

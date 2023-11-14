@@ -118,7 +118,29 @@ namespace ProyectoIntegradorTaller.views.admin
         {
             if (!string.IsNullOrEmpty(rjTextBox1.Texts))
             {
-                dataGridView1.DataSource = LogicaUsuarios.BuscarUsuario(this.rjTextBox1.Texts);
+                switch (CBFiltro.Texts)
+                {
+                    case "Nombre":
+                        dataGridView1.DataSource = LogicaUsuarios.buscarNombre(RBActivo.Checked, rjTextBox1.Texts);
+                        break;
+                    case "Apellido":
+                        dataGridView1.DataSource = LogicaUsuarios.buscarApellido(RBActivo.Checked, rjTextBox1.Texts);
+                        break;
+                    case "DNI":
+                        dataGridView1.DataSource = LogicaUsuarios.buscarDNI(RBActivo.Checked, rjTextBox1.Texts);
+                        break;
+                    case "Correo":
+                        dataGridView1.DataSource = LogicaUsuarios.buscarEmail(RBActivo.Checked, rjTextBox1.Texts);
+                        break;
+                    case "Tipo":
+                        dataGridView1.DataSource = LogicaUsuarios.buscarTipo(RBActivo.Checked, rjTextBox1.Texts);
+                        break;
+
+                    default:
+                        dataGridView1.DataSource = LogicaUsuarios.BuscarUsuario(this.rjTextBox1.Texts);
+                        break;
+                }
+              
             }
             else
             {

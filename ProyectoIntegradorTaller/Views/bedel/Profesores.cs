@@ -52,7 +52,34 @@ namespace ProyectoIntegradorTaller.views.admin
 
         private void rjTextBox1__TextChanged(object sender, EventArgs e)
         {
-            dataGridView1.DataSource=LogicaUsuarios.BuscarUsuarioProfesor(rjTextBox1.Texts);
+            if (!string.IsNullOrEmpty(rjTextBox1.Texts))
+            {
+                switch (CBFiltro.Texts)
+                {
+                    case "Nombre":
+                        dataGridView1.DataSource = LogicaUsuarios.buscarNombre(4, rjTextBox1.Texts);
+                        break;
+                    case "Apellido":
+                        dataGridView1.DataSource = LogicaUsuarios.buscarApellido(4, rjTextBox1.Texts);
+                        break;
+                    case "DNI":
+                        dataGridView1.DataSource = LogicaUsuarios.buscarDNI(4, rjTextBox1.Texts);
+                        break;
+                    case "Correo":
+                        dataGridView1.DataSource = LogicaUsuarios.buscarEmail(4, rjTextBox1.Texts);
+                        break;
+                  
+                    default:
+                       
+                        break;
+                }
+
+            }
+            else
+            {
+                dataGridView1.DataSource = LogicaUsuarios.BuscarUsuarioProfesor(rjTextBox1.Texts);
+            }
+           
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)

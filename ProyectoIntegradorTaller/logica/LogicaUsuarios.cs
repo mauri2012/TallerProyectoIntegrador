@@ -33,7 +33,219 @@ namespace ProyectoIntegradorTaller.logica
                 box.ValueMember = "id_tipoUsuario";
             }
         }
-    
+        public static IList buscarDNI(int idtipoUsuario, string valor)
+        {
+            using (classroom_managerEntities db = new classroom_managerEntities())
+            {
+                var query = from usuario in db.usuario
+                            join tipoUsuario in db.tipoUsuario on usuario.id_tipoUsuario equals tipoUsuario.id_tipoUsuario
+                            where usuario.id_tipoUsuario == idtipoUsuario && usuario.dni.ToString().Contains(valor)
+                            select new
+                            {
+                                Id = usuario.id_usuario,
+                                Nombre = usuario.nombre,
+                                Apellido = usuario.apellido,
+                                DNI = usuario.dni,
+                                Email = usuario.correo,
+                                
+                            };
+                return query.ToList();
+
+
+
+
+            }
+        }
+     
+        public static IList buscarEmail(int idtipoUsuario, string valor)
+        {
+            using (classroom_managerEntities db = new classroom_managerEntities())
+            {
+                var query = from usuario in db.usuario
+                            join tipoUsuario in db.tipoUsuario on usuario.id_tipoUsuario equals tipoUsuario.id_tipoUsuario
+                            where usuario.id_tipoUsuario==idtipoUsuario && usuario.correo.Contains(valor)
+                            select new
+                            {
+                                Id = usuario.id_usuario,
+                                Nombre = usuario.nombre,
+                                Apellido = usuario.apellido,
+                                DNI = usuario.dni,
+                                Email = usuario.correo,
+               
+                            };
+                return query.ToList();
+
+
+
+
+            }
+        }
+        public static IList buscarApellido(int idtipoUsuario, string valor)
+        {
+            using (classroom_managerEntities db = new classroom_managerEntities())
+            {
+                var query = from usuario in db.usuario
+                            join tipoUsuario in db.tipoUsuario on usuario.id_tipoUsuario equals tipoUsuario.id_tipoUsuario
+                            where usuario.id_tipoUsuario==idtipoUsuario && usuario.apellido.Contains(valor)
+                            select new
+                            {
+                                Id = usuario.id_usuario,
+                                Nombre = usuario.nombre,
+                                Apellido = usuario.apellido,
+                                DNI = usuario.dni,
+                                Email = usuario.correo,
+                      
+                            };
+                return query.ToList();
+
+
+
+
+            }
+        }
+        public static IList buscarNombre(int idtipousuario, string valor)
+        {
+            using (classroom_managerEntities db = new classroom_managerEntities())
+            {
+                var query = from usuario in db.usuario
+                            join tipoUsuario in db.tipoUsuario on usuario.id_tipoUsuario equals tipoUsuario.id_tipoUsuario
+                            where usuario.id_tipoUsuario==idtipousuario && usuario.nombre.Contains(valor)
+                            select new
+                            {
+                                Id = usuario.id_usuario,
+                                Nombre = usuario.nombre,
+                                Apellido = usuario.apellido,
+                                DNI = usuario.dni,
+                                Email = usuario.correo,
+                
+                            };
+                return query.ToList();
+
+
+
+
+            }
+        }
+        public static IList buscarDNI(bool RBActivo, string valor)
+        {
+            using (classroom_managerEntities db = new classroom_managerEntities())
+            {
+                var query = from usuario in db.usuario
+                            join tipoUsuario in db.tipoUsuario on usuario.id_tipoUsuario equals tipoUsuario.id_tipoUsuario
+                            where usuario.desactivar == (RBActivo ? "NO" : "SI") && usuario.dni.ToString().Contains(valor)
+                            select new
+                            {
+                                Id = usuario.id_usuario,
+                                Nombre = usuario.nombre,
+                                Apellido = usuario.apellido,
+                                DNI = usuario.dni,
+                                Email = usuario.correo,
+                                Tipo = tipoUsuario.tipo,
+                                Activo = usuario.desactivar,
+                            };
+                return query.ToList();
+
+
+
+
+            }
+        }
+        public static IList buscarTipo(bool RBActivo, string valor)
+        {
+            using (classroom_managerEntities db = new classroom_managerEntities())
+            {
+                var query = from usuario in db.usuario
+                            join tipoUsuario in db.tipoUsuario on usuario.id_tipoUsuario equals tipoUsuario.id_tipoUsuario
+                            where usuario.desactivar == (RBActivo ? "NO" : "SI") && tipoUsuario.tipo.Contains(valor)
+                            select new
+                            {
+                                Id = usuario.id_usuario,
+                                Nombre = usuario.nombre,
+                                Apellido = usuario.apellido,
+                                DNI = usuario.dni,
+                                Email = usuario.correo,
+                                Tipo = tipoUsuario.tipo,
+                                Activo = usuario.desactivar,
+                            };
+                return query.ToList();
+
+
+
+
+            }
+        }
+        public static IList buscarEmail(bool RBActivo, string valor)
+        {
+            using (classroom_managerEntities db = new classroom_managerEntities())
+            {
+                var query = from usuario in db.usuario
+                            join tipoUsuario in db.tipoUsuario on usuario.id_tipoUsuario equals tipoUsuario.id_tipoUsuario
+                            where usuario.desactivar == (RBActivo ? "NO" : "SI") && usuario.correo.Contains(valor)
+                            select new
+                            {
+                                Id = usuario.id_usuario,
+                                Nombre = usuario.nombre,
+                                Apellido = usuario.apellido,
+                                DNI = usuario.dni,
+                                Email = usuario.correo,
+                                Tipo = tipoUsuario.tipo,
+                                Activo = usuario.desactivar,
+                            };
+                return query.ToList();
+
+
+
+
+            }
+        }
+        public static IList buscarApellido(bool RBActivo, string valor)
+        {
+            using (classroom_managerEntities db = new classroom_managerEntities())
+            {
+                var query = from usuario in db.usuario
+                            join tipoUsuario in db.tipoUsuario on usuario.id_tipoUsuario equals tipoUsuario.id_tipoUsuario
+                            where usuario.desactivar == (RBActivo ? "NO" : "SI") && usuario.apellido.Contains(valor)
+                            select new
+                            {
+                                Id = usuario.id_usuario,
+                                Nombre = usuario.nombre,
+                                Apellido = usuario.apellido,
+                                DNI = usuario.dni,
+                                Email = usuario.correo,
+                                Tipo = tipoUsuario.tipo,
+                                Activo = usuario.desactivar,
+                            };
+                return query.ToList();
+
+
+
+
+            }
+        }
+        public static IList buscarNombre(bool RBActivo,string valor)
+        {
+            using (classroom_managerEntities db = new classroom_managerEntities())
+            {
+                var query = from usuario in db.usuario
+                            join tipoUsuario in db.tipoUsuario on usuario.id_tipoUsuario equals tipoUsuario.id_tipoUsuario
+                            where usuario.desactivar == (RBActivo ? "NO" : "SI") && usuario.nombre.Contains(valor)
+                            select new
+                            {
+                                Id = usuario.id_usuario,
+                                Nombre = usuario.nombre,
+                                Apellido = usuario.apellido,
+                                DNI = usuario.dni,
+                                Email = usuario.correo,
+                                Tipo = tipoUsuario.tipo,
+                                Activo = usuario.desactivar,
+                            };
+                return query.ToList();
+
+
+
+
+            }
+        }
         public static IList ListarUsuarios(bool RBActivo)
         {
             using (classroom_managerEntities db = new classroom_managerEntities())
