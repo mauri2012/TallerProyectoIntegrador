@@ -5,7 +5,7 @@
 ![Texto alternativo](./Radme/Capturas/Screenshot_3.png)
 
 ## Recursos adicionles
-[Bases de datos](./Radme/BD/)
+[Bases de datos](./Radme/Bases de datos/)
 
 [Informe de Requerimientos](./Radme/Informe/)
 # Instrucciones de Acceso - Usuario 
