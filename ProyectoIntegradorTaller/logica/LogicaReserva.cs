@@ -23,11 +23,13 @@ namespace ProyectoIntegradorTaller.logica
         {
             using (classroom_managerEntities db = new classroom_managerEntities())
             {
-                cb.DataSource = db.usuario
-                    .Where(r => r.id_tipoUsuario == 4).Select(p => new { fullname = p.nombre + " " + p.apellido }).ToList();
                 cb.DisplayMember = "fullname";
 
                 cb.ValueMember = "id_usuario";
+
+                cb.DataSource = db.usuario
+                    .Where(r => r.id_tipoUsuario == 4).Select(p => new { fullname = p.nombre + " " + p.apellido }).ToList();
+                
 
                 cb.BindingContext[cb.DataSource].EndCurrentEdit();
 

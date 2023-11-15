@@ -97,15 +97,15 @@ namespace ProyectoIntegradorTaller.logica
         {
             using (classroom_managerEntities db = new classroom_managerEntities())
             {
-                cb.DataSource = db.materias.ToList();
                 cb.DisplayMember = "materia";
                 cb.ValueMember = "id_materia";
+
+                cb.DataSource = db.materias.ToList();
+                
 
                 cb.BindingContext[cb.DataSource].EndCurrentEdit();
        
                 cb.SelectedItem = db.materias.FirstOrDefault(r => r.id_materia == res.id_materia);
-
-                
 
             }
         }

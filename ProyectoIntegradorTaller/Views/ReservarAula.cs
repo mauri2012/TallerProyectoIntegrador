@@ -65,26 +65,6 @@ namespace ProyectoIntegradorTaller.views.admin
             id_aula = reserva1.id_aula;
             res = reserva1;
 
-            //            CBMateria.DataSource = LogicaReserva.CBMateriasListar();
-            using (classroom_managerEntities db = new classroom_managerEntities())
-            {
-                CBMateria.DataSource=db.materias.ToList();
-                CBMateria.DisplayMember = "materia";
-                CBMateria.ValueMember = "id_materia";
-       
-                CBMateria.BindingContext[CBMateria.DataSource].EndCurrentEdit();
-                if (res.id_materia == 1)
-                {
-                    CBMateria.SelectedIndex = -1;
-                }
-                else
-                {
-                    CBMateria.SelectedItem = db.materias.FirstOrDefault(r => r.id_materia == res.id_materia);
-                }
-
-            }
-
-
             LogicaMaterias.ListarMateriasCB(CBMateria,res);
 
        
@@ -92,15 +72,7 @@ namespace ProyectoIntegradorTaller.views.admin
             BReservarAula.Click += new System.EventHandler(this.editar_Click);
             if (Session.SessionCacheData.IdProfile == 1 || Session.SessionCacheData.IdProfile == 3)
             {
-                using (classroom_managerEntities db=new classroom_managerEntities())
-                {
-                    CBPRofesor.DataSource = db.usuario
-                   .Where(r => r.id_tipoUsuario == 4).Select(p => new { fullname = p.nombre + " " + p.apellido,id_usuario=p.id_usuario }).ToList();
-                    CBPRofesor.DisplayMember = "fullname";
-                    CBPRofesor.ValueMember = "id_usuario";
-                    CBPRofesor.SelectedIndex = -1;
-                }
-         
+                
                 LogicaReserva.ListarProfesoresComboBox(CBPRofesor,res);
             }
             else
