@@ -61,11 +61,25 @@ namespace ProyectoIntegradorTaller.views
 
             this.Hide();
             var periodo = LogicaReserva.ObtenerPeriodoPorNombre(this.Periodo.Texts);
-            reserva reserva1 = LogicaReserva.BuscarReservaParaGrilla(idDia, idHora, id_aula,periodo.id_periodo);
+            reserva reserva1 = LogicaReserva.BuscarReservaParaGrilla(idDia, idHora, id_aula,periodo.id_periodo,"SI");
+            reserva reserva2 = LogicaReserva.BuscarReservaParaGrilla(idDia, idHora, id_aula, periodo.id_periodo, "NO");
             if (reserva1 == null)
             {
-                ReservarAula reserva = new ReservarAula(id_aula, idHora, idDia,periodo.periodo_nombre);
-                reserva.Show();
+                if(reserva2 != null && Session.SessionCacheData.IdProfile==4) {
+                    DialogResult dialogResult =MessageBox.Show("Este turno de reserva fue solicitado por otro profesor, ¿Esta seguro que desea reservarlo? ","Conflicto Solicitud",MessageBoxButtons.YesNo);
+                    if (dialogResult == DialogResult.Yes)
+                    {
+                        ReservarAula reserva = new ReservarAula(id_aula, idHora, idDia, periodo.periodo_nombre);
+                        reserva.Show();
+                    }
+                }
+                else
+                {
+                    ReservarAula reserva = new ReservarAula(id_aula, idHora, idDia, periodo.periodo_nombre);
+                    reserva.Show();
+                }
+
+
             }
             else
             {
