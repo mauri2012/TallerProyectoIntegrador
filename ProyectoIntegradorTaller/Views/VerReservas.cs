@@ -72,6 +72,10 @@ namespace ProyectoIntegradorTaller.views
                         ReservarAula reserva = new ReservarAula(id_aula, idHora, idDia, periodo.periodo_nombre);
                         reserva.Show();
                     }
+                    else
+                    {
+                        this.Show();
+                    }
                 }
                 else
                 {

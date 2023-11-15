@@ -81,7 +81,7 @@ namespace ProyectoIntegradorTaller.views.admin
 
        
                 BEliminar.Visible = false;
-               
+                BReservarAula.Visible = false;
                 BImprimir.Visible = false;
             }
         }
