@@ -38,6 +38,7 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Periodo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Hora = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.usuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Dia = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -181,6 +182,7 @@
             this.Hora,
             this.usuario,
             this.Dia,
+            this.Periodo,
             this.materia,
             this.Autorizar,
             this.Eliminar});
@@ -259,6 +261,14 @@
             this.Eliminar.ReadOnly = true;
             this.Eliminar.Text = "Eliminar";
             this.Eliminar.UseColumnTextForButtonValue = true;
+            //
+            // Periodo
+            //
+            this.Periodo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Periodo.DataPropertyName = "periodo";
+            this.Periodo.HeaderText = "Periodo";
+            this.Periodo.Name = "periodo";
+            this.Periodo.ReadOnly = true;
             // 
             // label6
             // 
@@ -287,6 +297,8 @@
             "Nombre",
             "Apellido",
             "DNI",
+            "Horas",
+            "Periodo",
             "Tipo",
             "Email"});
             this.CBFiltro.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(228)))), ((int)(((byte)(245)))));
@@ -350,6 +362,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn Hora;
         private System.Windows.Forms.DataGridViewTextBoxColumn usuario;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Periodo;
         private System.Windows.Forms.DataGridViewTextBoxColumn Dia;
         private System.Windows.Forms.DataGridViewTextBoxColumn materia;
         private System.Windows.Forms.DataGridViewButtonColumn Autorizar;

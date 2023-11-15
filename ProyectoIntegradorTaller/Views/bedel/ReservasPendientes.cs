@@ -5,13 +5,6 @@ using ProyectoIntegradorTaller.views.admin;
 using ProyectoIntegradorTaller.views.components;
 using ProyectoIntegradorTaller.views.profesor;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ProyectoIntegradorTaller.views.admin
@@ -37,9 +30,21 @@ namespace ProyectoIntegradorTaller.views.admin
                 MsgBoxResult ask = (MsgBoxResult)MessageBox.Show("Seguro que quiere autorizar la reserva en el  " + (string)dataGridView1.Rows[e.RowIndex].Cells["Nombre"].Value + "  ?", "Reservar", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                 if (ask == MsgBoxResult.Yes)
                 {
-                    int idUsuario = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells["Id"].Value);
-                    LogicaReserva.ReservaActiva("SI", idUsuario);
-                    dataGridView1.DataSource = LogicaReserva.ListarReservasPorEstado("NO");
+                    var unaReserva = LogicaReserva.reservaDisponible((string)dataGridView1.Rows[e.RowIndex].Cells["Nombre"].Value,
+                        (string)dataGridView1.Rows[e.RowIndex].Cells["Periodo"].Value,
+                        (string)dataGridView1.Rows[e.RowIndex].Cells["Hora"].Value,
+                        (string)dataGridView1.Rows[e.RowIndex].Cells["Dia"].Value);
+                    if (unaReserva.Count==0)
+                    {
+                        int idUsuario = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells["Id"].Value);
+                        LogicaReserva.ReservaActiva("SI", idUsuario);
+                        dataGridView1.DataSource = LogicaReserva.ListarReservasPorEstado("NO");
+                    }
+                    else
+                    {
+                        MessageBox.Show("NO se puede autorizar esta solicitud debido a que ya existe una reserva en ese dia en ese  horario en ese Aula");
+                    }
+   
                 }
             }
             else if (dataGridView1.Columns[e.ColumnIndex].Name == "Eliminar")
@@ -84,6 +89,12 @@ namespace ProyectoIntegradorTaller.views.admin
                         break;
                     case "Dia":
                         dataGridView1.DataSource = LogicaReserva.BusquedaReservasPorDia("NO",TBBusqueda.Texts);
+                        break;
+                    case "Periodo":
+                        dataGridView1.DataSource = LogicaReserva.BusquedaReservasPeriodo("NO", TBBusqueda.Texts);
+                        break;
+                    case "Horas":
+                        dataGridView1.DataSource = LogicaReserva.BusquedaReservasHoras("NO", TBBusqueda.Texts);
                         break;
                     case "Materia":
                         dataGridView1.DataSource = LogicaReserva.BusquedaReservasMateria("NO",TBBusqueda.Texts);
