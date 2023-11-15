@@ -19,24 +19,29 @@ namespace ProyectoIntegradorTaller.logica
 {
     public class LogicaReserva
     {
-        public static void ListarProfesoresComboBox(ComboBoxPersonalisado cb, reserva res)
+        public static string ListarProfesoresComboBoxSI( reserva res)
         {
             using (classroom_managerEntities db = new classroom_managerEntities())
             {
-                cb.DisplayMember = "fullname";
 
-                cb.ValueMember = "id_usuario";
 
-                cb.DataSource = db.usuario
-                    .Where(r => r.id_tipoUsuario == 4).Select(p => new { fullname = p.nombre + " " + p.apellido }).ToList();
-                
-
-                cb.BindingContext[cb.DataSource].EndCurrentEdit();
-
-                cb.SelectedItem = db.usuario
+                return db.usuario
                 .Where(r => r.id_usuario == res.id_usuario)
                 .Select(p => new { fullname = p.nombre + " " + p.apellido })
-                .FirstOrDefault();
+                .FirstOrDefault().ToString();
+
+
+            }
+        }
+        public static IList ListarProfesoresComboBoxDS()
+        {
+            using (classroom_managerEntities db = new classroom_managerEntities())
+            {
+
+
+                return  db.usuario
+                    .Where(r => r.id_tipoUsuario == 4).Select(p => new { fullname = p.nombre + " " + p.apellido }).ToList();
+     
 
 
             }

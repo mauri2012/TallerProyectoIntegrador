@@ -1,13 +1,8 @@
 ﻿using ProyectoIntegradorTaller.models;
-using ProyectoIntegradorTaller.views.admin;
-using ProyectoIntegradorTaller.views.components;
-using System;
 using System.Collections;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+
+
 
 namespace ProyectoIntegradorTaller.logica
 {
@@ -56,14 +51,14 @@ namespace ProyectoIntegradorTaller.logica
             }
         }
 
-        public static void MateriasCambiarEstado(string estado, DataGridView dataGrid, DataGridViewCellEventArgs e)
+        public static void MateriasCambiarEstado(string estado, int idMateria)
         {
             
             using (classroom_managerEntities db = new classroom_managerEntities())
             {
 
 
-                int idMateria = Convert.ToInt32(dataGrid.Rows[e.RowIndex].Cells["Id"].Value);  
+                 
 
                 materias aulaDesactivar = db.materias.FirstOrDefault(u => u.id_materia == idMateria);
 
@@ -93,20 +88,19 @@ namespace ProyectoIntegradorTaller.logica
             }
         }
 
-        public static void ListarMateriasCB(ComboBoxPersonalisado cb,reserva res)
+        public static IList ListarMateriasCBDS()
         {
             using (classroom_managerEntities db = new classroom_managerEntities())
             {
-                cb.DisplayMember = "materia";
-                cb.ValueMember = "id_materia";
-
-                cb.DataSource = db.materias.ToList();
-                
-
-                cb.BindingContext[cb.DataSource].EndCurrentEdit();
-       
-                cb.SelectedItem = db.materias.FirstOrDefault(r => r.id_materia == res.id_materia);
-
+                return db.materias.ToList();   
+ 
+            }
+        }
+        public static string ListarMateriasCBSI( reserva res)
+        {
+            using (classroom_managerEntities db = new classroom_managerEntities())
+            {
+                return  db.materias.FirstOrDefault(r => r.id_materia == res.id_materia).ToString();
             }
         }
     }

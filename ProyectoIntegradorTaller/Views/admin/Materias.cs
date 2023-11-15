@@ -131,7 +131,8 @@ namespace ProyectoIntegradorTaller.views.admin
                 MsgBoxResult ask = (MsgBoxResult)MessageBox.Show("Seguro que quiere eliminar la materia " + (string)dataGridView1.Rows[e.RowIndex].Cells[1].Value + "  ?", "Eliminar", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                 if (ask == MsgBoxResult.Yes)
                 {
-                    LogicaMaterias.MateriasCambiarEstado("NO", dataGridView1, e);
+                    int idMateria = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells["Id"].Value);
+                    LogicaMaterias.MateriasCambiarEstado("NO", idMateria);
                     dataGridView1.DataSource = LogicaMaterias.ListarMateriasActivas();
                 }
 

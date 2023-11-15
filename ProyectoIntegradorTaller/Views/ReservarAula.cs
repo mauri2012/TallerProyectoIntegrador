@@ -65,15 +65,20 @@ namespace ProyectoIntegradorTaller.views.admin
             id_aula = reserva1.id_aula;
             res = reserva1;
 
-            LogicaMaterias.ListarMateriasCB(CBMateria,res);
-
+            CBMateria.DisplayMember = "materia";
+            CBMateria.ValueMember = "id_materia";
+            CBMateria.DataSource=LogicaMaterias.ListarMateriasCBDS();
+            CBMateria.SelectedItem = LogicaMaterias.ListarMateriasCBSI(res);
        
             BReservarAula.Text = "Editar Reserva";
             BReservarAula.Click += new System.EventHandler(this.editar_Click);
             if (Session.SessionCacheData.IdProfile == 1 || Session.SessionCacheData.IdProfile == 3)
             {
-                
-                LogicaReserva.ListarProfesoresComboBox(CBPRofesor,res);
+
+                CBPRofesor.DisplayMember = "fullname";
+                CBPRofesor.ValueMember = "id_usuario";
+                CBPRofesor.DataSource =LogicaReserva.ListarProfesoresComboBoxDS();
+                CBPRofesor.SelectedItem=LogicaReserva.ListarProfesoresComboBoxSI(res);
             }
             else
             {
