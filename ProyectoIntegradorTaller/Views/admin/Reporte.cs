@@ -35,7 +35,7 @@ namespace ProyectoIntegradorTaller.views.admin
            // PBMaximizar_.Location = new Point(752,11);
            // PBCerrar_.Location = new Point(775, 11);
 
-
+            AulaLabel.Text=LogicaClase.NombreAula(id_aula);
             Periodo.DataSource = LogicaReserva.listarPeriodo();
             //Periodo.DataSource = items;
             Periodo.DisplayMember = "periodo_nombre";

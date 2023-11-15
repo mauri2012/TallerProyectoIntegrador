@@ -88,7 +88,7 @@ namespace ProyectoIntegradorTaller.views.admin
             LogicaMaterias.ListarMateriasCB(CBMateria,res);
 
        
-            BReservarAula.Text = "Editar Aula";
+            BReservarAula.Text = "Editar Reserva";
             BReservarAula.Click += new System.EventHandler(this.editar_Click);
             if (Session.SessionCacheData.IdProfile == 1 || Session.SessionCacheData.IdProfile == 3)
             {

@@ -39,6 +39,7 @@ namespace ProyectoIntegradorTaller.views.admin
             this.panel5 = new System.Windows.Forms.Panel();
             this.chart2 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.AulaLabel = new System.Windows.Forms.Label();
             this.Periodo = new ProyectoIntegradorTaller.views.components.ComboBoxPersonalisado();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -120,19 +121,30 @@ namespace ProyectoIntegradorTaller.views.admin
             this.chart2.Size = new System.Drawing.Size(800, 299);
             this.chart2.TabIndex = 46;
             this.chart2.Text = "chart2";
-            
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.AulaLabel);
             this.panel3.Controls.Add(this.Periodo);
             this.panel3.Controls.Add(this.label3);
             this.panel3.Controls.Add(this.label2);
             this.panel3.Controls.Add(this.CBFiltro);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(800, 144);
             this.panel3.TabIndex = 70;
+            // 
+            // AulaLabel
+            // 
+            this.AulaLabel.AutoSize = true;
+            this.AulaLabel.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold);
+            this.AulaLabel.Location = new System.Drawing.Point(349, 4);
+            this.AulaLabel.Name = "AulaLabel";
+            this.AulaLabel.Size = new System.Drawing.Size(103, 29);
+            this.AulaLabel.TabIndex = 69;
+            this.AulaLabel.Text = "Periodo";
             // 
             // Periodo
             // 
@@ -323,5 +335,6 @@ namespace ProyectoIntegradorTaller.views.admin
         private Panel panel5;
         private Panel panel3;
         private Panel panel1;
+        private Label AulaLabel;
     }
 }

@@ -62,7 +62,7 @@ namespace ProyectoIntegradorTaller.logica
                 }
                 catch (Exception ex)
                 {
-                    return null;  
+                    return null;
                 }
             }
         }
@@ -94,7 +94,7 @@ namespace ProyectoIntegradorTaller.logica
         }
 
 
-        
+
         public static reserva BuscarReservaParaGrilla(int idDia, int idHora, int idAula, int idPeriodo)
         {
             using (classroom_managerEntities db = new classroom_managerEntities())
@@ -391,15 +391,64 @@ namespace ProyectoIntegradorTaller.logica
 
                 if (reserva != null)
                 {
-                    reserva.activo = "NO";  
+                    reserva.activo = "NO";
 
-                   
+
                     db.SaveChanges();
                 }
 
             }
         }
+        public static IList reservaDisponible(string aula, string periodo, string horario, string dia)
+        {
 
+            using (classroom_managerEntities db = new classroom_managerEntities())
+            {
+                var id_aula = db.aula.Where(a => a.activa == "SI").FirstOrDefault(a=> a.nombre==aula).id_aula;
+                var periodoElejido = db.Periodo.FirstOrDefault(p => p.periodo_nombre == periodo);
+                var diaElegido = db.dias_semana.FirstOrDefault(d => d.dias == dia);
+                var horarioElegido = db.horas.FirstOrDefault(h => h.horario == horario);
+                return db.reserva
+                     .Where(r => r.id_aula == id_aula && r.activo == "SI" && r.id_hora == horarioElegido.id_hora && r.id_dia == diaElegido.id_dias)
+                     .AsEnumerable()
+                     .Join(db.Periodo, reserva => reserva.id_periodo, p => p.id_periodo, (reserva, p) => new { Reserva = reserva, Periodo = p }
+                 ).Where
+                            (r => (((r.Periodo.fecha_hasta <= periodoElejido.fecha_hasta && r.Periodo.fecha_desde >= periodoElejido.fecha_desde) || r.Periodo.id_periodo == 4) && periodoElejido.id_periodo == 1) ||
+                                    (((r.Periodo.fecha_hasta >= periodoElejido.fecha_hasta && r.Periodo.fecha_desde <= periodoElejido.fecha_desde) || r.Periodo.id_periodo == 4) && (periodoElejido.id_periodo == 7))
+                                    || ((r.Periodo.fecha_desde == periodoElejido.fecha_desde || r.Periodo.id_periodo == 4) && (periodoElejido.id_periodo == 6 || periodoElejido.id_periodo == 8))
+                                    || ((r.Periodo.fecha_desde >= periodoElejido.fecha_desde || r.Periodo.id_periodo == 4) && (periodoElejido.id_periodo == 2))
+                                    || (r.Periodo.fecha_hasta == periodoElejido.fecha_hasta && (periodoElejido.id_periodo == 9))
+                                    || (((r.Periodo.fecha_desde <= periodoElejido.fecha_desde && r.Periodo.fecha_hasta >= periodoElejido.fecha_desde) || r.Periodo.fecha_hasta == periodoElejido.fecha_hasta) && (periodoElejido.id_periodo == 5))
+                                    || ((r.Periodo.id_periodo == 1 || r.Periodo.id_periodo == 7 || r.Periodo.id_periodo == 3
+                                       || r.Periodo.id_periodo == 2 || r.Periodo.id_periodo == 5 || r.Periodo.id_periodo == 8
+                                       || r.Periodo.id_periodo == 10 || r.Periodo.id_periodo == 4) && periodoElejido.id_periodo == 4)
+                                    || (r.Periodo.fecha_desde <= periodoElejido.fecha_hasta && periodoElejido.id_periodo == 3)
+                                    || ((r.Periodo.fecha_desde >= periodoElejido.fecha_desde || periodoElejido.id_periodo == 4) && periodoElejido.id_periodo == 10)).Select(r => r.Reserva).ToList();
+            }
+        }
+        public static IList reservaDisponible(int id_aula,Periodo periodoElejido,horas horarioElegido,dias_semana diaElegido )
+        {
+            using (classroom_managerEntities db= new classroom_managerEntities())
+            {
+                return db.reserva
+                     .Where(r => r.id_aula == id_aula && r.activo == "SI" && r.id_hora == horarioElegido.id_hora && r.id_dia == diaElegido.id_dias)
+                     .AsEnumerable()
+                     .Join(db.Periodo, reserva => reserva.id_periodo, p => p.id_periodo, (reserva, p) => new { Reserva = reserva, Periodo = p }
+                 ).Where
+                            (r => (((r.Periodo.fecha_hasta <= periodoElejido.fecha_hasta && r.Periodo.fecha_desde >= periodoElejido.fecha_desde) || r.Periodo.id_periodo == 4) && periodoElejido.id_periodo == 1) ||
+                                    (((r.Periodo.fecha_hasta >= periodoElejido.fecha_hasta && r.Periodo.fecha_desde <= periodoElejido.fecha_desde) || r.Periodo.id_periodo == 4) && (periodoElejido.id_periodo == 7))
+                                    || ((r.Periodo.fecha_desde == periodoElejido.fecha_desde || r.Periodo.id_periodo == 4) && (periodoElejido.id_periodo == 6 || periodoElejido.id_periodo == 8))
+                                    || ((r.Periodo.fecha_desde >= periodoElejido.fecha_desde || r.Periodo.id_periodo == 4) && (periodoElejido.id_periodo == 2))
+                                    || (r.Periodo.fecha_hasta == periodoElejido.fecha_hasta && (periodoElejido.id_periodo == 9))
+                                    || (((r.Periodo.fecha_desde <= periodoElejido.fecha_desde && r.Periodo.fecha_hasta >= periodoElejido.fecha_desde) || r.Periodo.fecha_hasta == periodoElejido.fecha_hasta) && (periodoElejido.id_periodo == 5))
+                                    || ((r.Periodo.id_periodo == 1 || r.Periodo.id_periodo == 7 || r.Periodo.id_periodo == 3
+                                       || r.Periodo.id_periodo == 2 || r.Periodo.id_periodo == 5 || r.Periodo.id_periodo == 8
+                                       || r.Periodo.id_periodo == 10 || r.Periodo.id_periodo == 4) && periodoElejido.id_periodo == 4)
+                                    || (r.Periodo.fecha_desde <= periodoElejido.fecha_hasta && periodoElejido.id_periodo == 3)
+                                    || ((r.Periodo.fecha_desde >= periodoElejido.fecha_desde || periodoElejido.id_periodo == 4) && periodoElejido.id_periodo == 10)).Select(r => r.Reserva).ToList();
+            }
+               
+        }
         public static void InsertarReserva(int id_aula, string CBHora, string CBMateria, string CBPRofesor, string CBDia, string periodo, string Estado)
         {
             using (classroom_managerEntities db = new classroom_managerEntities())
@@ -414,22 +463,7 @@ namespace ProyectoIntegradorTaller.logica
                 var diaElegido = db.dias_semana.FirstOrDefault(dia => dia.dias == CBDia);
                 var horarioElegido = db.horas.FirstOrDefault(horario => horario.horario == CBHora);
 
-                var reservas1 = db.reserva
-                    .Where(r => r.id_aula == id_aula && r.activo == "SI" && r.id_hora == horarioElegido.id_hora && r.id_dia == diaElegido.id_dias)
-                    .AsEnumerable()
-                    .Join(db.Periodo, reserva => reserva.id_periodo, p => p.id_periodo, (reserva, p) => new { Reserva = reserva, Periodo = p }
-                ).Where
-                           (r => (((r.Periodo.fecha_hasta <= periodoElejido.fecha_hasta && r.Periodo.fecha_desde >= periodoElejido.fecha_desde) || r.Periodo.id_periodo == 4) && periodoElejido.id_periodo == 1) ||
-                                   (((r.Periodo.fecha_hasta >= periodoElejido.fecha_hasta && r.Periodo.fecha_desde <= periodoElejido.fecha_desde) || r.Periodo.id_periodo == 4) && (periodoElejido.id_periodo == 7))
-                                   || ((r.Periodo.fecha_desde == periodoElejido.fecha_desde || r.Periodo.id_periodo == 4) && (periodoElejido.id_periodo == 6 || periodoElejido.id_periodo == 8))
-                                   || ((r.Periodo.fecha_desde >= periodoElejido.fecha_desde || r.Periodo.id_periodo == 4) && (periodoElejido.id_periodo == 2))
-                                   || (r.Periodo.fecha_hasta == periodoElejido.fecha_hasta && (periodoElejido.id_periodo == 9))
-                                   || (((r.Periodo.fecha_desde <= periodoElejido.fecha_desde && r.Periodo.fecha_hasta >= periodoElejido.fecha_desde) || r.Periodo.fecha_hasta == periodoElejido.fecha_hasta) && (periodoElejido.id_periodo == 5))
-                                   || ((r.Periodo.id_periodo == 1 || r.Periodo.id_periodo == 7 || r.Periodo.id_periodo == 3
-                                      || r.Periodo.id_periodo == 2 || r.Periodo.id_periodo == 5 || r.Periodo.id_periodo == 8
-                                      || r.Periodo.id_periodo == 10 || r.Periodo.id_periodo == 4) && periodoElejido.id_periodo == 4)
-                                   || (r.Periodo.fecha_desde <= periodoElejido.fecha_hasta && periodoElejido.id_periodo == 3)
-                                   || ((r.Periodo.fecha_desde >= periodoElejido.fecha_desde || periodoElejido.id_periodo == 4) && periodoElejido.id_periodo == 10)).Select(r => r.Reserva).ToList();
+                var reservas1 = reservaDisponible(id_aula, periodoElejido, horarioElegido, diaElegido);
 
                 if (reservas1.Count == 0)
                 {
@@ -497,6 +531,7 @@ namespace ProyectoIntegradorTaller.logica
                             join materias in db.materias on reserva.id_materia equals materias.id_materia
                             join aula in db.aula on reserva.id_aula equals aula.id_aula
                             join usuario in db.usuario on reserva.id_usuario equals usuario.id_usuario
+                            join Periodo in db.Periodo on reserva.id_periodo equals Periodo.id_periodo
                             where reserva.activo == estado
                             select new
                             {
@@ -504,6 +539,8 @@ namespace ProyectoIntegradorTaller.logica
                                 Name = aula.nombre,
                                 Hora = horas.horario,
                                 usuario = usuario.nombre + " "+usuario.apellido,
+                                periodo= Periodo.periodo_nombre,
+
                                 materia = materias.materia,
                                 Estado = reserva.activo,
                                 Dia = dias_semana.dias,
@@ -513,7 +550,68 @@ namespace ProyectoIntegradorTaller.logica
                 return query.ToList();
             }
         }
+        public static IList BusquedaReservasHoras(string estado, string valor)
+        {
+            using (classroom_managerEntities db = new classroom_managerEntities())
+            {
 
+
+                var query = from reserva in db.reserva
+                            join dias_semana in db.dias_semana on reserva.id_dia equals dias_semana.id_dias
+                            join horas in db.horas on reserva.id_hora equals horas.id_hora
+                            join materias in db.materias on reserva.id_materia equals materias.id_materia
+                            join aula in db.aula on reserva.id_aula equals aula.id_aula
+                            join usuario in db.usuario on reserva.id_usuario equals usuario.id_usuario
+                            join Periodo in db.Periodo on reserva.id_periodo equals Periodo.id_periodo
+                            where reserva.activo == estado
+                            && horas.horario.Contains(valor)
+                            select new
+                            {
+                                ID = reserva.id_reserva,
+                                Name = aula.nombre,
+                                Hora = horas.horario,
+                                usuario = usuario.nombre + " " + usuario.apellido,
+                                periodo = Periodo.periodo_nombre,
+                                materia = materias.materia,
+                                Estado = reserva.activo,
+                                Dia = dias_semana.dias,
+
+                            };
+
+                return query.ToList();
+            }
+        }
+        public static IList BusquedaReservasPeriodo(string estado, string valor)
+        {
+            using (classroom_managerEntities db = new classroom_managerEntities())
+            {
+
+
+                var query = from reserva in db.reserva
+                            join dias_semana in db.dias_semana on reserva.id_dia equals dias_semana.id_dias
+                            join horas in db.horas on reserva.id_hora equals horas.id_hora
+                            join materias in db.materias on reserva.id_materia equals materias.id_materia
+                            join aula in db.aula on reserva.id_aula equals aula.id_aula
+                            join usuario in db.usuario on reserva.id_usuario equals usuario.id_usuario
+                            join Periodo in db.Periodo on reserva.id_periodo equals Periodo.id_periodo
+                            where reserva.activo == estado
+                            && Periodo.periodo_nombre.Contains(valor)
+                            select new
+                            {
+                                ID = reserva.id_reserva,
+                                Name = aula.nombre,
+                                Hora = horas.horario,
+                                usuario = usuario.nombre + " " + usuario.apellido,
+                                periodo = Periodo.periodo_nombre,
+                                materia = materias.materia,
+                                Estado = reserva.activo,
+                                Dia = dias_semana.dias,
+
+                            };
+
+                return query.ToList();
+            }
+        }
         public static IList BusquedaReservasPorNombreAula(string estado, string valor)
         {
             using (classroom_managerEntities db = new classroom_managerEntities())
@@ -526,6 +624,7 @@ namespace ProyectoIntegradorTaller.logica
                             join materias in db.materias on reserva.id_materia equals materias.id_materia
                             join aula in db.aula on reserva.id_aula equals aula.id_aula
                             join usuario in db.usuario on reserva.id_usuario equals usuario.id_usuario
+                            join Periodo in db.Periodo on reserva.id_periodo equals Periodo.id_periodo
                             where reserva.activo == estado 
                             && aula.nombre.Contains(valor)
                             select new
@@ -534,6 +633,7 @@ namespace ProyectoIntegradorTaller.logica
                                 Name = aula.nombre,
                                 Hora = horas.horario,
                                 usuario = usuario.nombre + " " + usuario.apellido,
+                                periodo=Periodo.periodo_nombre,
                                 materia = materias.materia,
                                 Estado = reserva.activo,
                                 Dia = dias_semana.dias,
@@ -584,7 +684,7 @@ namespace ProyectoIntegradorTaller.logica
                             join materias in db.materias on reserva.id_materia equals materias.id_materia
                             join aula in db.aula on reserva.id_aula equals aula.id_aula
                             join usuario in db.usuario on reserva.id_usuario equals usuario.id_usuario
-
+                            join Periodo in db.Periodo on reserva.id_periodo equals Periodo.id_periodo
                             where reserva.activo==estado &&  dias_semana.dias.Contains(valor)
                             select new
                             {
@@ -593,6 +693,7 @@ namespace ProyectoIntegradorTaller.logica
                                 Hora = horas.horario,
                                 usuario = usuario.nombre + " " + usuario.apellido,
                                 materia = materias.materia,
+                                periodo=Periodo.periodo_nombre,
                                 Estado = reserva.activo,
                                 Dia = dias_semana.dias,
 
@@ -642,6 +743,7 @@ namespace ProyectoIntegradorTaller.logica
                             join materias in db.materias on reserva.id_materia equals materias.id_materia
                             join aula in db.aula on reserva.id_aula equals aula.id_aula
                             join usuario in db.usuario on reserva.id_usuario equals usuario.id_usuario
+                            join Periodo in db.Periodo on reserva.id_periodo equals Periodo.id_periodo
                             where reserva.activo == estado && horas.horario.Contains(valor)
                             select new
                             {
@@ -650,6 +752,7 @@ namespace ProyectoIntegradorTaller.logica
                                 Hora = horas.horario,
                                 usuario = usuario.nombre + " " + usuario.apellido,
                                 materia = materias.materia,
+                                periodo=Periodo.periodo_nombre,
                                 Estado = reserva.activo,
                                 Dia = dias_semana.dias,
 
@@ -700,6 +803,7 @@ namespace ProyectoIntegradorTaller.logica
                             join materias in db.materias on reserva.id_materia equals materias.id_materia
                             join aula in db.aula on reserva.id_aula equals aula.id_aula
                             join usuario in db.usuario on reserva.id_usuario equals usuario.id_usuario
+                            join Periodo in db.Periodo on reserva.id_periodo equals Periodo.id_periodo
                             where reserva.activo == estado 
                             && materias.materia.Contains(valor)
                             select new
@@ -709,6 +813,7 @@ namespace ProyectoIntegradorTaller.logica
                                 Hora = horas.horario,
                                 usuario = usuario.nombre + " " + usuario.apellido,
                                 materia = materias.materia,
+                                periodo=Periodo.periodo_nombre,
                                 Estado = reserva.activo,
                                 Dia = dias_semana.dias,
 
@@ -762,6 +867,7 @@ namespace ProyectoIntegradorTaller.logica
                             join materias in db.materias on reserva.id_materia equals materias.id_materia
                             join aula in db.aula on reserva.id_aula equals aula.id_aula
                             join usuario in db.usuario on reserva.id_usuario equals usuario.id_usuario
+                            join Periodo in db.Periodo on reserva.id_periodo equals Periodo.id_periodo
                             where reserva.activo == estado && usuario.nombre.Contains(nombre) && usuario.apellido.Contains(apellido)
                            
                             select new
@@ -771,6 +877,7 @@ namespace ProyectoIntegradorTaller.logica
                                 Hora = horas.horario,
                                 usuario = usuario.nombre + " " + usuario.apellido,
                                 materia = materias.materia,
+                                periodo=Periodo.periodo_nombre,
                                 Estado = reserva.activo,
                                 Dia = dias_semana.dias,
 
