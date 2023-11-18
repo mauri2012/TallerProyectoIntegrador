@@ -1,8 +1,8 @@
 ﻿using ProyectoIntegradorTaller.models;
+using ProyectoIntegradorTaller.views.components;
 using System.Collections;
 using System.Linq;
-
-
+using System.Windows.Forms;
 
 namespace ProyectoIntegradorTaller.logica
 {
@@ -88,19 +88,21 @@ namespace ProyectoIntegradorTaller.logica
             }
         }
 
-        public static IList ListarMateriasCBDS()
+        public static void ListarMateriasCBDS(ComboBoxPersonalisado CBMateria,reserva res)
         {
             using (classroom_managerEntities db = new classroom_managerEntities())
             {
-                return db.materias.ToList();   
- 
+                CBMateria.DisplayMember = "materia";
+                CBMateria.ValueMember = "id_materia";
+                CBMateria.DataSource= db.materias.ToList();
+                CBMateria.SelectedItem = db.materias.FirstOrDefault(r => r.id_materia == res.id_materia);
             }
         }
-        public static string ListarMateriasCBSI( reserva res)
+        public static materias ListarMateriasCBSI( reserva res)
         {
             using (classroom_managerEntities db = new classroom_managerEntities())
             {
-                return  db.materias.FirstOrDefault(r => r.id_materia == res.id_materia).ToString();
+                return  db.materias.FirstOrDefault(r => r.id_materia == res.id_materia);
             }
         }
     }

@@ -33,15 +33,22 @@ namespace ProyectoIntegradorTaller.logica
 
             }
         }
-        public static IList ListarProfesoresComboBoxDS()
+        public static void ListarProfesoresComboBoxDS(ComboBoxPersonalisado CBPRofesor,reserva res)
         {
             using (classroom_managerEntities db = new classroom_managerEntities())
             {
 
-
-                return  db.usuario
+                CBPRofesor.DisplayMember = "fullname";
+                CBPRofesor.ValueMember = "id_usuario";
+                
+                CBPRofesor.DataSource=db.usuario
                     .Where(r => r.id_tipoUsuario == 4).Select(p => new { fullname = p.nombre + " " + p.apellido }).ToList();
-     
+                CBPRofesor.SelectedItem = db.usuario
+                .Where(r => r.id_usuario == res.id_usuario)
+                .Select(p => new { fullname = p.nombre + " " + p.apellido })
+                .FirstOrDefault();
+
+
 
 
             }
